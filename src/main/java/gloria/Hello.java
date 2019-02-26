@@ -7,8 +7,7 @@ public class Hello {
 	public static void main(String[] args) {
 		System.out.println("Hello");
 		
-		public class Guesser {
-			public static void main(String[] args) {
+	
 				Scanner scanner = new Scanner(System.in);
 				Random random = new Random();
 
@@ -30,8 +29,8 @@ public class Hello {
 				scanner.close();
 			}
 
-		}
+		
 		
 	
 	}
-}
+
