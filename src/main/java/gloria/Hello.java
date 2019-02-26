@@ -27,6 +27,7 @@ public class Hello {
 
 				System.out.println("Well done!");
 				scanner.close();
+				// progetto
 			}
 
 		
