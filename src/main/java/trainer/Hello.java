@@ -1,7 +1,7 @@
-package monica;
+package trainer;
 
 public class Hello {
 	public static void main(String[] args) {
-		System.out.println("Hello ciao");
+		System.out.println("Hello");
 	}
 }
