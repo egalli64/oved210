@@ -1,4 +1,4 @@
-package alessandraC;
+package hello;
 
 public class Hello {
 	private static int month = 5;
