@@ -15,6 +15,9 @@ public class Hello {
 			System.out.println("Element " + i + " = " + months[i]);
 		}
 		
+		for(int value : months) {
+			System.out.println("Element: " + value);
+		}
 		System.out.println("countdown completed");	
 	}
 	public static void main(String[] args) {
