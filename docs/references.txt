@@ -1,0 +1,5 @@
+The Java Language Specification v.6
+https://docs.oracle.com/javase/specs/jls/se6/jls3.pdf
+
+The Java™ Tutorials
+https://docs.oracle.com/javase/tutorial/
