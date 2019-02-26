@@ -13,7 +13,7 @@ public class Hello2 {
 		System.out.println("Printing coutdown: ");
 		for (int i = 0; i < months.length; i++) {
 			System.out.println("Element " + i + " = " + months [i]);
-	}
+			}
 	
 	System.out.println("Countdown completed ");
 	}
