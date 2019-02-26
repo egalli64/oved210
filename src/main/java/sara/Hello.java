@@ -12,6 +12,10 @@ public class Hello {
 		for(int i = 0; i < months.length; i++) {
 			System.out.println("Element "+ i + " = "+ months[i]);
 		}
+		//un altro modo per stampare
+		for(int value : months) {
+			System.out.println("Element: " + value);
+		}
 		System.out.println("Countdown completed");
 	}
 	// un metodo per decremento
