@@ -1,47 +1,57 @@
 package sara;
 
 public class Hello {
-	private static int month = 5; 
+	public static void countdown() {
+		System.out.println("Hello, I'm in countdown");
+	// un metodo per decremento
+		int[] months = new int[12];
+		for(int i = 0; i < months.length; i++) {
+			months[i] = months.length -1 - i;
+		}
+		System.out.println("Printing countdown:");
+		for(int i = 0; i < months.length; i++) {
+			System.out.println("Element "+ i + " = "+ months[i]);
+		}
+		System.out.println("Countdown completed");
+	}
+	// un metodo per decremento
+	//int[] months = new int[12];
+	//for (int i =11; i>= 0; i--)  {
+	// months [i] = 0;
+	//}
 	
-    public static void main(String[] args) {
-	    System.out.println("hello!");
-	    char flag = 'A';
-	    int counter = 0;
-	    Integer c2 = 0;
-	    Integer c2b = new Integer (0);
-	    
-	    System.out.println("Counter is " + counter + " flag is " + flag + " and total is " + month);
-	    
-	    
-	    
-	    if (counter == 0) {
-	    	System.out.println(" As Expected ");
-	    }  else if (flag != 'B')  {
-	    	System.out.println(" Surprising! ");
-	    }  else {
-	    	System.out.println(" Never printed " );
-	    }
-	    
-	     switch(month) {
-	     case 1:
-	    	 System.out.println("31 days");
-	    	 break;
-	     case 2:
-	    	 System.out.println("28 days");
-	    	 break;
-	    default:
-	    	 System.out.println("other");
-	    	 break;
-	     }
-//	    long largeValue =0;
-	   
-	    
-	   // I've seen a target!
-	    counter = counter + 1;
-	    counter = counter++; 
-	    // counter = ++counter
-	    
-	    counter += 1;
-	    System.out.println("Counter is " + counter);
+	
+	public static void main(String[]args) {
+		System.out.println("Hello");
+		countdown();
+		
+		
+		long a = 42;
+		int b = (int)a;
+		
+		int x = 12;
+		long y = x;
+		
+		double d = 12.23;
+		float f = (float)d;
+		
+		System.out.println(a + ", " + b + ", " + d + ", " + f);
+
+		int jan = 31;
+		int feb = 28;
+		
+		//inizializzare i valori di ogni mes
+		//int[] months = new int[12];
+		
+		//for(int i = 11; i >=0; i--) {
+			// months[i] = i;
+		//}
+		
+		int[] months = {31, 28, 10, 21, 18, 13, 1, 1, 1, 1, 30, 31};
+		
+		System.out.println("Months is sized " + months.length);
+		for(int i = 0; i < months.length; i++) {
+			System.out.println("Element" + i + " = " + months[i]);
+		}
 	}
 }
