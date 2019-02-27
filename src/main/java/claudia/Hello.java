@@ -28,9 +28,6 @@ public class Hello {
 		
 		
 		
-		for(int value : months) {
-			System.out.println("Element" + value);
 		}
 		
-}
 }
