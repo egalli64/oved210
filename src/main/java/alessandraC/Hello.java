@@ -1,34 +1,44 @@
 package alessandraC;
 
 public class Hello {
-	private static int month = 5;
+	
+	public static void countdown() {
+		System.out.println("Hello, I'm in countdown!");
+
+		int[] months = new int[12];
+		for (int i = 0; i < months.length; i++) {
+			months[i] = months.length - 1 - i;
+		}
+
+		System.out.println("Printing countdown:");
+		for (int i = 0; i < months.length; i++) {
+			System.out.println("Element " + i + " =" + months[i]);
+		}
+
+		System.out.println("Countdown completed");
+	}
 
 	public static void main(String[] args) {
-		char flag = 'A';
-		int counter = 0;
+		System.out.println("Hello");
+		countdown ();
 
-		System.out.println("Counter is" + counter + "flag is" + flag + "and total is" + month);
+		long a = 42;
+		int b = (int) a;
 
-		if (counter == 0) {
-			System.out.println("Aspected");
-		} else if (flag != 'B')
-			System.out.println("Surprising!");
-		counter = counter++;
+		int x = 12;
+		long y = x;
 
-		counter += 1;
-		System.out.println("Counter is" + counter);
+		int jan = 31;
+		int feb = 28;
 
-		switch (month) {
-		case 1:
-			System.out.println("31 days");
-			break;
-		case 2:
-			System.out.println("28 days");
-			break;
-		default:
-			System.out.println("other");
-			break;
+//		int[] months = new int [12];
+//		for (int i = 10; i >= 0; i--) {
+//			months[i] = i + 1;
+//			System.out.println("Element" + i + " = " + months[i]);
 
-		}
+		int[] months = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		System.out.println("Months is sized" + months.length);
+
 	}
+
 }
