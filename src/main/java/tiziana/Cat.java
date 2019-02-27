@@ -6,6 +6,11 @@ public class Cat extends Animal {
 		super(name,weight);
 	}
 
+	@Override
+	public String toString() {
+		return "Cat [name=" + name + ", weight=" + weight + "]";
+	}
+
 
 	}
 	
