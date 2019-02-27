@@ -1,11 +1,13 @@
 package francesca;
 
 public class Box {
-	private double x;
-	private double y;
-	private double z;
+	protected static int counter = 0; //la variabile counter è statica
+	protected double x;
+	protected double y;
+	protected double z;
 	
 	public Box() {
+		Box.counter += 1;
 	}
 	public double getX() {
 		return x;
@@ -35,6 +37,7 @@ public class Box {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		Box.counter += 1;
 	}
 
 public double getVolume() {
@@ -43,6 +46,9 @@ public double getVolume() {
 @Override
 public String toString() {
 	return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
+}
+public static int getCounter() {
+	return counter;
 }
 }
 
