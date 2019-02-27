@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class PersonUser {
 	public static void main(String[] args) {
+		
+		
 
 		Person[] persons = new Person[5];
 
@@ -13,7 +15,8 @@ public class PersonUser {
 		persons[3] = new Person(74, 2.04);
 		persons[4] = new Person(18, 1.61);
 		
-		
+
+
 		
 		for (int i = 0; i < 5; i++) {
 	if(persons[i].getAge() > 40) {

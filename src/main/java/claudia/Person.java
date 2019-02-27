@@ -1,6 +1,10 @@
 package claudia;
 
 public class Person {
+	protected static int counter = 0;{
+		System.out.println("How many persons?" + Person.counter);}	
+	
+	
 	private int age;
 	private double height;
 

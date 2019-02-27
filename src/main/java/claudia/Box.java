@@ -1,56 +1,61 @@
 package claudia;
 
 public class Box {
-protected double x;
-protected double y;
-protected double z;
 
+	protected static int counter = 0;
+	protected double x;
+	protected double y;
+	protected double z;
 
-@Override
-public String toString() {
-	return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
-}
+	@Override
+	public String toString() {
+		return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
+	}
 
-public Box() {
-	
-}
+	public Box() {
 
-public double getX() {
-	return x;
-}
+		Box.counter += 1;
+	}
 
-public void setX(double x) {
-	this.x = x;
-}
+	public Box(double x, double y, double z) {
+		this.x = x;
+		this.y = y;
+		this.z = y;
+		
+		Box.counter += 1;
+	}
 
-public double getY() {
-	return y;
-}
+	public static int getCounter() {
+		return counter;
+	}
 
-public void setY(double y) {
-	this.y = y;
-}
+	public double getX() {
+		return x;
+	}
 
-public double getZ() {
-	return z;
-}
+	public void setX(double x) {
+		this.x = x;
+	}
 
-public void setZ(double z) {
-	this.z = z;
-}
+	public double getY() {
+		return y;
+	}
 
-public Box (double x, double y, double z) 
-{ this.x = x; 
-this.y = y; 
-this.z = y; }
+	public void setY(double y) {
+		this.y = y;
+	}
 
-public double getVolume() {
-	return x * y * z;
-	
-	
-	
-	
-	
-}
+	public double getZ() {
+		return z;
+	}
+
+	public void setZ(double z) {
+		this.z = z;
+	}
+
+	public double getVolume() {
+		return x * y * z;
+
+	}
 
 }
