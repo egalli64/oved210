@@ -1,9 +1,9 @@
 package mariangela;
 
 public class Box {
-private double x;
-private double y;
-private double z;
+protected double x;
+protected double y;
+protected double z;
 
 public Box() {
 	
