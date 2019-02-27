@@ -1,15 +1,27 @@
 package gloria;
 
 public class Box {
+	protected static int counter = 0;
+
 	protected double x;
 	protected double y;
 	protected double z;
 	
-	public Box () {
+	public Box() {
+		Box.counter += 1;
 	}
 	
+	public Box (double x, double y, double z) {
+	     this.x = x; // significa che this.x deve essere uguale al parametro "double x" che mi sta passando
+	     this.y = y;
+	     this.z = z;
+
+	     Box.counter += 1;
+	      
+	}
+				
 	
-public double getX() {
+    public double getX() {
 		return x;
 	}
 
@@ -34,14 +46,7 @@ public double getX() {
 	public void setZ(double z) {
 		this.z = z;
 	}
-
-public Box (double x, double y, double z) {
-     this.x = x; // significa che this.x deve essere uguale al parametro "double x" che mi sta passando
-     this.y = y;
-     this.z = z;
-      
-	}
-		
+	
 	public double getVolume() {
 	  return x * y * z;
 	  
@@ -54,8 +59,11 @@ public Box (double x, double y, double z) {
 	}
 	
 	
-	}
+	public static int getCounter() {
+		return counter;
+    }
 	
+}
 
 
 
