@@ -1,12 +1,16 @@
 package tiziana;
 
 public class Box {
+	protected static int counter=0;
+	
 	
 	protected double x;
 	protected double y;
 	protected double z;
 	
 	public Box() {
+		Box.counter +=1;
+		
 	}
 
 	
@@ -14,6 +18,8 @@ public class Box {
 	   this.x =x;
 	   this.y =y;
 	   this.z =z;   
+	   
+	   Box.counter +=1;
 	}
 			
 	
@@ -22,7 +28,6 @@ public class Box {
 	}
 
 	
-
 
 
 	@Override
