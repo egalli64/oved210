@@ -24,7 +24,6 @@ public class Box {
 	
 
 
-
 	@Override
 	public String toString() {
 		return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
