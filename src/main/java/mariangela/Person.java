@@ -31,7 +31,9 @@ public class Person {
 		this.height = height;
 	}
 
-
+public Person createKid() {
+	return new Person(0, height / 10);            //creare una nuova persona che abbia un'altezza pari a quella della persona 0 / 10
+}
 	@Override
 	public String toString() {
 		return "Person [age=" + age + ", height=" + height + "]";
