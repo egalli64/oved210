@@ -8,17 +8,27 @@ public class PersonUser {
 
 	
 	public static void main(String[] args) {
-		Random random = new Random();
+		Random random = new Random ();
+		
 		Person [] persons = new Person [NR_PERSONS];
+		
+		System.out.println("How many persons?" + Person.getCounter());
+		
+		persons[0] = new Person(5, 0.37);
+		persons[1] = new Person(42, 1.85);
+		persons[2] = new Person(21, 1.72);
+		persons[3] = new Person(74, 2.04);
+		persons[4] = new Person(18, 1.61);
+		
+		System.out.println("How many persons?" + Person.getCounter());
 		
 		//initialize array	
 	    for (int i = 0; i < NR_PERSONS; i++) {
-		    persons[i] = new Person (20 + random.nextInt(40), 1.50 + random.nextDouble ()); 
+		
+			persons[i] = new Person (20 + random.nextInt(40), 1.50 + random.nextDouble ()); 
 			
-	    }
-	    
-	       
-	    
+	    }	    
+	      	    
 	    // print array
 		for (int i = 0; i < NR_PERSONS; i++) {
 			System.out.println("Person" + i + ":" + persons[i]);

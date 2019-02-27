@@ -1,23 +1,18 @@
-package sara;
+package francesca;
 
 public class Box {
-	protected static int counter = 0;
-	
-	
-	private double x;
-	private double y;
-	private double z;
+	protected static int counter = 0; //la variabile counter è statica
+	protected double x;
+	protected double y;
+	protected double z;
 	
 	public Box() {
 		Box.counter += 1;
-				
 	}
-	
 	public double getX() {
 		return x;
 	}
 
-	
 	public void setX(double x) {
 		this.x = x;
 	}
@@ -44,17 +39,16 @@ public class Box {
 		this.z = z;
 		Box.counter += 1;
 	}
-	
-	public double getVolume() {
-		return x * y * z;
-			}
 
-	@Override
-	public String toString() {
-		return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
-	}
-	public static int getCounter() {
-		return counter;
-	}
-	}
-	
+public double getVolume() {
+	  return x * y * z;
+}
+@Override
+public String toString() {
+	return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
+}
+public static int getCounter() {
+	return counter;
+}
+}
+
