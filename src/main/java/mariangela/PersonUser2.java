@@ -15,6 +15,8 @@ public class PersonUser2 {
 		persons[2] = new Person2(21, 1.72);
 		persons[3] = new Person2(74, 2.04);
 		persons[4] = new Person2(18, 1.61);
+		
+		System.out.println("How many persons? " + Person2.getCounter());
 
 		for (int i = 0; i < NR_PERSONS; i++) {
 			System.out.println(i + ": " + persons[i]);
