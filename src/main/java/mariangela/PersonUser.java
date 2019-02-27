@@ -38,11 +38,10 @@ public class PersonUser {
 			if (persons[i].getHeight() < 1.80 && persons[i].getAge() > 10) {
 				System.out.println(i + ": " + persons[i]);
 			}
-			
+
 		}
 		System.out.println("******");
-		
-		
+
 		Person kid = persons[4].createKid();
 		System.out.println("New person: " + kid);
 	}
