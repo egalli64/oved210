@@ -1,12 +1,21 @@
 package mariangela;
 
-public class Person {
+public class Person2 {
+
+	protected static int counter = 0;
+
 	private int age;
 	private double height;
 
-	public Person(int age, double height) {
+	public Person2() {
+		Person2.counter += 1;
+	}
+
+	public Person2(int age, double height) {
 		this.age = age;
 		this.height = height;
+
+		Person2.counter += 1;
 
 	}
 
@@ -26,14 +35,18 @@ public class Person {
 		this.height = height;
 	}
 
-	public Person createKid() {
-		return new Person(0, height / 10); // creare una nuova persona che abbia un'altezza pari a quella della persona
+	public Person2 createKid() {
+		return new Person2(0, height / 10); // creare una nuova persona che abbia un'altezza pari a quella della persona
 											// 0 / 10
 	}
 
 	@Override
 	public String toString() {
 		return "Person [age=" + age + ", height=" + height + "]";
+	}
+
+	public static int getCounter() {
+		return counter;
 	}
 
 }

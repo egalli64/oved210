@@ -17,7 +17,7 @@ public class PersonUser {
 			System.out.println(i + ": " + persons[i]);
 		}
 
-		System.out.println("******");
+		System.out.println("*****");
 //
 //		for (int i = 0; i < NR_PERSONS; i++){            //voglio stampare solo quelli più vecchi di 40 anni
 //		posso anche scrivere for (Person person : person) {
@@ -38,11 +38,10 @@ public class PersonUser {
 			if (persons[i].getHeight() < 1.80 && persons[i].getAge() > 10) {
 				System.out.println(i + ": " + persons[i]);
 			}
-			
+
 		}
 		System.out.println("******");
-		
-		
+
 		Person kid = persons[4].createKid();
 		System.out.println("New person: " + kid);
 	}
