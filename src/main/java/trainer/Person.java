@@ -28,7 +28,7 @@ public class Person {
 	public Person createKid() {
 		return new Person(0, height / 10);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Person [age=" + age + ", height=" + height + "]";
