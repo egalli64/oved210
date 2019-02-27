@@ -1,15 +1,28 @@
 package gloria;
 
 public class Person {
+	private static int counter;
 	private int age;
 	private double height; // fino a qui definisco le prorpietà della classe
+		
 	
 	public Person (int age, double height) { // costruisco il costruttore
+		
+		Person.counter += 1;
+		
+		
+		
 		this.age = age;
-		this.height = height;
+		this.height = height;		
 		
-		
-		
+	}
+
+	public static int getCounter() {
+		return counter;
+	}
+
+	public static void setCounter(int counter) {
+		Person.counter = counter;
 	}
 
 	@Override
@@ -34,5 +47,4 @@ public class Person {
 		
 	}
 	
-
 }
