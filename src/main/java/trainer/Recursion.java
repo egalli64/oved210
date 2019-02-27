@@ -1,14 +1,14 @@
 package trainer;
 
 public class Recursion {
-	static public int recursiveFactorial(int n) {
+	public static int recursiveFactorial(int n) {
 		if (n == 1) {
 			return 1;
 		}
 		return recursiveFactorial(n - 1) * n;
 	}
 
-	static public int factorial(int n) {
+	public static int factorial(int n) {
 		int result = 1;
 
 		for(int i = 1; i <= n; i++) {
