@@ -1,6 +1,8 @@
 package sara;
 
 public class Person {
+	protected static int person = 0;
+	
 	private int age;
 	private double height;
 	

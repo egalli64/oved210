@@ -1,11 +1,16 @@
 package sara;
 
 public class Box {
+	protected static int counter = 0;
+	
+	
 	private double x;
 	private double y;
 	private double z;
 	
 	public Box() {
+		Box.counter += 1;
+				
 	}
 	
 	public double getX() {
@@ -37,6 +42,7 @@ public class Box {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		Box.counter += 1;
 	}
 	
 	public double getVolume() {
@@ -47,6 +53,8 @@ public class Box {
 	public String toString() {
 		return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
+	public static int getCounter() {
+		return counter;
+	}
+	}
 	
-	
-}
