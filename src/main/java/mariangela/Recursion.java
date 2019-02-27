@@ -6,7 +6,7 @@ public class Recursion {
 			return 1;
 		}
 
-		return recursivefactorial(n - 1) * n;
+		return recursivefactorial (n - 1) * n;
 	}
 
 	 public static int factorial(int n) {
