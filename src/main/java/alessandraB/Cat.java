@@ -8,7 +8,9 @@ public class Cat extends Animal {
 
 	@Override
 	public String toString() {
-		return "Cat [peso=" + peso + ", nome=" + nome + "]";
+		return "Cat [peso=" + peso + ", nome=" + nome + "]"; // se aggiungo la string di tipo cane,
+														     // come su tipo gatto, mi fa capire che non è un
+															 // animale generico (animal), ma precisamente un cane
 	}
 
 }

@@ -1,9 +1,16 @@
 package tiziana;
 
-public class Person {
+public class Person2 {
+	protected static int counter=0;
+	
+	public Person2() {
+		Person2.counter += 1;
+	}
+	
 	
 	private int age;
 	private double height;
+	
 	
 	
 	
@@ -33,19 +40,24 @@ public class Person {
 	}
 
 
-	public Person(int age, double height) {
+	public Person2(int age, double height) {
 		this.age=age;
 		this.height=height;
+		
+		Person2.counter += 1;
 	}
 
 
-	public static String getCounter() {
-		// TODO Auto-generated method stub
-		return null;
+	public static int getCounter() {
+		return counter;
+	}
+
+
+	public void setCounter(int counter) {
+		Person2.counter = counter;
 	}
 	
 	
 	
-	
-
 }
+	
