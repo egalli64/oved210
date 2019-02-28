@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 import java.util.Random;
 

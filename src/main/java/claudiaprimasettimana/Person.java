@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 public class Person {
 	protected static int counter = 0;{
