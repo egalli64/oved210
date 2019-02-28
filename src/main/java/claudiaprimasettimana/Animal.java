@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 public abstract class Animal {
 
