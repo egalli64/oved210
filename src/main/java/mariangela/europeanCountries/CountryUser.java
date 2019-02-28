@@ -6,6 +6,7 @@ public class CountryUser {
 		String[] ids = { "IT", "FR", "ES", "CH", "BE" };
 		String[] names = { "Italy", "France", "Spain", "Switzerland", "Belgium" };
 		String[] cityNames = { "Rome", "Paris", "Madrid", "Bern", "Brussels" };
+		String[] personNames = { "Carlo", "Pierre", "Miguel" };
 
 		Country[] countries = new Country[ids.length];
 		for (int i = 0; i < ids.length; i++) {
@@ -22,13 +23,26 @@ public class CountryUser {
 		}
 		System.out.println("****");
 
-		System.out.println("Spain: ");
-		for (City city : cities) {
-			String cid = city.getCountryId();
-			if (cid.equals("ES")) {
-				System.out.println(city.getName());
-				System.out.println(" ");
+		for (Country country : countries) {
+			String countryId = country.getId();
+
+			for (City city : cities) {
+				String cid = city.getCountryId();
+				if (cid.equals(countryId)) {
+					System.out.println(country.getName() + ": " + city.getName());
+
+				}
+
 			}
+
 		}
+		System.out.println("*******");
+		
+		Person[] persons = new Person[personNames.length];
+		for (int i = 0; i < personNames.length; i++) {
+			persons[i] = new Person(personNames[i], cities[i]);
+			System.out.println(personNames[i] + ", " + cityNames[i]);
+		}
+
 	}
 }
