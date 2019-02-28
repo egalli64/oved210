@@ -12,8 +12,9 @@ public class CountryUser {
 		
 		for (int i = 0; i < 4; i++) {
 			System.out.println(countries [i]);
+			
 		}
-		
+			
 		
 				
 	System.out.println("***");
@@ -33,12 +34,29 @@ public class CountryUser {
 	
 	//oppure posso anche fare:
 	System.out.println("otherCountries has" + otherCountries.length + "elements"); // questo per ottenere invece il numero dei paesi inseriti
-	
-	
-	}
-	}
-	
 
+	}
+}
+	
+//	System.out.println("***");
+//
+//	
+//	for (Country country : countries) {
+//			String cid = country.getId();
+//		
+//	for(City city : cities ) {
+//		String ccid= city.getIds();
+//		
+//	if(cid.equals(ccid)) {
+//				
+//		
+//		
+//	System.out.println(city.getIds() + "," + city.getCityNames());
+//			
+//	}
+//	}
+		
+	//}
 
 
 	

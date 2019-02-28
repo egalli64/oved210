@@ -4,20 +4,32 @@ public class City {
 	
 	private String ids; 
 	private String cityNames;
-	private String name;
+	private String names;
 	
-	public City (String ids, String cityNames, String name) {
+	public City (String ids, String cityNames, String names) {
 		
 	    this.ids = ids; 
 		this.cityNames = cityNames;
-		this.name = name; 
+		this.names = names; 
 
 	}
 
 	@Override
 	public String toString() {
-		return "City [ids = "+ids+", cityNames = "+cityNames+" , name = "+name+"]";
+		return "City [ids = "+ids+", cityNames = "+cityNames+" , names = "+names+"]";
 		
+	}
+
+	public String getIds() {
+		return ids;
+	}
+
+	public String getCityNames() {
+		return cityNames;
+	}
+
+	public String getNames() {
+		return names;
 	}
 
 	
