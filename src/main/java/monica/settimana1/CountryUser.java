@@ -7,11 +7,21 @@ public class CountryUser {
 		String[] ids = { "IT", "FR", "ES", "CH", "BE" };    // ids è un array di stringhe (così e più rapido)
 		String[] names = { "Italy", "France", "Spain", "Switzerland", "Belgio" };    //ids è un array di stringhe 
         String[]cityNames= {"Rome", "Paris", "Madrid", "Bern", "Bruxelles"};
-	
+	    String [] peopleNames = {"carlo" , "pierre", "Miguel"};
+        
+        People[] people= new People [peopleNames.length];
+        
+        people[0] = new People("carlo", new City("Rome", "IT"));
+        people[1] = new People ("pierre", new City("Paris", "FR"));
+        people[2]= new People ("Miguel", new City ("Madrid", "ES"));
+        
+        for (int i = 0; i < peopleNames.length; i++) 
+        	System.out.println( people [i] );
         
         
         
         
+        System.out.println("**************");
 		for (int i = 0; i < ids.length; i++) {     // faccio un for loop per stammpare i valori delle array di stringhe 
 			System.out.println(ids[i] + "," + names[i]);
 		}
@@ -61,6 +71,7 @@ public class CountryUser {
 	
 		
 		}
+			
 			
 			
 			
