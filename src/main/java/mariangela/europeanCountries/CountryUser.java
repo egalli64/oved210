@@ -22,12 +22,16 @@ public class CountryUser {
 		}
 		System.out.println("****");
 
-		System.out.println("Spain: ");
-		for (City city : cities) {
-			String cid = city.getCountryId();
-			if (cid.equals("ES")) {
-				System.out.println(city.getName());
-				System.out.println(" ");
+		for (Country country : countries) {
+			System.out.println(country.getName() + ": ");
+			String countryId = country.getId();
+
+			for (City city : cities) {
+				String cid = city.getCountryId();
+				if (cid.equals(countryId)) {
+					System.out.println(city.getName());
+					System.out.println(" ");
+				}
 			}
 		}
 	}
