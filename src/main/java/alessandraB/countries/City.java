@@ -20,4 +20,19 @@ public class City {
 		return "City [cityName=" + cityName + ", countryID=" + countryID + "]";
 	}
 
+	public String getCityName() {
+		return cityName;
+	}
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+	public String getCountryID() {
+		return countryID;
+	}
+
+	public void setCountryID(String countryID) {
+		this.countryID = countryID;
+	}
 }
