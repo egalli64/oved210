@@ -5,18 +5,22 @@ package claudia.countries;
 
 public class City {
 
-	String id;
-	String name;
+	String CountryId;
+	String CityName;
 	
-	public City (String id, String name) {
-		this.id = id;
-		this.name = name;
+	public City (String CountryId, String CityName) {
+		this.CountryId = CountryId;
+		this.CityName = CityName;
 }
 
 	@Override
 	public String toString() {
-		return "City [id=" + id + ", name=" + name + "]";
+		return "City [CountryId=" + CountryId + ", CityName=" + CityName + "]";
+	}
+
+	
+
+	
 	}
 	
 	
-}

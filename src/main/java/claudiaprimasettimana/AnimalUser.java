@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 public class AnimalUser {
 	public static void main(String[] args) {
