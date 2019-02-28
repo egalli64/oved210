@@ -37,17 +37,21 @@ public class CountryUser {
 		for (City city : cities) {
 			System.out.println(city);
 		}
-		
+
 		System.out.println("***");
 
-		System.out.print("Spain: ");
-		for (City city : cities) {
-			String cid = city.getCountryId();
-			if(cid.equals("ES")) {
-				System.out.print(city.getName());
-				System.out.print(" ");
+		for (Country country : countries) {
+			System.out.print(country.getName() + ": ");
+			String countryId = country.getId();
+
+			for (City city : cities) {
+				String cid = city.getCountryId();
+				if (cid.equals(countryId)) {
+					System.out.print(city.getName());
+					System.out.print(" ");
+				}
 			}
+			System.out.println();
 		}
-		System.out.println();
 	}
 }
