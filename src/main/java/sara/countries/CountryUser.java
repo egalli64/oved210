@@ -22,7 +22,7 @@ public class CountryUser {
 		cities[0] = new City("Milan", "IT");
 		cities[1] = new City("London", "UK");
 		cities[2] = new City("Paris", "FR");
-
+		
 		for (Country country : countries) {
 			String countryId = country.getId();
 
@@ -32,11 +32,12 @@ public class CountryUser {
 				if (cityId.equals(countryId)) {
 					System.out.println(country.getName() + "," + city.getName());
 				}
+				
 			}
 		}
 	}
-}
 
+}
 // un altro metodo
 
 // String[] id = { "IT", "FR", "ES", "CH" };
