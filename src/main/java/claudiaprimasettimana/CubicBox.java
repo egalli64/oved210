@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 public class CubicBox extends Box {
 	public CubicBox(double x) {

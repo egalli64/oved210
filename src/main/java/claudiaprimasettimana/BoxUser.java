@@ -1,4 +1,4 @@
-package claudia;
+package claudiaprimasettimana;
 
 public class BoxUser {
 public static void main(String[] args) {
