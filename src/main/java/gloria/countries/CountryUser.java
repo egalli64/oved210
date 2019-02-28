@@ -5,7 +5,7 @@ public class CountryUser {
 			
 	Country[] countries = new Country [4]; // ho creato un oggetto che si chiama countries in un array di Country
 		
-		countries  [0] = new Country ("IT", "Italy");
+		countries [0] = new Country ("IT", "Italy");
 		countries [1] = new Country ("FR", "France");
 		countries [2] = new Country ("ES", "Spain");
 		countries [3] = new Country ("CH", "Switzerland");
@@ -24,6 +24,7 @@ public class CountryUser {
 	String[] names = {"Italy", "France", "Spain", "Switzerland", "Argentina"};
 	
 	Country[] otherCountries = new Country[ids.length];
+	
 	for (int i=0; i < otherCountries.length; i++) {
 		otherCountries[i] = new Country(ids[i], names[i]);
 	System.out.println(ids[i] + "," + names [i]); // questo per ottenere la sigla dei paesi e il nome per esteso
@@ -37,6 +38,7 @@ public class CountryUser {
 	}
 	}
 	
+
 
 
 	

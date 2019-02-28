@@ -1,11 +1,10 @@
 package gloria.countries;
 
 public class Country {
-	private String id;
 	private String name;
+	private String id;
 	
-	
-	public Country (String name, String id) {
+	public Country (String id, String name) {
 		
 		this.id = id;
 		this.name = name;
