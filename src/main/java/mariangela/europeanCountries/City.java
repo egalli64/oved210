@@ -9,7 +9,6 @@ public class City {
 		this.name = name;
 		this.countryId = countryId;
 		
-
 	}
 
 	public String getName() {
