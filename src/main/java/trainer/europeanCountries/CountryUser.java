@@ -66,5 +66,11 @@ public class CountryUser {
 		for (Person person : persons) {
 			System.out.println(person);
 		}
+		
+		System.out.println("*******");
+		for (int i = 0; i < persons.length; i++) {
+			System.out.println(persons + ids[i] + names [i]);
+		}
 	}
+	
 }
