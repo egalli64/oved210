@@ -1,19 +1,33 @@
 package mariangela.europeanCountries;
 
 public class City {
-	protected String cityName;
-	protected String id;
+	protected String name;
+	protected String countryId;
 
-	public City(String cityName, String id) {
+	public City(String name, String countryId) {
 
-		this.cityName = cityName;
-		this.id = id;
+		this.name = name;
+		this.countryId = countryId;
+		
 
 	}
 
-	@Override
-	public String toString() {
-		return "City [cityName=" + cityName + ", id=" + id + "]";
+	public String getName() {
+		return name;
 	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(String countryId) {
+		this.countryId = countryId;
+	}
+
+
 
 }

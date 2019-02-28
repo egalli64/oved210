@@ -5,6 +5,16 @@ package alessandraB.countries;
 // name (for ex. "Italy")
 
 public class Country {
+	public String getName() {
+		return name;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
 	private String id;  // se metto private, questa variabile è visibile solo all'interno del package countries.
 	private String name;
 	
