@@ -1,4 +1,4 @@
-package monica;
+package monica.settimana1;
 
 public class BoxUser {
 	public static void main(String[] args) {
