@@ -53,5 +53,18 @@ public class CountryUser {
 			}
 			System.out.println();
 		}
+
+		System.out.println("*** People from Europe ***");
+
+		String[] personNames = { "Carlo", "Pierre", "Miguel", "Pirmin" };
+
+		Person[] persons = new Person[personNames.length];
+		for (int i = 0; i < persons.length; i++) {
+			persons[i] = new Person(personNames[i], cities[i]);
+		}
+
+		for (Person person : persons) {
+			System.out.println(person);
+		}
 	}
 }
