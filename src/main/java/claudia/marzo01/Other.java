@@ -14,10 +14,19 @@ public class Other extends Base {
 
 	@Override
 	public void doSomething() {
+		System.out.println("Something for other");
 		// TODO Auto-generated method stub
 		
 	}
-	
+	 Other other = new Other (21, "hihi");
+	 
+	 public int getValue() {
+		 return 42;
+	 }
+	 
 
 
-}
+	}
+
+
+

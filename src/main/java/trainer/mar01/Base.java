@@ -22,7 +22,7 @@ public abstract class Base {
 	}
 
 	public abstract void doSomething();
-	
+
 	@Override
 	public String toString() {
 		return "Base [x=" + x + ", y=" + y + "]";

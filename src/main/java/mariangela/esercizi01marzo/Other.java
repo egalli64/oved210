@@ -1,9 +1,10 @@
-package trainer.mar01;
+package mariangela.esercizi01marzo;
 
 public class Other extends Base {
 
 	public Other(int x, String y) {
 		super(x, y);
+		
 	}
 
 	@Override
@@ -11,7 +12,10 @@ public class Other extends Base {
 		System.out.println("Something for other");
 	}
 
-	public int getValue() {
+	public int getValue( ) {
 		return 42;
 	}
-}
+	}
+	
+
+

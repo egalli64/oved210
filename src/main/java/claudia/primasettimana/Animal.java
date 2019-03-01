@@ -5,8 +5,11 @@ public abstract class Animal {
 	String name;
 	int weight;
 	
-	public Animal (String name, int weight) {
-		
+	public Animal (String name, int weight) throws Exception {
+		if(weight <= 0) {
+			throw new Exception();
+//			throw new IllegalArgumentException()
+		}
 		this.name = name;
 		this.weight = weight;
 		
