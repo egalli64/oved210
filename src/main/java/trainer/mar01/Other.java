@@ -11,4 +11,7 @@ public class Other extends Base {
 		System.out.println("Something for other");
 	}
 
+	public int getValue() {
+		return 42;
+	}
 }

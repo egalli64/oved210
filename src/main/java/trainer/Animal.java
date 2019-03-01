@@ -10,6 +10,10 @@ public abstract class Animal {
 	protected Fur fur;
 
 	public Animal(int weight, String name, Fur fur) {
+		if (weight <= 0) {
+			throw new IllegalArgumentException("Negative weight not accepted!");
+		}
+
 		this.weight = weight;
 		this.name = name;
 		this.fur = fur;
