@@ -1,28 +1,34 @@
 package alessandraB.countries;
 
 public class Person {
-	
-	//proprietà:
-	//nome --> string name
-	//città in cui vive --> string cityName
+
+	// proprietà:
+	// nome --> string name
+	// città in cui vive --> string cityName
 
 	String namePerson;
-	String cityName;
-	
-	public Person(String namePerson, String cityName) {
+	City city;
+	Country country;
+
+	public Person(String namePerson, City city, Country country) {
 		this.namePerson = namePerson;
-		this.cityName = cityName;
-		
-		
-	
-}
+		this.city = city;
+		this.country = country;
+
+	}
+
 	public String getNamePerson() {
 		return namePerson;
 	}
-	public String getCityName() {
-		return cityName;
+
+	public City getCity() {
+		return city;
 	}
+
 	@Override
 	public String toString() {
-		return "Person [namePerson=" + namePerson + ", cityName=" + cityName + "]";
-	}}
+		return "Person [namePerson=" + namePerson + ", city=" + city + ", country=" + country + "]";
+	}
+
+	
+}
