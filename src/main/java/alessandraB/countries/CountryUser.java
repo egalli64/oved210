@@ -65,24 +65,32 @@ public class CountryUser {
 				}
 			}
 		}
-	System.out.println("****");
-	
-		String[] namePerson = {"Alessandra", "Pierre"," Miguel"};
-		
+		System.out.println("****");
+
+		String[] namePerson = { "Alessandra", "Pierre", "Miguel" };
+
 		Person[] people = new Person[namePerson.length];
 		
-		people [0] = new Person ("Alessandra", "Milan");
-		people [1] = new Person ("Pierre", "Paris");
-		people [2] = new Person ("Miguel", "Barcellona");
-		
-		
-		for(Person person : people) {
-			for(City city : cities) {
-				if(person.getCityName().equals(city.getCityName())) {
-			System.out.println(person.getNamePerson()+ " lives in " + person.getCityName());
-			
+		for(int i = 0; i < namePerson.length; i++) {
+		    people[i] = new Person(namePerson[i],cities[i],countries[i]); 
+		    System.out.println(people[i]);
 		}
-			}
-		} }
 
+		
+//		people[0] = new Person("Alessandra", cities[0]);
+//		people[1] = new Person("Pierre", cities[1]);
+//		people[2] = new Person("Miguel", cities[2]);
+
+		
+		
+//		for (Person person : people) {
+//			for (City city : cities) {
+//				if (person.getCity().equals(city.getCityName())) {
+//					System.out.println(person.getNamePerson() + " lives in " + person.getCity());
+//
+//				}
+//			}
+//		}
 	}
+
+}
