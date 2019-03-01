@@ -1,20 +1,12 @@
-package claudiaprimasettimana;
+package alessandraC;
 
 public class Person {
-	protected static int counter = 0;{
-		System.out.println("How many persons?" + Person.counter);}	
-	
-	
 	private int age;
 	private double height;
 
 	public Person(int age, double height) {
 		this.age = age;
 		this.height = height;
-		
-		
-		
-		
 	}
 
 	public int getAge() {
@@ -31,6 +23,7 @@ public class Person {
 
 	public void setHeight(double height) {
 		this.height = height;
+
 	}
 
 	@Override
@@ -38,4 +31,7 @@ public class Person {
 		return "Person [age=" + age + ", height=" + height + "]";
 	}
 
+	public Person createKid() {
+		return null;
+	}
 }
