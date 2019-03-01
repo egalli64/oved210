@@ -1,6 +1,14 @@
 package gloria.mar01;
 
 public class Simple {
+	
+	public static void f() {
+		Base base = new Base(23, "hello");
+		System.out.println(base);
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		boolean a = true; // 1 bit, tipo primitivo 
 		byte b = 12; //  8 bit, sempre primitivio ma più piccolo 
@@ -82,8 +90,7 @@ public class Simple {
 //    	 System.out.println();
 //     }
 	 //...   
-		  
-		
+		  		
 	}
 
 }
