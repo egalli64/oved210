@@ -6,6 +6,7 @@ public class Person {
 	private double height;
 	
 	
+	
 	@Override
 	public String toString() {
 		return "Person [age=" + age + ", height=" + height + "]";
@@ -35,6 +36,12 @@ public class Person {
 	public Person(int age, double height) {
 		this.age=age;
 		this.height=height;
+	}
+
+
+	public static String getCounter() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
