@@ -46,7 +46,38 @@ public class Simple {
 			
 			
 		}
+//		public void operation() {
+//			int x = 3;
+//			int y = 5;
+//		}
+//		
+//		public static void f() {
+//			Base base = new Base(23, "hello";)
+//			System.out.println(base);
 		
-	}
+		Derived derived = new Derived(12, "hello");
+		System.out.println(derived);
+		Other other = new Other (21, "hihi");
+		System.out.println(other);
+		
+		Base[]bases = new Base[2];
+		bases[0] = derived;
+		bases[1] = other;
+		
+		
+		for(Base base: bases) {
+		System.out.println(base);
+		base.doSomething();
+		
+		if(base instanceof Derived) {
+			Derived x = (Derived)base;
+			x.getMyStatus();
+			System.out.println(x.getMyStatus());
+		}
+		
+		//		base.getMyStatus();
+		
+		}
+	}}
 
-}
+
