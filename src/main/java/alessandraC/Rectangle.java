@@ -1,18 +1,14 @@
-package claudia;
+package alessandraC;
 
-public class Rectangle  extends Figure {
-	
+public class Rectangle extends Figure {
+
 	public Rectangle(double x, double y) {
 		super(x, y);
 	}
-	
+
 	@Override
 	public double area() {
 		return x * y;
 	}
 
-	
-	}
-
-
-
+}
