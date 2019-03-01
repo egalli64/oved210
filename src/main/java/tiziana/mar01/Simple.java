@@ -1,4 +1,4 @@
-package trainer.mar01;
+package tiziana.mar01;
 
 public class Simple {
 
