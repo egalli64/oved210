@@ -64,7 +64,14 @@ public class CountryUser {
 		}
 
 		for (Person person : persons) {
-			System.out.println(person);
+			System.out.print(person + " - ");
+			String id = person.getCity().getCountryId();
+			for(Country country: countries) {
+				if(country.getId().equals(id)) {
+					System.out.println(country.getName());
+					break;
+				}
+			}
 		}
 	}
 }
