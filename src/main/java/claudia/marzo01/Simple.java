@@ -46,7 +46,15 @@ public class Simple {
 			
 			
 		}
-		
+//		public void operation() {
+//			int x = 3;
+//			int y = 5;
+//		}
+//		
+//		public static void f() {
+//			Base base = new Base(23, "hello";)
+//			System.out.println(base);
+		}
 	}
 
-}
+
