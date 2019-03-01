@@ -2,7 +2,7 @@ package trainer;
 
 public class Operators {
 	public static void main(String[] args) {
-		int a = 12, b = 30;
+		int a = 12, b = 30, c = 21;
 		System.out.println(a + b);
 		System.out.println(a - b);
 		System.out.println(a * b);
@@ -14,7 +14,8 @@ public class Operators {
 		System.out.println(b);
 		b += a; // b = b + a;
 		b = +a; // b = a;
-		b = -a; // b = -12;
+		b = -a; // b = -a;
+		b = c - a;
 		b -= a; // b = b - a;
 		System.out.println(b);
 		b -= 7;

@@ -25,16 +25,14 @@ public class Primitive {
 		long a = 42;
 		int b = (int)a;
 		
-		int x = 12;
-		long y = x;
+	
 		
 		double d = 12.23;
 		float f = (float)d;
 		
 		System.out.println(a + ", " + b + ", " + d + ", " + f);
 		
-		int jan = 31;
-		int feb = 28;
+		
 		
 //		int[] months = new int[12];
 //		for(int i = 0; i < months.length; i++) {

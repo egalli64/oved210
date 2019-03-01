@@ -9,7 +9,6 @@ public class City {
 		this.name = name;
 		this.countryId = countryId;
 		
-
 	}
 
 	public String getName() {
@@ -26,6 +25,11 @@ public class City {
 
 	public void setCountryId(String countryId) {
 		this.countryId = countryId;
+	}
+
+	@Override
+	public String toString() {
+		return  name + ", " + countryId ;
 	}
 
 

@@ -10,8 +10,13 @@ public class Operators {
 		System.out.println( a - b );
 		System.out.println( a * b );
 		System.out.println( a / b );
-		System.out.println( b % a );
+		System.out.println( (double) a / b ); // divisione con il resto
+		System.out.println( b % a ); // modulo % risultato dell'operazione intera 
 		System.out.println(b);
+		System.out.println(b++); // prima restituiscimi il valore di b e poi incrementalo
+		System.out.println(++b); // prima incrementalo e poi restituiscimi il valore 
+		System.out.println(b--); // uguale ma decremento anzichè incremento
+		System.out.println(--b);
 		
 		b += a; // b = b + a
 		System.out.println(b);

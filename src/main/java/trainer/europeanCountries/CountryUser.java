@@ -64,5 +64,31 @@ public class CountryUser {
 				
 			}
 		}
+
+		System.out.println("*** People from Europe ***");
+
+		String[] personNames = { "Carlo", "Pierre", "Miguel", "Pirmin" };
+
+		Person[] persons = new Person[personNames.length];
+		for (int i = 0; i < persons.length; i++) {
+			persons[i] = new Person(personNames[i], cities[i]);
+		}
+
+		for (Person person : persons) {
+			System.out.print(person + " - ");
+			String id = person.getCity().getCountryId();
+			for(Country country: countries) {
+				if(country.getId().equals(id)) {
+					System.out.println(country.getName());
+					break;
+				}
+			}
+		}
+		
+		System.out.println("*******");
+		for (int i = 0; i < persons.length; i++) {
+			System.out.println(persons + ids[i] + names [i]);
+		}
 	}
+	
 }
