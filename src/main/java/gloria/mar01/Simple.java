@@ -3,13 +3,22 @@ package gloria.mar01;
 public class Simple {
 	
 	public static void f() {
-		Base base = new Base(23, "hello");
-		System.out.println(base);
-	}
+//		Base base = new Base (23, "hello");
+//		System.out.println(base);
+		
+		
+		Derived derived = new Derived (12, "hi") ;
+		System.out.println(derived);
 	
-	
+
+	   Other other = new Other (12, "hihi");
+		   System.out.println(other);
+	   }
+
 	
 	public static void main(String[] args) {
+		f();
+		
 		boolean a = true; // 1 bit, tipo primitivo 
 		byte b = 12; //  8 bit, sempre primitivio ma più piccolo 
 		short s = 1020; // 16 bit 
@@ -29,18 +38,18 @@ public class Simple {
 		       // devo quindi scriverlo così, eseguendo un CAST:
 			ix = (int)l;
 		int x = 12;
-						
+		int y = 5;				
 		}
 		
 		String s1 = "Hello";
 		String s2 = new String ("Hello"); // sono due metodi di scrittura equivalenti ma creano due oggetti completamente diversi. 
 		                                  // Nel secondo non stiamo creando un tipo primitivo MA un reference type, un vero e proprio oggetto
 		
-		int[] days = null; // days è una variabile di arrey di interi (segnalato dalla presenza della parentesi).
+//		int[] days = null; // days è una variabile di arrey di interi (segnalato dalla presenza della parentesi).
 		                   // l'arrey contiene un insieme di variabili dello stesso tipo.
 		                   // nulla è un indirizzo fittizio per dire che non esiste nessuna variabile days, 
 		                   // se avessimo saputo cosa mettere dentro days allora avremmo scritto il nostro ARREY, cioè:
-		    int[] days00 = new int [12]; // ho inserito quindi 12 elementi e ci scrivo prima "new int", i 12 elementi sono tutti inizializzati da 0.
+		    int[] days = new int [12]; // ho inserito quindi 12 elementi e ci scrivo prima "new int", i 12 elementi sono tutti inizializzati da 0.
 		    		                  // per far si che ci siano tutti i valori corretti, cioè mettere il numero dei giorni giusti per ogni mese e non solo 0 devo 
 		      days[0] = 31; // non è necessario inserire dopo l'uguale il "new int" perchèà si tratta di interi primitivi
 		      days [1] = 28;

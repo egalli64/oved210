@@ -1,6 +1,6 @@
 package gloria.mar01;
 
-public class Base {
+public abstract class Base {
 	protected int x;
 	protected String y;
 	
@@ -27,6 +27,7 @@ public class Base {
 		this.y = y;
 	}
 	
+	public abstract void doSomething();
 	
 	@Override
 	public String toString() {
