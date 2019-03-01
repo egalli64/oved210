@@ -27,7 +27,7 @@ public abstract class Base {
 	}
 	
 	
-	public abstract void doSomething();   
+	public abstract void doSomething();       //metodo astratto
 	
 	@Override                                  // andare in Source --> generate toString
 	public String toString() {
