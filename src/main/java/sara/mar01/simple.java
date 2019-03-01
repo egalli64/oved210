@@ -11,9 +11,23 @@ public static void f() {                        // per estendere classe Base/
 	
 	Other other = new Other (21, "hihi");
 	System.out.println(other);
+	
+	Base[] bases = new Base[2];
+	bases[0] = derived;
+	bases[1] = other;
+	
+	
+	for(Base base: bases) {       //loop su tutto l'array bases stampando base (perchè all'interno ci sono oggetti derived e other)
+		System.out.println(base);
+		base.doSomething();
+	}
+	
 }
 
 	public static void main(String[] args) {
+		f();
+		
+	
 		boolean a = true;         // tipo primitivo che occupa 1 bit
 		byte b = 12;              // tipo primitivo che occupa 8 bit (256 numeri) *NON MOLTO UTILIZZATO*
 		short s = 1020;           // tipo primitivo che occupa 16 bit  *NON MOLTO UTILIZZATO*

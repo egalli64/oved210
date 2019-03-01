@@ -17,6 +17,7 @@ public class Derived extends Base { //per classe derivata "extends"
 
 	@Override
 	public void doSomething() {
+		System.out.println("something");
 	}
     
 }
