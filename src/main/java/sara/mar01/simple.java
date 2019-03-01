@@ -2,7 +2,17 @@ package sara.mar01;
                           //RIEPILOGO SETTIMANA
 public class simple {
 	
-	
+public static void f() {                        // per estendere classe Base
+	Base base = new Base(23, "hello");
+	System.out.println(base);
+}
+
+
+
+	// ***//
+
+
+
 	    // fare operators
 	// public static void main(String[] args) {
 	//	int a = 12, b = 30;
@@ -22,7 +32,12 @@ public class simple {
 		// "==" significa "assegnamento" 
 //	}
 	
-		
+
+
+		// *** //
+
+
+
 	public static void main(String[] args) {
 		boolean a = true;         // tipo primitivo che occupa 1 bit
 		byte b = 12;              // tipo primitivo che occupa 8 bit (256 numeri) *NON MOLTO UTILIZZATO*
@@ -38,11 +53,27 @@ public class simple {
 			int x = 12;
 		}
 		
+		
+		
+		// *** //
+		
+		
+		
 		String s1 = "Hello";
 		String s2 = new String("Hello"); // con "new" si crea oggetto reference *ovvero stringa sullo steck rimanda ad oggetto sulla heep*
 
+		
+		// *** //
+		
+		
+		
 	    //array:     serve per gestire gruppi di elementi * dopo il tipo va inserito [] *  
 		int[] days = new int[12]; // * nello steck viene creata variabile days che rimanda ad un array (new int [12]) nello heep
+		
+		
+		// *** //
+		
+		
 		
 		//inizializzare valori                    // altro modo per scrivere
 		                                          // int[] days = { 31, 28, /* ... */ 31 };
@@ -51,6 +82,11 @@ public class simple {
 		//...
 		days[11] = 31;
 				
+		
+		// *** //
+		
+		
+		
 	    // loop for
 		for(int i = 0; i < days.length; i++) {
 			// days[i] = i;
