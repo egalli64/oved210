@@ -1,6 +1,6 @@
 package tiziana.mar01;
 
-public class Base {
+public abstract class Base {
 	protected int x;
 	protected String y;
 
@@ -20,6 +20,8 @@ public class Base {
 	public void setY(String y) {
 		this.y = y;
 	}
+
+	public abstract void doSomething();
 
 	@Override
 	public String toString() {

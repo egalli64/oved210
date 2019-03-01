@@ -8,11 +8,14 @@ public class Simple {
 	}
 
 	public static void f() {
-		Base base = new Base(23, "hello");
-		System.out.println(base);
+//		Base base = new Base(23, "hello");
+//		System.out.println(base);
 
 		Derived derived = new Derived(12, "hi");
 		System.out.println(derived);
+
+		Other other = new Other(21, "hihi");
+		System.out.println(other);
 	}
 
 	public static void main(String[] args) {
