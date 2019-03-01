@@ -7,7 +7,18 @@ public class Simple {
 		int y = 5;
 	}
 	
+	public static void f() {
+		Base base = new Base(23, "hello");
+		System.out.println(base);
+		
+		Derived derived = new Derived(12, "hi");
+		System.out.println(derived);
+	}
+	
 	public static void main(String[] args) {
+		f();
+
+		
 		boolean a = true;   // 1 bit
 		byte b = 12;		// 8 bit
 		short s = 1020;		// 16 bit
