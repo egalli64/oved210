@@ -1,18 +1,24 @@
 package alessandraC;
 
 public class Box {
+	protected static int counter = 0;
+	
 	protected double x;
 	protected double y;
 	protected double z;
 	
 	
 	public Box () {
+		Box.counter += 1;
+		
 	}
 	
 	public Box(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
+		
+		Box.counter += 1;
 		
 	}
 	
@@ -51,6 +57,9 @@ public class Box {
 		return "Box [x=" + x + ", y=" + y + ", z=" + z + "]";
 	}
 	
+	public static int getCounter () {
+		return counter;
+	}
 	
 
 }
