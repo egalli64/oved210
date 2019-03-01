@@ -2,7 +2,15 @@ package alessandraB.mar01;
 
 public class Simple {
 	
-	public static void main(String[] args) {
+	public static void f() {
+		Base base = new Base (23, "hello");
+		System.out.println(base);
+		
+		
+	}
+	public static void main (String[] args) {
+		f(); 
+		
 		boolean a = true; //tipo primitivo: cioè viene messo sullo stack e heep
 		                  // sullo stack si collocano le variabili automatiche
 		                  //occupa 1 bit
@@ -54,11 +62,11 @@ public class Simple {
 		
 		for(int i1 = 0; i1 < days.length; i1++) {
 			days [i1] = i1; 
-			System.out.println(days[i]);	
+			System.out.println(days[i1]);	
 			
 		}
-	for(int value : days) {
-		System.out.println(value);
-	}
+	//for(int value : days) {
+		//System.out.println(value);
+	
 	}   
 }

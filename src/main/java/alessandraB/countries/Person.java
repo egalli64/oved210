@@ -14,7 +14,7 @@ public class Person {
 		this.namePerson = namePerson;
 		this.city = city;
 		this.country = country;
-
+ 
 	}
 
 	public String getNamePerson() {
