@@ -1,4 +1,4 @@
-package claudiaprimasettimana;
+package claudia.primasettimana;
 
 public class Operators {public static void main(String[] args) {
 	
@@ -9,15 +9,15 @@ public class Operators {public static void main(String[] args) {
 	System.out.println(a + b);
 	System.out.println(a - b);
 	System.out.println(a * b);
-	System.out.println((double)a / b);
-	System.out.println(b % a);
-	System.out.println(++b);
+//	System.out.println((double)a / b); divisione per ottenere risultati frazionari
+//	System.out.println(b % a);divisione "modulo" tra interi
+//	System.out.println(++b);mi dice di incrementare e poi stampare, all'inverso dico il contrario
 	System.out.println(b--);
 	System.out.println(b);
 	
 //sono operatori diversi b = b + a
 	
-	b += a;
+//	b += a; b = b + a; b -= b - a
 	System.out.println(b);
 	b -= 7;
 	System.out.println(b);  
