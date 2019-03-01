@@ -8,8 +8,11 @@ public class Person {
 	
 	//per fare un costruttore
 	public Person(int age, double height) {
-		this.age = age;
-		this.height = height;
+		
+		if (age <= 0) {
+		throw new IllegalArgumentException("Negative age is not accepted!!");
+		
+		}
 	}
 
 	public int getAge() {

@@ -14,7 +14,11 @@ public class Operators {
 		System.out.println(b);
 		System.out.println(b--);
 		System.out.println(b);
-	
+//		b + a= b=b+a;
+//	    b= +a= b=a;
+//		b= -a= b= -a;
+//		b=c-a;
+		
 		
 		b+=a; 
 		System.out.println(b);

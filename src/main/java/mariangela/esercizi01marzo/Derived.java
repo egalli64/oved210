@@ -11,7 +11,15 @@ public Derived (int x,String y) {
 
 @Override
 public String toString() {
-	return "Derived [z=" + z + "]";
+	return "Derived [z=" + z + ", x=" + x + ", y=" + y + ", " + "]";
 }
 
+@Override
+public void doSomething() {
+	System.out.println("Something");
+	
+}
+public double getMyStatus() {
+	return 2.4;
+}
 }
