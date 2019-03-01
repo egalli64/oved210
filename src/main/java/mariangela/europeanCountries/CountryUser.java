@@ -36,13 +36,15 @@ public class CountryUser {
 			}
 
 		}
-		System.out.println("*******");
+		System.out.println("***People from Europe***");
 		
 		Person[] persons = new Person[personNames.length];
 		for (int i = 0; i < personNames.length; i++) {
 			persons[i] = new Person(personNames[i], cities[i]);
-			System.out.println(personNames[i] + ", " + cityNames[i]);
+	
 		}
-
+		for (Person person : persons) {
+			System.out.println(person);
+		}
 	}
 }

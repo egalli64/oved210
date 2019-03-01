@@ -73,5 +73,11 @@ public class CountryUser {
 				}
 			}
 		}
+		
+		System.out.println("*******");
+		for (int i = 0; i < persons.length; i++) {
+			System.out.println(persons + ids[i] + names [i]);
+		}
 	}
+	
 }
