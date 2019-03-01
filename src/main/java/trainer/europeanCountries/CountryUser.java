@@ -5,6 +5,7 @@ public class CountryUser {
 		String[] ids = { "IT", "FR", "ES", "CH" };
 		String[] names = { "Italy", "France", "Spain", "Switzerland" };
 		String[] cityNames = { "Rome", "Paris", "Madrid", "Bern" };
+		String[] personNames= {"Carlo","Pierre","Miguel","Pirmin"};
 
 		if (ids.length != names.length || ids.length != cityNames.length) {
 			System.out.println("Unexpected!");
@@ -51,7 +52,17 @@ public class CountryUser {
 					System.out.print(" ");
 				}
 			}
-			System.out.println();
+			System.out.println("***");
+			for(City city:cities) {
+				String cid =city.getCountryId();
+				if(cid.equals(countryId)) {
+					System.out.println(city.getName());
+					System.out.println("");
+					
+					
+				}
+				
+			}
 		}
 
 		System.out.println("*** People from Europe ***");

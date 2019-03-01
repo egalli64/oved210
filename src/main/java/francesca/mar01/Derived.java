@@ -1,10 +1,10 @@
-package trainer.mar01;
+package francesca.mar01;
 
 public class Derived extends Base {
 	private double z;
 	
-	public Derived(int x, String y) {
-		super(x, y);
+	public Derived (int x, String y) {
+		super (x, y);
 		
 		this.z = x / 3.0;
 	}
@@ -16,6 +16,14 @@ public class Derived extends Base {
 
 	@Override
 	public void doSomething() {
-		System.out.println("something");
+		// TODO Auto-generated method stub
+		
 	}
-}
+
+	
+	
+	}
+	
+	
+
+
