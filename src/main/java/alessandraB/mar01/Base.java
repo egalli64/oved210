@@ -1,9 +1,9 @@
 package alessandraB.mar01;
 
-public class Base {
-	protected int x; // il fatto che siano private vuol dire che non posso accederli direttamente. L'
-					// accesso a x io ce l'ho, ma per accedervi mi serve il getter o il setter
-					// (su un altra classe posso settare x a un determinato valore).
+public abstract class Base {
+	protected int x;    // il fatto che siano private vuol dire che non posso accederli direttamente. L'
+					   // accesso a x io ce l'ho, ma per accedervi mi serve il getter o il setter
+					   // (su un altra classe posso settare x a un determinato valore).
 	protected String y;
 	
 
@@ -28,6 +28,8 @@ public class Base {
 	public void setY(String y) {
 		this.y = y;
 	}
+	
+	public abstract void doSomething();
 
 	@Override   // il metodo toString non nasce in questa classe, ma è un override di un metodo che era stato
 	            // scritto in una classe superiore che si sta estendendo.

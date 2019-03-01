@@ -1,4 +1,4 @@
-package trainer.mar01;
+package tiziana.mar01;
 
 public class Simple {
 
@@ -16,53 +16,10 @@ public class Simple {
 
 		Other other = new Other(21, "hihi");
 		System.out.println(other);
-
-		Base[] bases = new Base[2];
-		bases[0] = derived;
-		bases[1] = other;
-
-		for (Base base : bases) {
-			System.out.println(base);
-			base.doSomething();
-			if (base instanceof Derived) {
-				Derived x = (Derived) base;
-				System.out.println(x.getMyStatus());
-			}
-			if (base instanceof Other) {
-				Other x = (Other) base;
-				System.out.println(x.getValue());
-			}
-		}
-
-	}
-
-	private static String getMyString() {
-		return null;
-	}
-
-	public static void g() {
-		String s = getMyString();
-
-		try {
-			System.out.println(s.length());
-		} catch (Exception ex) {
-			System.out.println("I have no length for this string!");
-		}
-
-		try {
-			int[] array = new int[3];
-			for (int i = 0; i <= array.length; i++) {
-				array[i] = i;
-			}
-		} catch (Exception ex) {
-			System.out.println("Can't initialize the array!");
-		}
-
 	}
 
 	public static void main(String[] args) {
 		f();
-		g();
 
 		boolean a = true; // 1 bit
 		byte b = 12; // 8 bit
