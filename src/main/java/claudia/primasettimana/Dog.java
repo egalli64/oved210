@@ -1,4 +1,4 @@
-package claudia;
+package claudia.primasettimana;
 
 public class Dog extends Animal {
 	
