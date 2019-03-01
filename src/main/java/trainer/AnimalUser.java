@@ -25,9 +25,13 @@ public class AnimalUser {
 		System.out.println(sb.toString());
 
 		Animal[] animals = new Animal[2];
-
-		animals[0] = new Dog(2050, "Bolt", Animal.Fur.LONG);
-		animals[1] = new Cat(650, "Fuzzy", Animal.Fur.SHORT);
+		try {
+			animals[0] = new Dog(-34, "Bolt", Animal.Fur.LONG);
+			animals[1] = new Cat(650, "Fuzzy", Animal.Fur.SHORT);			
+		} catch (Exception ex) {
+			System.out.println(ex.getMessage());
+			return;
+		}
 
 		for (Animal animal : animals) {
 			System.out.println(animal);
