@@ -1,4 +1,4 @@
-package tiziana.mar01;
+package alessandraC.mar01;
 
 public abstract class Base {
 	protected int x;
@@ -27,4 +27,5 @@ public abstract class Base {
 	public String toString() {
 		return "Base [x=" + x + ", y=" + y + "]";
 	}
+
 }
