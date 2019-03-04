@@ -3,18 +3,19 @@ package gloria;
 public class Animal {
 	protected double weight;
 	protected String name;
-	 
-	
-	
-public Animal (String name, double weight) {
-    this.name = name;
-    this.weight = weight; 
-}
 
+	public Animal(String name, double weight) {
+		if (weight <= 0) {
+			throw new IllegalArgumentException("Negative weight not accepted!");
+		}
 
-@Override
-public String toString() {
-	return "Animal [weight = " + weight +", name = "+ name +"]";
-}
+		this.name = name;
+		this.weight = weight;
+	}
+
+	@Override
+	public String toString() {
+		return "Animal [weight = " + weight + ", name = " + name + "]";
+	}
 
 }
