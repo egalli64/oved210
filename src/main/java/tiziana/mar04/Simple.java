@@ -16,6 +16,8 @@ public class Simple {
 			System.out.println(name + ", you are " + age);
 		} catch (InputMismatchException ime) {
 			System.out.println("I was expecting your name as a string and your age as an integer!");
+		} catch(Exception ex)  {
+			System.out.println("Bum!");
 		} finally {
 			System.out.println("The program ends here.");
 		}
