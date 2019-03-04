@@ -21,4 +21,8 @@ public class Derived extends Base {
 
 	}
 
+	public double getMyStatus() {
+		return 2.4;
+	}
+
 }
