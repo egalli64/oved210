@@ -16,8 +16,13 @@ public class Derived extends Base {
 
 	@Override
 	public void doSomething() {
-		// TODO Auto-generated method stub
+		System.out.println("something");
+	
 		
+	}
+
+	public double getMyStatus() {
+		return 2.4;
 	}
 
 	
