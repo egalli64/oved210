@@ -1,18 +1,18 @@
-package gloria.mar04;
+package alessandraC.mar04;
 
 public class MyLinkedListUser {
 	public static void main(String[] args) {
-		MyLinkedList mll = new MyLinkedList();
-
+		MyLinkedList mll = new MyLinkedList ();
+		
 		System.out.println(mll.toString());
-		mll.addLast(12);
+		mll.addFirst(15);
 		System.out.println(mll.toString());
-		mll.addLast(3);
+		mll.addFirst(36);
 		System.out.println(mll.toString());
-		mll.addLast(42);
+		mll.addFirst(72);
 		System.out.println(mll.toString());
-
+		
+		
 	}
-	
-	
+
 }
