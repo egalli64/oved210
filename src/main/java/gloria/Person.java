@@ -4,17 +4,11 @@ public class Person {
 	private static int counter;
 	private int age;
 	private double height; // fino a qui definisco le prorpietà della classe
+
+	public Person(int age, double height) { // costruisco il costruttore
 		
-	
-	public Person (int age, double height) { // costruisco il costruttore
-		
-		Person.counter += 1;
-		
-		
-		
-		this.age = age;
-		this.height = height;		
-		
+		throw new IllegalArgumentException("Negative height is not accepted!!");
+
 	}
 
 	public static int getCounter() {
@@ -34,7 +28,7 @@ public class Person {
 		return age;
 	}
 
-	public void setAge(int age) { // metodo SET 
+	public void setAge(int age) { // metodo SET
 		this.age = age;
 	}
 
@@ -44,7 +38,7 @@ public class Person {
 
 	public void setHeight(double height) {
 		this.height = height;
-		
+
 	}
-	
+
 }
