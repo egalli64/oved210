@@ -1,18 +1,27 @@
 package donatella;
 
+
+
 public class Dog extends Animal {
-	
-	public Dog(String name,int weight) {
-		super(name,weight);
-		
-		
-		
+
+	public Dog(int weight, String name, Fur fur) {
+		super(weight, name, fur);
+	}
+
+	public void bark() {
+		System.out.println("Bark!");
 	}
 
 	@Override
 	public String toString() {
-		return "Dog [name=" + name + ", weight=" + weight + "]";
+		return "Dog [weight=" + weight + ", name=" + name + ", fur=" + fur + "]";
 	}
-	
-	
 }
+
+		
+		
+	
+	
+	
+	
+
