@@ -13,4 +13,13 @@ public class Derived extends Base {
 	public String toString() {
 		return "Derived [z=" + z + ", x=" + x + ", y=" + y + "]";
 	}
+
+	@Override
+	public void doSomething() {
+		System.out.println("something");
+	}
+	
+	public double getMyStatus() {
+		return 2.4;
+	}
 }

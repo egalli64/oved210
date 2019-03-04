@@ -11,6 +11,19 @@ public class PersonUser {
 		Random random = new Random();
 		Person[] persons = new Person[NR_PERSONS];
 		
+		try {
+			
+	     persons[0] = new Person(-1, 30);
+	     persons[1] = new Person(26, 60);
+	    		 
+		
+		} catch(Exception ex)  {
+			
+			System.out.println(ex.getMessage());
+			return;
+		}
+		
+		
 		//per inizializzare array
 		for(int i = 0; i < NR_PERSONS; i++) {
 			persons[i] = new Person(20 + random.nextInt(40), 1.50 + random.nextDouble());

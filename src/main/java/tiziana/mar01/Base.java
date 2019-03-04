@@ -27,5 +27,4 @@ public abstract class Base {
 	public String toString() {
 		return "Base [x=" + x + ", y=" + y + "]";
 	}
-
 }

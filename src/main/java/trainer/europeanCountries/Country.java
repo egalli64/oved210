@@ -5,6 +5,10 @@ public class Country {
 	private String name;
 
 	public Country(String id, String name) {
+		if (id == null || id.length() != 2) {
+			throw new IllegalArgumentException("Bad id");
+		}
+
 		this.id = id;
 		this.name = name;
 	}
