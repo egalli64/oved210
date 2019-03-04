@@ -1,4 +1,4 @@
-package tiziana.mar01;
+package marina.mar01;
 
 public abstract class Base {
 	protected int x;
@@ -16,12 +16,13 @@ public abstract class Base {
 	public String getY() {
 		return y;
 	}
+	
+	public abstract void doSomething();
+	
 
 	public void setY(String y) {
 		this.y = y;
 	}
-
-	public abstract void doSomething();
 
 	@Override
 	public String toString() {

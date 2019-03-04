@@ -1,6 +1,7 @@
-package tiziana.mar01;
+package alessandraC.mar01;
 
 public class Derived extends Base {
+
 	private double z;
 
 	public Derived(int x, String y) {
@@ -19,10 +20,6 @@ public class Derived extends Base {
 	public void doSomething() {
 		System.out.println("something");
 
-	}
-
-	public double getMyStatus() {
-		return 2.4;
 	}
 
 }
