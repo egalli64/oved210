@@ -4,6 +4,7 @@ package donatella.mar04;
 
 public class MyLinkedList {
 	private Node head=null;
+	private Node tail=null;
 	
 
 
@@ -19,9 +20,38 @@ public class MyLinkedList {
 	
 	}
 	public void addLast(int value) {
+		Node node= new Node(value);
+		if(tail ==null) {
+			head=node;
+			tail=node;
+			
+			} else {
+				tail.setNext(node);
+				tail = node;
+			
+		}}
+	
+	
+	
+		public void addLastPlain(int value) {
+			Node node = new Node(value);
+			if(head == null) {
+				head = node;
+			} else {
+				Node last = head;
+				Node tail = head.getNext();
+				while(tail != null) {
+					last = tail;
+					tail = tail.getNext();
+				}
+				last.setNext(node);
 		
-		
+
 	}
+	}
+
+		
+	
 	
 	
 

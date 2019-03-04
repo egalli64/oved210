@@ -13,7 +13,13 @@ public class MyLinkedListUser {
 		System.out.println(mll.toString());
 		
 		
-		
+		System.out.println(mll.toString());
+		mll.addLast(12);
+		System.out.println(mll.toString());
+		mll.addLast(3);
+		System.out.println(mll.toString());
+		mll.addLast(42);
+		System.out.println(mll.toString());
 	}
 
 }
