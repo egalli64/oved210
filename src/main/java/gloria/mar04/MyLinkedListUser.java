@@ -5,13 +5,14 @@ public class MyLinkedListUser {
 		MyLinkedList mll = new MyLinkedList();
 
 		System.out.println(mll.toString());
-		mll.addFirst(12);
+		mll.addLast(12);
 		System.out.println(mll.toString());
-		mll.addFirst(3);
+		mll.addLast(3);
 		System.out.println(mll.toString());
-		mll.addFirst(42);
+		mll.addLast(42);
 		System.out.println(mll.toString());
 
 	}
-
+	
+	
 }
