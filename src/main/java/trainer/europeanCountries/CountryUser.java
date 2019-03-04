@@ -1,7 +1,18 @@
 package trainer.europeanCountries;
 
 public class CountryUser {
+	public static void f() {
+		Country[] countries = new Country[3];
+		try {
+			countries[0] = new Country(null, "Fake");			
+		} catch(IllegalArgumentException iae) {
+			System.out.println(iae);
+		}
+	}
+	
 	public static void main(String[] args) {
+		f();
+		
 		String[] ids = { "IT", "FR", "ES", "CH" };
 		String[] names = { "Italy", "France", "Spain", "Switzerland" };
 		String[] cityNames = { "Rome", "Paris", "Madrid", "Bern" };
