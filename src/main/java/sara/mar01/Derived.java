@@ -14,6 +14,14 @@ public class Derived extends Base { //per classe derivata "extends"
 	public String toString() {
 		return "Derived [z=" + z + ", x=" + x + ", y=" + y + "]";
 	}
-    
-    
+
+	@Override
+	public void doSomething() {
+		System.out.println("something");
+	}
+     
+	public double getMyStatus() {   //per inserire un metodo (una caratteristica) di other
+		return 2.4;
+		
+	}
 }

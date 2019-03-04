@@ -51,10 +51,10 @@ public class CountryUser {
 			Person[] persons = new Person[personNames.length];
 
 			for (int i = 0; i < persons.length; i++) {
-//				persons[i] = new Person(personNames[i], cities[i], countries [i]);
+				persons[i] = new Person(personNames[i], cities[i]);
 			}
-			
-				for (Person person : persons) {
+
+			for (Person person : persons) {
 				System.out.println(person);
 
 			}

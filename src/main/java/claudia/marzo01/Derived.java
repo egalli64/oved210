@@ -1,7 +1,13 @@
 package claudia.marzo01;
 
 public class Derived extends Base {
-	private double z;
+	double z;
+	public double getZ() {
+		return z;
+	}
+	public void setZ(double z) {
+		this.z = z;
+	}
 	public Derived(int x, String y) {
 	super(x, y);
 	
@@ -14,6 +20,12 @@ public class Derived extends Base {
 	@Override
 	public void doSomething() {
 		// TODO Auto-generated method stub
-		
+	
+}
+	Derived derived = new Derived(12, "hello");
+	
+	public double getMyStatus() {
+		return 2.4;
 	}
+
 }

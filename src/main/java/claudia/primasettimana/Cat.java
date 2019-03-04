@@ -2,7 +2,7 @@ package claudia.primasettimana;
 
 public class Cat extends Animal {
 	
-	public Cat(String name, int weight) {
+	public Cat(String name, int weight) throws Exception {
 		super(name, weight);
 		
 		
