@@ -1,12 +1,14 @@
-package francesca.mar01;
+package gloria.mar01;
 
 public class Derived extends Base {
-	private double z;
-	
-	public Derived (int x, String y) {
-		super (x, y);
-		
+
+	public double z;
+
+	public Derived(int x, String y) {
+		super(x, y); // super è il riferimento al costruttore della classe madre
+
 		this.z = x / 3.0;
+
 	}
 
 	@Override
@@ -17,18 +19,10 @@ public class Derived extends Base {
 	@Override
 	public void doSomething() {
 		System.out.println("something");
-	
-		
+
 	}
 
 	public double getMyStatus() {
 		return 2.4;
 	}
-
-	
-	
-	}
-	
-	
-
-
+}
