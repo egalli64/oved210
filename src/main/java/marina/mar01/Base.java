@@ -1,6 +1,6 @@
-package francesca.mar01;
+package marina.mar01;
 
-public class Base {
+public abstract class Base {
 	protected int x;
 	protected String y;
 
@@ -16,6 +16,9 @@ public class Base {
 	public String getY() {
 		return y;
 	}
+	
+	public abstract void doSomething();
+	
 
 	public void setY(String y) {
 		this.y = y;
@@ -24,10 +27,5 @@ public class Base {
 	@Override
 	public String toString() {
 		return "Base [x=" + x + ", y=" + y + "]";
-	}
-
-	public void doSomething() {
-		// TODO Auto-generated method stub
-		
 	}
 }

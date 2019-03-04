@@ -12,7 +12,14 @@ public class Other extends Base {
 
 	@Override
 	public void doSomething() {
-		// TODO Auto-generated method stub
+		System.out.println("Something for other");
+	}
+
+
+
+
+	public int GetValue() {
+	return 42;
 	}
 	
 }
