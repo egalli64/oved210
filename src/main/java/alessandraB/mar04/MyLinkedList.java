@@ -2,6 +2,7 @@ package alessandraB.mar04;
 
 public class MyLinkedList {// listalinkata di interi
 	private Node head = null;
+	private Node tail = null;
 
 	public MyLinkedList() {
 
@@ -22,10 +23,18 @@ public class MyLinkedList {// listalinkata di interi
 	public void addLast(int value) {
 	
 		Node node = new Node(value);
+		if(tail == null)  {
+			head = node;
+			tail = node;
+			
+		} else {
+			tail.setNext(node);
+			tail = node;
+		}
+			
+		}
 		
-
-	}
-	
+		 
 	@Override
 	public String toString() {
 		StringBuilder result = new StringBuilder("[");
