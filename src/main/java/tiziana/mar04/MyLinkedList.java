@@ -1,44 +1,23 @@
-package trainer.mar04;
+package tiziana.mar04;
 
 public class MyLinkedList {
 	private Node head = null;
 	private Node tail = null;
 
 	public MyLinkedList() {
+
 	}
 
 	public void addFirst(int value) {
 		Node node = new Node(value);
-		if(tail == null) {
-			tail = node;
-		}
 		node.setNext(head);
 		head = node;
 	}
 
-	// add last w/o tail
-//	public void addLastPlain(int value) {
-//		Node node = new Node(value);
-//		if(head == null) {
-//			head = node;
-//		} else {
-//			Node last = head;
-//			Node tail = head.getNext();
-//			while(tail != null) {
-//				last = tail;
-//				tail = tail.getNext();
-//			}
-//			last.setNext(node);
-//		}
-//	}
-
 	public void addLast(int value) {
 		Node node = new Node(value);
-		if(tail == null) {
+		if (tail == null) {
 			head = node;
-			tail = node;
-		} else {
-			tail.setNext(node);
 			tail = node;
 		}
 	}
@@ -47,13 +26,13 @@ public class MyLinkedList {
 	public String toString() {
 		StringBuilder result = new StringBuilder("[ ");
 		Node cur = head;
-		while(cur != null) {
+		while (cur != null) {
 			result.append(cur.getValue());
 			result.append(" ");
 			cur = cur.getNext();
 		}
 		result.append("]");
-		
+
 		return result.toString();
 	}
 }
@@ -85,5 +64,9 @@ class Node {
 	@Override
 	public String toString() {
 		return "Node [value=" + value + ", next=" + next + "]";
+	}
+
+	public void addLast(int value) {
+
 	}
 }

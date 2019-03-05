@@ -1,4 +1,4 @@
-package mariangela.esercizi01marzo;
+package mariangela.mar01;
 
 public class Other extends Base {
 

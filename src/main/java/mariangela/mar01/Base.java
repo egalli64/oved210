@@ -1,4 +1,4 @@
-package mariangela.esercizi01marzo;
+package mariangela.mar01;
 
 public abstract class Base {
 	protected int x;
