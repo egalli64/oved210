@@ -15,10 +15,11 @@ public class MyLinkedList {
 	Node getHead() {
 		return this.head;
 	}
+
 	/**
 	 * for test only, return list tail
 	 * 
-	 * @return the object tail 
+	 * @return the object tail
 	 */
 	Node getTail() {
 		return this.tail;
@@ -26,8 +27,13 @@ public class MyLinkedList {
 
 	public void addFirst(int value) {
 		Node node = new Node(value);
-		node.setNext(head);
-		head = node;
+		if (head == null) {
+			head = node;
+			tail = node;
+		} else {
+			node.setNext(head);
+			head = node;
+		}
 	}
 
 	@Override
