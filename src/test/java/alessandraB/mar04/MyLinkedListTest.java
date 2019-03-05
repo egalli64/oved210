@@ -7,19 +7,18 @@ import org.junit.Test;
 public class MyLinkedListTest {
 
 	@Test
-	public void emptyListHasNullHead() { // testo che quando creo una lista, la head sia null
+	public void emptyListHasNullHeadTail() { // testo che quando creo una lista, la head sia null
 		MyLinkedList mll = new MyLinkedList();
 		assertNull(mll.getHead());
 		assertNull(mll.getTail());
-		
 
 	}
 
 	@Test
 	public void testAddFirstSimple() {
 
-		final int VALUE = 12; // VALUE in maiuscolo indica una costante
-
+		final int VALUE = 56; // VALUE in maiuscolo indica una costante
+        final int VALUE2 = 43;
 		MyLinkedList mll = new MyLinkedList();
 
 		mll.addFirst(VALUE);
@@ -28,7 +27,10 @@ public class MyLinkedListTest {
 		assertNotNull(myHead); // sto asserendo che myhead non deve essere null
 
 		assertEquals(VALUE, myHead.getValue());
-
+		
+		Node myTail = mll.getTail();
+		assertNotNull(myTail);
+		assertEquals(VALUE2, myTail.getValue());
 	}
 
 	@Test
@@ -43,43 +45,48 @@ public class MyLinkedListTest {
 		assertNotNull(myHead); // sto asserendo che myhead non deve essere null
 
 		assertEquals(VALUE, myHead.getValue());
-		
-		
+
 	}
-	
+
 	@Test
 	public void testAddFirstandAddLast() {
-		
+
 		MyLinkedList mll = new MyLinkedList();
 		final int VALUE = 56;
-		
-		
+		final int VALUE2 = 43;
+
 		mll.addFirst(VALUE);
-		mll.addLast(VALUE);  
-	
+		mll.addLast(VALUE2);
+
 		Node myHead = mll.getHead();
 		Node myTail = mll.getTail();
 		
-    	assertNotNull(myHead);
+
+		assertNotNull(myHead);
 		assertNotNull(myTail);
-		
+
 		assertEquals(VALUE, myHead.getValue());
-		assertEquals(VALUE, myTail.getValue());
+		assertEquals(VALUE2, myTail.getValue());
 		
+		Node myHeadNext = myHead.getNext();
+		assertNotNull(myHeadNext);
+		assertEquals(VALUE2, myHeadNext.getValue());
+		
+		
+
 	}
 
 //	@Test // i test sono definiti da queste annotazioni @Test: mi indica che tutti i
-			// metodi
-			// presenti in questa classe sono utilizzati per fare un test (se non lo metto
-			// non funzionano).
+	// metodi
+	// presenti in questa classe sono utilizzati per fare un test (se non lo metto
+	// non funzionano).
 //public void testToString() {
-		//fail("Not yet implemented"); // se non esistesse la import static il metodo fail dovrebbe essere
-										// definito all'interno di questa classe. E' definito all'interno
-										// della classe Assert. Se non avessi l'import static,
-										// avrei dovuto scrivere Assert.fail("not.."). La classe Assert è quella che mi
-										// permette
-										// di fare le asserzioni del test.
+	// fail("Not yet implemented"); // se non esistesse la import static il metodo
+	// fail dovrebbe essere
+	// definito all'interno di questa classe. E' definito all'interno
+	// della classe Assert. Se non avessi l'import static,
+	// avrei dovuto scrivere Assert.fail("not.."). La classe Assert è quella che mi
+	// permette
+	// di fare le asserzioni del test.
 
-	}
-
-
+}
