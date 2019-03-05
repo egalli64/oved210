@@ -12,6 +12,16 @@ public class MyLinkedList {
 	public MyLinkedList() {
 		
 	}
+	
+	
+//	*for test only,return to the list head
+//	*
+//	@return the object head
+
+	Node getHead() {
+	return	this.head;
+	}
+	
 	public void addFirst(int value) {
 		Node node=new Node(value);
 		node.setNext(head);
@@ -48,7 +58,13 @@ public class MyLinkedList {
 		
 
 	}
-	}
+			
+					
+		
+			
+				
+			}
+	
 
 		
 	
@@ -67,6 +83,12 @@ public class MyLinkedList {
 		result.append("]");
 		
 		return result.toString();
+	}
+
+
+	public Node getTail() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 	
