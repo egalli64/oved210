@@ -1,4 +1,4 @@
-package claudia.marzo01;
+package claudia.mar01;
 
 public class Derived extends Base {
 	double z;

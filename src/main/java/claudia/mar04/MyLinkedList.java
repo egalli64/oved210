@@ -3,38 +3,48 @@ package claudia.mar04;
 public class MyLinkedList {
 	private Node head = null;
 	private Node tail = null;
-	
+
 	@Override
 	public String toString() {
 		return "MyLinkedList [head=" + head + ", tail=" + tail + "]";
 	}
-	public MyLinkedList(){
-			
-}
+
+	public MyLinkedList() {
+	}
+
+//	per il testing faccio ritornare l'oggetto head
+	Node getHead() {
+		return this.head;
+	}
+
 	public void addFirst(int value) {
 		Node node = new Node(value);
 		node.setNext(head);
 		head = node;
-}
+	}
 
 	public void addLast(int value) {
+		// create new node for value
 		Node node = new Node(value);
-		node.setNext(tail);
-		tail = node;
-		
+
+		if (tail == null) {
+			head = node;
+			tail = node;
+		} else {
+			// current tail.next -> new node
+			tail.setNext(node);
+			tail = node;
+		}
 	}
 }
-	class Node {
-	private int value;
-	Node next;
-	
-	public Node(int value) {
-		
-	}
 
-	@Override
-	public String toString() {
-		return "Node [value=" + value + ", next=" + next + "]";
+class Node {
+	private int value;
+	private Node next;
+
+	public Node(int value) {
+		this.value = value;
+		this.next = next;
 	}
 
 	public int getValue() {
@@ -53,6 +63,9 @@ public class MyLinkedList {
 		this.next = next;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Node [value=" + value + ", next=" + next + "]";
 	}
-	
+
+}
