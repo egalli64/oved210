@@ -22,23 +22,18 @@ public class MyLinkedList {
 		Node node = new Node(value);
 		node.setNext(head);
 		head = node;
+		tail = node;
 	}
 
 	public void addLast(int value) {
 		Node node = new Node(value);
 		if (head == null) {
 			head = node;
+			tail = node;
 		} else {
-			Node last = head;
-			Node tail = head.getNext();
-			while (tail != null) {
-				last = tail;
-				tail = tail.getNext();
-			}
-			last.setNext(node);
-
+			tail.setNext(node);
+			tail = node;
 		}
-
 	}
 
 	@Override
@@ -47,7 +42,7 @@ public class MyLinkedList {
 	}
 
 	public Node getTail() {
-		return tail;
+		return this.tail;
 	}
 
 	public void setTail(Node tail) {
