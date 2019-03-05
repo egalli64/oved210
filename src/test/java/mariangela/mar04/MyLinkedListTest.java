@@ -30,8 +30,8 @@ public class MyLinkedListTest {
 
 	@Test
 	public void addFirstCouple() {
-		final int VALUE = 12;
-		final int SECONDVALUE = 8;
+		final int VALUE = 8;
+		final int SECONDVALUE = 12;
 		MyLinkedList mll = new MyLinkedList();
 
 		mll.addFirst(VALUE);
@@ -39,11 +39,11 @@ public class MyLinkedListTest {
 
 		Node myHead = mll.getHead();
 		assertNotNull(myHead);
-		assertEquals(VALUE, myHead.getValue());
+		assertEquals(SECONDVALUE, myHead.getValue());
 		
-		Node myHeadNext = mll.getHead();
+		Node myHeadNext = myHead.getNext();
 		assertNotNull(myHeadNext);
-		assertEquals(SECONDVALUE, myHeadNext.getValue());
+		assertEquals(VALUE, myHeadNext.getValue());
 		
 		Node myTail = mll.getTail();
 		assertNotNull(myTail);
