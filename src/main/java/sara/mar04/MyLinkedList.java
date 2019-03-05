@@ -1,11 +1,23 @@
 package sara.mar04;
 
+
+
 public class MyLinkedList {
 	private Node head = null; //lista vuota
 
 	
 	public MyLinkedList() {  
+	} 
+	
+	/**
+	 * for test only, return the list head
+	 * 
+	 * @return the object head
+	 */
+	Node getHead () {
+	return this.head;
 	}
+	
 	//metodo
 	public void addFirst(int value) {   
 		Node node = new Node(value);        
@@ -14,7 +26,19 @@ public class MyLinkedList {
 	}
 
 	public void addLast(int value) {
-		
+		Node node = new Node(value);
+		if (head == null) {
+			head = node;
+		} else {
+			Node last = head;
+			Node tail = head.getNext();
+			while (tail != null) {
+				last = tail;
+				tail = tail.getNext();
+			}
+			last.setNext(head);
+			head = node;
+		}
 		
 	}
 
