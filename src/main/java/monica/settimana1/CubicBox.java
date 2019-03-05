@@ -1,4 +1,4 @@
-package monica;
+package monica.settimana1;
 
 public class CubicBox extends Box {
    public CubicBox(double x) {

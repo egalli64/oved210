@@ -1,4 +1,4 @@
-package trainer.mar04;
+package marina.mar04;
 
 public class MyLinkedList {
 	private Node head = null;
@@ -12,29 +12,47 @@ public class MyLinkedList {
 	 * 
 	 * @return the object head
 	 */
+
 	Node getHead() {
 		return this.head;
 	}
-
 	/**
 	 * for test only, return the list tail
 	 * 
 	 * @return the object tail
 	 */
+	
 	Node getTail() {
 		return this.tail;
 	}
-	
+
+//	public void addFirst(int value) {
+//		Node node = new Node(value);
+//		node.setNext(head);
+//		head = node;
+//	}
+
 	public void addFirst(int value) {
 		Node node = new Node(value);
-		if(tail == null) {
+		if (tail == null) {
 			tail = node;
 		}
 		node.setNext(head);
 		head = node;
 	}
 
-	// add last w/o tail
+	public void addLast(int value) {
+		Node node = new Node(value);
+		if (tail == null) {
+			head = node;
+			tail = node;
+		} else {
+			tail.setNext(node);
+			tail = node;
+		}
+	}
+
+// ALTRO METODO:
 //	public void addLastPlain(int value) {
 //		Node node = new Node(value);
 //		if(head == null) {
@@ -50,28 +68,16 @@ public class MyLinkedList {
 //		}
 //	}
 
-	public void addLast(int value) {
-		Node node = new Node(value);
-		if(tail == null) {
-			head = node;
-			tail = node;
-		} else {
-			tail.setNext(node);
-			tail = node;
-		}
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder result = new StringBuilder("[ ");
 		Node cur = head;
-		while(cur != null) {
+		while (cur != null) {
 			result.append(cur.getValue());
 			result.append(" ");
 			cur = cur.getNext();
 		}
 		result.append("]");
-		
 		return result.toString();
 	}
 }
@@ -100,8 +106,13 @@ class Node {
 		this.next = next;
 	}
 
+	public Node(int value, Node next) {
+		this.value = value;
+	}
+
 	@Override
 	public String toString() {
 		return "Node [value=" + value + ", next=" + next + "]";
 	}
+
 }
