@@ -4,7 +4,7 @@ public class MyLinkedListUser {
 	public static void main(String[] args) {
 		MyLinkedList mll = new MyLinkedList();
 				
-		System.out.println(mll.toString());
+		System.out.println(mll);
 		mll.addFirst(21);
 		System.out.println(mll.toString());
 		mll.addLast(12);

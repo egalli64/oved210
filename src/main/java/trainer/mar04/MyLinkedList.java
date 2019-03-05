@@ -7,6 +7,24 @@ public class MyLinkedList {
 	public MyLinkedList() {
 	}
 
+	/**
+	 * for test only, return the list head
+	 * 
+	 * @return the object head
+	 */
+	Node getHead() {
+		return this.head;
+	}
+
+	/**
+	 * for test only, return the list tail
+	 * 
+	 * @return the object tail
+	 */
+	Node getTail() {
+		return this.tail;
+	}
+	
 	public void addFirst(int value) {
 		Node node = new Node(value);
 		if(tail == null) {
