@@ -16,20 +16,21 @@ public class MyLinkedList {
 		head = node;
 	}
 
-	public void addLastPlain(int value) {
-		Node node = new Node(value);
-		if(head == null) {
-			head = node;
-		} else {
-			Node last = head;
-			Node tail = head.getNext();
-			while(tail != null) {
-				last = tail;
-				tail = tail.getNext();
-			}
-			last.setNext(node);
-		}
-	}
+	// add last w/o tail
+//	public void addLastPlain(int value) {
+//		Node node = new Node(value);
+//		if(head == null) {
+//			head = node;
+//		} else {
+//			Node last = head;
+//			Node tail = head.getNext();
+//			while(tail != null) {
+//				last = tail;
+//				tail = tail.getNext();
+//			}
+//			last.setNext(node);
+//		}
+//	}
 
 	public void addLast(int value) {
 		Node node = new Node(value);
