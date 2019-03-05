@@ -2,8 +2,20 @@ package monica.settimana2; //04/03/19
 
 public class MyLinkedList {
 	private Node head = null;
+	private Node tail = null;
 
 	public MyLinkedList() {
+	}
+
+	/**
+	 * for the test only, return the list head
+	 * 
+	 * @return
+	 */
+
+	// serve per il test solo, ritorna la testa della lista
+	Node getHead() {
+		return this.head;
 	}
 
 	public void addFirst(int value) {
@@ -17,6 +29,13 @@ public class MyLinkedList {
 		if (head == null) {
 			head = node;
 		} else {
+			Node last = head;
+			Node tail = head.getNext();
+			while (tail != null) {
+				last = tail;
+				tail = tail.getNext();
+			}
+			last.setNext(node);
 
 		}
 
@@ -25,6 +44,14 @@ public class MyLinkedList {
 	@Override
 	public String toString() {
 		return "MyLinkedList [head=" + head + "]";
+	}
+
+	public Node getTail() {
+		return tail;
+	}
+
+	public void setTail(Node tail) {
+		this.tail = tail;
 	}
 
 }
