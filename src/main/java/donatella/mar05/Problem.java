@@ -24,9 +24,11 @@ public class Problem {
 	public static boolean hasEven(int[]data) {
 		
 		
+		
+		
 		return false;
 	}
-
+	
 	// in 2 out: true
 //		/in:-1027 out:false
 	
