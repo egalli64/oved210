@@ -1,79 +1,71 @@
-package trainer.mar04;
+package alessandraB.mar04;
 
-public class MyLinkedList {
+public class MyLinkedList {// listalinkata di interi
 	private Node head = null;
 	private Node tail = null;
 
 	public MyLinkedList() {
+
 	}
 
 	/**
-	 * for test only, return the list head
-	 * 
-	 * @return the object head
+	 * //for test only, return the list head //@return the object head --> viene
+	 * usata per la generazione automatica dell'annotazione relativa alla classe
 	 */
+
 	Node getHead() {
-		return this.head;
+		return this.head = head;
+
 	}
 
-	/**
-	 * for test only, return the list tail
-	 * 
-	 * @return the object tail
-	 */
 	Node getTail() {
-		return this.tail;
+		return this.tail = tail;
+
 	}
-	
+
 	public void addFirst(int value) {
 		Node node = new Node(value);
-		if(tail == null) {
-			tail = node;
-		}
-		node.setNext(head);
-		head = node;
-	}
-
-	// add last w/o tail
-//	public void addLastPlain(int value) {
-//		Node node = new Node(value);
-//		if(head == null) {
-//			head = node;
-//		} else {
-//			Node last = head;
-//			Node tail = head.getNext();
-//			while(tail != null) {
-//				last = tail;
-//				tail = tail.getNext();
-//			}
-//			last.setNext(node);
-//		}
-//	}
-
-	public void addLast(int value) {
-		Node node = new Node(value);
-		if(tail == null) {
+		if (head == null && tail == null) {
 			head = node;
 			tail = node;
+		} else {
+			node.setNext(head); // la variabile next all'interno di nodo è "head", il successore del nodo sarà
+			// quello che è l'head corrente
+			head = node; // l'indirizzo head diventa l'indirizzo del primo elemento nella mia lista
+
+		}
+
+	}
+
+	public void addLast(int value) {
+
+		Node node = new Node(value);
+		if (tail == null) {
+			head = node;
+			tail = node;
+
 		} else {
 			tail.setNext(node);
 			tail = node;
 		}
+
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder result = new StringBuilder("[ ");
+		StringBuilder result = new StringBuilder("[");
+
 		Node cur = head;
-		while(cur != null) {
+		while (cur != null) {
 			result.append(cur.getValue());
 			result.append(" ");
 			cur = cur.getNext();
+
 		}
 		result.append("]");
-		
 		return result.toString();
 	}
+
 }
 
 class Node {
@@ -100,8 +92,4 @@ class Node {
 		this.next = next;
 	}
 
-	@Override
-	public String toString() {
-		return "Node [value=" + value + ", next=" + next + "]";
-	}
 }
