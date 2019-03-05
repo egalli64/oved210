@@ -58,7 +58,7 @@ public class MyLinkedListTest {
 		mll.addFirst(VALUE);
 		mll.addLast(VALUE2);
 
-		Node myHead = mll.getHead();
+		Node  myHead = mll.getHead();
 		Node myTail = mll.getTail();
 		
 
