@@ -102,4 +102,12 @@ public class SimpleMethods {
 		}
 		return false;
 	}
+	public static int findPos(int[]data, int target) {
+		int index = 0;
+		for(int i = 0; i < data.length; i++) {
+		  if(target == data[i])
+			  return data[index];
+		}
+	 return -1;
+}
 }

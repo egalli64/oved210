@@ -111,6 +111,22 @@ public class SimpleMethodsTest {
 		
 		
 	}
-}
+	
+	
+	@Test
+	public void findPos()  {
+		int[] data = {1,2,3};
+		int target = 7;
+		
+		assertThat(SimpleMethods.findPos(data, 7), is (-1));
+	
+	}
+	@Test
+	public void findPos2()  {
+		int[] data = {1,2,3};
+		int target = 2;
+		
+		assertThat(SimpleMethods.findPos(data, 2), is (1));
+} }
 
 
