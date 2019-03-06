@@ -75,4 +75,82 @@ public class SimpleMethodsTest {
 
 	}
 
+// primo problema
+	@Test
+	public void firstSmallestIndexNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void firstSmallestIndexEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void firstSmallestIndexPlain() {
+		int[] data = { 1, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(3));
+	}
+
+	@Test
+	public void firstSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
+
+	}
+
+	// secondo problema
+	@Test
+	public void lastSmallestIndexNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void lastSmallestIndexEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+
+	}
+
+	@Test
+	public void lastSmallestIndexPlain() {
+		int[] data = { 1, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
+	}
+
+	@Test
+	public void lastSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
+	}
+
+//terzo problema
+	
+	@Test
+	public void findTrue() {
+		int[] data = {1,2,3};
+		assertTrue(SimpleMethods.find(data, 2));
+
+	}
+
+	@Test
+	public void findFalse() {
+		int[] data = {1,2,3};
+		assertFalse(SimpleMethods.find(data, 7));
+
+}
+	@Test
+	public void findPos() {
+		int[] data = {1,2,3};
+		assertThat(SimpleMethods.findPos(data, 2),is(1));
+	}
+	
+	@Test
+	public void findPosFalse() {
+		int[] data = { 1, 2, 3 };
+		assertThat(SimpleMethods.findPos(data, 7), is(-1));
+	}
 }
