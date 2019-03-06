@@ -141,14 +141,4 @@ public class SimpleMethodsTest {
 
 	}
 
-//	@Test
-//	public void findPosTrue() {
-//		int[] data = { 1, 2, 3 };
-//		assertThat(SimpleMethods.findpos(data, 2), is(1));
-//	}
-//
-//	@Test
-//	public void findPosFalse() {
-//		int[] data = { 1, 2, 3 };
-//		assertEquals(SimpleMethods.findpos(data, 7), is(-1));
 }

@@ -120,8 +120,37 @@ public class SimpleMethods {
 		}
 		return false;
 	}
-}
+
 //    /**
 //    *{1,2,3},2 -> 1
 //    *{1,2,3},7 -> -1
 //    */
+
+	public static int findPos(int[] data, int target) {
+		if (data == null) {
+			return -1;
+		}
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == target) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	/**
+	 * "abba" -> true "abbab" -> false
+	 */
+	public static boolean isPalindrome(String s) {
+		return false;
+	}
+
+	/**
+	 * {1, 2, 3} -> {3, 2, 1}
+	 */
+	public static void reverse(int[] data) {
+
+	}
+}
