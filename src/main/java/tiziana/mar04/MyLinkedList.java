@@ -8,8 +8,25 @@ public class MyLinkedList {
 
 	}
 
+	/**
+	 * for test only, return list head
+	 * 
+	 * @return the object head
+	 */
+
+	Node getHead() {
+		return this.head;
+	}
+
+	Node getTail() {
+		return this.tail;
+	}
+
 	public void addFirst(int value) {
 		Node node = new Node(value);
+		if (tail == null) {
+			tail = node;
+		}
 		node.setNext(head);
 		head = node;
 	}
@@ -18,6 +35,10 @@ public class MyLinkedList {
 		Node node = new Node(value);
 		if (tail == null) {
 			head = node;
+			tail = node;
+
+		} else {
+			tail.setNext(node);
 			tail = node;
 		}
 	}
