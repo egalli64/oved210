@@ -4,6 +4,7 @@ package donatella.mar04;
 
 public class MyLinkedList {
 	private Node head=null;
+	private Node tail=null;
 	
 
 
@@ -11,6 +12,16 @@ public class MyLinkedList {
 	public MyLinkedList() {
 		
 	}
+	
+	
+//	*for test only,return to the list head
+//	*
+//	@return the object head
+
+	Node getHead() {
+	return	this.head;
+	}
+	
 	public void addFirst(int value) {
 		Node node=new Node(value);
 		node.setNext(head);
@@ -19,9 +30,44 @@ public class MyLinkedList {
 	
 	}
 	public void addLast(int value) {
+		Node node= new Node(value);
+		if(tail ==null) {
+			head=node;
+			tail=node;
+			
+			} else {
+				tail.setNext(node);
+				tail = node;
+			
+		}}
+	
+	
+	
+		public void addLastPlain(int value) {
+			Node node = new Node(value);
+			if(head == null) {
+				head = node;
+			} else {
+				Node last = head;
+				Node tail = head.getNext();
+				while(tail != null) {
+					last = tail;
+					tail = tail.getNext();
+				}
+				last.setNext(node);
 		
-		
+
 	}
+			
+					
+		
+			
+				
+			}
+	
+
+		
+	
 	
 	
 
@@ -37,6 +83,12 @@ public class MyLinkedList {
 		result.append("]");
 		
 		return result.toString();
+	}
+
+
+	public Node getTail() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 	
