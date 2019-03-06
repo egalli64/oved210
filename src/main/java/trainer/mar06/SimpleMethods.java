@@ -114,6 +114,16 @@ public class SimpleMethods {
 	 * {1, 2, 3}, 7 -> false
 	 */
 	public static boolean find(int[] data, int target) {
+		if(data == null) {
+			return false;
+		}
+		
+		for(int value: data) {
+			if(value == target) {
+				return true;
+			}
+		}
+		
 		return false;
 	}
 
@@ -122,6 +132,16 @@ public class SimpleMethods {
 	 * {1, 2, 3}, 7 -> -1
 	 */
 	public static int findPos(int[] data, int target) {
+		if(data == null) {
+			return -1;
+		}
+		
+		for(int i = 0; i < data.length; i++) {
+			if(data[i] == target) {
+				return i;
+			}
+		}
+		
 		return -1;
 	}
 	
