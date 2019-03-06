@@ -27,8 +27,10 @@ public class Problem {
 			if (data[i] % 2 == 0) {
 				return true;
 			}
+			
 		}
 		return false;
+		
 	}
 
 	
