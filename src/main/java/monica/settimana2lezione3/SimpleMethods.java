@@ -81,25 +81,75 @@ public class SimpleMethods {
 		}
 		return currentMinimum;
 	}
-	
+
 	/**
 	 * iniziamo ad utilizzare gli array input : int [] data output: smallest element
 	 * 
-	 * {1,2,5,-7} -> 3 posizione del numero più piccolo
-	 * {-7,2,5,-7} -> 0
+	 * {1,2,5,-7} -> 3 posizione del numero più piccolo {-7,2,5,-7} -> 0
 	 */
 
-	
-	//da fare primo problema
+	// da fare primo problema
 	public static int firstSmallestIndex(int[] data) {
-		return 0;
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int currentMinimumIndex = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] < data[currentMinimumIndex]) {
+				currentMinimumIndex = i;
+			}
+		}
+		return currentMinimumIndex;
 	}
 
 // da fare secondo problema
 	public static int lastSmallestIndex(int[] data) {
-		return 0;
-	}
-	
+		if (data == null || data.length == 0) {
+			return -1;
+		}
 
+		int currentMinimumIndex = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] <= data[currentMinimumIndex]) {
+				currentMinimumIndex = i;
+			}
+		}
+		return currentMinimumIndex;
+	}
+
+	/**
+	 * terzo problema: {1,2,3} ->2 true {1,2,3} ->7 false
+	 * 
+	 * 
+	 */
+	public static boolean find(int[] data, int target) {
+
+		if (data == null) {
+			return false;
+		}
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == target) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Quarto Problema
+	 * 
+	 * {1,2,3}, 2-> 1 {1,2,3}, 7->-1
+	 */
+	public static int findPos(int[] data, int target) {
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == target) {
+				return i;
+			}
+		}
+		return -1;
+	}
 
 }

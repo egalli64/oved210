@@ -1,5 +1,6 @@
 package trainer.mar06;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
@@ -124,4 +125,31 @@ public class SimpleMethodsTest {
 		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
 	}
 
+	@Test
+	public void findPositive() {
+		int[] data = {1, 2, 3};
+		int target = 2;
+		assertTrue(SimpleMethods.find(data, target));
+	}
+
+	@Test
+	public void findNegative() {
+		int[] data = {1, 2, 3};
+		int target = 7;
+		assertFalse(SimpleMethods.find(data, target));
+	}
+
+	@Test
+	public void findPosPositive() {
+		int[] data = {1, 2, 3};
+		int target = 2;
+		assertEquals(1, SimpleMethods.findPos(data, target));
+	}
+
+	@Test
+	public void findPosNegative() {
+		int[] data = {1, 2, 3};
+		int target = 7;
+		assertEquals(-1, SimpleMethods.findPos(data, target));
+	}
 }

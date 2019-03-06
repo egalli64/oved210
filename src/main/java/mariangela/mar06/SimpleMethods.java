@@ -61,7 +61,7 @@ public class SimpleMethods {
 	/**
 	 * input: int[] data output: smallest element
 	 * 
-	 * { -7, 2, 5, -7} -> 0 { 1, 2, 5, -7} -> 3
+	 * { -7, 2, 5, -7} -> 0 { -7, 2, 5, -7} -> 3
 	 * 
 	 * null, {} -> -1
 	 */
@@ -93,5 +93,39 @@ public class SimpleMethods {
 			}
 		}
 		return currentIndex;
+	}
+
+	/**
+	 * {1, 2, 3}, 2 -> true {1, 2, 3}, 7 -> false
+	 */
+	public static boolean find(int[] data, int target) {
+		if (data == null) {
+			return false;
+		}
+		for (int i = 0; i < data.length; i++) {
+			if (target == data[i]) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * {1, 2, 3}, 2 -> 1 
+	 * {1, 2, 3}, 7 -> -1
+	 */
+	public static int findPos(int[] data, int target) {
+		if (data == null) {
+			return -1;
+		}
+
+		for (int i = 0; i < data.length; i++) {
+			if (target == data [i]) {
+				return i;
+
+			}
+
+		}
+		return -1;
 	}
 }
