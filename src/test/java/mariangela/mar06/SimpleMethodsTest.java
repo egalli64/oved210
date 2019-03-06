@@ -89,7 +89,7 @@ public class SimpleMethodsTest {
 
 	@Test
 	public void smallestFirst() {
-		int[] data = {-7, 2, 5, -7 };
+		int[] data = { -7, 2, 5, -7 };
 		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
 
 	}
@@ -105,10 +105,10 @@ public class SimpleMethodsTest {
 		int[] data = {};
 		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
 	}
-	
+
 	@Test
 	public void smallestLast() {
-		int[] data = {-7, 2, 5, -7 };
+		int[] data = { -7, 2, 5, -7 };
 		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
 
 	}
@@ -123,12 +123,47 @@ public class SimpleMethodsTest {
 	public void smallestLastEmpty() {
 		int[] data = {};
 		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
-	
-	
-	
+
 	}
-	
-	
-	
-	
+
+	@Test
+	public void findTrue() {
+		int[] data = { 1, 2, 3 };
+		assertTrue(SimpleMethods.find(data, 2));
+	}
+
+	@Test
+	public void findFalse() {
+		int[] data = { 1, 2, 3 };
+		assertFalse(SimpleMethods.find(data, 7));
+
+	}
+
+	@Test
+	public void findNull() {
+		assertFalse(SimpleMethods.find(null, 2));
+	}
+
+	@Test
+	public void findEmpty() {
+		int[] data = {};
+		assertFalse(SimpleMethods.find(data, 2));
+	}
+
+	@Test
+	public void findPosNull() {
+		assertThat(SimpleMethods.findPos(null, 2), is(-1));
+	}
+
+	@Test
+	public void findPosEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.findPos(data, 2), is(-1));
+	}
+
+	@Test
+	public void findPosPlain() {
+		int[] data = { 1, 2, 3 };
+		assertThat(SimpleMethods.findPos(data, 2), is(1));
+	}
 }
