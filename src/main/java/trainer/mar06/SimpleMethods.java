@@ -57,7 +57,7 @@ public class SimpleMethods {
 				currentMinumum = data[i];
 			}
 		}
-
+		
 		return currentMinumum;
 	}
 
@@ -70,11 +70,73 @@ public class SimpleMethods {
 	 * null, {} -> -1
 	 */
 	public static int firstSmallestIndex(int[] data) {
-		return 0;
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int pos = 0;
+
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] < data[pos]) {
+				pos = i;
+			}
+		}
+
+		return pos;
 	}
 
+	/**
+	 * input: int[] data
+	 * output: smallest element
+	 * 
+	 * { 1, 2, 5, -7 } -> 3
+	 * { -7, 2, 5, -7 } -> 0
+	 * null, {} -> -1
+	 */
 	public static int lastSmallestIndex(int[] data) {
-		return 0;
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int pos = 0;
+
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] <= data[pos]) {
+				pos = i;
+			}
+		}
+
+		return pos;
+	}
+
+	/**
+	 * {1, 2, 3}, 2 -> true
+	 * {1, 2, 3}, 7 -> false
+	 */
+	public static boolean find(int[] data, int target) {
+		return false;
+	}
+
+	/**
+	 * {1, 2, 3}, 2 -> 1
+	 * {1, 2, 3}, 7 -> -1
+	 */
+	public static int findPos(int[] data, int target) {
+		return -1;
 	}
 	
+	/**
+	 * "abba" -> true
+	 * "abbab" -> false
+	 */
+	public static boolean isPalindrome(String s) {
+		return false;
+	}
+	
+	/**
+	 * {1, 2, 3} -> {3, 2, 1}
+	 */
+	public static void reverse(int[] data) {
+		
+	}
 }

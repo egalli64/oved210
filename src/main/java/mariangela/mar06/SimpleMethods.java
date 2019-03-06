@@ -41,7 +41,7 @@ public class SimpleMethods {
 	/**
 	 * input: int[] data output: smallest element
 	 * 
-	 * { 1, 2, 5, -7 } -> -7 {MAX_VALUE, MAX_VALUE, MAX_VALUE} -> MAX_VALUE
+	 * { 1, 2, 5, -7} -> -7 {MAX_VALUE, MAX_VALUE, MAX_VALUE} -> MAX_VALUE
 	 */
 
 	public static int smallest(int[] data) {
@@ -50,9 +50,48 @@ public class SimpleMethods {
 		}
 
 		int currentMinimum = data[0];
-		for (int i = 0; i < data.length; i++) {   // è come scrivere for(int value:data)
-			 
+		for (int i = 0; i < data.length; i++) { // è come scrivere for(int value:data)
+			if (data[i] < currentMinimum) {
+				currentMinimum = data[i];
+			}
 		}
 		return currentMinimum;
+	}
+
+	/**
+	 * input: int[] data output: smallest element
+	 * 
+	 * { -7, 2, 5, -7} -> 0 { 1, 2, 5, -7} -> 3
+	 * 
+	 * null, {} -> -1
+	 */
+
+	public static int firstSmallestIndex(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int currentIndex = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] < data[currentIndex]) {
+				currentIndex = i;
+			}
+		}
+
+		return currentIndex;
+	}
+
+	public static int lastSmallestIndex(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+
+		}
+		int currentIndex = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[i] <= data[currentIndex]) {
+				currentIndex = i;
+			}
+		}
+		return currentIndex;
 	}
 }

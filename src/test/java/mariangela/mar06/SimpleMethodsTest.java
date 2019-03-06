@@ -65,22 +65,70 @@ public class SimpleMethodsTest {
 		assertThat(SimpleMethods.toUpper('9'), is('9'));
 
 	}
+
 	@Test
 	public void smallestPlain() {
-		int[] data = { 1, 2, 5, -7};
+		int[] data = { 1, 2, 5, -7 };
 		assertThat(SimpleMethods.smallest(data), is(-7));
 
 	}
+
 	@Test
 	public void smallestNull() {
 		int[] data = null;
 		assertThat(SimpleMethods.smallest(data), is(Integer.MAX_VALUE));
 
 	}
+
 	@Test
 	public void smallestEmpty() {
 		int[] data = {};
 		assertThat(SimpleMethods.smallest(data), is(Integer.MAX_VALUE));
 
 	}
+
+	@Test
+	public void smallestFirst() {
+		int[] data = {-7, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
+
+	}
+
+	@Test
+	public void smallestFirstNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void smallestFirstEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+	
+	@Test
+	public void smallestLast() {
+		int[] data = {-7, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
+
+	}
+
+	@Test
+	public void smallestLastNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void smallestLastEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	
+	
+	
+	}
+	
+	
+	
+	
 }
