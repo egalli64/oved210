@@ -1,19 +1,18 @@
-package monica.settimana2; //04/03/19
+package claudia.mar04;
 
 public class MyLinkedList {
 	private Node head = null;
 	private Node tail = null;
 
+	@Override
+	public String toString() {
+		return "MyLinkedList [head=" + head + ", tail=" + tail + "]";
+	}
+
 	public MyLinkedList() {
 	}
 
-	/**
-	 * for the test only, return the list head
-	 * 
-	 * @return
-	 */
-
-	// serve per il test solo, ritorna la testa della lista
+//	per il testing faccio ritornare l'oggetto head
 	Node getHead() {
 		return this.head;
 	}
@@ -22,46 +21,30 @@ public class MyLinkedList {
 		Node node = new Node(value);
 		node.setNext(head);
 		head = node;
-		tail = node;
 	}
 
 	public void addLast(int value) {
+		// create new node for value
 		Node node = new Node(value);
-		if (head == null) {
+
+		if (tail == null) {
 			head = node;
 			tail = node;
 		} else {
+			// current tail.next -> new node
 			tail.setNext(node);
 			tail = node;
 		}
 	}
-
-	@Override
-	public String toString() {
-		return "MyLinkedList [head=" + head + "]";
-	}
-
-	public Node getTail() {
-		return this.tail;
-	}
-
-	public void setTail(Node tail) {
-		this.tail = tail;
-	}
-
 }
 
 class Node {
 	private int value;
 	private Node next;
 
-	@Override
-	public String toString() {
-		return "Node [value=" + value + ", next=" + next + "]";
-	}
-
 	public Node(int value) {
 		this.value = value;
+		this.next = next;
 	}
 
 	public int getValue() {
@@ -78,6 +61,11 @@ class Node {
 
 	public void setNext(Node next) {
 		this.next = next;
+	}
+
+	@Override
+	public String toString() {
+		return "Node [value=" + value + ", next=" + next + "]";
 	}
 
 }

@@ -7,27 +7,30 @@ import org.junit.Test;
 public class MyLinkedListTest {
 
 	@Test // questo lo stiamo creando noi
-	public void emptyListHasNullHead() {
+	public void emptyListHasNullHeadTail() {
 		MyLinkedList mll = new MyLinkedList();
 		assertNull(mll.getHead());
 		assertNull(mll.getTail());
 
 	}
 
-	@Test // @Test
-			// public void testAddFirst() {
-	public void addFirstSimple() {                      // fail("Not yet implemented"); } <- così era prima delle modifiche
+	@Test                                                // @Test
+			                                             // public void testAddFirst() {
+	public void addFirstSimple() {                       // fail("Not yet implemented"); } <- così era prima delle modifiche
 		final int VALUE = 12;
 
 		MyLinkedList mll = new MyLinkedList();
-//		assertNull(mll.getHead());
+        //		assertNull(mll.getHead());
 
 		mll.addFirst(VALUE);
-
+		
 		Node myHead = mll.getHead();
 		assertNotNull(myHead);
-
 		assertEquals(VALUE, myHead.getValue());
+		
+		Node myTail = mll.getTail();
+		assertNotNull(myTail);  
+		assertEquals(VALUE, myTail.getValue());
 	}
 
 	@Test
@@ -40,23 +43,33 @@ public class MyLinkedListTest {
 		Node myHead = mll.getHead();
 		assertNotNull(myHead);
 		assertEquals(VALUE, myHead.getValue());
+		
+		Node myTail = mll.getTail();
+		assertNotNull(myTail);  
+		assertEquals(VALUE, myTail.getValue());
 	}
 
 	@Test
-
 	public void addMix() {
 		final int VALUE = 24;
 		final int VALUE2 = 30;
 		MyLinkedList mll = new MyLinkedList();
 
 		mll.addFirst(VALUE);
+		mll.addLast(VALUE2);
+		
 		Node myHead = mll.getHead();
 		assertNotNull(myHead);
 		assertEquals(VALUE, myHead.getValue());
 
-		mll.addLast(VALUE2);
+		
 		Node myTail = mll.getTail();
-		assertNotNull(VALUE2);
+		assertNotNull(myTail);     
+		assertEquals(VALUE, myTail.getValue());
+	
+		Node myHeadNext = myHead.getNext();
+		assertNotNull(myHeadNext);
+		assertEquals(VALUE2, myHeadNext.getValue());
 
 	}
 
@@ -65,14 +78,22 @@ public class MyLinkedListTest {
 		final int VALUE = 24;
 		final int VALUE2 = 31;
 		MyLinkedList mll = new MyLinkedList();
+		
 		mll.addFirst(VALUE);
+		mll.addFirst(VALUE2);
+		
 		Node myHead = mll.getHead();
 		assertNotNull(myHead);
 		assertEquals(VALUE, myHead.getValue());
 
-		mll.addFirst(VALUE2);
-		Node myHead2 = mll.getHead();
-		assertNotNull(VALUE2);
+		Node myTail = mll.getTail();
+		assertNotNull(myTail);     
+		assertEquals(VALUE, myTail.getValue());
+	
+		Node myHeadNext = myHead.getNext();
+		assertNotNull(myHeadNext);
+		assertEquals(VALUE2, myHeadNext.getValue());
+		
 	}
 
 	@Test
@@ -81,10 +102,13 @@ public class MyLinkedListTest {
 		final int VALUE2 = 30;
 		MyLinkedList mll = new MyLinkedList();
 		mll.addLast(VALUE);
-		Node myTail = mll.getTail();
 		mll.addLast(VALUE2);
+		
+		Node myTail = mll.getTail();
 		Node myTail2 = mll.getTail();
 		assertNotNull(VALUE2);
+		
+		
 
 	}
 }
