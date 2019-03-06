@@ -122,12 +122,12 @@ public class SimpleMethodsTest {
 	public void findIndexNull() {
 		int [] data = null;
 		int target = 2;
-		assertThat(SimpleMethods.findIndex(data, target), is (-1));	
+		assertThat(SimpleMethods.findIndex(data, target), is (1));	
 	}
 	@Test
 	public void findIndexPlain() {
 		int [] data = { 1, 2, 3};
 		int target = 7;
-		assertThat(SimpleMethods.findIndex(data, target), is (1));	
+		assertThat(SimpleMethods.findIndex(data, target), is (-1));	
 	}
 }
