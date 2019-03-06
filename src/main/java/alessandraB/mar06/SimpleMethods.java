@@ -48,21 +48,58 @@ public class SimpleMethods {
 	 */
 
 	public static int smallest(int[] data) {
-			if(data == null || data.length == 0) {
-			return Integer.MAX_VALUE;		
-}   
-		int currentMinumum = data [0];
-		
+		if (data == null || data.length == 0) {
+			return Integer.MAX_VALUE;
+		}
+		int currentMinumum = data[0];
+
 		for (int i = 1; i < data.length; i++) {
-			if(currentMinumum > data[i]);
-			   currentMinumum = data [i];
-		}  
-	 return currentMinumum;	
-}
-	public static int firstSmallestIndex(int[]data) {
-		return 0;
+			if (currentMinumum > data[i]) {
+				currentMinumum = data[i];
+			}
+		}
+		return currentMinumum;
 	}
-	
-	
-	
+
+	public static int firstSmallestIndex(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int index = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[index] > data[i]) {
+				index = i;
+			}
+		}
+		return index;
+	}
+
+	public static int lastSmallestIndex(int[] data) {
+		if (data == null || data.length == 0) {
+			return -1;
+		}
+
+		int index = 0;
+		for (int i = 1; i < data.length; i++) {
+			if (data[index] >= data[i]) {
+				index = i;
+			}
+		}
+		return index;
+
+	}
+
+	/**
+	 * {1,2,3}, 2 --> true; {1,2,3}, 7 ---> false;
+	 */
+
+	public static boolean find(int[] data, int target) {
+
+		for (int i = 0; i < data.length; i++) {
+			if (target == data[i])
+				return true;
+		}
+		return false;
+	}
 }
