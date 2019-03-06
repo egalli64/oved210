@@ -76,4 +76,52 @@ public class SimpleMethodsTest {
 		assertThat(SimpleMethods.smallest(data), is(Integer.MAX_VALUE));
 	}
 
+	@Test
+	public void firstSmallestIndexNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void firstSmallestIndexEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void firstSmallestIndexPlain() {
+		int[] data = { 1, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(3));
+	}
+
+	@Test
+	public void firstSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
+	}
+
+	@Test
+	public void lastSmallestIndexNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void lastSmallestIndexEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void lastSmallestIndexPlain() {
+		int[] data = { 1, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
+	}
+	
+	@Test
+	public void lastSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
+	}
+
 }
