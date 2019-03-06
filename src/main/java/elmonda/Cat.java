@@ -1,8 +1,11 @@
 package elmonda;
 
 public class Cat extends Animal {
-	public Cat(int weight, String name) {
-		super(weight, name);
+	public Cat(int weight, String name, Fur fur) {
+		super(weight, name, fur);
+	}
+	public void meow() {
+		System.out.println("Meow!");
 	}
 
 	@Override

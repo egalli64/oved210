@@ -7,14 +7,17 @@ import org.junit.Test;
 public class ProblemTest {
 
 	@Test
-	public void testHasEvenTrue() {
+	public void testHasEven() {
 		int [] data = new int [] { 11, 42 };
-		assertTrue(Problem.hasEvenTrue(data));
+		assertTrue(Problem.hasEven(data));
+
 	}
+
 	@Test
 	public void testHasEvenFalse() {
-		int [] data = new int [] { 11, 42 };
-		assertFalse(Problem.hasEvenFalse(data));
+		int [] data = new int [] { 11, 33 };
+		assertFalse(Problem.hasEven(data));
+
 	}
 	@Test
 	public void testIsTrue() {
