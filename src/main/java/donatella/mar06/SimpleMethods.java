@@ -111,7 +111,30 @@ return currentMinumun;
 
 		return false;
 	}
-} 
+
+//	{1,2,3}, 2 -> 1
+//	{1,2,3},7 ->-1
 			
+			
+			
+
+				public static int findPost(int[] data, int target) {
+					   int index=0;
+						for (int i = 0; i < data.length; i++) {
+						if(target==data[i]) {
+						return data [index];
+					}
+						}
+						return -1;
+					
+				}
+
+				public static Object findPost(int[] data) {
+					// TODO Auto-generated method stub
+					return null;
+				}
+
+}
 				
+
 

@@ -111,13 +111,24 @@ public class SimpleMethodsTest {
 	 
 	        }
 		
+		@Test
+		public void findPost1() {
+			int[] data= {1,2,3};
+				int target=7;
+				assertThat(SimpleMethods.findPost(data), is(-1));
 		
+		
+		}
 			
-
-             
+         @Test
+		public void findPost() {
+			int[] data= {1,2,3};
+				int target=2;
+				assertThat(SimpleMethods.findPost(data), is(1));
+		
 	         
 
-}
+}}
 
 
 
