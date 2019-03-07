@@ -1,14 +1,11 @@
-package trainer.mar06;
+package marina.mar06;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-
+import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 public class SimpleMethodsTest {
+
 	@Test
 	public void isUpperA() {
 		assertTrue(SimpleMethods.isUpper('A'));
@@ -25,38 +22,38 @@ public class SimpleMethodsTest {
 	}
 
 	@Test
-	public void isAlphaA() {
-		assertTrue(SimpleMethods.isAlpha('A'));
-	}
-
-	@Test
-	public void isAlphaLowerC() {
-		assertTrue(SimpleMethods.isAlpha('c'));
+	public void isAlphaSimbol() {
+		assertFalse(SimpleMethods.isAlpha('='));
 	}
 
 	@Test
 	public void isAlphaNumber() {
-		assertFalse(SimpleMethods.isAlpha('7'));
+		assertFalse(SimpleMethods.isAlpha('8'));
 	}
 
 	@Test
-	public void isAlphaBracket() {
-		assertFalse(SimpleMethods.isAlpha('{'));
+	public void isAlphaB() {
+		assertTrue(SimpleMethods.isAlpha('B'));
 	}
 
 	@Test
-	public void toUpperA() {
-		assertThat(SimpleMethods.toUpper('A'), is('A'));
+	public void isAlphaLowerA() {
+		assertTrue(SimpleMethods.isAlpha('a'));
 	}
 
 	@Test
-	public void toUpperLowerX() {
-		assertThat(SimpleMethods.toUpper('x'), is('X'));
+	public void toUpperT() {
+		assertThat(SimpleMethods.toUpper('T'), is('T'));
+	}
+
+	@Test
+	public void toUpperLowerD() {
+		assertThat(SimpleMethods.toUpper('d'), is('D'));
 	}
 
 	@Test
 	public void toUpperNumber() {
-		assertThat(SimpleMethods.toUpper('9'), is('9'));
+		assertThat(SimpleMethods.toUpper('8'), is('8'));
 	}
 
 	@Test
@@ -94,13 +91,7 @@ public class SimpleMethodsTest {
 		int[] data = { 1, 2, 5, -7 };
 		assertThat(SimpleMethods.firstSmallestIndex(data), is(3));
 	}
-
-	@Test
-	public void firstSmallestIndexDouble() {
-		int[] data = { -7, 2, 5, -7 };
-		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
-	}
-
+	
 	@Test
 	public void lastSmallestIndexNull() {
 		int[] data = null;
@@ -127,29 +118,34 @@ public class SimpleMethodsTest {
 
 	@Test
 	public void findPositive() {
-		int[] data = {1, 2, 3};
+		int [] data = {1, 2, 3};
 		int target = 2;
 		assertTrue(SimpleMethods.find(data, target));
 	}
-
+	
+	
 	@Test
 	public void findNegative() {
-		int[] data = {1, 2, 3};
+		int [] data = {1, 2, 3};
 		int target = 7;
 		assertFalse(SimpleMethods.find(data, target));
 	}
-
+	
 	@Test
 	public void findPosPositive() {
-		int[] data = {1, 2, 3};
+		int [] data = {1, 2, 3};
 		int target = 2;
-		assertEquals(1, SimpleMethods.findPos(data, target));
+		assertThat(SimpleMethods.findPos(data, target), is (1));
 	}
-
+	
 	@Test
 	public void findPosNegative() {
-		int[] data = {1, 2, 3};
+		int [] data = {1, 2, 3};
 		int target = 7;
-		assertEquals(-1, SimpleMethods.findPos(data, target));
+		assertThat(SimpleMethods.findPos(data, target), is (-1));
 	}
+	
+	
+	
+	
 }
