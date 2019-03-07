@@ -122,16 +122,16 @@ public class SimpleMethods {
 	public static int findIndex(int[] data, int target) {
 		
 		if (data == null || data.length == 0) {
-			return -1;
+			return 1;
 		}
 
 		int currentFindIndex = 0;
 		for (int i = 0; i < data.length; i++) {
-			if (data[i] <= data[currentFindIndex]) {
-				currentFindIndex = i;
+			if (data[i] == target) {
+				return i;
 			}
 		}
-		return 1;
+		return -1;
 }
 }
 
