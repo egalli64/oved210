@@ -61,17 +61,29 @@ public class ArrayProblems {
 	 * {1, 2, 3}, {9, 8, 7} -< {1, 9, 2, 8, 3, 7}
 	 * </pre>
 	 * 
+	 * @param left  an int array
+	 * @param right another int array
+	 * @return the merge of the two input arrays
+	 * 
+	 * @throws IllegalArgumentException if the two arrays have different size
 	 */
 	public static int[] merger(int[] left, int[] right) {
-		int result[] = new int[0];
-		
-		
-		
+		if (left.length != right.length) {
+			throw new IllegalArgumentException("The input arrays should have");
+		}
+		// a left assegniamo indici pari e a right assegniamo indici dispari
 
+		int result[] = new int[left.length + right.length];
 
-		
-
+		for (int i = 0; i < result.length; i++) {
+			if (i % 2 == 0) {
+				result[i] = (left[i / 2]);
+			}
+			if (i % 2 == 1) {
+				result[i] = (right[i / 2]);
+			}
+			//altrimenti solo -> result[i] = i%2 == 0 ? left[i/2] : right [i/2];
+		}
 		return result;
 	}
-
 }
