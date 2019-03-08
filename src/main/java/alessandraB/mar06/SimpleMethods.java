@@ -102,12 +102,65 @@ public class SimpleMethods {
 		}
 		return false;
 	}
-	public static int findPos(int[]data, int target) {
+
+	public static int findPos(int[] data, int target) {
 		int index = 0;
-		for(int i = 0; i < data.length; i++) {
-		  if(target == data[i])
-			  return data[index];
+		for (int i = 0; i < data.length; i++) {
+			if (target == data[i])
+				return data[index];
 		}
-	 return -1;
-}
+		return -1;
+	}
+
+	/**
+	 * checks if a string is palindrome. if the passed string is null, return false.
+	 * otherwise return true only if the string is a palindrome
+	 * 
+	 * for example: "abba" --> true; "abac"--> false;
+	 * 
+	 * @param s the string to be checked if palindrome
+	 * @return true only if the input is a palindrome
+	 */
+
+	public static boolean isPalindrome(String s) {
+		if (s == null) {
+			return false;
+		}
+
+		if (s.length() < 2) {
+			return false;
+		}
+
+		int left = 0;
+		int right = s.length() - 1;
+
+		for (; left < right; left++, --right) {
+			if (s.charAt(left) != s.charAt(right))
+				return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * {1,2,3} --> {3,2,1}
+	 *
+	 */
+
+	public static void reverse(int[] data) {
+
+		if (data == null || data.length < 2) {
+			return ;
+		}
+
+		int left = 0;
+		int right = data.length - 1;
+		
+		for (; left < right; left++, right--) {
+			int temp = data[left];
+			data[left] = data[right];
+			data[right] = temp;
+		}
+		
+	}
 }

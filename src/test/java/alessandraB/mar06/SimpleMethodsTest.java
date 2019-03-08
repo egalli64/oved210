@@ -127,6 +127,80 @@ public class SimpleMethodsTest {
 		int target = 2;
 		
 		assertThat(SimpleMethods.findPos(data, 2), is (1));
-} }
+} 
+
+	@Test
+	public void isPalindromeEvenPositive() {
+		assertTrue(SimpleMethods.isPalindrome("abba"));
+		
+	}
+	
+	@Test
+	public void isPalindromeEvenNegative() {
+		assertFalse(SimpleMethods.isPalindrome("abab"));
+		
+	}
+	
+	@Test
+	public void isPalindromeOddNegative() {
+		assertFalse(SimpleMethods.isPalindrome("aab"));
+		
+	}
+	@Test
+	public void isPalindromeNull() {
+		assertFalse(SimpleMethods.isPalindrome(null));
+		
+	}
+	@Test
+	public void isPalindromeEmpty() {
+		assertFalse(SimpleMethods.isPalindrome(""));
+	
+		
+	}
+   //@Test
+   // public void reversePlain() {
+    	//int[] data = {1,2,3};
+    	
+    	
+    	//for(int i = 0; i < data.length; i++) {
+    		//assertThat(reverted[i],is(data[data.length -1 - i]));
+ //   }
+//	}
+    
+    @Test
+    public void reverseSimple() {
+    	int[] data = {1,2,3};
+    	
+    	SimpleMethods.reverse(data);
+    	
+    	assertThat(data.length, is (3));
+    	assertThat(data[0], is (3));
+    	assertThat(data[1], is (2));
+    	assertThat(data[2], is (1));
+    	
+    	
+    }
+    
+    @Test
+    public void reverseNull() {
+    	int[] data = null;
+    	
+    	SimpleMethods.reverse(data);
+    	
+    	assertNull(data);
+    	
+    	
+    }
+    @Test
+    public void reverseEmpty() {
+    	int[] data = {};
+    	
+    	SimpleMethods.reverse(data);
+    	
+    	assertThat(data.length, is (0));
+    	
+    }
+    
+}
 
 
