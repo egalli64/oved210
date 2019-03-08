@@ -17,17 +17,23 @@ public class MyLinkedList {// listalinkata di interi
 		return this.head = head;
 
 	}
-	
+
 	Node getTail() {
 		return this.tail = tail;
-		
+
 	}
 
 	public void addFirst(int value) {
 		Node node = new Node(value);
-		node.setNext(head); // la variabile next all'interno di nodo è "head", il successore del nodo sarà
-							// quello che è l'head corrente
-		head = node; // l'indirizzo head diventa l'indirizzo del primo elemento nella mia lista
+		if (head == null && tail == null) {
+			head = node;
+			tail = node;
+		} else {
+			node.setNext(head); // la variabile next all'interno di nodo è "head", il successore del nodo sarà
+			// quello che è l'head corrente
+			head = node; // l'indirizzo head diventa l'indirizzo del primo elemento nella mia lista
+
+		}
 
 	}
 

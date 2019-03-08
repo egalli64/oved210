@@ -11,10 +11,9 @@ public class MyLinkedListUser {
 		System.out.println(mll.toString());
 		mll.addFirst(16);
 		System.out.println(mll.toString());
-		
+
 		System.out.println("******");
 
-		System.out.println(mll.toString());
 		mll.addLast(37);
 		System.out.println(mll.toString());
 		mll.addLast(23);

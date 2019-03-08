@@ -3,78 +3,95 @@ package alessandraC.mar04;
 public class MyLinkedList {
 	private Node head = null;
 	private Node tail = null;
-	
-	public MyLinkedList () {
+
+	public MyLinkedList() {
 	}
-	
-	public void addFirst (int value) {
-		Node node = new Node (value);
-		if(tail == null) {
+
+	/**
+	 * for test only, return the list head
+	 * 
+	 * @return the object head
+	 */
+
+	Node getHead() {
+		return this.head;
+	}
+
+	/**
+	 * * for test only, return the list head
+	 * 
+	 * @return the object tail
+	 */
+
+	Node getTail() {
+		return this.tail;
+	}
+
+	public void addFirst(int value) {
+		Node node = new Node(value);
+		if (tail == null) {
 			tail = node;
 		}
 		node.setNext(head);
 		head = node;
 	}
-	
-	public void addLast (int value) {
-		
+
+	public void addLast(int value) {
+		Node node = new Node(value);
+		if (head == null) {
+			head = node;
+			tail = node;
+		} else {
+			tail.setNext(node);
+			tail = node;
+		}
+
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder result = new StringBuilder (" [ ");
+		StringBuilder result = new StringBuilder(" [ ");
 		Node cur = head;
 		while (cur != null) {
 			result.append(cur.getValue());
-			result.append (" ");
-			cur = cur.getNext ();
+			result.append(" ");
+			cur = cur.getNext();
 		}
-		result.append ("]");
-		return result.toString ();
-		
+		result.append("]");
+		return result.toString();
+
 	}
-		
-	}
+
 	class Node {
+
 		private int value;
 		private Node next;
-		
-		public Node (int value) {
+
+		public Node(int value) {
 			this.value = value;
 		}
+
+		public int getValue() {
+			return value;
+		}
+
+		public void setValue(int value) {
+			this.value = value;
+		}
+
 		public Node getNext() {
 			return next;
 		}
-		
-		public int getValue () {
-			return value;
-		}
-		
-		public void setNext (Node next) {
+
+		public void setNext(Node next) {
 			this.next = next;
 		}
-		
-		public void addLas(int value) {
-			Node node = new Node (value);
-			Object tail = null;
-			if (tail == null) {
-				Node head = node;
-				tail = node;
-			}
-			else {
-				Node head = null;
-				Node last = head;
-				Node tail1 = head.getNext ();
-				while(tail1 != null) {
-					last = tail1;
-					tail1 = tail1.getNext();
-				}
-				
-			}
-		}
+
 		@Override
 		public String toString() {
 			return "Node [value=" + value + ", next=" + next + "]";
 		}
-		
+
 	}
+
+}
