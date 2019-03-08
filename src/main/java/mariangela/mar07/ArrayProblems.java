@@ -61,16 +61,17 @@ public class ArrayProblems {
 		int result[] = new int[left.length + right.length];
 
 		for (int i = 0; i < result.length; i++) {
-			
+
 			if (i % 2 == 0) {
 
 				result[i] = left[i / 2];
-			}
-			
-			if (i % 2 != 0) {
+
+			} else {
 
 				result[i] = right[i / 2];
 			}
+			
+//			result [i] = i%2 == 0 ? left[i/2] : right [i/2];
 		}
 
 		return result;
