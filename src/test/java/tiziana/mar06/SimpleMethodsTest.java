@@ -140,5 +140,60 @@ public class SimpleMethodsTest {
 		assertFalse(SimpleMethods.find(data, target));
 
 	}
+	///////////
 
+	@Test
+	public void isPalindromePositive() {
+		assertTrue(SimpleMethods.isPalindrome("abba"));
+	}
+
+	@Test
+	public void isPalindromeNegative() {
+		assertFalse(SimpleMethods.isPalindrome("abbab"));
+
+	}
+
+	@Test
+	public void isPalindromeNull() {
+		assertFalse(SimpleMethods.isPalindrome(null));
+	}
+
+	@Test
+	public void isPalindromeEmpty() {
+		assertFalse(SimpleMethods.isPalindrome(""));
+	}
+	////////////
+
+	@Test
+	public void reverseReturnPlain() {
+		int[] data = { 1, 2, 3 };
+		int[] reverted = SimpleMethods.reverseReturn(data);
+
+		assertThat(reverted.length, is(data.length));
+
+		for (int i = 0; i < reverted.length; i++) {
+			assertThat(reverted[i], is(data[data.length - 1 - i]));
+		}
+
+	}
+
+//		assertThat(reverted[0], is(data[2]));
+//		assertThat(reverted[1], is(data[1]));
+//		assertThat(reverted[2], is(data[0]));
+
+	@Test
+	public void isreverseNull() {
+		int[] data = null;
+		SimpleMethods.reverseReturn(data);
+		assertNull(data);
+
+	}
+
+	@Test
+	public void isreverseEmpty() {
+		int[] data = {};
+		SimpleMethods.reverseReturn(data);
+		assertThat(data.length, is(0));
+
+	}
 }
