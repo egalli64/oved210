@@ -72,4 +72,23 @@ public class ArrayProblems {
 
 		return results;
 	}
+	
+
+	/**
+	 * Merge two arrays alternating elements (when possible)
+	 * 
+	 * <pre>
+	 * {1, 2}, {9, 8, 7, 6} -> {1, 9, 2, 8, 7, 6}
+	 * </pre>
+	 * 
+	 * @param left an int array
+	 * @param right another int array
+	 * @return the merge of the two input arrays
+	 */
+	public static int[] mergerEx(int[] left, int[] right) {
+		int results[] = new int[left.length + right.length];
+		
+		return results;
+	}
+
 }
