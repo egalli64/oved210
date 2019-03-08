@@ -72,7 +72,6 @@ public class ArrayProblems {
 
 		return results;
 	}
-	
 
 	/**
 	 * Merge two arrays alternating elements (when possible)
@@ -87,6 +86,28 @@ public class ArrayProblems {
 	 */
 	public static int[] mergerEx(int[] left, int[] right) {
 		int results[] = new int[left.length + right.length];
+
+		int minLen = Math.min(left.length, right.length);
+		
+		for (int i = 0; i < minLen * 2; i++) {
+			if (i % 2 == 0) {
+				results[i] = left[i / 2];
+			} else {
+				results[i] = right[i / 2];
+			}
+		}
+
+//		int[] largest = left.length == minLen ? right : left;
+		int[] largest;
+		if(left.length > right.length) {
+			largest = left;
+		} else {
+			largest = right;
+		}
+		int tailSize = largest.length - minLen;
+		for (int i = 0; i < tailSize; i++) {
+			results[minLen * 2 + i] = largest[minLen + i];
+		}
 		
 		return results;
 	}
