@@ -52,7 +52,7 @@ public class ArrayProblems {
 		// OPPURE SEMPLICEMENTE return sum(data) / data.length
 	}
 
-	// ESERCIZIO UNIONE DUE ARRAY
+	// ESERCIZIO UNIONE DUE ARRAY CON LUNGHEZZA UGUALE
 
 	/**
 	 * Merge the two passed arrays alternating elements
@@ -82,7 +82,51 @@ public class ArrayProblems {
 			if (i % 2 == 1) {
 				result[i] = (right[i / 2]);
 			}
-			//altrimenti solo -> result[i] = i%2 == 0 ? left[i/2] : right [i/2];
+			// altrimenti solo -> result[i] = i%2 == 0 ? left[i/2] : right [i/2];
+		}
+		return result;
+	}
+
+	// ESERCIZIO UNIONE ARRAY LUNGHEZZE DIVERSE
+	/**
+	 * Merge the two passed arrays alternating elements
+	 * 
+	 * <pre>
+	 * {1, 2}, {9, 8, 7, 6} -< {1, 9, 2, 8, 7, 6}
+	 * </pre>
+	 * 
+	 * @param left  an int array
+	 * @param right another int array
+	 * @return the merge of the two input arrays
+	 * 
+	 * @throws IllegalArgumentException if the two arrays have different size
+	 */
+
+	public static int[] mergerEx(int[] left, int[] right) {
+
+		int result[] = new int[left.length + right.length];
+
+		int minLength = Math.min(left.length, right.length); // lunghezza minima dell'array + piccolo
+
+		for (int i = 0; i < minLength * 2; i++) { // minLength * 2 per considerare la lunghezza a doppio
+			if (i % 2 == 0) {
+				result[i] = (left[i / 2]);
+			}
+			if (i % 2 == 1) {
+				result[i] = (right[i / 2]);
+			}
+		}
+		// per considerare la coda della lunghezza dell'array
+		int[] largest;
+		if (left.length > right.length) {
+			largest = left;
+		} else {
+			largest = right;
+		}
+		int tailSize = largest.length - minLength;
+
+		for (int i = 0; i < tailSize; i++) {
+			result[minLength * 2 + i] = largest[minLength + i];
 		}
 		return result;
 	}

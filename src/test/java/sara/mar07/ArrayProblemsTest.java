@@ -38,7 +38,7 @@ public class ArrayProblemsTest {
 		assertEquals(result, 2.0, 0.001); // si inserisce un delta 0.001 per arrotondare
 	}
 
-	// ESERCIZIO UNIONE DUE ARRAY
+				// ESERCIZIO UNIONE DUE ARRAY CON LUNGHEZZA UGUALE
 
 	@Test
 	public void MergerPlain() {
@@ -55,5 +55,24 @@ public class ArrayProblemsTest {
 		assertEquals(7, result[5]);
 
 	}
+	
+					//ESERCIZIO UNIONE ARRAY LUNGHEZZE DIVERSE
+	@Test
+	public void MergerExPlain() {
+		int[] left = { 1, 2};
+		int[] right = { 9, 8, 7, 6};
 
+		int[] result = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, result.length);
+		assertEquals(1, result[0]);
+		assertEquals(9, result[1]);
+		assertEquals(2, result[2]);
+		assertEquals(8, result[3]);
+		assertEquals(7, result[4]);
+		assertEquals(6, result[5]);
+
+	}
 }
+	
+
+
