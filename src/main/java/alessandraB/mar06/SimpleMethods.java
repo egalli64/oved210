@@ -163,4 +163,18 @@ public class SimpleMethods {
 		}
 		
 	}
+	
+	public static int[] reverseReturn(int[]data) {
+		if(data ==null|| data.length <2) {
+			return data;
+			
+		}
+		int[] result = new int[data.length];
+		for(int i = 0; i < data.length;i++)  {
+	     result[i] = data [data.length -1-i];
+		}
+		
+		return result;
+		
+	}
 }

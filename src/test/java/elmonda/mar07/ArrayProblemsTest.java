@@ -1,44 +1,41 @@
-package trainer.mar07;
+package elmonda.mar07;
 
 import static org.junit.Assert.*;
 
 import static org.hamcrest.core.Is.*;
+
 import org.junit.Test;
 
 public class ArrayProblemsTest {
 
 	@Test
-	public void sumPlain() {
+	public void test() {
 		double[] values = { 1.0, 2.1, 3.0, 4.2, 5.0 };
 		double result = ArrayProblems.sum(values);
-		assertEquals(15.3, result, 0.0001);
+		//assertThat(result, is(15.3));
+		assertEquals(result, 15.3, 0.001);
 	}
-
+		
 	@Test
 	public void sumNull() {
 		double[] values = null;
 		double result = ArrayProblems.sum(values);
 		assertThat(result, is(0.0));
+//	}
+//	
+//	@Test
+//	public void averagePlain() {
+//		double[] values = {1.0, 2.0, 3.0};
+//		double result = ArrayProblems.average(values);
+//		assertEquals(2.0, result, 0.0001);
+		
+		//fail("Not yet implemented");
 	}
-
+	
 	@Test
-	public void averagePlain() {
-		double[] values = { 1.0, 2.0, 3.0 };
-		double result = ArrayProblems.average(values);
-		assertEquals(2.0, result, 0.0001);
-	}
-
-	@Test
-	public void averageNull() {
-		double[] values = null;
-		double result = ArrayProblems.average(values);
-		assertThat(result, is(0.0));
-	}
-
-	@Test
-	public void mergerPlain() {
-		int[] left = { 1, 2, 3 };
-		int[] right = { 9, 8, 7 };
+	public void testMerger( ) {
+		int[] left = {1,2,3};
+		int[] right = {9,8,7};
 		
 		int[] result = ArrayProblems.merger(left, right);
 		assertEquals(left.length + right.length, result.length);
@@ -49,7 +46,6 @@ public class ArrayProblemsTest {
 		assertEquals(3, result[4]);
 		assertEquals(7, result[5]);
 	}
-
 	@Test
 	public void mergerExPlain() {
 		int[] left = { 1, 2, 3 };
@@ -95,3 +91,6 @@ public class ArrayProblemsTest {
 		assertEquals(4, result[5]);
 	}
 }
+
+
+
