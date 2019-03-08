@@ -1,34 +1,31 @@
 package alessandraC.mar04;
 
-
-
 public class MyLinkedList {
 	private Node head = null;
 	private Node tail = null;
 
 	public MyLinkedList() {
 	}
-	
+
 	/**
 	 * for test only, return the list head
 	 * 
 	 * @return the object head
 	 */
-	
-	Node getHead () {
-	return this.head;
+
+	Node getHead() {
+		return this.head;
 	}
-	
+
 	/**
-	 *  * for test only, return the list head
+	 * * for test only, return the list head
 	 * 
 	 * @return the object tail
 	 */
-	
-	Node getTail () {
+
+	Node getTail() {
 		return this.tail;
 	}
-	
 
 	public void addFirst(int value) {
 		Node node = new Node(value);
@@ -47,9 +44,9 @@ public class MyLinkedList {
 		} else {
 			tail.setNext(node);
 			tail = node;
-			}		
-
 		}
+
+	}
 
 	@Override
 	public String toString() {
@@ -64,16 +61,15 @@ public class MyLinkedList {
 		return result.toString();
 
 	}
-	
+
 	class Node {
-		
+
 		private int value;
 		private Node next;
 
 		public Node(int value) {
 			this.value = value;
 		}
-		
 
 		public int getValue() {
 			return value;
@@ -95,8 +91,7 @@ public class MyLinkedList {
 		public String toString() {
 			return "Node [value=" + value + ", next=" + next + "]";
 		}
-		
+
 	}
 
-	
 }

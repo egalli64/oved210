@@ -128,4 +128,11 @@ public class SimpleMethods {
 		}
 		return -1;
 	}
+	/**
+	 * "abba" -> true
+	 * "abac" -> false
+	 */
+	public static boolean isPalindrome(String s) {
+		return false;
+	}
 }
