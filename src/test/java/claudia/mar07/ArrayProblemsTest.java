@@ -1,8 +1,13 @@
 package claudia.mar07;
 
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+
 import static org.hamcrest.core.Is.*;
 import org.junit.Test;
+
+
 
 public class ArrayProblemsTest {
 
@@ -44,4 +49,35 @@ public class ArrayProblemsTest {
 		assertEquals(8, result[3]);
 		assertEquals(3, result[4]);
 		assertEquals(7, result[5]);
-}}
+}
+	
+	@Test
+	public void testMergerEx() {
+		int[]left = {1, 2};
+		int[]right = {9, 8, 7, 6};
+		int[]result = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, result.length);
+		assertEquals(1, result[0]);
+		assertEquals(9, result[1]);
+		assertEquals(2, result[2]);
+		assertEquals(8, result[3]);
+		assertEquals(7, result[4]);
+		assertEquals(6, result[5]);
+}
+	@Test
+	public void intersectionPlain() {
+		double[]left = {1.1, 4.4, 5.5};
+		double[]right = {1.1, 7.7};
+		ArrayList<Double> result = ArrayProblems.intersection(left, right);
+		assertThat(result.size(), is (1));
+		assertThat(result.get(0), is (left[0]));
+		
+	}
+	@Test
+	public void intersectionEmpty() {
+		double[]left = {1.1, 4.4, 5.5};
+		double[]right = {1.2, 7.7};
+		ArrayList<Double> result = ArrayProblems.intersection(left, right);
+		assertThat(result.size(), is (0));
+	}
+}
