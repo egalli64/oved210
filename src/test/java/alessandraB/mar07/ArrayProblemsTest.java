@@ -20,33 +20,69 @@ public class ArrayProblemsTest {
 	public void SumNull() {
 		double[] value = null;
 		double result = ArrayProblems.sum(value);
-		assertThat(result, is(0.0));
-
+		assertThat(result, is (0.0));
+		
 	}
-
 	@Test
 	public void averagePlain() {
-		double[] values = { 1.0, 2.0, 3.0 };
+		double[] values = { 1.0, 2.0, 3.0};
 		double result = ArrayProblems.average(values);
-
+		
 		assertEquals(2.0, result, 0.001);
 
-	}
-
+	} 
+	
 	@Test
 	public void testMerger() {
-		int[] left = { 1, 2, 3 };
-		int[] right = { 9, 8, 7 };
-
+		int[] left =  {1,2,3};
+		int[] right = {9,8,7};
+		
 		int[] result = ArrayProblems.merger(left, right);
+		assertEquals(left.length +right.length, result.length);
+		assertEquals(1,result[0]);
+		assertEquals(9,result[1]);
+		assertEquals(2,result[2]);
+		assertEquals(8,result[3]);
+		assertEquals(3,result[4]);
+		assertEquals(7,result[5]);
+		
+		
+	}
+	
+	@Test
+	public void testMergerEx() {
+		int[] left =  {1,2};
+		int[] right = {9,8,7,6};
+		
+		int[] result = ArrayProblems.mergerEx(left, right);
 		assertEquals(left.length + right.length, result.length);
-		assertEquals(1, result[0]);
-		assertEquals(9, result[1]);
-		assertEquals(2, result[2]);
-		assertEquals(8, result[3]);
-		assertEquals(3, result[4]);
-		assertEquals(7, result[5]);
-
+		assertEquals(1,result[0]);
+		assertEquals(9,result[1]);
+		assertEquals(2,result[2]);
+		assertEquals(8,result[3]);
+		assertEquals(7,result[4]);
+		assertEquals(6,result[5]);
+		
+		
+	}
+	
+	@Test
+	public void testMergerEx2() {
+		int[] left =  {1,2,3,4};
+		int[] right = {9,8};
+		
+		int[] result = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, result.length);
+		assertEquals(1,result[0]);
+		assertEquals(9,result[1]);
+		assertEquals(2,result[2]);
+		assertEquals(8,result[3]);
+		assertEquals(3,result[4]);
+		assertEquals(4,result[5]);
+		
+		
+	}
+	
+	
 	}
 
-}
