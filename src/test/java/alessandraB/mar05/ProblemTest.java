@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import alessandraB.mar06.SimpleMethods;
+
 public class ProblemTest {
 
 	@Test
@@ -20,4 +22,5 @@ public class ProblemTest {
 		int [] data = new int [] {1,2,3,4,3,2,1};
 		assertTrue(Problem.isEven(2));
 	}
+	
 }
