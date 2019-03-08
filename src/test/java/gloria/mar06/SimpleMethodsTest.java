@@ -6,9 +6,11 @@ import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 public class SimpleMethodsTest {
+
 	/**
 	 * ISUPPER
 	 */
+
 	@Test
 	public void isUpperA() {
 		assertTrue(SimpleMethods.isUpper('A')); // devo prima richiamare il nome della mia classe
@@ -28,6 +30,7 @@ public class SimpleMethodsTest {
 	/**
 	 * ISALPHA
 	 */
+
 	@Test
 	public void isAlphaAlphabeticChar() {
 		assertTrue(SimpleMethods.isAlpha('A'));
@@ -51,6 +54,7 @@ public class SimpleMethodsTest {
 	/**
 	 * TOUPPER
 	 */
+
 	@Test
 	public void toUpperA() {
 		assertThat(SimpleMethods.toUpper('A'), is('A'));
@@ -69,6 +73,7 @@ public class SimpleMethodsTest {
 	/**
 	 * SMALLEST
 	 */
+
 	@Test
 	public void smallestNull() {
 		int[] data = null;
@@ -84,6 +89,7 @@ public class SimpleMethodsTest {
 	/**
 	 * FirstSmallestIndex
 	 */
+
 	@Test
 	public void firstsmallestIndexEmpty() {
 		int[] data = {};
@@ -173,5 +179,98 @@ public class SimpleMethodsTest {
 		int[] data = { 1, 2, 3 };
 		int target = 7;
 		assertEquals(-1, SimpleMethods.findPos(data, target));
+	}
+
+	/**
+	 * Palindrome
+	 */
+
+	@Test
+	public void isPalindromeEvenPositive() {
+		assertTrue(SimpleMethods.isPalindrome("abba"));
+	}
+
+	@Test
+	public void isPalindromeEvenNegative() {
+		assertFalse(SimpleMethods.isPalindrome("abab"));
+	}
+
+	@Test
+	public void isPalindromeEvenOddPositive() {
+		assertTrue(SimpleMethods.isPalindrome("aba"));
+	}
+
+	@Test
+	public void isPalindromeEvenOddNegative() {
+		assertFalse(SimpleMethods.isPalindrome("aab"));
+	}
+
+	@Test
+	public void isPalindromeEvenNull() {
+		assertFalse(SimpleMethods.isPalindrome(null));
+	}
+
+	@Test
+	public void isPalindromeEvenEmpty() {
+		assertTrue(SimpleMethods.isPalindrome(""));
+	}
+
+	/**
+	 * reverse
+	 */
+	@Test
+	public void reverseSimple() {
+		int[] data = { 1, 2, 3 };
+		SimpleMethods.reverse(data);
+
+		assertThat(data.length, is(3));
+		assertThat(data[0], is(3));
+		assertThat(data[1], is(2));
+		assertThat(data[2], is(1));
+	}
+
+	@Test
+	public void reverseNull() {
+		int[] data = null;
+		SimpleMethods.reverse(data);
+		assertNull(data);
+
+	}
+
+	@Test
+	public void reverseEmpty() {
+		int[] data = {};
+		SimpleMethods.reverse(data);
+		assertThat(data.length, is(0));
+
+	}
+
+	@Test
+	public void reverseReturnPlain() {
+		int[] data = { 1, 2, 3};
+		int[] reverted = SimpleMethods.reverseReturn(data);
+
+		assertThat(reverted.length, is(data.length));
+		assertThat(reverted[0], is(data[2]));
+		assertThat(reverted[1], is(data[1]));
+		assertThat(reverted[2], is(data[0]));
+		
+		assertThat(reverted.length, is(data.length));
+		for (int i = 0; i < data.length; i++) {
+			assertThat(reverted[i], is(data[data.length - 1 - i]));
+
+		}
+
+//		@Test
+//		public void reverse5() {
+//			int[] data = {1, 2, 3, 4, 5};
+//			
+//			assertThat(data.length, is(5));
+//			assertThat(data[0], is(5));
+//			assertThat(data[1], is(4));
+//			assertThat(data[2], is(3));
+//			assertThat(data[0], is(2));
+//			assertThat(data[0], is(1));
+//		}
 	}
 }
