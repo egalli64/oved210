@@ -1,6 +1,7 @@
 package marina.mar07;
 
 import static org.junit.Assert.*;
+
 import static org.hamcrest.core.Is.*;
 
 import org.junit.Test;
