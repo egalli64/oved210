@@ -38,12 +38,39 @@ public class ArrayListProblems {
 
 	public static void removeDuplicates(ArrayList<String> data) {
 		for (int i = 0; i < data.size() - 1; i++) {
-			for (int j = i + 1; j < data.size(); j++) {
-				if (data.get(i) == data.get(j)) {
+			String s = data.get(i);
+			for (int j = data.size() - 1; j > i; j--) {
+				String t = data.get(j);
+				if (s.equals(t)) {
 					data.remove(j);
 				}
 			}
 		}
+	}
+
+	/**
+	 * given n-1 values in [1,n], return the missing value
+	 * 
+	 * {1,3}-->2 {1,3,5,7,9,8,6,2} --> 4
+	 */
+
+	public static int missingValue(int[] data) {
+
+		for (int i = 1; i <= data.length + 1; i++) {
+			boolean found = false;
+			for (int j = 0; j < data.length; j++) {
+				if (data[j] == i) {
+					found = true;
+					break;
+				}
+			}
+
+			if (found == false) {
+				return i;
+			}
+		}
+		return 0;
+
 	}
 
 }
