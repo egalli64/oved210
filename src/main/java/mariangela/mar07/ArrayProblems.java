@@ -70,12 +70,55 @@ public class ArrayProblems {
 
 				result[i] = right[i / 2];
 			}
-			
+
 //			result [i] = i%2 == 0 ? left[i/2] : right [i/2];
 		}
 
 		return result;
 
+	}
+
+	/**
+	 * Merge the two passed arrays alternating elements (when possible)
+	 * 
+	 * <pre>
+	 *{1, 2}, {9, 8, 7, 6} -> {1, 9, 2, 8, 7, 6}
+	 * </pre>
+	 * 
+	 * @param left  an int array
+	 * @param right another int array
+	 * @return the merge of the two input arrays
+	 */
+	public static int[] mergerEx(int[] left, int[] right) {
+
+		int results[] = new int[left.length + right.length];
+
+		int minLength = Math.min(left.length, right.length);
+
+		for (int i = 0; i < minLength * 2; i++) {
+
+			if (i % 2 == 0) {
+				results[i] = left[i / 2];
+
+			} else {
+
+				results[i] = right[i / 2];
+			}
+		}
+		int[] largest;
+		if (left.length > right.length) {
+			largest = left;
+		} else {
+			largest = right;
+		}
+		int tailSize = largest.length - minLength;
+		for (int i = 0; i < tailSize; i++) {
+
+			results[minLength * 2 + i] = largest[minLength + i];
+
+		}
+
+		return results;
 	}
 
 }
