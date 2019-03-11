@@ -53,10 +53,20 @@ public class ArrayListProblemsTest {
 
 		}
 		ArrayListProblems.removeDuplicates(data);
-		//assertThat(data.size(), is(1));
+		// assertThat(data.size(), is(1));
 		assertEquals(1, data.size());
-		assertThat(data.get(0), is ("aa"));
-		assertEquals("aa",data.get(0));
+		assertThat(data.get(0), is("aa"));
+		assertEquals("aa", data.get(0));
 
 	}
+
+	@Test
+	public void missingValue() {
+
+		int[] data = { 1, 2, 3, 5, 6, 7 };
+		int result = ArrayListProblems.missingValue(data);
+        
+		assertEquals(4, result);
+	}
+
 }
