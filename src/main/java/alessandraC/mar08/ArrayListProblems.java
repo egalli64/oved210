@@ -1,9 +1,12 @@
 package alessandraC.mar08;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+
 
 public class ArrayListProblems {
+
+	private static int value;
 
 	/**
 	 * Doubles contained in both input arrays;
@@ -19,7 +22,7 @@ public class ArrayListProblems {
 	 */
 
 	public static ArrayList<Double> intersection(double[] left, double[] right) {
-		ArrayList<Double> results = new ArrayList();
+		ArrayList<Double> results = new ArrayList<Double>();
 		for (int i = 0; i < left.length; i++) {
 			for (int j = 0; j < right.length; j++) {
 				if (left[i] == right[j]) {
@@ -56,22 +59,74 @@ public class ArrayListProblems {
 					data.remove(j);
 				}
 			}
-			}
-			
-			/**
-			 * Given n -1 values in [1, n], return the missing value;
-			 * 
-			 * <pre>
-			 * {1, 3} -> 2
-			 * {1, 3, 5, 7, 9, 8, 6, 2} -> 4
-			 * </pre>
-			 * 
-			 */
-			
-			
-			 
-
 		}
 	}
 
+	/**
+	 * Given n -1 values in [1, n], return the missing value;
+	 * 
+	 * <pre>
+	 * {1, 3} -> 2
+	 * {1, 3, 5, 7, 9, 8, 6, 2} -> 4
+	 * </pre>
+	 * 
+	 * @param k
+	 * 
+	 */
 
+	public static int missingValue(int[] data) {
+		for (int k = 1; k <= data.length + 1; k++) {
+			boolean found = false;
+
+			for (int j = 0; j < data.length; j++) {
+
+				if (value == k) {
+					found = true;
+					break;
+
+				}
+
+				if (found = false) {
+					return k;
+
+				}
+
+				throw new IllegalStateException();
+
+			}
+		}
+		return 0;
+	}
+
+	public static int missingValueBySorting(int[] data) {
+
+		Arrays.sort(data);
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] != i + 1) {
+				return i + 1;
+			}
+		}
+
+		return 0;
+	}
+
+	public static int missingValueLinear(int[] data) {
+		boolean[] flags = new boolean[data.length + 1];
+
+		for (int i = 0; i < data.length; i++) {
+			flags[data[i] - 1] = true;
+		}
+
+		for (int i = 0; i < flags.length; i++) {
+			if (flags[i] == false) {
+				return i + 1;
+			}
+
+		}
+
+		return 0;
+
+	}
+
+}

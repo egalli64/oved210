@@ -5,11 +5,13 @@ import static org.hamcrest.core.Is.*;
 
 import org.junit.Test;
 
+import trainer.mar06.SimpleMethods;
+
 public class SimpleMethodsTest {
 
 	@Test
 	public void IsUpperA() {
-		assertFalse(SimpleMethods.isUpper('A'));
+		assertTrue(SimpleMethods.isUpper('A'));
 	}
 
 	@Test
@@ -70,25 +72,25 @@ public class SimpleMethodsTest {
 	public void SmallestEmpty() {
 		int[] data = {};
 		assertThat(SimpleMethods.smallest(data), is(Integer.MAX_VALUE));
-	}
-
-	@Test
-	public void SmallestIndexPlain() {
-		int[] data = { 1, 2, 5, -7 };
-		assertThat(SimpleMethods.smallest(data), is(3));
 
 	}
 
 	@Test
-	public void SmallestIndexNull() {
+	public void firstSmallestIndexNull() {
 		int[] data = null;
-		assertThat(SimpleMethods.smallest(data), is(-1));
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
 	}
 
 	@Test
-	public void SmallestIndexEmpty() {
+	public void firstSmallestIndexEmpty() {
 		int[] data = {};
-		assertThat(SimpleMethods.smallest(data), is(-1));
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void firstSmallestIndexPlain() {
+		int[] data = { 1, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(3));
 	}
 
 	@Test
@@ -96,6 +98,30 @@ public class SimpleMethodsTest {
 		int[] data = { 1, 2, 3 };
 		int target = 2;
 		assertTrue(SimpleMethods.find(data, target));
+	}
+
+	@Test
+	public void firstSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.firstSmallestIndex(data), is(0));
+	}
+
+	@Test
+	public void lastSmallestIndexNull() {
+		int[] data = null;
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void lastSmallestIndexEmpty() {
+		int[] data = {};
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(-1));
+	}
+
+	@Test
+	public void lastSmallestIndexDouble() {
+		int[] data = { -7, 2, 5, -7 };
+		assertThat(SimpleMethods.lastSmallestIndex(data), is(3));
 	}
 
 	@Test
@@ -109,7 +135,7 @@ public class SimpleMethodsTest {
 	public void findPosPositive() {
 		int[] data = { 1, 2, 3 };
 		int target = 2;
-		assertEquals(1, SimpleMethods.findPos(data, target));
+		assertTrue(SimpleMethods.find(data, target));
 	}
 
 	@Test
@@ -151,15 +177,14 @@ public class SimpleMethodsTest {
 		int[] reverted = SimpleMethods.reverseReturn(data);
 
 		assertThat(reverted.length, is(data.length));
-		for (int i = 0; i < data.length; i++){
-			assertThat(reverted[i], is(data[data.length - 1 - i]));			
+		for (int i = 0; i < reverted.length; i++) {
+			assertThat(reverted[i], is(data[data.length - 1 - i]));
 		}
-
-//		assertThat(reverted[0], is(data[4]));
-//		assertThat(reverted[1], is(data[3]));
-//		assertThat(reverted[2], is(data[2]));
-//		assertThat(reverted[3], is(data[1]));
-//		assertThat(reverted[4], is(data[0]));
+//		assertThat(reverted[0], is(data[4]));		
+//		assertThat(reverted[1], is(data[3]));		
+//		assertThat(reverted[2], is(data[2]));		
+//		assertThat(reverted[3], is(data[1]));		
+//		assertThat(reverted[4], is(data[0]));		
 
 	}
 

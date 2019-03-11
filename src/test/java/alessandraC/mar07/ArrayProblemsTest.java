@@ -2,7 +2,11 @@ package alessandraC.mar07;
 
 import static org.junit.Assert.*;
 
+import org.hamcrest.Matcher;
+import static org.hamcrest.core.Is.*;
 import org.junit.Test;
+
+import alessandraC.mar08.ArrayListProblems;
 
 public class ArrayProblemsTest {
 
@@ -61,4 +65,53 @@ public class ArrayProblemsTest {
 		int result = ArrayProblems.merger(left, right);
 
 	}
+
+	@Test
+	public void missingValue2in3() {
+		int[] data = { 1, 3 };
+
+		int missing = ArrayListProblems.missingValue(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValue4in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 2 };
+
+		int missing = ArrayListProblems.missingValue(data);
+		assertThat(missing, is(4));
+	}
+
+	@Test
+	public void missingValueSort2in3() {
+		int[] data = { 1, 3 };
+
+		int missing = ArrayListProblems.missingValueBySorting(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValueSort4in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 2 };
+
+		int missing = ArrayListProblems.missingValueBySorting(data);
+		assertThat(missing, is(4));
+	}
+	
+	@Test
+	public void missingValueLinear2in3() {
+		int[] data = { 1, 3 };
+
+		int missing = ArrayListProblems.missingValueLinear(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValueLinear4in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 2 };
+
+		int missing = ArrayListProblems.missingValueLinear(data);
+		assertThat(missing, is(4));
+	}
+
 }

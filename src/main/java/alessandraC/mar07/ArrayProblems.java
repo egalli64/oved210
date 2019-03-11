@@ -109,4 +109,15 @@ public class ArrayProblems {
 		}
 		return results;
 	}
+
+	public static Object missing1(Object results) {
+		
+		return null;
+	}
+
+	public static Object missing(Object results) {
+
+
+		return null;
+	}
 }
