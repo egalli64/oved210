@@ -2,6 +2,7 @@ package sara.mar08;
 
 import static org.junit.Assert.*;
 
+
 import java.util.ArrayList;
 
 import static org.hamcrest.core.Is.*;
@@ -44,4 +45,12 @@ public class ArrayListProblemsTest {
 		assertThat(data.get(0), is(raw[0]));
 		assertThat(data.get(1), is(raw[1]));
 	}
+	
+	@Test
+	public void missingValue4in9() {
+		int [] data = {1,3,5,7,9,8,6,2};
+		int missing = ArrayListProblems.missingValue(data);
+		assertEquals(4, missing); 
+	}
+	
 }
