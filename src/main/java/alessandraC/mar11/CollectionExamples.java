@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class CollectionExamples {
 	public static void checkArrayList() {
-		ArrayList<String> myStrings = new ArrayList<String>();
+		ArrayList<String> myStrings = new ArrayList();
 
 		myStrings.add("Hello");
 		myStrings.add(0, "First");
