@@ -59,4 +59,53 @@ public class ArrayListProblemsTest {
 //		assertThat(data.get(0), is("aa"));		
 //}
 	}
+
+	@Test
+	public void MissingValue() {
+		int[] data = { 3, 5, 1, 4 };
+		int missing = ArrayListProblems.missingValue(data);
+
+		assertThat(missing, is(2));
+//		assertEquals(2, missing);  è la stessa cosa dell'equals
+	}
+
+	@Test
+	public void missingValue2in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 4 };
+
+		int missing = ArrayListProblems.missingValue(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValueSort2in3() {
+		int[] data = { 1, 3 };
+
+		int missing = ArrayListProblems.missingValueBySorting(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValueSort4in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 2 };
+
+		int missing = ArrayListProblems.missingValueBySorting(data);
+		assertThat(missing, is(4));
+	}
+
+	@Test
+	public void missingValueLinear2in3() {
+		int[] data = { 1, 3 };
+
+		int missing = ArrayListProblems.missingValueLinear(data);
+		assertThat(missing, is(2));
+	}
+
+	@Test
+	public void missingValueLinear4in9() {
+		int[] data = { 1, 3, 5, 7, 9, 8, 6, 2 };
+
+		int missing = ArrayListProblems.missingValueLinear(data);
+		assertThat(missing, is(4));
+	}
 }
