@@ -2,7 +2,7 @@ package tiziana.mar08;
 
 import java.util.ArrayList;
 
-public class ArrayListProblem {
+public class ArrayListProblems {
 
 	/**
 	 * Doubles contained in both input arrays
