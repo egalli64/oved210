@@ -49,7 +49,7 @@ public class ArrayListProblems {
 			}
 		}
 	}
-	
+
 	/**
 	 * Given n-1 values in [1, n], return the missing value
 	 * 
@@ -58,10 +58,21 @@ public class ArrayListProblems {
 	 * {1,3,5,7,9,8,6,2} -> 4
 	 * </pre>
 	 */
-	
-	public static void missingValue(int[] data) {
-		
+
+	public static int missingValue(int[] data) {
+
+		for (int i = 1; i <= data.length + 1; i++) { // questo for guarda tutta la serie naturale n+1
+			boolean found = false; // inizialmente asseriamo che non ci sia il mancante
+			for (int j = 0; j < data.length; j++) { // per evitare di avere troppi indici : for (int value: data)
+				if (data[j] == i) {
+					found = true; // trovato il mancante
+					break; // smettere di loopare
+				}
+			}
+			if (found == false) {
+				return i;
+			}
+		}
+		return 0;
 	}
-	
-	
 }
