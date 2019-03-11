@@ -1,6 +1,8 @@
 package sara.mar06;
 
 public class SimpleMethods {
+
+						// ESERCIZIO 1
 	/**
 	 * input: char c output: true if c is an uppercase character ('A') false
 	 * otherwise ('h')
@@ -16,6 +18,7 @@ public class SimpleMethods {
 		return false;
 	}
 
+						// ESERCIZIO 2
 	/**
 	 * input: char c output: true if c is an alphabetic character ('A', 'c') false
 	 * otherwise ('6,')')
@@ -28,6 +31,7 @@ public class SimpleMethods {
 		return false;
 	}
 
+						// ESERCIZIO 3
 	/**
 	 * input: char c output: char converted to uppercase 'x' --> 'X'
 	 */
@@ -42,6 +46,7 @@ public class SimpleMethods {
 
 	}
 
+					// ESERCIZIO 4
 	/**
 	 * input: int[] data output: smallest element
 	 * 
@@ -53,6 +58,7 @@ public class SimpleMethods {
 
 		}
 		int currentMinimum = data[0];
+
 		for (int i = 1; i < data.length; i++) {
 			if (data[i] < currentMinimum) {
 				currentMinimum = data[i];
@@ -62,6 +68,7 @@ public class SimpleMethods {
 		return currentMinimum;
 	}
 
+	// ESERCIZIO 5
 	/**
 	 * input: int[] data output: smallest element
 	 * 
@@ -81,6 +88,7 @@ public class SimpleMethods {
 
 	}
 
+	// ESERCIZIO 6
 	public static int lastSmallestIndex(int[] data) {
 
 		if (data == null || data.length == 0) {
@@ -96,6 +104,7 @@ public class SimpleMethods {
 		return currentLastIndex;
 	}
 
+	// ESERCIZIO 7
 	/**
 	 * {1, 2, 3}, 2 -> true {1, 2, 3}, 7 -> false
 	 */
@@ -113,14 +122,13 @@ public class SimpleMethods {
 		return false;
 	}
 
+	// ESERCIZIO 8
 
-	
 	/**
-	 * {1, 2, 3}, 2 -> 1
-	 * {1, 2, 3}, 7 -> -1
+	 * {1, 2, 3}, 2 -> 1 {1, 2, 3}, 7 -> -1
 	 */
 	public static int findIndex(int[] data, int target) {
-		
+
 		if (data == null || data.length == 0) {
 			return 1;
 		}
@@ -132,6 +140,82 @@ public class SimpleMethods {
 			}
 		}
 		return -1;
-}
-}
+	}
 
+	// ESERCIZIO 9
+	/**
+	 * isPAlindrome() checks if a String is a palindrome if the passed String is
+	 * null , return false otherwise return true only if the string is a palindrome
+	 * 
+	 * for example: "abba" -> true "abac" -> false
+	 * 
+	 * @param s the string to be checked if palindrome
+	 * @return true only if the input is a palindrome
+	 * 
+	 */
+
+	public static boolean isPalindrome(String s) {
+
+		if (s == null) {
+
+			return false;
+		}
+
+		if (s.length() < 2) { // la stringa con un solo carattere è un palindromo
+			return true;
+		}
+
+		int left = 0;
+		int right = s.length() - 1;
+
+		for (; left < right; left++, right--) {
+			if (s.charAt(left) != s.charAt(right)) {
+
+				return false;
+			}
+		}
+		return true;
+	}
+
+	// ESERCIZIO 10
+	/**
+	 * {1, 2, 3} -> {3, 2, 1}
+	 * 
+	 */
+
+	public static int[] reverseReturn(int[] data) {
+
+		if (data == null || data.length == 0) {
+			return data;
+		}
+
+		int[] result = new int[data.length];
+
+		for (int i = 0; i < result.length; i++) {
+
+			result[i] = data[data.length - 1 - i]; //nel primo elemento di result mettiamo l'ultimo di data
+		}											//mettendo -1 fa il giro, penultimo ecc
+		return result;														
+	}
+
+	// ESERCIZIO 11
+
+	public static void reverse(int[] data) {
+
+		if (data == null || data.length == 0) {
+			return;
+		}
+
+		// per fare swap
+
+		int left = 0;
+		int right = data.length - 1;
+
+		for (; left < right; left++, right--) {
+			int temp = data[left];
+			data[left] = data[right];
+			data[right] = data[left];
+			data[right] = temp;
+		}
+	}
+}
