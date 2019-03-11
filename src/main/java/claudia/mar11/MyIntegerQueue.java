@@ -16,7 +16,7 @@ public class MyIntegerQueue {
 		return 0;
 	}
 	public boolean isEmpty() {
-		return false;
+		return true;
 	}
 	public LinkedList<Integer> getData() {
 		
