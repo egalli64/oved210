@@ -50,5 +50,49 @@ public class ArrayProblemsTest {
 		assertEquals(8, result[3]);
 		assertEquals(3, result[4]);
 		assertEquals(7, result[5]);
+
+	}
+
+	@Test
+	public void mergerExFirst() {
+		int[] left = { 1, 2 };
+		int[] right = { 9, 8, 7, 6 };
+		int[] results = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, results.length);
+		assertEquals(1, results[0]);
+		assertEquals(9, results[1]);
+		assertEquals(2, results[2]);
+		assertEquals(8, results[3]);
+		assertEquals(7, results[4]);
+		assertEquals(6, results[5]);
+	}
+
+	@Test
+	public void mergerExEqual() {
+		int[] left = { 1, 2, 3 };
+		int[] right = { 9, 8, 7 };
+		int[] result = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, result.length);
+		assertEquals(1, result[0]);
+		assertEquals(9, result[1]);
+		assertEquals(2, result[2]);
+		assertEquals(8, result[3]);
+		assertEquals(3, result[4]);
+		assertEquals(7, result[5]);
+
+	}
+
+	@Test
+	public void mergerExSecond() {
+		int[] left = { 1, 2, 3, 4 };
+		int[] right = { 9, 8 };
+		int[] result = ArrayProblems.mergerEx(left, right);
+		assertEquals(left.length + right.length, result.length);
+		assertEquals(1, result[0]);
+		assertEquals(9, result[1]);
+		assertEquals(2, result[2]);
+		assertEquals(8, result[3]);
+		assertEquals(3, result[4]);
+		assertEquals(4, result[5]);
 	}
 }
