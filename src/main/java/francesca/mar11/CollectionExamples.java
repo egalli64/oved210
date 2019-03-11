@@ -2,22 +2,24 @@ package francesca.mar11;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class CollectionExamples {
 	public static void checkArrayList() {
-		ArrayList<String> myStrings = new ArrayList<>();
+		List<String> myStrings = new LinkedList<>();
 		
 		myStrings.add("Hello");
 		myStrings.add(0, "First");
 		System.out.println(myStrings);
 		
-		ArrayList<String> al2 = new ArrayList<>();
+		List<String> al2 = new LinkedList<>();
 		al2.addAll(myStrings);
 		al2.clear();
 		System.out.println(myStrings + ", " + al2);
 
-		ArrayList<String> al3 = new ArrayList<>(myStrings);
+		List<String> al3 = new LinkedList<>(myStrings);
 		boolean al3HasFirst = al3.contains("First");
 		System.out.println(al3HasFirst);
 
@@ -47,8 +49,8 @@ public class CollectionExamples {
 	
 	}
 	
-	public static void main(String[] args) {
-		checkArrayList();
+	public static void  checkArrayList1() {
+		ArrayList<String> myStrings =new ArrayList<>();
 	}
 }
 
