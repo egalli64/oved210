@@ -15,7 +15,7 @@ public class MyIntegerStack {
 	 * 
 	 * @return data
 	 */
-	ArrayList<Integer> getData() {
+	public ArrayList<Integer> getData() {
 		return this.data;
 	}
 
@@ -24,6 +24,10 @@ public class MyIntegerStack {
 	}
 
 	public Integer pop() {
+
+		if (data.isEmpty()) {
+			throw new IllegalAccessError("Can't pop() an empty stack");
+		}
 		return data.remove(data.size() - 1);
 	}
 
