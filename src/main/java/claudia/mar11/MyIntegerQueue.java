@@ -19,7 +19,7 @@ public class MyIntegerQueue {
 		return false;
 	}
 	public LinkedList<Integer> getData() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return data;
 	}
 }
