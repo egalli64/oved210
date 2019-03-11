@@ -1,6 +1,7 @@
 package sara.mar08;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayListProblems {
 
@@ -58,7 +59,8 @@ public class ArrayListProblems {
 	 * {1,3,5,7,9,8,6,2} -> 4
 	 * </pre>
 	 */
-
+	
+	//ESERCIZIO MISSING VALUE
 	public static int missingValue(int[] data) {
 
 		for (int i = 1; i <= data.length + 1; i++) { // questo for guarda tutta la serie naturale n+1
@@ -71,6 +73,32 @@ public class ArrayListProblems {
 			}
 			if (found == false) {
 				return i;
+			}
+		}
+		return 0;
+	}
+
+	
+//ESERCIZIO MISSING VALUE BY SORTING
+	public static int missingValueBySorting(int[] data) {
+		Arrays.sort(data);
+		for (int i = 0; i <= data.length; i++) {
+			if (data[i] != (i + 1)) {
+				return i + 1;
+			}
+		}
+		return 0;
+	}
+
+//ESERCIZIO MISSING VALUE LINEAR
+	public static int missingValueLinear(int[] data) {
+		boolean[] flags = new boolean[data.length + 1];
+		for (int i = 0; i < data.length; i++) {
+			flags[data[i] - 1] = true;
+		}
+		for (int i = 0; i < flags.length; i++) {
+			if (flags[i] == false) {
+				return i + 1;
 			}
 		}
 		return 0;
