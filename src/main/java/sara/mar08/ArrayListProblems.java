@@ -1,6 +1,7 @@
 package sara.mar08;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayListProblems {
 
@@ -49,7 +50,7 @@ public class ArrayListProblems {
 			}
 		}
 	}
-	
+
 	/**
 	 * Given n-1 values in [1, n], return the missing value
 	 * 
@@ -59,9 +60,47 @@ public class ArrayListProblems {
 	 * </pre>
 	 */
 	
-	public static void missingValue(int[] data) {
-		
+	//ESERCIZIO MISSING VALUE
+	public static int missingValue(int[] data) {
+
+		for (int i = 1; i <= data.length + 1; i++) { // questo for guarda tutta la serie naturale n+1
+			boolean found = false; // inizialmente asseriamo che non ci sia il mancante
+			for (int j = 0; j < data.length; j++) { // per evitare di avere troppi indici : for (int value: data)
+				if (data[j] == i) {
+					found = true; // trovato il mancante
+					break; // smettere di loopare
+				}
+			}
+			if (found == false) {
+				return i;
+			}
+		}
+		return 0;
 	}
+
 	
-	
+//ESERCIZIO MISSING VALUE BY SORTING
+	public static int missingValueBySorting(int[] data) {
+		Arrays.sort(data);
+		for (int i = 0; i <= data.length; i++) {
+			if (data[i] != (i + 1)) {
+				return i + 1;
+			}
+		}
+		return 0;
+	}
+
+//ESERCIZIO MISSING VALUE LINEAR
+	public static int missingValueLinear(int[] data) {
+		boolean[] flags = new boolean[data.length + 1];
+		for (int i = 0; i < data.length; i++) {
+			flags[data[i] - 1] = true;
+		}
+		for (int i = 0; i < flags.length; i++) {
+			if (flags[i] == false) {
+				return i + 1;
+			}
+		}
+		return 0;
+	}
 }

@@ -2,7 +2,8 @@ package marina.mar04;
 
 public class Problem {
 	/*
-	 * in: [1, 1, 2] out:2 in: [-1027, 12, -1027,12, 42] out:42
+	 * in: [1, 1, 2] out:2 
+	 * in: [-1027, 12, -1027,12, 42] out:42
 	 * 
 	 */
 
