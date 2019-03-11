@@ -162,20 +162,73 @@ public class SimpleMethods {
 		return -1;
 	}
 
-	
 	/**
-	 * "abba" -> true
-	 * "abbab" -> false
+	 * 
+	 * Checks if a string is a palindrome If the passed string is null, return
+	 * false. otherwise return true only if a string is a palindrome
+	 * 
+	 * For example:
+	 * 
+	 * "abba" -> true "abac" -> false
+	 * 
+	 * @param s the string to be checked if palindrome
+	 * @return true only if the input is a palindrome
+	 * 
+	 * @author my name
+	 * 
 	 */
+
 	public static boolean isPalindrome(String s) {
+		if (s == null || s.length() == 0) {
+			return false;
+		}
+
+		if (s.length() < 2) {
+			return true;
+		}
+
+//		int left = 0;
+//		int right = s.length() - 1;
+
+		for (int left = 0, right = s.length() - 1; left < right; left++, right--) {
+			if (s.charAt(left) == s.charAt(right)) {
+				return true;
+			}
+		}
 		return false;
+
 	}
-	
 
+	/*
+	 * {1, 2, 3} -> {3, 2 ,1} ribaltare il contenuto di data
+	 */
 
+	public static void reverse(int[] data) {
+
+		if (data == null || data.length < 2) {
+			return;
+		}
+		int left = 0;
+		int right = data.length - 1;
+
+		for (; left < right; left++, right--) {
+			int temp = data[left];
+			data[left] = data[right];
+			data[right] = temp;
+		}
+	}
+
+	public static int[] reverseReturn(int[] data) {
+		if (data == null || data.length < 2) {
+			return data;
+		}
+
+		int[] result = new int[data.length];
+
+		for (int i = 0; i < result.length; i++) {
+			result[i] = data[data.length - 1 - i];
+		}
+		return result;
+	}
 
 }
-
-
-
-
