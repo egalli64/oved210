@@ -2,7 +2,7 @@ package tiziana;
 
 import trainer.Box;
 
-public class boxuser {
+public class Boxuser {
 	public static void main(String[] args) {
 		
 		System.out.println("How many boxes?"+Box.getCounter());
