@@ -1,4 +1,4 @@
-package alessandraC.mar11;
+package tiziana.mar11;
 
 import java.util.ArrayList;
 
@@ -13,31 +13,32 @@ public class MyIntegerStack {
 	/**
 	 * For debugging and testing purpose only!
 	 * 
+	 * 
 	 * @return data
 	 */
-	public ArrayList<Integer> getData() {
+
+	ArrayList<Integer> getData() {
 		return this.data;
 	}
 
 	public void push(Integer value) {
 		data.add(value);
+
 	}
 
 	public Integer pop() {
-
-		if (data.isEmpty()) {
-			throw new IllegalAccessError("Can't pop() an empty stack");
+		if (data.size() == 0) {
+			throw new IllegalAccessError();
 		}
 		return data.remove(data.size() - 1);
+
 	}
 
 	public boolean isEmpty() {
-		if (data.isEmpty()) {
-
+		if (data.size() == 0) {
 			return true;
 		}
-
 		return false;
-	}
 
+	}
 }
