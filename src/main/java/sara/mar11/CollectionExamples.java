@@ -1,4 +1,4 @@
-package trainer.mar11;
+package sara.mar11;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -14,7 +14,7 @@ public class CollectionExamples {
 		ArrayList<String> al2 = new ArrayList<>();
 		al2.addAll(myStrings);
 		al2.clear();
-		System.out.println(myStrings + ", " + al2);
+		System.out.println(myStrings + "," + al2);
 
 		ArrayList<String> al3 = new ArrayList<>(myStrings);
 		boolean al3HasFirst = al3.contains("First");
@@ -23,7 +23,6 @@ public class CollectionExamples {
 		al3.add("another one");
 		System.out.println(al3);
 		boolean al3ContainsMyStrings = al3.containsAll(myStrings);
-		System.out.println(al3ContainsMyStrings);
 
 		for (int i = 0; i < al3.size(); i++) {
 			System.out.println(al3.get(i));
@@ -44,9 +43,10 @@ public class CollectionExamples {
 		
 		al3.remove(0);
 		System.out.println(al3);
+		
+		}
+		
+
 	}
 
-	public static void main(String[] args) {
-		checkArrayList();
-	}
-}
+
