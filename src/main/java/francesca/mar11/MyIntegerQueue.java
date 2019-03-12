@@ -18,15 +18,19 @@ public class MyIntegerQueue {
 	}
 	
 	public void enqueue(Integer value) {
+		data.addLast(value); //mettimelo in fondo
 		
 	}
 	
 	public Integer dequeue() {
-		return 0;
+		if (data.isEmpty()) {
+			throw new IllegalAccessError("Can't dequeue() an empty queue");
+		}
+		return data.pollFirst();
 	}
 	
 	public boolean isEmpty() {
-		return true;
+		return data.isEmpty();
 	}
 }
 
