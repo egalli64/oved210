@@ -39,4 +39,22 @@ public class HashExercisesTest {
 		HashSet<Integer> results = HashExercises.intersection(left, right);
 		assertThat(results.size(), is(0));
 	}
+	@Test
+	public void differencePlain() {
+		HashSet<Integer> left = new HashSet<Integer>(
+				Arrays.asList(1, 2, 3));
+		HashSet<Integer> right = new HashSet<Integer>(
+				Arrays.asList(2, 3, 4));
+
+//		HashSet<Integer> left = new HashSet<Integer>();
+//		left.add(1);
+//		left.add(2);
+//		left.add(3);
+		
+		HashSet<Integer> results = HashExercises.intersection(left, right);
+		assertThat(results.size(), is(1));
+		assertTrue(results.contains(1));		
+				
+	}
 }
+

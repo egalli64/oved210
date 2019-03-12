@@ -28,6 +28,11 @@ public class HashExercises {
 	}
 	public static HashSet<Integer> difference(HashSet<Integer> left, HashSet<Integer> right) {
 		HashSet<Integer> result = new HashSet<>();
+		for (Integer value : left) {
+			if (!right.contains(value)) {
+				result.add(value);
+			}
+		}
 		return result;
 }
 }
