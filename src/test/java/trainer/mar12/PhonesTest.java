@@ -12,7 +12,7 @@ public class PhonesTest {
 	@Test
 	public void getNumber() {
 		Phones phones = new Phones();
-		phones.getPhones().put("User", 42);
+		phones.getPhonesByName().put("User", 42);
 
 		assertThat(phones.getNumber("User"), is(42));
 	}
@@ -20,7 +20,8 @@ public class PhonesTest {
 	@Test
 	public void getName() {
 		Phones phones = new Phones();
-		phones.getPhones().put("User", 42);
+		phones.getPhonesByName().put("User", 42);
+		phones.getPhonesByNumber().put(42, "User");
 
 		assertThat(phones.getName(42), is("User"));
 	}
@@ -30,7 +31,7 @@ public class PhonesTest {
 		Phones phones = new Phones();
 		phones.put("User", 42);
 
-		HashMap<String, Integer> data = phones.getPhones();
+		HashMap<String, Integer> data = phones.getPhonesByName();
 		assertThat(data.get("User"), is(42));
 	}
 }
