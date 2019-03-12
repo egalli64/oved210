@@ -1,13 +1,13 @@
-package alessandraC.mar11;
+package marina.mar11;
 
 import java.util.ArrayList;
 
 public class MyIntegerStack {
+
 	private ArrayList<Integer> data;
 
 	public MyIntegerStack() {
 		data = new ArrayList<Integer>();
-
 	}
 
 	/**
@@ -15,12 +15,16 @@ public class MyIntegerStack {
 	 * 
 	 * @return data
 	 */
-	public ArrayList<Integer> getData() {
+
+	ArrayList<Integer> getData() {
 		return this.data;
 	}
 
 	public void push(Integer value) {
+
 		data.add(value);
+
+		System.out.println(data);
 	}
 
 	public Integer pop() {
@@ -32,12 +36,13 @@ public class MyIntegerStack {
 	}
 
 	public boolean isEmpty() {
-		if (data.isEmpty()) {
 
-			return true;
-		}
-
-		return false;
+		return data.isEmpty();
+		
+//		if (data.isEmpty()) {
+//			return true;
+//		}
+//		return false;
 	}
 
 }
