@@ -15,7 +15,7 @@ public class HashExercises {
 	 * @param right another set
 	 * @return intersection between left and right
 	 */
-	HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
+	public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
 		HashSet<Integer> result = new HashSet<>();
 		
 		return result;
