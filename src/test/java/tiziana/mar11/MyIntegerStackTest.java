@@ -1,16 +1,16 @@
 package tiziana.mar11;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.core.Is.*;
-import java.util.ArrayList;
-import org.junit.Test;
 
-import trainer.mar11.MyIntegerStack;
+import java.util.ArrayList;
+
+import static org.hamcrest.core.Is.*;
+import org.junit.Test;
 
 public class MyIntegerStackTest {
 
 	@Test
-	public void testPushOne() {
+	public void pushOne() {
 		MyIntegerStack stack = new MyIntegerStack();
 		stack.push(42);
 
@@ -24,33 +24,6 @@ public class MyIntegerStackTest {
 	}
 
 	@Test
-	public void testPop() {
-
-		MyIntegerStack stack = new MyIntegerStack();
-		stack.push(42);
-		Integer popped = stack.pop();
-
-		ArrayList<Integer> data = stack.getData();
-		assertThat(data.size(), is(0));
-		assertThat(popped, is(42));
-	}
-
-	@Test
-	public void testisEmptyTrue() {
-		MyIntegerStack stack = new MyIntegerStack();
-		assertTrue(stack.isEmpty());
-
-	}
-
-	@Test
-	public void testisEmptyFalse() {
-		MyIntegerStack stack = new MyIntegerStack();
-		stack.push(42);
-		assertFalse(stack.isEmpty());
-
-	}
-
-	@Test
 	public void popEmpty() {
 		MyIntegerStack stack = new MyIntegerStack();
 
@@ -60,6 +33,29 @@ public class MyIntegerStackTest {
 		} catch (IllegalAccessError iae) {
 			assertThat(iae.getMessage(), is("Can't pop() an empty stack"));
 		}
+	}
 
+	@Test
+	public void popOne() {
+		MyIntegerStack stack = new MyIntegerStack();
+		ArrayList<Integer> data = stack.getData();
+		data.add(42);
+
+		Integer popped = stack.pop();
+		assertThat(data.size(), is(0));
+		assertThat(popped, is(42));
+	}
+
+	@Test
+	public void isEmptyTrue() {
+		MyIntegerStack stack = new MyIntegerStack();
+		assertTrue(stack.isEmpty());
+	}
+
+	@Test
+	public void isEmptyFalse() {
+		MyIntegerStack stack = new MyIntegerStack();
+		stack.push(42);
+		assertFalse(stack.isEmpty());
 	}
 }
