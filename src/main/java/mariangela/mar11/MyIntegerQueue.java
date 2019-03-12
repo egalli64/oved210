@@ -24,7 +24,7 @@ public class MyIntegerQueue {
 			throw new IllegalAccessError("Can't dequeue() an empty queue");
 		}
 
-		return data.remove(data.size() - 1);
+		return data.removeLast();
 	}
 
 	public boolean isEmpty() {
