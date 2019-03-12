@@ -15,7 +15,7 @@ public class MyIntegerQueue {
 	}
 
 	public void enqueue(Integer value) {
-		data.add(value);
+		data.addFirst(value);
 
 	}
 
@@ -28,9 +28,6 @@ public class MyIntegerQueue {
 	}
 
 	public boolean isEmpty() {
-		if (data.isEmpty()) {
-			return true;
-		}
-		return false;
+		return data.isEmpty();
 	}
 }
