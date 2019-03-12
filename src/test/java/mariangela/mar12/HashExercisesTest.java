@@ -21,5 +21,15 @@ public class HashExercisesTest {
 		assertTrue(results.contains(2));
 		assertTrue(results.contains(3));
 	}
-
+	@Test
+	public void differencePlain() {
+		
+		HashSet<Integer> left = new HashSet<Integer>(Arrays.asList(1, 2, 3));
+		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList(2, 3, 4));
+		
+		HashSet<Integer> results = HashExercises.difference(left, right);
+		assertThat(results.size(), is(1));
+		assertTrue(results.contains(1));
+		
+	}
 }
