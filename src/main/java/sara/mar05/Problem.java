@@ -1,6 +1,7 @@
 package sara.mar05;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class Problem { // trovare il singolo tra le coppie
 
@@ -18,8 +19,10 @@ public class Problem { // trovare il singolo tra le coppie
 
 		for (int i = 1; i < data.length; i += 2) { // partire da 1 per guardare il secondo elemento e confrontarlo con
 													// il primo, per non arrivare all'ultimo e non trovarsi niente
-			if (data[i] != data[i - 1]) { //se il valore in posizione i è diverso dal valore in posizione diverso, abbiamo trovato il singolo
-				return data[i - 1]; //il singolo è sicuramente i-1 perchè non c'è nessun elemento prima con cui può essere confrontato
+			if (data[i] != data[i - 1]) { // se il valore in posizione i è diverso dal valore in posizione diverso,
+											// abbiamo trovato il singolo
+				return data[i - 1]; // il singolo è sicuramente i-1 perchè non c'è nessun elemento prima con cui può
+									// essere confrontato
 			}
 		}
 
@@ -50,17 +53,30 @@ public class Problem { // trovare il singolo tra le coppie
 	}
 
 	// CON HASHSET
-	public static int findUniqueHash (int [] data) {
+	public static int findUniqueHash(int[] data) {
 
-		if (data == null) { 
+		if (data == null || data.length % 2 == 0) {
 			throw new IllegalAccessError("Bad input data");
 		}
 
-	return 0;
+		HashSet<Integer> buffer = new HashSet<Integer>();
+
+		for (int i = 0; i < data.length; i++) {
+			if (buffer.contains(data[i])) { // cosi tutte le coppie verranno messe e tolte e rimarrà solo l'elemento
+											// singolo
+				buffer.remove(data[i]);
+			} else {
+				buffer.add(data[i]);
+			}
+		}
+		if (buffer.size() != 1) { // cosi ci assicuriamo che c'è solo un elemento! altrimenti tiriamo eccezione
+			throw new IllegalAccessError("Bad input data");
+		}
+
+		return buffer.iterator().next();
+// altrimenti
+//		Iterator<String> it = buffer.iterator();
+//		if(it.hasNext()) {
+//			return it.next();
 	}
-
-	
-	
-	
-
 }
