@@ -15,7 +15,7 @@ public class MyIntegerQueueTest {
 		queue.enqueue(42);
 		
 		LinkedList<Integer> data = queue.getData();
-		assertThat(data.size(), is(0));
+		assertThat(data.size(), is(1));
 		assertThat(data.get(0), is(42));
 	}
 	
@@ -55,8 +55,5 @@ public class MyIntegerQueueTest {
 		MyIntegerQueue queue = new MyIntegerQueue();
 		queue.enqueue(42);
 		assertFalse(queue.isEmpty());
-		
 	}
 }
-	
-	

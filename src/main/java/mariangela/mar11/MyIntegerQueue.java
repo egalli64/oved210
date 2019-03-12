@@ -15,7 +15,7 @@ public class MyIntegerQueue {
 	}
 
 	public void enqueue(Integer value) {
-		data.add(value);
+		data.addFirst(value);
 
 	}
 
@@ -24,13 +24,10 @@ public class MyIntegerQueue {
 			throw new IllegalAccessError("Can't dequeue() an empty queue");
 		}
 
-		return data.remove(data.size() - 1);
+		return data.removeLast();
 	}
 
 	public boolean isEmpty() {
-		if (data.isEmpty()) {
-			return true;
-		}
-		return false;
+		return data.isEmpty();
 	}
 }
