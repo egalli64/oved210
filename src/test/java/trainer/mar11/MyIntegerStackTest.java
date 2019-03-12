@@ -1,16 +1,16 @@
-package alessandraC.mar11;
+package trainer.mar11;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.core.Is.*;
 
 import java.util.ArrayList;
 
+import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 public class MyIntegerStackTest {
 
 	@Test
-	public void PushOne() {
+	public void pushOne() {
 		MyIntegerStack stack = new MyIntegerStack();
 		stack.push(42);
 
@@ -54,5 +54,4 @@ public class MyIntegerStackTest {
 		stack.push(42);
 		assertFalse(stack.isEmpty());
 	}
-
 }

@@ -1,4 +1,4 @@
-package alessandraC.mar11;
+package trainer.mar11;
 
 import java.util.ArrayList;
 
@@ -7,7 +7,6 @@ public class MyIntegerStack {
 
 	public MyIntegerStack() {
 		data = new ArrayList<Integer>();
-
 	}
 
 	/**
@@ -15,8 +14,8 @@ public class MyIntegerStack {
 	 * 
 	 * @return data
 	 */
-	public ArrayList<Integer> getData() {
-		return this.data;
+	ArrayList<Integer> getData() {
+		return data;
 	}
 
 	public void push(Integer value) {
@@ -24,20 +23,14 @@ public class MyIntegerStack {
 	}
 
 	public Integer pop() {
-
 		if (data.isEmpty()) {
 			throw new IllegalAccessError("Can't pop() an empty stack");
 		}
+
 		return data.remove(data.size() - 1);
 	}
 
 	public boolean isEmpty() {
-		if (data.isEmpty()) {
-
-			return true;
-		}
-
-		return false;
+		return data.isEmpty();
 	}
-
 }

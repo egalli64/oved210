@@ -1,7 +1,9 @@
 package sara.mar11;
 
 import java.util.ArrayList;
+
 import java.util.Iterator;
+
 
 public class CollectionExamples {
 	public static void checkArrayList() {
