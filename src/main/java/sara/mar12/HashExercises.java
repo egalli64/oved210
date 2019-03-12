@@ -23,14 +23,17 @@ public class HashExercises {
 				result.add(value);
 			}
 		}
-
-			return result;
-		}
-	
-	public static HashSet<Integer> difference (HashSet<Integer> left, HashSet<Integer> right) {
-		HashSet<Integer> result = new HashSet<>();
-		
-				return result;
-		}
+		return result;
 	}
 
+	public static HashSet<Integer> difference(HashSet<Integer> left, HashSet<Integer> right) {
+		HashSet<Integer> result = new HashSet<>();
+
+		for (Integer value : left) {
+			if (right.contains(value)) {
+				result.remove(value);
+			}
+		}
+		return result;
+	}
+}

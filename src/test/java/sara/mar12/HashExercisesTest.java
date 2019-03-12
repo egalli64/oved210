@@ -22,6 +22,17 @@ public class HashExercisesTest {
 		}
 	
 	@Test
+	public void differencePlain() {
+		HashSet<Integer> left = new HashSet<Integer>(Arrays.asList(1, 2, 3 ));
+		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList(4, 5, 6 ));
+
+		HashSet<Integer> results = HashExercises.difference(left, right);
+		assertThat(results.size(), is (1));
+		assertTrue(results.contains(1));
+		}
+	
+	
+	@Test
 	public void inserctionEmpty() {
 		HashSet<Integer> left = new HashSet<Integer>(Arrays.asList(1, 2, 3 ));
 		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList( 2, 3, 4 ));
