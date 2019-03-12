@@ -128,29 +128,122 @@ public class SimpleMethodsTest {
 	}
 
 //terzo problema
-	
+
 	@Test
 	public void findTrue() {
-		int[] data = {1,2,3};
+		int[] data = { 1, 2, 3 };
 		assertTrue(SimpleMethods.find(data, 2));
 
 	}
 
 	@Test
 	public void findFalse() {
-		int[] data = {1,2,3};
+		int[] data = { 1, 2, 3 };
 		assertFalse(SimpleMethods.find(data, 7));
 
-}
+	}
+
 	@Test
 	public void findPos() {
-		int[] data = {1,2,3};
-		assertThat(SimpleMethods.findPos(data, 2),is(1));
+		int[] data = { 1, 2, 3 };
+		assertThat(SimpleMethods.findPos(data, 2), is(1));
 	}
-	
+
 	@Test
 	public void findPosFalse() {
 		int[] data = { 1, 2, 3 };
 		assertThat(SimpleMethods.findPos(data, 7), is(-1));
 	}
+
+// 07/03/19 es. numero 1
+
+	@Test
+	public void isPalindromeEvenPositive() {
+		assertTrue(SimpleMethods.isPalindrome("abba"));
+	}
+
+	@Test
+	public void isPalindromeEvenNegative() {
+		assertFalse(SimpleMethods.isPalindrome("abab"));
+	}
+
+	@Test
+	public void isPalindromeOddPositive() {
+		assertTrue(SimpleMethods.isPalindrome("aba"));
+	}
+
+	@Test
+	public void isPalindromeOddNegative() {
+		assertFalse(SimpleMethods.isPalindrome("aab"));
+	}
+
+	@Test
+	public void isPalindromeNull() {
+		assertFalse(SimpleMethods.isPalindrome(null));
+	}
+
+	@Test
+	public void isPalindromeEmpty() {
+		assertFalse(SimpleMethods.isPalindrome(""));
+
+	}
+
+	// secondo problema
+
+	@Test
+	public void reverseNull() {
+		int[] data = null;
+		SimpleMethods.reverse(data);
+		assertNull(data);
+	}
+
+	@Test
+	public void reverseEmpty() {
+		int[] data = {};
+		SimpleMethods.reverse(data);
+		assertThat(data.length, is(0));
+	}
+
+	@Test
+	public void reverse() {
+		int[] data = { 1, 2, 3 };
+		SimpleMethods.reverse(data);
+
+		assertThat(data.length, is(3));
+		assertThat(data[0], is(3));
+		assertThat(data[1], is(2));
+		assertThat(data[2], is(1));
+	}
+
+	@Test
+	public void reverse5() {
+		int[] data = { 1, 2, 3, 4, 5 };
+		SimpleMethods.reverse(data);
+	
+		assertThat(data.length, is(5));
+		assertThat( data[0], is(5));
+		assertThat(data[1], is(4));
+		assertThat(data[2],is (3));
+	    assertThat(data[3], is (2));
+	    assertThat(data[4], is (1));
+	}
+	
+	//terzo problema
+	@Test
+	public void reverseReturnPlain() {
+		int[] data = { 1, 2, 3, 4, 5 };
+		int []reverted = SimpleMethods.reverseReturn(data);
+		
+		assertThat(reverted.length, is(5));
+
+		assertThat(reverted[0], is(5));
+		assertThat(reverted[1], is(4));
+		assertThat(reverted[2],is(3));
+	    assertThat(reverted[3], is(2));
+	    assertThat(reverted[4], is(1));
+		
+	}
+	
+
+	
 }
