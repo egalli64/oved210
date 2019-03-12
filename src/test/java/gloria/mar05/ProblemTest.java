@@ -19,13 +19,13 @@ public class ProblemTest {
 //	}
 	
 	@Test
-	public void testHasEven () {
+	public void hasEven () {
 		int[] data = new int []  { 1, 2, 3, 4, 3, 2, 1 };
 		assertTrue(Problem.hasEven(data));
 	}
 	
 	@Test
-	public void testHasEvenFalse () {
+	public void hasEvenFalse () {
 		int [] data = new int [] {1, 3, 3, 1};
 		assertFalse(Problem.hasEven(data));
 	}
@@ -38,5 +38,11 @@ public class ProblemTest {
 	@Test
 	public void isEvenFalse() {
 		assertFalse(Problem.isEven(-9));
+	}
+	
+	@Test
+	public void findUniqueHash() {
+		int [] data = new int [] {1, 2, 3, 4, 3, 2, 1 };
+		assertEquals(4, Problem.findUniqueHash(data));
 	}
 }

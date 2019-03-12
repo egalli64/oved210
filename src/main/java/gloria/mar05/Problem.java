@@ -93,12 +93,29 @@ public class Problem {
 		}
 		return false;
 	}
-	
+
 	public static int findUniqueHash(int[] data) {
-		if(data == null) {
+		if (data == null || data.length % 2 == 0) {
 			throw new IllegalStateException("Bad input data");
-			
 		}
-		return 0;
+
+		HashSet<Integer> buffer = new HashSet<>();
+		for (int i = 0; i < data.length; i++) { // for(int value : data) {
+			if (buffer.contains(data[i])) {
+				buffer.remove(data[i]);
+			} else {
+				buffer.add(data[i]);
+			}
+		}
+
+		if (buffer.size() != 1) {
+			throw new IllegalStateException("Bad input data");
+		}
+
+		return buffer.iterator().next(); // mi ritorna il valore del successore (è l'iteratore che lo fa in quanto
+											// puntatore). Mi punta al valore successivo e me lo ritorna. Mentre l'HAS
+											// NEXT mi chiede se si può muovere, a differenza del NEXT che si muove
+											// direttamente.
 	}
+
 }
