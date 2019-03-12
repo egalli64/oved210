@@ -1,8 +1,9 @@
-package trainer.mar12;
+package marina.mar12;
 
 import java.util.HashSet;
 
 public class HashExercises {
+	
 	/**
 	 * Intersection of two sets
 	 * 
@@ -15,9 +16,11 @@ public class HashExercises {
 	 * @param right another set
 	 * @return intersection between left and right
 	 */
-	public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
+	
+	HashSet<Integer> intersection (HashSet<Integer> left, HashSet<Integer> right) {
 		HashSet<Integer> result = new HashSet<>();
 		
 		return result;
 	}
+
 }
