@@ -1,21 +1,15 @@
-package alessandraC.mar11;
+package sara.mar11;
 
 import java.util.ArrayList;
-
+							//IMPLEMENTATO CON ARRAYLIST
 public class MyIntegerStack {
 	private ArrayList<Integer> data;
 
 	public MyIntegerStack() {
 		data = new ArrayList<Integer>();
-
 	}
 
-	/**
-	 * For debugging and testing purpose only!
-	 * 
-	 * @return data
-	 */
-	public ArrayList<Integer> getData() {
+	ArrayList<Integer> getData() {
 		return this.data;
 	}
 
@@ -24,20 +18,16 @@ public class MyIntegerStack {
 	}
 
 	public Integer pop() {
-
 		if (data.isEmpty()) {
 			throw new IllegalAccessError("Can't pop() an empty stack");
 		}
-		return data.remove(data.size() - 1);
+		return data.remove(data.size() - 1); //indice dell'elemento più a destra
 	}
 
 	public boolean isEmpty() {
 		if (data.isEmpty()) {
-
 			return true;
 		}
-
 		return false;
 	}
-
 }

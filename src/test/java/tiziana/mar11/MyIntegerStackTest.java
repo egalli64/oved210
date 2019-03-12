@@ -1,22 +1,26 @@
-package alessandraC.mar11;
+package tiziana.mar11;
 
 import static org.junit.Assert.*;
-import static org.hamcrest.core.Is.*;
 
 import java.util.ArrayList;
 
+import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 public class MyIntegerStackTest {
 
 	@Test
-	public void PushOne() {
+	public void pushOne() {
 		MyIntegerStack stack = new MyIntegerStack();
 		stack.push(42);
 
-		ArrayList<Integer> data = stack.getData();
+		ArrayList<Integer> data = stack();
 		assertThat(data.size(), is(1));
 		assertThat(data.get(0), is(42));
+	}
+
+	private ArrayList<Integer> stack() {
+		return null;
 	}
 
 	@Test
@@ -54,5 +58,4 @@ public class MyIntegerStackTest {
 		stack.push(42);
 		assertFalse(stack.isEmpty());
 	}
-
 }
