@@ -14,9 +14,13 @@ public class MyIntegerStackTest {
 		MyIntegerStack stack = new MyIntegerStack();
 		stack.push(42);
 
-		ArrayList<Integer> data = stack.getData();
+		ArrayList<Integer> data = stack();
 		assertThat(data.size(), is(1));
 		assertThat(data.get(0), is(42));
+	}
+
+	private ArrayList<Integer> stack() {
+		return null;
 	}
 
 	@Test
