@@ -1,18 +1,19 @@
-package trainer.mar12;
+package monica.settimana3lezione2; //12/03/19
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 import java.util.HashMap;
 
-import static org.hamcrest.core.Is.*;
 import org.junit.Test;
+
 
 public class PhonesTest {
 
 	@Test
 	public void getNumber() {
 		Phones phones = new Phones();
-		phones.getPhonesByName().put("User", 42);
+		phones.getPhones().put("User", 42);
 
 		assertThat(phones.getNumber("User"), is(42));
 	}
@@ -20,8 +21,7 @@ public class PhonesTest {
 	@Test
 	public void getName() {
 		Phones phones = new Phones();
-		phones.getPhonesByName().put("User", 42);
-		phones.getPhonesByNumber().put(42, "User");
+		phones.getPhones().put("User", 42);
 
 		assertThat(phones.getName(42), is("User"));
 	}
@@ -31,7 +31,9 @@ public class PhonesTest {
 		Phones phones = new Phones();
 		phones.put("User", 42);
 
-		HashMap<String, Integer> data = phones.getPhonesByName();
+		HashMap<String, Integer> data = phones.getPhones();
 		assertThat(data.get("User"), is(42));
+	
 	}
+
 }

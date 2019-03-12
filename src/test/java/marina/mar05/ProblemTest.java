@@ -1,4 +1,4 @@
-package marina.mar04;
+package marina.mar05;
 
 import static org.junit.Assert.*;
 
@@ -6,9 +6,22 @@ import org.junit.Test;
 
 public class ProblemTest {
 
+	@Test
+	public void findUniquePlain() {
+		int[] data = new int[] { 1, 2, 3, 4, 3, 2, 1 };
+		assertEquals(4, Problem.findUnique(data));
+	}
+	
+	@Test
+	public void findUniqueHash() {
+		int[] data = new int[] { 1, 2, 3, 4, 3, 2, 1 };
+		assertEquals(4, Problem.findUniqueHash(data));
+	}
+
 //	@Test
-//	public void test() {
-//		fail("Not yet implemented");
+//	public void findBiggerPlain() {
+//		int[] data = new int[] { 1, 2, 3, 4, 3, 2, 1 };
+//		assertEquals(4, Problem.findBigger(data));
 //	}
 
 	@Test
