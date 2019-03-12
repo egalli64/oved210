@@ -1,4 +1,4 @@
-package trainer.mar11;
+package tiziana.mar11;
 
 import java.util.LinkedList;
 
@@ -19,17 +19,17 @@ public class MyIntegerQueue {
 	}
 
 	public void enqueue(Integer value) {
-		data.addLast(value);
+
 	}
 
 	public Integer dequeue() {
-		if (data.isEmpty()) {
-			throw new IllegalAccessError("Can't dequeue() an empty queue");
-		}
-		return data.pollFirst();
+		return 0;
+
 	}
 
 	public boolean isEmpty() {
-		return data.isEmpty();
+		return false;
+
 	}
+
 }
