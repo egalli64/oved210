@@ -1,35 +1,27 @@
-package trainer.mar11;
+package sara.mar11;
 
 import java.util.LinkedList;
-
+							//IMPLEMENTATO CON LINKEDLIST
 public class MyIntegerQueue {
 	private LinkedList<Integer> data;
-
-	/**
-	 * For debugging and testing purpose only!
-	 * 
-	 * @return data
-	 */
+	
 	LinkedList<Integer> getData() {
 		return data;
 	}
-
+	
 	public MyIntegerQueue() {
 		data = new LinkedList<Integer>();
 	}
-
+		
 	public void enqueue(Integer value) {
-		data.addLast(value);
-	}
 
+	}
+	
 	public Integer dequeue() {
-		if (data.isEmpty()) {
-			throw new IllegalAccessError("Can't dequeue() an empty queue");
-		}
-		return data.pollFirst();
+		return 0;
 	}
-
+	
 	public boolean isEmpty() {
-		return data.isEmpty();
+		return true;
 	}
 }
