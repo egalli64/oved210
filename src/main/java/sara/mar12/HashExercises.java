@@ -30,8 +30,8 @@ public class HashExercises {
 		HashSet<Integer> result = new HashSet<>();
 
 		for (Integer value : left) {
-			if (right.contains(value)) {
-				result.remove(value);
+			if (!right.contains(value)) {
+				result.add(value);
 			}
 		}
 		return result;
