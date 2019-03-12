@@ -17,28 +17,23 @@ public class MyIntegerStack {
 	 * @return data
 	 */
 
-	ArrayList<Integer> getData() {
-		return this.data;
+	public ArrayList<Integer> getData() {
+		return data;
 	}
 
 	public void push(Integer value) {
 		data.add(value);
-
 	}
 
 	public Integer pop() {
-		if (data.size() == 0) {
-			throw new IllegalAccessError();
+		if (data.isEmpty()) {
+			throw new IllegalAccessError("Can't pop() an empty stack");
 		}
-		return data.remove(data.size() - 1);
 
+		return data.remove(data.size() - 1);
 	}
 
 	public boolean isEmpty() {
-		if (data.size() == 0) {
-			return true;
-		}
-		return false;
-
+		return data.isEmpty();
 	}
 }
