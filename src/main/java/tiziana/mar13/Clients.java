@@ -1,6 +1,8 @@
 package tiziana.mar13;
 
 import java.util.ArrayList;
+
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Clients {
@@ -32,8 +34,12 @@ public class Clients {
 	}
 
 	ArrayList<String> clientsStartingBy(char c) {
-		ArrayList<String> list = new ArrayList<>();
+		String x = String.valueOf(c);
+		String y = String.valueOf((char) (c + 1));
 
-		return list;
+		SortedSet<String> results = clients.subSet(x, y);
+
+		ArrayList<String> data = new ArrayList<>(results);
+		return data;
 	}
 }
