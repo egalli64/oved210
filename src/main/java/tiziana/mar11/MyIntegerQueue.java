@@ -11,7 +11,7 @@ public class MyIntegerQueue {
 	 * @return data
 	 */
 	LinkedList<Integer> getData() {
-		return data;
+		return this.data;
 	}
 
 	public MyIntegerQueue() {
@@ -20,6 +20,7 @@ public class MyIntegerQueue {
 
 	public void enqueue(Integer value) {
 		data.addLast(value);
+
 	}
 
 	public Integer dequeue() {
@@ -27,9 +28,11 @@ public class MyIntegerQueue {
 			throw new IllegalAccessError("Can't dequeue() an empty queue");
 		}
 		return data.pollFirst();
+
 	}
 
 	public boolean isEmpty() {
 		return data.isEmpty();
+
 	}
 }

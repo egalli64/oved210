@@ -3,6 +3,7 @@ package tiziana.mar11;
 import static org.hamcrest.core.Is.*;
 import static org.junit.Assert.*;
 
+import java.util.Deque;
 import java.util.LinkedList;
 
 import org.junit.Test;
