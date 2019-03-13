@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 public abstract class Figure {
 	protected double x;
