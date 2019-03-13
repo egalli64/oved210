@@ -1,4 +1,4 @@
-package trainer.mar12;
+package tiziana.mar12;
 
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
