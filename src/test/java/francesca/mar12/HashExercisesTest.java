@@ -37,5 +37,6 @@ public class HashExercisesTest {
 		
 		HashSet<Integer> results = HashExercises.difference(left, right);
 		assertThat(results.size(), is(0));
+		
 	}
 }
