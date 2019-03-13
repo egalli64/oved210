@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 public class Dog extends Animal {
 
