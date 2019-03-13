@@ -1,4 +1,4 @@
-package tiziana.mar11;
+package gloria.mar11;
 
 import java.util.ArrayList;
 
@@ -7,33 +7,37 @@ public class MyIntegerStack {
 
 	public MyIntegerStack() {
 		data = new ArrayList<Integer>();
-
 	}
 
 	/**
 	 * For debugging and testing purpose only!
 	 * 
-	 * 
 	 * @return data
 	 */
 
-	public ArrayList<Integer> getData() {
-		return data;
+	ArrayList<Integer> getData() {
+		return this.data;
+
 	}
 
-	public void push(Integer value) {
+	public void push(Integer value) { // usare add.
 		data.add(value);
+
 	}
 
-	public Integer pop() {
+	public Integer pop() { // usare remove su data. remove dell'ultimo elemento inserito.
 		if (data.isEmpty()) {
 			throw new IllegalAccessError("Can't pop() an empty stack");
 		}
-
 		return data.remove(data.size() - 1);
 	}
 
 	public boolean isEmpty() {
-		return data.isEmpty();
+		if (data.isEmpty()) {
+			return true;
+		}
+
+		return false;
+
 	}
 }

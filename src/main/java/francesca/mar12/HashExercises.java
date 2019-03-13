@@ -1,4 +1,4 @@
-package mariangela.mar12;
+package francesca.mar12;
 
 import java.util.HashSet;
 
@@ -7,8 +7,7 @@ public class HashExercises {
 	 * Intersection of two sets
 	 * 
 	 * <pre>
-	 * {1, 2, 3}, {2, 3, 4} -> {2, 3} 
-	 * {1, 2, 3}, {4, 5, 6} -> {}
+	 * {1, 2, 3}, {2, 3, 4} -> {2, 3} {1, 2, 3}, {4, 5, 6} -> {}
 	 * 
 	 * <pre>
 	 * 
@@ -18,10 +17,7 @@ public class HashExercises {
 	 */
 	public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
 		HashSet<Integer> result = new HashSet<>();
-		if (right.isEmpty() || left.isEmpty()) {
 
-			return result;
-		}
 		for (Integer value : left) {
 			if (right.contains(value)) {
 				result.add(value);
@@ -30,27 +26,14 @@ public class HashExercises {
 		return result;
 	}
 
-	/**
-	 * Difference of two sets
-	 * 
-	 * <pre>
-	 * {1, 2, 3}, {2, 3, 4} -> {1} 
-	 * {1, 2, 3}, {4, 5, 6} -> {1, 2, 3}
-	 * 
-	 * <pre>
-	 * 
-	 * @param left  a set
-	 * @param right another set
-	 * @return intersection between left and right
-	 */
 	public static HashSet<Integer> difference(HashSet<Integer> left, HashSet<Integer> right) {
 		HashSet<Integer> result = new HashSet<>();
+
 		for (Integer value : left) {
 			if (!right.contains(value)) {
 				result.add(value);
 			}
 		}
 		return result;
-
 	}
 }
