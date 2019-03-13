@@ -2,7 +2,9 @@ package gloria.mar13;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.Iterator;
 
@@ -84,16 +86,39 @@ public class TreeExamples {
 		// remove and return true
 		System.out.println(myTree.remove(-92)); // mi ritorna true perche il numero indicato esiste nel mio albero e
 												// quindi me lo può rimuovere
-		
+
 		System.out.println("My tree has" + myTree.size() + "elements");
 		myTree.add(103);
 		System.out.println("My tree has" + myTree.size() + "elements");
-		
 
 	}
 
 	public static void main(String[] args) {
-		treeSetExamples();
+//		treeSetExamples();
+		treeMapExample();
 	}
 
+	public static void treeMapExample() {
+		TreeMap<Integer, String> studentsById = new TreeMap<>();
+//		TreeMap<String, Integer> studentsByName = new TreeMap<>();
+		studentsById.put(12, "Tom");
+		studentsById.put(42, "Tim");
+		studentsById.put(27, "Sal");
+		studentsById.put(2, "Sal");
+
+		System.out.println(studentsById);// = {12=Tom, 27=Sal, 42=Tim}
+
+		Iterator<Map.Entry<Integer, String>> it = studentsById.entrySet().iterator();
+		while (it.hasNext()) { // va su tutti gli elementi della mia mappa e me li stampa come coppie. HASNEXT
+								// va inserito SEMPRE prima di tutti i next perchè è quello che permette di
+								// andare su tutti gli elementi della collezione
+//			System.out.println(it.next()); // 12=Tom 27=Sal 42=Tim
+			Map.Entry<Integer, String> entry = it.next();
+			if (entry.getValue().equals("Sal")) {
+				System.out.println("Sal has id" + entry.getKey());
+				// se volessi stampare solo un Sal in questo caso, basetrebbe mettere un BREAK;
+				// e si ferma al primo che mi trova
+			}
+		}
+	}
 }

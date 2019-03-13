@@ -1,6 +1,7 @@
 package gloria.mar13;
 
 import java.util.ArrayList;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Clients {
@@ -31,9 +32,13 @@ public class Clients {
 		return false;
 	}
 
-	ArrayList<String> clientStartingBy(char c) {
-		ArrayList<String> list = new ArrayList<>();
-		return list;
+	ArrayList<String> clientsStartingBy(char c) { // trasformo inizialmente il carattere in una stringa
+		
+		String begin = String.valueOf(c);
+		String end = String.valueOf((char) (c + 1));
+		SortedSet<String> results = clients.subSet(begin, end);
+		
+		ArrayList<String> data = new ArrayList<>(results);
+		return data;		
 	}
-
 }

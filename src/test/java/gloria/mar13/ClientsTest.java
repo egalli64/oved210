@@ -1,7 +1,9 @@
 package gloria.mar13;
 
 import org.junit.Test;
+import java.util.Arrays;
 import java.util.TreeSet;
+import java.util.ArrayList;
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.*;
 
@@ -82,4 +84,24 @@ public class ClientsTest {
 		assertThat(names.size(), is(0));
 	}
 
+	@Test
+	public void clientsStartingByT() {
+		// what the user would do - part 1
+		Clients clients = new Clients();
+
+		// simulation call Clients.add()
+		// calling directly TreeSet.add()
+		TreeSet<String> names = clients.getClients();
+		names.addAll(Arrays.asList("Tom", "Tim", "Bill", "Wim"));
+
+		// what the user would do - part 2
+		ArrayList<String> tClients = clients.clientsStartingBy('T');
+
+		// verify that the previous call succeeded
+		assertThat(tClients.size(), is(2));
+		assertTrue(tClients.contains("Tim"));
+		assertTrue(tClients.contains("Tom"));
+		
+	}
+	
 }
