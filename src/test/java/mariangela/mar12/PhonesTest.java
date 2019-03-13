@@ -1,4 +1,4 @@
-package trainer.mar12;
+package mariangela.mar12;
 
 import static org.junit.Assert.*;
 

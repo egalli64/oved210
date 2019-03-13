@@ -1,6 +1,8 @@
-package trainer.mar12;
+package mariangela.mar12;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Phones {
 	private HashMap<String, Integer> phonesByName;
@@ -20,13 +22,9 @@ public class Phones {
 		return phonesByName;
 	}
 	
-	/**
-	 * For testing purpose only
-	 * 
-	 * @return the underlying map 
-	 */
 	HashMap<Integer, String> getPhonesByNumber() {
 		return phonesByNumber;
+		
 	}
 	
 	Integer getNumber(String name) {
@@ -35,19 +33,19 @@ public class Phones {
 	
 	String getName(Integer number) {
 		return phonesByNumber.get(number);
-//		Iterator<Map.Entry<String, Integer>> it =
-//				phonesByName.entrySet().iterator();
-//		while(it.hasNext()) {
+//		Iterator <Map.Entry<String, Integer>> it = phones.entrySet().iterator();
+//		while (it.hasNext()) {
 //			Map.Entry<String, Integer> entry = it.next();
 //			if(entry.getValue().equals(number)) {
 //				return entry.getKey();
 //			}
 //		}
-//		return "Not found!"; // ?
+//		 return "Not found!";
 	}
 	
 	void put(String name, Integer number) {
 		phonesByName.put(name, number);
 		phonesByNumber.put(number, name);
 	}
+
 }

@@ -1,4 +1,4 @@
-package trainer.mar12;
+package tiziana.mar12;
 
 import java.util.HashMap;
 
