@@ -1,7 +1,6 @@
-package trainer.mar13;
+package tiziana.mar13;
 
 import java.util.ArrayList;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class Clients {
@@ -20,18 +19,21 @@ public class Clients {
 
 	public void add(String client) {
 		clients.add(client);
+
 	}
 
 	public boolean remove(String client) {
-		return clients.remove(client);
+		if (clients.remove(client)) {
+			return true;
+		}
+
+		return false;
+
 	}
 
 	ArrayList<String> clientsStartingBy(char c) {
-		String begin = String.valueOf(c);
-		String end = String.valueOf((char) (c + 1));
-		SortedSet<String> results = clients.subSet(begin, end);
+		ArrayList<String> list = new ArrayList<>();
 
-		ArrayList<String> data = new ArrayList<>(results);
-		return data;
+		return list;
 	}
 }

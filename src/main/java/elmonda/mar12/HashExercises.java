@@ -1,4 +1,4 @@
-package tiziana.mar12;
+package elmonda.mar12;
 
 import java.util.HashSet;
 
@@ -19,7 +19,7 @@ public class HashExercises {
 		HashSet<Integer> result = new HashSet<>();
 
 		for (Integer value : left) {
-			if (right.contains(value)) {
+			if (right.contains(value)) {  //se right contiene il valore
 				result.add(value);
 			}
 		}
@@ -43,11 +43,12 @@ public class HashExercises {
 		HashSet<Integer> result = new HashSet<>();
 
 		for (Integer value : left) {
-			if (!right.contains(value)) {
-				result.add(value);
+			if (!right.contains(value)) {  // se right non contiene il valore, allora lo metto in result
+				result.add(value);          // right non contiene i valori di left 1,2,3 quindi li ritorno
 			}
 		}
 
 		return result;
 	}
-}
+	}
+
