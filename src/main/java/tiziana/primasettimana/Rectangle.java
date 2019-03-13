@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 public class Rectangle extends Figure implements Colored {
 

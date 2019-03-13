@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 import java.util.Random;
 import java.util.Scanner;

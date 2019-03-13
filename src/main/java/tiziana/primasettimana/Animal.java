@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 public abstract class Animal {
 	String name;
