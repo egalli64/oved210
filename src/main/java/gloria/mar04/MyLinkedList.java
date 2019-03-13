@@ -1,24 +1,41 @@
 package gloria.mar04;
 
 public class MyLinkedList {
-
 	private Node head = null; // inizialmente è un non indirizzo e poi il primo diventa il primo elemento che
-	private Node tail = null;// c'è nella mia lista
+								// c'è nella mia lista
+	private Node tail = null;
 
 	public MyLinkedList() {
 
 	}
 
-	public void addFirst(int value) {
-		Node node = new Node(value); // mi sono creato l'oggetto nodo il successore è questo, la variabile next sarà questo
-	//	if()
-		
-		
-		node.setNext(head); 
-		head = node;
+	/**
+	 * for test only, return the list head
+	 * 
+	 * @return the object head
+	 */
+
+	Node getHead() {
+		return this.head;
 	}
 
-//	public void addLast(int value) {      ULTERIORE METODO
+	Node getTail() {
+		return this.tail;
+	}
+
+	public void addFirst(int value) {
+		Node node = new Node(value); // mi sono creato l'oggetto nodo il successore è questo, la variabile next sarà
+										// questo
+		if (head == null & tail == null) {
+			tail = node;
+			head = node;
+		} else {
+			node.setNext(head);
+			head = node;
+		}
+	}
+
+//	public void addLast(int value) {      ---> ULTERIORE METODO
 //	Node node = new Node(value);
 //	if(tail==null){
 //	head=node;
