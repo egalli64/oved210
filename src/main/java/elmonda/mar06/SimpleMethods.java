@@ -247,7 +247,7 @@ public static boolean isPalindrome(String s) {
 	}
 
 /**
- * {1,2,3} -> {3,2,1}   // mettere al contrario il mio deta in input
+ * {1,2,3} -> {3,2,1}   // mettere al contrario il mio data in input
  */
 // mi ritorna l'array che era in input al contrario
 

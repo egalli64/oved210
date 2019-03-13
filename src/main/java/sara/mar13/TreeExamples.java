@@ -3,9 +3,12 @@ package sara.mar13;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
+//TREE SET
 public class TreeExamples {
 	public static void treeSetExample() {
 		List<Integer> data = Arrays.asList(21, 57, 7, 12, 9);
@@ -58,7 +61,7 @@ public class TreeExamples {
 
 		myTree.addAll(Arrays.asList(21, 57, 7, 12, 9));
 		System.out.println(myTree);
-
+//METODO HEAD SET E TAIL SET
 		SortedSet<Integer> head = myTree.headSet(7);
 		System.out.println(head);
 
@@ -69,14 +72,35 @@ public class TreeExamples {
 		System.out.println(myTree.remove(9));
 
 		System.out.println("My Tree has" + myTree.size() + "elements");
-		
+
 		myTree.add(103);
 		System.out.println("My Tree has" + myTree.size() + "elements");
 	}
 
 //IL MAIN PER POTER STAMPARE
 	public static void main(String[] args) {
-		treeSetExample();
+		// treeSetExample();
+		treeMapExample();
 	}
 
+//TREE MAP
+	private static void treeMapExample() {
+		TreeMap<Integer, String> studentsById = new TreeMap<>();
+
+		studentsById.put(12, "Tom");
+		studentsById.put(42, "Tim");
+		studentsById.put(27, "Sal");
+		studentsById.put(2, "Sal");
+
+		System.out.println(studentsById);
+
+//ENTRYSET
+		Iterator<Map.Entry<Integer, String>> it = studentsById.entrySet().iterator();
+		while (it.hasNext()) { //finchè c'è un next looppa
+			Map.Entry<Integer, String> entry = it.next(); //prima va chiamato has next!
+			if (entry.getValue().equals("Sal")) {
+				System.out.println("Sal has id" + entry.getKey());
+			}
+		}
+	}
 }
