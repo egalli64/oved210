@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ProblemTest {
+
 	@Test
 	public void findUniqueN2Begin() {
 		int[] data = new int[] { 2, 1, 1 };
@@ -12,6 +13,15 @@ public class ProblemTest {
 	}
 
 	@Test
+
+	public void findUniqueSort() {
+		int[] data = new int[] { 1, 2, 3, 4, 3, 2, 1 };
+		assertEquals(4, Problem.findUniqueSort(data));
+
+	}
+
+	@Test
+
 	public void findUniqueN2Middle() {
 		int[] data = new int[] { 1, 2, 3, 4, 3, 2, 1 };
 		assertEquals(4, Problem.findUniqueN2(data));
