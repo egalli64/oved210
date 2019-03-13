@@ -1,7 +1,12 @@
 package alessandraC.mar13;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.SortedSet;
 import java.util.TreeSet;
+
+import org.thymeleaf.expression.Arrays;
 
 /**
  * ordinate the name of client in alphabetic order create an Array List with the
@@ -43,9 +48,29 @@ public class Clients {
 	}
 
 	ArrayList<String> clientsStartingBy(char c) {
-		ArrayList<String> list = new ArrayList<>();
-
+		String begin = String.valueOf(c);
+		String end = String.valueOf((char) (c + 1));
+		SortedSet<String> results = clients.subSet(begin, end);
+		
+		
+		ArrayList<String> list = new ArrayList<> (results);
+		
 		return list;
+		
+		
+		
+		
+		
+		
+		
+	
+	
+
+		
 	}
 
-}
+	
+		
+	}
+
+
