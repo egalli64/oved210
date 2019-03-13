@@ -12,7 +12,7 @@ public class Problem {
 	 * @return the most popular value in data
 	 *
 	 */
-	
+
 	/**
 	 * 
 	 * 
@@ -21,12 +21,14 @@ public class Problem {
 	 * @return the number of values in data
 	 */
 
-
-	
 	public static int count(int[] data, int value) {
-		return 0;
-		
-//		for(int i = 0; i <)
+
+		for (int i = 1; i < data.length + 1; i++) {
+			if (data[i] == value) {
+
+			}
+		}
+		return value;
 	}
 
 }
