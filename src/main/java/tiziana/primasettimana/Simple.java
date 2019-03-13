@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.primasettimana;
 
 public class Simple {
    private int a;
