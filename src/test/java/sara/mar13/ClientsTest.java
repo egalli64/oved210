@@ -54,7 +54,7 @@ public class ClientsTest {
 		Clients clients = new Clients(); //clients -> oggetto che contiene i clienti (perchè non è metodo static)
 
 		TreeSet<String> names = clients.getClients();
-		names.add("Mr");
+		names.add("MrX");
 		
 		//cosa può fare l'utente part 2
 		boolean removed = clients.remove("MrX");
