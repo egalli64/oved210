@@ -1,11 +1,13 @@
 package alessandraC.mar13;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 import java.util.TreeSet;
 
-import org.hamcrest.Matcher;
+import org.hamcrest.core.Is;
 import org.junit.Test;
+
 
 public class ClientsTest {
 
@@ -26,20 +28,21 @@ public class ClientsTest {
 	public void removeTom() {
 		// what the user would do - part 1
 		Clients clients = new Clients();
-		clients.add("Tom");
 
-		boolean removed = clients.remove("Tom");
-		// verify that the previous call succeeded
-		assertTrue(removed);
-
+		// simulation call to Clients.add()
+		// calling directly TreeSet.add()
 		TreeSet<String> names = clients.getClients();
+		names.add("Tom");
+
+		// what the user would do - part 2
+		boolean removed = clients.remove("Tom");
+		assertTrue(removed);
 		assertThat(names.size(), is(0));
-
 	}
 
-	private Matcher is(int i) {
-		// TODO Auto-generated method stub
-		return null;
+	
 	}
 
-}
+	
+
+
