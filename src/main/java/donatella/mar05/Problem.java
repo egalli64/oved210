@@ -1,43 +1,82 @@
 package donatella.mar05;
 
-
+import java.util.HashSet;
 
 public class Problem {
-	
+
 //	in:[2,1,1] out:2
 //	in [-1027,12,-1027,12,42] out 42
-	
-	public static int findUnique(int[]data) {
-		return 0;
+
+	public static int findUnique(int[] data) {
+
+		for (int i = 0; i < data.length; i++) {
+			boolean found = true;
+
+			for (int j = 0; j < data.length; j++) {
+				if (i == j) {
+					continue;
+				}
+
+				if (data[i] == data[j]) {
+					found = false;
+					break;
+				}
+			}
+
+			if (found) {
+				return data[i];
+			}
+
+		}
+		throw new IllegalAccessError("Can't find unique!");
+
 	}
-	
-//	in:[2,1,1] out:2
-//	in:[-1027,12,-1027,12,42]out:42
-	
-	public static int findBigger(int[]data) {
-		return 0;
-		
+
+	public static int findUniqueHash(int[] data) {
+		if (data == null) {
+			throw new IllegalStateException("Bad input data");
+		}
+
+		HashSet<Integer> buffer = new HashSet<>();
+		for (int i = 0; i < data.length; i++) {
+			if (buffer.contains(data[i])) {
+				buffer.remove(data[i]);
+			} else {
+				buffer.add(data[i]);
+			}
+		}
+		if(buffer.size()!=1) {
+			throw new IllegalStateException("Bad input data");
+		}
+		return buffer.iterator().next();
 	}
-// in [2,1,1] out: true
-//	/in:[-1027,11,-1029,15,41]out:false
-	
-	public static boolean hasEven(int[]data) {
-		
-		
-		
-		
+
+	public static int findBigger(int[] data) {
+		int result = Integer.MIN_VALUE;
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] > result) {
+				result = data[i];
+			}
+		}
+
+		return result;
+	}
+
+	public static boolean hasEven(int[] data) {
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] % 2 == 0) {
+				return true;
+			}
+		}
 		return false;
 	}
-	
-	// in 2 out: true
-//		/in:-1027 out:false
-	
+
 	public static boolean isEven(int value) {
-		if(value %2 == 0) {
+		if (value % 2 == 0) {
 			return true;
-			
-		
-	
-}
+		}
 		return false;
-}}
+	}
+}
