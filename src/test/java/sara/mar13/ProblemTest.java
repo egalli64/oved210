@@ -24,4 +24,22 @@ public class ProblemTest {
 		int[] data = { 2, 2, 2, 1, 1 };
 		assertThat(Problem.mostPopular(data), is(2));
 	}
+	
+	@Test
+	public void MostPopular2() {
+		int[] data = { 2, 2, 2, 1, 1, 3, 3, 1, 1 };
+		assertThat(Problem.mostPopular(data), is(1));
+	}
+	
+	@Test
+	public void MostPopularSort() {
+		int[] data = { 2, 2, 2, 1, 1 };
+		assertThat(Problem.mostPopularSort(data), is(2));
+	}
+	
+	@Test
+	public void MostPopularHash() {
+		int[] data = { 2, 2, 2, 1, 1 };
+		assertThat(Problem.mostPopularSort(data), is(2));
+	}
 }
