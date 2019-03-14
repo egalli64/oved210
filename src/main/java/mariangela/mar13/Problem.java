@@ -1,5 +1,9 @@
 package mariangela.mar13;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Problem {
 	/**
 	 * <pre>
@@ -24,6 +28,65 @@ public class Problem {
 
 				resultCount = currentCount;
 				result = data[i];
+			}
+		}
+		return result;
+	}
+
+	public static int mostPopularSort(int[] data) {
+		if (data == null || data.length == 0) {
+			throw new IllegalArgumentException("Bad input data!");
+		}
+		Arrays.sort(data);
+		int result = data[0];
+		int candidate = result;
+		int candidateFrequency = 1;
+		int resultFrequency = 1;
+
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] != candidate) {
+				if (candidateFrequency > resultFrequency) {
+					result = candidate;
+					resultFrequency = candidateFrequency;
+
+				}
+				candidate = data[i];
+				candidateFrequency = 1;
+			} else {
+				candidateFrequency++;
+			}
+		}
+		if (resultFrequency < candidateFrequency) {
+			return result;
+		} else {
+
+			return candidate;
+		}
+	}
+
+	public static int mostPopularHash(int[] data) {
+		if (data == null || data.length == 0) {
+			throw new IllegalArgumentException("Bad input data!");
+		}
+		Map<Integer, Integer> counters = new HashMap<>();
+		for (int i = 0; i < data.length; i++) {
+
+			if (counters.containsKey(data[i])) {
+				int value = counters.get(data[i]);
+				counters.put(data[i], value + 1);
+			} else {
+
+				counters.put(data[i], 1);
+			}
+
+		}
+		int result = 0;
+		int frequency = 0;
+		for (Map.Entry<Integer, Integer> entry : counters.entrySet()) {
+			int currentFrequency = entry.getValue();
+			if (currentFrequency > frequency) {
+				result = entry.getKey();
+				frequency = entry.getValue();
 			}
 		}
 		return result;
