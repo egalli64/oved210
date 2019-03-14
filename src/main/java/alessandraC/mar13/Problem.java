@@ -4,8 +4,9 @@ public class Problem {
 
 	/**
 	 * <pre>
-	 * {2, 2, 2, 1, 1} -> 2
-	 * {2, 2, 2, 1, 1, 3, 3, 1, 1} -> 1
+	 * {2, 2, 2, 1, 1}, 2 -> 3
+	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}, 3 -> 2
+	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}
 	 * </pre>
 	 * 
 	 * @param data an array of Integer
@@ -22,13 +23,14 @@ public class Problem {
 	 */
 
 	public static int count(int[] data, int value) {
+		int result = 0;
 
-		for (int i = 1; i < data.length + 1; i++) {
-			if (data[i] == value) {
-
+		for (int i = 0; i < data.length; i++) {
+			if (data [i] == value) {
+				result += 1;
 			}
 		}
-		return value;
-	}
 
+		return result;
+	}
 }
