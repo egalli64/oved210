@@ -11,20 +11,20 @@ public class Problem {
 	 * @return the most popular value in data
 	 */
 	public static int mostPopular(int[] data) {
-		if(data == null || data.length == 0) {
+		if (data == null || data.length == 0) {
 			throw new IllegalArgumentException("Bad input data!");
 		}
-		int result = data[0] ;
+		int result = data[0];
 		int resultCount = count(data, result);
-		
-		for(int i = 0; i < data.length; i++) {
+
+		for (int i = 0; i < data.length; i++) {
 			int currentCount = count(data, data[i]);
-		
-		if(currentCount > resultCount){
-			
-			resultCount = currentCount;
-			result = data[i];
-		}
+
+			if (currentCount > resultCount) {
+
+				resultCount = currentCount;
+				result = data[i];
+			}
 		}
 		return result;
 	}
