@@ -7,7 +7,6 @@ import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 import marina.mar06.SimpleMethods;
-import trainer.mar07.ArrayProblems;
 
 public class ArrayProblemsTest {
 
