@@ -1,4 +1,4 @@
-package tiziana.mar13;
+package francesca.mar13;
 
 public class Problem {
 	/**
@@ -6,12 +6,10 @@ public class Problem {
 	 * {2, 2, 2, 1, 1} -> 2
 	 * {2, 2, 2, 1, 1, 3, 3, 1, 1} -> 1
 	 * </pre>
-	 * 
 	 * @param data an array of integer
 	 * @return the most popular value in data
 	 */
 	public static int mostPopular(int[] data) {
-	
 		return 0;
 	}
 
@@ -24,5 +22,6 @@ public class Problem {
 	public static int count(int[] data, int value) {
 		return 0;
 	}
+	
 
 }
