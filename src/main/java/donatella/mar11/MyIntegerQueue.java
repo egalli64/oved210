@@ -6,22 +6,27 @@ public class MyIntegerQueue {
 	private LinkedList<Integer> data;
 
 	LinkedList<Integer> getData() {
-	return data;
-}
+		return data;
+	}
+
 	public MyIntegerQueue() {
 		data = new LinkedList<Integer>();
 
 	}
 
 	public void enqueue(Integer value) {
-
+		data.addLast(value);
 	}
 
 	public Integer dequeue() {
-		return 0;
+		if (data.isEmpty()) {
+			throw new IllegalAccessError("Can't dequeue() an empty queue");
+		}
+		return data.pollFirst();
 	}
+
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		return data.isEmpty();
+		
+}
 }
