@@ -12,16 +12,14 @@ public class ProblemTest {
 	@Test
 	public void testMostPopular2() {
 		int[] data = {2, 2, 2, 1, 1};
-		int result = Problem.mostPopular(data);
-		assertThat (result, is(2));
+		assertThat(Problem.mostPopular(data), is(2));
 		
 	}
 	
 	@Test
 	public void testMostPopular1() {
 		int[] data = {2, 2, 2, 1, 1, 3, 3, 1, 1};
-		int result = Problem.mostPopular(data);
-		assertThat (result, is(1));
+		assertThat (Problem.mostPopular(data), is(1));
 		
 	}
 
@@ -29,8 +27,7 @@ public class ProblemTest {
 	public void testCount2() {
 		int[] data = { 2, 2, 2, 1, 1 };
 		int value = 2;
-		int result = Problem.count(data, value);
-		assertThat (result, is(3));
+		assertThat (Problem.count(data, value), is(3));
 		
 	}
 
@@ -38,8 +35,7 @@ public class ProblemTest {
 	public void testCount3() {
 		int[] data = { 2, 2, 2, 1, 1, 3, 3, 1, 1 };
 		int value = 3;
-		int result = Problem.count(data, value);
-		assertThat(result, is(2));
+		assertThat(Problem.count(data, value), is(2));
 	}
 
 }
