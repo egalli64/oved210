@@ -17,7 +17,7 @@ public class Problem {
 		int result = data[0];
 		int resultCount = count(data, result);
 
-		for (int i = 0; i < data.length; i++) {
+		for (int i = 1; i < data.length; i++) {
 			int currentCount = count(data, data[i]);
 
 			if (currentCount > resultCount) {
