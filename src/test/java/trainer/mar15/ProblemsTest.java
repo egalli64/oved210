@@ -33,4 +33,14 @@ public class ProblemsTest {
 		assertTrue(results.contains(5));
 		assertTrue(results.contains(6));
 	}
+	
+	@Test
+	public void ifElseZero() {
+		try {
+			Problems.ifElse(0);
+			fail("ifElse() should throw an exception");
+		} catch(IllegalAccessError ex) {
+			// as expected
+		}
+	}
 }
