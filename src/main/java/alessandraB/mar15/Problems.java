@@ -52,4 +52,37 @@ public class Problems {
 
       return result;
 	}
-}
+
+	/**
+		 * 
+		 * value an integer
+		 * if value odd --> " Weird"
+		 * if value even and [2,5] --> "not Weird"
+		 * if value even and [6,20] --> "Weird"
+		 * if value even and greater than 20, return "not Weird"
+		 * return "Weird" or "not Weird"
+		 */
+		
+	public static String ifElse(int value) {
+
+		if( value %2 == 1) {
+			return "weird";
+		
+		} else {
+			
+	    if( value >= 2 || value <= 5) {
+	    	return "not Weird";
+	    }
+	    	if( value >= 6 || value <= 20) {
+		    	return " Weird";
+	    	}
+		    	if( value > 20) {
+			  return "not Weird";
+	    } else {
+		
+		    	throw new IllegalAccessError();
+	
+	}
+		} } }
+
+
