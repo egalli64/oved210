@@ -1,6 +1,7 @@
 package sara.mar12;
 
 import static org.hamcrest.core.Is.*;
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;
