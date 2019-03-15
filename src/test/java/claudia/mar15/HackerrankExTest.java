@@ -24,7 +24,7 @@ public class HackerrankExTest {
 	}
 	@Test
 	public void ifElse21() {
-		String result = HackerrankEx.ifElse(21);
+		String result = HackerrankEx.ifElse(22);
 		assertThat(result, is("Not Weird"));
 	}
 }
