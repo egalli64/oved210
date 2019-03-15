@@ -26,19 +26,16 @@ public class Problems {
 		buffer.sort(null); // ordine naturale
 		ArrayList<Integer> result = new ArrayList<Integer>();
 
-		int value = buffer.get(0);
-		result.add(value);
+		Integer previous = buffer.get(0);
+		result.add(previous);
 
 		for (int i = 1; i < buffer.size(); i++) {
-			int current = buffer.get(i);
-			if (current != value) {
-				buffer.add(value);
-
+			Integer current = buffer.get(i);
+			if (current != previous) {
+				previous = current;
+				result.add(previous);
 			}
-
 		}
 		return result;
-
 	}
-
-} 
+}

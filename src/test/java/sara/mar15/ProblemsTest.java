@@ -19,8 +19,6 @@ public class ProblemsTest {
 		assertTrue(buffer.contains(1));
 		assertTrue(buffer.contains(4));
 		assertTrue(buffer.contains(5));
-		assertTrue(buffer.contains(6));
-		
+		assertTrue(buffer.contains(6));	
 	}
-
 }
