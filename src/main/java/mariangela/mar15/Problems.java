@@ -1,6 +1,8 @@
 package mariangela.mar15;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class Problems {
@@ -38,4 +40,17 @@ public class Problems {
 
 		return result;
 	}
+
+	public static List<Integer> killDuplicatesHash(List<Integer> data) {
+		if (data == null) {
+			return Collections.emptyList();
+		}
+
+		HashSet<Integer> single = new HashSet<Integer>();
+		single.addAll(data);
+		ArrayList<Integer> result = new ArrayList<Integer>(single);
+		return result;
+
+	}
+
 }
