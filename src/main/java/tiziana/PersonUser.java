@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class PersonUser {
 	private final static int NR_PERSONS = 5;

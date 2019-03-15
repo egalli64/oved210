@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class TriangleRectangle extends Figure implements Colored {
 
