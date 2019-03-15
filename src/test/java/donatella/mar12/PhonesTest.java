@@ -1,10 +1,10 @@
-package gloria.mar12;
+package donatella.mar12;
 
-import static org.hamcrest.core.Is.*;
 import static org.junit.Assert.*;
 
 import java.util.HashMap;
 
+import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
 public class PhonesTest {
@@ -33,5 +33,4 @@ public class PhonesTest {
 		HashMap<String, Integer> data = phones.getPhones();
 		assertThat(data.get("User"), is(42));
 	}
-
 }
