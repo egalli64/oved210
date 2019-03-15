@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class FigureUser {
 	public static void main(String[] args) {

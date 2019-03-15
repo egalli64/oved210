@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class Person2 {
 	protected static int counter=0;
