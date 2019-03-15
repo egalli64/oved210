@@ -53,4 +53,45 @@ public class Problems {
 
 	}
 
+	/**
+	 * <pre>
+	 * If value is odd, return "Weird"
+	 * If value is even and in [2 .. 5], return "Not Weird"
+	 * If value is even and in [6 .. 20], return "Weird"
+	 * If value is even and greater than 20, return "Not Weird"
+	 * </pre>
+	 * 
+	 * @param value an integer
+	 * @return "Weird" or "Not weird"
+	 */
+	public static String ifElse(int value) {
+
+		if (value % 2 == 1 || (value > 5 && value < 21)) {
+			return "Weird";
+		} else {
+			return "Not Weird";
+		}
+	}
 }
+
+//		if (value <= 0) {
+//			throw new IllegalAccessError();
+//		}
+//		
+//		if (value % 2 != 0) {
+//			return "Weird";
+//		}
+//		
+//		if (2 <= value && 5 >= value) {
+//			return "Not Weird";
+//		}
+//
+//		if (6 <= value && 20 >= value) {
+//			return "Weird";
+//		}
+//		if (value > 20) {
+//			return "Not Weird";
+//		}
+//		
+//		return "Weird";
+//	}
