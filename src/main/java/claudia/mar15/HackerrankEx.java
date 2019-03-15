@@ -1,5 +1,7 @@
 package claudia.mar15;
 
+import java.util.Arrays;
+
 public class HackerrankEx {
 	/**
 	 * 
@@ -23,10 +25,34 @@ public class HackerrankEx {
 		if (value >= 6 && value <= 20) {
 			return "Weird";
 		}
-		if (value > 20) {
-			return "Not Weird";
-		}
-		return null;
 
+		return "Not Weird";
+	}
+
+	public static int[] multiples(int value) {
+		int[] result = new int[10];
+
+		for (int i = 1; i <= result.length; i++) {
+			result[i - 1] = value * i;
+		}
+
+		return result;
+	}
+
+	static public boolean isAnagram(String left, String right) {
+		if (left.length() != right.length()) {
+			return false;
+		}
+		char[] x = left.toCharArray();
+		char[] y = right.toCharArray();
+		Arrays.sort(x);
+		Arrays.sort(y);
+		for (int i = 0; i < x.length; i++) {
+			if (x[i] != y[i]) {
+				return false;
+			}
+
+		}
+		return true;
 	}
 }
