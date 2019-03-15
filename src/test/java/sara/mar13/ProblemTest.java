@@ -1,6 +1,6 @@
 package sara.mar13;
 
-import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.Is.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
