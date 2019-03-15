@@ -63,10 +63,33 @@ public class ArrayListProblemsTest {
 	@Test
 	public void missingValue() {
 
-		int[] data = { 1, 2, 3, 5, 6, 7 };
+		int[] data = { 1, 3, 5, 2, 6, 7};
 		int result = ArrayListProblems.missingValue(data);
         
 		assertEquals(4, result);
+		assertThat(result, is (4));
 	}
+	@Test
+	public void missingValueBySorting() {
 
+		int[] data = { 1, 3, 5, 2, 6, 7};
+		int result = ArrayListProblems.missingValueBySorting(data);
+        
+		assertEquals(4, result);
+		assertThat(result, is (4));
+	} 
+	@Test
+	public void missingValueLinear() {
+
+		int[] data = { 1, 3, 5, 2, 6, 7};
+		int result = ArrayListProblems.missingValueLinear(data);
+        
+		assertEquals(4, result);
+		assertThat(result, is (4));
+	} 
+	
+	
+	
 }
+
+
