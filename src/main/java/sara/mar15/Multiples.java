@@ -19,21 +19,4 @@ public class Multiples {
 		return result;
 	}
 	
-	/**
-	 * <pre>
-	 * cat,tac -> true
-	 * catt, tacc -> false
-	 * </pre>
-	 * 
-	 * @param left a string
-	 * @param right another string
-	 * @return true if left is an anagram of right
-	 */
-	
-	static public boolean isAnagram(String left, String right) {
-		
-		
-		return false;
-		
-	}
 }
