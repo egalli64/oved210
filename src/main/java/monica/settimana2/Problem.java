@@ -10,20 +10,20 @@ public class Problem {
 		}
 		Arrays.sort(data);
 		for (int i = 1; i < data.length; i += 2) {
-			if (data[i] != data [i - 1]) {
-				return data[i-1];
+			if (data[i] != data[i - 1]) {
+				return data[i - 1];
 			}
 		}
-		return data[data.length -1];
+		return data[data.length - 1];
 
 	}
 
 	public static int findUnique(int[] data) {
-		for (int i = 1; i < data.length  ; i++) {
+		for (int i = 1; i < data.length; i++) {
 			boolean single = true;
-			
+
 			for (int j = 0; j < data.length; j++) {
-				if (i==j) {  //significa che ogni elemento è sempre uguale a se stesso
+				if (i == j) { // significa che ogni elemento è sempre uguale a se stesso
 					continue;
 				}
 				if (data[i] == data[j]) {
@@ -38,12 +38,10 @@ public class Problem {
 
 				}
 			}
-			}
-			throw new IllegalAccessError("Can't ");
-		
+		}
+		throw new IllegalAccessError("Can't ");
+
 	}
-			
-	
 
 	public static int findBigger(int[] data) {
 		int result = Integer.MIN_VALUE;

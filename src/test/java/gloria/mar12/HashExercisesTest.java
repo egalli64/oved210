@@ -44,7 +44,8 @@ public class HashExercisesTest {
 		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList(4, 5, 6));
 
 		HashSet<Integer> results = HashExercises.difference(left, right);
-		assertThat(results.size(), is(3));
+
+
 		assertTrue(results.contains(1));
 		assertTrue(results.contains(2));
 		assertTrue(results.contains(3));
