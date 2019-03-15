@@ -1,63 +1,53 @@
 package alessandraC.mar12;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 public class Phones {
 	private HashMap<String, Integer> phonesByName;
 	private HashMap<Integer, String> phonesByNumber;
-
-	public Phones(HashMap<String, Integer> phones) {
-		phones = new HashMap<String, Integer>();
+	
+	public Phones() {
+		phonesByName = new HashMap<>();
+		phonesByNumber = new HashMap<>();
 	}
-
+	
 	/**
 	 * For testing purpose only
-	 * @param phones 
 	 * 
-	 * @return the underlying map
+	 * @return the underlying map 
 	 */
-	HashMap<String, Integer> getPhones(HashMap<String, Integer> phones) {
-		return phones;
+	HashMap<String, Integer> getPhonesByName() {
+		return phonesByName;
 	}
-
-	Integer getNumber(String name, HashMap<String, Integer> phones) {
-		return phones.get(name);
+	
+	/**
+	 * For testing purpose only
+	 * 
+	 * @return the underlying map 
+	 */
+	HashMap<Integer, String> getPhonesByNumber() {
+		return phonesByNumber;
 	}
-
-	String getName(Integer number, HashMap<String, Integer> phones) {
+	
+	Integer getNumber(String name) {
+		return phonesByName.get(name);
+	}
+	
+	String getName(Integer number) {
 		return phonesByNumber.get(number);
-		
-//		Iterator<Map.Entry<String, Integer>> it = phones.entrySet().iterator();
-//		while (it.hasNext()) {
+//		Iterator<Map.Entry<String, Integer>> it =
+//				phonesByName.entrySet().iterator();
+//		while(it.hasNext()) {
 //			Map.Entry<String, Integer> entry = it.next();
-//			if (entry.getValue().equals(number)) {
+//			if(entry.getValue().equals(number)) {
 //				return entry.getKey();
 //			}
 //		}
-//		return "Not found";
-				
+//		return "Not found!"; // ?
 	}
-
-	private Object entry(Object value) {
-
-		return null;
-	}
-
-	private Object getValue() {
-
-		return null;
-	}
-
-	void put(String name, Integer number, Phones phones) {
+	
+	void put(String name, Integer number) {
 		phonesByName.put(name, number);
 		phonesByNumber.put(number, name);
-
 	}
-
-	
-		
-	}
-	
-	
+}

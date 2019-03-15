@@ -34,4 +34,9 @@ public class MyIntegerStack {
 
 		return false;
 	}
+
+	public ArrayList<Integer> getData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
