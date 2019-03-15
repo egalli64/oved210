@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class Recursion {
 	static public int recursiveFactorial(int n) {
