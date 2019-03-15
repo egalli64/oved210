@@ -3,7 +3,9 @@ package alessandraC.mar13;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class TreeExamples {
@@ -52,19 +54,19 @@ public class TreeExamples {
 
 		System.out.println("The last element in my Tree is");
 		System.out.println(myTree.last());
-		
-		myTree.addAll(Arrays.asList(21,57, 7, 12, 9));
+
+		myTree.addAll(Arrays.asList(21, 57, 7, 12, 9));
 		System.out.println(myTree);
 		SortedSet<Integer> head = myTree.headSet(7);
 		// [-92, -7]
 		System.out.println(head);
 		head = myTree.headSet(7, true);
-		//{-92, -7, 7}
+		// {-92, -7, 7}
 		System.out.println(head);
-		
+
 		System.out.println(myTree.remove(1_000));
 		System.out.println(myTree.remove(-92));
-		
+
 		System.out.println("My Tree has" + myTree.size() + "elements");
 		myTree.add(103);
 		System.out.println("My Tree has" + myTree.size() + "elements");
@@ -72,7 +74,35 @@ public class TreeExamples {
 
 	public static void main(String[] args) {
 		treeSetExample();
-
+		treeMapExample();
+		
 	}
 
+
+//		System.out.println(int)Math.floor(42, 45));
+//		System.out.println(int)Math.cell(42, 45);
+	
+
+	public static void treeMapExample() {
+		TreeMap<Integer, String> studentsById = new TreeMap<> ();
+		studentsById.put(12, "Tom");
+		studentsById.put(42, "Tim");
+		studentsById.put(27, "Sal");
+		
+		System.out.println(studentsById);
+		
+		
+		Iterator<Map.Entry<Integer, String>> it = studentsById.entrySet().iterator();
+		while(it.hasNext()) {
+			Map.Entry<Integer, String> entry = it.next();
+			if(entry.getValue().equals("Sal")) {
+			System.out.println("Sal has id" + entry.getKey());
+			
+		}
+
+		}
+	}
 }
+	
+	
+	

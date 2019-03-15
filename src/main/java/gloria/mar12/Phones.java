@@ -24,7 +24,7 @@ public class Phones {
 		return phonesByName;
 	}
 
-	Integer getNumber(String name) { // nella string ho la chiave quindi basta che la passo nel get ed è fatto, mi
+	Integer getNumber(String name) { // nella stringa ho la chiave quindi basta che la passo nel get ed è fatto, mi
 										// ritorna il valore
 		return phonesByName.get(name);
 	}

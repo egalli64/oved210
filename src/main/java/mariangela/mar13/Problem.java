@@ -1,4 +1,4 @@
-package trainer.mar13;
+package mariangela.mar13;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,16 +16,18 @@ public class Problem {
 	 */
 	public static int mostPopular(int[] data) {
 		if (data == null || data.length == 0) {
-			throw new IllegalArgumentException("Bad input data");
+			throw new IllegalArgumentException("Bad input data!");
 		}
+		int result = data[0];
+		int resultCount = count(data, result);
 
-		int result = 0;
-		int resultCount = 0;
-		for (int i = 0; i < data.length; i++) {
+		for (int i = 1; i < data.length; i++) {
 			int currentCount = count(data, data[i]);
+
 			if (currentCount > resultCount) {
-				result = data[i];
+
 				resultCount = currentCount;
+				result = data[i];
 			}
 		}
 		return result;
@@ -33,62 +35,51 @@ public class Problem {
 
 	public static int mostPopularSort(int[] data) {
 		if (data == null || data.length == 0) {
-			throw new IllegalArgumentException("Bad input data");
+			throw new IllegalArgumentException("Bad input data!");
 		}
-
 		Arrays.sort(data);
-
 		int result = data[0];
-		int resultCount = 1;
-		int current = result;
-		int currentCount = 1;
-		for (int i = 1; i < data.length; i++) {
-			if (data[i] != current) {
-				if (currentCount > resultCount) {
-					result = current;
-					resultCount = currentCount;
-				}
+		int candidate = result;
+		int candidateFrequency = 1;
+		int resultFrequency = 1;
 
-				current = data[i];
-				currentCount = 1;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] != candidate) {
+				if (candidateFrequency > resultFrequency) {
+					result = candidate;
+					resultFrequency = candidateFrequency;
+
+				}
+				candidate = data[i];
+				candidateFrequency = 1;
 			} else {
-				currentCount++;
+				candidateFrequency++;
 			}
 		}
-
-		if (resultCount > currentCount) {
+		if (resultFrequency < candidateFrequency) {
 			return result;
 		} else {
-			return current;
-		}
 
-//		return resultCount > currentCount ? result : current;
+			return candidate;
+		}
 	}
 
 	public static int mostPopularHash(int[] data) {
 		if (data == null || data.length == 0) {
-			throw new IllegalArgumentException("Bad input data");
+			throw new IllegalArgumentException("Bad input data!");
 		}
-		
 		Map<Integer, Integer> counters = new HashMap<>();
+		for (int i = 0; i < data.length; i++) {
 
-		for(int i = 0; i < data.length; i++) {
-			if(counters.containsKey(data[i])) {
+			if (counters.containsKey(data[i])) {
 				int value = counters.get(data[i]);
 				counters.put(data[i], value + 1);
 			} else {
-				counters.put(data[i], 1);				
-			}
-		}
-		
-//		for (int key : data) {
-//			Integer counter = counters.get(key);
-//			if (counter == null) {
-//				counter = 0;
-//			}
-//			counters.put(key, counter + 1);
-//		}
 
+				counters.put(data[i], 1);
+			}
+
+		}
 		int result = 0;
 		int frequency = 0;
 		for (Map.Entry<Integer, Integer> entry : counters.entrySet()) {
@@ -98,7 +89,6 @@ public class Problem {
 				frequency = entry.getValue();
 			}
 		}
-
 		return result;
 	}
 
@@ -106,23 +96,22 @@ public class Problem {
 	 * <pre>
 	 * {2, 2, 2, 1, 1}, 2 -> 3
 	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}, 3 -> 2
-	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}, 4 -> 0
 	 * </pre>
 	 * 
-	 * @param data  an array of integers (possibly) w/ repetitions
-	 * @param value an integer that could be in data
+	 * @param data
+	 * @param value
 	 * @return the number of values in data
 	 */
 	public static int count(int[] data, int value) {
-		int result = 0;
 
-		for (int current : data) {
-			if (current == value) {
-				result += 1;
+		int result = 0;
+		for (int i = 0; i < data.length; i++) {
+			if (data[i] == value) {
+				result++;
+
 			}
 		}
 
 		return result;
 	}
-
 }
