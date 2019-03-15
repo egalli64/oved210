@@ -36,4 +36,32 @@ public class ProblemsTest {
 		assertTrue(results.contains(5));
 		assertTrue(results.contains(6));
 	}
+	
+	@Test
+	public void ifElse3() {
+		String result = Problems.ifElse(3);
+		assertThat (result, is("Weird"));
+		
+	}
+	
+	@Test
+	public void ifElse22() {
+		String result = Problems.ifElse(22);
+		assertThat (result, is("Not Weird"));
+		
+	}
+	
+	@Test
+	public void ifElse2to5() {
+		String result = Problems.ifElse(2);
+		assertThat (result, is("Not Weird"));
+		
+	}
+	
+	@Test
+	public void ifElse6to20() {
+		String result = Problems.ifElse(6);
+		assertThat (result, is("Weird"));
+		
+	}
 }
