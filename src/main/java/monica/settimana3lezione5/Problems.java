@@ -3,9 +3,12 @@ package monica.settimana3lezione5; // 15/03/19
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import org.thymeleaf.expression.Lists;
 
 /**
  * {1,1,1,4,5,6,4,6,5} -> {1,4,6,5} {} -> {} null -> exception? {}?
@@ -32,8 +35,8 @@ public class Problems {
 		result.add(value);
 
 		for (int i = 1; i < buffer.size(); i++) {
-			int current = buffer.get(i);       // cosi gli dico di lavorare sull'elemento corrente
-			if (current != value) {           // confrontami l'elemento corrente con quello precedente
+			int current = buffer.get(i); // cosi gli dico di lavorare sull'elemento corrente
+			if (current != value) { // confrontami l'elemento corrente con quello precedente
 				result.add(current);
 				value = current;
 			}
@@ -43,4 +46,15 @@ public class Problems {
 
 	}
 
+	public static List<Integer> killDuplicatesHash(List<Integer> data) {
+		if (data == null || data.isEmpty()) {
+			throw new UnsupportedOperationException("not yet implmentes");
+		}
+
+		HashSet<Integer> hashData = new HashSet<>(data);
+		List<Integer> result = new ArrayList<Integer>(hashData);
+
+		return result;
+
+	}
 }
