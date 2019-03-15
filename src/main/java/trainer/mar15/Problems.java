@@ -83,4 +83,18 @@ public class Problems {
 			return "Not Weird";
 		}
 	}
+	
+	/**
+	 * 2 -> {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+	 * 
+	 * @param value an integer
+	 * @return the first ten multiples of value
+	 */
+	public int[] multiples(int value) {
+		int[] results = new int[10];
+		
+		// ...
+		
+		return results;
+	}
 }
