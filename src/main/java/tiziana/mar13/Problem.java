@@ -78,9 +78,19 @@ public class Problem {
 			}
 
 			counters.put(key, counter + 1);
-			
-			
+
 		}
+
+//		oppure
+//		
+//		for(int i = 0; i < data.length; i++) {
+//		  if(counters.containsKey(data[i])) {
+//			int value = counters.get(data[i]);
+//			counters.put(data[i], value + 1);
+//			} else {
+//				counters.put(data[i], 1);				
+//			}
+//		}
 
 		int result = 0;
 		int frequency = 0;
@@ -96,10 +106,13 @@ public class Problem {
 
 	/**
 	 * <pre>
-	 * {2, 2, 2, 1, 1}, 2 -> 3 {2, 2, 2, 1, 1, 3, 3, 1, 1}, 1 -> 4
+	 * {2, 2, 2, 1, 1}, 2 -> 3
+	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}, 3 -> 2
+	 * {2, 2, 2, 1, 1, 3, 3, 1, 1}, 4 -> 0
+	 * </pre>
 	 * 
-	 * @param data
-	 * @param value
+	 * @param data  an array of integers (possibly) w/ repetitions
+	 * @param value an integer that could be in data
 	 * @return the number of values in data
 	 */
 

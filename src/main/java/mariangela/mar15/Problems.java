@@ -72,7 +72,7 @@ public class Problems {
 			return "Not Weird";
 		}
 	}
-}
+
 
 //		if (value <= 0) {
 //			throw new IllegalAccessError();
@@ -95,3 +95,46 @@ public class Problems {
 //		
 //		return "Weird";
 //	}
+	/**
+	 * 
+	 * 2 -> {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+	 * 
+	 * 
+	 * @param value an integer
+	 * @return the first ten multiples of value
+	 */
+	public static int[] multiples(int value) {
+		int[] results = new int[10];
+		
+		for (int i = 0; i < results.length; i++) {
+			
+			results[i] = value * (i + 1); 
+			
+		}
+		return results;
+	}
+	/**
+	 * 
+	 * cat, tac -> true
+	 * catt, tacc -> false
+	 * 
+	 * 
+	 * @param left is a string
+	 * @param right another string
+	 * @return true is left is an anagram of right
+	 */
+	
+	static public boolean isAnagram(String left, String right) {
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
