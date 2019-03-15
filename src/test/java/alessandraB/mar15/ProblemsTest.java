@@ -41,7 +41,7 @@ public class ProblemsTest {
 	@Test
 	public void testifElse() {
 		String result = Problems.ifElse(21);
-		assertThat(result, is("Not Weird"));
+		assertThat(result, is("weird"));
 		
 		
 		
