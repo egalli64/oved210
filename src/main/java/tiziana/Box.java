@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class Box {
 	protected static int counter=0;

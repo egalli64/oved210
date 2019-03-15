@@ -1,4 +1,4 @@
-package tiziana.primasettimana;
+package tiziana;
 
 public class CubicbBox extends Box {
 	public CubicbBox(double x) {
