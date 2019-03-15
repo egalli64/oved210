@@ -8,22 +8,22 @@ import static org.hamcrest.core.Is.*;
 
 public class ProblemTest {
 	
-//	@Test
-//	public void mostPopularHashTest() {
-//
-//		int[] data = { 2, 2, 2, 1, 1 };
-//		int result = Problem.mostPopularHash(data);
-//		assertThat(result, is(2));
-//		}
-//
-//	@Test
-//	public void mostPopularHash2Test() {
-//
-//		int[] data = {2, 2, 2, 1, 1, 3, 3, 1, 1};
-//		int result = Problem.mostPopularHash(data);
-//		assertThat(result, is(1));
-//		}
-//	
+	@Test
+	public void mostPopularHashTest() {
+
+		int[] data = { 2, 2, 2, 1, 1 };
+		int result = Problem.mostPopularHash(data);
+		assertThat(result, is(2));
+		}
+
+	@Test
+	public void mostPopularHash2Test() {
+
+		int[] data = {2, 2, 2, 1, 1, 3, 3, 1, 1};
+		int result = Problem.mostPopularHash(data);
+		assertThat(result, is(1));
+		}
+	
 
 	@Test
 	public void popularFirstTest() {

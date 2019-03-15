@@ -60,7 +60,6 @@ public class Problem {
 	}
 
 	public static int mostPopularSorted(int[] data) {
-
 		if (data == null || data.length == 0) {
 			throw new IllegalArgumentException("Bad input data");
 		}
@@ -68,51 +67,66 @@ public class Problem {
 		Arrays.sort(data);
 
 		int result = data[0];
-		int resultFreq = 1;
+		int resultCount = 1;
 		int current = result;
-		int currentFreq = 1;
-
+		int currentCount = 1;
 		for (int i = 1; i < data.length; i++) {
 			if (data[i] != current) {
-				if (currentFreq > resultFreq) {
+				if (currentCount > resultCount) {
 					result = current;
-					resultFreq = currentFreq;
+					resultCount = currentCount;
 				}
+
 				current = data[i];
-				currentFreq = 1;
+				currentCount = 1;
 			} else {
-				currentFreq++;
+				currentCount++;
 			}
 		}
-		if (resultFreq > currentFreq) {
+
+		if (resultCount > currentCount) {
 			return result;
 		} else {
 			return current;
 		}
+
+//		return resultCount > currentCount ? result : current;
 	}
 
-//	public static int mostPopularHash(int[] data) {
-//		
-//		if (data == null || data.length == 0) {
-//			throw new IllegalArgumentException("Bad input data");
-//		}
-//	
-//		Map <Integer, Integer> counters = new HashMap<>();
-//		
-//		for (int i=0; i < data.length; i++) {
-//			if(counters.containsKey(data[i])) {
-//				int value = counters.get(data[i]);
-//				counters.put(data[i], value + 1);
+	public static int mostPopularHash(int[] data) {
+		if (data == null || data.length == 0) {
+			throw new IllegalArgumentException("Bad input data");
+		}
+		
+		Map<Integer, Integer> counters = new HashMap<>();
+
+		for(int i = 0; i < data.length; i++) {
+			if(counters.containsKey(data[i])) {
+				int value = counters.get(data[i]);
+				counters.put(data[i], value + 1);
+			} else {
+				counters.put(data[i], 1);				
+			}
+		}
+		
+//		for (int key : data) {
+//			Integer counter = counters.get(key);
+//			if (counter == null) {
+//				counter = 0;
 //			}
+//			counters.put(key, counter + 1);
 //		}
-//		
-////		for (int key: data) {
-////			Integer counter = counters.get(key);
-////		if (counter == null) {
-////			counter = 0;
-////		}
-////		counters.put(key, counter + 1);
-////	}
-////
-////	}
+
+		int result = 0;
+		int frequency = 0;
+		for (Map.Entry<Integer, Integer> entry : counters.entrySet()) {
+			int currentFrequency = entry.getValue();
+			if (currentFrequency > frequency) {
+				result = entry.getKey();
+				frequency = entry.getValue();
+			}
+		}
+
+		return result;
+	}
 }
