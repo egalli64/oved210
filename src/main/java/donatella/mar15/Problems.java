@@ -3,8 +3,10 @@ package donatella.mar15;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.TreeMap;
 
 public class Problems {
 
@@ -100,18 +102,34 @@ public class Problems {
 //	@return true if left is an anagram of right
 
 	static public boolean Anagram(String left, String right) {
-		if(left.length()!=right.length()) {
+		if (left.length() != right.length()) {
 			return false;
 		}
-		char[] x=left.toCharArray();
-		char[] y=right.toCharArray();
+		char[] x = left.toCharArray();
+		char[] y = right.toCharArray();
 		Arrays.sort(x);
 		Arrays.sort(y);
-		for(int i=0; i< x.length; i++) {
-		if(x[i]!=y[i]);
-		
-		return  false;
+		for (int i = 0; i < x.length; i++) {
+			if (x[i] != y[i])
+				;
+
+			return false;
+		}
+		return true;
 	}
-     return true;
-}
+
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> hm = new HashMap<>();
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = hm.get(key);
+			if (value == null) {
+				hm.put(key, 1);
+			} else {
+				hm.put(key, value + 1);
+			}
+
+		}
+		return false;
+	}
 }

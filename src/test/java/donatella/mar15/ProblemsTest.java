@@ -108,4 +108,19 @@ public class ProblemsTest {
 		assertFalse(Problems.Anagram(a,b));
 		return false;
 	}
+	@Test
+	public static boolean isAnagramHashPositive() {
+		String a = "cat";
+		String b = "tac";
+		assertTrue(Problems.Anagram(a, b));
+		return true;
+	}
+
+	@Test
+	public static boolean isAnagramHashNegative() {
+		String a= "catt";
+		String b="tacc";
+		assertFalse(Problems.Anagram(a,b));
+		return false;
+	}
 }
