@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.PrimaSettimana;
 
 public class AnimalUser {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tiziana;
+package tiziana.PrimaSettimana;
 
 public class Box {
 	protected static int counter=0;

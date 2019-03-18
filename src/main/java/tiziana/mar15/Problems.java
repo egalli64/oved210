@@ -161,36 +161,37 @@ public class Problems {
 	}
 
 	static public boolean isAnagramHash(String left, String right) {
-		HashMap<Character, Integer> hm1 = new HashMap<>();
-		HashMap<Character, Integer> hm2 = new HashMap<>();
+		HashMap<Character, Integer> hml = new HashMap<>();
+		HashMap<Character, Integer> hmr = new HashMap<>();
 
 		for (int i = 0; i < left.length(); i++) {
 			Character key = left.charAt(i);
-			Integer value = hm1.get(key);
+			Integer value = hml.get(key);
 			if (value == null) {
-				hm1.put(key, 1);
+				hml.put(key, 1);
 			} else {
-				hm1.put(key, value + 1);
+				hmr.put(key, value + 1);
 			}
 		}
 
 		for (int i = 0; i < right.length(); i++) {
 			Character Key = right.charAt(i);
-			Integer value = hm2.get(Key);
+			Integer value = hmr.get(Key);
 			if (value == null) {
-				hm2.put(Key, 1);
+				hmr.put(Key, 1);
 			} else {
-				hm2.put(Key, value + 1);
+				hmr.put(Key, value + 1);
 
 			}
 		}
-		
-//		for(Map.Entry<Character, Integer> entry: hm2.entrySet()) {
-//			Integer rightValue = hm2.getkey(
-//		}
-//		
 
-			return true;
-	
+		for (Map.Entry<Character, Integer> entry : hml.entrySet()) {
+			Integer rightValue = hmr.get(entry.getKey());
+			if (rightValue == null || !rightValue.equals(entry.getValue())) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 }
