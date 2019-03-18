@@ -1,7 +1,5 @@
 package trainer.mar18;
 
-import java.util.HashMap;
-
 public class User {
 	public static void main(String[] args) {
 		System.out.println("base:");
