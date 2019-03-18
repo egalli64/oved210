@@ -63,15 +63,15 @@ public class Problems {
 	public static String ifElse(int value) {
 
 		if (value % 2 == 1) {
-			return "weird";
+			return "Weird";
 
 		} else {
 
-			if (value >= 2 || value <= 5) {
+			if (value >= 2 && value <= 5) {
 				return "not Weird";
 			}
-			if (value >= 6 || value <= 20) {
-				return " Weird";
+			if (value >= 6 && value <= 20) {
+				return "Weird";
 			}
 			if (value > 20) {
 				return "not Weird";
@@ -79,7 +79,55 @@ public class Problems {
 
 				throw new IllegalAccessError();
 
-			}
+			} // if(value %2 == 1 || (value > 5 && value < 21)) {
+				// return "Weird";
+				// } else {
+				// return "Not Weird";
 		}
+	}
+
+	/**
+	 * 2 --> {2,4,6,8,10,12,14,16,18,20}
+	 * 
+	 * @param value an integer
+	 * @return the first ten multiples of value
+	 */
+
+	public static int[] multiples(int value) {
+		int[] results = new int[10];
+
+		for (int i = 0; i < results.length; i++) {
+			int x = value * (i + 1);
+			results[i] = x;
+
+		}
+
+		return results;
+	}
+
+	/**
+	 *
+	 * @param left  a string
+	 * @param right another string
+	 * @return true if left is an anagram of right
+	 */
+
+	static public boolean isAnagram(String left, String right) {
+
+		if (left.length() != right.length()) {
+			return false;
+		}
+
+		char[] x = left.toCharArray(); // torna la versione in caratteri delle stringhe
+		char[] y = right.toCharArray();
+		Arrays.sort(x);
+		Arrays.sort(y);
+
+		for (int i = 0; i < x.length; i++) {
+			if (x[i] == y[i]) {
+				return true;
+			} 
+		}
+		return false;
 	}
 }

@@ -11,6 +11,8 @@ import static org.hamcrest.core.Is.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import trainer.mar12.HashExercises;
+
 public class HashExercisesTest {
 	@Test
 	public void intersectionPlain() {
@@ -38,21 +40,26 @@ public class HashExercisesTest {
 	}
 
 	@Test
+	public void differencePlain() {
+		HashSet<Integer> left = new HashSet<Integer>(Arrays.asList(1, 2, 3));
+		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList(2, 3, 4));
+
+		HashSet<Integer> results = HashExercises.difference(left, right);
+		assertThat(results.size(), is(1));
+		Assert.assertTrue(results.contains(1));
+	}
+
+	@Test
 	public void intersectionDifference() {
 		HashSet<Integer> left = new HashSet<Integer>(Arrays.asList(1, 2, 3));
 		HashSet<Integer> right = new HashSet<Integer>(Arrays.asList(4, 5, 6));
 
 		HashSet<Integer> results = HashExercises.difference(left, right);
 		assertThat(results.size(), is(3));
-		assertTrue(results.size());
-		assertTrue(results.size());
-		assertTrue(results.size());
-		
+		assertTrue(results.contains(1));
+		assertTrue(results.contains(2));
+		assertTrue(results.contains(3));
 
 	}
 
-	private void assertTrue(int size) {
-		// TODO Auto-generated method stub
-		
-	}
 }
