@@ -5,7 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Problems {
 	/**
@@ -146,32 +149,44 @@ public class Problems {
 	}
 
 	static public boolean isAnagramHash(String left, String right) {
-		HashMap<Character, Integer> counters = new HashMap<>();
+		HashMap<Character, Integer> hml = new HashMap<>();
+		HashMap<Character, Integer> hmr = new HashMap<>();
+
 		for (int i = 0; i < left.length(); i++) {
-			Character key = left.charAt(i);
-			Integer value = counters.get(key);
-			if (value == null) {
-				value = 0;
+
+			if (hml.containsKey(left.charAt(i))) {
+				int value = hml.get(left.charAt(i));
+				hml.put(left.charAt(i), value + 1);
+
+			} else {
+				hml.put(left.charAt(i), 1);
 			}
-			counters.put(key, value + 1);
+
 		}
 
 		for (int i = 0; i < right.length(); i++) {
-			Character key = right.charAt(i);
-			Integer value = counters.get(key);
-			if (value == null || value.equals(0)) {
-				return false;
-			}
-			counters.put(key, value - 1);
-		}
 
-		for (int value : counters.values()) {
-			if (value != 0) {
-				return false;
+			if (hmr.containsKey(right.charAt(i))) {
+				int value = hmr.get(right.charAt(i));
+				hmr.put(right.charAt(i), value + 1);
+
+			} else {
+				hmr.put(right.charAt(i), 1);
+
 			}
 		}
 
+		Iterator<Map.Entry<Character, Integer>> it = hml.entrySet().iterator();
+		while (it.hasNext()) {
+
+			Map.Entry<Character, Integer> entry = it.next();
+
+			Integer rightValue = hmr.get(entry.getKey());
+			if (rightValue == null || !rightValue.equals(entry.getValue())) {
+				return false;
+			}
+
+		}
 		return true;
 	}
-
 }
