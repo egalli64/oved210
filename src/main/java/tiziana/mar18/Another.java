@@ -1,5 +1,5 @@
 package tiziana.mar18;
 
-public class Another {
-
+public abstract class Another {
+	public abstract void z();
 }

@@ -5,13 +5,4 @@ public class Base {
 		System.out.println("Base.k()");
 	}
 
-	@Override
-	public String toString() {
-		return "Base [getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
-	}
-
-
-	
-
 }
