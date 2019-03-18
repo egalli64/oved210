@@ -1,5 +1,7 @@
 package claudia.mar05;
 
+import java.util.HashSet;
+
 public class Problem {
 
 //	int[] data = {2, 1, 1}; 
@@ -26,6 +28,23 @@ public class Problem {
 		}
 		throw new IllegalAccessError("Can't find unique!");
 
+	}
+
+	public static int findUniqueHash(int[] data) {
+		if (data == null) {
+			throw new IllegalStateException("Bad input data");
+		}
+
+		HashSet<Integer> buffer = new HashSet<>();
+		for (int i = 0; i < data.length; i++) {
+			if (buffer.contains(data[i])) {
+				buffer.remove(data[i]);
+			} else {
+				buffer.add(data[i]);
+			}
+		}		
+		
+		return buffer.iterator().next();
 	}
 
 	public static int findBigger(int[] data) {
