@@ -2,7 +2,6 @@ package alessandraC.mar15;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.core.Is.*;
-import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,37 +9,34 @@ import java.util.List;
 
 import org.junit.Test;
 
-import org.junit.Test;
 
 public class ProblemsTest {
 
 	@Test
 	public void killDuplicatesSort() {
+		List<Integer> values = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
+		List<Integer> results = Problems.killDuplicatesSort(values);
 
-		List<Integer> array = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
-		List<Integer> result = Problems.killDuplicateHash(array);
-
-		assertThat(result.size(), is(4));
-		assertTrue(result.contains(1));
-		assertTrue(result.contains(4));
-		assertTrue(result.contains(5));
-		assertTrue(result.contains(6));
-
+		assertThat(results.size(), is(4));
+		assertTrue(results.contains(1));
+		assertTrue(results.contains(4));
+		assertTrue(results.contains(5));
+		assertTrue(results.contains(6));
+	
 	}
 
 	@Test
-	public void killDuplicateHash() {
+	public void killDuplicatesHash() {
+		List<Integer> values = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
+		List<Integer> results = Problems.killDuplicateHash(values);
 
-		List<Integer> array = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
-		List<Integer> result = Problems.killDuplicateHash(array);
-
-		assertThat(result.size(), is(4));
-		assertTrue(result.contains(1));
-		assertTrue(result.contains(4));
-		assertTrue(result.contains(5));
-		assertTrue(result.contains(6));
-
+		assertThat(results.size(), is(4));
+		assertTrue(results.contains(1));
+		assertTrue(results.contains(4));
+		assertTrue(results.contains(5));
+		assertTrue(results.contains(6));
 	}
+
 
 	@Test
 	public void IfElseOdd() {
@@ -62,16 +58,29 @@ public class ProblemsTest {
 	@Test
 	public void ifElseEven22() {
 		assertThat(Problems.ifElse(22), is("Not weird"));
+	
+	}
+	
+
+	@Test
+	public void isAnagramPositive() {
+		assertTrue(Problems.isAnagram("cat", "tac"));
 	}
 
 	@Test
-	public void ifElseZero() {
-		try {
+	public void isAnagramNegative() {
+		assertFalse(Problems.isAnagram("catt", "tacc"));
+	}
 
-		Problems.ifElse(0);
-		fail("ifElse() should throw an exception");
-	} catch(IllegalAccessError ex) {
+	@Test
+	public void isAnagramHashPositive() {
+		assertTrue(Problems.isAnagramHash("cat", "tac"));
+	}
+
+	@Test
+	public void isAnagramHashNegative() {
+		assertFalse(Problems.isAnagramHash("catt", "tacc"));
+	}
 	
-	}
-	}
+	
 }
