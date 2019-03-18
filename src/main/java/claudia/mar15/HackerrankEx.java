@@ -1,6 +1,7 @@
 package claudia.mar15;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class HackerrankEx {
 	/**
@@ -54,5 +55,24 @@ public class HackerrankEx {
 
 		}
 		return true;
+	}
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> myHashAnagram = new HashMap<>();
+		for (int i = 0; i < left.length(); i++){
+			Character key = left.charAt(i);
+			Integer value = myHashAnagram.get(key);
+			if(value == null) {
+				value = 0;
+			}
+				myHashAnagram.put(key, value +1);
+			}
+		
+		
+		
+		
+		
+		
+		
+		return false;
 	}
 }

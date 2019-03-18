@@ -62,4 +62,17 @@ public class HackerrankExTest {
 	@Test
 	public void isAnagram3() {
 		assertFalse(HackerrankEx.isAnagram("cat", "tcc"));
-}}
+}
+	@Test
+	public void isAnagramHash1() {
+		assertTrue(HackerrankEx.isAnagramHash("cat", "act"));
+	}
+	@Test
+	public void isAnagramHash2() {
+		assertTrue(HackerrankEx.isAnagramHash("cat", "tac"));
+}
+	@Test
+	public void isAnagramHash3() {
+		assertFalse(HackerrankEx.isAnagramHash("cat", "tcc"));
+}
+}
