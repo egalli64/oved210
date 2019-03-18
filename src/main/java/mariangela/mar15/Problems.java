@@ -1,9 +1,14 @@
 package mariangela.mar15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class Problems {
 	/**
@@ -73,7 +78,6 @@ public class Problems {
 		}
 	}
 
-
 //		if (value <= 0) {
 //			throw new IllegalAccessError();
 //		}
@@ -105,36 +109,84 @@ public class Problems {
 	 */
 	public static int[] multiples(int value) {
 		int[] results = new int[10];
-		
+
 		for (int i = 0; i < results.length; i++) {
-			
-			results[i] = value * (i + 1); 
-			
+
+			results[i] = value * (i + 1);
+
 		}
 		return results;
 	}
+
 	/**
 	 * 
-	 * cat, tac -> true
-	 * catt, tacc -> false
+	 * cat, tac -> true catt, tacc -> false
 	 * 
 	 * 
-	 * @param left is a string
+	 * @param left  is a string
 	 * @param right another string
 	 * @return true is left is an anagram of right
 	 */
-	
+
 	static public boolean isAnagram(String left, String right) {
-		return false;
+		if (left == null || right == null || left.length() != right.length()) {
+			return false;
+		}
+
+		char[] lhs = left.toCharArray();
+		Arrays.sort(lhs);
+
+		char[] rhs = right.toCharArray();
+		Arrays.sort(rhs);
+
+		for (int i = 0; i < lhs.length; i++) {
+			if (lhs[i] != rhs[i]) {
+				return false;
+			}
+		}
+
+		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> hml = new HashMap<>();
+		HashMap<Character, Integer> hmr = new HashMap<>();
+
+		for (int i = 0; i < left.length(); i++) {
+
+			if (hml.containsKey(left.charAt(i))) {
+				int value = hml.get(left.charAt(i));
+				hml.put(left.charAt(i), value + 1);
+
+			} else {
+				hml.put(left.charAt(i), 1);
+			}
+
+		}
+
+		for (int i = 0; i < right.length(); i++) {
+
+			if (hmr.containsKey(right.charAt(i))) {
+				int value = hmr.get(right.charAt(i));
+				hmr.put(right.charAt(i), value + 1);
+
+			} else {
+				hmr.put(right.charAt(i), 1);
+
+			}
+		}
+
+		Iterator<Map.Entry<Character, Integer>> it = hml.entrySet().iterator();
+		while (it.hasNext()) {
+
+			Map.Entry<Character, Integer> entry = it.next();
+
+			Integer rightValue = hmr.get(entry.getKey());
+			if (rightValue == null || !rightValue.equals(entry.getValue())) {
+				return false;
+			}
+
+		}
+		return true;
+	}
 }

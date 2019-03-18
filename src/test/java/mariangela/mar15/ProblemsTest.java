@@ -80,4 +80,24 @@ public class ProblemsTest {
 		assertThat (results[8], is(18));
 		assertThat (results[9], is(20));
 	}
+	
+	@Test
+	public void isAnagramPositive() {
+		assertTrue(Problems.isAnagram("cat", "tac"));
+	}
+
+	@Test
+	public void isAnagramNegative() {
+		assertFalse(Problems.isAnagram("catt", "tacc"));
+	}
+
+	@Test
+	public void isAnagramHashPositive() {
+		assertTrue(Problems.isAnagramHash("cat", "tac"));
+	}
+
+	@Test
+	public void isAnagramHashNegative() {
+		assertFalse(Problems.isAnagramHash("catt", "tacc"));
+	}
 }
