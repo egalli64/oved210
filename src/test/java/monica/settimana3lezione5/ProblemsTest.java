@@ -9,6 +9,7 @@ import java.util.List;
 import static org.hamcrest.core.Is.*;
 import org.junit.Test;
 
+
 public class ProblemsTest {
 
 	@Test
@@ -36,6 +37,17 @@ public class ProblemsTest {
 		assertTrue(results.contains(5));
 		assertTrue(results.contains(6));
 	
+
 	}
 
+	@Test
+	public void isAnagramHashPositive() {
+		assertTrue(Problems.isAnagramHash("cat", "tac"));
+	}
+
+	@Test
+	public void isAnagramHashNegative() {
+		assertFalse(Problems.isAnagramHash("catt", "tacc"));
+	}
 }
+

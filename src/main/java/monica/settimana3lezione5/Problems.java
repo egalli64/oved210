@@ -3,6 +3,7 @@ package monica.settimana3lezione5; // 15/03/19
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -57,4 +58,41 @@ public class Problems {
 		return result;
 
 	}
-}
+
+	static public boolean isAnagramHash(String left, String right) {
+		if (left.length() != right.length()) {
+			return false;
+		}
+
+		HashMap<Character, Integer> countersLeft = new HashMap<>();
+		for (int i = 0; i < left.length(); i++) {
+			Character keyL = left.charAt(i);
+			Integer valueL = countersLeft.get(keyL);
+
+			if (countersLeft.containsKey(keyL)) {
+				countersLeft.put(keyL, valueL + 1);
+			} else {
+				countersLeft.put(keyL, 1);
+			}
+		}
+		HashMap<Character, Integer> countersRight = new HashMap<>();
+		for (int k = 0; k < right.length(); k++) {
+			Character keyR = right.charAt(k);
+			Integer valueR = countersRight.get(keyR);
+
+			if (countersRight.containsKey(keyR)) {
+				countersRight.put(keyR, valueR + 1);
+
+			} else {
+				countersRight.put(keyR, 1);
+			}
+		}
+
+		Iterator<Map.Entry<Character, Integer>> it = countersLeft.entrySet().iterator();
+		while (it.hasNext()) {
+			
+		it.next(); 
+		}
+		return true;
+	} }
+
