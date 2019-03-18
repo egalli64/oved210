@@ -1,7 +1,9 @@
 package mariangela.mar15;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -73,7 +75,6 @@ public class Problems {
 		}
 	}
 
-
 //		if (value <= 0) {
 //			throw new IllegalAccessError();
 //		}
@@ -105,36 +106,72 @@ public class Problems {
 	 */
 	public static int[] multiples(int value) {
 		int[] results = new int[10];
-		
+
 		for (int i = 0; i < results.length; i++) {
-			
-			results[i] = value * (i + 1); 
-			
+
+			results[i] = value * (i + 1);
+
 		}
 		return results;
 	}
+
 	/**
 	 * 
-	 * cat, tac -> true
-	 * catt, tacc -> false
+	 * cat, tac -> true catt, tacc -> false
 	 * 
 	 * 
-	 * @param left is a string
+	 * @param left  is a string
 	 * @param right another string
 	 * @return true is left is an anagram of right
 	 */
-	
+
 	static public boolean isAnagram(String left, String right) {
-		return false;
+		if (left == null || right == null || left.length() != right.length()) {
+			return false;
+		}
+
+		char[] lhs = left.toCharArray();
+		Arrays.sort(lhs);
+
+		char[] rhs = right.toCharArray();
+		Arrays.sort(rhs);
+
+		for (int i = 0; i < lhs.length; i++) {
+			if (lhs[i] != rhs[i]) {
+				return false;
+			}
+		}
+
+		return true;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> counters = new HashMap<>();
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = counters.get(key);
+			if (value == null) {
+				value = 0;
+			}
+			counters.put(key, value + 1);
+		}
+
+		for (int i = 0; i < right.length(); i++) {
+			Character key = right.charAt(i);
+			Integer value = counters.get(key);
+			if (value == null || value.equals(0)) {
+				return false;
+			}
+			counters.put(key, value - 1);
+		}
+
+		for (int value : counters.values()) {
+			if (value != 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 }
