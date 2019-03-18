@@ -2,8 +2,10 @@ package tiziana.mar15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class Problems {
 
@@ -50,7 +52,7 @@ public class Problems {
 		}
 
 		HashSet<Integer> newhash = new HashSet<>(array); /// abbiamo creato una nuova lista hashset(newhash) dove ci
-															/// mettiamo
+		/// mettiamo
 		ArrayList<Integer> result = new ArrayList<Integer>(newhash); /// l'array e poi trasferiamo in una nuova lista
 																		/// arraylist(result) la lista hashnew.
 
@@ -125,7 +127,7 @@ public class Problems {
 
 	/**
 	 * <pre>
-	 * cat, tac -> true
+	 * cat, tac -> true;
 	 * catt, tacc -> false;
 	 * </pre>
 	 * 
@@ -156,6 +158,39 @@ public class Problems {
 
 		}
 		return true;
+	}
 
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> hm1 = new HashMap<>();
+		HashMap<Character, Integer> hm2 = new HashMap<>();
+
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = hm1.get(key);
+			if (value == null) {
+				hm1.put(key, 1);
+			} else {
+				hm1.put(key, value + 1);
+			}
+		}
+
+		for (int i = 0; i < right.length(); i++) {
+			Character Key = right.charAt(i);
+			Integer value = hm2.get(Key);
+			if (value == null) {
+				hm2.put(Key, 1);
+			} else {
+				hm2.put(Key, value + 1);
+
+			}
+		}
+		
+//		for(Map.Entry<Character, Integer> entry: hm2.entrySet()) {
+//			Integer rightValue = hm2.getkey(
+//		}
+//		
+
+			return true;
+	
 	}
 }
