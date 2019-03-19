@@ -93,7 +93,20 @@ public class ProblemsTest {
 			String aright = "tacc";
 			assertFalse(Problems.isAnagram(aleft,  aright));
 		}
+		@Test
+		public void isAnagramPositiveHash() {
+			String aleft = "cat";
+			String aright = "tac";
+			assertTrue(Problems.isAnagram(aleft,  aright));
+		}
+		@Test
+		public void isAnagramNegativeHash() {
+			String aleft = "catt";
+			String aright = "tacc";
+			assertFalse(Problems.isAnagram(aleft,  aright));	
 		
+		
+}
 }
 
 

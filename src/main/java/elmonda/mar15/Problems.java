@@ -3,6 +3,7 @@ package elmonda.mar15;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -150,6 +151,69 @@ public class Problems {
 		}
 		return true;
 	}
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> equals = new HashMap<>();
+		for (int i = 0; i < left.length(); i++) {    // per ogni elemento singolo in left
+			Character key = left.charAt(i);           // la chiave sarà uguale ad ogni singolo elemento di left
+			Integer value = equals.get(key);           // ogni valore numerico intero è associato ad una chiave
+			if (value == null) {                       // confronta il valore e se non c'è ed è quindi  uguale a null, il valore numerioco sarà uguale a zero.
+				value = 0;
+				
+			}
+			equals.put(key, value + 1);       
+		}
+
+		for (int i = 0; i < right.length(); i++) {  
+			Character key = right.charAt(i);
+			Integer value = equals.get(key);
+			if (value == null || value.equals(0)) {
+				return false;
+			}
+			equals.put(key, value - 1);
+		}
+
+		for (int value : equals.values()) {
+			if (value != 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+	///////////////////////////////////////////////////////
+	
+	static public boolean isAnagramHashA(String left, String right) {
+		HashMap<Character, Integer> mapLeft = new HashMap<>();
+		HashMap<Character, Integer> mapRight = new HashMap<>();
+		
+		for (int i = 0; i < right.length(); i++) {
+			Integer value = mapRight.get(right.charAt(i));
+		if(value == null) {
+			mapRight.put(right.charAt(i),1);
+			
+		}else {
+			mapRight.put(right.charAt(i), value +1);
+			
+		}
+	
+	}
+
+
+	for (int i = 0; i < left.length(); i++) {
+		Integer value = mapLeft.get(right.charAt(i));
+	if(value == null) {
+		mapLeft.put(left.charAt(i),1);
+		
+	}else {
+		mapLeft.put(left.charAt(i), value +1);
+		
+	}
+
+}
+	return false;
+	
+
+}
 
 }
 
