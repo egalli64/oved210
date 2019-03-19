@@ -49,7 +49,7 @@ public class ArrayListProblemsTest {
 }
 		ArrayListProblems.removeDuplicates(data);  // non ritorna niente, riceve in data, lo manipola  ein data ci dev'essere il risultato,
 		// tutti i duplicati devono essere buttati via
-		//assertThat(data.size(),is(1));        // voglio che data conenga un solo elemento
+		//assertThat(data.size(),is(1));        // voglio che data contenga un solo elemento
 		  
 		assertThat(data.size(), is(1));
 		//assertEquals(1, data.size());
