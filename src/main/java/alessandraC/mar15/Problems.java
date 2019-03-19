@@ -2,17 +2,12 @@ package alessandraC.mar15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Problems {
-
-	private static Object value;
 
 	/**
 	 * <pre>
@@ -54,12 +49,15 @@ public class Problems {
 
 	}
 
-	public static List<Integer> killDuplicateHash(List<Integer> data) {
-		if (data == null) {
-			return Collections.emptyList();
+	public static List<Integer> killDuplicatesHash(List<Integer> data) {
+		if (data == null || data.size() == 0) {
+			throw new IllegalArgumentException("Bad input data");
 		}
-		return new ArrayList<>(new HashSet<>(data));
 
+		HashSet<Integer> hash = new HashSet<>(data);
+		ArrayList<Integer> result = new ArrayList<Integer>(hash);
+
+		return result;
 	}
 
 	/**
@@ -78,8 +76,8 @@ public class Problems {
 	 */
 
 	public static String ifElse(int value) {
-		if (value <= 0) {
-			throw new IllegalArgumentException("Bad input data");
+		if (value < 1) {
+			throw new IllegalAccessError("Bad input data");
 		}
 
 		if (value % 2 == 1) {
