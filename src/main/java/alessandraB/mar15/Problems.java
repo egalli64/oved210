@@ -130,4 +130,15 @@ public class Problems {
 		}
 		return false;
 	}
-}
+	
+	 
+	static public boolean isAnagramHash(String left, String right) {
+		
+		HashMap <Character, Integer> hm = new HashMap<Character, Integer>();
+		
+		for(int i = 0; i < left.length(); i++) {
+			
+		}
+		
+		return false;	
+} }
