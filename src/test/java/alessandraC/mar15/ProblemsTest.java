@@ -1,9 +1,10 @@
 package alessandraC.mar15;
 
-import static org.junit.Assert.*;
-import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,18 +18,27 @@ public class ProblemsTest {
 		List<Integer> values = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
 		List<Integer> results = Problems.killDuplicatesSort(values);
 
+
+		List<Integer> array = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
+		List<Integer> result = Problems.killDuplicatesSort(array);
+
+		assertThat(result.size(), is(4));
+		assertTrue(result.contains(1));
+		assertTrue(result.contains(4));
+		assertTrue(result.contains(5));
+		assertTrue(result.contains(6));
+
 		assertThat(results.size(), is(4));
 		assertTrue(results.contains(1));
 		assertTrue(results.contains(4));
 		assertTrue(results.contains(5));
-		assertTrue(results.contains(6));
-	
+		assertTrue(results.contains(6));	
 	}
 
 	@Test
 	public void killDuplicatesHash() {
 		List<Integer> values = Arrays.asList(1, 1, 1, 4, 5, 6, 4, 6, 5);
-		List<Integer> results = Problems.killDuplicateHash(values);
+		List<Integer> results = Problems.killDuplicatesHash(values);
 
 		assertThat(results.size(), is(4));
 		assertTrue(results.contains(1));
@@ -61,10 +71,29 @@ public class ProblemsTest {
 	
 	}
 	
+	@Test
+	public void multiplesTwo() {
+
+		int[] values = Problems.multiples(2);
+
+		assertThat(values.length, is(10));
+		assertThat(values[0], is(2));
+		assertThat(values[1], is(4));
+		assertThat(values[2], is(6));
+		assertThat(values[3], is(8));
+		assertThat(values[4], is(10));
+		assertThat(values[5], is(12));
+		assertThat(values[6], is(14));
+		assertThat(values[7], is(16));
+		assertThat(values[8], is(18));
+		assertThat(values[9], is(20));
+
+	}
 
 	@Test
 	public void isAnagramPositive() {
 		assertTrue(Problems.isAnagram("cat", "tac"));
+
 	}
 
 	@Test
@@ -80,7 +109,5 @@ public class ProblemsTest {
 	@Test
 	public void isAnagramHashNegative() {
 		assertFalse(Problems.isAnagramHash("catt", "tacc"));
-	}
-	
-	
+	}	
 }
