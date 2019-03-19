@@ -1,0 +1,6 @@
+package gloria.mar18;
+
+public interface Happy {
+	void smile();
+
+}
