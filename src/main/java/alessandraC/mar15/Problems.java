@@ -2,11 +2,17 @@ package alessandraC.mar15;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Problems {
+
+	private static Object value;
 
 	/**
 	 * <pre>
@@ -49,13 +55,10 @@ public class Problems {
 	}
 
 	public static List<Integer> killDuplicateHash(List<Integer> data) {
-		if (data == null || data.size() == 0) {
-			throw new IllegalArgumentException("Bad input data");
+		if (data == null) {
+			return Collections.emptyList();
 		}
-
-		HashSet<Integer> result = new HashSet<>(data);
-
-		return data;
+		return new ArrayList<>(new HashSet<>(data));
 
 	}
 
@@ -63,7 +66,7 @@ public class Problems {
 	 * <pre>
 	 * If value is odd, return "weird"
 	 * If value is even and in [6 .. 20], return "weird" 
-
+	
 	 * if value is even and in [2 .. 5], return "Not weird"
 	 * if value is even and greater than 20, return " Not weird"
 	 * </pre>
@@ -86,18 +89,95 @@ public class Problems {
 		if (value >= 2 && value <= 5) {
 			return "Not weird";
 		}
-		
-		if(value >= 6 && value <= 20) {
+
+		if (value >= 6 && value <= 20) {
 			return "Weird";
-			
+
 		}
-		if(value > 20) {
+		if (value > 20) {
 			return "Not weird";
+
 		}
-
-
-		
 		return "Weird";
 	}
 
+	/**
+	 * 2 -> {2, 4, 6, 8, 10, 12, 14, 16, 18, 20}
+	 * 
+	 * @param value an integer
+	 * @return the first ten multiples of value
+	 */
+	static public int[] multiples(int value) {
+		int[] results = new int[10];
+
+		for (int i = 0; i < results.length; i++) {
+			results[i] = value * (i + 1);
+		}
+
+		return results;
+	}
+
+	/**
+	 * <pre>
+	 * cat, tac -> true
+	 * cat, tca -> true
+	 * catt, tacc -> false
+	 * </pre>
+	 * 
+	 * @param left  a string
+	 * @param right another string
+	 * @return true if left is an anagram of right
+	 */
+	static public boolean isAnagram(String left, String right) {
+		if (left == null || right == null || left.length() != right.length()) {
+			return false;
+		}
+
+		char[] lhs = left.toCharArray();
+		Arrays.sort(lhs);
+
+		char[] rhs = right.toCharArray();
+		Arrays.sort(rhs);
+
+		for (int i = 0; i < lhs.length; i++) {
+			if (lhs[i] != rhs[i]) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	public static boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> hml = new HashMap<>();
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = hml.get(key);
+			if (value == null) {
+				hml.put(key, 1);
+			} else {
+				hml.put(key, value + 1);
+			}
+		}
+
+		HashMap<Character, Integer> hmr = new HashMap<>();
+		for (int i = 0; i < right.length(); i++) {
+			Character key = right.charAt(i);
+			Integer value = hmr.get(key);
+			if (value == null) {
+				hmr.put(key, 1);
+			} else {
+				hmr.put(key, value + 1);
+			}
+		}
+
+		for (Map.Entry<Character, Integer> entry : hml.entrySet()) {
+			Integer rightValue = hmr.get(entry.getKey());
+			if (rightValue == null || !rightValue.equals(entry.getValue())) {
+				return false;
+			}
+		}
+
+		return true;
+	}
 }

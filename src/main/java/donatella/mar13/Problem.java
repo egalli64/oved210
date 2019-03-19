@@ -94,6 +94,6 @@ public class Problem {
 			}
 		}
 
-		return i;
+		return result;
 	}
 }

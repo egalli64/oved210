@@ -65,9 +65,12 @@ public class HackerRankTest {
 	}
 
 	@Test
-	public void isAnagramNot() {
-		String a = "catt";
-		String b = "tacc";
-		assertFalse(HackerRank.isAnagram(a, b));
+	public void isAnagramPositive() {
+		assertTrue(HackerRank.isAnagramHash("cat", "tac"));
+	}
+
+	@Test
+	public void isAnagramNegative() {
+		assertFalse(HackerRank.isAnagramHash("catt", "tacc"));
 	}
 }

@@ -1,6 +1,8 @@
 package alessandraC.mar01;
 
-public class Derived extends Base {
+import alessandraC.mar18.Happy;
+
+public class Derived extends Base implements Happy {
 
 	private double z;
 
@@ -20,6 +22,11 @@ public class Derived extends Base {
 	public void doSomething() {
 		System.out.println("something");
 
+	}
+
+	@Override
+	public void smile() {
+		
 	}
 
 }

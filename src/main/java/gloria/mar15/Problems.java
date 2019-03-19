@@ -3,6 +3,7 @@ package gloria.mar15;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 
 public class Problems {
@@ -50,6 +51,35 @@ public class Problems {
 		return new ArrayList<>(new HashSet<>(data));
 
 	}
+	
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> anagram = new HashMap<>();
 
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = anagram.get(key);
+			if (value == null) {
+				value = 0;
+			}
+			anagram.put(key, value + 1);
+		}
+
+		for (int i = 0; i < right.length(); i++) {
+			Character key = right.charAt(i);
+			Integer value = anagram.get(key);
+			if (value == null || value.equals(0)) {
+				return false;
+			}
+			anagram.put(key, value - 1);
+		}
+
+		for (int value : anagram.values()) {
+			if (value != 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
 
 }
