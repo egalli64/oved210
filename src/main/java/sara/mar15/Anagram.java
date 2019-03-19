@@ -1,6 +1,7 @@
 package sara.mar15;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
 
@@ -26,12 +27,41 @@ public class Anagram {
 		Arrays.sort(arrayLeft);
 		Arrays.sort(arrayRight);
 
-		
 		for (int i = 0; i < arrayLeft.length; i++) {
 			if (arrayLeft[i] != arrayRight[i]) {
 				return false;
 			}
 		}
 		return true;
-	}                              
+	}
+
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> anagram = new HashMap<Character, Integer>();
+
+		for (int i = 0; i < left.length(); i++) {
+			Character key = left.charAt(i);
+			Integer value = anagram.get(key);
+//				if (value == null) {
+//					value = 0;
+//				}
+//				
+			if (anagram.containsKey(key)) {
+
+			}
+
+			
+
+			for (int j = 0; j < right.length(); j++) {
+				Character keyright = right.charAt(j);
+				Integer valueright = anagram.get(key);
+				if (value == null || value.equals(0)) {
+					return false;
+				}
+				
+
+				return true;
+			}
+		}
+		return false;
+	}
 }
