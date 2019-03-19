@@ -104,4 +104,20 @@ public class ProblemsTest {
 		String right = "tacc";
 		assertFalse(Problems.isAnagram(left, right));
 	}
+
+	@Test
+	public void testisAnagramHashTrue() {
+		String left = "cat";
+		String right = "tac";
+		assertTrue(Problems.isAnagramHash(left, right));
+
+	}
+
+	@Test
+	public void testisAnagramHashFalse() {
+		String left = "catt";
+		String right = "tacc";
+		assertFalse(Problems.isAnagramHash(left, right));
+	}
+
 }
