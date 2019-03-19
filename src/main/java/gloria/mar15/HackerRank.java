@@ -1,6 +1,7 @@
 package gloria.mar15;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class HackerRank {
 	/**
@@ -89,8 +90,38 @@ public class HackerRank {
 				return false;
 			}
 		}
-		
+
 		return true;
 
+	}
+
+	static public boolean isAnagramHash(String left, String right) {
+		HashMap<Character, Integer> mapLeft = new HashMap<>();
+		HashMap<Character, Integer> mapRight = new HashMap<>();
+
+		for (int i = 0; i < left.length(); i++) {
+			Integer value = mapLeft.get(left.charAt(i));
+			if (value == null) {
+				mapLeft.put(left.charAt(i), 1);
+
+			} else {
+
+				mapLeft.put(left.charAt(i), value + 1);
+			}
+
+		}
+
+		for (int i = 0; i < right.length(); i++) {
+			Integer value = mapRight.get(right.charAt(i));
+			if (value == null) {
+				mapRight.put(right.charAt(i), 1);
+
+			} else {
+
+				mapRight.put(right.charAt(i), value + 1);
+			}
+		}
+
+		return false;
 	}
 }
