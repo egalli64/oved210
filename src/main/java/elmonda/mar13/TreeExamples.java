@@ -3,7 +3,9 @@ package elmonda.mar13;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.SortedSet;
+import java.util.TreeMap;
 import java.util.TreeSet;
 public class TreeExamples {
 	public static void treeSetExample() {
@@ -77,9 +79,36 @@ public class TreeExamples {
 		
 	}
 public static void main(String[] args) {
-	treeSetExample();
+	//treeSetExample();
+	treeMapExample();
 	
-	System.out.println((int)Math.ceil(42.45));   // 
-	System.out.println((int)Math.floor(42.45));
+	//System.out.println((int)Math.ceil(42.45));   // 
+	//System.out.println((int)Math.floor(42.45));
+}
+
+public static void treeMapExample() {
+	//le chiavi sono stringhe e le mappe sono valori
+	TreeMap<Integer, String> studentsById = new TreeMap<>();
+	//TreeMap<Integer, String> studentsByName = new TreeMap<>();
+	
+	studentsById.put(12,  "Tom");
+	studentsById.put(42,  "Tim");
+	studentsById.put(27,  "Sal");
+	studentsById.put(2,  "Sal");
+	
+	System.out.println(studentsById);
+	Iterator<Map.Entry<Integer, String>> it = studentsById.entrySet().iterator();  // in it abbiamo un iteratore all'entry set che è posizionato prima del primo elemento
+	// quindi possiamo looppare su tutti i valori
+	while(it.hasNext()) { // mi gira su tutti gli elementi della mia mappa e me li stampa
+		Map.Entry<Integer, String> entry = it.next();
+		if(entry.getValue().equals("Sal")) {// prendi il valore che c'è in entry confrontalo con sal, se sono uguali esegui il blocco
+		System.out.println("Sal has id" + entry.getKey());  // mi ritorna un entry di string
+		//break;
+	}
+	
+	//Iterator<Map.<K, V>.Entry<K, V>> it =
+	// voglio risalire dal nome dell'utente alla sua matricola, è una cosa che faccio raramente
+	
+	}			
 }
 }

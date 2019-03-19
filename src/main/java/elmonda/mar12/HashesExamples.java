@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class HashesExamples {
 	public static void hashSetExample() {
-		HashSet<String> myStrings = new HashSet<>();  // dico che la mia variabille è di tipo hashset string
+		HashSet<String> myStrings = new HashSet<>();  // dico che la mia variabile è di tipo hashset string
 
 		myStrings.add("Hello");    
 		// myStrings.add(0, "First"); // nonsense!   // non posso fare add in posizione zero perchè non esiste il concetto di posizione
