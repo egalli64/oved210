@@ -299,14 +299,27 @@ on (d.location_id = l.location_id)
 group by l.country_id
 order by 2 desc;
 
--- filter on employees than on a group of employees
+-- having: filter groups
+select manager_id, trunc(avg(salary))
+from employees
+group by manager_id
+having avg(salary) > 8500
+order by 2 desc;
+
+-- where: filter on employees
+select manager_id, trunc(avg(salary))
+from employees
+where salary > 8500
+group by manager_id
+order by 2 desc;
+
+-- filter on employees than on groups of employees
 select manager_id, trunc(avg(salary))
 from employees
 where salary > 6000
 group by manager_id
 having avg(salary) > 8500
 order by 2 desc;
-
 
 
 
