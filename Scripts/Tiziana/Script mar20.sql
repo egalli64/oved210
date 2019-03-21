@@ -285,7 +285,31 @@ from employees e join departments d
 on(e.department_id = d.department_id)
 join locations l
 on(d.location_id = l.location_id)
-group by l.country_id;
+group by l.country_id
+order by 1;
+
+--having filtra con i gruppi
+select manager_id, trunc(avg(salary))
+from employees
+group by manager_id
+having avg(salary) > 8500
+order by 2 desc;
+
+--where filtra con le righe
+select manager_id, trunc(avg(salary))
+from employees
+where salary > 8500
+group by manager_id
+order by 2 desc;
+
+--where e having filtrano insieme
+select manager_id, trunc(avg(salary))
+from employees
+where salary > 6000
+group by manager_id
+having avg(salary) > 8500
+order by 2 desc;
+
 
 
 
