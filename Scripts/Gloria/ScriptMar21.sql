@@ -1,4 +1,5 @@
---ESERCIZIO:
+--ESERCIZI:
+
 --1) Employees: show id, last name, job id, hire date, for each employee
 select  employee_id, last_name, job_id, to_char(hire_date) as "StarDate"
 from employees
@@ -141,3 +142,120 @@ select last_name, trunc((sysdate - hire_date)/7) as "Tenure"
 from employees
 where department_id = 90
 order by 2 desc;
+
+--26) <employee last name> earns <salary> monthly but wants <3 times saalry> as Dream Salaries
+select (last_name ||' earns '||to_char(salary, '$99,999.99')||' monthly but wants '||to_char(salary*3, '$99,999.99')) as "Dreams Salaries"
+from employees
+order by salary desc;
+
+--27) last name e commission, se non le hanno diciamo no commission
+select last_name, nvl(to_char(commission_pct), 'no commission')
+from employees;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+select sysdate
+from dual;
+
+--scrivere data e ora
+select employee_id, hire_date, to_char(hire_date, 'Month dd,yyyy')
+from employees;
+
+select to_char(sysdate,'dd month yyyy'),
+       to_char(sysdate,'dd month yyyy hh24:mi:ss')
+from dual;
+
+select to_date('12 Gennaio 1994', 'dd month yyyy'), to_date('7.4.18', 'mm.dd.yy')
+from dual;
+
+select to_date('05-FEB-2019 19:32:18', 'dd-month-yy hh24:mi:ss')
+from dual;
+
+select to_char(to_date('05-FEB-2019 19:32:18', 'dd-mon-yyyy hh24:mi:ss'), 'hh24:mi:ss')
+from dual;
+
+--stampo la data odierna e quella tra 13 mesi
+select sysdate, add_months(sysdate, 13)
+from dual;
+
+--per vedere l'ultimo giorno del mese senza fare il conto, inserendo solo il primo giorno del mese
+select last_day('01-FEB-2016')
+from dual;
+
+--per stampare quanti mesi sono passati dal..
+select months_between(sysdate, '15-GEN-01')
+from dual;
+
+--giorno successivo ad una certa data: inserisco il primo giorno del mese con il nome del giorno che voglio
+select next_day('01-GIU-2019', 'lunedi')
+from dual;
+
+select round(to_date('25-OTT-2019'),'yyyy'), trunc(to_date('25-OTT-2019'),'yyyy')
+from dual;
+
+--ESERICIZIO:
+--last name, hire date e il primo lunedi dopo i primi sei mesi di servizio
+select last_name, hire_date, to_char(next_day(add_months(hire_date, 6), 'lunedi'), 'fmDay, "the" ddspth "of" Month "," yyyy') as "Review"
+from employees;
+
+--select to_char(sysdate,'fmDay, "the" ddspth "of" Month "," yyyy')
+--from dual;
+
+--ESERCIZIO:
+
+--1) Employees: highest, lowest, sum, average salary as maximum minimum sum and average
+select max(salary) as "Maximum", min(salary) as "Minimum", sum(salary) as "Sum", round(avg(salary)) as "Average"
+from employees;
+
+--2) Employees: devo fare il RAGGRUPPAMENTO: job id, maximum minimum sum avg
+select job_id, max(salary) as "Maximum", min(salary) as "Minimum", sum(salary) as "Sum", round(avg(salary)) as "Average"
+from employees
+group by job_id
+order by 2 desc;
+
+--3) Employees: per ogni job_id quanti employee ci sono:
+select job_id, count(employee_id)
+from employees
+group by job_id
+order by 2;
+
+--4) Employees: numeri dei manager in employees 
+select count(distinct manager_id)
+from employees;
+
+--5) Employees: differenza tra salario più alto e quello più basso
+select max(salary) - min(salary)
+from employees;
+
+--6) manager id e dipendente pagato meno di quel manager escludendo i gruppi che hanno meno di 6000 e dove il manager è nullo
+select manager_id, min(salary)
+from employees
+having min(salary) > 6000 and manager_id is not null
+group by manager_id
+order by 2 desc;
+
+--7) indirizzi di tutti i dipartimenti: location id, street address, city, state p, country name
+select country_id, location_id, street_address, city, state_province, country_name
+from locations natural join countries
+order by 2;
+
+--8) last name, dep id, dep name
+select last_name, department_id, department_name
+from employees join departments
+using(department_id)
+order by 1;
+
+--9) last name, job id, dep id, dep name degli impiegati che vivono a toronto
+select last_name, job_id, department_id, department_name
+from employees join departments
+using(department_id)
+join locations
+using(location_id)
+where city = 'Toronto';
+
+--10) last name, employee id abbinati al cognome del manager e all'id del manager. employee_id, emp#, manager_id, mgr#
+select emp.last_name || ' , ' || emp.employee_id as "Employee",
+       mgr.last_name || ' , ' || mgr.manager_id as "Manager"
+from employees emp join employees mgr
+on(emp.manager_id = mgr.employee_id)
+order by 1;
