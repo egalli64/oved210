@@ -228,6 +228,7 @@ SELECT AVG(SALARY), VARIANCE(SALARY), STDDEV(SALARY), AVG(DISTINCT SALARY) --ave
 FROM employees
 ORDER BY salary;
 
+
 SELECT count(*), COUNT(EMPLOYEE_ID), count(DEPARTMENT_ID), COUNT(rowid) -- count(rowid) = count(*)
 FROM EMPLOYEES;
 
