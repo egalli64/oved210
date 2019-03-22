@@ -160,3 +160,5 @@ join locations l
 on (d.location_id = l.location_id)
 group by l.country_id
 order by 1;
+
+
