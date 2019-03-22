@@ -184,7 +184,8 @@ USING (location_id)
 WHERE location_id = '1800'
 
 
-SELECT first_name, 
+SELECT e.LAST_NAME, e.EMPLOYEE_ID, m.last_name, m.DEPARTMENT_ID
 FROM EMPLOYEES e JOIN EMPLOYEES m
-
+ON (e.MANAGER_ID = m.MANAGER_ID)
+ORDER BY 3,1;
 
