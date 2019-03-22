@@ -304,9 +304,17 @@ WHERE city = 'Toronto';
 
 --employee e il nome del manager associato
 --Employee, Emp#, Manager, Mgr#
-SELECT e.last_name, e.EMPLOYEE_ID, m.last_name, m.DEPARTMENT_ID
-FROM EMPLOYEES e JOIN EMPLOYEES m 
-on(e.MANAGER_ID = m.EMPLOYEE_ID);
+--includere anche il nome del manager che ha come valore null
+--VOGLIO SALVAGUARDARE EMPLOYEES 
+SELECT e.last_name, e.EMPLOYEE_ID, m.last_name, m.DEPARTMENT_ID 
+FROM EMPLOYEES e LEFT JOIN EMPLOYEES m 
+on(e.MANAGER_ID = m.EMPLOYEE_ID)
+ORDER BY 3, 1;
+
+
+
+
+
 
 
 
