@@ -63,5 +63,7 @@ create table emp (
 alter table emp
 add commission number (2,2);
 
-
+alter table emp modify (
+last_name varchar2(50)
+);
 	
