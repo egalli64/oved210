@@ -307,7 +307,7 @@ FROM EMPLOYEES
 WHERE COMMISSION_PCT IS not NULL
 --GROUP BY DEPARTMENT_ID;
 
-SELECT department_id, avg(salary)
+SELECT department_id, ROUND(avg(salary))
 FROM EMPLOYEES
 WHERE EMPLOYEE_ID != (SELECT count(EMPLOYEE_id)
                      FROM EMPLOYEES
