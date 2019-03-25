@@ -220,8 +220,10 @@ from dual;
 
 
 select power(2, -3), power(2, 3),
-       sqrt(25), sqrt(5),
-       round(5.75), round(5.2),
+       sqrt(25), sqrt(5)
+from dual;       
+      
+select round(5.75), round(5.2),
        round(5.75, 1), round(5.75, -1),
        round(5.75, 0), round(5.75, -2)
 from dual;     
