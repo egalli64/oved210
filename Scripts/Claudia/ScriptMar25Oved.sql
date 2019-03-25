@@ -260,7 +260,8 @@ CREATE TABLE Emp(
 ALTER TABLE EMP
 ADD Commission NUMBER (2, 2);
 
-
+ALTER TABLE EMP
+MODIFY last_name varchar2(50);
 
 
 
