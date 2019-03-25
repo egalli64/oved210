@@ -250,14 +250,15 @@ where hire_date between'1-GEN-03'and '31-AGO-07';
 
 --department name, salario medio, employees number commissioni
 
-select department_id, round(avg(salary))
+select department_id, C
 from employees 
 group by department_id;
 
-select department_name, commission_pct
-from employees join departments
+select department_name, count(commission_pct), round(avg(salary)
+from departments
+join employees using(department_id)
 using(department_id)
-where commission_pct = is not null;
+
 
 
 
