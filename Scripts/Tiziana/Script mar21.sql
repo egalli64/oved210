@@ -208,11 +208,28 @@ on (d.location_id = l.location_id)
 where l.city = 'Toronto';
 
 
-select e.last_name, e.manager_id, m.last_name, m.manager_id 
+select e.last_name as employee , e.employee_id as emp#, m.last_name as manager, m.department_id  as mng#
 from employees e join employees m
-on(e.manager_id = m.manager_id)
-where m.manager_id is not null
-order by 2;
+on(e.manager_id = m.employee_id)
+order by 3,1;
+
+
+select e.last_name as employee , e.employee_id as emp#, m.last_name as manager, m.department_id  as mng#
+from employees e left outer join employees m 
+on (e.manager_id = m.employee_id) 
+order by 3,1; 
+
+
+
+
+
+
+
+   
+ 
+
+
+
 
 
 
