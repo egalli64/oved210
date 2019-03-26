@@ -276,13 +276,6 @@ create table dept(
 	id number (7) constraint dept_pk primary key,
 	name varchar2 (25));
 
-
-create table emp(
-	id number (7) constraint emp_pk primary key,
-	last_name varchar2(25),
-	first_name varchar2(25),
-	dept_id number(7) constraint emp_dept_id_fk references dept(id));
-
 alter table emp 
 add commission number (2,2);
 
@@ -291,13 +284,58 @@ alter table emp
 modify last_name varchar2(50);
 
 
-alter table emp 
-drop column first_name;
+alter table emp
+drop (last_name);
 
 
 
+--tentative marking of column as unused
+alter table emp set unused(dept_id);
+
+--when safe, drop them
+alter table emp drop unused column;
 
 
+
+--CONTINUA ESERCIZI (26 MARZO)
+
+--create table employees
+create table employees as
+	select employee_id as id, first_name, last_name, salary, department_id as dept_id
+	from hr.employees;
+
+alter table employees read only;
+
+delete from employees;
+
+truncate table employees;
+
+update employees
+set first_name = 'Tom'
+where id = 100;
+
+--tutti i tentativi di modificare la mia tabella sono falliti perchè la tabella è read only!!
+
+alter table employees read write;
+
+update employees
+set first_name = 'Tom'
+where id = 100;
+
+select*
+from employees 
+where id = 100;
+
+truncate table employees;
+
+select count(rowid) from employees;
+
+drop table dept;
+drop table emp;
+drop table employees;
+drop table coders;
+drop table my_employee;
+drop table my_statues;
 
 
 
