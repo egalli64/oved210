@@ -295,6 +295,111 @@ where city = 'Toronto';
 select e.last_name, e.employee_id, m.last_name, m.department_id
 from employees e join employees m
 on(e.manager_id = m.employee_id)
-order by 3, 1
+order by 3, 1;
 
+-- 2.5
+select e.last_name, e.employee_id, m.last_name, m.department_id
+from employees e LEFT join employees m
+on(e.manager_id = m.employee_id)
+order by 3, 1;
 
+-- 2.6
+select e.department_id, e.last_name, c.last_name
+from employees e join employees c
+on(e.department_id = c.department_id)
+where e.employee_id != c.employee_id
+order by 1, 2;
+
+-- 2.8
+select hire_date
+from employees
+where last_name = 'Davies';
+
+select last_name, hire_date
+from employees
+where hire_date > '29-GEN-05';
+
+-- 2.9
+select e.last_name, e.hire_date, m.last_name, m.hire_date
+from employees e join employees m
+on(e.manager_id = m.employee_id)
+where e.hire_date < m.hire_date
+order by 1;
+
+-- 3.2
+select employee_id, last_name, salary
+from employees
+where salary > (
+	select avg(salary)
+	from employees
+)
+order by 3;
+
+-- 3.3
+select employee_id, last_name
+from employees
+where department_id in (
+	select distinct department_id
+	from employees
+	where last_name like '%u%'
+);
+
+-- 3.4
+select last_name, department_id, job_id
+from employees join departments
+using(department_id)
+where location_id = 1700;
+
+-- 3.5
+select last_name, salary
+from employees
+where manager_id = (
+	select employee_id
+	from employees
+	where first_name = 'Steven' and last_name = 'King'
+);
+
+select e.last_name, e.salary
+from employees e join employees m
+on e.manager_id = m.employee_id
+where m.last_name = 'King';
+
+-- 3.6
+select department_id, last_name, job_id
+from employees
+where department_id = (
+	select department_id
+	from departments
+	where department_name = 'Executive'
+);
+
+-- 3.7
+select last_name, salary
+from employees
+where salary > (
+	select min(salary)
+	from employees
+	where department_id = 60
+)
+order by 2;
+
+select last_name, salary
+from employees
+where salary > all(
+	select salary
+	from employees
+	where department_id = 60
+)
+order by 2;
+
+-- 3.8
+select employee_id, last_name, salary
+from employees
+where department_id in (
+	select distinct department_id
+	from employees
+	where last_name like '%u%'
+) and salary > (
+	select avg(salary)
+	from employees
+);
