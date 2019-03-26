@@ -257,13 +257,34 @@ CREATE TABLE Emp(
 		REFERENCES DEPT(id) ON DELETE CASCADE
 );
 
+--comandi DDL, una volta fatti non si possono modificare
 ALTER TABLE EMP
 ADD Commission NUMBER (2, 2);
 
 ALTER TABLE EMP
 MODIFY last_name varchar2(50);
 
+ALTER TABLE EMP 
+DROP FIRST_NAME;
 
+--marcare come UNUSED una colonna non utilizzata (comando pericoloso)
+ALTER TABLE EMP
+SET unused(dept_id);
+
+SELECT *
+FROM all_tab_columns
+WHERE table_name = 'EMP' AND COLUMN_NAME = 'Dept_id'
+
+--vedere quante colonne sono inutilizzate
+SELECT *
+FROM USER_UNUSED_COL_TABS;
+
+--eliminazione colonne unused
+ALTER TABLE EMP
+DROP unused COLUMNS;
+
+
+	
 
 
 
