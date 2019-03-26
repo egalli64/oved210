@@ -52,11 +52,33 @@ end;
 -- open cursor for
 declare 
     type t_coder_cursor is ref cursor return coders%rowtype; --rowtype: tipo di riga della tabella coders
-    v_coder_cursor t_coder_cursor;
+    v_coder_cursor t_coder_cursor; --creare una variabile di tipo t coder cursor definito alla riga precedente
     v_cur coders%rowtype;
 begin     
-    for v_cur in v_coder_cursor loop          
+    open v_coder_cursor for select* from coders where coder_id BETWEEN 103 and 105;
+    
+    loop
+        fetch v_coder_cursor into v_cur;    
+        exit when v_coder_cursor%notfound;
+        
         DBMS_OUTPUT.put_line('Coder ' || v_cur.coder_id || ' is ' || v_cur.first_name || ' ' || v_cur.last_name);
+    end loop;
+end;
+/
+
+--unconstrained cursor
+declare 
+    type t_cursor is ref cursor; 
+    v_cursor t_cursor; 
+    v_cod coders%rowtype;
+begin     
+    open v_cursor for select* from coders where coder_id BETWEEN 103 and 105;
+    
+    loop
+        fetch v_cursor into v_cod;    
+        exit when v_cursor%notfound;
+        
+        DBMS_OUTPUT.put_line('Coder ' || v_cod.coder_id || ' is ' || v_cod.first_name || ' ' || v_cod.last_name);
     end loop;
 end;
 /
