@@ -1,10 +1,3 @@
--- pl/sql procedure, function, trigger
-
--- connect as: sqlplus / as sysdba
--- alter session set container = xepdb1;
--- grant create procedure to oved;
--- grant create trigger to oved;
-
 create or replace procedure update_coder_salary(
     p_coder_id in coders.coder_id%type,
     p_factor in number
@@ -27,4 +20,7 @@ exception
         rollback;
 end update_coder_salary;
 /    
+
+call update_coder_salary(103,1);
+call update_coder_salary(p_coder_id => 104, p_factor =>1.5);
 
