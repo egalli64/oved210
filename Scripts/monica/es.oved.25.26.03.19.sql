@@ -76,9 +76,70 @@ dept_id NUMBER (7)
 )
 
 
---13*es. aggiungere colonna alla tabella
+--13*es. aggiungere/ modificare /cancellare colonna alla tabella
 
 ALTER TABLE emp
 ADD (commission NUMBER (2,2))
 
+ALTER TABLE EMP
+modify(
+LAST_name varchar2(50))
+
+ALTER TABLE emp 
+DROP ( first_name);
+
+--ESERECIZI GIORNO "26/03/19"
+
+--1*es. congelare una tabella senza eliminarla
+
+ALTER TABLE emp SET unused (dept_id)
+
+--2* es. eliminare definitivamente la colonna che ho congelato in precedenza
+
+ALTER TABLE emp drop unused COLUMNS
+
+--3* es : creare tabella 
+CREATE TABLE employee2 (
+id NUMBER (6) CONSTRAINT employee2_pk PRIMARY key,
+first_name varchar2(20),
+last_name varchar2(25) ,
+salary NUMBER (8,2),
+dept_id NUMBER (4)
+);
+
+
+DROP TABLE EMPLOYEE2;
+
+--4* es: creare la stessa tabella di sopra con il select dalla tabella hr.employees cosi si copiano automaticamente i dati
+CREATE TABLE employees2 AS 
+	SELECT employee_id AS id, first_name, last_name, salary, DEPARTMENT_ID AS dept_id
+	FROM hr.employees
+	
+--5*es: tutti le modifiche che faccio non sono possibili dal read only
+ALTER TABLE EMPLOYEES2 READ ONLY 
+
+--6* es: cosa succede se cerco di eliminare tutte le righe della tabella (non permette)
+DELETE FROM EMPLOYEES2;
+
+
+--7*es: la faccio tornare utilizzabile
+ALTER TABLE EMPLOYEES2 READ WRITE
+
+--8* modifico employee
+
+UPDATE EMPLOYEES2
+SET FIRST_NAME = 'Tom'
+WHERE id = 100
+
+
+TRUNCATE TABLE EMPLOYEES2
+
+--9* es: cancella tutte le tabelle
+DROP TABLE DEPT
+DROP TABLE emp 
+DROP TABLE EMPLOYEES2
+DROP TABLE coders
+DROP TABLE INFOS
+DROP TABLE SIMPLE
+DROP TABLE MY_EMPLOYEE
 
