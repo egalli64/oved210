@@ -1,7 +1,11 @@
 -- create table
 
 create table coders as
-	select employee_id as coder_id, first_name, last_name, hire_date, salary
+	select employee_id as coder_id,
+			first_name,
+			last_name,
+			hire_date,
+			salary
 	from hr.employees
 	where department_id = 60;
 
