@@ -81,3 +81,19 @@ alter table emp drop(
 	first_name
 );
 
+-- tentative marking of column as unused
+alter table emp set unused(dept_id);
+
+select dept_id
+from emp;
+
+select *
+from ALL_TAB_COLUMNS
+where table_name = 'EMP';
+
+select *
+from  USER_UNUSED_COL_TABS;
+
+-- when safe, drop them
+alter table emp drop unused columns;
+
