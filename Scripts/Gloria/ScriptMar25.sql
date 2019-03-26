@@ -1,9 +1,13 @@
 --CREATE TABLE 
 
 create table coders as
-select employee_id as coder_id, first_name, last_name, hire_date, salary
-from hr.employees
-where department_id = 60;
+ select employee_id as coder_id, 
+        first_name,
+        last_name,
+        hire_date,
+        salary
+ from hr.employees
+ where department_id = 60;
 
 create table simple (
   simple_id number(6, 0) primary key, 
@@ -280,9 +284,50 @@ create table emp (
      constraint emp_dept_id_fk references dept(id) on delete cascade
 );
 
+
 alter table emp
    add commission number (2, 2);
 
 alter table emp modify(
-   last_name varchar2(50)
+   last_name varchar2(50)        
 );
+
+--tentative marking of column as unused 
+alter table emp set unused (dept_id);
+--when safe, drop them 
+alter table emp drop unused columns;
+
+
+--ESERCIZIO
+--4)
+create table employees2 as 
+ select employee_id as id,
+        first_name,
+        last_name,
+        salary,
+        department_id as dept_id
+ from hr.employees;
+ 
+alter table employees2 read only;
+
+delete from employees2;
+
+truncate table employees2;
+
+update employees2
+set first_name = 'Tom'
+where id = 100;
+
+select * from employees2 where id = 100;
+
+truncate table employees2;
+
+select count(rowid)from employees2;
+
+
+--5)
+drop table dept;
+drop table emp;
+drop table employees2;
+drop table infos;
+drop table coders;
