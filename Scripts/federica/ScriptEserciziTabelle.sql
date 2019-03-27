@@ -69,3 +69,32 @@ add commission number(2,2);
 alter table emp modify(
 last_name varchar2(50)
 );
+
+alter table emp drop(first_name);
+
+alter table emp set unused(dept_id);--non elimina la colonna ma indica che non è usata
+
+alter table emp drop unused columns;--elimina la colonna non usata
+
+--Esercizio:
+--con il comando 'create' creo una tabella vuota
+create table employees (
+id number(6),
+first_name varchar2(20),
+last_name varchar2(25) constraint employees_pk primary key,
+salary number(8,2),
+dept_id number(4)
+);
+
+drop table employees;
+
+--con il comando 'select' creo una tabella che mi prende i dati da una esistente
+create table employees as 
+select employee_id as id,
+first_name, 
+last_name, 
+salary, 
+department_id as dept_id
+from hr.employees;
+
+

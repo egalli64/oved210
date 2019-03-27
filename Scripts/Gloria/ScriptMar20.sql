@@ -203,15 +203,15 @@ select abs(-10), abs(10)
 from dual;
 --ceil/floor/modulo/potenza
 select abs(-10), abs(10),
-    ceil (5.8), ceil(-5.2),
-    floor(5.8), floor(-5.2),
-    mod(8, 4), mod(8, 3),
-    power(2, -3), power(2, 3)
+    ceil (5.2), ceil(-5.2), -- SEMPRE PER ECCESSO 
+    floor(5.8), floor(-5.2), -- SEMPRE PER DIFETTO
+    mod(8, 4), mod(8, 3), -- MODULO 
+    power(2, -3), power(2, 3) -- POTENZA
 from dual;
 
 select power(2, -3), power(2, 3),
-       sqrt(25), sqrt(5),
-       round(5.75), round (5.2), round(5.75, 1), round(5.75, -1), round(51.75, -2)
+       sqrt(25), sqrt(5), -- RADICE QUADRATA
+       round(5.75), round (5.2), round(5.75, 1), round(5.75, -1), round(51.75, -2) -- ARROTONDAMENTO PER ECCESSO O DIFETTO A SECONDA DEL DECIMALE
 from dual;
 
 select trunc(5.75), 
@@ -220,8 +220,7 @@ from dual;
 select to_char(1234.54), to_char(1234.54, '99,999.99'),
      to_char(2019, 'RN'), to_number('970,23') * 2,
      cast('05-GEN-18' as date),
-     cast(12345.234 as n
-     umber(10,2))
+     cast(12345.234 as number(10,2))
 from dual;
 
 --aggregate functions (avarage, variance, deviazione standard)
