@@ -1,0 +1,115 @@
+--pl/sql
+set serveroutput on
+
+declare
+ --per un lavoro semplice va bene questo metodo
+    v_first_name coders.first_name%type;--firstname è una variabile dello stesso tipo della colonna coders
+    v_last_name coders.last_name%type;
+begin
+
+--invece di usare le subquery è possibile usare la funzione into
+--ci permette di eseguire una select e di mettere il risultato nelle variabili
+    select first_name, last_name
+    into v_first_name, v_last_name --per mettere i valori che ha letto nelle variabili dichiarate
+    from coders
+    where coder_id = 103;
+    
+     DBMS_OUTPUT.PUT_LINE('Coder 103 is ' ||
+     v_first_name || ' ' || v_last_name);
+end;
+/
+------------------------------------------------------------------------------------------------
+--vogliamo fare una query che ci permetta di lavorare su tutti i query o parte, su una serie di righe, quindi una serie di coders
+declare
+    v_coder_id coders.coder_id%type;
+    v_first_name coders.first_name%type;--firstname è una variabile dello stesso tipo della colonna coders
+    v_last_name coders.last_name%type;
+    --definisco un oggetto
+    cursor v_coder_cursor is  --il cursore è il risultato di questa select
+        select coder_id, first_name, last_name
+        from coders
+        order by last_name;
+begin     
+    open v_coder_cursor; --apri il cursore, esegui la select associata
+
+    loop
+        fetch v_coder_cursor  --entriamo nella loop, fetch--> cerca di leggere il prossimo elemento nel cursore, la prossima riga, 
+        into v_coder_id, v_first_name, v_last_name;--se legge qualcosa me le butta in qst tre variab
+        exit when v_coder_cursor%notfound;  --altrimnt, quando not found è true sappiamo che non abbimao niente da leggere e usciamo dal loop
+
+    
+        DBMS_OUTPUT.PUT_LINE('Coder ' || v_coder_id || ' is ' || v_first_name || ' ' || v_last_name);
+    end loop;
+end;
+/
+------------------------------
+--*********************************************************IMPLICIT FETCH*********************************************
+
+declare
+
+    cursor v_coder_cursor is  --il cursore è il risultato di questa select
+        select coder_id, first_name, last_name
+        from coders
+        order by last_name;
+begin    
+    for v_cur in v_coder_cursor loop   --v cur sarà il risultato della fetch sul cursore
+        
+        DBMS_OUTPUT.PUT_LINE('Coder ' || v_cur.coder_id || ' is ' || v_cur.first_name || ' ' || v_cur.last_name);
+    end loop;
+end;
+/
+
+--------------------------------
+--per avere più elasticità E NON LEGARE IL CURSORE ALLA SELECT, definire il cursore a prescindere dalla select
+--VOGLIO AVERE LA POSSIBILTà DI CAMBIARLA, E SCEGLIERE CODERS DIVERSI
+---------------------OPEN CURSOR
+--VOGLIO CHE IL CURSOR POSSA CAMBIARE A SECONDA DELLE MIE NECESSITà
+--DEFINIRò UN TIPO-- , equivale a defiire classe in java è come dire che la classe è derivata
+
+--voglio def un nuovo tipo come classe, che è un estens di una classe esistente cursor, che mi ritornerà
+--il tipo base di qust collez sarà la riga , la  riga che mi ritornerà sarà del tipo coders, la riga è fatta nello stesso modo di coders
+-- il tipo della riga è come quella in coders -->coders%rowtype;
+declare
+    type t_coder_cursor is ref cursor return coders%rowtype; 
+    --ora posso definirmi il cursore
+    v_coder_cursor t_coder_cursor; --creami un oggetto del tipo che abbiamo definito sopra, t_coder_cursor
+    v_cur coders%rowtype;--variab che mi permette di leggere il singolo risultato nel cursore
+    
+begin
+--apriamo il cursore specificando la query su cui vogliamo lavorare, in questo modo chi chiama la mia funzione può specificare i coders da leggere inserendo l'intervallo, n
+--nella clausola declare non avrei potuto farlo
+    open v_coder_cursor for select* from coders where coder_id BETWEEN 103 and 105; 
+
+    loop
+    --v_cur rapp della singola riga letta, fetch la userà 
+        fetch v_coder_cursor into v_cur; --legge e assegna quello che c'è in coder, alla variabile cur
+        exit when v_coder_cursor%notfound;
+        DBMS_OUTPUT.PUT_LINE('Coder ' || v_cur.coder_id || ' is ' || v_cur.first_name || ' ' || v_cur.last_name);
+        
+    end loop;
+end;
+/
+
+--******************************UNCONSTRAINED CURSOR***************************************
+--se non so il tipo di cursore su cui voglio lavforare posso comunque dirgli che il mio cursuore estende il cursore generico, senza specificare un cursore in particolare
+declare
+    type t_cursor is ref cursor;
+    --ora posso definirmi il cursore
+    v_cursor t_cursor; --creami un oggetto del tipo che abbiamo definito sopra, t_cursor
+    v_cod coders%rowtype;--questo rimane relativo alla tabella --variab che mi permette di leggere il singolo risultato nel cursore
+    
+begin
+--apriamo il cursore specificando la query su cui vogliamo lavorare, in questo modo chi chiama la mia funzione può specificare i coders da leggere inserendo l'intervallo, n
+--nella clausola declare non avrei potuto farlo
+    open v_cursor for select* from coders where coder_id BETWEEN 103 and 105; 
+
+    loop
+    --v_cur rapp della singola riga letta, fetch la userà 
+        fetch v_cursor into v_cod; --legge e assegna quello che c'è in coder, alla variabile cur
+        exit when v_cursor%notfound;
+        
+   DBMS_OUTPUT.PUT_LINE('Coder ' || v_cod.coder_id || ' is ' || v_cod.first_name || ' ' || v_cod.last_name);
+        
+    end loop;
+end;
+/
