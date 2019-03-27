@@ -24,17 +24,18 @@ exception
 end update_coder_salary;
 /
 
-
+--test1
 call update_coder_salary(103, 1);
 
+--altro test
 call update_coder_salary(p_coder_id => 104, p_factor => 1.5);
 
+
+--test2
 begin 
     update_coder_salary(105, 3);
 end;
 /
-
-drop procedure update_coder_salary;
 
 
 
