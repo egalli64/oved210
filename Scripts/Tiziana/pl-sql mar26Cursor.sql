@@ -88,8 +88,8 @@ begin
    loop
         fetch v_cursor into v_cod;
         exit when v_cursor%notfound; 
-        dbms_output.put_line('Coder ' || v_cod.coder_id || ' is ' || v_cod.first_name || ' ' || v_cod.last_name);
-   
+          
+   dbms_output.put_line('Coder ' || v_cod.coder_id || ' is ' || v_cod.first_name || ' ' || v_cod.last_name);
    end loop;
 end;
 /
