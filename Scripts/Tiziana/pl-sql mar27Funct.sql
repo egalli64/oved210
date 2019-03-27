@@ -106,7 +106,7 @@ begin
 end;
         
 --test
-select my_numeric_nvl( 12, null)
+select my_numeric_nvl(12, null)
 from dual;
 --altro test
 select he.employee_id, my_numeric_nvl(he.commission_pct, 0)
