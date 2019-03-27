@@ -1,3 +1,6 @@
+--DML
+--Create, Truncate, Drop, Alter
+
 --create table
 
 create table coders as 
