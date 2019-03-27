@@ -60,7 +60,8 @@ begin
    open v_coder_cursor for select * from coders where coder_id BETWEEN 103 and 105;
    
    loop
-      fetch v_coder_cursor into v_cur;
+      fetch v_coder_cursor 
+      into v_cur;
       exit when v_coder_cursor%notfound;
       
       DBMS_OUTPUT.PUT_LINE('Coder ' || v_cur.coder_id || 
