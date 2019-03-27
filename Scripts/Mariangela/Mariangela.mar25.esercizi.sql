@@ -67,5 +67,45 @@ alter table emp modify (
 last_name varchar2(50)
 );
 
+alter table emp set unused(dept_id); -- quando non voglio eliminare la colonna ma indico che non viene usata 
 
-	
+alter table emp drop unused column; -- per cancellarla in un secondo momento 
+
+select*
+from ALL_TAB_COLUMNS
+where table_name = 'EMP'
+
+create table employees as
+	select employee_id as id,
+		first_name, 
+		last_name, 
+		salary, 
+		department_id as dept_id
+	from hr.employees;
+
+-- drop table employees;
+
+alter table employees read only;
+
+delete from employees;
+
+alter table employees read write;
+
+update employees
+set first_name = 'Tom'
+where id = 100;
+
+select * 
+from employees
+where id = 100;
+
+truncate table employees;
+
+select count(round) from employees;
+
+drop table dept;
+drop table emp;
+drop table employees;
+drop table coders;
+drop table my_employee;
+drop table my_statuses;
