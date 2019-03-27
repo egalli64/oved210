@@ -32,6 +32,31 @@ create procedure update_coder_salary(
     begin
     update_coder_salary(105, 3);
     end;
+ /
+ 
+ --incremento di un dollaro per il salario per coder_id = 107
+ 
+ create procedure update_salary as
+ begin
+ update coders
+ set salary = salary + 1
+ where coder_id = 107;
+ commit;
+ end update_salary;
+ /
+ call update_salary();
+
+ --incremento salario di un dollaro con parametro coder_id
+ create procedure update_salaries_forCoder(
+ p_coder_id in coders.coder_id%type)
+ as
+ begin
+ update coders
+ set salary = salary + 1
+ where coder_id = p_coder_id;
+ end update_salaries_forCoder;
     
-    
+begin
+update_salaries_forcoder(104);
+end;
     
