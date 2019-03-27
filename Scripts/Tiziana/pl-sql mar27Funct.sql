@@ -36,7 +36,7 @@ create or replace procedure find_max(
     p_max out number
 )as
 begin 
-     if p_a > p_b then
+	if p_a > p_b then
         p_max := p_a;
     else
         p_max := p_b;
@@ -69,7 +69,7 @@ create or replace function find_max(
 return number as
     -- no variables here!
 begin 
-     if p_a > p_b then
+    if p_a > p_b then
         return p_a;
     else
         return p_b;
@@ -100,7 +100,7 @@ create or replace function my_numeric_nvl(
     p_b in number)
 return number as
 begin
-     if p_a is null then
+    if p_a is null then
         return p_b;
     else
         return p_a;
