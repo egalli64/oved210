@@ -15,8 +15,11 @@ before update of salary on coders
 for each row 
 begin
     insert into coder_salaries values(
-        :old.coder_id, :old.salary, :new.salary);               --accedi alla versione vecchia della tabella
+        :old.coder_id, :old.salary, :new.salary);        --accedi alla versione vecchia della tabella
 end coder_salary_update;
 /
 
+--test
+update coders
+set salary = salary + 100;
 
