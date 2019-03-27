@@ -200,7 +200,7 @@ call increase_salary_for_coders(106, 107, 1000);
 
 
 
---altro metodo alternativo
+--altro metodo alternativo con cursor
 create or replace procedure increase_salary_for_coders(
     p_low in coders.coder_id%type,
     p_high in coders.coder_id%type,
@@ -213,7 +213,5 @@ begin
     commit;
 end;
 /
-
---
 
 
