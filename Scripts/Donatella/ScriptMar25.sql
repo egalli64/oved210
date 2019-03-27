@@ -266,3 +266,29 @@ references dept(id)
 
 alter table emp 
 add commission number(2,2);
+
+--last_name varchar(50) invece di (25).
+alter table emp
+modify(last_number varchar(50)
+);
+alter table emp drop(
+first_name
+);
+
+--tentative marking of column as unused:
+alter table emp set unused(dept_id);
+
+--when safe, drop them:
+alter table emp drop unused columns;
+
+
+select*
+from ALL_TAB_COLUMNS
+where table_name='EMP';
+
+select *
+from USER_UNUSED_COL_TABS;
+
+--8
+create table employees2 as
+select employee_id as Id, first_name, last_name, salary,
