@@ -1,7 +1,6 @@
 
 set serveroutput on
 
---find_max come PROCEDURA 
 create or replace procedure get_coder_name(
     p_coder_id in coders.coder_id%type,
     p_first_name out coders.first_name%type,
@@ -27,7 +26,7 @@ end;
 
 
 
-
+--find max come PROCEDURA
 --find_max ( a in, b in, max out)
 --find_max (3, 12, max) --> max=12;
 
