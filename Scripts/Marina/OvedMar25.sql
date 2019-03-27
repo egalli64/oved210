@@ -2,7 +2,11 @@
 
 
 create table coders as
-	select employee_id as coder_id, first_name, last_name, hire_date, salary
+	select employee_id as coder_id, 
+	first_name, 
+	last_name, 
+	hire_date, 
+	salary
 	from hr.employees
 	where department_id = 60;
 	
@@ -230,5 +234,42 @@ drop table emp;
 alter table emp
 add commission number (2,2);
 
-alter table emp modify last_name varchar2 (50);
+alter table emp 
+modify last_name varchar2 (50);
+
+alter table emp
+set unused (dept_id);
+
+alter table emp drop unused columns;
+
+
+create table employees as
+	select employee_id as id, first_name, last_name, salary, department_id as dept_id
+	from hr.employees;
+
+alter table employees 
+read only;
+
+delete from employees;
+
+
+alter table employees read write;
+
+update employees
+set first_name = 'Tom'
+where id = 100;
+
+select * from employees where id = 100;
+
+truncate table employees;
+
+select count(rowid) from employees;
+
+drop table dept;
+drop table emp;
+drop table employees;
+drop table coders;
+
+
+	
 
