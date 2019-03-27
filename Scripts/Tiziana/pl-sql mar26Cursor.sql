@@ -61,10 +61,13 @@ declare
     v_coder_cursor t_coder_cursor;
     v_cur coders%rowtype;
 begin
-    open v_coder_cursor for select * from coders where coder_id between 103 and 105;
-loop
-    fetch v_coder_cursor into v_cur;
-    exit when v_coder_cursor%notfound;
+    open v_coder_cursor for
+    select * 
+    from coders 
+    where coder_id between 103 and 105;
+    loop
+        fetch v_coder_cursor into v_cur;
+        exit when v_coder_cursor%notfound;
     
     dbms_output.put_line('Coder ' || v_cur.coder_id || ' is ' || v_cur.first_name || ' ' || v_cur.last_name);
     end loop;
@@ -78,7 +81,10 @@ declare
     v_cursor t_cursor;
     v_cod coders%rowtype;
 begin
-   open v_cursor for select* from coders where coder_id between 103 and 105;
+   open v_cursor for 
+   select* 
+   from coders 
+   where coder_id between 103 and 105;
    loop
         fetch v_cursor into v_cod;
         exit when v_cursor%notfound; 
