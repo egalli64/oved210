@@ -1,4 +1,4 @@
---DML
+--DDL
 --Create, Truncate, Drop, Alter
 
 --create table
