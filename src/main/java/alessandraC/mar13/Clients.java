@@ -1,12 +1,8 @@
 package alessandraC.mar13;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
-
-import org.thymeleaf.expression.Arrays;
 
 /**
  * ordinate the name of client in alphabetic order create an Array List with the
