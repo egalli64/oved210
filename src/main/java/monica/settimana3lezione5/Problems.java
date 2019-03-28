@@ -1,15 +1,11 @@
 package monica.settimana3lezione5; // 15/03/19
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.thymeleaf.expression.Lists;
 
 /**
  * {1,1,1,4,5,6,4,6,5} -> {1,4,6,5} {} -> {} null -> exception? {}?

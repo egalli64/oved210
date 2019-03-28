@@ -2,9 +2,6 @@ package marina.mar05;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Iterator;
-
-import org.apache.tomcat.jni.Buffer;
 
 public class Problem {
 

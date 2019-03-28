@@ -5,9 +5,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-import org.springframework.web.multipart.support.StringMultipartFileEditor;
-import org.thymeleaf.templateresolver.StringTemplateResolver;
-
 public class Problems {
 
 	/**
