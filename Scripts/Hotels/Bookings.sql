@@ -1,5 +1,6 @@
 
 ---TABLE
+DROP TABLE bookings;
 
 create table bookings (
 booking_id number (12) primary key,
@@ -9,14 +10,11 @@ availability date,
 payment number (5, 2) 
 );
 
-DROP TABLE bookings;
-
 -- SEQUENCE
-create sequence bookings_seq;
 drop sequence bookings_seq;
+create sequence bookings_seq;
 
-select bookings_seq.nextval
-from dual;
+start with 001 increment by 1;
 
 --INSERT
 insert into bookings(booking_id, client_id, hotel_id, availability, payment)
