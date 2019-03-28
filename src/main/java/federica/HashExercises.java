@@ -1,8 +1,8 @@
 package federica;
 
-import java.util.HashSet;
+//import java.util.HashSet;
 
-public class HashExercises {
+//public class HashExercises {
 	/**
 	 * Intersection of two sets
 	 * 
@@ -15,20 +15,20 @@ public class HashExercises {
 	 * @param right another set
 	 * @return intersection between left and right
 	 */
-public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
-		HashSet<Integer> result = new HashSet<>();
-		if (right.isEmpty() || left.isEmpty()) {
+//public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
+		//HashSet<Integer> result = new HashSet<>();
+	//	if (right.isEmpty() || left.isEmpty()) {
 		
-		return result;
-}
+		//return result;
+//}
 
-for(Integer value:left) {
-	if(!right.contains(value)) {
-		result.add(value);
-		}
-	}
-	return result;
-}
+//for(Integer value:left) {
+	//if(!right.contains(value)) {
+		//result.add(value);
+		//}
+//	}
+	//return result;
+//}
 
 /**
  * Intersection of two sets
@@ -43,14 +43,14 @@ for(Integer value:left) {
  * @param right another set
  * @return intersection between left and right
  */
-public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
-	HashSet<Integer> result = new HashSet<>();
-	for(Integer value:left) {
-		if(right.contains(value)) {
-			result.add(value);
-		}
-	}
-	return result;
-}
-}
+//public static HashSet<Integer> intersection(HashSet<Integer> left, HashSet<Integer> right) {
+//	HashSet<Integer> result = new HashSet<>();
+	//for(Integer value:left) {
+		//if(right.contains(value)) {
+			//result.add(value);
+		//}
+	//}
+	//return result;
+//}
+//}
 	
