@@ -2,7 +2,7 @@
 
 --create table
 CREATE TABLE clients (
-id NUMBER (4) CONSTRAINT clients_pk PRIMARY KEY,
+client_id NUMBER (4) CONSTRAINT clients_pk PRIMARY KEY,
 clientName varchar2(100),
 email varchar2(50),
 phone NUMBER (25),
