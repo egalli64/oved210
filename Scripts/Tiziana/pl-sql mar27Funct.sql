@@ -62,7 +62,7 @@ end;
 drop procedure find_max;
 
 
---fin_max come FUNZIONE
+--find_max come FUNZIONE
 create or replace function find_max(
     p_a in number,
     p_b in number)
@@ -87,14 +87,12 @@ begin
 
     dbms_output.put_line(' Max is ' || find_max(a, b));
 end;
-
---oppure   
+--altro test   
 select find_max(3, 12)
 from dual;
     
 
 --my_numeric_value(a, b) return a if when a is not null, while b 
-
 create or replace function my_numeric_nvl(
     p_a in number,
     p_b in number)
@@ -108,7 +106,7 @@ begin
 end;
         
 --test
-select my_numeric_nvl( 12, null)
+select my_numeric_nvl(12, null)
 from dual;
 --altro test
 select he.employee_id, my_numeric_nvl(he.commission_pct, 0)
@@ -117,7 +115,7 @@ from hr.employees he;
 
 
 
---function circe area(p_radius numeric) -> circle area
+--function circle area(p_radius numeric) -> circle area
 create or replace function circle_area(
     p_radius in number)
 return number as
@@ -195,7 +193,7 @@ begin
 end;
 /
 --test
-call increase_salary_for_coders(106, 107, 1000);
+call increase_salary_for_coders(105, 107, 1000);
 
 
 
