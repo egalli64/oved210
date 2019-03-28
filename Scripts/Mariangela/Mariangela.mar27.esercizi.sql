@@ -188,20 +188,16 @@ end;
  -- increase: how much to increase salaries
  
 create or replace procedure increase_salary_for_coders (
-p_low IN coders.low%type,
-p_high IN coders.high%type,
-p_increase OUT coders.increase%type
+p_low IN coders.coder_id%type,
+p_high IN coders.coder_id%type,
+p_increase IN coders.salary%type
 ) as
-type t_coder_cursor is ref cursor return coders%rowtype;
-cursor v_coder_cursor is 
- select coder_id, salary 
- from coders 
- where coder_id between p_low and p_high;
-
 begin
-for 
-
-
-
+    update coders
+    set salary = salary + p_increase
+    where coder_id between p_low and p_high;
+    commit;
 end;
 /
+
+call increase_salary_for_coders (103, 105, 200);
