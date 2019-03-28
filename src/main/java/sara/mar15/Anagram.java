@@ -3,8 +3,6 @@ package sara.mar15;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
-
 public class Anagram {
 
 	/**

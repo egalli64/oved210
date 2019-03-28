@@ -364,10 +364,11 @@ references dept(id)
 );
 
 
---colonna commission
-alter table emp add commission number(2, 2); --add per aggiungere
+--colonna commission, per aggiungere una colonna 
+alter table emp add(
+commission number(2, 2)
+); --add per aggiungere
 
-add colomn commission;
 
 --per modificare una tabella e precisamente per cambiare la struttura
 alter table emp modify(  ---per modificarle
@@ -375,8 +376,78 @@ last_name varchar2(50)
 );
 
 alter table emp drop(  --per eliminarle
-first_name varchar2(55)
+first_name 
 );
 
 
 --modify drop 
+
+--droppare una colonna è una cosa delicata,
+--unused c'è ancora ma non è utilizzata, unused è un comando di alter
+--per dire che dept_id non è utilizzata
+
+--tentative marking of column as unused
+alter table emp set unused(dept_id);  --marchiamo la colonna
+
+--when safe , drop them
+alter table emp drop unused columns;--se dopo svariato tempo nessuno si lamenta, le droppiamo
+
+select dept_id
+from emp;
+
+select*
+from ALL_TAB_COLUMNS
+where table_name = 'EMP'; 
+
+
+select*
+FROM USER_UNUSED_COL_TABS;
+
+---TAB EMPLOYEES2
+--EMPLOYEE_ID, FIRST_NAME, SALARY AND DEPT_ID
+drop table employees2;
+drop table employees;
+
+create table employees as  
+select employee_id as id,
+first_name,
+last_name,
+salary,
+department_id as dept_id
+from hr.employees;
+
+--es 2.9
+--read only
+alter table employees read only;
+
+--cosa succede 
+delete from employees;
+
+truncate table employees;
+
+update my employees
+set first_name ='Tom'
+where id = 100;
+
+--facciamola tornare read right
+alter table employees read write;
+
+--modifichiamola
+select* from employees where id = 100;
+
+truncate table employees;
+
+select count(rowid) from employees;
+
+--2.12
+--drop delle tabelle.
+
+drop table dept;
+drop table emp;
+drop table employees;
+drop table coders;
+
+
+
+
+

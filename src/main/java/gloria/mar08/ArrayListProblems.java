@@ -3,10 +3,6 @@ package gloria.mar08;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.apache.catalina.filters.AddDefaultCharsetFilter;
-
-import com.fasterxml.classmate.members.RawConstructor;
-
 public class ArrayListProblems {
 
 	/**
