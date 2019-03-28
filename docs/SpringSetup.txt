@@ -1,0 +1,33 @@
+Clean up the maven repository to avoid inconsistency
+ (for user "Administrator")
+C:\Users\Administrator\.m2\repository
+
+Install Spring Tools for Eclipse
+https://spring.io/tools
+
+Install Apache Maven:
+https://maven.apache.org/download.cgi (binary zip archive)
+Save apache-maven-3.6.0-bin.zip in \dev (or somewhere else)
+ and unzip it
+
+Find ojdbc8.jar
+ (\app\Administrator\product\18.0.0\dbhomeXE\jdbc\lib)
+And push it to your local maven repository as com.oracle.jdbc 8
+
+From C:\dev\apache-maven-3.6.0\bin run:
+mvn install:install-file -Dfile=/app/Administrator/product/18.0.0/dbhomeXE/jdbc/lib/ojdbc8.jar -DgroupId=com.oracle -DartifactId=jdbc -Dversion=8 -Dpackaging=jar
+
+Add a dependency in the project pom.xml:
+<dependency>
+	<groupId>com.oracle</groupId>
+	<artifactId>jdbc</artifactId>
+	<version>8</version>
+</dependency>
+
+Set the application properties for the oracle connection:
+spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/orclpdb
+spring.datasource.username=hr
+spring.datasource.password=hr
+
+Update project (Alt-F5)
