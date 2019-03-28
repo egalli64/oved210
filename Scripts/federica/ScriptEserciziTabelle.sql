@@ -97,4 +97,33 @@ salary,
 department_id as dept_id
 from hr.employees;
 
+alter table employees read only;
+
+--eliminare le righe dalla tabella
+delete from employees;--non lo fa perchè è read only
+
+alter table employees read write;
+
+update employees
+set first_name = 'Tom'
+where id = 100;
+
+select *
+from employees
+where id = 100;
+
+truncate table employees;--tabella vuota
+
+select count(round) from employees;--non me lo esegue perchè è vuota
+
+drop table employees;
+drop table dept;
+drop table emp;
+drop table coders;
+drop table my_employee;
+drop table my_statuses;
+
+
+
+
 

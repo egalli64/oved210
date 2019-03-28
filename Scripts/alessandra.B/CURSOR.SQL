@@ -38,7 +38,7 @@ BEGIN
       DBMS_OUTPUT.PUT_LINE('CODER  '|| V_CODER_ID|| ' is ' ||v_first_name||' '||v_last_name);
       
   END LOOP;
-  END;
+END;
  / 
  
  --IMPLICIT FETCH CURSOR

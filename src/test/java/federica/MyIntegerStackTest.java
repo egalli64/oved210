@@ -36,10 +36,10 @@ public class MyIntegerStackTest {
 	}
 
 	@Test
-	public void testIsEmptyTrue() {
-	MyIntegerStack stack = new MyIntegerStack();
-	assertTrue(stack.isEmpty());
-	
+	public void isEmptyTrue() {
+		MyIntegerStack stack = new MyIntegerStack();
+		assertTrue(stack.isEmpty());
+
 	}
 
 	@Test
@@ -47,6 +47,33 @@ public class MyIntegerStackTest {
 		MyIntegerStack stack = new MyIntegerStack();
 		stack.push(42);
 		assertFalse(stack.isEmpty());
+
+	}
+
+	@Test
+	public void popEmpty() {
+		MyIntegerStack stack = new MyIntegerStack();
+
+		try {
+			stack.pop();
+			fail("pop() should throw an exception here");
+		} catch (IllegalAccessError iae) {
+			assertThat(iae.getMessage(), is("Can't pop() an empty stack"));
+		}
+	}
+
+	@Test
+	public void testIsEmptyFalse() {
+		MyIntegerStack stack = new MyIntegerStack();
+		stack.push(42);
+		assertFalse(stack.isEmpty());
+
+	}
+
+	@Test
+	public void testIsEmptyTrue() {
+		MyIntegerStack stack = new MyIntegerStack();
+		assertTrue(stack.isEmpty());
 
 	}
 
