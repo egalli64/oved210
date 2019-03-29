@@ -16,7 +16,7 @@ public class OvedApp {
 		private static final Logger log = LoggerFactory.getLogger(OvedApp.class);
 
 		public static void main(String[] args) {
-			log.info("I'm just entered the main method");
+			log.info("I've just entered the main method");
 			SpringApplication.run(OvedApp.class, args);
 		}
 		
