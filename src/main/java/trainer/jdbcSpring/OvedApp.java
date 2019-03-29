@@ -21,7 +21,10 @@ public class OvedApp {
 		return (args) -> {
 			Iterable<Region> iterable = repo.findAll();
 			for (Region region : iterable) {
-				System.out.println("Working with region " + region.getName());
+				System.out.println("Working with region " + region);
+				for(Country country: region.getCountries()) {
+					System.out.println(" " + country.getName());
+				}
 			}
 		};
 	}
@@ -33,6 +36,9 @@ public class OvedApp {
 			for (Country country : iterable) {
 				System.out.println("Working with country " + country);
 			}
+			
+			System.out.println("Find all 'Italy' countries:");
+			System.out.println(repo.findByName("Italy"));
 		};
 	}
 }
