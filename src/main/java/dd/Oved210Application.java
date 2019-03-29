@@ -12,18 +12,15 @@ public class Oved210Application {
 	private static final Logger log = LoggerFactory.getLogger(Oved210Application.class);
 	
 	public static void main(String[] args) {
-		log.info("I'm just entered the main method");
+		log.trace("I've just entered the main method");
 		SpringApplication.run(Oved210Application.class, args);
 	}
 	
 	@Bean
 	public CommandLineRunner simple () {
-		return (args) -> {
-			log.trace("I'm in simple() now!");
-			
-		};
+		return (args) -> {};
 		
-	};
+	}
 	
 
 }
