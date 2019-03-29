@@ -12,14 +12,27 @@ public class OvedApp {
 	private static final Logger log = LoggerFactory.getLogger(OvedApp.class);
 
 	public static void main(String[] args) {
-		log.info("I'm just entered the main method");
+		log.info("I've just entered the main method");
 		SpringApplication.run(OvedApp.class, args);
 	}
-	
+
 	@Bean
-	public CommandLineRunner simple() {
+	public CommandLineRunner onRegion(RegionRepository repo) {
 		return (args) -> {
-			log.info("I'm in simple() now!");
+			Iterable<Region> iterable = repo.findAll();
+			for (Region region : iterable) {
+				System.out.println("Working with region " + region.getName());
+			}
+		};
+	}
+
+	@Bean
+	public CommandLineRunner onCountry(CountryRepository repo) {
+		return (args) -> {
+			Iterable<Country> iterable = repo.findAll();
+			for (Country country : iterable) {
+				System.out.println("Working with country " + country);
+			}
 		};
 	}
 }
