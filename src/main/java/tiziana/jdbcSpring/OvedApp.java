@@ -17,9 +17,54 @@ public class OvedApp {
 	}
 
 	@Bean
-	public CommandLineRunner simple() {
+	public CommandLineRunner onRegion(RegionRepository repo) {
 		return (args) -> {
-			log.info("I'm in simple() now!");
+			Iterable<Region> iterable = repo.findAll();
+			for (Region region : iterable) {
+				System.out.println("Working with region " + region.getName());
+			}
+
+			System.out.println("Find all 'Asia' regions:");
+			System.out.println(repo.findByName("Asia"));
 		};
+	}
+
+	@Bean
+	public CommandLineRunner onCountry(CountryRepository repo) {
+		return (args) -> {
+			Iterable<Country> iterable = repo.findAll();
+			for (Country country : iterable) {
+				System.out.println("Working with country " + country);
+			}
+
+			System.out.println("Find all 'Italy' countries:");
+			System.out.println(repo.findByName("Italy"));
+		};
+	}
+
+	@Bean
+	public CommandLineRunner onEmployee(EmployeeRepository repo) {
+		return (args) -> {
+			Iterable<Employee> iterable = repo.findAll();
+			for (Employee employee : iterable) {
+				System.out.println("Working with employee " + employee.getLastName());
+			}
+
+			System.out.println("Find all 'Faviet' employees:");
+			System.out.println(repo.findBylastName("Faviet"));
+		};
+	}
+
+	@Bean
+	public CommandLineRunner employeeCreate(EmployeeRepository repo) {
+		return (args) -> {
+			System.out.println("Create a new programmer:");
+			Employee employee = new Employee("Tiziana", "Leogrande", "tizleo", "IT_PROG");
+			System.out.println(employee);
+			repo.save(employee);
+			System.out.println(employee);
+
+		};
+
 	}
 }
