@@ -1,4 +1,4 @@
-package tiziana.jdbcSpring;
+package federica.jdbcSpring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import federica.jdbcSpring.entities.Country;
+import federica.jdbcSpring.entities.Region;
 
 @SpringBootApplication
 public class OvedApp {
@@ -23,9 +26,6 @@ public class OvedApp {
 			for (Region region : iterable) {
 				System.out.println("Working with region " + region.getName());
 			}
-
-			System.out.println("Find all 'Asia' regions:");
-			System.out.println(repo.findByName("Asia"));
 		};
 	}
 
@@ -37,34 +37,37 @@ public class OvedApp {
 				System.out.println("Working with country " + country);
 			}
 
-			System.out.println("Find all 'Italy' countries:");
+			System.out.println("Find all 'Italy' countries");
 			System.out.println(repo.findByName("Italy"));
+		};
+	}
+
+	@Bean
+	public CommandLineRunner onRegionEurope(RegionRepository repo) {
+		return (args) -> {
+			System.out.println("Find all 'Europe' countries");
+			System.out.println(repo.findByName("Europe"));
 		};
 	}
 
 	@Bean
 	public CommandLineRunner onEmployee(EmployeeRepository repo) {
 		return (args) -> {
-			Iterable<Employee> iterable = repo.findAll();
-			for (Employee employee : iterable) {
-				System.out.println("Working with employee " + employee.getLastName());
+			Iterable<Employee> iterable = repo.findByLastName("King");
+			for (Employee employees : iterable) {
+				System.out.println("Working with Employees" + employees);
 			}
-
-			System.out.println("Find all 'Faviet' employees:");
-			System.out.println(repo.findBylastName("Faviet"));
 		};
 	}
-
 	@Bean
 	public CommandLineRunner employeeCreate(EmployeeRepository repo) {
 		return (args) -> {
-			System.out.println("Create a new programmer:");
-			Employee employee = new Employee("Tiziana", "Leogrande", "tizleo", "IT_PROG");
+			System.out.println("Create a new programmer: ");
+			Employee employee = new Employee("Bill", "Clinton", "BCLINTON", "IT_PROG");
 			System.out.println(employee);
 			repo.save(employee);
 			System.out.println(employee);
-
 		};
-
-	}
+			
+		}
 }
