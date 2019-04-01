@@ -41,4 +41,30 @@ public class OvedApp {
 			System.out.println(repo.findByName("Italy"));
 		};
 	}
+
+	@Bean
+	public CommandLineRunner onEmployee(EmployeeRepository repo) {
+		return (args) -> {
+			Iterable<Employee> iterable = repo.findAll();
+			for (Employee employee : iterable) {
+				System.out.println("Working with employee " + employee);
+			}
+			
+			System.out.println("Find all 'King' employees:");
+			for (Employee employee : repo.findByLastName("King")) {
+				System.out.println(employee);
+			}
+		};
+	}
+
+	@Bean
+	public CommandLineRunner employeeCreate(EmployeeRepository repo) {
+		return (args) -> {
+			System.out.println("Create a new programmer:");
+			Employee employee = new Employee("Bill", "Clinton", "BCLINTON", "IT_PROG");
+			System.out.println(employee);
+			repo.save(employee);
+			System.out.println(employee);
+		};
+	}
 }
