@@ -1,0 +1,12 @@
+body {
+	background-color: pink;
+	background-size: 100%;
+}
+
+h2 {
+	color: green;
+}
+
+#blockId {
+	background-color: white;
+}
