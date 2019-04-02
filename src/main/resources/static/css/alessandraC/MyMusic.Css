@@ -1,5 +1,13 @@
 body {
-	background-color: #e647f8;
+	background-color: #ff5e5e;
 	
+	background-image:
+		src="/img/alessandraC/Prisma.png";
+	background-size:100%;
 	
+}
+
+h1, h2 {
+	color: black;
+	background-color: #ec1c65 ;
 }
