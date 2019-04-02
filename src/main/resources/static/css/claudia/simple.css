@@ -1,7 +1,37 @@
-body{
-	background-color: #004080;
+body {
+	background-image: url('/img/claudia/stradaSfondo.jpg');
+	background-size: 100% 100%;
+	text-align: left;
 }
 
-h1, h2, h3{
-	color: #ff8080;
+p {
+	font-family: monospace;
+	text-align: left;
+}
+
+h1, h2, h3 {
+	color: #004040;
+	text-align: left;
+}
+
+#special {
+	color: violet;
+}
+
+.myClass {
+	color: purple;
+}
+
+p.myClass {
+	color: blue;
+}
+
+#blockId {
+	background-color: #b7ffb7;
+}
+
+#SpanId {
+	background-color: #ffff82;
+	font-weight: bold;
+	font-style: italic;
 }
