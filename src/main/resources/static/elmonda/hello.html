@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello page </title>
+</head>
+<body>
+	<h1 id="top">Welcome to my home page!</h1>  <!--  id serve per dare un nome specifico ad un elemento, l'id dev'essere univoco-->
+	<h2>Welcome to my home page!</h2>
+	<h3>Welcome to my home page!</h3>
+	<h4>Welcome to my home page!</h4>
+	<h5>Welcome to my home page!</h5>
+	<h6>Welcome to my home page!</h6>
+	
+	<h1>Paragraph</h1>
+	
+	<p>A few of paragraphs</p>
+	<p>First:   hello	hello!
+			how' s life today?</p>
+	<p>Second</p>
+	
+	<h2>Some special effects</h2>
+	<p> This is <b> very important</b> or <i>maybe</i>
+	just a bit important.</p>
+	
+	<p>E=MC<sup>2</sup></p>
+	<p>CO<suB>2</sub></p>
+	
+	<P>I want to break this<br />   <!-- break per rompere le righe e andare a capo -->
+	 paragraph in two parts!</P>
+	 
+	 <hr>                             <!-- mi tira una riga in mezzo al testo -->
+	 <p>Something else </p>
+	 blah, blah, blah
+	 
+	 
+	 <h2>Lists:</h2>
+	 <ol>
+	 	<li>First</li>
+	 	<li>Second</li>
+	 		<li>Third</li>
+	 </ol>
+	 
+	  <h2>Lists:</h2>
+	 <ul>
+	 	<li>First</li>
+	 	<li>Second</li>
+	 		<li>Third</li>
+	 </ul>
+	
+	
+	<dl>
+		<dt>Dog</dt>
+		<dd>A friendly animal</dd>         <!-- definition description -->
+		<dt>Cat</dt>                       <!-- definition term -->
+		<dd>Another friendly animal</dd>
+	
+	</dl>
+	
+	<!--  -->
+	
+	<ol>
+		<li>First thing:
+		<ul>
+		<li>A
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+		<li/>
+		<li>B</li>
+		</ul>
+		<li>Second thing:
+		<ul>
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		
+		</ul>
+		</li>
+	</ol>
+	
+	<h2>Link</h2>
+	<p>Go to the
+		 <a href="http://www.spring.io">Spring</a>
+		 site.</p>
+		 
+		 
+		 <p>
+		 <p>Go to the
+		 <a href="../index.html">home</a>
+	 page.</p>
+	
+	
+	<p>
+	Go to the
+		 <a href="#top">top</a> of this page
+		 .</p>
+	
+	
+	<!-- per inserire immagini img -->
+	
+	<h2>Images</h2>   <!-- src source mi indica la sorgente, dove prender eil mio file , non c'è bisogno di chiuderlo, per dire al browser che non deve cercare un tag di chiusura-->
+	<p>
+		<img src="https://staticfanpage.akamaized.net/wp-content/uploads/2016/01/gattino-triste-300x225.jpg"/> <!-- ho messo come sorgente l'indirizzo dell'immagine (coia indirizzo dell'immagine) -->
+	</p>
+	
+	<p>
+		<img src="/img/Elmonda/gattino.jpg"
+		width="100" height="100" alt="A cat"/>           <!-- alt alt="A cat" ---testo alternativo quando non viene visualizzata l'immag -->
+			
+				</p>
+				<figure>
+				<img src="/img/Elmonda/gattino.jpg"
+		width="100" height="100" alt="A cat"/>   
+		<figcaption>A cat as seen on <a href="https://www.fanpage.it/salva-un-gattino-randagio-e-malato-donna-multata-di-166-euro/">Fanpage</a></figcaption>
+				</figure>
+				
+				
+		
+		<h2>Tables</h2>
+		<p>A simple 
+		<table>
+		<tr>
+		<td>7</td> <td>8</td><td>9</td>
+		</tr>
+		
+		<tr>
+		<td>4</td> <td>5</td><td>6</td>
+		</tr>
+		
+		<tr>
+		<td>1</td> <td>2</td><td>3</td>
+		</tr>
+		
+		</table>
+	
+	<h2>Table </h2>
+		<table>
+			<thead>  <!-- testa della tabella -->
+			
+			<tr>
+		<th scope="row">*</th>
+		 <th scope="col">Left</th>
+		 <th scope="col">Center</th>
+		  <th scope="col">Right</th>
+		</tr>
+			</thead>
+		<tr>
+
+		<tr>
+		
+		<tr>
+		<th scope="row">Top</th>
+		 <td>7</td>
+		 <td>8</td>
+		 <td>9</td>
+		</tr>
+		
+		<tr>
+		<th scope="row">Center</th> 
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		</tr>
+		
+		<tr>
+		<th scope="row">Low</th> 
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		</tr>
+		
+		</table>
+				
+			
+		<!--  -->	
+		
+			<h3>Timetable </h3>
+		<table>
+			<thead>  <!-- testa della tabella -->
+			
+			<tr>
+		<th scope="row">Day/Time</th>
+		 <th scope="col">9-11</th>
+		 <th scope="col">11-13</th>
+		  <th scope="col">14-16</th>
+		  <th scope="col">16-18</th>
+		</tr>
+			</thead>
+		<tr>
+
+		<tr>
+		
+		<tr>
+		<th scope="row">Monday</th>
+		 <td colspan="2" align="Center">SQL</td>  <!-- sql ha un colspa di 2 vuol dire che occupa 2  -->
+		 <td>Exercise</td>
+		 <td rowspan="2" >JDBC</td>
+		</tr>
+		
+		<tr>
+		<th scope="row">Tuesday</th>
+		 <td colspan="3" align="Center">HTML</td> 
+		</tr>
+		
+		<tr>
+		<th scope="row">Wednesday</th> 
+		 <td>Exercise</td>
+		 <td colspan="3" align="Center">HTML</td> 
+		</tr>
+		</table>
+				
+	<!--  -->			
+			
+			
+				
+			<h3>Balance</h3>
+		<table>
+			<thead>  <!-- testa della tabella -->
+			
+			<tr>
+		<th scope="col">Date</th>
+		 <th scope="col">Input</th>
+		 <th scope="col">Output</th>
+		</tr>
+			</thead>
+		<tr>
+
+		<tr>
+		
+		<tr>
+		<th scope="row">1st Jan</th>
+		<td>12</td>
+		<td>42</td>
+		</tr>
+		
+		<tr>
+		<th scope="row">2nd Jan</th>
+		<td>22</td>
+		<td>12</td>
+		</tr>
+		
+		<tr>
+		<th scope="row">3rd Jan</th>
+		<td>18</td>
+		<td>15</td>
+		
+		</tr>
+		
+		
+		
+		
+		<tr>
+		<th scope="row">....</th>
+			<td>....</td>
+				<td>...</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+		
+		<th scope="row">total</th> 
+		 <td>18012</td>
+			<td>4215</td>
+		</tr>
+		</table>
+		
+		<!--  CHE FUNZIONALITAì VOGLIAMO CHE IL NOSTRO CONTROLLER CI ESEGUA-->	
+		<h2>Forms</h2>
+		<form action="doSomething">
+			<p>
+			Text input: <input type="text" name="user" size="15"  maxlength="30" />  <!-- specificheremo il tipo di input, dimensione e dimens max -->
+			</p>
+			
+			<p>
+			Radio input:<br />
+			<input type="radio" name="Lang" value="Java" checked="checked" />Java<br />
+			<input type="radio" name="Lang" value="Python" checked="checked" />Python<br />
+			<input type="radio" name="Lang" value="C++" checked="checked" />C++<br />
+			
+			</p>
+			
+			<p>
+			Radio input:<br />
+			<input type="checkbox" name="ds" value="map" checked="checked" />Map<br />
+			<input type="checkbox" name="ds" value="list"  />list<br />
+			<input type="checkbox" name="ds" value="set" checked="checked" />set<br />
+			
+			</p>
+			
+			
+			
+			<p>
+			Select option:<br />
+			<select name="os">
+			<option value= "none">----</option>
+			<option value= "linux">Linux</option>
+			<option value= "windows">Windows-</option>
+			<option value= "macOs">Mac</option>
+			
+			</select>	
+			</p>
+		
+		<!-- produrre pagine  aseconda di quello che l'utente vuole -->
+		<p>
+			Select option:<br />
+			<select name="ide" size="3" multiple="multiple">
+			<option value= "eclipse">Eclipse</option>
+			<option value= "netbeans">Netbeans</option>
+			<option value= "Intellij">Intellij-</option>
+			</select>	
+			</p>
+		
+		<!--  ci permettono di  far dire al nostro utente cosa vuole selezionare all'interno...
+		la checkbox--selezioni multiple-->
+		
+		<p> 
+		Text area:<br />
+		<textarea name="comment"rows="4" cols="20"> Enter here your comment. </textarea>  <!--  mi viene messa a disposiz un area che ha a disposiz il numero di righe  ecolonne specificato-->
+		
+		</p>
+		
+		
+		
+		<!-- invece del bottono per cliccare possimao metterci l'immagne -->
+		<!-- posso mettere nel form qualcoa che l'utente nn vede -->
+		
+		<!-- il senso è che posso mandare un comando al controller senza che l'utente se ne accorga, come una parola chiave,una variabile,  sconto personalizzato che l'utente non vede mentre il controller si -->
+	<p> 
+		Hidden input:<br />
+		<input type="hidden" name="invisible" value="unknown"/>  
+ 	</p>	
+	<!-- raggruppare dati e mostrarli raggruppati, si usa una struttura chimaata fieldset, ... label=etichetta -->
+	
+	<fieldset>
+		<legend>User name</legend>
+		<label>First name
+		<input type="text" name="fname">
+		</label>
+		<label>Last name
+		<input type="text" name="lname">
+		</label>
+	</fieldset>
+		<p>
+		
+		<!--  -->
+		
+		
+		
+			Submit: <br/>
+			<input type="submit" value="Enter" /><br />
+			
+			</p>
+		</form>
+		
+			
+				
+</body>
+</html>
