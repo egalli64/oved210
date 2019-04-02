@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--rappresenta meta informazioni, ci spiega il carattere utilizzato all'interno del body, che in questo caso è utf-8-->
+<title>My Hello page</title>
+<!--è il titolo della pagina che si legge in alto-->
+</head>
+<body>
+	<h1 id="top">Welcome to my home page!</h1>
+	<h2>Welcome to my home page!</h2>
+	<h3>Welcome to my home page!</h3>
+	<h4>Welcome to my home page!</h4>
+	<h5>Welcome to my home page!</h5>
+	<h6>Welcome to my home page!</h6>
+
+	<h1>Paragraph</h1>
+	<p>A few of paragraphs:</p>
+	<p>First: hello hello! how's life today?</p>
+	<p>Second</p>
+
+	<h2>Some special effects</h2>
+	<p>
+		This is <b>very important </b> or <i>maybe</i> just a bit important
+	</p>
+	<!-- b vuol dire BOLD cioè grassetto, mentre i è il corsivo (sta per italico) -->
+
+	<p>
+		E = mc<sup>2</sup>
+	</p>
+	<!-- sup è per fare l'apice -->
+	<p>
+		CO <sub>2</sub>
+	</p>
+	<!-- sub è l'indice -->
+	<p>
+		I want to break this <br />
+		<!-- br (break) indica che si va a capo, posso mettere solo br o br /, per indicare che non ha chiusura -->
+		paragraph in two parts!
+	</p>
+
+	<hr>
+	<hr />
+	<!-- hr o hr / tira una riga netta -->
+
+	blah,blah, blah
+	<!-- non è buono stile ma lo stampa ugualmente -->
+
+	<h2>Lists</h2>
+
+	<ol>
+		<!-- ol sta per ordered list, mi fa una lista ordinata tipo 1, 2, 3 ecc -->
+		<li>First</li>
+		<!-- list item -->
+		<li>Second</li>
+		<li>Third</li>
+	</ol>
+
+	<ul>
+		<!-- ul sta per unordered list, mi fa una lista NON ordinata, anzichè il numero mette un pallino -->
+		<li>First</li>
+		<!-- list item -->
+		<li>Second</li>
+		<li>Third</li>
+	</ul>
+
+	<dl>
+		<!-- definition list -->
+		<dt>Dog</dt>
+		<!-- definition term -->
+		<dd>A friendly animal</dd>
+		<!-- definition description -->
+		<dt>Cat</dt>
+		<dd>Another friendly animal</dd>
+	</dl>
+
+	<ol>
+		<li>First thing:
+			<ul>
+				<li>A
+					<ul>
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+					</ul>
+				</li>
+				<li>B</li>
+				<li>C</li>
+				<li>D</li>
+			</ul>
+		</li>
+		<li>Second thing:
+			<ul>
+				<li>A</li>
+				<li>B</li>
+				<li>C</li>
+
+			</ul>
+		</li>
+
+
+	</ol>
+
+	<h2>Link</h2>
+	<p>
+		Go to the <a href="http://www.spring.io">Spring</a> site.
+		<!-- a sta per anchor, cioè il link a cui ti ancori -->
+	</p>
+
+	<p>
+		Go to the <a href="../index.html">home</a> page.
+		<!-- ..indica la directory che sta sopra, mi rimanda allo stesso sito della home page -->
+	</p>
+
+	<p>
+		Go to the <a href="#top">top</a> of this page.
+		<!--  vado a cercare l'id in cima alla mia pagina, e vedo l'id = top -->
+
+
+	</p>
+
+	<h2>IMAGES</h2>
+
+	<p>
+		<!-- per risorsa esterna -->
+		<img
+			src="https://www.maxizoo.it/blog/wp-content/uploads/2017/11/Cosa-dare-da-mangiare-a-un-gattino.jpg">
+	</p>
+
+	<p>
+		<!-- per risorsa interna -->
+		<img src="/img/alessandrab/gattinok.jpg" width=" 200" height="200"
+			alt="A cat">
+		<!-- specifico la dimensione -->
+		<!-- alt rappresenta l'alternativa che ti compare se l'immagine non è raggiungibile -->
+	</p>
+
+
+	<figure>
+		<!-- figure si usa quando ho un'immagine e una caption -->
+		<img src="/img/alessandrab/gattinok.jpg" width=" 200" height="200"
+			alt="A cat">
+		<figcaption>
+			A cat seen on <a
+				href="https://www.maxizoo.it/blog/cosa-dare-da-mangiare-a-un-gattino">
+				MAXIPET</a>
+		</figcaption>
+	</figure>
+
+
+	<h2>TABLES</h2>
+	<!-- tr sta per table row, td sta< per table data -->
+	<p>A simple table</p>
+	<table>
+		<tr>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+	</table>
+
+	<p>A simple table 2</p>
+	<table>
+		<thead>
+			<!-- table heading, indica le intestazioni -->
+
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<th scope="row">Center</th>
+			<td>5</td>
+			<td>6</td>
+			<td>7</td>
+		</tr>
+		<tr>
+			<th scope="row">Low</th>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+
+	</table>
+
+
+	<p>Timetable</p>
+	<table>
+		<thead>
+
+			<tr>
+				<th scope="row">Day/Time</th>
+				<th scope="col">9.00-11.00</th>
+				<th scope="col">11.00-13.00</th>
+				<th scope="col">14.00-16.00</th>
+				<th scope="col">16.00-18.00</th>
+			</tr>
+		</thead>
+
+		<tr>
+			<th scope="row">MONDAY</th>
+			<td colspan="2" align="center">SQL</td>
+			<!-- per dirgli che OCCUPA 2 BLOCCHI di colonna -->
+			<td>Exercise</td>
+			<td rowspan="2" align="center">JDBC</td>
+			<!-- per dirgli che OCCUPA 2 BLOCCHI di righe -->
+		</tr>
+		<tr>
+			<th scope="row">TUESDAY</th>
+			<td colspan="3" align="center">HTML</td>
+
+
+		</tr>
+		<tr>
+			<th scope="row">WEDNESDAY</th>
+			<td colspan="2" align="center">Exercise</td>
+			<td>HTML</td>
+
+		</tr>
+
+	</table>
+
+
+	<p>Balance</p>
+	<table>
+		<thead>
+
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Input</th>
+				<th scope="col">Output</th>
+
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<th scope="row">1st Jan</th>
+				<td>12</td>
+				<!-- per dirgli che OCCUPA 2 BLOCCHI di colonna -->
+				<td>Exercise</td>
+				<td>43</td>
+				<!-- per dirgli che OCCUPA 2 BLOCCHI di righe -->
+			</tr>
+			<tr>
+				<th scope="row">3rd JAN</th>
+				<td>18</td>
+				<td>15</td>
+
+
+			</tr>
+			<tr>
+				<th scope="row">6th JAN</th>
+				<td>56</td>
+				<td>19</td>
+
+			</tr>
+
+			<tr>
+				<th scope="row">...</th>
+				<td>...</td>
+				<td>...</td>
+
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th scope="row">Total</th>
+				<td>1892</td>
+				<td>347</td>
+			</tr>
+		</tfoot>
+
+	</table>
+
+
+	<h2>FORMS</h2>
+
+	<form action="doSomething">
+		<p>
+			Text input: <input type="text" name="user" size="15" maxlength="30" />
+
+		</p>
+		<p>
+			Radio input: <br /> <input type="radio" name="lang" value="Java" />Java
+			<br /> <input type="radio" name="lang" value="Python"
+				checked="checked" />Python <br /> <input type="radio" name="lang"
+				value="C++" />C++ <br />
+
+		</p>
+
+		<p>
+			Submit: <br /> <input type="submit" name="enter" value="GO!">
+		</p>
+
+
+		<p>
+			Text area: <br />
+			<textarea name="comment" rows="4" cols="20" maxlength="12"></textarea>
+
+		</p>
+
+
+		<p>
+			Check box: <br /> <input type="Checkbox" name="text" value="Map">Map
+			<br /> <input type="Checkbox" name="text" value="Set">Set <br />
+			<input type="Checkbox" name="text" value="List" checked="checked">List
+			<br />
+		</p>
+
+
+		<p>
+			Select option: <br /> <select name="os">
+				<option value="none">-----</option>
+				<option value="Linux">Linux</option>
+				<option value="Windows">Windows</option>
+				<option value="MacOS">MacOs</option>
+
+			</select>
+		</p>
+
+		<p>
+			Select option: <br /> <select name="ide" size="3"
+				multiple="multiple">
+				<option value="Eclipse" selected="selected">Eclipse</option>
+				<option value="Netbeans">Netbeans</option>
+				<option value="Intellij" selected="selected">Intellij</option>
+
+
+			</select>
+			
+			
+			
+			<p>
+			Hidden input: <br/>
+			<input type = "hidden" name= "invisible" value = "unknown" >
+			</p>
+			
+			
+			<fieldset>
+			<legend>User Name</legend>
+			<label>First Name:  
+			 <input type = "text" name = "fname">
+			</label> <br>
+			<label>Last Name:  
+			 <input type = "text" name = "lname">
+			</label>
+			
+			</fieldset>
+		
+	</form>
+</body>
+</html>
