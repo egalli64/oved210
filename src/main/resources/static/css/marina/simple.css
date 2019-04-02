@@ -1,10 +1,36 @@
-body{
-	background-color: #80ff80;
+body {
+	background-color: #a8d8e1;
+	background-image: url('/img/marina/Piccolo-gatto.jpg');
+	background-size: 20% 30%;
 }
 
+p {
+	font-family: monospace;
+}
 
 h1, h2, h3 {
-	color: red;
-	
-	
+	color: black;
+	background-color: yellow;
 }
+
+#special {
+	color: violet;
+}
+
+.MyClass {
+	color: #ff0000;
+}
+
+p.MyClass {
+	color: green;
+}
+
+#blockId {
+	background-color: white;
+}
+
+#spanId {
+	color: red;
+	font-weight: bold;
+}
+
