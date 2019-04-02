@@ -1,0 +1,62 @@
+body {
+	background-image:
+		url('http://www.commentnation.com/backgrounds/images/damask_wallpaper_seamless_background_red_and_black.jpg');
+	background-size: 5%;
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+.container {
+	text-align: center;
+}
+
+p {
+	color: white;
+}
+
+.lacasa {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+table {
+	background: white;
+}
+
+ol, ul {
+	color: white;
+}
+
+.title {
+	color: red;
+	font-weight: bold;
+	background-color: black;
+}
+
+#login {
+	color: white;
+	background-color: #808080;
+}
+
+#log {
+	position: relative;
+	width: 10px;
+	height: 1px;
+	color: black;
+	font-weight: bolder;
+}
+
+#fan {
+	color: white;
+	font-style: italic;
+	background-color: #a80000;
+}
+
+h1 {
+	color: white;
+	font-weight: bold;
+}
+
+h2, h3, h4, h5, h6 {
+	color: black;
+	background-color: red;
+	font-weight: bold;
+}
