@@ -1,7 +1,34 @@
 body {
-	background-color: #80ff80;
+	background-color: grey;
+	background-image: url('/img/tiziana/mare.jpg');
+	background-size: 100%;
+}
+
+p {
+	font-family: monospace;
 }
 
 h1, h2, h3 {
-	color: yellow;
+	color: white;
+	background-color: blue;
+}
+
+#special {
+	color: violet;
+}
+
+p.myClass {
+	color: blue;
+}
+
+.myClass {
+	color: blue;
+}
+
+#blockId {
+	background-color: white;
+}
+
+#spanId {
+	color: pink;
 }
