@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+<title>My Hello Java Script Page </title>
+
+</head>
+<body>
+<textarea id = "target" rows = "20" cols = "80"></textarea>
+
+
+
+
+
+
+
+<script type = "text/javascript"> 
+	document.write("<p> JavaScript has done this! </p>");
+	console.log("hello from Java Script!");
+	
+ let tx  = document.getElementById('target'); // cercami da document l'elemento che ha Id target e mettimelo nella variabile di testo tx
+ tx.value += "hello\n";
+ tx.value += "hello\n";// \n vuol dire new line, cioè vai a capo una volta che hai aggiunto il valore a tx
+</script>
+</body>
+</html>
