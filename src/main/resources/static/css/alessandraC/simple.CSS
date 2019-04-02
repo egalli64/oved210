@@ -1,15 +1,39 @@
 body {
-	background-color: #80ff80;
-}
-h1 {
-	color: yellow;
+	background-color: #800080;
 	
+	background-image:
+		url(https://images.unsplash.com/photo-1533467915241-eac02e856653?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80);
+	background-size:100%;
 }
-h2 {
+
+p {
+	font-family: monospace;
 	color: red;
+}
+
+h1, h2, h3, h4 {
+	color: yellow;
+	background-color: #ff0080;
+}
+
+#special {
+	color: violet;
+}
+
+.MyClass {
+	color: #ff0080;
+}
+
+p.MyClass {
+	color: #0000ff;
+}
+
+#blockId {
+	background-color: white;
 	
 }
-h3 {
-	color: blue;
-	
+
+#spanId {
+	color:pink;
+	font-weight:bold;
 }
