@@ -15,6 +15,78 @@
 	
 	let tx = document.getElementById('target');
 	tx.value += "hello\n";
+	
+	let result = 39;
+	tx.value += "result is " + result + "\n";
+	tx.value += "result is a " + typeof(result) + "\n";
+	tx.value += "tx is a " + typeof(tx) + "\n";
+	tx.value += "hello is a " + typeof("hello") + "\n";
+	
+	
+	let check = result == 42;
+	tx.value += "Is result == 42? " + check + "(" + typeof(check) + ")\n";
+	
+	//create a date
+	let now = new Date();
+	tx.value += now + "\n";
+	tx.value += now.toDateString() + "\n";
+	
+	//array of days
+	let days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+	tx.value += "Today is " + days[1] + "\n";
+	
+	days.push(result);
+	tx.value += "Last day is " + days[days.length - 1] + "\n";
+	
+	tx.value += days + "\n";
+	
+	days.unshift(null);
+	tx.value += days + "\n";
+	
+	let popped = days.pop();
+	tx.value += days + "\n";
+	tx.value += "I have popped " + popped + "\n";
+	
+	let shifted = days.shift();
+	tx.value += days + "\n";
+	tx.value += "I have shifted " + shifted + "\n";
+	
+	//strict equality
+	let a = '42';
+	let b = 42;
+	if(a == b){
+		target.value += "Unespected\n";
+	}
+	if(a === b){
+		target.value += "This won't happen\n";
+	}
+	if(a !== b){
+		target.value += "This would happen\n";
+	}
+	let c = parseInt(a);
+	if(b === c){
+		target.value += "c === b\n";
+	}
+	
+	let f = 10 / 3;
+	target.value += f + "\n";
+	target.value += f.toFixed(2) + "\n";
+	target.value += f.toFixed(0) + "\n";
+	
+	//this is a mistake
+	let d = parseInt(now);
+	if(isNaN(d)){
+		target.value += "This should not be accepted\n";
+	}
+	target.value += d + "\n";
+	
+	function appendTo(target, message){
+		target.value += message + "\n";
+	}
+	appendTo(target, now.toDateString().toUpperCase());
+	
+	
+	
 </script>
 </body>
 </html>
