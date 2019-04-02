@@ -1,8 +1,38 @@
 body {
-	background-color:yellow;
+	background-color: #ff8040;
+	 background-image: 
+	url('/img/donatella/celeste.jpg');
+	background-size: 100% 100%
+	 
+	
 }
 
-h1, h2,h3 {
-	color: yellow;
-	
+p {
+	font-family: monospace;
+}
+
+h1, h2, h3 {
+	background-color: blue;
+	color: #004000;
+}
+
+#special {
+	color: violet;
+}
+
+.myClass {
+	color: purple;
+}
+
+p.myClass {
+	color: blue;
+}
+blockId{
+	background-color: white;
+}
+
+spanId{
+	color:pink;
+	font-weight: bold;
+	font-style: italic;
 }
