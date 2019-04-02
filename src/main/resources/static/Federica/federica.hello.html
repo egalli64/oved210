@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome</title>
+</head>
+<body>
+	<h1 id="top">Welcome here!</h1>
+	<h2>Welcome!</h2>
+	<h3>Welcome!</h3>
+	<h4>Welcome!</h4>
+	<h5>Welcome!</h5>
+	<h6>Welcome!</h6>
+	
+	<h1>Paragraph</h1>
+	
+	<p>A few of paragraph:</p>
+	<p>First: hello hello!
+	how's life today?</p>
+	<p>Second</p>
+	
+	<h2>Some special effects</h2>
+	<p>This is <b>very important</b> or <i>maybe</i>
+	   just a bit important.</p>
+	   
+	 <p>E=MC<sup>2</sup></p>
+	 <p>CO<sub>2</sub></p>
+	 
+	<p>I want to break this <br>
+	   paragraph in two parts!</p>
+	   
+	<hr>
+	<p>Something else</p>
+	blah, blah, blah
+	
+	<ol>
+	<li>First</li>
+	<li>Second</li>
+	<li>Third</li>
+	</ol>
+	
+	<ul>
+	<li>First</li>
+	<li>Second</li>
+	<li>Third</li>
+	</ul>
+	
+	<dl>
+	<dt>Dog</dt>
+	<dt>A friendly animal</dt>
+	<dd>Another friendly animal</dd>
+	</dl>
+	
+	<ol>
+	<li>First Thing:
+	 <ul>
+	    <li>A</li>
+	    <li>B</li>
+	    <li>C</li>
+	   </ul>
+	  </li>
+	</ol>
+	
+	
+	<h2>Link</h2>
+	<p>Go to the <a href="http://www.spring.io">Spring</a> site.</p>
+	
+	<p>Go to the <a href="../index.html">Home</a> page.</p>
+	
+	<p>Go to the <a href="#top">top</a> of this page.</p>
+
+<h2>Images</h2>
+<p>
+   <img src="https://www.animalidacompagnia.it/wp-content/uploads/2018/06/la-storia-del-gatto-696x464.jpg">
+</p>
+
+<h2>Tables</h2>
+<p>A simple table</p>
+<table>
+   <tr>
+      <td>7</td> <td>8</td> <td>9</td>
+   </tr>
+   
+   <tr>
+      <td>4</td> <td>5</td> <td>6</td>
+   </tr>
+   
+   <tr>
+      <td>1</td> <td>2</td> <td>3</td>
+   </tr>
+</table>
+
+
+<p>A simple table</p>
+<table>
+   <thead>
+   <tr>
+      <th scope="row">*</th> 
+      <th scope="col">left</th> 
+      <th scope="col">center</th>
+      <th scope="col">right</th>
+   </tr>
+   </thead>
+   
+   <tr>
+      <th scope="row">top</th>
+      <td>7</td>
+      <td>8</td> 
+      <td>9</td>
+   </tr>
+   
+   <tr>
+    <th scope="row">center</th>
+      <td>4</td>
+      <td>5</td> 
+      <td>6</td>
+    </tr>
+   
+   <tr>
+      <th scope="row">low</th>
+      <td>1</td> 
+      <td>2</td> 
+      <td>3</td>
+   </tr>
+</table>
+
+<p>time table</p>
+<table>
+   <thead>
+   <tr>
+      <th scope="row">Day\Time</th> 
+      <th scope="col">9-11</th> 
+      <th scope="col">11-13</th>
+      <th scope="col">14-16</th>
+       <th scope="col">16-18</th>
+   </tr>
+   </thead>
+   
+   <tr>
+      <th scope="row">Monday</th>
+      <td colspan="2" align="center">SQL</td>
+      <td>Exercise</td> 
+      <td>JDBC</td>
+   </tr>
+   
+   <tr>
+    <th scope="row">Tuesday</th>
+      <td colspan="3" align="center">HTML</td>
+      <td>Exercise</td>  
+    </tr>
+   
+   <tr>
+      <th scope="row">Wednesday</th>
+      <td>Exercise</td>
+      <td colspan="3" align="center">HTML</td>
+   </tr>
+</table>
+
+<p>Balance</p>
+<table>
+<tfoot>
+   <thead>
+   <tr>
+      <th scope="col">Date</th> 
+      <th scope="col">input</th> 
+      <th scope="col">output</th>
+   </tr>
+   </thead>
+   <tbody>
+   
+  <tr>
+      <th scope="row">1st Jan</th>
+      <td>12</td>
+      <td>42</td>
+   </tr>
+   
+   <tr>
+      <th scope="row">2nd Jan</th>
+      <td>22</td>
+      <td>12</td>
+   </tr>
+   
+   <tr>
+      <th scope="row">3rd Jan</th>
+      <td>18</td>
+      <td>15</td>
+   </tr>
+   
+   <tr>
+   <th scope="row">...</th>
+   <td>...</td>
+   <td>...</td>
+   </tr>
+   
+   <tr>
+   <th scope="row">Total</th>
+   <td>18012</td>
+   <td>4215</td>
+   </tr>
+   
+   </tfoot>
+</table>
+
+<h2>Forms</h2>
+<form action="doSomething">
+  <p>Text input: <input type="text" name="user" size="15" maxlenght="30" />
+  </p>
+    
+<p>Radio input:<br />
+  <input type="radio" name="lang" value="Java" checked="checked"/>Java<br />
+  <input type="radio" name="lang" value="Python"/>Python<br />
+  <input type="radio" name="lang" value="C+++"/>C++<br />
+</p>
+     
+<p>
+Submit:<br />
+<input type="submit" value="Enter" />
+</p>
+
+<p>Check box:<br />
+  <input type="checkbox" name="ds" value="Map" checked="checked"/>Map<br />
+  <input type="checkbox" name="ds" value="List"/>List<br />
+  <input type="checkbox" name="ds" value="Set" checked="checked"/>Set<br />
+  
+<p>
+Select option:<br />
+<select name="os">
+<option value="none">---</option>
+<option value="Linux">Linux</option>
+<option value="Windows">Windows</option>
+<option value="macOs">macOs</option>
+</select>
+</p>
+
+<p>
+Select option:<br />
+<select name="ide" size="3" multiple="multiple">
+<option value="Eclipse" selected="selected">Eclipse</option>
+<option value="netbeans">NetBeans</option>
+<option value="Intellij" selected="selected">Intellij</option>
+</select>
+</p>
+
+<p>
+Submit:<br> <input type="submit" value="enter" />
+</p>
+
+<p>
+Text area:<br />
+<textarea name="Comment" rows="4" cols="20">Enter here your comment.</textarea>
+</p>
+
+<p>
+Hidden input:<br />
+<input type="hidden" name="invisible" value="unknown" />
+</p>
+
+<fieldset><legend>My group</legend>
+<label>First name:
+<input type="text" name="fname">
+</label>
+<label>Last name:
+<input type="text" name="lname">
+</label>
+</fieldset>
+
+<p>
+</form>
+
+</body>
+</html>
