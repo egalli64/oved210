@@ -3,11 +3,28 @@
 <head>
 <meta charset="UTF-8">
 
-<title> My Hello CSS page</title>
-<link rel = "stylesheet" type = "text/css" href= "/simple.css/alessandrab/simple.css"/>
+<title>My Hello CSS page</title>
+<link rel="stylesheet" type="text/css"
+	href="/css/alessandrab/simple.css" />
 
 </head>
 <body>
+
+	<h6>Link w/ navigation</h6>
+
+	<nav>
+		<ul>
+			<li>back to the home page <a href="hello.html"> Back to the
+					home page</a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<h6>Link "old style"</h6>
+	<p>
+		Go back to the home page <a href="hello.html">home page</a>
+	</p>
 	<h1>Welcome to my home page!</h1>
 	<h2>Welcome to my home page!</h2>
 	<h3>Welcome to my home page!</h3>
@@ -15,7 +32,34 @@
 	<h5>Welcome to my home page!</h5>
 	<h6>Welcome to my home page!</h6>
 
+	<p>This would be rendered as monospaced text</p>
+
+	<h2 id="special">This is different</h2>
+	<!-- gli associo un id cosi che possa specificare uno stile diverso ( #special) -->
+
+	<h4 class=myClass>Hello</h4>
+	<p class="myClass">this is some text</p>
+	<p class="myClass">this is some other text</p>
+
+	<div id="blockId">
+		<!-- con il div mi creo una cosa specifica che viene gestita allo stesso modo -->
+		<p>
+			My car is a <span id="spanId">Lamborghini Aventador!</span>
+		</p>
+		<h5>Special feautures:</h5>
+		<ul>
+			<li>Easy parking steering control</li>
+			<li>Extra luggage room</li>
+
+		</ul>
+
+	</div>
+	
+	<iframe width = "400" height = "400" src = "http://maps.google.com/maps?q=duomo+milano&amp;output=embed">  <!-- una specie di div che cede il controllo a un altro sito (tipo google maps) -->
+	
+	</iframe> <!-- per mettere tipo una mappa o un frame di una mappa -->
 
 
+      <p> Oved &copy, 2019</p>  <!-- copyright -->
 </body>
 </html>

@@ -1,0 +1,28 @@
+body {
+	background-image : url('/img/mariangela/chewbe.jpg');
+	background-size: 100%;
+}
+p{
+	font-family: monospace;
+}
+h1, h2, h3 {
+	background-color: #000000;
+	color: #ffff00;
+}
+
+#special {
+	color: #ffffff;
+}
+.myClass {
+	color: #ffffff;
+}
+p.myClass {
+	color: blue;
+}
+#blockId {
+	background-color : white;
+}
+#spanId {
+	color: #0000ff;
+	font-weight: bold;
+}
