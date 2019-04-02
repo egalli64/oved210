@@ -1,7 +1,44 @@
 body{
-	background-color: gray;
+	background-image: linear-gradient(to top right, #000040 0%, #8080ff 50%, #ffffff 100%);
+   
 }
 
 h1, h2, h3{
-	color: blue;
+	color: #4aafec;
+	
+}
+
+p {
+	
+	font-family:monospace;
+	color: white;
+}
+
+h4, h5, h6{
+	color: #0080ff;
+}
+
+#special{
+	color: #2bd5bf;
+	background-color: white;
+}
+
+p.myClass{
+	color: pink;
+	
+}
+
+h4.myClass{
+	color: #c9f4fa
+}
+
+#blockId{
+	background-color: white;
+	
+}
+
+#spanId{
+	color : #ff8080;
+	font-weight: bold;
+	font-style: italic;
 }
