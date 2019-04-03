@@ -4,9 +4,11 @@
 <meta charset="UTF-8">
 <title>La casa de papel</title>
 <link rel="stylesheet" type="text/css" href="/css/marina/mypageCss.css">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/marina/mypage.js" type ="text/javascript"></script>
 </head>
 <body>
-	<div class="container">
+<div class="container">
 		<img
 			src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"
 			width="20%"
@@ -15,11 +17,11 @@
 			src="http://www.ansa.it/webimages/img_700/2018/4/28/ca2e9cecf77e8119b1fd657a59e37c25.jpg"
 			width="500" height="300">
 
-		<p class="title">
+		<h2 class="title">
 			This page is dedicated to <i> La casa de Papel</i>
-		</p>
+		</h2>
 		<br>
-		<p>Here I will show you all the main characters!</p>
+		<h3>Here I will show you all the main characters!</h3>
 	</div>
 
 	<br>
@@ -118,27 +120,28 @@
 	<h2 id="fan">Here is the FAN CLUB</h2>
 
 
-	<fieldset id="login">
-		<br>
-		<legend id=log>
+	<div id="login">
+
+		<p id=log>
 			<b>LOGIN</b>
-		</legend>
+		</p>
 		<label>User name: <input type="text" name="user"
 			maxlength="15">
 		</label> <label>Password: <input type="password" name="password">
 		</label> <input type="submit" value="LOG IN">
 		<p><i>
-			If you're not already registered, click <a href="http://nfoifneo">here</a>
+			If you're not already registered, click <a href="http://linknull">here</a>
 			to Sign up.</i>
+			<br>
 		</p>
-	</fieldset>
+	</div>
 
 	<p>
 		Select your favorite season: <br> <input type="radio" name="lang"
 			value="1">I<br> <input type="radio" name="lang"
 			value="2">II<br>
 	</p>
-	<input type="submit" value="SUBMIT">
+	<input id="nice" type="button" value="SUBMIT">
 
 	<p>
 		Select your favorite character: <br> <select name="os">
@@ -150,7 +153,7 @@
 			<option value="Rio">Rio</option>
 			<option value="Denver">Denver</option>
 		</select> <br>
-		<input type="submit" value="SUBMIT">
+		<input type="button" value="SUBMIT">
 	</p>
 
 	<p>
@@ -178,16 +181,16 @@
 			<option value="Against the Clock">II-7-Against the Clock</option>
 			<option value="Bye Beautiful">II-8-Bye Beautiful</option>
 		</select> <br>
-		<input type="submit" value="SUBMIT">
+		<input type="button" value="SUBMIT">
 
 	</p>
 
 	<p>
 		Tell us what you think about La casa de papel: <br>
-		<textarea name="comment" rows="4" cols="20">Write here.
-</textarea>
+		<textarea name="comment" rows="4" cols="20">Write here.</textarea>
 		<br>
-		<input type="submit" value="SUBMIT">
+		
+		<input type="button" value="SUBMIT">
 	</p>
 
 

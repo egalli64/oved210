@@ -1,10 +1,13 @@
 body {
 	background-image:
-		url('http://www.commentnation.com/backgrounds/images/damask_wallpaper_seamless_background_red_and_black.jpg');
+	url('http://www.commentnation.com/backgrounds/images/damask_wallpaper_seamless_background_red_and_black.jpg');
 	background-size: 5%;
-	font-family: Verdana, Geneva, sans-serif;
+	font-family: "Courier New", Courier, monospace;
 }
-
+#background {
+	opacity:0.2;
+	
+}
 .container {
 	text-align: center;
 }
@@ -37,17 +40,14 @@ ol, ul {
 }
 
 #log {
-	position: relative;
-	width: 10px;
-	height: 1px;
+
 	color: black;
 	font-weight: bolder;
 }
 
 #fan {
-	color: white;
-	font-style: italic;
-	background-color: #a80000;
+	color: red;
+	background-color: #000000;
 }
 
 h1 {
