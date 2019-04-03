@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JQuery page</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	let name = prompt("What's your name?", "Guest");
+	//alert("Hello");
+
+	function generateMessage(user, date) {
+		return "Hello " + user + ". You connected at " + date;
+	}
+
+	// same as: $(document).ready(function() {
+	$(function() {
+		$('#header').slideDown(3000);
+		
+		let score = 42;
+		$('textarea').append('Your current score is ' + score + '\n');
+		$('textarea').append(generateMessage(name, new Date()) + '\n');
+		
+		$('#signature').text("Hello by JQuery!");
+		//document.getElementById('signature').innerText = 'Hello by HTML5'
+		
+		$('#spanMsg').replaceWith(name);
+		
+		$('#colorSwapper').click(function(){
+			
+		});
+		
+	});
+</script>
+<style type="text/css">
+.red {
+	color: red;
+}
+</style>
+</head>
+<body>
+	<h1 class="red" id="header" hidden="true">Hello!</h1>
+	<nav>
+		<ul>
+			<li><a href="helloJs.html">Back to JavaScript examples</a>
+			<li><a href="helloCss.html">Back to Css examples</a>
+		</ul>
+	</nav>
+
+	<textarea rows="10" cols="80"></textarea>
+
+	<p id="pmsg">
+		This message is just for you, <span id="spanMsg">Unknown</span>:
+		hello!
+	</p>
+
+	<input type="button" 
+		id="colorSwapper" 
+		value="Change color" />
+
+	<p id="signature">&copy; ACME Inc. 2019</p>
+	
+	
+	
+</body>
+</html>
