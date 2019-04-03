@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>My Blog</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/monica/hello.js" type="text/javascript"></script>
 
 <link	rel="stylesheet" 
 		type= "text/css"
@@ -13,7 +15,7 @@
 </head>
 <body>
 
-	<h1> Welcome to my Blog!</h1>
+	<h1 id="header" hidden = "true"> Welcome to my Blog!</h1>
 
 	<p>
 		<img src="https://www.giardinaggio.net/immagini-fiori_NG1.jpg"
@@ -49,6 +51,7 @@
 
 	</ol>
 
+	
 	<h2>Descrizione categorie</h2>
 
 	<hr>
@@ -181,7 +184,7 @@
 
 <h2> Seleziona prodotto per richiedere maggiori informazioni </h2>
 <p> <b> Categoria: </b> <br> 
-			<input type ="radio"  name= "Lang" value= "Fiori Margherita" checked= "checked"/> Fiori Margherita<br/>
+			<input type ="radio"  name= "Lang" value= "Fiori Margherita" checked= "checked"/>Fiori Margherita<br/>
 			<input type ="radio"  name= "Lang" value= "Fiori Pesco"/> Fiori Pesco<br/>
 			<input type ="radio"  name= "Lang" value= "Petali di rosa" /> Petali di rosa<br/>
 	</p>
@@ -206,7 +209,9 @@
            maxlength="16" required>
 </div>
 
-<input type="submit" value="Accedi">
+<input type="submit" 
+		id= "accedi"
+		value="Accedi">
 </fieldset>
 
 

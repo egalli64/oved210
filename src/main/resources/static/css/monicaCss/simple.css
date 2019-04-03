@@ -8,48 +8,46 @@ p {
 }
 
 h1, h2, h3 {
-	background-color : #ff80c0;
+	background-color: #ff80c0;
 	color: yellow;
 }
 
-
-#special{
-	color:violet;
+#special {
+	color: violet;
 }
 
-p.myClass{
-	color:red; 
+p.myClass {
+	color: red;
 }
 
-table{
+table {
 	font-family: monospace;
 	color: red;
 }
 
 fieldset {
-	font-family:  serif;
-	color:red;
+	font-family: serif;
+	color: red;
 }
 
-ol{ 
+ol {
 	font-family: monospace;
-	color:blue;
+	color: blue;
 }
 
 #blockId {
 	background-color: white;
 }
- 
-#spanId{
-	color: pink; 
+
+#spanId {
+	color: pink;
 	font-weight: bold;
-} 
-
-
-
-h1 {
-	text-align:center;
 }
 
+h1 {
+	text-align: center;
+}
 
-
+.red {
+	color: red;
+}
