@@ -3,57 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <title>My region!</title>
-<link rel="stylesheet" type="text/css" href="/css/donatella/simple.css" />
+<body>
+
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+	
+<script type="text/javascript" src= "/js/donatella/region.js">
+</script>
+
+<body>
+	<h1 id="Spiagge">Welcome to my region</h1>
+	<h2>Welcome to region!</h2>
+	<h3>Welcome to region!</h3>
+	<h4>Welcome to region!</h4>
+	
+
+	<link rel="stylesheet" type="text/css" href="/css/donatella/simple.css" />
 </head>
 <body background="/img/donatella/celeste.jpg">
 <head>
 <body>
 	<nav>
-	<ul>
-	<li><a href="region.html">Go back to home page</a></li>
-	</ul>
+		<ul>
+			<li><a href="region.html">Go back to home page</a></li>
+		</ul>
 	</nav>
-	
-	<h6> Link"old style"</h6>
+
+	<h6>Link"old style"</h6>
 	<p>
 		Go back to the <a href="region.html">home page</a>
 	</p>
 
-	<h1 >Welcome to my region!</h1>
+
+
+
+
+	<h1>Descrizione</h1>
+	<p>La Sardegna è una grande isola italiana situata nel Mar
+		Mediterraneo e caratterizzata da circa 2000 km di costa, spiagge
+		sabbiose e da un entroterra montuoso attraversato da sentieri
+		escursionistici. Il suo paesaggio frastagliato è costellato da
+		migliaia di nuraghi, misteriose rovine in pietra dalla forma ad
+		alveare, costruiti nell'Età del Bronzo</p>
+	</p>
 	
-
-
-	<h2>Descrizione</h2>
-	<p>La Sardegna è una grande isola italiana situata nel Mar Mediterraneo e caratterizzata da circa 2000 km di costa, 
-	spiagge sabbiose e da un entroterra montuoso attraversato da sentieri escursionistici. Il suo paesaggio frastagliato 
-	è costellato da migliaia di nuraghi,
-	 misteriose rovine in pietra dalla forma ad alveare, costruiti nell'Età del Bronzo</p>
-	</p>
 	<p>Le spiagge</p>
-	<p>Le bombarde,
-	Lazzaretto,
-	Pineta Mugoni
+	<p>Le bombarde, Lazzaretto, Pineta Mugoni</p>
+
+
+
+
+
+	</p>
+	spiaggia le Bombarde
+	<p>
+		<img src="/img/donatella/006 spiaggia le bombarde.jpg" width="200"
+			height="200" />
 	</p>
 
-
-
-	<h2>Images</h2>
+	</p>
+	spiaggia Lazzaretto
 	<p>
-		<img
-			src="https://www.vistanet.it/cagliari/wp-content/uploads/sites/2/2018/05/SARDEGNA_SAT.jpg" width= "150" height ="150" />
-
-	</p>spiaggia le Bombarde
-<p>
-	<img src="/img/donatella/006 spiaggia le bombarde.jpg" width ="150" height ="150"
-	 />
-</p>
-
-	</p>spiaggia Lazzaretto
-<p>
-	<img src="/img/donatella/lazzaretto.jpg" width ="150" height ="150"
-	 />
-</p>
-
+		<img src="/img/donatella/lazzaretto.jpg" width="200" height="200" />
+	</p>
+	</p>
+	spiaggia Pineta Mugoni
+	<p>
+		<img src="/img/donatella/pineta Mugoni.jpg" width="200" height="200" />
+	</p>
 
 	<p>Tabella dati</p>
 	<table>
@@ -87,7 +106,7 @@
 		</tr>
 	</table>
 
-	<p>le preferite</p>
+	<p>le spiagge  preferite</p>
 
 	<table>
 		<thead>
@@ -116,6 +135,20 @@
 			<td>...</td>
 			<td>...</td>
 		</tr>
+		
+	
+		
+<body>		
+	<p id="pmsg">
+		La Sardegna  <span id="spanMsg">è bella</span>:Buona Vacanza!!
+	</p>
+		
+	<input type="button" id="upsize" value="Bigger" />
+
+	<input type="button" id="downsize" value="Smaller" />
+	
+	
+	
 </body>
 
 </table>
@@ -133,36 +166,38 @@
 	<p>
 		Select option:<br /> <select name="os">
 			<option value="none">---</option>
-			<option value="giallo">Giallo
-				</option>
+			<option value="giallo">Giallo</option>
 			<option value="verde">Verde</option>
 			<option value="rosso">Rosso</option>
 		</select>
 	</p>
-	<div id="blockId">
-		<p>
-			La strada<span id="spanId"> per arrivare alle spiaggie!</span>!
-		</p>
-		<h5>Cartina:</h5>
-		<ul>
-			<li>Easy-parking steering control</li>
-			<li>Extra luggage room</li>
-		</ul>
+	
+		
+		
+	
 
 
 	</div>
-	
+
 </form>
 
- <p> Strada per le Bombarde</p>
-	<iframe
-	width ="500"
-	height="500"
-	 src="https://www.google.com/maps/place/J+and+B+Le+Bombarde;output=embed">
-	 </iframe>
+<p>Alghero e il suo mare</p>
+<iframe width="560" height="315"
+ src="https://www.youtube.com/embed/Hl6eoFcoeN4" frameborder="0" allow="accelerometer; autoplay; 
+ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>le spiagge</p>
+	<div>
+	<select onchange="setTarget(this)">
+	<option>-</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	</select>
+	<br/>
+	<label>Spiaggia:<input id="target" ></label>
+	</div>
 
-	
-	<p>Region &copy;2019</p>
-	
+<p>Region &copy;2019</p>
+
 </body>
 </html>
