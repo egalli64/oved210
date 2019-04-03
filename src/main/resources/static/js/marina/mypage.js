@@ -1,11 +1,11 @@
-alert("Welcome to La casa de papel fan page!");
+$(function(){
 
-
-$('button').click(function() {
-	<a href="http://linknull">here</a>;
-});
 
 $('#nice').click(function() {
 	$(this).val("Nice Choice!");
+});
+
+$('#header').slideDown(1000);
+
 
 });

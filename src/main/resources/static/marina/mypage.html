@@ -5,93 +5,51 @@
 <title>La casa de papel</title>
 <link rel="stylesheet" type="text/css" href="/css/marina/mypageCss.css">
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="/js/marina/mypage.js" type ="text/javascript"></script>
+<script src="/js/marina/mypage.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="container">
-		<img
-			src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"
-			width="20%"
-			height="10%">
-		<br> <img
-			src="http://www.ansa.it/webimages/img_700/2018/4/28/ca2e9cecf77e8119b1fd657a59e37c25.jpg"
-			width="500" height="300">
 
-		<h2 class="title">
-			This page is dedicated to <i> La casa de Papel</i>
-		</h2>
+
+	<div id="signup">
+		<br> <label>User name: <input type="text" name="user"
+			maxlength="15">
+		</label> <label>Password: <input type="password" name="password">
+		</label> <a href="http://linknull"><input type="submit" value="LOG IN"></a>
+
 		<br>
-		<h3>Here I will show you all the main characters!</h3>
+		<p id="register">
+			If you're not already registered, click <a href="http://linknull">here</a>
+			to Sign up.
+		</p>
+		<br>
 	</div>
 
-	<br>
-
-	<p>
-	<ol>
-		<li><h3 id="prof">The Professor:</h3> <br> <img
-			src="https://www.hallofseries.com/wp-content/uploads/2018/03/profesor2-e1527710617745.png"
-			height="250" width="400">
-			<p>
-				<b>Álvaro Morte</b> as <i>Sergio Marquina</i> (The Professor /
-				Salvador "Salva" Martín): The mastermind of the heist who assembled
-				the group.
-			</p></li>
-		<li><h3>Tokyo:</h3> <br> <img
-			src="https://gogomagazine.it/wp-content/uploads/2018/04/ursula-corbero-casa-di-carta.jpg"
-			height="250" width="400">
-			<p>
-				<b>Úrsula Corberó</b> as <i>Silene Oliveira (Tokyo)</i>: The
-				protagonist and narrator; she was a runaway robber until scouted by
-				the Professor to participate in his plan.
-			</p></li>
-		<li>
-			<h3>Berlin:</h3> <br> <img
-			src="https://www.hallofseries.com/wp-content/uploads/2018/04/la-casa-di-carta-berlino-4.jpg"
-			alt="Berlin" height="250" width="400">
-			<p>
-				<b>Pedro Alonso</b> as <i>Andrés de Fonollosa</i> (Berlin): A jewel
-				thief and the Professor's second-in-command.
-			</p>
-		</li>
-	</ol>
-	<ul>
-		<li><h3>Nairobi:</h3> <br> <img
-			src="https://www.lascimmiapensa.com/wp-content/uploads/2018/07/Nairobi.jpg"
-			height="250" width="400">
-			<p>
-				<b>Alba Flores</b> as <i>Ágata Jiménez</i> (Nairobi): An expert in
-				forgery in charge of printing the money for the group.
-			</p></li>
-
-		<li><h3>Rio:</h3> <br> <img
-			src="https://tse3.mm.bing.net/th?id=OIP.VTFjMfYkqwbw5XbDFCIQTQHaEM&pid=Api"
-			height="250" width="400">
-			<p>
-				<b>Miguel Herrán</b> as<i> Aníbal Cortés</i> (Rio): A young hacker
-				and Tokyo's boyfriend.
-			</p></li>
-		<li>
-			<h3>Denver:</h3> <br>
-			<figure>
-				<img
-					src="https://ilarge.lisimg.com/image/16446101/1000full-jaime-lorente.jpg"
-					height="250" width="400">
-				<figcaption>
-					As seen on <a href="https://www.listal.com/viewimage/16446101">this
-						page</a>
-				</figcaption>
-			</figure>
-			<p>
-				<b>Jaime Lorente</b> as <i>Daniel Ramos</i> (Denver): Moscow's son
-				who joins him in the heist.
-			</p>
-		</li>
-	</ul>
+	<img src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"
+		width="20%" height="10%">
 
 	<br>
-	<p>
-		Go back to the <a href="#prof">Professor!</a>
-	</p>
+	<img
+		src="http://www.ansa.it/webimages/img_700/2018/4/28/ca2e9cecf77e8119b1fd657a59e37c25.jpg"
+		width="30%" height="10%" id="header" hidden="true">
+
+	<h2 class="title">
+		This is the fan page of <i> La casa de Papel</i>
+	</h2>
+
+	<h3>Read more about the characters:</h3>
+
+	<a href="/marina/mypage/professor.html">The Professor</a>
+	<br>
+	<a href="/marina/mypage/tokyo.html">Tokyo</a>
+	<br>
+	<a href="/marina/mypage/berlin.html">Berlin</a>
+	<br>
+	<a href="/marina/mypage/nairobi.html">Nairobi</a>
+	<br>
+	<a href="/marina/mypage/rio.html">Rio</a>
+	<br>
+	<a href="/marina/mypage/denver.html">Denver</a>
+
 
 	<h3>Seasons Table</h3>
 	<table>
@@ -116,25 +74,8 @@
 
 	<br>
 	<br>
-
-	<h2 id="fan">Here is the FAN CLUB</h2>
-
-
-	<div id="login">
-
-		<p id=log>
-			<b>LOGIN</b>
-		</p>
-		<label>User name: <input type="text" name="user"
-			maxlength="15">
-		</label> <label>Password: <input type="password" name="password">
-		</label> <input type="submit" value="LOG IN">
-		<p><i>
-			If you're not already registered, click <a href="http://linknull">here</a>
-			to Sign up.</i>
-			<br>
-		</p>
-	</div>
+	<hr>
+	<h2 id="fan">Tell us your opinion</h2>
 
 	<p>
 		Select your favorite season: <br> <input type="radio" name="lang"
@@ -152,8 +93,8 @@
 			<option value="Nairobi">Nairobi</option>
 			<option value="Rio">Rio</option>
 			<option value="Denver">Denver</option>
-		</select> <br>
-		<input type="button" value="SUBMIT">
+		</select> <br> <a href="http://linknull"><input type="button"
+			value="SUBMIT"></a>
 	</p>
 
 	<p>
@@ -180,23 +121,17 @@
 			<option value="What Have We Done?">II-6-What Have We Done?</option>
 			<option value="Against the Clock">II-7-Against the Clock</option>
 			<option value="Bye Beautiful">II-8-Bye Beautiful</option>
-		</select> <br>
-		<input type="button" value="SUBMIT">
+		</select> <br> <a href="http://linknull"><input type="button"
+			value="SUBMIT"></a>
 
 	</p>
 
 	<p>
 		Tell us what you think about La casa de papel: <br>
 		<textarea name="comment" rows="4" cols="20">Write here.</textarea>
-		<br>
-		
-		<input type="button" value="SUBMIT">
+		<br> <a href="http://linknull"><input type="button"
+			value="SUBMIT"></a>
 	</p>
-
-
-
-
-
 
 
 
