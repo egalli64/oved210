@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JavaScript page</title>
+</head>
+<body>
+
+	<textarea id="target" rows="20" cols="80"></textarea>
+
+	<script type="text/javascript">
+		document.write("<p>JavaScript 'has done' this!</p>");
+		console.log("Hello from JavaScript");
+
+		let tx = document.getElementById('target');
+		tx.value += "Hello\n";
+
+		let result = 39;
+
+		// result is 39
+		tx.value += "Result is " + result + "\n";
+		// result is a number
+		tx.value += "Result is a " + typeof (result) + "\n";
+		// tx is a object
+		tx.value += "Tx is a " + typeof (tx) + "\n";
+		// string is a string
+		tx.value += "String is a " + typeof ("hello") + "\n";
+
+		// is result == 42? false
+		tx.value += "Is result == 42? " + (result == 42) + "\n";
+		let check = result == 42;
+		tx.value += "Is result == 42? " + check + "(" + typeof (check) + ")\n";
+
+		// create a date
+		let now = new Date();
+		tx.value += now + "\n";
+		tx.value += now.toDateString() + "\n";
+
+		// array
+		let days = [ 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun' ];
+		// si comincia a contare da zero quindi martedì corrisponderà al valore 1; ossia il secondo elemento
+		tx.value += "Today is " + days[1] + "\n";
+
+		days.push(result);
+		tx.value += "Last days is " + days[days.length - 1] + "\n";
+
+		tx.value += days + "\n";
+
+		days.unshift(null);
+		days.unshift("hello");
+		tx.value += days + "\n";
+
+		let popped = days.pop();
+		tx.value += days + "\n";
+		tx.value += "I have popped " + popped + "\n";
+
+		let shifted = days.shift();
+		tx.value += days + "\n";
+		tx.value += "I have shifted " + shifted + "\n";
+
+		//strict equality
+		let a = '42';
+		let b = 42;
+
+		if (a == b) {
+			target.value += "Unexpected!\n";
+		}
+
+		if (a === b) {
+			targte.value += "This won't happen\n";
+		}
+
+		if (a !== b) {
+			target.value += "This would happen\n";
+		}
+
+		let c = parseInt(a);
+
+		if (b === c) {
+			target.value += "c === b\n";
+		}
+
+		let f = 10 / 3;
+
+		target.value += f + "\n";
+		// si ferma a 2 decimali che sono quelli che io indico all'interno della parentesi
+		target.value += f.toFixed(2) + "\n";
+		target.value += f.toFixed(0) + "\n";
+
+		// this is a mistake!
+		let d = parseInt(now);
+		if (isNaN(d)) {
+			target.value += "Nan is not accepted here\n";
+			d = -1;
+		}
+		
+		target.value += d + "\n";
+		// se invece subito dopo il primo let metto questa: mi darà NaN  che vuol dire = Not a Number!
+		// let e = parseInt(now); 
+		// target.value += e + "\n";
+	
+		
+		function appendTo(target, message) {
+			target.value += message + "\n";
+		}
+		
+		appendTo(target, now.toDateString().toUpperCase());
+		appendTo(null, now);
+		
+	</script>
+</body>
+</html>
