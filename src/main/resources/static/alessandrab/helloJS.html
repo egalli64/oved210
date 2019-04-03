@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<textarea id = "target" rows = "20" cols = "80"></textarea>
+<textarea id = "target" rows = "40" cols = "80"></textarea>
 
 
 
@@ -21,8 +21,96 @@
 	console.log("hello from Java Script!");
 	
  let tx  = document.getElementById('target'); // cercami da document l'elemento che ha Id target e mettimelo nella variabile di testo tx
- tx.value += "hello\n";
+
  tx.value += "hello\n";// \n vuol dire new line, cioè vai a capo una volta che hai aggiunto il valore a tx
+ 
+ let result = 39; //Java script decide il tipo della variabile a seconda di cosa ci metto dentro
+ tx.value += "result is " + result +  "\n";
+ tx.value += "result is a " +  typeof(result) + " \n";//typeof ritorna la tipologia della variabile che gli metto tra parentesi
+ tx.value += "tx is an " +  typeof(tx) + " \n";
+ tx.value += "String is a " +  typeof("hello") + " \n";
+ 
+ 
+ let check = result == 42;
+ tx.value += "Is result == 42? " + check + "(" + typeof(check) + ") \n";
+ 
+ let now = new Date();
+ tx.value += now + "\n";
+ tx.value += now.toDateString() + "\n";
+ 
+ //array
+ 
+ let days = ['Mon', 'Tue', 'Wed','Thu', 'Fri', 'Sat', 'Sun'];
+ 
+ tx.value += "Today is " + days[1] + "\n";
+ 
+ days.push(result); 
+ // in java script posso inserire più elementi diversi in un array (l'array + generico), e lo mette come ultimo elemento
+ tx.value += "Last day is " + days[days.length -1] + "\n";
+ 
+ tx. value += days + "\n"; // stampo tutto l'array
+ 
+ days.unshift(null); //unshift è proprio il comando per inserire un elemento nell'array come primo elemento
+ tx. value += days + "\n";
+ 
+ days.unshift("hello");
+ tx. value += days + "\n";
+ 
+ let popped = days.pop(); // metto in popped l'elemento che ho eliminato da days tramite la funzione pop (contrario di push) toglie quello più a destra
+ tx. value += days + "\n";
+ tx.value += "I have popped  " + popped + "\n";
+ 
+ let shifted = days.shift();
+ tx.value += days + "\n";
+ tx.value += "I have shifted  " + shifted + "\n";
+ 
+ // strict equality
+
+ let a = '42';
+ let b = 42;
+ if (a == b) {
+	 target.value += "Unexpected!";
+ }   
+ 
+ if (a === b) {
+	 target.value += "This won't happen!\n";
+ }
+  // in Java script esiste il triplo uguale che significa STRETTAMENTE UGUALE
+  
+   if (a !== b) {
+	 target.value += "This won't happen!\n";
+ } // !== vuol dire NON STRETTAMENTE UGUALE
+ 
+ let c = parseInt(a); // mi fa il parsing della stringa che gli passo e gliela ritorno come intero
+ if (b === c) {
+	 target.value += "c === b\n";
+ }
+ 
+ let f = 10/3;
+ target.value += f + "\n"; // Java script la legge come divisione
+ target.value += f.toFixed(2) + "\n"; // toFixed() mi dice il numero di decimai a ci mi devo fermare (in questo caso esce 3.33)
+ target.value += f.toFixed(0) + "\n";
+ 
+ 
+ // this is a mistake!
+ 
+ let d = parseInt(now);
+ target.value += d + "\n";
+ 
+ if(isNaN(d)) {
+	 target.value += "NaN is not accepted here\n";
+	 d = -1;
+ }
+ 
+ target.value += d + "\n";
+ 
+ function appendTo(target, message)  {
+	 
+	 target.value += message + "\n";	 
+ }
+ 
+ appendTo(target, now.toDateString().toUpperCase());
+  
 </script>
 </body>
 </html>

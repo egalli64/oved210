@@ -3,14 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <title>My hello page </title>
-<link rel="stylesheet" type="text/css" href= "/css/Elmonda/simple.css">
+<link rel="stylesheet"
+ type="text/css"
+ href= "/css/Elmonda/simple.css">           <!-- colleg allo stile -->  
 </head>
-<body>
+<body >
+<h6>Link w/ navigation</h6>
+	<nav>
+	<ul>
+	<li> <a href="hello.html">Back to home page</a></li>
+	<!-- anordered list dove ci sono i link dove voglio nadare -->
+	</ul>
+	</nav>
+	
+	<h6>Link "old style"</h6>
+	<p>Go back to the <a href="hello.html">home page</a></p>
+	
+	
 	<h1 id="top">Welcome to my home page!</h1>  <!--  id serve per dare un nome specifico ad un elemento, l'id dev'essere univoco-->
 	<h2>Welcome to my home page!</h2>
-	<h3>Welcome to my home page!</h3>
+	<h3>Welcome to my home page!</h3>   <!--  -->
 	<h4>Welcome to my home page!</h4>
 	<h5>Welcome to my home page!</h5>
 	<h6>Welcome to my home page!</h6>
+	
+	
+	<p>This would be rendered as monospaced text </p>
+	This should be rendered using the body default char
+
+	<p>7 %lt; 5</p>
+	
+<h2 id="special"> This is different </h2>
+
+	
+	<h2 id="special">This is different</h2>
+	<h4 class="myClass">Hello</h4>
+<p class="myClass">This is some text</p>
+<p class="myClasss">This is some other text</p>  <!-- voglio che agiscabo in modo diverso specificando la loro classe -->
+
+	<div id="blockId">
+	<!-- tenere unito il blocco in modo che quello che mi rappresenta venga gestito nello stesso modo, ad esempio per la sezione del mio testo -->
+		<p>My car is a <span id="spanId"> Lamborghini Aventador</span>!</p>
+		<h5>Special features</h5>
+		<ul>
+			<li>Easy-parking steering control<li>
+			<li>Extra luggage rom</li>
+		</ul>
+	</div>
+	
+	<!--iframe=  cedere un pezzo del mio quadrato ad una pagina che lavorerà in quello spazio ,  &amp per inserire la e commerciale-->
+	<!--  --><iframe      
+	width="400"
+	height="400"
+	src="http://maps.google.com/maps?q=duomo+milano&amp;output=embed">
+	</iframe> -->
+	
+	<p>Oved &copy;2019</p>
 	</body>
 	</html>
