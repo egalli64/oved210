@@ -4,13 +4,16 @@
 <meta charset="UTF-8">
 <title>My profile</title>
 <link rel="stylesheet" type="text/css" href="/css/tiziana/myprofile.css">
+<script src="//code.jquery.com/jquery-3.3.1.min.js"> </script>   
+<script src="/js/tiziana/myprofile.js" type = "text/javascript"> </script>
 </head>
 <body>
 	
-	<h1>Welcome to my home page</h1>
+	
+	<h1 id="header" hidden="true">Welcome to my home page</h1>
 	<h2>Welcome to my profile</h2>
 
-	<h2>Description:</h2>
+	<h2 id = character>Description:</h2>
 
 	<p>My name is Tiziana.</p>
 	<p>I'm 25.</p>
@@ -36,17 +39,18 @@
 			</label>
 			<label>Last name:
 					<input type="text" name="lname">
-			</label>
-					
+			</label>			
 		</fieldset>
 
 
-	<h2>Formation:</h2>
+<div class = "changeColor">
+	<h2 id = character>Formation:</h2>
 
 	<p>I'm graduated in economics at the University of Bari.</p>
 	<p>Now I attend a training course in Accenture in Milano.</p>
+</div>
 
-	<h2>Aspects of my character:</h2>
+	<h2 id = character>Aspects of my character:</h2>
 	<p>I consider myself a person:
 	<ol>
 		<li>organized,</li>
@@ -56,15 +60,17 @@
 
 
 
-	<h2>My Hobbies:</h2>
+<div class = "changeColor">
+	<h2 id = character>My Hobbies:</h2>
 	<ul>
 
 		<li>I like reading a lot.</li>
 		<li>I don't like sports but I love walking around.</li>
 
 	</ul>
+</div>
 
-	<h2>Physical aspect:</h2>
+	<h2 id = character>Physical aspect:</h2>
 	<p>My measures</p>
 	<table>
 		<thead>
@@ -111,7 +117,7 @@
 		
 	<h2>Time schedule</h2>	
 	<div id="blockId">
-	<table>
+	<table >
 		<thead>
 			<tr>
 				<th scope="row">Week/Time</th>
@@ -161,9 +167,31 @@
 		
 	</table>
 	</div>
-			
 	
 
+	<br>
+	<h2>My favorite matter at the university</h2>
+			
+	<div>
+		<select onchange="setTarget(this)">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<br>
+		<label> What's is my favorite matter at the University?: <input id="target" readonly="readonly" > 
+		</label>
+	</div>
+	<p> My favorite matter is the chose 1 (Maths) </p>
+	
+
+	<br>
+	<h2>Change color of points of Formation and Hobbies </h2>
+	<input type="button" id="colorSwapper" value="Change color" />
+	
+	
+	
+	
 
 
 

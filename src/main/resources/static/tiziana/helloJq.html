@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JQuery page</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"> </script>   
+<script src="/js/tiziana/hello.js" type = "text/javascript"> </script>
+	
+
+<style type="text/css">
+.redColor {
+	color: red;
+}
+</style>
+
+
+</head>
+<body>
+	<h1 class="changeColor" id="header" hidden="true">Hello!</h1>
+	<nav>
+		<ul>
+			<li><a href="helloJs.html">Back to JavaScript examples</a>
+			<li><a href="helloCss.html">Back to CSS examples</a>
+		</ul>
+	</nav>
+
+	<textarea rows="10" cols="80"> </textarea>
+
+	<p class="changeColor" id="pmsg">
+		This message is just for you, <span id="spanMsg">Guest</span>: hello!
+	</p>
+
+
+	<input type="button" id="colorSwapper" value="Change color" />
+
+	<input type="button" id="upsize" value="Bigger" />
+
+	<input type="button" id="downsize" value="Smaller" />
+	
+	<input type="button" id="useless" value="Click me" />
+	
+	<hr>
+	<div>
+		<select onchange="setTarget(this)">
+			<option>-</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select>
+		<br>
+		<label> As string: <input id="target" readonly="readonly" > 
+		</label>
+	</div>
+
+
+	<p class="changeColor" id="signature">&copy; ACME Inc. 2019</p>
+
+
+
+</body>
+</html>
