@@ -1,12 +1,24 @@
 body {
-	background-color: pink;
+	background-image: linear-gradient(pink, grey);
 	background-size: 100%;
 }
 
 h2 {
-	color: green;
+	color:green;
+	background-color:white;
+	font-style:italic;
+}
+
+#character {
+	color: blue;
 }
 
 #blockId {
-	background-color: white;
+	background-color: pink;
 }
+
+.blueColor {
+	color:blue;
+}
+
+

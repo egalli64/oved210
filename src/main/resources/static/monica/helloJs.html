@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JavaScript page</title>
+
+
+</head>
+<body>
+
+<textarea id= "target" rows="20" cols="80"></textarea>
+
+
+<script type ="text/javascript">
+	document.write("<p> JavaScript has done this! </p>");
+	console.log("Hello from javaScript");
+	
+	let tx = document.getElementById('target');
+	tx.value += "hello\n";
+	
+	let result = 39;
+	tx.value += "result is " + result + "\n ";
+	tx.value += "result is " + typeof (result) + "\n ";
+	tx.value += "tx is " + typeof (tx) + "\n ";
+	tx.value += "String is a " + typeof ("hello") + "\n ";
+	
+	let check = result == 42;
+	tx.value += "Is result == 42? " + check 
+			+ "("+typeof(check) + ")\n";
+	
+	let now = new Date ();
+	tx.value += now + "\n";
+	tx.value += now.toDateString() + "\n";
+	
+	//array
+	let days = ['Mon','Tue', 'Wed','Thu', 'Fri','Sat','Sun'];
+	
+	tx.value += "Today is " + days[1] + "\n" ;
+	
+	days.push(result);
+	
+	tx.value += " Last day is " + days[days.length-1] + "\n" ;
+	
+	tx.value += days + "\n";
+	
+	days.unshift(null);       //aggiungi uno spazio libero alla sinistra della stringa cioè come primo elemento
+	tx.value += days + "\n"; 
+	
+	//quando voglio eliminare un elemento a destr (popped)
+	let popped = days.pop();
+	tx.value += days + "\n";
+	tx.value += "I have popped " + popped + "\n";
+	
+	//quando voglio eliminare un elemento a sinistra (shifted)
+	let shifted = days.shift();
+	tx.value += days + "\n";
+	tx.value += "I have shifted " + shifted + "\n";
+	
+	
+	//strict equality = a è strettamente uguale a b cioè non guardo solo il valore ma anche il tipo (a === b)
+		let a = '42';
+		let b = 42;
+		if (a==b){
+			
+			target.value += "Unexpected!";
+		}
+	
+		if (a===b){
+			target.value += "This won't happen";
+			
+		}
+	
+	let c = parseInt(a);
+	if (b === c){
+		target.value += "c === b\n";
+	}
+	
+	let f = 10/3;
+	target.value += f + "\n";
+	target.value += f.toFixed(2) + "\n";  //con il toFixed() prende solo i decimali che indico in parentesi
+	
+	//this is a mistake!
+	let d = parseInt (now);
+	if (isNaN(d)){
+		target.value += "NaN should not be accepted\n";
+		d=-1;
+	}
+	
+	target.value += d+ "\n";
+	
+	
+	//funzione serve per monitorare gli eventi ed eseguirli
+	function appendTo(target,message){
+		target.value += message + "\n";
+		
+	}
+	 
+	
+	appendTo(target, now.toDateString().toUpperCase());
+	
+</script>
+</body>
+</html>
