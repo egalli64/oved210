@@ -49,7 +49,49 @@
 	let popped = days.pop();
 	tx.value += days + "\n";
 	tx.value += "I have popped " + popped + "\n";
+
+	let shifted = days.shift();
+	tx.value += days + "\n";
+	tx.value += "I have shifted " + shifted + "\n";
+
+	// strict equality
+	let a = '42';
+	let b = 42;
+	if(a == b) {
+		target.value += "Unexpected!\n";
+	}
+	if(a === b) {
+		target.value += "This won't happen\n";
+	}
+	if(a !== b) {
+		target.value += "This would happen\n";
+	}
 	
+	let c = parseInt(a);
+	if(b === c) {
+		target.value += "c === b\n";
+	}
+	
+	let f = 10 / 3;
+	target.value += f + "\n";
+	target.value += f.toFixed(2) + "\n";
+	target.value += f.toFixed(0) + "\n";
+	
+	// this is a mistake!
+	let d = parseInt(now);
+	if(isNaN(d)) {
+		target.value += "NaN is not accepted here\n";
+		d = -1;
+	}
+	
+	target.value += d + "\n";
+	
+	function appendTo(target, message) {
+		target.value += message + "\n";
+	}
+
+	appendTo(target, now.toDateString().toUpperCase());
+	appendTo(null, now);
 </script>
 </body>
 </html>
