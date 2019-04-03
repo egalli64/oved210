@@ -1,0 +1,21 @@
+body {
+	background-image : url('/img/mariangela/chewbe.jpg');
+	background-size: 100%;
+}
+p{
+	font-family: monospace;
+}
+h1, h2, h3 {
+	
+	text-align: center;
+	color: #ffff00;
+}
+
+.center {
+	text-align: center;
+}
+
+#favourite {
+
+	background-color: white;
+}

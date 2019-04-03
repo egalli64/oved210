@@ -9,21 +9,8 @@ p {
 	text-align: left;
 }
 
-h1, h2, h3 {
-	color: #004040;
-	text-align: left;
-}
-
 #special {
 	color: violet;
-}
-
-.myClass {
-	color: purple;
-}
-
-p.myClass {
-	color: blue;
 }
 
 #blockId {
@@ -34,4 +21,12 @@ p.myClass {
 	background-color: #ffff82;
 	font-weight: bold;
 	font-style: italic;
+}
+
+.red {
+	color: red;
+}
+
+.blue{
+	color: blue;
 }

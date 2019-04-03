@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JQuery page</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type = "text/javascript">  
+	let name = prompt("What's your name?", "Guest")    //creazione popApp che chiede i dati
+	//alert ("Hello");
+	
+	function generateMessage(user, date){
+		return "Hello" + user + ".You connected at " + date
+	}
+	
+	
+	// si può anche scrivere : $(document).ready(function(){
+	$(function()  {
+		
+	
+		$('#header').slideDown(1000); // aspetta che il doc sia caricato e fai lo slideDown in un secondo della scritta Hello
+		
+		let score= 42;
+		$('textarea').append('Your current score is '+ score + '\n')
+		$('textarea').append(generateMessage(name, new Date()) + '\n');
+		
+		
+		 $('#signature').text("Hello By Jquery");
+		//document.getElementById('signature').innerText = "Hello by JQuery;
+		
+		 $('#spanMsg').replaceWith(name);
+		 
+		//abbiamo creato un tasto nell'html che cambia colore alla scrittura del paragrafo #pmsg, sotto c'e il comando
+		//$('#colorSwapper').click(function(){
+			//$('#pmsg').toggleClass('red');
+		//});
+		
+		//in questo caso però prende tutti gli elementi che hanno la classe .changeColor 
+		$('#colorSwapper').click(function(){
+			$('.changeColor').toggleClass('blueColor');
+		});
+		
+		
+		//abbiamo creato un tasto nell'html che aumenta la scrittura, sotto c'è il comando
+		$('#upSize').click(function(){
+			let cur = parseInt($('#pmsg').css('font-size')); 
+			$('#pmsg').css('font-size', cur * 2);
+	
+		});
+		
+		//abbiamo creato un tasto nell'html che diminuisce la scrittura, sotto c'e il comando
+		$('#downSize').click(function(){
+				let cur= parseInt($('#pmsg').css('font-size'));	
+			if(cur>1){
+				$('#pmsg').css('font-size', cur / 2);
+			
+				}
+		});
+		 
+		//dblclick assegna un doppio click su tutta la pagina    e= evento  pagX= coordinate evento  cioè seleziona quello che vogliamo 
+		$('html').dblclick(function(e){
+			let s =	"Double click @ "+ e.pageX + ',' + e.pageY + '\n';
+			$('textarea').append(s);
+		});
+		
+		$('#pmsg').mouseover(function(){
+			$('textarea').append("mouse over message\n");
+		});
+	
+		
+		//ho creato un bottone che quando viene premuto cambia il suo nome 
+		$('#useless').click(function(){
+			$(this).val("Don't click me anymore ");  //this permette di lavorare sull'elemento corrente 
+		});
+		
+	});
+	
+	function setTarget(elSrc){
+		let target = document.getElementById('target');
+		switch (elSrc.selectedOptions[0].value){
+		case '1':
+			target.value = "One";
+			break;
+		case '2':
+			target.value = "Two";
+			break;
+		case '3':
+			target.value = "Three";
+			break;
+		default:
+			target.value = "";
+			break;
+			
+		}
+	}
+	
+	
+</script>
+  
+  <!-- Codice Sotto Css -->
+  
+<style type= "text/css">
+.redColor{
+	color:red;
+	}
+	
+.blueColor{
+	color:blue;
+	}
+
+
+
+
+</style>
+
+</head>
+
+
+
+<!-- Codice Sotto Html -->
+
+
+<body>      
+	<h1 class = "changeColor" id="header" hidden = "true">Hello!</h1>
+	<nav>
+		<ul>
+			<li> <a href= "helloJs.html">Back to JavaScript examples </a> </li>
+			<li> <a href= "helloCss.html">Back to CSS examples </a> </li>
+		</ul>
+	
+	</nav>
+	
+	<textarea rows = "10" cols= "80" > </textarea>
+	
+	<p class= "changeColor" id="pmsg"> 
+			This message is just for you,
+			<span id="spanMsg" > Unknown </span>: hello!
+	</p>
+	
+	<input Type="button"
+			id= "colorSwapper"
+			value= "Change color" />
+	 
+	<input Type="button"
+			id= "upSize"
+			value= "Bigger" />
+	
+		<input Type="button"
+			id= "downSize"
+			value= "Smaller" />
+			
+		<input Type="button"
+			id= "useless"
+			value= "Click Me" />
+			
+			
+			<hr>
+		<div>
+			<select onchange="setTarget(this)">
+				<option>-</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+		<br>
+		
+			<label> As string: 
+			<input id = "target" readonly =readonly/>   
+			</label>
+		</div>
+			
+			
+	
+	<p class = "changeColor" id = "signature">&copy; ACME Inc.2019 </p>
+	
+	
+	
+</body>
+</html>
