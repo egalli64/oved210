@@ -1,7 +1,37 @@
 body {
-	background-color: gray;
+/*	background-color: #ff80c0; */
+	
+	background-image:
+		url('/img/francesca/fiori.jpg');
+	background-size: 100% 100%;
+	
+}
+
+p {
+	font-family: monospace;
+	text-alingn: center;
 }
 
 h1, h2, h3 {
-	color: yellow;
+	background-color: black;
+	color: #ffffff;
+}
+#special {
+	color: violet;
+}
+
+.myClass {
+	color:purple;
+}
+
+p.myClass {
+	color:blue;
+}
+#blockid {
+	background-color: red;
+}
+#spanId {
+	color: pink;
+	font-weight: bold;
+	font-style: italic;
 }

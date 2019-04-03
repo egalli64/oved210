@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JavaScript page </title>
+</head>
+<body>
+
+
+<textarea id="target" rows="20" cols="80"></textarea>
+
+<script type="text/javascript">
+	document.write("<p>JavaScript has done this!</p>");
+	console.log("Hello from JavaScript");
+
+	let tx = document.getElementById('target'); 
+	tx.value += "hello\n";  
+
+	
+		let result = 39;
+		tx.value +="result is " + result + "\n";
+		tx.value +="result is a " + typeof(result) + "\n";
+		tx.value +="tx is a " + typeof(tx) + "\n";
+		tx.value +="String is a " + typeof("hello") + "\n";
+		
+		
+		let check = result == 42;
+		tx.value +=" Is result == 42?" + check
+				+ " (" + typeof(check) + ")\n";
+		
+		
+		//create a date
+		let now = new Date(); //creare oggetti tipo date come in java 
+		tx.value += now + "\n";
+		tx.value += now.toDateString() + "\n";
+				
+			//javascript è un po' limitato, non esistono infatti tutte le collezioni che ci sono in java
+	// se abbiamo bisogno di una collezione usiamo l'array, che è simile ad una coda/linkedlist che è accedibile da entrambe le parti.
+	
+	
+	//ARRAY con i giorni della settimana
+	let days = [
+		'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'  // la posso accedre come accedo gli array in java
+		];
+			
+			tx.value += "Today is" + days[1] + "\n"; //il primo elemento ha indice zero, 1 vuol dire il secono elemento, è un array generico di object posso aggiungerci di tutto
+		days.push(result);
+			//com faccio ad accedere l'ultimo elemnto di un'array
+			tx.value += "Last day is " + days[days.length - 1] + "\n";
+			
+			//tutti gli elemnti
+			tx.value +=days + "\n";
+			
+			//come mettere un elemento  all'estrema sinistra
+			days.unshift(null); //inserire come primo elemnto nell'array il valore null
+			days.unshift("hello");
+			tx.value += days + "\n";
+			
+			let popped = days.pop(); //l'elemto più a destra viene eliminato
+			tx.value += days + "\n";
+			tx.value += "I have popped" + popped + "\n";
+			
+			//eliminiamo dall'altra parte
+			let shifted = days.shift(); //inserire come primo elemnto nell'array il valore null
+			tx.value += days + "\n";
+			tx.value += " I have shifted " + shifted + "\n";
+			
+			//--------strict equality-------
+			//javascrip lavora 
+			let a = '42';  //stringa
+			let b = 42;   //valore
+			if(a == b) {
+				target.value += "unexpected!";
+			}
+			
+			if( a === b) { //se è uguale ma davvero uguale,
+				target.value += "This wont happen\n";   //questa volta non eseguirà, a è uguale a  b ma a bnon è strettamente uguale  a b
+				
+			}
+			
+			if( a !== b) {
+				target.value += "This would happen\n";   
+			}
+			
+			let c = parseInt(a); //gli passo la stringa e mi converte in un numero, parsing della stringa che gli passo e me la ritorna intera
+			if(b === c) {
+				target.value += "c===b\n"; 	
+			}
+			//non abbiamo i tipi numerici, ma solo i tipi interi
+			let f = 10 / 3;
+			target.value += f + "\n"; 
+			target.value += f.toFixed(2) + "\n";   //non mi riconosce la funzione di div.
+			//per dirgli a quanti decimali mi voglio fermare c'è il metodo tofix
+			target.value += f.toFixed(0) + "\n"; 
+			
+			//javascript non vuole avere eccezioni
+			
+			//this a mistake!
+			let d = parseInt(now); //pensando che now contenga un numero
+			//PER CONTROLLARE COSA CI SIA EFFETTIVAMENTE DENTRO NOW
+			if(isNaN(d)) {  //se non è un numero
+				target.value += "NaN is not accepted here\n";  //se qualcuno passa un valore non accettabile che quindi non è un numero
+				d = -1;    //lo meto uguale a zero
+			}
+			target.value += d + "\n"; //mi ritorna Nan CHE SIGNIFICA NOT A NUMBER
+			
+			function appendTo(target, message) { //mi sono definito una funzione che si chiama appendto
+				//sto cercando di fare un asseghnamento a una variabile indefinita
+				target.value += message + "\n"; //scriviamao la funzione
+				
+			} 
+			
+			appendTo(target, now.toDateString().toUpperCase()); //todatestring per convertire la data, su una stringa posso chiamare metodi toUppercase
+			//sul mio oggetto now chiamo il metodo stringa, sulla stringa che mi ritona chiamo il metodo toUpper
+			//è una concatenazione che mi permette di scrivere codice molto rapidamente
+			appendTo(null, now);
+			
+			
+			
+</script>
+</body>
+</html>  
