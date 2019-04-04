@@ -15,12 +15,10 @@ p{
 
 table {
 	background: white;
-	text-align: center;
 }
 
 ol, ul {
 	color: white;
-	align: center;
 	}
 
 .title {
@@ -32,7 +30,7 @@ ol, ul {
 #signup {
 	color: black;
 	background-color: #e9e9e9;
-	text-align: right;
+
 	font-size: 10px;
 }
 #register {
@@ -49,4 +47,13 @@ h1, h2, h3, h4, h5, h6 {
 	color: black;
 	background-color: red;
 	font-weight: bold;
+}
+
+.my1 {
+	color:black;
+	background-color: white;
+}
+.my2 {
+	color:black;
+	background-color: yellow;
 }

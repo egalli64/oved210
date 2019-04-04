@@ -5,7 +5,7 @@ $('#nice').click(function() {
 	$(this).val("Nice Choice!");
 });
 
-$('#header').slideDown(1000);
+// $('#header').slideDown(1000);
 
 
 });
