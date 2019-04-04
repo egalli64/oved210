@@ -1,0 +1,218 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello Bootstrap /2</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+.my1 {
+	background-color: whitesmoke;
+}
+.my2 {
+	background-color: lightcyan;
+}
+
+.myU {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-light my1">
+		<a class="navbar-brand">Navigation bar</a>
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="helloJs.html">Back to JavaScript examples</a></li>
+			<li class="nav-item"><a class="nav-link" href="helloBs.html">Back to first Bootstrap page</a></li>
+		</ul>
+	</nav>
+	
+	<div class="container-fluid my2">
+		<h1>Hello</h1>
+		<h2>Hello</h2>
+		<h3>Hello</h3>
+		<h4>Hello</h4>
+		<h5>Hello</h5>
+		<h6>Hello</h6>
+		
+		<h1>
+			Hello<small class="text-muted">, goodbye</small>
+		</h1>
+	</div>
+	<div class="container-fluid my1">
+		<p class="display-1">Hello</p>		
+		<p class="display-2">Hello</p>		
+		<p class="display-3">Hello</p>		
+		<p class="display-4">Hello</p>		
+	</div>
+
+  <div class="container-fluid my2">
+  <p class="lead">I'm a lead</p>
+  <p>I'm without a lead</p>
+  </div>
+  
+  <div class="container-fluid my1">
+  <p>A <mark>mark</mark> word</p>
+  <p>A <del>deleted</del> word</p>
+  <p>A <s>striked-through</s> word</p>
+  <p>A <ins>inserted</ins> word</p>
+  <p>A <u>unarticolated</u> word</p>
+  <p>A <span class="myU">underlined</span> word</p>
+  <p>A <small>small</small> word</p>
+  <p>A <strong>strong</strong> word</p>
+  <p>A word with <em>emphasis</em> word</p>
+  <p><abbr title = "Hipertext markup Language">HTML</abbr></p>
+  <p><abbr title = "Hipertext markup Language" class="initialism">HTML</abbr></p>
+  <p><blockquote>Cogito ergo sum</blockquote></p>
+  <p><blockquote class="Blockquote">Cogito ergo sum</blockquote></p>
+  
+  <blockquote class="blockquote">
+    <p>Cogito ergo sum</p>
+    <footer class="blockquote-footer">
+    Cartesio in
+    <cite title="Discorso sul metodo">
+    Discorso sul metodo
+    </cite>
+    </footer>
+  </blockquote>
+  </div>
+  
+<hr />
+
+	<div class="container-fluid">
+		<table class="table table-dark">
+			<thead class="thead-light">
+				<tr>
+					<th scope="row">*</th>
+					<th scope="col">Left</th>
+					<th scope="col">Center</th>
+					<th scope="col">Right</th>
+				</tr>
+			</thead>
+			<tr>
+				<th scope="row">Top</th>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Center</th>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Low</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="container-fluid">
+		<table class="table table-dark table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th scope="row">*</th>
+					<th scope="col">Left</th>
+					<th scope="col">Center</th>
+					<th scope="col">Right</th>
+				</tr>
+			</thead>
+			<tr>
+				<th scope="row">Top</th>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Center</th>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Low</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="container-fluid">
+		<table class="table table-bordered table-dark table-striped">
+			<thead class="thead-light">
+				<tr>
+					<th scope="row">*</th>
+					<th scope="col">Left</th>
+					<th scope="col">Center</th>
+					<th scope="col">Right</th>
+				</tr>
+			</thead>
+			<tr>
+				<th scope="row">Top</th>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Center</th>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Low</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
+	
+	
+	<div class="container-fluid">
+		<table class="table table-hover table-bordered">
+			<thead>
+				<tr>
+					<th scope="row">*</th>
+					<th scope="col">Left</th>
+					<th scope="col">Center</th>
+					<th scope="col">Right</th>
+				</tr>
+			</thead>
+			<tr class="table-warning">
+				<th scope="row">Top</th>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+
+			<tr class="table-danger">
+				<th scope="row">Center</th>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+
+			<tr class="table-success">
+				<th scope="row">Low</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+
+
+</body>
+</html>

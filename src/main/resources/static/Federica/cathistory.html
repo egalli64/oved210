@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>Storia del gatto</title>
 
+
+<link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/Federica/cathistory.css" >
+
 
 <script src = "//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/federica/cat.js" type="text/javascript"></script>
@@ -12,7 +15,11 @@
 
 <style type="text/css">
 .whiteColor {
-  color: white;
+  color: gray;
+}
+
+.my1 {
+    background-color: lightgray;
 }
 
 </style>
@@ -22,8 +29,8 @@
 
 
 <body>
-<h1 class = "changeColor" id = "header" hidden = "true">Storia del gatto</h1>
-<h2 class = "changeColor" id = "header">Dagli Egizi fino ad oggi attraverso i secoli</h2>
+<h1 class = "changeColor" id = "header">Storia del gatto</h1>
+<h2 class = "changeColor" id = "header"><i>Dagli Egizi fino ad oggi attraverso i secoli</i></h2>
 
 
 <div class = "center">
@@ -32,29 +39,50 @@
 
 
 <h3 class = "changeColor" id = "header">Il gatto domestico</h3>
-<input type="button" id="colorSwapper" value="Change color" />
+
+<!--  <input type="button" id="colorSwapper" value="Cambia colore" /> -->
+<button type="button" class="btn btn-secondary" id="colorSwapper">Cambia colore</button>
 
 
 <p>Il gatto domestico può essere classificato come <i>Felis Silvestris Catus</i> 
 e fu l'uomo ad addomesticarlo.</p>
 <p>Molte persone affermano che le origini di questo animale risalgano a circa 10.000 anni fa. Il gatto domestico deriva dal gatto selvatico africano.</p>
 <p>Nella cultura egiziana, il gatto era rappresentanto come una divinità, come la <i>Dea Bastet</i>, e appariva raffigurato in un grande numero di monumenti, confermando la venerazione per questo animale.</p>
-<p>Also Romans people used the cat to mice hunt, and than it became very important for them.</p>
-<p>The cat comes in Italy thaks to a roman centurion, who hide a little cat in his belt, during a travel from Phoenician.</p>
+<p>Anche i Romani usavano il gatto per cacciare i topi, quindi divenne molto importante per loro.</p>
+<p>Il gatto arrivò in Italia grazie ad un centurione romano, il quale  nascose un felino nella sua cintura, durante un viaggio attraverso il Mediterrano dalla Fenicia.</p>
 
-<p>Esistono numerose razze di gatti:</p>
+
+<div class="container-fluid my1">
+     <h1 class = "changeColor" id = "header">Evoluzione</h1>
+     <h2 class = "changeColor" id = "header">Successiva alla sua addomesticazione</h2>
+     <div class="row">
+          <div class="col-sm-4 my1">
+            <ul>
+          <li>Modificazione dell’assetto ormonale</li>
+          <li>Neotenia, cioè persistenza di alcune caratteristiche infantili nell’adulto</li>
+          <li>Prolificità</li>
+          </ul>
+          </div>
+   </div>
+   </div>
+   
+   
+<p>Esistono numerose <b>razze</b> di gatti:</p>
 <ul>
 <li>Persiano</li>
-<li>Blu di Russia</li>
+<li>Siamese</li>
 <li>Certosino</li>
-<li>Siberiano</li>
 <li>Main Coon</li>
+<li>...</li>
 </ul>
 
-<p>Razze di gatti</p>
-<table>
+<p>Classificazione per provenienza e carattere:</p>
+<div class="container-fluid">
+
+<table class="table table-light table-bordered">
+
    <thead>
-     <tr>
+     <tr class="table-active">
       <th scope="col">Razza</th> 
       <th scope="col">Provenienza</th> 
       <th scope="col">Carattere</th>
@@ -85,10 +113,11 @@ e fu l'uomo ad addomesticarlo.</p>
       <td>Esuberante</td>
       </tr>   
 </table>
+</div>
 
 <hr>
 
-<p>Questionario:</p>
+<p><b>Questionario</b>:</p>
 <p>
 Domanda 1: Quali sono le origini del gatto?<br />
   <input type="radio" name="domanda1" value="Africa" checked="checked"/>Africa<br /> 
@@ -116,10 +145,10 @@ Domanda 3: In quale paese i gatti erano assimilati a divinità? Seleziona l'opzi
 
 <p>
 Commenti:<br />
-<textarea name="Comment" rows="15" cols="100">Lascia un commento...</textarea>
+<textarea name="Comment" rows="10" cols="80">Lascia un commento...</textarea>
 </p>
 
-<fieldset><legend>Iscriviti</legend>
+<fieldset><legend>Iscriviti alla Newsletter</legend>
 <label>Nome:
 <input type="text" name="Nome">
 </label>
@@ -133,7 +162,8 @@ Commenti:<br />
 <input type="text" name="E-mail">
 </label>
 </fieldset>
-<input type="button" id="useless" value="Iscrivimi" />
+<button type="button" class="btn btn-secondary" id="useless">Iscrivimi</button>
+<!--  <input type="button" id="useless" value="Iscrivimi" />-->
 
 
 
