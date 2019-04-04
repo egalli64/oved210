@@ -5,10 +5,16 @@ body {
 p{
 	font-family: monospace;
 }
-h1, h2, h3 {
+.yellow {
 	
 	text-align: center;
 	color: #ffff00;
+}
+
+.black {
+	
+	text-align: center;
+	color: #000000;
 }
 
 .center {
@@ -18,4 +24,14 @@ h1, h2, h3 {
 #favourite {
 
 	background-color: white;
+}
+
+.box1 {
+background-color: #c0c0c0;
+text-align: center;
+
+}
+
+.not-visible {
+  visibility: hidden;
 }
