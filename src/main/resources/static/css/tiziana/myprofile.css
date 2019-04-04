@@ -1,5 +1,5 @@
 body {
-	background-image: linear-gradient(pink, grey);
+	background-image: linear-gradient(pink, bisque);
 	background-size: 100%;
 }
 
@@ -14,7 +14,7 @@ h2 {
 }
 
 #blockId {
-	background-color: pink;
+	background-color: #ff80ff;
 }
 
 .blueColor {
@@ -22,10 +22,10 @@ h2 {
 }
 
 .my1{
-	background-color: #8080ff;
+	background-color: #d3e39b;
 	}
 .my2{
-	background-color: #80ffff;
+	background-color: #eccd93;
 	}
 .my3{
 	background-color: #f8fb84;
@@ -36,10 +36,12 @@ h2 {
 
 
 #idmenu {
-	color: blue;
+	background: #1cbd17;
 }
 
-
+.center {
+	text-align: center;
+}
 
 
 

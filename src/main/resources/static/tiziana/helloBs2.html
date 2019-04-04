@@ -68,8 +68,8 @@
 		<p>A <strong>strong</strong>word</p>
 		<p>A word with <em>emphasis</em></p>
 		<p>
-			<abbr title="HyperText Markup Language">HTML</abbr> <abbr
-				class="initialism" title="HyperText Markup Language">HTML</abbr>
+			<abbr title="HyperText Markup Language">HTML</abbr> 
+			<abbr class="initialism" title="HyperText Markup Language">HTML</abbr>
 		</p>
 		
 		<blockquote>Cogito ergo sum</blockquote>
@@ -85,10 +85,9 @@
 	</div>
 	
 
-	<hr />
+	<hr>
 
 
-	<div>
 		<table>
 			<thead>
 				<tr>
@@ -118,8 +117,39 @@
 				<td>3</td>
 			</tr>
 		</table>
-	</div>
 
+	<div class="container-fluid">
+		<table class="table table-borderless">
+			<thead>
+				<tr>
+					<th scope="row">*</th>
+					<th scope="col">Left</th>
+					<th scope="col">Center</th>
+					<th scope="col">Right</th>
+				</tr>
+			</thead>
+			<tr>
+				<th scope="row">Top</th>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Center</th>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+			</tr>
+
+			<tr>
+				<th scope="row">Low</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+	</div>
 
 
 
@@ -333,7 +363,7 @@
 
 	<div class="container-fluid">
 		<table class="table table-bordered table-dark table-striped">
-			<thead class="">
+			<thead class="thead-light">
 				<tr>
 					<th scope="row">*</th>
 					<th scope="col">Left</th>
@@ -395,7 +425,7 @@
 			<tr>
 				<th scope="row">Low</th>
 				<td>1</td>
-				<td>2</td>
+				<td class="table-info">2</td>
 				<td>3</td>
 			</tr>
 		</table>
