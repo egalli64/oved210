@@ -11,7 +11,9 @@
 </script>
 
 </head>
+
 <body>
+<div id="cars">
 	<div class="text-center">
 	<h1 class="changeColor blue" id="top">Welcome to my page!</h1>
 	</div>
@@ -50,39 +52,44 @@
 	<div class="container-fluid">
 	<h4 id="info">Cars information</h4>
 	
-	<table class="table table-hover table-bordered table-striped" >
+	<table class="table table-hover table-bordered table-striped table-dark" >
 		<thead class="thead-dark">
 			<tr>
 				<th scope="row">Name of car</th>
-				<th scope="col">HorsePower</th>
-				<th scope="col">Weight (Kg)</th>
+				<th scope="col" class="text-center">HorsePower (CV)</th>
+				<th scope="col"class="text-center">Weight (Kg)</th>
+				<th scope="col"class="text-center">Price (Euro)</th>
 
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<th scope="row" align="left"><i>Ferrari F8</i></th>
-				<td align="center">415</td>
-				<td align="center">3525</td>
+				<td align="center">720</td>
+				<td align="center">1330</td>
+				<td align="center">270.000</td>
 			</tr>
 			<tr>
 				<th scope="row" align="left"><i>Lamborghini Gallardo</i></th>
-				<td align="center">430</td>
-				<td align="center">3690</td>
+				<td align="center">500</td>
+				<td align="center">1450</td>
+				<td align="center">187.000</td>
 			</tr>
 			<tr>
 				<th scope="row" align="left"><i>Tesla S</i></th>
-				<td align="center">328</td>
-				<td align="center">3100</td>
+				<td align="center">215</td>
+				<td align="center">1970</td>
+				<td align="center">89.000</td>
 			</tr>
 			<tr>
 				<th scope="row" align="left"><i>Audi R8</i></th>
-				<td align="center">300</td>
-				<td align="center">3268</td>
+				<td align="center">540</td>
+				<td align="center">1640</td>
+				<td align="center">147.500</td>
 			</tr>
 
 		</tbody>
-		</div>
+		
 	</table>
 	<h5>Images</h5>
 	<div class="container-fluid">
@@ -116,19 +123,20 @@
 		Go to the <a href="#top">top</a> of this page.
 	</p>
 
-	<h4>
+	<h6>
 		<i>If you want to follow me... <br> come back soon!
 		</i> <br>Click on: <a href="http://localhost:8080/claudia/cars.html">
-			cars </a>
-	</h4>
+			http://localhost:8080/claudia/cars.html </a>
+	</h6>
 
 	<p>
 		Comments:<br>
-		<textarea name="comment" rows="10" cols="30" maxlength="100">Enter here your comment
+		<textarea name="comment" rows="10" cols="50" maxlength="100">Enter here your comment
 			</textarea>
 	</p>
 
 	<p class="changeColor" id="signature">&copy; LC 2019</p>
 
+</div>
 </body>
 </html>
