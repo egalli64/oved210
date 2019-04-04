@@ -3,22 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <title>Storia del gatto</title>
+
+<link rel="stylesheet" type="text/css" href="/css/Federica/cathistory.css" >
+
+<script src = "//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/federica/cat.js" type="text/javascript"></script>
+
+
+<style type="text/css">
+.whiteColor {
+  color: white;
+}
+
+</style>
+
+
 </head>
 
+
 <body>
-<h1>Storia del gatto</h1>
-<h2>Dagli Egizi fino ad oggi attraverso i secoli</h2>
+<h1 class = "changeColor" id = "header" hidden = "true">Storia del gatto</h1>
+<h2 class = "changeColor" id = "header">Dagli Egizi fino ad oggi attraverso i secoli</h2>
 
-<h2>Images</h2>
-<p>
-<img src="https://www.animalidacompagnia.it/wp-content/uploads/2018/06/la-storia-del-gatto-696x464.jpg">
-</p>
 
-<h3>Il gatto domestico</h3>
+<div class = "center">
+<img src="/img/federica/la-storia-del-gatto-696x464.jpg" width="500" height="300">
+</div>
+
+
+<h3 class = "changeColor" id = "header">Il gatto domestico</h3>
+<input type="button" id="colorSwapper" value="Change color" />
+
+
 <p>Il gatto domestico può essere classificato come <i>Felis Silvestris Catus</i> 
 e fu l'uomo ad addomesticarlo.</p>
 <p>Molte persone affermano che le origini di questo animale risalgano a circa 10.000 anni fa. Il gatto domestico deriva dal gatto selvatico africano.</p>
-<p>Nella cultura egiziana, the cat is pictured as a God, like the <i>Dea Bastet</i>, but also it appears in large number of monuments, confirming veneration for this animal.</p>
+<p>Nella cultura egiziana, il gatto era rappresentanto come una divinità, come la <i>Dea Bastet</i>, e appariva raffigurato in un grande numero di monumenti, confermando la venerazione per questo animale.</p>
 <p>Also Romans people used the cat to mice hunt, and than it became very important for them.</p>
 <p>The cat comes in Italy thaks to a roman centurion, who hide a little cat in his belt, during a travel from Phoenician.</p>
 
@@ -66,6 +86,8 @@ e fu l'uomo ad addomesticarlo.</p>
       </tr>   
 </table>
 
+<hr>
+
 <p>Questionario:</p>
 <p>
 Domanda 1: Quali sono le origini del gatto?<br />
@@ -87,6 +109,7 @@ Domanda 3: In quale paese i gatti erano assimilati a divinità? Seleziona l'opzi
 <option value="Grecia">Grecia</option>
 <option value="Antica Roma">Antica Roma</option>
 <option value="America">America</option>
+<option value="-">-</option>
 </select>
 </p>
 
@@ -110,6 +133,7 @@ Commenti:<br />
 <input type="text" name="E-mail">
 </label>
 </fieldset>
+<input type="button" id="useless" value="Iscrivimi" />
 
 
 
