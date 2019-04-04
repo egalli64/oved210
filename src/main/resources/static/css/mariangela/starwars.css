@@ -6,7 +6,7 @@ p{
 	font-family: monospace;
 }
 .yellow {
-	
+	 text-shadow: 2px 2px 5px blue;
 	text-align: center;
 	color: #ffff00;
 }
@@ -27,7 +27,9 @@ p{
 }
 
 .box1 {
-background-color: #c0c0c0;
+width: 500px;
+height: 60px;
+background-color: rgba(200, 200, 200, 0.7);
 text-align: center;
 
 }
