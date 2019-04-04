@@ -1,7 +1,10 @@
-$(function() {
-	$('#header').slideDown(2000);
 
-});
 $(function() {
-	$('#force').slideDown(2000);
+	$('#force').click(function() {
+		if ( $('#clone').css('visibility') == 'hidden' )
+		    $('#clone').css('visibility','visible');
+		  else
+		    $('#clone').css('visibility','hidden');
+	});
 });
+
