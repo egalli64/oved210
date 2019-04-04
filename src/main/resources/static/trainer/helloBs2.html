@@ -13,6 +13,7 @@
 .my2 {
 	background-color: lightcyan;
 }
+
 .myU {
 	text-decoration: underline;
 }
@@ -41,43 +42,100 @@
 			Hello<small class="text-muted">, goodbye</small>
 		</h1>
 	</div>
-	<!-- Per fare tanti titoli, al posto di h1.ecc si usano i display -->
 	<div class="container-fluid my1">
 		<p class="display-1">Hello</p>
 		<p class="display-2">Hello</p>
 		<p class="display-3">Hello</p>
 		<p class="display-4">Hello</p>
 	</div>
-
 	<div class="container-fluid my2">
-		<p class="lead">I'm a lead</p>
-		<p>I'm not a lead</p>
+		<p>Blah, blah, blah</p>
+		<p class="lead">I'm a lead, I want to be more visible</p>
+		<p>I'm without a lead, this is just normal stuff</p>
 	</div>
 	<div class="container-fluid my1">
-		<p> A <mark>marked</mark> word</p>
-		<p>	A <del>deleted</del> word</p>
-		<p>	A <s>striked-through</s> word</p>
-		<p> An <ins>inserted</ins> word</p>
-		<p> An <u>unarticolated</u> word</p>
-		<p> An <span class="myU">underlined</span> word</p>
-		<p> A <small>small</small> word</p>
-		<p> A <strong>strong</strong> word</p>
-		<p> A word with <em>emphasis</em></p>
 		<p>
-			<abbr title="HyperText Markup Language">HTML</abbr>
-			<abbr title="HyperText Markup Language" class=initialism>HTML</abbr>
+			A
+			<mark>marked</mark>
+			word
 		</p>
-		
 		<p>
-			<blockquote>Cogito ergo sum</blockquote>
-			<blockquote class="blockquote"></blockquote>
+			A
+			<del>deleted</del>
+			word
+		</p>
+		<p>
+			A <s>striked-through</s> word
+		</p>
+		<p>
+			An
+			<ins>inserted</ins>
+			word
+		</p>
+		<p>
+			An <u>unarticolated</u> word
+		</p>
+		<p>
+			An <span class="myU">underlined</span> word
+		</p>
+		<p>
+			A <small>small</small> word
+		</p>
+		<p>
+			A <strong>strong</strong> word
+		</p>
+		<p>
+			A word with <em>emphasis</em>
+		</p>
+		<p>
+			<abbr title="HyperText Markup Language">HTML</abbr> <abbr
+				class="initialism" title="HyperText Markup Language">HTML</abbr>
+		</p>
+		<blockquote>Cogito ergo sum</blockquote>
+		<blockquote class="blockquote">Cogito ergo sum</blockquote>
+		<blockquote class="blockquote text-center">
 			<p>Cogito ergo sum</p>
-		</p>
-		
-		
-		
-		 
+			<footer class="blockquote-footer">
+				Cartesio in <cite title="Discours de la méthode"> Discorso
+					sul metodo </cite>
+			</footer>
+		</blockquote>
+	</div>
 
+	<hr />
+
+	<table>
+		<thead>
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Center</th>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Low</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+
+	<div class="container-fluid">
 	</div>
 
 </body>
