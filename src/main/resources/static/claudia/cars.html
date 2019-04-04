@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>My favorite cars</title>
 <link rel="stylesheet" type="text/css" href="/css/claudia/simple.css">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 <script src="//code.jquery.com/jquery-3.3.1.min.js">
 </script>
 <script type="text/javascript" src="/js/claudia/hello2.js">
@@ -12,20 +12,22 @@
 
 </head>
 <body>
+	<div class="text-center">
 	<h1 class="changeColor blue" id="top">Welcome to my page!</h1>
+	</div>
 
-
+	<div class="text-center">
 	<h1>
 		<b>HELLO!!!</b>
-	</h1>
-	<p>I want to show you my favorite cars:</p>
+	</h1></div>
+	<h3>I want to show you my favorite cars:</h3>
 
-	<h2>Maserati from Geneva International Motor Show</h2>
-	<p>
-		<img src="/img/claudia/maserati.jpg">
-	</p>
+		<figure> <img src="/img/claudia/maserati.jpg" >
+		<figcaption>Maserati from Geneva Intenational Motor Show</figcaption>
+		</figure>
+	
 	<hr>
-	<p>An ordered list:</p>
+	<h6>An ordered list:</h6>
 	<ol>
 		<li><b>Ferrari F8 </b> look at <a href="ferrari.html">
 				Ferrari </a></li>
@@ -44,18 +46,18 @@
 		<figcaption>Audi R8</figcaption>
 	</figure>
 	<hr>
-
-	<p id="info">Cars information</p>
-	<table>
-		<thead>
+	
+	<div class="container-fluid">
+	<h4 id="info">Cars information</h4>
+	
+	<table class="table table-hover table-bordered table-striped" >
+		<thead class="thead-dark">
 			<tr>
 				<th scope="row">Name of car</th>
 				<th scope="col">HorsePower</th>
 				<th scope="col">Weight (Kg)</th>
 
 			</tr>
-
-
 		</thead>
 		<tbody>
 			<tr>
@@ -80,7 +82,22 @@
 			</tr>
 
 		</tbody>
+		</div>
 	</table>
+	<h5>Images</h5>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-4">
+				<img src="/img/claudia/ferrariF8.jpg" width=100% height=80%>
+			</div>
+			<div class="col-4">
+				<img src="/img/claudia/lamborghiniGallardo.jpg" width=100% height= 80%>
+			</div>
+			<div class="col-4">
+				<img src="/img/claudia/teslaS.jpg" width=100% height=80%>
+			</div>
+		</div>
+	</div>
 	<p>
 		Select car for more information and pictures:<br> <select
 			name="car">
