@@ -3,28 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>My region!</title>
-<body>
 
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/donatella/region.css" />
+<style>
+.my1 {
+	background-color: red;
+}
 
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+.my2 {
+	background-color: blue;
+}
 
+.my3 {
+	background-color: white;
+}
 
-	
-<script type="text/javascript" src= "/js/donatella/region.js">
-</script>
-
-<body>
-	<h1 id="Spiagge">Welcome to my region</h1>
-	<h2>Welcome to region!</h2>
-	<h3>Welcome to region!</h3>
-	<h4>Welcome to region!</h4>
-	
-
-	<link rel="stylesheet" type="text/css" href="/css/donatella/simple.css" />
+.my4 {
+	background-color: red;
+}
+</style>
 </head>
-<body background="/img/donatella/celeste.jpg">
-<head>
 <body>
+
+
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/js/donatella/region.js">
+		
+	</script>
+
+	<div class="jumbotron text-center">
+		<h1 id="Spiagge">Welcome to my region</h1>
+		<h2>Salve!</h2>
+
+	</div>
 	<nav>
 		<ul>
 			<li><a href="region.html">Go back to home page</a></li>
@@ -36,50 +49,37 @@
 		Go back to the <a href="region.html">home page</a>
 	</p>
 
-
-
-
-
 	<h1>Descrizione</h1>
 	<p>La Sardegna è una grande isola italiana situata nel Mar
 		Mediterraneo e caratterizzata da circa 2000 km di costa, spiagge
 		sabbiose e da un entroterra montuoso attraversato da sentieri
-		escursionistici. Il suo paesaggio frastagliato è costellato da
-		migliaia di nuraghi, misteriose rovine in pietra dalla forma ad
-		alveare, costruiti nell'Età del Bronzo</p>
-	</p>
-	
-	<p>Le spiagge</p>
+		escursionistici.</p>
+
+
+	<p>Le mie spiagge preferite del Nord:</p>
 	<p>Le bombarde, Lazzaretto, Pineta Mugoni</p>
 
 
 
 
 
-	</p>
-	spiaggia le Bombarde
-	<p>
-		<img src="/img/donatella/006 spiaggia le bombarde.jpg" width="200"
-			height="200" />
-	</p>
+	<p>SPIAGGIA LE BOMBARDE</p>
+	<img src="/img/donatella/006 spiaggia le bombarde.jpg" width="50%" />
 
-	</p>
-	spiaggia Lazzaretto
-	<p>
-		<img src="/img/donatella/lazzaretto.jpg" width="200" height="200" />
-	</p>
-	</p>
-	spiaggia Pineta Mugoni
-	<p>
-		<img src="/img/donatella/pineta Mugoni.jpg" width="200" height="200" />
-	</p>
+
+	<p>SPIAGGIA LAZZARETTO</p>
+	<img src="/img/donatella/lazzaretto.jpg" width="50%" />
+
+	<p>SPIAGGIA PINETA MUGONI</p>
+	<img src="/img/donatella/pineta Mugoni.jpg" width="50%" />
+
 
 	<p>Tabella dati</p>
 	<table>
 		<thead>
 			<tr>
 
-				<th scope="">*</th>
+				<th scope="col">*</th>
 				<th scope="col">Nord</th>
 				<th scope="col">Center</th>
 				<th scope="col">Sud
@@ -106,7 +106,7 @@
 		</tr>
 	</table>
 
-	<p>le spiagge  preferite</p>
+
 
 	<table>
 		<thead>
@@ -135,67 +135,181 @@
 			<td>...</td>
 			<td>...</td>
 		</tr>
+
+		<p>La Sardegna è bella :Buona Vacanza!!</p>
 		
-	
-		
-<body>		
-	<p id="pmsg">
-		La Sardegna  <span id="spanMsg">è bella</span>:Buona Vacanza!!
-	</p>
-		
-	<input type="button" id="upsize" value="Bigger" />
 
-	<input type="button" id="downsize" value="Smaller" />
-	
-	
-	
-</body>
+	</table>
+	<h2>Forms</h2>
+	<form action="commenti">
+		<p>
+			Text input:<input type="test" name="user" size="20" maxlenght="30">
+		<p>Colore ombrelloni:
+		<p>
+			Select option:<br /> <select name="os">
+				<option value="none">---</option>
+				<option value="giallo">Giallo</option>
+				<option value="verde">Verde</option>
+				<option value="rosso">Rosso</option>
+			</select>
+		</p>
+  </form>
 
-</table>
-<h2>Forms</h2>
-<form action="commenti">
-	<p>
-		Text input:<input type="test" name="user" size="20" maxlenght="30">
-	<p>
+	<p>Alghero e il suo mare</p>
+	<iframe width="560" height="315"
+		src="https://www.youtube.com/embed/Hl6eoFcoeN4" frameborder="0"
+		allow="accelerometer; autoplay; 
+ encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen></iframe>
 
-		colore ombrelloni:<br /> <input type="radio" name="lang"
-			value="giallo" checked="checked" />Giallo<br /> <input type="radio"
-			name="lang" value="verde" />Verde<br /> <input type="radio"
-			name="lang" value="rosso" />Rosso<br />
-	</p>
-	<p>
-		Select option:<br /> <select name="os">
-			<option value="none">---</option>
-			<option value="giallo">Giallo</option>
-			<option value="verde">Verde</option>
-			<option value="rosso">Rosso</option>
-		</select>
-	</p>
-	
-		
-		
-	
-
-
-	</div>
-
-</form>
-
-<p>Alghero e il suo mare</p>
-<iframe width="560" height="315"
- src="https://www.youtube.com/embed/Hl6eoFcoeN4" frameborder="0" allow="accelerometer; autoplay; 
- encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<p>le spiagge</p>
+	<p>le spiagge</p>
 	<div>
-	<select onchange="setTarget(this)">
-	<option>-</option>
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	</select>
-	<br/>
-	<label>Spiaggia:<input id="target" ></label>
+		<select onchange="setTarget(this)">
+			<option>-</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+		</select> <br /> <label>Spiaggia:<input id="target"></label>
 	</div>
+
+
+
+
+
+	<div class="container-fluid my1">
+		<h1>Le provincie</h1>
+
+	</div>
+
+	<nav class="navbar navbar-light  my1">
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="helloJs.html">Alcune
+					foto!</a></li>
+			<li><a href="nav-item">Descrizione</a></li>
+		</ul>
+	</nav>
+	<div class=" container-fluid my3">
+		<h1>Sassari</h1>
+		<p>Si trova al Nord della Sardegna. La città di Sassari è il polo
+			urbano storico del Capo di sopra dell'isola. Con i suoi 546,08 km², è
+			il comune più esteso della regione e il più esteso d'Italia dopo
+			Roma, Ravenna, Cerignola e Noto. Essa sorge su un tavolato calcareo
+			declinante a nord-ovest verso il golfo dell'Asinara e la pianura
+			della Nurra, mentre a sud-est il terreno è prevalentemente collinare.
+		</p>
+		<div class="row">
+			<div class="col-3">
+				<img src="/img/donatella/sassari.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/CostumiSassari.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/mareSassari.jpg" width="100%">
+			</div>
+		</div>
+	</div>
+	<div class=" container-fluid my3">
+		<h1>Nuoro</h1>
+		<p>Si trova al centro della Sardegna.La città si estende su un
+			altopiano granitico, a circa 550 m s.l.m., ai piedi del monte
+			Ortobene</p>
+		<div class="row">
+			<div class="col-3">
+				<img src="/img/donatella/Nuoro.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/costumisardiN.jpg" width="50%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/mareNuoro.jpg" width="100%">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid my3">
+		<h1>Oristano</h1>
+		<p>Si trova nel centro-occidentale della Sardegna di fronte
+			all'omonimo golfo presso la foce del Tirso.Si trova nella parte
+			settentrionale della pianura del Campidano, nella regione detta
+			Campidano di Oristano. Capoluogo di provincia dal 16 luglio 1974, la
+			città ha una storia antica; di origine medievale, è stata a lungo
+			capitale del Giudicato di Arborea.</p>
+		<div class="row">
+			<div class="col-3">
+				<img src="/img/donatella/Oristano.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/costumeOristanojpg.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/mareOristano.jpg" width="100%">
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid my3">
+		<h1>Cagliari</h1>
+		<p>Si trova al sud della Sardegna.Cagliari è il capoluogo della
+			Sardegna. È nota per il Castello, un quartiere fortificato medievale
+			in collina situato al di sopra del resto della città. Tra le
+			attrazioni architettoniche figura la Cattedrale di Cagliari del XIII
+			secolo. Ospitato in un ex arsenale, il Museo Archeologico Nazionale
+			di Cagliari espone oggetti in bronzo, ceramiche romane e manufatti
+			dall'età nuragica fino all'era bizantina.</p>
+		<div class="row">
+			<div class="col-3">
+				<img src="/img/donatella/Cagliari.jpg" width="200%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/costumisardi.jpg" width="100%">
+			</div>
+			<div class="col-3">
+				<img src="/img/donatella/poetto.jpg" width="100%">
+			</div>
+		</div>
+
+	</div>
+	<p>TEMPERATURE</p>
+	<div class="container-fluid">
+		<table class="table table-hover">
+			<thead class="thead-light">
+				<tr>
+
+					<th scope="row">Provincia</th>
+					<th scope="col">Max</th>
+					<th scope="col">Min</th>
+
+				</tr>
+			</thead>
+			<tr class="table-danger">
+				<th scope="row">Sassari</th>
+				<th>22</th>
+				<th>14</th>
+
+			</tr>
+			<tr>
+				<th scope="col">Nuoro</th>
+				<th>23</th>
+				<th>10</th>
+
+			</tr>
+			<tr>
+				<th scope="col">Oristano</th>
+				<th>25</th>
+				<th>2</th>
+
+			</tr>
+			<tr class="table-success">
+				<th scope="col">Cagliari</th>
+				<th>24</th>
+				<th>18</th>
+
+			</tr>
+		</table>
+	</div>
+
+</body>
 
 <p>Region &copy;2019</p>
 
