@@ -1,3 +1,37 @@
+body {
+    background-color: pink;
+	background-image: url('/img/federica/sfondo-nuvole.jpg');
+	background-size: 100% 100%;
+	
+}
+
+p {
+	font-family:monospace;
+}
+
 h1, h2, h3 {
-	color: yellow;
+	background-color: #ff0080;
+	color: #0080ff;
+}
+
+#spacial {
+	color: violet;
+}
+
+.myClass {
+	color:purple;
+}
+
+p.myClass { 
+	color: blue;
+}
+
+#bolckId {
+	background-color: yellow;
+}
+
+#spanId {
+	color: pink;
+/*	font-weight: bold; */
+	font-style: italic;
 }

@@ -1,0 +1,15 @@
+body {
+	background-color: #c0c0c0;
+}
+
+hr {
+	color: #000000;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
