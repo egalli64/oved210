@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+
+<title>My Hello JQuery Page</title>
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script  type ="text/javascript" src = "/js/alessandrab/helloJq.js">
+	
+</script>
+
+<style type = "text/css">
+.red{
+
+color: red;
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+
+	<h1 class = "changeColor" id="header" hidden="true">Hello Bart!
+	</h1>
+	<!-- se metto hidden = true vuol dire che ho nascosto l'elemento -->
+
+
+	<nav>
+		<ul>
+			<li><a href="helloJS.html">Back to JavaScript examples</a></li>
+			<li><a href="CSS.html">Back to CSS examples</a></li>
+		</ul>
+
+	</nav>
+
+
+	<textarea rows="10" cols="80"></textarea>
+	
+	<p class = "changeColor" id = "pmsg"> This message is just for you,<span id = "spanMessage"> Unknown </span>: hello!</p>
+	
+	<input type = "button" id = "colorSwapper" value = "Change color"/>
+	<input type = "button" id = "upsize" value = "Bigger"/>
+	<input type = "button" id = "downsize" value = "Smaller"/>
+	<input type = "button" id = "useless" value = "Click me"/>
+	
+	<hr/>
+	
+	<div>
+	
+	<select onchange = "setTarget(this)">
+	
+	<option>-</option>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	
+	
+	</select>
+	<br/>
+	
+	<label> As string: <input id = "target" readonly = "readonly"/></label>
+
+	</div>
+	
+	
+	<p class = "changeColor" id="signature">&copy; ACME Inc.2019</p>
+
+</body>
+</html>

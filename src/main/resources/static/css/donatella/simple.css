@@ -1,5 +1,5 @@
 body {
-	background-color: #ff8040;
+	background-color: #00ffff;
 	 background-image: 
 	url('/img/donatella/celeste.jpg');
 	background-size: 100% 100%
@@ -12,8 +12,8 @@ p {
 }
 
 h1, h2, h3 {
-	background-color: blue;
-	color: #004000;
+	background-color:blue;
+	color: #80ffff;
 }
 
 #special {
@@ -25,10 +25,10 @@ h1, h2, h3 {
 }
 
 p.myClass {
-	color: blue;
+	color: yellow;
 }
 blockId{
-	background-color: white;
+	background-color: pink;
 }
 
 spanId{

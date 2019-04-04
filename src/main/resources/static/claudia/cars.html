@@ -4,9 +4,15 @@
 <meta charset="UTF-8">
 <title>My favorite cars</title>
 <link rel="stylesheet" type="text/css" href="/css/claudia/simple.css">
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js">
+</script>
+<script type="text/javascript" src="/js/claudia/hello2.js">
+</script>
+
 </head>
 <body>
-	<h1 id="top">Welcome to my page!</h1>
+	<h1 class="changeColor blue" id="top">Welcome to my page!</h1>
 
 
 	<h1>
@@ -21,17 +27,17 @@
 	<hr>
 	<p>An ordered list:</p>
 	<ol>
-		<li><b>Ferrari F8 </b> look at <a
-			href="ferrari.html"> Ferrari </a></li>
+		<li><b>Ferrari F8 </b> look at <a href="ferrari.html">
+				Ferrari </a></li>
 		<li><b>Lamborghini Gallardo </b> look at <a
-			href="lamborghini.html">
-				Lamborghini</a></li>
-		<li><b>Tesla S </b> look at <a
-			href="tesla.html">
-				Tesla</a></li>
+			href="lamborghini.html"> Lamborghini</a></li>
+		<li><b>Tesla S </b> look at <a href="tesla.html"> Tesla</a></li>
 	</ol>
 
 
+	<input type="button" id="colorSwapper" value="Change Color" />
+	<input type="button" id="upsize" value="Bigger" />
+	<input type="button" id="downsize" value="Smaller" />
 	<h3>Another favorite car</h3>
 	<figure>
 		<img src="/img/claudia/AudiR8.jpg" width="500">
@@ -39,7 +45,7 @@
 	</figure>
 	<hr>
 
-	<p>Cars information</p>
+	<p id="info">Cars information</p>
 	<table>
 		<thead>
 			<tr>
@@ -48,6 +54,7 @@
 				<th scope="col">Weight (Kg)</th>
 
 			</tr>
+
 
 		</thead>
 		<tbody>
@@ -103,5 +110,8 @@
 		<textarea name="comment" rows="10" cols="30" maxlength="100">Enter here your comment
 			</textarea>
 	</p>
+
+	<p class="changeColor" id="signature">&copy; LC 2019</p>
+
 </body>
 </html>
