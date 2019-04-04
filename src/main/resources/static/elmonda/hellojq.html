@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My hello JQuery page </title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	let name = prompt("What's your name?", "Guest");  //possiamo creare un popup per perm all'utente di mettere i dati
+	//alert("Hello");
+	
+	//possiamo crearci una nostra funzione senza chied niente a jquery
+	function generateMessage(user, date) { //usa due input e li mette insieme
+		return "Hello " + user + ". You connected at" + date; //fa la concatenazione dei due parametri		
+	}
+	
+	//vammi a prendere il doc, su di esso chiama ready passandogl il metodo ready che aspettarà che il doc sia completam caricato
+	// same as: $(document).ready(function() {
+	$(function(){   // $ funzionalità di jquery, creami una funzione di cui non ti dico il nome, funzione anonima perchè tanto non la chiamerà nessuno, verrà eseguita al volo-->
+		$('#header').slideDown(3000);	//#lavorami solo sull'elemento id che ha header //con $sto invocando funzionalità query e gli passo un elemnto h1 e gli dico fai lo slowdoun degli elemnti
+		
+		let score = 42; //popoliamo la funzione, voglio che lutente che si collega abbia un punteggio di 42
+		$('textarea').append('Your current score is' + score + '\n'); //vai sulla text area e appendi nell'area questo testo
+		$('textarea').append(generateMessage(name, new Date()) + '\n');
+		
+		
+		$('#signature').text("Hello byJQuery!");	
+		//document.getElementById('signature').innerText = 'Hello by HTML5';
+		//*****
+		$('#spanMsg').replaceWith(name); //in name c'è il risukltato della chiamata l popup, quindi il nome che l'utent ha inserito, gli dico vai in span message  esostituisci il testo con il nome che abbiamo salvato in name
+		
+	//	$('#colorSwapper').click(function() {  //dico a jquery di prendermi l'elem con id swapper e associami questa funzione	
+		//voglio che quando succede qualcosa di dinamico venga modificato lo stile	 creiamo area css***
+			//alert("You clicked me!");  //per vedere cosa succ quando schiacciamo il bottono
+	//		$('#pmsg').toggleClass('red');//cambia la classe sull'elemento o elemnti
+	//	});
+		
+		$('#colorSwapper').click(function() {
+			$('.changeColor').toggleClass('redColor');
+		});
+		
+		
+		
+		
+		$('#upsize').click(function(){
+			let cur = parseInt($('#pmsg').css('font-size'));
+			$('#pmsg').css('font-size', cur * 2);
+		});
+		
+		$('#downsize').click(function() {
+			let cur = parseInt($('#pmsg').css('font-size'));
+			if(cur > 1) {
+			$('#pmsg').css('font-size', cur / 2);
+			}
+	
+	   });                           //javascr sa che dovrà essere eseguito solo quand il doc è pronto 
+	   $('html').dblclick(function(e) {
+	   
+		   let s = "Double click @ " + e.pageX + ',' + e.pageY + '\n';
+		   $('textarea').append(s);
+		   
+	   
+	});
+	    
+	   $('#pmsg').mouseover(function(){           //vogliamo che compaia un messaggio quando viene passato il mouse 
+		   $('textarea').append("Mouse over message\n");
+	   
+		   
+	   });
+	   $('#useless').click(function() {
+			$(this).val("Don't click me anymore");  //this---l'elem corrente su cui sto lavorando, metodo per camb il valore corrente è val
+	   }); //se clicco sopra mi compare il testo "Don't click me anymore"
+	});
+	
+	
+	//fuori dalla sezione jquery e dentro l'area script, devo mettere a disposii una funzione che faraà qualcosa quando verrà cliccato
+	function setTarget(elSrc) { //chiamiamolo elsrc ,che significa: l'elemento che mi ha chiamato
+		let target = document.getElementById ('target'); //jquery di prendermi l'elemento che ha id tarhget e di salvarmelo come target
+		switch(elSrc.selectedOptions[0].value) { //mi dice quali sono le opzioni selezionate  evale sia per le singole che per le multiple
+		 //switchare l'elemento sorgente, qual è l'opzione correntye selezionata
+			case '1':
+				target.value = "One";  //a seconda dell'input selez andrò a scrivere qualcosa nel target che è la mia input line
+				break;
+			case '2':
+				target.value = "Two";
+				break;
+			case '3':
+				target.value = "Three";
+				break;
+				default:
+					target.value = "";
+					break;
+		}
+	}
+	        //area css**
+</script>
+<style type="text/css"> 
+.redColor{
+	color:red;
+	}
+
+</style>
+</head>
+<body>
+	<h1 class="changeColor" id ="header" hidden= "true">Hello!</h1>    <!-- vorremo che normalmente non fosse visibile, per farlo bidogna dirgli che l'elemento è nascosto --> 
+	<nav>
+			<ul>
+				<li><a href="hellojs.html">Back to JavaScript examples</a></li>
+				<li><a href="helloCss.html">Back to CSS examples</a></li>
+			</ul>	
+	</nav>
+	<textarea rows="10" cols="80"></textarea>
+	
+	<p class="changeColor" id="pmsg">
+		This message is just for you, 
+		<span id="spanMsg">Unknown</span>: hello!                    <!-- *** -->
+	</p>
+	
+	<input type="button"
+	id="colorSwapper"
+	value="Change color" />                     <!-- vogliamo associare a questo bottone un comportamento -->
+	
+	<input type="button"
+	id="upsize"
+	value="Bigger"/>
+	
+	<input type="button"
+	id="downsize"
+	value="Smaller" />
+	
+	
+	 <!-- mostra all'utenye il messaggio click me -->
+	<input type="button"                      
+	id="useless"
+	value="Click me" />
+	
+	<hr />
+	<div>
+		<select onchange="setTarget(this)">  <!-- quando cambia la select dovrà essere chiamato qualcosa, che vienew specificato nella stringa, ci metterò una funzione javascript -->
+			<option>-</option>  <!-- tutte le volte che cambio qualcosa alla mia option questa funzione (setTarget(this) verrà chiamata -->
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>  <!--  -->
+		</select>
+		<br/>
+		<label>As string:<input id="target" readonly="readonly"/> </label>  <!-- se clicco sulla lable il controllo pasa all'input associato..non voglio che l'utente sia libero di scriverci dentro -->
+	</div>
+	
+	
+	
+	
+	
+	<p class="changeColor" id="signature">&copy; ACME Inc. 2019</p>  <!-- posso cambiare il testo, il controllo lo prende jquery e indica di metterci il testo 
+		                                                                   $('#signature'.text('Hello byJQuery'));		-->
+	</body>
+</html>

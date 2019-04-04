@@ -1,43 +1,46 @@
 body {
- 	background-color: #ff80c0;
- 	
- 	background-image:
- 	linear-gradient(to bottom, rgba(400,400,0,0.10), rgba(100, 200, 400,5.5)),
- 	url('/img/elmonda/sfondos.jpg');
- 	background-size: 100% 100%;
- 	}
- 	p{
- 		font-family:   <!--devo fare attenzione al tipo di font, conviene usare un font generale, monospace, dove tutti i caratteri hanno la stessa dimensione. tutti i browser hanno dei font che hanno dimensione variabile o monospace -->
- 	}
- 	
- 	
- 	h1, h2, h3 {    
- 		background-color: #ffffff;              <!-- -->
- 		color: #008040;
- 		}
- 		
- 		
- 		#special {
- 		color:violet;
- 		}
- 		
- 		}
- 		p.myClass{
- 		color:#ff00ff;
- 		
- 		p.myClass{
- 		color:white;
- 		}
- 		
- 		<!-- gli elementi di p che hanno myclass sono di un determinato colore, uso la classe quando voglio applicare lo stile  atutti gli elementi della classe -->
- 		
- 		#blockId {
- 		background-color: #ff80c0;
- 		
- 		}
- 		
- 		#spanId{
- 		color: pink;
- 		font-wight: bold;
- 		font-style: italic;
- 		}
+	background-color: #ff80c0;
+	background-image: linear-gradient(to bottom, rgba(400, 400, 0, 0.10),
+		rgba(100, 200, 400, 5.5)), url('/img/elmonda/sfondos.jpg');
+	background-size: 100% 100%;
+}
+
+p {
+	font-family: <!-- devo fare attenzione al tipo di font,
+		conviene usare un font generale, monospace,
+		dove tutti i caratteri hanno la stessa dimensione. tutti i browser hanno
+		dei font che hanno dimensione variabile o monospace -->
+}
+
+h1, h2, h3 {
+	background-color: #ffffff; <!-- -->
+	color: #008040;
+}
+
+#special {
+	color: violet;
+}
+
+p.myClass {
+	color: #ff00ff;
+	color: white;
+}
+
+/* 
+   gli elementi di p che hanno myclass sono di un determinato colore,
+   uso la classe quando voglio applicare lo stile
+   a tutti gli elementi della classe
+ */
+#blockId {
+	background-color: #ff80c0;
+}
+
+#spanId {
+	color: pink;
+	font-wight: bold;
+	font-style: italic;
+}
+
+.redColor {
+	color: red;
+}

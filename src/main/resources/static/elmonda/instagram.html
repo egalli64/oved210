@@ -2,13 +2,21 @@
 <head>
 <meta charset="UTF-8">
 <title>My instagram page </title>
-</head>
+
+
 <link rel="stylesheet"
  type="text/css"
-href= "/css/elmonda/insta.css"> 
-<body>
+href= "/css/elmonda/insta.css">
+<script src= "//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/elmonda/hello.js" type="text/javascript"></script>
+</head>
 
-<h1>Welcome to my personal page!</h1>
+ 
+<body>
+<h1  id ="header" hidden= "true">Welcome to my personal page!</h1>    
+
+
+
 
 <h1>INSTAGRAM PROFILE</h1>
 
@@ -156,6 +164,17 @@ This is my instagram profile. </p>
 		</table>
 		
 		
+		<div>
+		<select onchange="setTarget(this)">  <!-- quando cambia la select dovrà essere chiamato qualcosa, che vienew specificato nella stringa, ci metterò una funzione javascript -->
+			<option>-</option>  <!-- tutte le volte che cambio qualcosa alla mia option questa funzione (setTarget(this) verrà chiamata -->
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>  <!--  -->
+		</select>
+		<br/>
+		<label>INFORMAZIONI:<input id="target" readonly="readonly"/> </label>  <!-- se clicco sulla lable il controllo pasa all'input associato..non voglio che l'utente sia libero di scriverci dentro -->
+	</div>
+		
 		<p> DESCRIPTION SPEEDY 30</p>
 		<p>Launched in 1930 as the "Express" and inspired by that era's travel revolution, the Speedy is the ultimate Louis Vuitton icon. </p>
 		<p>The original and complete city bag, it is the stylish companion of the girl about town.</p>
@@ -181,14 +200,49 @@ This is my instagram profile. </p>
 		
 		</p>
 		
+		<p class="changeColor" id="pmsg">
+		VIDEO YOUTUBE, 
+		<span id="spanMsg">Unknown</span>: hello!                    <!-- *** -->
+	</p>
+	
+		<input type="button"
+	id="colorSwapper"
+	value="Change color" />
+	
+	<input type="button"                      
+	id="useless"
+	value="Click me" />
+	
 		<div>
 		
-		<iframe      
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/_r1eQveXzQM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<!--  <iframe      
 	width="400"
 	height="400"
 	src="http://maps.google.com/maps?q=duomo+milano&amp;output=embed">
-	</iframe>
+	</iframe> -->
 		</div>
+		<hr>
+	<p>An ordered list:</p>
+	<ol>
+		<li><b>Chiara Ferragni</b> look at <a
+			href="chiara.html"> Chiara </a></li>
+		<li><b>Giulia Gaudino </b> look at <a
+			href="giulia.html">
+				Giulia</a></li>
+		<li><b>Giulia De Lellis </b> look at <a
+			href="giulias.html">
+				Giulia</a></li>
+	</ol>
+		
+		<hr />
+	
+	
+	
+	
+		
+		
+		
 		
 		</body>
 </html>
