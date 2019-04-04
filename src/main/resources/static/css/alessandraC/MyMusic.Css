@@ -1,13 +1,28 @@
 body {
-	background-color: #ff5e5e;
+	color:white;
+	font-style:Elvetica;
+	background: #ff5e5e;
 	
 	background-image:
-		src="/img/alessandraC/Prisma.png";
+		url(https://upload.wikimedia.org/wikipedia/commons/6/63/Dispersion_prism.jpg);
+	
 	background-size:100%;
 	
 }
 
 h1, h2 {
-	color: black;
-	background-color: #ec1c65 ;
+	color: #ffffff;
+	background: #ec1c65 ;
 }
+
+table {
+	background: white;
+	color: black;
+}
+
+a {
+	color: white;
+	background: #ec1c65;
+}
+
+

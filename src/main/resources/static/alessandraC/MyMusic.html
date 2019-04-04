@@ -3,208 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome in my Music's store!</title>
-<link rel="stylesheet"
-	type="text/css"
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/alessandraC/MyMusic.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css"
 	href="/css/alessandraC/MyMusic.Css">
 </head>
 <body>
-	
 
-	<h1>Welcome in my Music's store!</h1>
-	<h2>1 - Store's details</h2>
+
+	<h4 class="MyClass">Home</h4>
+
+	<h1 id="header" hidden="true">Welcome in my Music's store!</h1>
+	<h2>1 - Details</h2>
 	<ul>
-		<li>Name Store:<i>Play Music</i></li>
+		<li>Store's Name:<i>Play Music</i></li>
 		<li>Address:<i>Via Torino 1, 20123, Milan</i></li>
-		<li>Items:<i> Musical instruments & cd</i></li>
+		<li>Items:<i> Musical Instruments & Cd Collections</i></li>
 
 	</ul>
-	
-	<iframe src="http://maps.google.com/maps?q=via+torino+milano&amp;output=embed"
-	width="350"
-	height="350">
-	</iframe>
 
-	<hr>
+	<iframe
+		src="http://maps.google.com/maps?q=via+torino+milano&amp;output=embed"
+		width="350" height="350"> </iframe>
 
 	<h2>2 - Collections</h2>
+	<div id="blockId">
+		<dl>
+			<dt>Musical genre - cd</dt>
+			<dd>Rock, Pop and Reggae music</dd>
+			<dt>Artists</dt>
+			<dd>
+				U2,<br /> Queen,<br /> Coldplay,<br /> Robbie Williams,<br />
+				Sia,<br /> Bob Marley,<br /> Mariah Carey,<br />Michael Bublè,<br />
+			</dd>
 
-	<dl>
-		<dt>Musical genre - cd</dt>
-		<dd>Rock, Pop and Reggae music</dd>
-		<dt>Artists</dt>
-		<dd>
-			U2,<br /> Queen,<br /> Coldplay,<br /> Robbie Williams,<br /> Sia,<br /> Bob
-			Marley,<br /> Mariah Carey,<br />Michael Bublè,<br />
-		</dd>
-		<dt>Instruments</dt>
-		<dd>
-			Fender Telecaster,<br /> Gibson Les Paul,<br /> Rickenbacker 650S,<br /> Fender Stratocaster,<br /> Rickenbacker 330,<br />
-			Gibson Melody Maker,<br /> Fender Jaguar,<br />
+			<dt>Musical Instruments</dt>
+			<dd>Guitar, Bass, Battery</dd>
+			<dt>Models</dt>
+			<dd>
+				Fender Telecaster,<br /> Gibson Les Paul,<br /> Rickenbacker 650S,<br />
+				Fender Stratocaster,<br /> Ibanez AGB 200 Bass,<br />Fender AM
+				elite P-bass,<br /> BDK-1,<br />Pearl Export E5,<br />Yamaha
+				Gigmaker 20,<br />
+			</dd>
 
-		</dd>
+		</dl>
+	</div>
+	
+	<ul>
+		<a href="/alessandraC/SingleCd.html">Single Cd</a><br>
+		<a href="/alessandraC/OpeningHours.html">Customer Space</a>
 		
+	
+	</ul>
 
-		<hr>
-
-		<h2>3 - Single cd's pictures</h2>
-
-		<p>
-			<img
-				src="http://www.liketotally80s.com/wp-content/uploads/2017/03/jt-300x300.jpg"
-				width="400" />
-		</p>
-		<figcaption>
-			U2 <a
-				href="https://www.rollingstone.it/musica/news-musica/u2-cosa-aspettarsi-dal-nuovo-tour/421666/">Rolling
-				Stone<a />
-		</figcaption>
-		
-		<p>
-			<img
-				src="http://digilander.iol.it/francoarara/foto/innuendo_front.jpg"
-				width="400" />
-		</p>
-		<figcaption>
-			Queen <a
-				href="https://www.mbmusic.it/2014/11/queen-forever-album-cover-e-lista-tracce/">Mb Music
-				<a />
-		</figcaption>
-		
-
-		<p>
-			<img
-				src="http://cdn.gelestatic.it/deejay/www/2015/11/1794739_10156273567560253_5783605225921995279_n.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Coldplay <a
-				href="https://www.cosmopolitan.com/it/star/a25322198/coldplay-nuovo-singolo-nuovo-nome-2018/">Cosmopolitan<a />
-		</figcaption>
-
-		<p>
-			<img
-				src="https://img.discogs.com/TCSQp69VzfodCMehbKL-1IfOCXQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1277652-1457476770-7073.jpeg.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Robbie Williams <a
-				href="https://www.cosmopolitan.com/it/star/a25322198/coldplay-nuovo-singolo-nuovo-nome-2018/">BCC
-				music<a />
-		</figcaption>
-
-		<p>
-			<img
-				src="https://cdn.gelestatic.it/deejay/www/2015/12/Sia_this-is-acting.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Sia <a
-				href="https://www.cosmopolitan.com/it/star/a25322198/coldplay-nuovo-singolo-nuovo-nome-2018/">people<a />
-		</figcaption>
-
-		<p>
-			<img
-				src="https://static1.qmusic.medialaancdn.be/9/8f/b2/02/5618/Bob+Marley+Could+You+Be+Loved.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Bob Marley <a
-				href="https://www.allmusic.com/artist/bob-marley-mn0000071514">all
-				music<a />
-		</figcaption>
-
-
-		<p>
-			<img
-				src="https://img.discogs.com/vzeMIlcmgMHQBgR2jV3WcgXYBlo=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-3939840-1435743676-5016.jpeg.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Mariah Carey <a
-				href="https://secretldn.com/mariah-carey-tfl-announcements/">Secret
-				London<a />
-		</figcaption>
-
-		<p>
-			<img
-				src="http://www.mbmusic.it/wp-content/uploads/2011/11/Michael_Buble-Christmas_album_cover.jpg"
-				width="400" />
-		</p>
-
-		<figcaption>
-			Michael Bublè <a
-				href="https://www.corriere.it/sette/black-rock/18_ottobre_25/michael-buble-554c75b4-d3bc-11e8-8205-0a376a81469f.shtml">Corriere
-				<a />
-		</figcaption>
-
-
-		<hr>
-
-		<h2>4 - PlayList</h2>
-		<p>Store Playlist</p>
-		<table>
-			<thead>
-				<tr>
-					<th scope="row">Jan</th>
-					<th scope="row">Feb</th>
-					<th scope="row">Mar</th>
-				</tr>
-			</thead>
-
-			<tr>
-				<th scope="row">Monday</th>
-				<td colspan="1" align="center">U2, Bublè</td>
-				<td colspan="2" align="center">Williams</td>
-				<td colspan="3" align="center">Carey, Coldplay</td>
-
-
-			</tr>
-
-			<tr>
-				<th scope="row">Tuesday</th>
-				<td colspan="1" align="center">Bob Marley</td>
-				<td colspan="2" align="center">Sia, U2</td>
-				<td colspan="1" align="center">Williams</td>
-
-
-			</tr>
-
-			<tr>
-				<th scope="row">Wednesday</th>
-				<td colspan="1" align="center">Coldplay</td>
-				<td colspan="2" align="center">U2</td>
-				<td colspan="3" align="center">Bublè</td>
-			</tr>
-
-			<tr>
-				<th scope="row">Wednesday</th>
-				<td colspan="1" align="center">Bob Marley</td>
-				<td colspan="2" align="center">Sia, Williams</td>
-				<td colspan="3" align="center">U2, Carey</td>
-			</tr>
-
-			<tr>
-				<th scope="row">Wednesday</th>
-				<td colspan="1" align="center">U2, Williams</td>
-				<td colspan="2" align="center">Carey, Marley</td>
-				<td colspan="3" align="center">Coldplay, Sia</td>
-			</tr>
-		</table>
-
-		<hr>
-
-		<h2>2 - Select Your Concert's List</h2>
-		<p>
-			Check box: <br /> <input type="checkbox" name="ds" value="map"
-				checked="checked" />U2<br /> <input type="checkbox" name="ds"
-				value="list" />Coldplay<br /> <input type="checkbox" name="ds"
-				value="set" />Michael Bublè<br /> <input type="checkbox" name="ds"
-				value="set" />Mariah Carey<br />
-		</p>
-</body>
-</html>
+	
