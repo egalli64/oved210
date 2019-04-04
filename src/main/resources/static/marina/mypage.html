@@ -11,108 +11,116 @@
 </head>
 <body>
 
-	<div class="container-fluid" id="signup">
-		<div class="row">
-			<div class="col-sm-5">
-				<label>User name: <input type="text" name="user"
-					maxlength="15">
-				</label>
+	<div class="container-fluid" >
+			<div class="row">
+			<div class="col-7"></div>
+			<div class="col-5 text-right"id="signup"><br><label>Username: <input type="text" name="user" maxlength="15">
+				</label> <label>Password: <input type="password" name="password"></label> 
+				<a href="http://linknull"><input type="submit" value="LOGIN"></a>
 			</div>
-			<div class="col-sm-5">
-				<label>Password: <input type="password" name="password">
-				</label>
 			</div>
-			<div class="col-sm-2">
-				<a href="http://linknull"><input type="submit" value="LOG IN"></a>
+			<div class="row">
+				<div class="col-7"></div>
+				<div class="col-5" id="signup"><p id="register" class="text-right">
+						If you're not already registered, click <a href="http://linknull">here</a>
+						to Sign up.</p>
+				</div>
 			</div>
-			<br>
-			<p id="register">
-				If you're not already registered, click <a href="http://linknull">here</a>
-				to Sign up.
-			</p>
-			<br>
 		</div>
-	</div>
-
+<br>
 
 	<img src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"
-		width="20%" height="10%">
+		width="20%" height="10%" class="img-fluid">
 	<br>
 	<img
 		src="http://www.ansa.it/webimages/img_700/2018/4/28/ca2e9cecf77e8119b1fd657a59e37c25.jpg"
-		width="30%" height="10%" id="header">
+		width="30%" height="10%" id="header" class="img-fluid rounded-lg">
 
-	<h2 class="title">
+	<h3 class="title">
 		This is the fan page of <i>La casa de Papel</i>
-	</h2>
+	</h3>
 
-	<h3>Read more about the characters:</h3>
-
-<!--Characters Buttons  -->
+	<h4>Read more about the characters:</h4>
+	<!--Characters Buttons  -->
+	<div>
+		<a href="/marina/mypage/professor.html">
+			<button type="button" class="btn btn-primary">The professor</button>
+		</a>
+	</div>
 	<br>
-
-	<a href="/marina/mypage/professor.html">
-		<button type="button" class="btn btn-primary">The professor</button>
-	</a>
+	<div>
+		<a href="/marina/mypage/tokyo.html">
+			<button type="button" class="btn btn-secondary">Tokyo</button>
+		</a>
+	</div>
 	<br>
-	<a href="/marina/mypage/tokyo.html">
-		<button type="button" class="btn btn-secondary">Tokyo</button>
-	</a>
+	<div>
+		<a href="/marina/mypage/berlin.html">
+			<button type="button" class="btn btn-success">Berlin</button>
+		</a>
+	</div>
 	<br>
-
-	<a href="/marina/mypage/berlin.html">
-		<button type="button" class="btn btn-success">Berlin</button>
-	</a>
+	<div>
+		<a href="/marina/mypage/nairobi.html">
+			<button type="button" class="btn btn-danger">Nairobi</button>
+		</a>
+	</div>
 	<br>
-	<a href="/marina/mypage/nairobi.html">
-		<button type="button" class="btn btn-danger">Nairobi</button>
-	</a>
+	<div>
+		<a href="/marina/mypage/rio.html">
+			<button type="button" class="btn btn-warning">Rio</button>
+		</a>
+	</div>
 	<br>
-	<a href="/marina/mypage/rio.html">
-		<button type="button" class="btn btn-warning">Rio</button>
-	</a>
-	<br>
+	<div>
 
 	<a href="/marina/mypage/denver.html">
 		<button type="button" class="btn btn-info">Denver</button>
 	</a>
-	
-<!-- END Characters Buttons  -->
-
+		</div>
 	<br>
-	<h3>Seasons Table</h3>
 
-	<table class="table table-sm">
-		<thead>
-			<tr>
-				<th scope="col">Season</th>
-				<th scope="col">I</th>
-				<th scope="col">II</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">Episodes</th>
-				<td>9</td>
-				<td>8</td>
-			</tr>
-			<tr>
-				<th scope="row">Aired</th>
-				<td>2 May 2017</td>
-				<td>16 October 2017</td>
-			</tr>
-		</tbody>
-	</table>
+	<!-- END Characters Buttons  -->
 
-	<br>
-	<br>
+	<h4>Seasons Table</h4>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-3"></div>
+			<div class="col-xl-6">
+				<table class="table table-bordered text-centered">
+					<thead>
+						<tr class="table-success">
+							<th scope="col">Season</th>
+							<th scope="col">I</th>
+							<th scope="col">II</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="table-danger">
+							<th scope="row">Episodes</th>
+							<td>9</td>
+							<td>8</td>
+						</tr>
+						<tr class="table-warning">
+							<th scope="row">Aired</th>
+							<td>2 May 2017</td>
+							<td>16 October 2017</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xl-3"></div>
+		</div>
+	</div>
+
 	<hr>
-	<h2 id="fan">Tell us your opinion</h2>
+	<h4 id="fan">Tell us your opinion</h4>
 
 	<p>
 		Select your favorite season: <br> <input type="radio" name="lang"
 			value="1">I<br> <input type="radio" name="lang"
-			value="2">II<br>
+			value="2">II
 	</p>
 	<input id="nice" type="button" value="SUBMIT">
 
