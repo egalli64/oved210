@@ -24,3 +24,4 @@ function setTarget(elSrc) { //chiamiamolo elsrc ,che significa: l'elemento che m
 				break;
 	}
 }
+

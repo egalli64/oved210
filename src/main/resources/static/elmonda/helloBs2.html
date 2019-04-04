@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My hello Bootstrap page</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<style>
+.my1 {
+	background-color: lightsalmon;
+}
+.my2 {
+	background-color: lightblue;
+}
+.my3 {
+	background-color: lavender;
+}
+.my4 {
+	background-color: bisque;
+}
+.myU {
+	text-decoration: underline      <!-- per def lo style-->
+}
+</style>
+</head>
+<body>
+	<nav class="navbar navbar-light my1">
+		<a class="navbar-brand">Navigation bar</a>
+		<ul class="nav navbar-nav">
+
+			<li class="nav-item"><a class="nav-link" href="helloJs.html">Back
+					to JavaScript examples</a></li>
+			<li class="nav-item"><a class="nav-link" href="helloCss.html">Back
+					to CSS examples</a></li>
+		</ul>
+
+	</nav>
+	<div class="container-fluid my2">
+		<h1>Hello</h1>
+		<h2>Hello</h2>
+		<h3>Hello</h3>
+		<h4>Hello</h4>
+		<h5>Hello</h5>
+		<h6>Hello</h6>
+
+		<h1>
+			Hello<small class="Text-muted">,goodbye</small>
+		</h1>
+
+
+	</div>
+	<!-- display, per i titoli principali e header per titoli secondari..mi modifinao il testo come se fosse un header  -->
+	<div class="container-fluid my2">
+		<p class="display-1">Hello</p>
+		<p class="display-2">Hello</p>
+		<p class="display-3">Hello</p>
+		<p class="display-4">Hello</p>
+
+
+	</div>
+
+	<div class="container-fluid my2">
+		<p>Blah, blah, blah</p>
+		<p class="lead">I'm a lead, I want to be more visible</p>
+		<p>I'm without a lead, this is just normal stuff</p>
+
+	</div>
+	<div class="container-fluid my1">
+		<p>
+			A
+			<mark>marked</mark>
+			text
+		</p>
+		<!-- sottolinea mark -->
+		<p>
+			A
+			<del>deleted</del>
+			text
+		</p>
+		<p>
+			A <s>striked-through</s>text
+		</p>
+		<p>
+			An
+			<ins>inserted</ins>
+			text
+		</p>
+		<p>
+			An <u>unarticolated</u>text
+		</p>
+		<!-- u sta per underscore , quando voglio dire che c'è qualcosa che non è comprensibile-->
+		<p>
+			An <span class="myU">underlined</span> word
+		</p>
+		<p>
+			A <small>small</small> word
+		</p>
+		<p>
+			A <strong>strong</strong> word
+		</p>
+		<p>
+			A word with <em>emphasis</em>
+		</p>
+		<!-- corsivo... italico -->
+		<p>
+			<abbr title="HyperText Markup Language">HTML</abbr> <abbr
+				title="HyperText Markup Language" class="initialism">HTML</abbr>
+
+		</p>
+		<p>
+		<blockquote>Cogito ergo sum</blockquote>
+		<blockquote class="blockquote text-center">
+			<p>Cogito ergo sum</p>
+			<footer class="blockquote-footer">
+				Cartesio in <cite title="Discours de la méthod"> <!-- titolo originale, mi viene fuolri un popup -->
+					Discorso sul metodo
+				</cite>
+			</footer>
+		</blockquote>
+
+	</div>
+	
+	<hr />
+	
+	<h3>Table w/ heading</h3>
+	<table>
+		<thead>
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Center</th>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Low</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+	
+	
+	
+	
+	<div class="container-fluid"></div>
+	
+
+	<table class="table table-dark">
+		<thead>
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Center</th>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Low</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+	
+	
+	
+	<div class="container-fluid">
+	<table class="table table-dark">
+	
+		<thead>
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Center</th>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Low</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+	
+	<div class="container-fluid">
+	<table class="table table-striped">
+	
+		<thead>
+			<tr>
+				<th scope="row">*</th>
+				<th scope="col">Left</th>
+				<th scope="col">Center</th>
+				<th scope="col">Right</th>
+			</tr>
+		</thead>
+		<tr>
+			<th scope="row">Top</th>
+			<td>7</td>
+			<td>8</td>
+			<td>9</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Center</th>
+			<td>4</td>
+			<td>5</td>
+			<td>6</td>
+		</tr>
+
+		<tr>
+			<th scope="row">Low</th>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table>
+</div>
+
+			<div class="container-fluid">
+				<table class="table table-bordered">
+
+					<thead class="thead-life">
+						<tr>
+							<th scope="row">*</th>
+							<th scope="col">Left</th>
+							<th scope="col">Center</th>
+							<th scope="col">Right</th>
+						</tr>
+					</thead>
+					<tr>
+						<th scope="row">Top</th>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Center</th>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Low</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="container-fluid">
+				<table class="table table-bordered table-dark table-striped">
+
+					<thead class="thead-light">
+						<tr>
+							<th scope="row">*</th>
+							<th scope="col">Left</th>
+							<th scope="col">Center</th>
+							<th scope="col">Right</th>
+						</tr>
+					</thead>
+					<tr>
+						<th scope="row">Top</th>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Center</th>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Low</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+				</table>
+			</div>
+			
+	<div class="container-fluid">
+				<table class="table table-hover table-dark table-striped">
+
+					<thead class="thead-light">
+						<tr>
+							<th scope="row">*</th>
+							<th scope="col">Left</th>
+							<th scope="col">Center</th>
+							<th scope="col">Right</th>
+						</tr>
+					</thead>
+					<tr class="table-danger">
+						<th scope="row">Top</th>
+						<td>7</td>
+						<td class="table-info">8</td>
+						<td>9</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Center</th>
+						<td class="table-info">4</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Low</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+				</table>
+			</div>
+			
+			
+			<div class="container-fluid">
+				<table class="table table-bordered table-dark table-striped">
+
+					<thead class="thead-light">
+						<tr>
+							<th scope="row">*</th>
+							<th scope="col">Left</th>
+							<th scope="col">Center</th>
+							<th scope="col">Right</th>
+						</tr>
+					</thead>
+					<tr>
+						<th scope="row">Top</th>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Center</th>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Low</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+				</table>
+			</div>
+			
+	
+
+			
+			</body>

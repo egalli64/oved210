@@ -44,3 +44,25 @@ p.myClass {
 .redColor {
 	color: red;
 }
+
+.myColor1 {
+	background-color: lightsalmon;
+}
+.myColor2 {
+	background-color: lightblue;
+}
+.myColor3 {
+	background-color: lavender;
+}
+.myColor4 {
+	background-color: bisque;
+}
+
+#blog {
+	padding: 5px 5px 5px 20px;
+	
+}
+
+
+
+
