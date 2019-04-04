@@ -1,5 +1,5 @@
 body {
-	background-color: #c0c0c0;
+	background-color: #ffffff;
 }
 
 hr {
@@ -12,4 +12,18 @@ h1, h2 {
 
 .center {
 	text-align: center;
+}
+
+table.table-bordered{
+    border:1px solid black;
+    margin-top:20px;
+  }
+table.table-bordered > thead > tr > th{
+    border:1px solid black;
+}
+table.table-bordered > tbody > tr > th{
+    border:1px solid black;
+}
+table.table-bordered > tbody > tr > td{
+    border:1px solid black;
 }
