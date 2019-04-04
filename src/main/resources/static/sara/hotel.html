@@ -5,13 +5,11 @@
 <link rel="stylesheet"
 	type="text/css"
 	href="/css/sara/hotel.css" />
-	
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/sara//hello.js" type="text/javascript"></script>
 <script type="text/javascript">
 
-
-let name = prompt("welcome", "user");
+let name = prompt("Welcome", "User");
 
 	function generateMessage(user, date) {
 		return "Hello " + user + ". You connected at " + date;
@@ -19,18 +17,29 @@ let name = prompt("welcome", "user");
 
 	$(function() {
 		$('#header').slideDown(1000);
-		$('#header2').slideDown(3000);
+		$('#header2').slideDown(2000);
 		$('#signature').text("SeaHotel Inc. 1978");
 		$('#colorSwapper').click(function() {
 			$('.changeColor').toggleClass('blueColor');
 		});
-
 	});
 </script>
 
 <style type="text/css">
 .blueColor {
 	color: blue;
+}
+.my1 {
+	background-color: bisque;
+}
+.my2 {
+	background-color: lightblue;
+}
+.my3 {
+	background-color: lightblue;
+}
+.my4 {
+	background-color: bisque;
 }
 </style>
 </head>
@@ -44,11 +53,12 @@ let name = prompt("welcome", "user");
 			width="300" />
 	</p>
 
+	<div class="link my2">
 	<p>
 		Go to the <a href="https://www.hotelbaiadellezagare.it/it/">SeaHotel</a>
 		site.
 	</p>
-
+	</div>
 
 	<fieldset>
 		<legend>Booking</legend>
@@ -60,6 +70,7 @@ let name = prompt("welcome", "user");
 		</label>
 	</fieldset>
 
+	<div class="room my1">
 	<p>
 		Select your room:<br /> <select name="os">
 			<option value="single">single</option>
@@ -72,23 +83,35 @@ let name = prompt("welcome", "user");
 			<option value="3">3</option>
 			<option value="4">4</option>
 		</select>
-	</p>
-
+		</div>
+		
+		<h4>Rooms</h4>
+		<div class="row">
+			<div class="col-4 my1"><img src= "img/sara/Sup1_1.jpg" width= 10%> </div>
+			<div class="col-4 my2"><img src= "img/sara/deluxe.jpg" width= 10%> </div>
+			<div class="col-4 my1"><img src= "img/sara/vistamare.jpg" width= 10%> </div>
+		</div>
+	
+	
+	
+	<div class="textarea my3">
 	<p>
 		Recensioni:<br />
 		
 		<textarea name="comment" rows="4" cols="20">Enter here your comment.
 			</textarea>
 	</p>
-
+	</div>
+	
+	<div class="submit my4">
 	<p>
 		Submit: <br /> <input type="Submit" value="prenota" />
 	</p>
+	</div>
 
 	<input type="button" id="colorSwapper" value="Change color" />
 
-	<p class="changeColor" id="signature">&copy; SeaHotel Inc. 1978</p>
-
+	<h3 class="changeColor" id="signature">&copy; SeaHotel Inc. 1978</h3>
 
 </body>
 </html>
