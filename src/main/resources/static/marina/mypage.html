@@ -3,73 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <title>La casa de papel</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/marina/mypageCss.css">
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/marina/mypage.js" type="text/javascript"></script>
 </head>
 <body>
 
-
-	<div id="signup">
-		<br> <label>User name: <input type="text" name="user"
-			maxlength="15">
-		</label> <label>Password: <input type="password" name="password">
-		</label> <a href="http://linknull"><input type="submit" value="LOG IN"></a>
-
-		<br>
-		<p id="register">
-			If you're not already registered, click <a href="http://linknull">here</a>
-			to Sign up.
-		</p>
-		<br>
+	<div class="container-fluid" id="signup">
+		<div class="row">
+			<div class="col-sm-5">
+				<label>User name: <input type="text" name="user"
+					maxlength="15">
+				</label>
+			</div>
+			<div class="col-sm-5">
+				<label>Password: <input type="password" name="password">
+				</label>
+			</div>
+			<div class="col-sm-2">
+				<a href="http://linknull"><input type="submit" value="LOG IN"></a>
+			</div>
+			<br>
+			<p id="register">
+				If you're not already registered, click <a href="http://linknull">here</a>
+				to Sign up.
+			</p>
+			<br>
+		</div>
 	</div>
+
 
 	<img src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"
 		width="20%" height="10%">
-
 	<br>
 	<img
 		src="http://www.ansa.it/webimages/img_700/2018/4/28/ca2e9cecf77e8119b1fd657a59e37c25.jpg"
-		width="30%" height="10%" id="header" hidden="true">
+		width="30%" height="10%" id="header">
 
 	<h2 class="title">
-		This is the fan page of <i> La casa de Papel</i>
+		This is the fan page of <i>La casa de Papel</i>
 	</h2>
 
 	<h3>Read more about the characters:</h3>
 
-	<a href="/marina/mypage/professor.html">The Professor</a>
+<!--Characters Buttons  -->
 	<br>
-	<a href="/marina/mypage/tokyo.html">Tokyo</a>
-	<br>
-	<a href="/marina/mypage/berlin.html">Berlin</a>
-	<br>
-	<a href="/marina/mypage/nairobi.html">Nairobi</a>
-	<br>
-	<a href="/marina/mypage/rio.html">Rio</a>
-	<br>
-	<a href="/marina/mypage/denver.html">Denver</a>
 
+	<a href="/marina/mypage/professor.html">
+		<button type="button" class="btn btn-primary">The professor</button>
+	</a>
+	<br>
+	<a href="/marina/mypage/tokyo.html">
+		<button type="button" class="btn btn-secondary">Tokyo</button>
+	</a>
+	<br>
 
+	<a href="/marina/mypage/berlin.html">
+		<button type="button" class="btn btn-success">Berlin</button>
+	</a>
+	<br>
+	<a href="/marina/mypage/nairobi.html">
+		<button type="button" class="btn btn-danger">Nairobi</button>
+	</a>
+	<br>
+	<a href="/marina/mypage/rio.html">
+		<button type="button" class="btn btn-warning">Rio</button>
+	</a>
+	<br>
+
+	<a href="/marina/mypage/denver.html">
+		<button type="button" class="btn btn-info">Denver</button>
+	</a>
+	
+<!-- END Characters Buttons  -->
+
+	<br>
 	<h3>Seasons Table</h3>
-	<table>
+
+	<table class="table table-sm">
 		<thead>
 			<tr>
-				<th scope="row">Season</th>
-				<th scope="col">1</th>
-				<th scope="col">2</th>
+				<th scope="col">Season</th>
+				<th scope="col">I</th>
+				<th scope="col">II</th>
 			</tr>
 		</thead>
-		<tr>
-			<th scope="col">Episodes</th>
-			<td align="center">9</td>
-			<td align="center">8</td>
-		</tr>
-		<tr>
-			<th scope="col">Aired</th>
-			<td>2 May 2017</td>
-			<td>16 October 2017</td>
-		</tr>
+		<tbody>
+			<tr>
+				<th scope="row">Episodes</th>
+				<td>9</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<th scope="row">Aired</th>
+				<td>2 May 2017</td>
+				<td>16 October 2017</td>
+			</tr>
+		</tbody>
 	</table>
 
 	<br>
@@ -132,10 +164,5 @@
 		<br> <a href="http://linknull"><input type="button"
 			value="SUBMIT"></a>
 	</p>
-
-
-
-
-
 </body>
 </html>
