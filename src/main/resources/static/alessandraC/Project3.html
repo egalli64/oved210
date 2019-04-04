@@ -7,108 +7,21 @@
 <script src="/js/alessandraC/MyMusic.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="/css/alessandraC/MyMusic.Css">
-</head>
-<body>
-
-<style type="text/css">
-.redColor {
-	color:red;
-}
-</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
 
 <nav>
 		<ul>
-			<li><a href="MyMusic.html">Back to My Music</a></li>
-			<li><a href="SingleCd.html">Back to Single Cd</a></li>	
+			<li><a href="Project1.html">Back to My Music</a></li>
+			<li><a href="Project2.html">Back to Single Cd</a></li>	
 		</ul>
 	</nav>
 	
 	
 	<h1 class="changeColor" id="header" hidden="true">Order Space</h1>
 	
-	
-	<textarea rows="10" cols="60"></textarea>
-	
-	<p class="changeColor" id="pmsg">
-		<span id="spanMsg"></span>Make an order!
-	</p>
-	
-	<input type="submit" value="Enter" />
-		<br>
-
-<div id="BlockId">
-
-		<h2>5 - Store & Customer Space </h2>
-		<h3>Opening Hours </h3>
-		
-		<table>
-			<thead>
-			<tr>
-				<th scope="row">Day</th>
-				<th scope="col">Morning</th>
-				<th scope="col">Afternoon</th>
-				
-				
-			</tr>
-			</thead>
-
-			<tr>
-				<th scope="row">Monday</th>
-				<td colspan="1" align="center">9 - 13</td>
-				<td colspan="2" align="center">15 - 18</td>
-				
-
-			</tr>
-
-			<tr>
-				<th scope="row">Tuesday</th>
-				<td colspan="1" align="center">8:30 - 12:30</td>
-				<td colspan="2" align="center">15:30 - 18:30</td>
-			
-
-			</tr>
-
-			<tr>
-				<th scope="row">Wednesday</th>
-				<td colspan="1" align="center">9 - 13</td>
-				<td colspan="2" align="center">14:30 - 17:30</td>
-				
-			</tr>
-
-			<tr>
-				<th scope="row">Thursday</th>
-				<td colspan="1" align="center">8:30 - 13</td>
-				<td colspan="2" align="center">15:30 - 18</td>
-				
-			</tr>
-
-			<tr>
-				<th scope="row">Friday</th>
-				<td colspan="1" align="center">9 - 13</td>
-				<td colspan="2" align="center">Closed</td>
-				
-			</tr>
-			
-			<tr>
-				<th scope="row">Saturday</th>
-				<td colspan="1" align="center">10 - 13:30</td>
-				<td colspan="2" align="center">15 - 19</td>
-				
-			</tr>
-			
-			<tr>
-				<th scope="row">Sunday</th>
-				<td colspan="1" align="center">Closed</td>
-				<td colspan="2" align="center">Closed</td>
-				
-			</tr>
-		</table>
-		
-		<hr>
-		
-		<h3>Store Access</h3>
+	<h3>Store Access</h3>
 		<fieldset>
 				<legend>Login</legend>
 				<label>UserName:
@@ -120,14 +33,21 @@
 			</fieldset>
 			
 		<input type="submit" value="Enter" />
-		<br>
-</div>
-<hr>
-<h3>Choose your favorite Cd</h3>
+		<hr>
 
-<p class="changeColor" id="pmsg">
-		<span id="spanMsg">Unknown</span>: hello!
-	</p>
+	<textarea name="comment"rows="6" cols="30">Insert your Order</textarea>
+	
+	<p class="changeColor" id="pmsg"></p>
+		
+	
+	<input type="submit" value="Submit" />
+		<br>
+
+<div id="BlockId">
+
+		<h2>5 - Store & Customer Space </h2>
+		
+		<h3>Choose your favorite Cd</h3>
 
 			<input type="button"
 			id="colorSwapper"
@@ -174,8 +94,74 @@
 			<input type="button"
 			id="colorSwapper"
 			value="Love - Michael Bublè" />
-			
-			
-	
 
-	
+		 <hr>
+		 
+		<h3>Opening Hours </h3>
+		
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th scope="row">Day</th>
+				<th scope="col">Morning</th>
+				<th scope="col">Afternoon</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th scope="row">Monday</th>
+				<td colspan="1" align="center">9 - 13</td>
+				<td colspan="2" align="center">15 - 18</td>
+			</tr>
+			<tr>
+				<th scope="row">Tuesday</th>
+				<td colspan="1" align="center">8:30 - 12:30</td>
+				<td colspan="2" align="center">15:30 - 18:30</td>
+			</tr>
+			<tr>
+				<th scope="row">Wednesday</th>
+				<td colspan="1" align="center">9 - 13</td>
+				<td colspan="2" align="center">14:30 - 17:30</td>
+				
+			</tr>
+
+			<tr>
+				<th scope="row">Thursday</th>
+				<td colspan="1" align="center">8:30 - 13</td>
+				<td colspan="2" align="center">15:30 - 18</td>
+				
+			</tr>
+
+			<tr>
+				<th scope="row">Friday</th>
+				<td colspan="1" align="center">9 - 13</td>
+				<td colspan="2" align="center">Closed</td>
+				
+			</tr>
+			
+			<tr>
+				<th scope="row">Saturday</th>
+				<td colspan="1" align="center">10 - 13:30</td>
+				<td colspan="2" align="center">15 - 19</td>
+				
+			</tr>
+			
+			<tr>
+				<th scope="row">Sunday</th>
+				<td colspan="1" align="center">Closed</td>
+				<td colspan="2" align="center">Closed</td>
+			</tr>
+			</tbody>
+		</table>
+		
+		<hr>
+		
+
+</div>
+<hr>
+
+
+</body>
+</html>
+
+

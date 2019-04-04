@@ -1,16 +1,15 @@
 body {
 	color:white;
 	font-style:Elvetica;
-	background: #ff5e5e;
 	
-	background-image:
+background-image:
 		url(https://upload.wikimedia.org/wikipedia/commons/6/63/Dispersion_prism.jpg);
-	
+
 	background-size:100%;
 	
 }
 
-h1, h2 {
+h1, h2, h3, h4, li, dt, dd {
 	color: #ffffff;
 	background: #ec1c65 ;
 }
@@ -24,9 +23,4 @@ a {
 	color: white;
 	background: #ec1c65;
 }
-
-.redcolor {
-	color: red;
-}
-
 
