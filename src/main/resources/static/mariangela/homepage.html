@@ -22,13 +22,13 @@
 
 		<br /> 
 		<br /> 
-		<a href="page.html"><input type="button" value="Episode IV" /></a> 
-		<a href="page1.html"><input type="button" value="Episode V" /></a> 
-		<a href="page2.html"><input type="button" value="Episode VI" /></a>
+		<a href="page.html"><input type="button" value="Episode IV" class="btn btn-warning" /></a> 
+		<a href="page1.html"><input type="button" value="Episode V" class="btn btn-danger" /></a> 
+		<a href="page2.html"><input type="button" value="Episode VI" class="btn btn-primary"/></a>
 	</div>
-	</br>
-	<div class="container box1" >
-		<h3 class = "black">Select your favourite character:</h3> 
+	<br>
+	<div class="container box1 rounded" >
+		<h4 class = "black">Select your favourite character:</h4> 
 			<input type="radio" name="character" value="Darth Vader" checked="checked" /> Darth Vader 
 			<input type="radio" name="character" value="C3PO" checked="checked" /> C3PO 
 			<input type="radio" name="character" value="R2-D2" checked="checked" /> R2-D2
@@ -36,17 +36,55 @@
 			<input type="radio" name="character" value="Chewbacca" checked="checked" /> Chewbacca 
 	</div>
 	
-	</br>
+	<br>
 	
 	<h1 class="yellow">Are you a fan?</h1>
-	</br>	
+	<br>
 	<div class="center">
-	<input type="button" id = "force" value="Click Here" />
+		<button type="button" id="force" class="btn btn-secondary btn-sm">Click here</button>
 	</div>
-	</br>
+	<br>
 	<div class="center">
-		<img id = "clone" class = "not-visible" src="/img/mariangela/clone.jpg"
+		<img id="clone" class="not-visible" src="/img/mariangela/clone.jpg"
 			width="150" height="150">
+	</div>
+	<br>
+	<div class="container-fluid" >
+		<table class ="table table-hover" >
+			<thead class = "thead-dark">
+				<tr>
+					<th scope="row"> </th>
+					<th scope="col">Title</th>
+					<th scope="col">Year</th>
+					<th scope="col">Director</th>
+					<th scope="col">Photography</th>
+					
+				</tr>
+			</thead>
+			<tr class="table-warning">
+				<th scope="row">Episode IV</th>
+				<td>A New Hope</td>
+				<td>1977</td>
+				<td>George Lucas</td>
+				<td>Gilbert Taylor</td>
+			</tr>
+
+			<tr class= "table-danger">
+				<th scope="row">Episode V</th>
+				<td>The Empire Strikes Back</td>
+				<td>1980</td>
+				<td>Irvin Kershner</td>
+				<td>Peter Suschitzky</td>
+			</tr>
+
+			<tr class = "table-primary">
+				<th scope="row">Episode VI</th>
+				<td>Return of The Jedi</td>
+				<td>1983</td>
+				<td>Richard Marquand</td>
+				<td>Alec Mills</td>
+			</tr>
+		</table>
 	</div>
 </body>
 
