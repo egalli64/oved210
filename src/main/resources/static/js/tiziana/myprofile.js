@@ -19,5 +19,6 @@ $(function() {
 		$('.changeColor').toggleClass('blueColor');
 	});
 	
+	
 	$('#header').slideDown(1000);
 });
