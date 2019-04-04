@@ -6,7 +6,7 @@ h2 {
 	color: white;
 }
 h3 {
-	color: black;
+	color: white;
 }
 h4 {
 	color: white;
@@ -15,5 +15,17 @@ fieldset {
 	color: white;
 }
 function {
+	color: white;
+}
+th {
+	color:white;
+}
+h6 {
+	color: white;
+}
+h7 {
+	color: white;
+}
+figcaption {
 	color: white;
 }
