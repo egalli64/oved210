@@ -13,29 +13,26 @@ import javax.persistence.Table;
 import donatella.jdbcSpring.Country;
 
 @Entity
-@Table(name="REGIONS")
+@Table(name = "REGIONS")
 public class Region {
 	@Id
-	@Column (name="REGION_ID")
+	@Column(name = "REGION_ID")
 	private long id;
-	
-	@Column (name="REGION_NAME")
-	private String name;
-	
-	@OneToMany(mappedBy="region", 
-			fetch=FetchType.EAGER, 
-			cascade=CascadeType.ALL)
-	Set<Country> countries;
-	
-	public Region() {
-}
 
-	public Set<Country> getCountries() {
-		return countries;
+	@Column(name = "REGION_NAME")
+	private String name;
+
+	@OneToMany(mappedBy = "region", 
+			fetch = FetchType.EAGER, 
+			cascade = CascadeType.ALL)
+	Set<Country> countries;
+
+	public Region() {
 	}
 
-	public void setCountries(Set<Country> countries) {
-		this.countries = countries;
+	public Region(long id, String name) {
+		this.id = id;
+		this.name = name;
 	}
 
 	public long getId() {
@@ -54,9 +51,16 @@ public class Region {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Region [id=" + id + ", name=" + name +   "]";
+	public Set<Country> getCountries() {
+		return countries;
 	}
 
+	public void setCountries(Set<Country> countries) {
+		this.countries = countries;
+	}
+
+	@Override
+	public String toString() {
+		return "Region [id=" + id + ", name=" + name + "]";
+	}
 }
