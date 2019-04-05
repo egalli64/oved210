@@ -21,6 +21,7 @@ public class Oved210Controller {
 		logger.warn("GET login attempt for user: " + user);
 
 		model.addAttribute("user", user);
+		model.addAttribute("password", password);
 		return "welcome";
 	}
 
