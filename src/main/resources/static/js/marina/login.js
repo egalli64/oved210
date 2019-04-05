@@ -1,14 +1,3 @@
-$(function(){
-
-
-$('#nice').click(function() {
-	$(this).val("Nice Choice!");
-});
-
-// $('#header').slideDown(1000);
-
-});
-
 function checkUser() {
 	let user = document.getElementById("userId");
 	let password = document.getElementById("pwdId");

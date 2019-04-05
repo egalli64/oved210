@@ -23,11 +23,15 @@ public class Region {
 	@OneToMany(mappedBy="region", fetch=FetchType.EAGER, cascade = CascadeType.ALL)
 	Set<Country> countries;
 	
-	
 	public Region() {
 		
 	}
 
+	public Region(long id, String name) {
+		this.id = id;
+		this.name = name;
+		
+	}
 	public long getId() {
 		return id;
 	}

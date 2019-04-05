@@ -1,7 +1,7 @@
 body {
-	background-color: #a8d8e1;
-	background-image: url('/img/marina/Piccolo-gatto.jpg');
-	background-size: 20% 30%;
+  background-image: linear-gradient(turquoise , white);
+  background-size: 100%;
+  text-align: center;
 }
 
 p {
@@ -9,9 +9,13 @@ p {
 }
 
 h1, h2, h3 {
-	color: black;
-	background-color: yellow;
+	color: white;
+	background-color: salmon;
 }
+table {
+	background-color:white;
+}
+
 
 #special {
 	color: violet;

@@ -10,13 +10,18 @@
 <script src="/js/marina/mypage.js" type="text/javascript"></script>
 </head>
 <body>
-
+<!--  log in form -->
 	<div class="container-fluid" >
 			<div class="row">
 			<div class="col-7"></div>
-			<div class="col-5 text-right"id="signup"><br><label>Username: <input type="text" name="user" maxlength="15">
-				</label> <label>Password: <input type="password" name="password"></label> 
+			<div class="col-5 text-right"id="signup"><br>
+			<form name="frmLog" action="/marina/login" method="post"
+			onsubmit="return checkUser()">
+			<label for="userId"> User name: <input type="text" name="user" maxlength="15" id="userId"
+			>
+				</label> <label for="pwdId">Password: <input type="password" name="password" id="pwdId"></label> 
 				<a href="http://linknull"><input type="submit" value="LOGIN"></a>
+			</form>
 			</div>
 			</div>
 			<div class="row">
@@ -27,6 +32,8 @@
 				</div>
 			</div>
 		</div>
+
+<!-- end log in form -->
 <br>
 
 	<img src="https://i.ytimg.com/vi/F1oHBcTdKL4/maxresdefault.jpg"

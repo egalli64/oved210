@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>A simple page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+type="text/css"
+th:href="@{/css/marina/simple.css}">
+</head>
+<body>
+	<h1>Something simple.</h1>
+
+<p>
+	These are the available regions:
+	<span th:text="${regions}">[]</span>
+</p>
+
+<p>
+	This is the first region in the list:
+	<span th:text="${regions[0]}"></span>
+</p>
+
+<p>
+	This is the first region in the list:
+	<div th:object="${regions[0]}">
+	<h6>Name: <span th:text ="*{name}"></span></h6>
+	</div>
+</p>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      </tr>
+  </thead>
+  <tbody>
+   	<tr th:each="region: ${regions}">
+	<td th:text="${region.id}"></td>
+	<td th:text="${region.name}"></td>
+	</tr>
+  </tbody>
+</table>
+		
+		<h3>Select Option</h3>
+	<select>
+		<option th:each="region: ${regions}"
+		th:value="${region.id}"
+		th:text="${region.name}">
+		</option>
+	</select>
+
+</body>
+</html>
