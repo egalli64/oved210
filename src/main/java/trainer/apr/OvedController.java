@@ -51,6 +51,8 @@ public class OvedController {
 		);
 
 		model.addAttribute("regions", regions);
+		model.addAttribute("errorMessage",
+				"Something went wrong");
 		return "trainer/simple";
 	}
 }
