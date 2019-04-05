@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	background-image: url('/img/sara/garganoimage.jpg');
 }
 h1 {
 	color: red;
@@ -8,7 +8,7 @@ h2 {
 	color: orange;
 }
 h3 {
-	color: #ffff00;
+	color: #ff80c0;
 }
 h4 {
 	color: #330fc6;

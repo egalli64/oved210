@@ -59,8 +59,7 @@ public class Oved210Controller {
 			new Region(2, "Antartica")
 		);
 		
-		logger.trace(regions.toString());
-
+		model.addAttribute("regions", regions);
 		return "sara/simple";
 	}
 }
