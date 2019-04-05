@@ -27,10 +27,18 @@ public class Region {
 			cascade = CascadeType.ALL )  //cascadeType serve per dire che deve riportare tutte le operazioni che faccio su country nella tabella 
 	Set<Country> countries;
 	
-	public Region() {
+	public Region() {   //costruttore di default
 		
 	}
 
+	public Region(long id, String name) {  // costruttore che inserisco per l' OvedController
+		this.id= id;
+		this.name= name;
+	}
+	
+	
+	
+	
 	public long getId() {
 		return id;
 	}

@@ -4,7 +4,7 @@ function checkUser(){
 	//controllo sull' user
 	 let user= document.getElementById("userId");
 	 
-	 if (user.value.length == 0 || user.char  ){
+	 if (user.value.length == 0){
 		 
 		 alert("User name is missing!"); //popup che indica l'errore
 		 user.focus(); // metti focus del controllo sull' user 
