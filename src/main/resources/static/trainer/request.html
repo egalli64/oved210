@@ -3,35 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome here!</title>
+<script src="/js/trainer/login.js"></script>
 </head>
 <body>
 	<h1>Welcome to Oved!</h1>
 	<fieldset>
 		<legend>Hello</legend>
-		<form name="frmLog" action="/login" method="post"
+		<form name="frmLog"
+			action="/trainer/login"
+			method="post"
 			onsubmit="return checkUser()">
 			<div>
 				<label for="userId">User:</label>
 				<input name="user" id="userId">
 				<label for="pwdId">Password:</label>
 				<input name="password" id="pwdId" type="password">
-			</div>
-			<div>
-				<button>Check in</button>
-			</div>
-		</form>
-	</fieldset>
-
-	<fieldset>
-		<legend>GET is not a good idea here</legend>
-		<form action="/login" method="get">
-			<div>
-				<label>User:
-					<input name="user" />
-				</label>
-				<label>Password:
-					<input name="password" type="password">
-				</label>
 			</div>
 			<div>
 				<button>Check in</button>
