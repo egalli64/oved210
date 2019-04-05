@@ -1,5 +1,7 @@
-package trainer.jdbcSpring;
+package sara.jdbcSpring;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -24,9 +26,6 @@ public class Region {
 			fetch = FetchType.EAGER, 
 			cascade = CascadeType.ALL)
 	Set<Country> countries;
-
-	public Region() {
-	}
 
 	public Region(long id, String name) {
 		this.id = id;

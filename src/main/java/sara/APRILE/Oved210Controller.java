@@ -1,8 +1,7 @@
-package trainer.apr;
+package sara.APRILE;
 
 import java.util.Arrays;
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,11 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import trainer.jdbcSpring.Region;
+import sara.jdbcSpring.Region;
 
 @Controller
-public class OvedController {
-	private static final Logger logger = LoggerFactory.getLogger(OvedController.class);
+public class Oved210Controller {
+	private static final Logger logger = LoggerFactory.getLogger(Oved210Controller.class);
 
 	@Value("${admin}")
 	private String admin;
@@ -24,7 +23,19 @@ public class OvedController {
 	@Value("${admin.password}")
 	private String adminPassword;
 
-	@PostMapping("/trainer/login")
+	@GetMapping("/sara/login")
+	public String loginByGet( //
+			@RequestParam(name = "user", defaultValue = "Unknown") String user, //
+			@RequestParam(name = "password") String password, //
+			Model model) {
+		logger.warn("GET login attempt for user: " + user);
+
+		model.addAttribute("user", user);
+		model.addAttribute("password", password);
+		return "/sara/welcome";
+	}
+
+	@PostMapping("/sara/login")
 	public String login( //
 			@RequestParam(name = "user") String user, //
 			@RequestParam(name = "password") String password, //
@@ -33,24 +44,23 @@ public class OvedController {
 		model.addAttribute("user", user);
 
 		if (user.equals(admin) && password.equals(adminPassword)) {
-			return "trainer/welcome";
+			return "sara/welcome";
 		}
 
-		logger.info("No login for " + user + "/" + password);
-		return "trainer/rejected";
+		return "sara/notWelcome";
 	}
 
-	@GetMapping("/trainer/simple")
+	@GetMapping("/sara/simple")
 	public String simple(Model model) {
 		logger.trace("Enter simple()");
 
-		// JPA emulation
 		List<Region> regions = Arrays.asList(
-			new Region(1, "Europe"),
+			new Region(1, "Europe"), 
 			new Region(2, "Antartica")
 		);
+		
+		logger.trace(regions.toString());
 
-		model.addAttribute("regions", regions);
-		return "trainer/simple";
+		return "sara/simple";
 	}
 }

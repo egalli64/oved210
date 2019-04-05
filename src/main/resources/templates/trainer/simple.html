@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>A simple page</title>
+</head>
+<body>
+	<h1>Something simple</h1>
+	
+	<p>
+		These are the available regions:
+		<span th:text="${regions}">[]</span>
+	</p>
+	
+	<p>
+		This is the first region in the list:
+		<span th:text="${regions[0]}">Europe</span>
+	</p>
+	<p>
+		This is the first region in the list:
+		<div th:object="${regions[0]}">
+			Name: <span th:text="*{name}"></span>
+		</div>
+	</p>
+	
+</body>
+</html>
