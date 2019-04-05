@@ -1,0 +1,53 @@
+body {
+	background-color: #cbff97;
+}
+
+p {
+	font-family: monospace;
+	color: blue;
+}
+
+h1, h2, h3 {
+	background-color: #ff80c0;
+	color: yellow;
+}
+
+#special {
+	color: violet;
+}
+
+p.myClass {
+	color: red;
+}
+
+table {
+	font-family: monospace;
+	color: red;
+}
+
+fieldset {
+	font-family: serif;
+	color: red;
+}
+
+ol {
+	font-family: monospace;
+	color: blue;
+}
+
+#blockId {
+	background-color: white;
+}
+
+#spanId {
+	color: pink;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+.red {
+	color: red;
+}

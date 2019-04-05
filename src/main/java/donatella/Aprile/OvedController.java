@@ -1,7 +1,8 @@
-package sara.APRILE;
+package donatella.Aprile;
 
 import java.util.Arrays;
 import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,19 +12,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import sara.jdbcSpring.Region;
+import donatella.jdbcSpring.entities.Region;
 
 @Controller
-public class Oved210Controller {
-	private static final Logger logger = LoggerFactory.getLogger(Oved210Controller.class);
-
+public class OvedController {
+	private static final Logger logger = LoggerFactory.getLogger(OvedController.class);
 	@Value("${admin}")
 	private String admin;
 
 	@Value("${admin.password}")
 	private String adminPassword;
 
-	@GetMapping("/sara/login")
+	// this is not a good idea!
+	@GetMapping("/donatella/login")
 	public String loginByGet( //
 			@RequestParam(name = "user", defaultValue = "Unknown") String user, //
 			@RequestParam(name = "password") String password, //
@@ -31,35 +32,31 @@ public class Oved210Controller {
 		logger.warn("GET login attempt for user: " + user);
 
 		model.addAttribute("user", user);
-		model.addAttribute("password", password);
-		return "/sara/welcome";
+		return "donatella/welcome";
 	}
 
-	@PostMapping("/sara/login")
-	public String login( //
-			@RequestParam(name = "user") String user, //
-			@RequestParam(name = "password") String password, //
+	@PostMapping("/donatella/login")
+	public String login(@RequestParam(name = "user") String user, @RequestParam(name = "password") String password,
 			Model model) {
 		logger.debug("Login attempt for user: " + user);
 		model.addAttribute("user", user);
 
-		if (user.equals(admin) && password.equals(adminPassword)) {
-			return "sara/welcome";
-		}
+		if (user.equals(admin) && password.equals(adminPassword))
+			;
 
-		return "sara/notWelcome";
+		return "donatella/welcome";
+
 	}
 
-	@GetMapping("/sara/simple")
+	@GetMapping("/donatella/simple")
 	public String simple(Model model) {
 		logger.trace("Enter simple()");
 
-		List<Region> regions = Arrays.asList(
-			new Region(1, "Europe"), 
-			new Region(2, "Antartica")
-		);
-		
+//	JPA emulation:
+		List<Region> regions = Arrays.asList(new Region(1, "Europe"), new Region(2, "Antartica"));
+
 		model.addAttribute("regions", regions);
-		return "sara/simple";
+
+		return "donatella/simple";
 	}
 }

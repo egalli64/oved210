@@ -27,6 +27,9 @@ public class Region {
 			cascade = CascadeType.ALL)
 	Set<Country> countries;
 
+	public Region() {
+	}
+	
 	public Region(long id, String name) {
 		this.id = id;
 		this.name = name;
