@@ -3,7 +3,7 @@
 $(function() {
 
 	//funzioni per myBlog
-	$('#header').slideDown(1000);
+	//$('#header').slideDown(1000);
 
 	
 	
@@ -18,3 +18,5 @@ $(function() {
 	});
 
 });
+
+
