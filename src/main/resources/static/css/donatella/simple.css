@@ -12,8 +12,8 @@ p {
 }
 
 h1, h2, h3 {
-	background-color:yellow;
-	color: #ffff00;
+	background-color:blue;
+	color: #ff0000;
 }
 
 #special {
@@ -25,7 +25,7 @@ h1, h2, h3 {
 }
 
 p.myClass {
-	color: yellow;
+	color: red;
 }
 blockId{
 	background-color: pink;

@@ -24,9 +24,9 @@ public class OvedController {
 	private String adminPassword;
 	
 	@PostMapping("/marina/login")
-	public String login( //
-			@RequestParam(name = "user") String user, //
-			@RequestParam(name = "password") String password, //
+	public String login( 
+			@RequestParam(name = "user") String user, 
+			@RequestParam(name = "password") String password, 
 			Model model) {
 		logger.debug("Login attempt for user: " + user);
 
