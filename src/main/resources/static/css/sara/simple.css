@@ -1,5 +1,6 @@
 body {
-	background-color: #ffffa6;
+	background-image: url('/img/sara/fiori.jpg');
+	background-size: 100% 100%;
 }
 h1 {
 	color: red;
