@@ -24,4 +24,25 @@ public class MathController {
 		
 		return "/sara/result";
 	}
+		
+	@GetMapping("/sara/double")
+	public String value(
+			@RequestParam double a, //
+			@RequestParam double b, //
+			@RequestParam double c, //
+			Model model) { //
+		
+		double max = Math.max(Math.max(a, b), c);
+		double min = Math.min(Math.min(a, b), c);
+			
+		
+		model.addAttribute("max", max); 
+		model.addAttribute("min", min);
+		model.addAttribute("avg", (a + b + c)/3);
+		
+		return "/sara/result";
+	}
 }
+	
+	
+
