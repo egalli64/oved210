@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Result</title>
+</head>
+<body>
+	<h1 th:text="'Result of ' + ${x} + ' + ' + ${y} + ' = ' + ${result}"></h1>
+	<p>Adding <span th:text= "${x}"></span>
+	with <span th:text= "${y}"></span>
+	leads to <span th:text= "${result}"></span>
+	</p>
+
+</body>
+</html>

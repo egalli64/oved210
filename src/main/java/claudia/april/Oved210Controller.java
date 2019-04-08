@@ -1,5 +1,8 @@
 package claudia.april;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import claudia.jdbcSpring.entities.Region;
 
 @Controller
 public class Oved210Controller {
@@ -55,5 +60,18 @@ public class Oved210Controller {
 		
 		return "claudia/notWelcome";
 	}
-	
+	@GetMapping("/claudia/simple")
+	public String simple(Model model) {
+		logger.trace("Enter simple()");
+		
+		//JPA emulation
+		List<Region> regions = Arrays.asList(
+				new Region(1, "Europe"),
+				new Region(2, "Americas")
+				);
+		
+		model.addAttribute("regions", regions);
+		logger.trace(regions.toString());
+		return "claudia/simple";
+	}
 }
