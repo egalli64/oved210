@@ -1,11 +1,11 @@
 body{
-	background-image: linear-gradient(to top right, #000040 0%, #8080ff 50%, #ffffff 100%);
+	background-image: linear-gradient(to top right, #ffffff 0%, #b6e9f3 50%, #ffffff 100%);
    
 }
 
 h1, h2, h3{
 	color: #4aafec;
-	
+
 }
 
 p {
