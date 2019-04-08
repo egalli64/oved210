@@ -1,7 +1,4 @@
-package donatella.Aprile;
-
-import java.util.Arrays;
-import java.util.List;
+package gloria.APRILE;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,19 +9,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import donatella.jdbcSpring.entities.Region;
 
 @Controller
-public class OvedController {
-	private static final Logger logger = LoggerFactory.getLogger(OvedController.class);
+public class Oved210Controller {
+	private static final Logger logger = LoggerFactory.getLogger(Oved210Controller.class);
+
 	@Value("${admin}")
 	private String admin;
 
 	@Value("${admin.password}")
 	private String adminPassword;
 
-	// this is not a good idea!
-	@GetMapping("/donatella/login")
+	@GetMapping("/gloria/login")
 	public String loginByGet( //
 			@RequestParam(name = "user", defaultValue = "Unknown") String user, //
 			@RequestParam(name = "password") String password, //
@@ -32,31 +28,35 @@ public class OvedController {
 		logger.warn("GET login attempt for user: " + user);
 
 		model.addAttribute("user", user);
-		return "donatella/welcome";
+		model.addAttribute("password", password);
+		return "/gloria/welcome";
 	}
 
-	@PostMapping("/donatella/login")
-	public String login(@RequestParam(name = "user") String user, @RequestParam(name = "password") String password,
+	@PostMapping("/gloria/login")
+	public String login( //
+			@RequestParam(name = "user") String user, //
+			@RequestParam(name = "password") String password, //
 			Model model) {
 		logger.debug("Login attempt for user: " + user);
 		model.addAttribute("user", user);
 
-		if (user.equals(admin) && password.equals(adminPassword))
-			;
+		if (user.equals(admin) && password.equals(adminPassword)) {
+			return "gloria/welcome";
+		}
 
-		return "donatella/welcome";
-
+		return "gloria/notWelcome";
 	}
 
-	@GetMapping("/donatella/simple")
+	@GetMapping("/gloria/simple")
 	public String simple(Model model) {
 		logger.trace("Enter simple()");
 
-//	JPA emulation:
-		List<Region> regions = Arrays.asList(new Region(1, "Europe"), new Region(2, "Antartica"));
-
-		model.addAttribute("regions", regions);
-
-		return "donatella/simple";
+//		List<Region> regions = Arrays.asList(
+//			new Region(1, "Europe"), 
+//			new Region(2, "Antartica")
+//		);
+		
+//		model.addAttribute("regions", regions);
+		return "gloria/simple";
 	}
 }
