@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import tiziana.jdbcSpring.Region;
 
 @Controller
-public class Oved210Controller {
-	private static final Logger logger = LoggerFactory.getLogger(Oved210Controller.class);
+public class OvedController {
+	private static final Logger logger = LoggerFactory.getLogger(OvedController.class);
 
 	@Value("${admin}")
 	private String admin;
@@ -77,3 +77,8 @@ public class Oved210Controller {
 		return "welcome";
 	}
 }
+
+
+
+
+

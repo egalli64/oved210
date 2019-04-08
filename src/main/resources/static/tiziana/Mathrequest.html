@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome here!</title>
+</head>
+<body>
+	<h1>Welcome to My AddRequest!</h1>
+	<fieldset>
+	<form name="frmLog" action="/tiziana/add" method="get"
+		onsubmit="return add()">
+		<div>
+			<label for="numberFirst">Number1:</label> 
+			<input name="x" id="numberFirst" type=number> 
+			<label for="numberSecond">Number2:</label> 
+			<input name="y" id="numberSecond" type=number>
+		</div>
+		<div>
+			<button>Result</button>
+		</div>
+	</form>
+	</fieldset>
+	
+	
+	<h1>Welcome to My Operations!</h1>
+	<fieldset>
+	<form name="frmLog" action="/tiziana/functions" method="get"
+		onsubmit="return operations()">
+		<div>
+			<label for="numberFirst">Number1:</label> 
+			<input name="a" id="numberFirst" type=number> 
+			<label for="numberSecond">Number2:</label> 
+			<input name="b" id="numberSecond" type=number>
+			<label for="numberThird">Number3:</label> 
+			<input name="c" id="numberThird" type=number>
+		</div>
+		<div>
+			<button>Result</button>
+		</div>
+	</form>
+	</fieldset>
+	
