@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Math!</title>
+<script src="/js/mariangela/login.js"></script>
+</head>
+<body>
+
+	<h1>Welcome to my Math!</h1>
+	<fieldset>
+	<legend>Let's add!</legend>
+		<form name="frmLog" action="/mariangela/form" method="get"
+		onsubmit="return checkResult()">
+			<div>
+				<label for="x">First:</label>
+				<input name="x" id="x" type = "number">
+				<label for="y">Second:</label>
+				<input name="y" id="y" type = "number">
+			</div>
+			<div>
+				<button>Add</button>
+			</div>
+		</form>
+	</fieldset>
+
+
+
+		<fieldset>
+	<legend>Let's find avg!</legend>
+		<form name="frmLog" action="/mariangela/avg" method="get"
+		onsubmit="return checkAvg()">
+			<div>
+				<label for="x">First:</label>
+				<input name="x" id="x" type = "number" step= "0.01">
+				<label for="y">Second:</label>
+				<input name="y" id="y" type = "number" step= "0.01">
+				<label for="z">Third:</label>
+				<input name="z" id="z" type = "number" step= "0.01">
+			</div>
+			<div>
+				<button>Avg</button>
+			</div>
+		</form>
+	</fieldset>
+</body>
+</html>
