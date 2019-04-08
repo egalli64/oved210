@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Welcome to MyAdder</title>
+</head>
+<body>
+
+	<h1
+		th:text="'Hello, the first value is ' + ${x} + ', the second value is ' + ${y} + ', so the result is ' + ${result}">Hello!</h1>
+
+<p>Adding <span th:text = "${x} ">1</span>with <span th:text = " ${y}">2</span> leads to <span th:text = " ${result}">3</span> </p>
+</body>
+</html>
