@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>A simple page</title>
+<link rel="stylesheet"
+type="text/css"
+th:href="@{/css/elmonda/simple.css}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h1> Something simple</h1>
+	
+	<p>
+		There are the available regions:
+		<span th:text="${regions}">[]</span>
+	</p>
+	
+	<p>
+		This is the first region in the list:
+		<span th:text="${regions[0]}">Europe</span>
+	</p>
+	
+	<div>
+		This is the first region in the list:
+		<div th:object="${regions[0]}">
+			Name:
+			 <span th:text="*{name}"></span>
+		    <!-- elemento fittizo per permetterci di fare cose particolari, <th:block> --specializzato per elementi particolari di thymeleaf -->
+			Id:
+			<th:block th:switch="*{id}"> <!-- ID COLLEGATO ALL'ELEMENTO CORRENTE  EVIENE CONFRONTATO CON QULLO DEL CASE CHE SEGUEvoglio fare uno switch sul suo nome -->
+				<span th:case="1">I</span>
+				<span th:case="2">II</span>
+				<span th:case="*">III</span>
+			</th:block>
+		</div>
+	</div>
+	<h3>Table</h3>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+		</tr>
+		<tr th:each="region:${regions}"> <!-- ad ogni interazione dovrà cambiare , me la popolerà con tante righe quante sono le mie regioni-->
+			<td th:text="${region.id}"></td>
+			<td th:text="${region.name}"></td>
+		</tr>
+	</table>
+	
+	<h3>Select-Option</h3> <!-- option per ogni regione, metterò un valore che non è visibile e verrà passato se selezionato -->
+	<select>
+		<option th:each="region: ${regions}"
+		th:value="${region.id}"
+		th:text="${region.name}">
+		</option>
+	</select>
+	
+
+
+<div>
+				<table class="table table-hover table-bordered table-danger table-striped">
+
+					<thead class="thead-light">
+						<tr>
+							<th scope="row">I NUMERI DELLE REGIONI</th>
+							<th scope="col">PRODOTTI</th>
+							<th scope="col">VENDITE</th>
+							<th scope="col">TREND</th>
+						</tr>
+					</thead>
+					<tr>
+						<th scope="row"></th>
+						<td>14.6K</td>
+						<td>30000</td>
+						<td>$$$</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Giulia Gaudino</th>
+						<td>1K</td>
+						<td>554</td>
+						<td>$$$</td>
+					</tr>
+
+					<tr>
+						<th scope="row">Giulia De Lellis</th>
+						<td>3K</td>
+						<td>25666</td>
+						<td>$$$</td>
+					</tr>
+				</table>
+		
+			
+		</div>
+			
+			
+			
+		
+	
+</body>
+</html>
