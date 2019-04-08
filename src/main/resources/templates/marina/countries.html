@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Countries</title>
+
+</head>
+<body>
+<p>
+	<h6>These are the countries:</h6>
+	<span th:text="${countries}">[]</span>
+</p>
+
+<p>
+<div th:each="country: ${countries}">
+	This is the id:
+	<p th:text="${country.countryId}"></p>
+		These is the name: 
+	
+	<p th:text="${country.countryName}"></p>
+
+</div>
+
+</body>
+</html>

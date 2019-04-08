@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Regions</title>
+
+</head>
+<body>
+<p>
+	<h6>These are the regions:</h6>
+	<span th:text="${regions}">[]</span>
+</p>
+
+<p>
+<div th:each="region: ${regions}">
+	This is the id:
+	<p th:text="${region.regionId}"></p>
+		These is the name: 
+	
+	<p th:text="${region.regionName}"></p>
+
+</div>
+
+</body>
+</html>
