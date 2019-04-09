@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/francesca/simple.css}">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Green Hotel</h1>
+		<p>
+			These are the available Green Hotel: <span th:text="${greenhotel}">[]</span>
+		</p>
+
+		<p>
+			This is the first Hotel in the list: <span th:text="${greenhotel[0]}">HotelTulipano</span>
+		</p>
+		<div>
+			This is the first Hotel in the list:
+			<div th:object="${greenhotel[0]}">
+				Name: <span th:text="*{hotelName}"></span> <br /> Id :
+				<th:block th:switch="*{hotelId}">
+					<span th:case="1">I</span>
+					<span th:case="2">II</span>
+					<span th:case="*">III</span>
+				</th:block>
+			</div>
+		</div>
+
+		<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+			<tr th:each="greenhotel: ${hotels}">
+				<td th:text="${hotels.hotelId}"></td>
+				<td th:text="${hotels.hotelName}"></td>
+			</tr>
+		</table>
+
+		<h3>Select-Option</h3>
+		<select>
+			<option th:each="greenhotel: ${hotels}" th:value="${hotels.hotelId}"
+				th:text="${hotels.hotelName}"></option>
+		</select>
+	</div>
+</body>
+</html>
