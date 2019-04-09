@@ -1,9 +1,9 @@
---setup Clients TABLE
+-- setup Clients TABLE
 
 --create table
 CREATE TABLE clients (
 client_id NUMBER (4) CONSTRAINT clients_pk PRIMARY KEY,
-client_Name varchar2(100),
+clientName varchar2(100),
 email varchar2(50),
 phone NUMBER (25),
 hotel_id NUMBER (6) CONSTRAINT clients_hotel_id_fk REFERENCES hotels(hotel_id)
