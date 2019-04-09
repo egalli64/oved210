@@ -15,11 +15,11 @@ public class GreenClientsController {
 	@Autowired
 	private GreenClientsRepository repo;
 	
-	@GetMapping("/elmonda/clients")
+	@GetMapping("/project/green/clients")
 	public String allClients(Model model) {
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());
-		return "/elmonda/clients"; 
+		return "/project/green/clients"; 
 	}
 	
 
