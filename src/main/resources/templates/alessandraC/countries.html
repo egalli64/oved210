@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/alessandraC/simple.css}">
+</head>
+<body>
+
+<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+			<tr th:each="region: ${regions}">
+				<td th:text="${region.regionId}"></td>
+				<td th:text="${region.regionName}"></td>
+			</tr>
+		</table>
+
+		<h3>Select-Option</h3>
+		<select>
+			<option th:each="region: ${regions}" th:value="${region.regionId}"
+				th:text="${region.regionName}"></option>
+		</select>
+	</div>
+</body>
+</html>
