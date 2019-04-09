@@ -56,6 +56,59 @@
 		<option th:each="region:${regions}" th:value="${region.id}"
 			th:text="${region.name}"></option>
 	</select>
+	
+	
+	
+
+	<p>
+		These are the available countries: <span th:text="${countries}">[]
+		</span>
+
+	</p>
+
+	<p>
+		This is the first country in the list: <span th:text="${countries[0]}">Europe</span>
+	</p>
+
+
+	<div>
+		This is the first country in the list:
+		<div th:object="${countries[0]}">
+
+
+			Name: <span th:text="*{name}"></span> <br /> Id:
+			<th:block th:switch="*{id}">
+				<span th:case="1">I</span>
+				<span th:case="2">II</span>
+				<span th:case="2">III</span>
+			</th:block>
+		</div>
+	</div>
+
+
+	<h3>Table</h3>
+	<table>
+
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+
+		</tr>
+		<tr th:each="country:${countries}">
+			<!-- è come se stessi facendo un for each -->
+
+			<td th:text="${country.id}"></td>
+			<td th:text="${country.name}"></td>
+		</tr>
+	</table>
+
+	<h3>Select-Option</h3>
+
+	<select>
+		<option th:each="country:${countries}" th:value="${country.id}"
+			th:text="${country.name}"></option>
+	</select>
+	
 
 </body>
 </html>
