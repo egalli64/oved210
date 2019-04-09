@@ -14,10 +14,10 @@ public class GreenhotelController {
 	@Autowired
 	private GreenhotelRepository repo;
 
-	@GetMapping("/project/green/hotels")
-	public String allGreen(Model model) {
-		log.trace("get all green");
-		model.addAttribute("green", repo.findAll());
-		return "/project/green/hotels";
+	@GetMapping("/project/green/GreenHotel")
+	public String allGreenHotels(Model model) {
+		log.trace("get all GreenHotel");
+		model.addAttribute("GreenHotel", repo.findAll());
+		return "/project/green/GreenHotel";
 	}
 }
