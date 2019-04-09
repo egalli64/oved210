@@ -51,11 +51,6 @@ public class BlueClient {
 
 
 
-
-
-
-
-
 	public Long getPhone() {
 		return phone;
 	}

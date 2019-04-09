@@ -58,13 +58,13 @@ client_Name varchar2(100),
 email varchar2(50),
 phone NUMBER (25))
 
-DROP TABLE clients;
+--DROP TABLE clients;
 
 CREATE SEQUENCE Blue_clients_seq;
 
 SELECT Blue_clients_seq.nextval
 FROM dual;
-DROP SEQUENCE clients_seq
+--DROP SEQUENCE clients_seq
 
 INSERT INTO Blue_clients
 VALUES (1, 'Alan Brie', 'a.brie@gmail.com',3675626954)
@@ -92,14 +92,14 @@ client_id number (4) references Blue_clients(client_id),
 availability date,
 payment number (5, 2) 
 );
-DROP TABLE blue_bookings;
+--DROP TABLE blue_bookings;
 create sequence Blue_bookings_seq
 start with 1 increment by 1;
 
 SELECT Blue_bookings_seq.nextval
 FROM dual;
 
-DROP SEQUENCE Blue_bookings_seq;
+--DROP SEQUENCE Blue_bookings_seq;
 
 insert into Blue_bookings(booking_id, client_id, hotel_id, availability, payment)
 values (1, 1, 1,'01-APR-2019', 70.50);
