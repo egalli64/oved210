@@ -13,6 +13,9 @@ import org.slf4j.LoggerFactory;
 public class BlueController {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 
+	
+	//controller Clients
+	
 	@Autowired
 	private BlueClientRepository blue;
 
@@ -33,4 +36,32 @@ public class BlueController {
 		return "project/blue/clients";
 	}
 
+	
+	//controller Hotels
+	
+	@Autowired
+	private BlueHotelRepository hot;
+	
+	@GetMapping("/project/blue/hotels")
+	public String allHotels(Model model) {
+		log.trace("get all hotels");
+		model.addAttribute("hotels", hot.findAll());
+		return "project/blue/hotels";
+	}
+	
+	//controller Bookings
+	
+	@Autowired
+	private BlueBookingRepository boo;
+	
+	@GetMapping("/project/blue/bookings")
+	public String allBookings(Model model) {
+		log.trace("get all bookings");
+		model.addAttribute("bookings", boo.findAll());
+		return "project/blue/bookings";
+	}
+	
+	
+	
+	
 }

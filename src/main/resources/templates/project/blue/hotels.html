@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Hotels</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css"
+	href="/css/project/blue.css" />
+	</head>
+
+<body>
+	<h3>Table Hotels</h3>
+	<table class="table">
+		<tr>
+			<th>Hotel Id</th>
+			<th>Hotel Name</th>
+			<th>City</th>
+			<th>Rooms</th>
+		</tr>
+		<tr th:each="hotel: ${hotels}">
+			<td th:text="${hotel.hotelId}"></td>
+			<td th:text="${hotel.hotelName}"></td>
+			<td th:text="${hotel.city}"></td>
+			<td th:text="${hotel.roomCounter}"></td>
+		</tr>
+	</table>
+</body>
