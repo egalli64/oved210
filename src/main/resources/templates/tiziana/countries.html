@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/tiziana/hello.css}">
+</head>
+<body>
+
+		<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>COUNTRY_ID</th>
+				<th>COUNTRY_NAME</th>
+				<th>REGION_ID</th>
+			</tr>
+			<tr th:each="country: ${countries}">
+				<td th:text="${country.countryId}"></td>
+				<td th:text="${country.countryName}"></td>
+				<td th:text="${country.regionId}"></td>
+			</tr>
+		</table>
+		
+</body>
+</html>

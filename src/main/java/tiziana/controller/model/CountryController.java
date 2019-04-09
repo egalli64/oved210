@@ -15,7 +15,7 @@ package tiziana.controller.model;
 		private CountryRepository repo;
 		
 		@GetMapping("tiziana/countries")
-		public String allCountriess(Model model) {
+		public String allCountries(Model model) {
 			log.trace("get all countries");
 			model.addAttribute("countries", repo.findAll());
 			return "tiziana/countries";

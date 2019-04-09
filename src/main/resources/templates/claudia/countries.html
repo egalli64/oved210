@@ -7,71 +7,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 <body>
-	<h1>Something simple...</h1>
+	<h1>Something about countries...</h1>
 	
 	<p>
-		These are the available regions:
-		<span th:text="${regions}">[]</span>
-	</p>
-	<p>
-		This is the first region in the list:
-		<span th:text="${regions[0]}">Europe</span>
-		</p>
-		<p>This is the first region in the list:
-		<div th:object="${regions[0]}">
-		Name: <span th:text="*{name}"></span>
-			<br />
-			Id: <th:block th:switch="*{id}">
-				<span th:case="1">I</span>
-				<span th:case="2">II</span>
-				<span th:case="*">III</span>
-			</th:block>
-		</div>
-		
-		
-		
-		
-		<div class="container-fluid my3">
-		<h3>Table</h3>
-		<table class="table table-bordered table-success">
-		<thead>
-		<tr>
-		<th>ID</th>
-		<th>NAME</th>
-		</tr>
-		</thead>
-		
-			<tr th:each="region: ${regions}">
-					<td th:text="${region.id}"></td>
-					<td th:text="${region.name}"></td>	
-				</tr>
-				</table>
-	
-	</div>
-	
-		<h3>Table</h3>
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>NAME</th>
-				</tr>
-				
-				<tr th:each="region: ${regions}">
-					<td th:text="${region.id}"></td>
-					<td th:text="${region.name}"></td>	
-				</tr>
-		</table>
-		
-		<h3>Select Options</h3>
-		<select>
-			<option th:each="region: ${regions}"
-			th:value="${region.id}"
-			th:text="${region.name}">
-			</option>
-		
-		</select>
-		
-		<p>
 		These are the available countries:
 		<span th:text="${countries}">[]</span>
 	</p>
@@ -129,8 +67,5 @@
 			</option>
 		
 		</select>
-		
-		
-		
 </body>
 </html>

@@ -25,7 +25,7 @@ public class OvedController {
 	@Value("${admin.password}")
 	private String adminPassword;
 
-	@RequestMapping(path = "/trainer/")
+	@RequestMapping(value = {"/trainer", "/trainer/"})
 	public String getAdminUi() {
 		return "/trainer/index.html";
 	}
