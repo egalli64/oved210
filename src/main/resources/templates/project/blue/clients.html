@@ -20,7 +20,7 @@
 				<th>Phone</th>
 				
 			</tr>
-			<tr th:each=": ${clients}">
+			<tr th:each="BlueClient: ${BlueClients}">
 				<td th:text="${BlueClients.clientId}"></td>
 				<td th:text="${BlueClients.clientName}"></td>
 				<td th:text="${BlueClients.email}"></td>
