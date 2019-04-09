@@ -22,7 +22,7 @@
 		<div>
 			This is the first region in the list:
 			<div th:object="${countries[0]}">
-				Name: <span th:text="*{countrynName}"></span> <br /> Id :
+				Name: <span th:text="*{countryName}"></span> <br /> Id :
 				<th:block th:switch="*{countryId}">
 					<span th:case="1">I</span>
 					<span th:case="2">II</span>

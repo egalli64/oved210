@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/monicaCss/simple.css}">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Countries</h1>
+		<p>
+			These are the available countries: <span th:text="${countries}">[]</span>
+		</p>
+
+
+		<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+			<tr th:each="country: ${countries}">
+				<td th:text="${country.countryId}"></td>
+				<td th:text="${country.countryName}"></td>
+			</tr>
+		</table>
+
+		<h3>Select-Option</h3>
+		<select>
+			<option th:each="country: ${countries}" th:value="${country.countryId}"
+				th:text="${country.countryName}"></option>
+		</select>
+	</div>
+</body>
+</html>

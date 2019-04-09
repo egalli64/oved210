@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Clients</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+
+<body>
+<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>Client_Id</th>
+				<th>Client_Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Hotel_id</th>
+			</tr>
+			<tr th:each=": ${clients}">
+				<td th:text="${BlueClients.clientId}"></td>
+				<td th:text="${BlueClients.clientName}"></td>
+				<td th:text="${BlueClients.email}"></td>
+				<td th:text="${BlueClients.phone}"></td>
+				<td th:text="${BlueClients.hotelId}"></td>
+			</tr>
+		</table>
+
+
+
+
+
+</body>
