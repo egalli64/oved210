@@ -1,4 +1,4 @@
--- setup Clients TABLE
+--setup Clients TABLE
 
 --create table
 CREATE TABLE clients (
