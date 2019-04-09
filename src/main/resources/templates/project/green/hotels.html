@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>GreenHotel</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/francesca/simple.css}">
+</head>
+<body>
+	
+
+		<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+			<tr th:each="hotel: ${hotels}">
+				<td th:text="${hotel.hotelId}"></td>
+				<td th:text="${hotel.hotelName}"></td>
+			</tr>
+		</table>
+
+		<h3>Select-Option</h3>
+		<select>
+			<option th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+				th:text="${hotel.hotelName}"></option>
+		</select>
+
+</body>
+</html>
