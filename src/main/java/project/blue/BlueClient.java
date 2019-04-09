@@ -13,21 +13,11 @@ public class BlueClient {
 	private String clientName;
 	private String email;
 	private Long phone;
-	private Long hotelId;
+	
 	
 	public BlueClient() {
 		
 	}
-
-	
-
-	@Override
-	public String toString() {
-		return "BlueClient [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone="
-				+ phone + ", hotelId=" + hotelId + "]";
-	}
-
-
 
 	public Long getClientId() {
 		return clientId;
@@ -53,6 +43,19 @@ public class BlueClient {
 		this.email = email;
 	}
 
+	@Override
+	public String toString() {
+		return "BlueClient [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone="
+				+ phone + "]";
+	}
+
+
+
+
+
+
+
+
 	public Long getPhone() {
 		return phone;
 	}
@@ -61,13 +64,7 @@ public class BlueClient {
 		this.phone = phone;
 	}
 
-	public Long getHotelId() {
-		return hotelId;
-	}
-
-	public void setHotelId(Long hotelId) {
-		this.hotelId = hotelId;
-	}
+	
 }
 
 

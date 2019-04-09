@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Welcome to Thymeleaf</title>
+</head>
+<body>
+<h1>Welcome to my add!</h1>
+	<fieldset>
+	<legend> My add</legend>
+	<form name="frmAdd"
+		action="/elmonda/add"
+		method="get"
+		onsubmit="return add()">
+		<div>
+		<label for="a">A:</label>
+		<input name="a" type="number">
+		<label for="b">B:</label>
+		<input name="b" type="number">
+		<label for="c">C:</label>
+		<input name="c" type="number">
+		</div>
+		<div>
+		<button>Add</button> 
+		</div>
+		</form>
+		</fieldset>
+</body>
+</html>

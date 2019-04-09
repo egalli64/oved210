@@ -5,6 +5,9 @@
 <title>Clients</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css"
+	href="/css/project/blue.css" />
 	</head>
 
 <body>
@@ -15,14 +18,14 @@
 				<th>Client_Name</th>
 				<th>Email</th>
 				<th>Phone</th>
-				<th>Hotel_id</th>
+				
 			</tr>
-			<tr th:each=": ${clients}">
+			<tr th:each="BlueClient: ${BlueClients}">
 				<td th:text="${BlueClients.clientId}"></td>
 				<td th:text="${BlueClients.clientName}"></td>
 				<td th:text="${BlueClients.email}"></td>
 				<td th:text="${BlueClients.phone}"></td>
-				<td th:text="${BlueClients.hotelId}"></td>
+				
 			</tr>
 		</table>
 
