@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "HOTELS")
+@Table (name = "RED_HOTELS")
 public class Hotel {
 	@Id
 	private long hotelId;
@@ -51,9 +51,11 @@ public class Hotel {
 
 	@Override
 	public String toString() {
-		return "RedHotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", city=" + city + ", roomCounter="
+		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", city=" + city + ", roomCounter="
 				+ roomCounter + "]";
 	}
+
+
 
 	
 }

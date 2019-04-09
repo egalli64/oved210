@@ -25,7 +25,13 @@
 			</tr>
 		</table>
 	</div>	
-
+ 	<h3>Select Hotel</h3>
+	<select class="custom-select">
+		<option th:each = "hotel: ${hotels}"
+			th:value="${hotel.hotelId}"
+			th:text="${hotel.hotelName}">	
+		</option>
+	</select>
 
 </body>
 </html>

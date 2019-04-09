@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Thymeleaf</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="text-center">
 	<h1 th:text="'Welcome, ' + ${user} + '!'"></h1>
-	
+	<br/>
 	<p>Show me all the <a href="/project/red/hotels">hotels</a> </p>
 	<p>Show me all the <a href="/project/red/clients">clients</a> </p>
 	<p>Show me all the <a href="/project/red/bookings">booking</a> </p>
