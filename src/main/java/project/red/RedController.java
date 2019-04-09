@@ -18,7 +18,7 @@ public class RedController {
 	@Value("${admin.password}")
 	private String adminPassword;
 
-	@PostMapping("project/red/login")
+	@PostMapping("/project/red/login")
 	public String login( //
 			@RequestParam(name = "user") String user, //
 			@RequestParam(name = "password") String password, //
@@ -28,8 +28,8 @@ public class RedController {
 		model.addAttribute("user", user);
 
 		if (user.equals(admin) && password.equals(adminPassword)) {
-			return "project/red/welcome";
+			return "/project/red/welcome";
 		}
-		return "project/red/reject";
+		return "/project/red/reject";
 	}
 }
