@@ -3,7 +3,7 @@
 --create table
 CREATE TABLE clients (
 client_id NUMBER (4) CONSTRAINT clients_pk PRIMARY KEY,
-clientName varchar2(100),
+client_Name varchar2(100),
 email varchar2(50),
 phone NUMBER (25),
 hotel_id NUMBER (6) CONSTRAINT clients_hotel_id_fk REFERENCES hotels(hotel_id)
