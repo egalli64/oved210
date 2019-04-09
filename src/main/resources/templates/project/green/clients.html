@@ -9,26 +9,7 @@
 	th:href="@{/css/elmonda/simple.css}">
 </head>
 <body>
-	<div class="container-fluid">
-		<h1>Clients</h1>
-		<p>
-			These are the available clients: <span th:text="${clients}">[]</span>
-		</p>
-
-		<p>
-			This is the first client in the list: <span th:text="${clients[0]}">Alan Rama</span>
-		</p>
-		<div>
-			This is the first client in the list:
-			<div th:object="${clients[0]}">
-				Name: <span th:text="*{clientName}"></span> <br /> Id :
-				<th:block th:switch="*{clientId}">
-					<span th:case="1">I</span>
-					<span th:case="2">II</span>
-					<span th:case="*">III</span>
-				</th:block>
-			</div>
-		</div>
+	
 
 		<h3>Table</h3>
 		<table class="table">
@@ -47,6 +28,6 @@
 			<option th:each="client: ${clients}" th:value="${client.clientId}"
 				th:text="${client.clientName}"></option>
 		</select>
-	</div>
+	
 </body>
 </html>
