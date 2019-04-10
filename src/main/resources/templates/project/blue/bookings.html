@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Bookings</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css"
+	href="/css/project/blue.css" />
+	</head>
+
+<body>
+	<h3>Table Bookings</h3>
+	<table class="table">
+		<tr>
+			<th>Booking Id</th>
+			<th>Hotel Id</th>
+			<th>Client Id</th>
+			<th>Availability</th>
+			<th>Payment</th>
+		</tr>
+		<tr th:each="booking: ${bookings}">
+			<td th:text="${booking.bookingId}"></td>
+			<td th:text="${booking.hotelId}"></td>
+			<td th:text="${booking.clientId}"></td>
+			<td th:text="${booking.availability}"></td>
+			<td th:text="${booking.payment}"></td>
+		</tr>
+	</table>
+</body>

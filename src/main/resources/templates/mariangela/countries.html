@@ -13,12 +13,13 @@
 		<table class ="table table-hover">
 			<thead class = "thead-light">
 			<tr>
-				<th>ID</th>
-				<th>NAME</th>
+				<th>REGION ID</th>
+				<th>COUNTRY ID</th>
+				<th>COUNTRY NAME</th>
 			</tr>
 			</thead>
 			<tr th:each="country: ${countries}" class = "table-warning">
-				<td th:text =${region.regionId}></td>
+				<td th:text =${country.regionId}></td>
 				<td th:text =${country.countryId}></td>
 				<td th:text =${country.countryName}></td>
 			</tr>
@@ -28,9 +29,8 @@
 	<h3>Select-Option</h3>
 	<select class="custom-select">
 		<option th:each = "country: ${countries}"
-			th:value="${region.regionId}"
-			th:text="${country.countryId}"	
-			th:text =${country.countryName}>
+			th:value="${country.regionId}"
+			th:text="${country.countryName}">
 		</option>
 	</select>
 

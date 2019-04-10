@@ -1,3 +1,5 @@
+-- hotels
+
 drop table red_hotels;
 
 create table red_hotels (
@@ -25,4 +27,30 @@ values(red_hotel_seq.nextval , 'Hotel Giglio', 'Napoli', 5);
 
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
 values(red_hotel_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
+
+-- clients 
+
+DROP TABLE red_clients;
+
+CREATE TABLE red_clients (
+client_id NUMBER (4) 
+clientName varchar2(100),
+email varchar2(50),
+phone NUMBER (25),
+hotel_id NUMBER (6) 
+);
+
+create sequence red_clients_seq
+start with 001 increment by 1;
+
+
+
+
+
+
+
+
+
+
+
 
