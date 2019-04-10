@@ -1,5 +1,5 @@
 body {
-	background-image: url('/img/project/blue/hotels.jpg');
+	background-image: url('/img/project/green/hotel.jpg');
 	
 	color: #000040;
 	background-size: 100%
@@ -35,21 +35,4 @@ p{
 	font-style: italic;
 	font-weight: bold;
 	background-color:#e1e1e1;
-}
-
-.button{
-
-  background-color: #c5c2b8;
-  border: none;
-  color: #ffffff;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition: 0.3s;
-}
-
-.button:hover {
-  background-color: #95ddff;
-  color: white;
 }

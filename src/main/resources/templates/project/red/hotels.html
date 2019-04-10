@@ -8,13 +8,13 @@
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
 
 </head>
-<body>
+<body id="hotels">
 
 	<div class="container-fluid">
-		<h3>Hotels</h3>
+		<h3 class="backgroundtitles">Hotels</h3>
 	<br>
 			<table class="table table-hover">
-			<thead class= "thead-light">
+			<thead class= "thead-primary">
 			<tr>
 				<th>HOTEL ID</th>
 				<th>HOTEL NAME</th>
@@ -22,7 +22,7 @@
 				<th>ROOM COUNTER</th>
 			</tr>
 			</thead>
-			<tr th:each="hotel: ${hotels}">
+			<tr class="table-primary" th:each="hotel: ${hotels}">
 				<td th:text =${hotel.hotelId}></td>
 				<td th:text =${hotel.hotelName}></td>
 				<td th:text =${hotel.city}></td>
@@ -30,15 +30,27 @@
 			</tr>
 		</table>
 	</div>	
+
 	
- 	<h3>Select Hotel</h3>
-	<select class="custom-select">
+	 <h3 class="backgroundtitles">Choose your hotel</h3>
+	<div class="input-group">
+  <select class="custom-select" id="inputGroupSelect04">
+    <option selected>Choose...</option>
 		<option th:each = "hotel: ${hotels}"
 			th:value="${hotel.hotelId}"
 			th:text="${hotel.hotelName}">	
 		</option>
-	</select>
-	<button class="btn btn-outline-primary">GO</button>
+  </select>
+  <div class="input-group-append">
+    <button class="btn btn-info" type="button">GO</button>
+  </div>
+</div>
+
+<hr>
+
+<a href="/templates/project/red/welcome.html"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
+</a>
+	
 
 </body>
 </html>
