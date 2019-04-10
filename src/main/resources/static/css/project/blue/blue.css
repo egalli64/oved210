@@ -36,3 +36,20 @@ p{
 	font-weight: bold;
 	background-color:#e1e1e1;
 }
+
+.button{
+
+  background-color: #c5c2b8;
+  border: none;
+  color: #ffffff;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #95ddff;
+  color: white;
+}

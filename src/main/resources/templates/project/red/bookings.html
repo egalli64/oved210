@@ -14,16 +14,18 @@
 			<tr>
 				<th>BOOKING ID</th>
 				<th>HOTEL ID</th>
-				<th>CLIENT ID</th>
+				<th>CLIENT NAME</th>
 				<th>CHECK IN</th>
+				<th>CHECK OUT</th>
 				<th>PAYMENT</th>
 			</tr>
 			</thead>
-			<tr th:each="booking: ${bookings}" class ="table-danger">
+			<tr th:each="booking: ${bookings}" class ="table-info">
 				<td th:text =${booking.bookingId}></td>
 				<td th:text =${booking.hotelId}></td>
-				<td th:text =${booking.clientId}></td>
+				<td th:text =${booking.clientName}></td>
 				<td th:text =${booking.checkIn}></td>
+				<td th:text =${booking.checkOut}></td>
 				<td th:text =${booking.payment}></td>
 			</tr>
 		</table>
