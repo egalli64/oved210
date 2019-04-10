@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Countries</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css">
+</head>
+<body>
+		<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>ID</th>
+			</tr>
+			<tr th:each="booking: ${bookings}">
+				<td th:text="${booking.bookingId}"></td>
+			</tr>
+		</table>
+
+		<h3>Select-Option</h3>
+		<select>
+			<option th:each="booking: ${bookings}" 
+					th:value="${booking.bookingId}"></option>
+		</select>
+</body>
+</html>
