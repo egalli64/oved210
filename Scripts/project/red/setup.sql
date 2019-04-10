@@ -12,6 +12,8 @@ room_counter number (6)
 create sequence red_hotel_seq
 start with 121 increment by 1;
 
+DROP SEQUENCE red_hotel_seq;
+
 --insert data in hotels
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
 values(red_hotel_seq.nextval , 'Hotel Tulipano', 'Milano', 10);
@@ -33,57 +35,53 @@ values(red_hotel_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
 DROP TABLE red_clients;
 
 CREATE TABLE red_clients (
-client_id NUMBER (4),
-client_name varchar2(100),
+client_name varchar2(100) PRIMARY KEY,
 email varchar2(50),
 phone varchar2(25),
-hotel_id NUMBER (6) 
+hotel_id NUMBER (6) CONSTRAINT red_clients_hotel_id_fk REFERENCES red_hotels(hotel_id)
 );
 
-create sequence red_clients_seq
-start with 001 increment by 1;
-
-DROP SEQUENCE red_clients_seq;
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Ryan Reynolds', 'r.reynols@icloud.com','3335566781', 121);
+VALUES ('Ryan Reynolds', 'r.reynols@icloud.com','3335566781', 121);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Brad Pitt', 'brangelina_no_more@outlook.com','3472625894', 121);
+VALUES ('Brad Pitt', 'brangelina_no_more@outlook.com','3472625894', 121);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Luca Argentero', 'bigbrother3@gmail.com','3298765123', 122);
+VALUES ('Luca Argentero', 'bigbrother3@gmail.com','3298765123', 122);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Gerry Scotti', 'g.scotti@gmail.com','3345632567', 122);
+VALUES ('Gerry Scotti', 'g.scotti@gmail.com','3345632567', 122);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Raffaella Carrà', 'raffa.forever@gmail.com','3479067281', 125);
+VALUES ('Raffaella Carrà', 'raffa.forever@gmail.com','3479067281', 125);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Julia Roberts', 'r.Julia@gmail.com','3365432178', 123);
+VALUES ('Julia Roberts', 'r.Julia@gmail.com','3365432178', 123);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Gianni Sperti', 'giannismile@gmail.com','3287623416', 124);
+VALUES ('Gianni Sperti', 'giannismile@gmail.com','3287623416', 124);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Angelina Jolie', 'angelina_alone@icloud.com','3298754231', 125);
+VALUES ('Angelina Jolie', 'angelina_alone@icloud.com','3298754231', 125);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Tina Cipollari', 'gemma.hate@gmail.com','3479865123', 124);
+VALUES ('Tina Cipollari', 'gemma.hate@gmail.com','3479865123', 124);
 
 INSERT INTO red_clients
-VALUES (red_clients_seq.nextval, 'Ryan Gosling', 'dance.ryan@gmail.com','3362367154', 123);
+VALUES ('Ryan Gosling', 'dance.ryan@gmail.com','3362367154', 123);
 
 --bookings
 
 drop table red_bookings;
 
 create table red_bookings (
-booking_id number (6) primary key,
-hotel_id number (6),
-client_id number (4),
+booking_id number (6),
+hotel_id number (6) CONSTRAINT red_bookings_hotel_id_fk REFERENCES red_hotels(hotel_id),
+client_name varchar2(100) CONSTRAINT red_bookings_client_name_fk REFERENCES red_clients(client_name),
 check_in date,
+check_out date,
 payment number (5, 2)
 );
 
@@ -92,33 +90,35 @@ start with 001 increment by 1;
 
 DROP SEQUENCE red_bookings_seq;
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+--aggiungere nomi e check out
+
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (001, 121, 1,'10-APR-2019', 80.50);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 122, 2, '06-MAR-2019', 100.70);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 123, 3, '11-AGO-2019', 60.20);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 124, 4,'21-DIC-2019', 200.60);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 125, 5,'25-AGO-2019', 120.60);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval,121, 6,'23-GEN-2019', 60.80);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 122, 7,'19-FEB-2019', 124.60);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 123, 8,'12-LUG-2019', 89.60);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', 90.50);
 
-insert into red_bookings(booking_id, hotel_id, client_id, check_in, payment)
+insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', 70.60);
 
