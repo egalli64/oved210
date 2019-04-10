@@ -1,21 +1,37 @@
 package project.red;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "RED_CLIENTS")
 public class Client {
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CliGen")
+	@SequenceGenerator(sequenceName = "RED_CLIENTS_SEQ", allocationSize = 1, name = "CliGen")
+	@Column(name = "CLIENTS_ID")	
 	private long clientId;
+
 	private String clientName;
 	private String email;
 	private String phone;
 	private long hotelId;
 
-	public Client() {
+	public Client(String clientName, String email, String phone, long hotelId) {
+		this.clientName = clientName;
+		this.email = email;
+		this.phone = phone;
+		this.hotelId = hotelId;
 
+	}
+	
+	protected Client() {
+		
 	}
 
 	public long getClientId() {
