@@ -3,13 +3,27 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Thymeleaf</title>
+
+<link rel="stylesheet" type="text/css"
+	href="/css/project/green/green2.css" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 </head>
 <body>
-	<h1 th:text="'Welcome ' + ${user} + '!'"></h1>
-	
-<p>Show me all the <a href="/project/green/clients">clients</a> </p>
-<p>Show me all the <a href="/project/green/hotels">hotels</a> </p>
-<p>Show me all the <a href="/project/green/bookings">bookings</a> </p>
-		
+	<fieldset class="text-center">
+		<h1 th:text="'Welcome ' + ${user} + '!'"></h1>
+
+		<p>
+			Click for <a href="/project/green/clients">clients</a>
+		</p>
+		<p>
+			Click for <a href="/project/green/hotels">hotels</a>
+		</p>
+		<p>
+			Click for <a href="/project/green/bookings">bookings</a>
+		</p>
+	</fieldset>
+	</div>
 </body>
 </html>

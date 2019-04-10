@@ -1,38 +1,28 @@
 body {
 	background-image: url('/img/project/green/hotel.jpg');
-	
 	color: #000040;
 	background-size: 100%
 }
 
+
 h1 {
 	text-align: center;
-	color: #c5c1b4;
+	color: #0589eb;
 	font-style: italic;
 	font-weight: bold;
-	background-color: #ffffff;
 }
 
-label{
-
-	color: #585858;
+label {
+	color: #ffffff;
 	font-weight: bold;
 }
 
-
-legend{
-	
-	color: #b7e2ff;
-	font-weight: bold;
+legend {
+	color: #298737;
 	backgroun-color: white;
 }
 
-fieldset{
-	background-color:#e0ded8;
-}
-
-p{
+p {
 	font-style: italic;
-	font-weight: bold;
-	background-color:#e1e1e1;
+	background-color: #fdf9db;
 }
