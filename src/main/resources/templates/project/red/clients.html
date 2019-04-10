@@ -6,8 +6,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
 </head>
+
 <body id="clients">
 	<h3 class="backgroundtitles">Clients</h3>
+	<div>
+<a href="/project/red/insertClient.html"><button type="button" class="btn btn-info" aria-pressed="true">NEW CLIENT</button>
+</a>
+</div>
+<br>
 	<div class="container-fluid">
 		<table class ="table table-hover">
 			<thead class = "thead-primary">
@@ -19,7 +25,7 @@
 				<th>HOTEL ID</th>
 			</tr>
 			</thead>
-			<tr th:each="client: ${clients}" class ="table-primary">
+			<tr th:each="client: ${clients}" class ="table-danger">
 				<td th:text =${client.clientId}></td>
 				<td th:text =${client.clientName}></td>
 				<td th:text =${client.email}></td>
@@ -30,7 +36,7 @@
 	</div>	
 
 <hr>
-<a href=""><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
+<a href="/project/red/login"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
 </a>
 
 
