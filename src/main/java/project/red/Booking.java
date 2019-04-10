@@ -13,7 +13,7 @@ public class Booking {
 	private long bookingId;
 	private long hotelId;
 	private long clientId;
-	private Date availability;
+	private Date checkIn;
 	private long payment;
 
 	public Booking() {
@@ -44,12 +44,12 @@ public class Booking {
 		this.clientId = clientId;
 	}
 
-	public Date getAvailability() {
-		return availability;
+	public Date getCheckIn() {
+		return checkIn;
 	}
 
-	public void setAvailability(Date availability) {
-		this.availability = availability;
+	public void setCheckIn(Date checkIn) {
+		this.checkIn = checkIn;
 	}
 
 	public long getPayment() {
@@ -62,11 +62,8 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", availability="
-				+ availability + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", checkIn="
+				+ checkIn + ", payment=" + payment + "]";
 	}
-	
-	
-	
+
 }
-	
