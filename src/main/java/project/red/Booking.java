@@ -12,8 +12,9 @@ public class Booking {
 	@Id
 	private long bookingId;
 	private long hotelId;
-	private long clientId;
+	private String clientName;
 	private Date checkIn;
+	private Date checkOut;
 	private long payment;
 
 	public Booking() {
@@ -36,12 +37,12 @@ public class Booking {
 		this.hotelId = hotelId;
 	}
 
-	public long getClientId() {
-		return clientId;
+	public String getClientName() {
+		return clientName;
 	}
 
-	public void setClientId(long clientId) {
-		this.clientId = clientId;
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
 	}
 
 	public Date getCheckIn() {
@@ -50,6 +51,14 @@ public class Booking {
 
 	public void setCheckIn(Date checkIn) {
 		this.checkIn = checkIn;
+	}
+
+	public Date getCheckOut() {
+		return checkOut;
+	}
+
+	public void setCheckOut(Date checkOut) {
+		this.checkOut = checkOut;
 	}
 
 	public long getPayment() {
@@ -62,8 +71,11 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", checkIn="
-				+ checkIn + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientName=" + clientName + ", checkIn="
+				+ checkIn + ", checkOut=" + checkOut + ", payment=" + payment + "]";
 	}
+
+
+
 
 }
