@@ -5,8 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CLIENTS")
-public class GreenClients {
+@Table(name="GREEN_CLIENTS")
+public class GreenClients { 
 	
 	@Id
 	private long clientId;
@@ -14,55 +14,41 @@ public class GreenClients {
 	private String email;
 	private Long phone;
 	
-
+	public GreenClients() {
+		
+	}
 
 	public long getClientId() {
 		return clientId;
 	}
 
-
+	public void setClientId(long clientId) {
+		this.clientId = clientId;
+	}
 
 	public String getClientName() {
 		return clientName;
 	}
 
-
-
 	public void setClientName(String clientName) {
 		this.clientName = clientName;
 	}
-
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
 
 	public Long getPhone() {
 		return phone;
 	}
 
-
-
 	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
-
-
-
-	public void setClientId(long clientId) {
-		this.clientId = clientId;
-	}
-
-
 
 	@Override
 	public String toString() {
