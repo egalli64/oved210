@@ -1,7 +1,4 @@
--- hotels
-
-drop table red_hotels;
-
+--hotels
 create table red_hotels (
 hotel_id number (6) primary key,
 hotel_name varchar2 (40),
@@ -11,8 +8,6 @@ room_counter number (6)
 
 create sequence red_hotel_seq
 start with 121 increment by 1;
-
-DROP SEQUENCE red_hotel_seq;
 
 --insert data in hotels
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
@@ -30,10 +25,10 @@ values(red_hotel_seq.nextval , 'Hotel Giglio', 'Napoli', 5);
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
 values(red_hotel_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
 
--- clients 
 
-DROP TABLE red_clients;
 
+
+--clients 
 CREATE TABLE red_clients (
 client_name varchar2(100) PRIMARY KEY,
 email varchar2(50),
@@ -41,7 +36,7 @@ phone varchar2(25),
 hotel_id NUMBER (6) CONSTRAINT red_clients_hotel_id_fk REFERENCES red_hotels(hotel_id)
 );
 
-
+--insert data in clients
 INSERT INTO red_clients
 VALUES ('Ryan Reynolds', 'r.reynols@icloud.com','3335566781', 121);
 
@@ -72,10 +67,10 @@ VALUES ('Tina Cipollari', 'gemma.hate@gmail.com','3479865123', 124);
 INSERT INTO red_clients
 VALUES ('Ryan Gosling', 'dance.ryan@gmail.com','3362367154', 123);
 
+
+
+
 --bookings
-
-drop table red_bookings;
-
 create table red_bookings (
 booking_id number (6),
 hotel_id number (6) CONSTRAINT red_bookings_hotel_id_fk REFERENCES red_hotels(hotel_id),
@@ -88,9 +83,7 @@ payment number (5, 2)
 create sequence red_bookings_seq
 start with 001 increment by 1;
 
-DROP SEQUENCE red_bookings_seq;
-
-
+--insert data in bookings
 insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
 values (001, 121, 'Ryan Reynolds','10-APR-2019', '15-APR-2019', 80.50);
 
