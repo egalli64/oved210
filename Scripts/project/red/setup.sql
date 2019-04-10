@@ -1,3 +1,13 @@
+drop sequence red_bookings_seq;
+drop table red_bookings;
+DROP SEQUENCE red_client_seq;
+drop table red_clients;
+drop sequence red_hotel_seq;
+drop table red_hotels;
+
+
+
+
 --hotels
 
 create table red_hotels (
