@@ -1,7 +1,11 @@
 package project.blue;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -9,11 +13,13 @@ import javax.persistence.Table;
 public class BlueClient {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ClientGen")
+	@SequenceGenerator(sequenceName = "BLUE_CLIENTS_SEQ", allocationSize = 1, name = "ClientGen")
 	private Long clientId;
+	
 	private String clientName;
 	private String email;
 	private Long phone;
-	
 	
 	public BlueClient() {
 		
