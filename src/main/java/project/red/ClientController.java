@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ClientController {
-	private static final Logger log = LoggerFactory.getLogger(ClientController.class);
+	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
 
 	@Autowired
-	private ClientRepository repo;
+	private BookingRepository repo;
 
 	@GetMapping("/project/red/clients")
-	public String allClients(Model model) {
+	public String allBookings(Model model) {
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());
 		return "/project/red/clients";
