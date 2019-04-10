@@ -34,7 +34,7 @@ DROP TABLE red_clients;
 
 CREATE TABLE red_clients (
 client_id NUMBER (4),
-clientName varchar2(100),
+client_name varchar2(100),
 email varchar2(50),
 phone varchar2(25),
 hotel_id NUMBER (6) 
