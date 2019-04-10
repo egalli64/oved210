@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Welcome</title>
+</head>
+<body>
+	<h1 th:text="'Hello, ' + ${user} + '!'"></h1>
+	<p>A list of: <a href="/project/blue/clients">Clients</a></p>
+	<p>A list of: <a href="/project/blue/hotels">Hotels</a></p>
+	<p>A list of: <a href="/project/blue/bookings">Bookings</a></p>
+</body>
+</html>

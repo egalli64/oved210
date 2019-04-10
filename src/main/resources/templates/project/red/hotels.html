@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hotel</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h3>Hotels</h3>
+	<div class="container-fluid">
+		<table class ="table table-hover">
+			<thead class = "thead-light">
+			<tr>
+				<th>HOTEL ID</th>
+				<th>HOTEL NAME</th>
+				<th>CITY</th>
+				<th>ROOM COUNTER</th>
+			</tr>
+			</thead>
+			<tr th:each="hotel: ${hotels}" class ="table-info">
+				<td th:text =${hotel.hotelId}></td>
+				<td th:text =${hotel.hotelName}></td>
+				<td th:text =${hotel.city}></td>
+				<td th:text =${hotel.roomCounter}></td>
+			</tr>
+		</table>
+	</div>	
+ 	<h3>Select Hotel</h3>
+	<select class="custom-select">
+		<option th:each = "hotel: ${hotels}"
+			th:value="${hotel.hotelId}"
+			th:text="${hotel.hotelName}">	
+		</option>
+	</select>
+
+</body>
+</html>

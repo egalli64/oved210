@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>My adder</title>
+</head>
+<body>
+
+ <h1 th:text = " ${x} + ' + ' + ${y} + ' = ' + ${result} "></h1>
+ 
+ <p> Adding <span th:text =" ${x}">12</span>
+ 	with <span th:text =" ${y}">2</span>
+ 	leads to <span th:text =" ${result}">14</span>
+
+
+</body>
+</html>

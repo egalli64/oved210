@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Regions</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/alessandraC/simple.css}">
+</head>
+<body>
+
+<div class="container-fluid">
+		<h1>Countries</h1>
+		<p>
+			These are the available countries: <span th:text="${countries}">[]</span>
+		</p>
+
+		<p>
+			This is the first region in the list: <span th:text="${countries[0]}">Europe</span>
+		</p>
+		<div>
+			This is the first region in the list:
+			<div th:object="${countries[0]}">
+				Name: <span th:text="*{countryName}"></span> <br /> Id :
+				<th:block th:switch="*{countryId}">
+					<span th:case="1">I</span>
+					<span th:case="2">II</span>
+					<span th:case="*">III</span>
+				</th:block>
+			</div>
+		</div>
+
+
+<h3>Table</h3>
+		<table class="table">
+			<tr>
+				<th>COUNTRY_ID</th>
+				<th>COUNTRY_NAME</th>
+				<th>REGION_ID</th>
+			</tr>
+			<tr th:each="country: ${countries}">
+				<td th:text="${country.countryId}"></td>
+				<td th:text="${country.countryName}"></td>
+				<td th:text="${country.regionId}"></td>
+			</tr>
+		</table>
+
+</body>
+</html>

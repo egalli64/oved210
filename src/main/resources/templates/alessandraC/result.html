@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Result</title>
+</head>
+<body>
+
+<p th:text="${x}">15</p> <p>+</p>
+<p th:text="${y}">5</p> <p>=</p>
+<p th:text="${result}">20</p>
+
+<p>Adding <span th:text="${x}">12</span> with
+		<span th:text="${y}">2</span> leads to
+		<span th:text="${result}">14</span>
+
+
+<p th:text="'The max value is ' + ${max} + '!'"></p>
+<p th:text="'The min value is ' + ${min} + '!'"></p>
+<p th:text="'The avg value is ' + ${avg} + '!'"></p>
+
+</body>
+</html>
