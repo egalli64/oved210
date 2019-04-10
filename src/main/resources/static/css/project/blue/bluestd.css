@@ -7,6 +7,8 @@ body {
  	text-align: center;
 	background-color: #53aff4;
 	color: white;
+	
+	font-weight: bold;
 }
 
 th{

@@ -3,13 +3,34 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Thymeleaf</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+
 </head>
-<body class="text-center">
-	<h1 th:text="'Welcome, ' + ${user} + '!'"></h1>
-	<br/>
-	<p>Show me all the <a href="/project/red/hotels">Hotels</a> </p>
-	<p>Show me all the <a href="/project/red/clients">Clients</a> </p>
-	<p>Show me all the <a href="/project/red/bookings">Bookings</a> </p>
+<body>
+<div class="container-fluid" id="welcome">
+
+		<h1 class="titles" th:text="'Hello, ' + ${user} + '!'"></h1>
+		<br>
+
+		<p>Show me all the</p>
+		<div>
+			<a href="/project/red/hotels"><button type="button"
+					class="btn btn-info">Hotels</button></a>
+		</div>
+		<br>
+		<div>
+			<a href="/project/red/clients"><button type="button"
+					class="btn btn-info">Clients</button></a>
+		</div>
+				<br>
+		<div>
+			<a href="/project/red/bookings"><button type="button"
+					class="btn btn-info">Bookings</button></a>
+		</div>
+				<br>
+</div>
 </body>
 </html>
