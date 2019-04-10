@@ -18,14 +18,13 @@ public class Client {
 	private String clientName;
 	private String email;
 	private String phone;
-	private long hotelId;
 
-	public Client(String clientName, String email, String phone, long hotelId) {
+
+	public Client(String clientName, String email, String phone) {
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;
-		this.hotelId = hotelId;
-
+		
 	}
 	
 	protected Client() {
@@ -64,18 +63,12 @@ public class Client {
 		this.phone = phone;
 	}
 
-	public long getHotelId() {
-		return hotelId;
-	}
-
-	public void setHotelId(long hotelId) {
-		this.hotelId = hotelId;
-	}
+	
 
 	@Override
 	public String toString() {
 		return "Client [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone=" + phone
-				+ ", hotelId=" + hotelId + "]";
+				 + "]";
 	}
 
 
