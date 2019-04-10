@@ -85,6 +85,7 @@ check_out date,
 payment number (5, 2)
 );
 
+
 create sequence red_bookings_seq
 start with 001 increment by 1;
 
