@@ -66,15 +66,15 @@ public class BlueController {
 			Model model) {
 		BlueClient client= new BlueClient();
 		
-		client.setClientName("paolo");
-		client.setEmail("mmm");
+		client.setClientName("cname");
+		client.setEmail("email");
 		client.setPhone(12L);
 		
 		
 		// log.trace("get all clients");
 		repClient.save(client);
 		
-		return "project/blue/addClients";
+		return "project/blue/Clients";
 
 	}
 
