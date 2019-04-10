@@ -60,24 +60,58 @@ public class BlueController {
 	// controller per aggiungere il cliente
 
 	@GetMapping("/project/blue/clients/add")
-	public String addClient(
-			
-			
+	public String addClient( //
+			@RequestParam String name, //
+			@RequestParam String email, //
+			@RequestParam Long phone, //
 			Model model) {
-		BlueClient client= new BlueClient();
-		
-		client.setClientName("cname");
-		client.setEmail("email");
-		client.setPhone(12L);
-		
-		
-		// log.trace("get all clients");
-		repClient.save(client);
-		
-		return "project/blue/Clients";
+		BlueClient client = new BlueClient();
 
+		client.setClientName(name);
+		client.setEmail(email);
+		client.setPhone(phone);
+		
+		
+		repClient.save(client);
+
+		// log.trace("get all clients");
+		
+	model.addAttribute("clients", repClient.findAll());
+	
+//		allClients(model);
+		return "project/blue/clients";
 	}
 
+	//controller remove clients
+	@GetMapping("/project/blue/clients/remove")
+	public String removeClient( //
+			@RequestParam String name, //
+			@RequestParam String email, //
+			@RequestParam Long phone, //
+			Model model) {
+		BlueClient client = new BlueClient();
+
+		client.setClientName(name);
+		client.setEmail(email);
+		client.setPhone(phone);
+		
+		
+		repClient.delete(client);
+
+		// log.trace("get all clients");
+		
+       model.addAttribute("clients", repClient.findAll());
+	
+//		allClients(model);
+		return "project/blue/clients";
+	}
+	
+	
+	
+	
+	
+	
+	
 	// controller Hotels
 
 	@Autowired
