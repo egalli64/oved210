@@ -12,7 +12,7 @@ public class ClientController {
 	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
 
 	@Autowired
-	private BookingRepository repo;
+	private ClientRepository repo;
 
 	@GetMapping("/project/red/clients")
 	public String allBookings(Model model) {
