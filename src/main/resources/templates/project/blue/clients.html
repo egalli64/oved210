@@ -7,12 +7,12 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" type="text/css"
-	href="/css/project/blue.css" />
+	 href="/css/project/blue/bluestd.css" />
 	</head>
 
 <body>
-	<h3>Table</h3>
-	<table class="table">
+	<h3> Clients</h3>
+	<table class="table table-hover table-bordered table-striped" >
 		<tr>
 			<th>Client Id</th>
 			<th>Client Name</th>
@@ -26,7 +26,7 @@
 			<td th:text="${client.phone}"></td>
 		</tr>
 	</table>
-	
+	<hr>
 	<nav>
 		<ul>
 			<li><a href="/project/blue/login"> <b>Back to the list</b> </a></li>

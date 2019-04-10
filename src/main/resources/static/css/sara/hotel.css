@@ -3,27 +3,21 @@ body {
 	background-size: 100% 100%;
 }
 h2 {
-	color: white;
+	color: green;
 }
-h3 {
-	color: white;
-}
-h4 {
-	color: white;
+p {
+	color: green;
 }
 fieldset {
-	color: white;
+	color: green;
 }
 function {
-	color: white;
+	color: green;
 }
 th {
 	color:white;
 }
 h6 {
-	color: white;
-}
-h7 {
 	color: white;
 }
 figcaption {

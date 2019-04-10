@@ -1,51 +1,53 @@
 package project.green;
 
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "BOOKINGS")
+@Table(name = "GREEN_BOOKINGS")
 public class Booking {
 	@Id
-	private long booking_id;
-	private long hotel_id;
-	private long client_id;
-	private long availability;
+	private long bookingId;
+	private long hotelId;
+	private long clientId;
+	private Date availability;
 	private long payment;
 
 	public Booking() {
 	}
 
-	public long getBooking_id() {
-		return booking_id;
+	public long getBookingId() {
+		return bookingId;
 	}
 
-	public void setBooking_id(long booking_id) {
-		this.booking_id = booking_id;
+	public void setBookingId(long bookingId) {
+		this.bookingId = bookingId;
 	}
 
-	public long getHotel_id() {
-		return hotel_id;
+	public long getHotelId() {
+		return hotelId;
 	}
 
-	public void setHotel_id(long hotel_id) {
-		this.hotel_id = hotel_id;
+	public void setHotelId(long hotelId) {
+		this.hotelId = hotelId;
 	}
 
-	public long getClient_id() {
-		return client_id;
+	public long getClientId() {
+		return clientId;
 	}
 
-	public void setClient_id(long client_id) {
-		this.client_id = client_id;
+	public void setClientId(long clientId) {
+		this.clientId = clientId;
 	}
 
-	public long getAvailability() {
+	public Date getAvailability() {
 		return availability;
 	}
 
-	public void setAvailability(long availability) {
+	public void setAvailability(Date availability) {
 		this.availability = availability;
 	}
 
@@ -59,8 +61,8 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Bookings [booking_id=" + booking_id + ", hotel_id=" + hotel_id + ", client_id=" + client_id
-				+ ", availability=" + availability + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", availability="
+				+ availability + ", payment=" + payment + "]";
 	}
-
 }
+	

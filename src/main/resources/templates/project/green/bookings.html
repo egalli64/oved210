@@ -5,16 +5,26 @@
 <title>Countries</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"
+th:href="@{/css/sara/hotel.css}">
 </head>
 <body>
 		<h3>Table</h3>
 		<table class="table">
-			<tr>
-				<th>ID</th>
+			<tr><b>
+			<th>Booking Id</th>
+			<th>Hotel Id</th>
+			<th>Client Id</th>
+			<th>Availability</th>
+			<th>Payment</th>
 			</tr>
 			<tr th:each="booking: ${bookings}">
-				<td th:text="${booking.bookingId}"></td>
+			<td th:text="${booking.bookingId}"></td>
+			<td th:text="${booking.hotelId}"></td>
+			<td th:text="${booking.clientId}"></td>
+			<td th:text="${booking.availability}"></td>
+			<td th:text="${booking.payment}"></td>
+			</b>
 			</tr>
 		</table>
 
