@@ -49,6 +49,13 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
+	
+	@GetMapping("/project/green/addClients")
+	public String create(Model model) {
+		log.trace("get all clients");
+		model.addAttribute("clients", repoClient.findAll());
+		return "/project/green/clients";
+	}
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
@@ -63,5 +70,8 @@ public class GreenController {
 		model.addAttribute("bookings", repoBooking.findAll());
 		return "project/green/bookings";
 	}
+
+	
+	
 
 }
