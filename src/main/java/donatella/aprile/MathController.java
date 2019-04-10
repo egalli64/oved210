@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MathController {
-	private static final Logger log = LoggerFactory.getLogger(OvedController.class);
+	private static final Logger log = LoggerFactory.getLogger(MathController.class);
 	
 
 	@GetMapping("/donatella/add")
