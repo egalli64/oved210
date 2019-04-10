@@ -2,7 +2,7 @@ drop table green_clients;
  
  
 create table green_clients (
-client_id number (4) primary key,
+client_id number (4) constraint green_clients_pk primary key,
 clientname varchar2(100),
 email varchar2(50),
 phone number (25),
