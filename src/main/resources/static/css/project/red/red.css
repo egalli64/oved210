@@ -1,14 +1,29 @@
 body {
 	background-image: url('/img/project/red/img.png');
 	background-size:40%;
-	color: #0080ff;
+	color: #12a9e2;
 	text-align: center;
 }
 
-.titles {
-	color: #0057ae;
+#error {
+	background-color: black;
+}
+#hotels{
+	background-color: #d8fee0;
 }
 
+#booking{
+	background-color: #ffffdd;
+}
+
+.titles {
+	color: #0c66c9;
+}
+
+.backgroundtitles{
+	background-color: rgba(255, 255, 255, 0.7);
+	color: #0c66c9;
+}
 
 #welcome {
 width: 600px;

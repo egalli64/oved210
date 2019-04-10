@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Welcome to Thymeleaf</title>
+<title>Welcome</title>
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,7 +10,8 @@
 
 </head>
 <body>
-<div class="container-fluid" id="welcome">
+<br>
+<div class="container-fluid border border-info" id="welcome">
 
 		<h1 class="titles" th:text="'Hello, ' + ${user} + '!'"></h1>
 		<br>
@@ -30,7 +31,9 @@
 			<a href="/project/red/bookings"><button type="button"
 					class="btn btn-info">Bookings</button></a>
 		</div>
-				<br>
+				<br>	
+				
+				
 </div>
 </body>
 </html>
