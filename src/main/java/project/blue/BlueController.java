@@ -12,10 +12,10 @@ import org.slf4j.LoggerFactory;
 @Controller
 public class BlueController {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
+	private static String user;
 
-	
-	//controller Clients
-	
+	// controller Clients
+
 	@Autowired
 	private BlueClientRepository blue;
 
@@ -24,7 +24,17 @@ public class BlueController {
 			@RequestParam(name = "user") String user, //
 			@RequestParam(name = "password") String password, //
 			Model model) {
+
+		BlueController.user = user;
 		model.addAttribute("user", user);
+
+		return "/project/blue/response";
+	}
+
+	@GetMapping("/project/blue/login")
+	public String login(
+			Model model) {
+		model.addAttribute("user", BlueController.user);
 
 		return "/project/blue/response";
 	}
@@ -36,32 +46,28 @@ public class BlueController {
 		return "project/blue/clients";
 	}
 
-	
-	//controller Hotels
-	
+	// controller Hotels
+
 	@Autowired
 	private BlueHotelRepository hot;
-	
+
 	@GetMapping("/project/blue/hotels")
 	public String allHotels(Model model) {
 		log.trace("get all hotels");
 		model.addAttribute("hotels", hot.findAll());
 		return "project/blue/hotels";
 	}
-	
-	//controller Bookings
-	
+
+	// controller Bookings
+
 	@Autowired
 	private BlueBookingRepository boo;
-	
+
 	@GetMapping("/project/blue/bookings")
 	public String allBookings(Model model) {
 		log.trace("get all bookings");
 		model.addAttribute("bookings", boo.findAll());
 		return "project/blue/bookings";
 	}
-	
-	
-	
-	
+
 }
