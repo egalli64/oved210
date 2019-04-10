@@ -1,6 +1,5 @@
 package project.red;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +13,6 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CliGen")
 	@SequenceGenerator(sequenceName = "RED_CLIENTS_SEQ", allocationSize = 1, name = "CliGen")
-	@Column(name = "CLIENTS_ID")	
 	private long clientId;
 
 	private String clientName;
