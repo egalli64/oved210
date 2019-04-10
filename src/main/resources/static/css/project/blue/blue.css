@@ -30,3 +30,9 @@ legend{
 fieldset{
 	background-color:#e0ded8;
 }
+
+p{
+	font-style: italic;
+	font-weight: bold;
+	background-color:#e1e1e1;
+}
