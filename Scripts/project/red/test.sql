@@ -1,4 +1,5 @@
 --hotels
+drop table red_hotels;
 
 create table red_hotels (
 hotel_id number (6) primary key,
@@ -10,6 +11,7 @@ room_counter number (6)
 create sequence red_hotel_seq
 start with 121 increment by 1;
 
+drop sequence red_hotel_seq;
 
 --insert data in hotels
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
@@ -32,6 +34,7 @@ values(red_hotel_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
 
 --clients 
 
+drop table red_clients;
 
 CREATE TABLE red_clients (
 client_name varchar2(100) PRIMARY KEY,
@@ -75,7 +78,7 @@ VALUES ('Ryan Gosling', 'dance.ryan@gmail.com','3362367154', 123);
 
 
 --bookings
-
+drop table red_bookings;
 
 create table red_bookings (
 booking_id number (6) PRIMARY key,
@@ -90,7 +93,7 @@ payment number (5, 2)
 create sequence red_bookings_seq
 start with 001 increment by 1;
 
-
+drop sequence red_bookings_seq;
 
 --insert data in bookings
 insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
