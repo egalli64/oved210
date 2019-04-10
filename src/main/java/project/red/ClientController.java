@@ -20,4 +20,11 @@ public class ClientController {
 		model.addAttribute("clients", repo.findAll());
 		return "/project/red/clients";
 	}
+	
+	@GetMapping("/project/red/insertClient")
+	public String create(Model model) {
+		log.trace("get all clients");
+		model.addAttribute("clients", repo.findAll());
+		return "/project/red/clients";
+	}	
 }
