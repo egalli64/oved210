@@ -1,18 +1,17 @@
 body {
-	background-image: linear-gradient(to top right, #003162 0%, #11568e 50%, #ffffff 100%);
-	color: #000040;
-}
-
-h3 {
-	color: #ff5b5b;
-}
-
-th{
+	background-image: url('/img/project/blue/hotels.jpg');
 	
 	color: #000040;
+	background-size: 100% 100%
 }
 
-td{
-	
-	color: #9c384d
+h1 {
+	align-text: center;
+	color: #1e2782;
+	font-style: italic;
+}
+
+fieldset{
+	align-text: center;
+	color: black;
 }
