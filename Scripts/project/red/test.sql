@@ -102,33 +102,33 @@ start with 001 increment by 1;
 drop sequence red_bookings_seq;
 
 --insert data in bookings
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 121, 'Ryan Reynolds','10-APR-2019', '15-APR-2019', 80.50);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 121, 1, 'Ryan Reynolds','10-APR-2019', '15-APR-2019', 80.50);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 'Brad Pitt', '06-MAR-2019', '08-MAR-2019', 100.70);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 122, 2, 'Brad Pitt', '06-MAR-2019', '08-MAR-2019', 100.70);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 'Luca Argentero', '11-AGO-2019','13-AGO-2019', 60.20);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 123, 3, 'Luca Argentero', '11-AGO-2019','13-AGO-2019', 60.20);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 124, 'Gerry Scotti','21-DIC-2019', '23-DIC-2019', 200.60);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 124, 4, 'Gerry Scotti','21-DIC-2019', '23-DIC-2019', 200.60);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 'Raffaella Carrà','25-AGO-2019', '28-AGO-2019', 120.60);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 125, 5, 'Raffaella Carrà','25-AGO-2019', '28-AGO-2019', 120.60);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval,121, 'Julia Roberts','23-GEN-2019', '25-GEN-2019', 60.80);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval,121, 6, 'Julia Roberts','23-GEN-2019', '25-GEN-2019', 60.80);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 'Gianni Sperti','19-FEB-2019', '22-FEB-2019', 124.60);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 122, 7, 'Gianni Sperti','19-FEB-2019', '22-FEB-2019', 124.60);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 'Angelina Jolie','12-LUG-2019','15-LUG-2019', 89.60);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 123, 8, 'Angelina Jolie','12-LUG-2019','15-LUG-2019', 89.60);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 'Tina Cipollari','30-GEN-2019', '2-FEB-2019', 90.50);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 123, 9, 'Tina Cipollari','30-GEN-2019', '2-FEB-2019', 90.50);
 
-insert into red_bookings(booking_id, hotel_id, client_name, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 'Ryan Gosling','16-OTT-2019', '18-OTT-2019', 70.60);
+insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 125, 10, 'Ryan Gosling','16-OTT-2019', '18-OTT-2019', 70.60);
 
