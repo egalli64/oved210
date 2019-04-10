@@ -6,18 +6,22 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
-	th:href="@{/css/elmonda/simple.css}"
-	href="/css/project/green/green.css" />
+
+	href="/css/project/green/green2.css" />
 </head>
-<body>
-		<h3>INFO CLIENTS</h3>
-		<table class="info-clients">
+<body id="clients">
+	<h3 class="backgroundtitles">Clients</h3>
+	<div class="container-fluid">
+		<table class ="table table-hover">
+			<thead class = "thead-succes">
 			<tr>
-				<th>Client Id</th>
-				<th>Client Name</th>
-				<th>Email</th>
-				<th>Phone</th>				
+				<th>CLIENT ID</th>
+				<th>CLIENT NAME</th>
+				<th>EMAIL</th>
+				<th>PHONE</th>
+				<th>HOTEL ID</th>
 			</tr>
+			</thead>
 			
 			<tr th:each="client: ${clients}">
 				<td th:text="${client.clientId}"></td>
@@ -26,5 +30,6 @@
 				<td th:text="${client.phone}"></td>
 			</tr>
 		</table>
+		</div>
 </body>
 </html>
