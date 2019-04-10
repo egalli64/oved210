@@ -8,6 +8,7 @@ import javax.persistence.Table;
 @Table(name = "RED_CLIENTS")
 public class Client {
 	@Id
+	private long clientId;
 	private String clientName;
 	private String email;
 	private String phone;
@@ -15,6 +16,14 @@ public class Client {
 
 	public Client() {
 
+	}
+
+	public long getClientId() {
+		return clientId;
+	}
+
+	public void setClientId(long clientId) {
+		this.clientId = clientId;
 	}
 
 	public String getClientName() {
@@ -33,14 +42,6 @@ public class Client {
 		this.email = email;
 	}
 
-	public long getHotelId() {
-		return hotelId;
-	}
-
-	public void setHotelId(long hotelId) {
-		this.hotelId = hotelId;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -49,10 +50,19 @@ public class Client {
 		this.phone = phone;
 	}
 
+	public long getHotelId() {
+		return hotelId;
+	}
+
+	public void setHotelId(long hotelId) {
+		this.hotelId = hotelId;
+	}
+
 	@Override
 	public String toString() {
-		return "Client [clientName=" + clientName + ", email=" + email + ", phone=" + phone + ", hotelId=" + hotelId
-				+ "]";
+		return "Client [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone=" + phone
+				+ ", hotelId=" + hotelId + "]";
 	}
+
 
 }
