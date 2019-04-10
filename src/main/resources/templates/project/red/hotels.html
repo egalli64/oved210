@@ -22,7 +22,7 @@
 				<th>ROOM COUNTER</th>
 			</tr>
 			</thead>
-			<tr th:each="hotel: ${hotels}">
+			<tr class="table-info" th:each="hotel: ${hotels}">
 				<td th:text =${hotel.hotelId}></td>
 				<td th:text =${hotel.hotelName}></td>
 				<td th:text =${hotel.city}></td>
