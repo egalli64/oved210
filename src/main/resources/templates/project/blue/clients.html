@@ -11,6 +11,13 @@
 	</head>
 
 <body>
+
+<h2 th:text = "${errorMessage}"
+th:if = "${errorMessage}">
+</h2>
+
+
+
 	<h3> Clients</h3>
 	<table class="table table-hover table-bordered table-striped" >
 		<tr>
@@ -31,7 +38,7 @@
 	<fieldset class = "text-center">
 	<button class = "text-center" id = "add" >
 
-			<a href="/project/blue/add"> <b>Add client</b> </a>
+			<a href="/project/blue/clients/add.html"> <b>Add client</b> </a>
 			
 			
 
@@ -39,7 +46,7 @@
 	
 	<button class = "text-center" id = "rmv">
 	
-			<a href="/project/blue/login"> <b>Remove client</b> </a>
+			<a href="/project/blue/clients/remove.html"> <b>Remove client</b> </a>
 			
 			
 	</button>
