@@ -8,16 +8,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ClientController {
+public class BookingController {
 	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
 
 	@Autowired
 	private BookingRepository repo;
 
-	@GetMapping("/project/red/clients")
+	@GetMapping("/project/red/bookings")
 	public String allBookings(Model model) {
-		log.trace("get all clients");
-		model.addAttribute("clients", repo.findAll());
-		return "/project/red/clients";
+		log.trace("get all bookings");
+		model.addAttribute("bookings", repo.findAll());
+		return "/project/red/bookings";
 	}
 }
