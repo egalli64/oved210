@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ClientRepository 
-	extends CrudRepository <Client, String> {
+	extends CrudRepository <Client, Long> {
 
 }

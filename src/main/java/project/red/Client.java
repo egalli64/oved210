@@ -8,6 +8,7 @@ import javax.persistence.Table;
 @Table(name = "RED_CLIENTS")
 public class Client {
 	@Id
+	private long clientId;
 	private String clientName;
 	private String email;
 	private String phone;
