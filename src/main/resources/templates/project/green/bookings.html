@@ -11,7 +11,11 @@
 		<h3>Table</h3>
 		<table class="table">
 			<tr>
-				<th>ID</th>
+			<th>Booking Id</th>
+			<th>Hotel Id</th>
+			<th>Client Id</th>
+			<th>Availability</th>
+			<th>Payment</th>
 			</tr>
 			<tr th:each="booking: ${bookings}">
 				<td th:text="${booking.bookingId}"></td>

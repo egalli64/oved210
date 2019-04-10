@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/blue/blue.css" />
 </head>
 <body>
 	<h1 th:text="'Hello, ' + ${user} + '!'"></h1>
-	<p>A list of: <a href="/project/blue/clients">Clients</a></p>
-	<p>A list of: <a href="/project/blue/hotels">Hotels</a></p>
-	<p>A list of: <a href="/project/blue/bookings">Bookings</a></p>
+	<p class= "text-center">A list of: <a href="/project/blue/clients">Clients</a></p>
+	<p class= "text-center">A list of: <a href="/project/blue/hotels">Hotels</a></p>
+	<p class= "text-center">A list of: <a href="/project/blue/bookings">Bookings</a></p>
 </body>
 </html>
