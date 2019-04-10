@@ -1,6 +1,5 @@
 --hotels
 
-
 create table red_hotels (
 hotel_id number (6) primary key,
 hotel_name varchar2 (40),
@@ -10,7 +9,6 @@ room_counter number (6)
 
 create sequence red_hotel_seq
 start with 121 increment by 1;
-
 
 
 --insert data in hotels
