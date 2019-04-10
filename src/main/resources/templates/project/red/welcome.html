@@ -3,13 +3,34 @@
 <head>
 <meta charset="utf-8">
 <title>Welcome to Thymeleaf</title>
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+
 </head>
-<body class="text-center">
+<body>
+<div class="container-fluid" id="welcome">
+
 	<h1 th:text="'Welcome, ' + ${user} + '!'"></h1>
+<<<<<<< HEAD
+	<br>
+	
+	<p>Show me all the </p><div>
+	<a href="/project/red/hotels"><button type="button" class="btn btn-light">Hotels</button></a>
+	</div> <br>
+	<div><a href="/project/red/clients"><button type="button" class="btn btn-light">Clients</button></a>
+	 </div> 
+	 <div>
+	 <a href="/project/red/bookings"><button type="button" class="btn btn-light">Bookings</button></a>
+	 </div>
+
+</div>
+
+=======
 	<br/>
 	<p>Show me all the <a href="/project/red/hotels">Hotels</a> </p>
 	<p>Show me all the <a href="/project/red/clients">Clients</a> </p>
 	<p>Show me all the <a href="/project/red/bookings">Bookings</a> </p>
+>>>>>>> branch 'master' of https://github.com/egalli64/oved210.git
 </body>
 </html>
