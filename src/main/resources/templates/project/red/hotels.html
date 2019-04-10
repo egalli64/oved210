@@ -22,7 +22,7 @@
 				<th>ROOM COUNTER</th>
 			</tr>
 			</thead>
-			<tr class="table-primary" th:each="hotel: ${hotels}">
+			<tr class="table-success" th:each="hotel: ${hotels}">
 				<td th:text =${hotel.hotelId}></td>
 				<td th:text =${hotel.hotelName}></td>
 				<td th:text =${hotel.city}></td>
@@ -48,7 +48,7 @@
 
 <hr>
 
-<a href="/templates/project/red/welcome.html"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
+<a href="/project/red/login"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
 </a>
 	
 
