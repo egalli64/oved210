@@ -6,31 +6,46 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
-th:href="@{/css/sara/hotel.css}">
+	href="/css/project/green/green2.css">
 </head>
 <body>
-		<h3>Table</h3>
-		<table class="table">
+	<div class="container-fluid">
+
+		<h3>Booking</h3>
+		<table class="booking">
 			<tr>
-			<th>Booking Id</th>
-			<th>Hotel Id</th>
-			<th>Client Id</th>
-			<th>Availability</th>
-			<th>Payment</th>
+				<th>Booking Id</th>
+				<th>Hotel Id</th>
+				<th>Client Id</th>
+				<th>Availability</th>
+				<th>Payment</th>
 			</tr>
 			<tr th:each="booking: ${bookings}">
-			<td th:text="${booking.bookingId}"></td>
-			<td th:text="${booking.hotelId}"></td>
-			<td th:text="${booking.clientId}"></td>
-			<td th:text="${booking.availability}"></td>
-			<td th:text="${booking.payment}"></td>
+				<td th:text="${booking.bookingId}"></td>
+				<td th:text="${booking.hotelId}"></td>
+				<td th:text="${booking.clientId}"></td>
+				<td th:text="${booking.availability}"></td>
+				<td th:text="${booking.payment}"></td>
 			</tr>
 		</table>
 
-		<h3>Select-Option</h3>
-		<select>
-			<option th:each="booking: ${bookings}" 
-					th:value="${booking.bookingId}"></option>
+		<h3>check-in:</h3>
+		<select name="os">
+			<option value="month">Month</option>
+		</select><select name="os">
+			<option value="day">Day</option>
+		</select><select name="os">
+			<option value="yyyy"></option>
 		</select>
+		 
+		<h3>check-out:</h3>
+		<select name="os">
+			<option value="month">Month</option>
+		</select><select name="os">
+			<option value="day">Day</option>
+		</select><select name="os">
+			<option value="yyyy"></option>
+		</select>
+	</div>
 </body>
 </html>
