@@ -2,16 +2,31 @@ body {
 	background-image: url('/img/project/blue/hotels.jpg');
 	
 	color: #000040;
-
+	background-size: 100%
 }
 
 h1 {
-	align-text: center;
-	color: #1e2782;
+	text-align: center;
+	color: #c5c1b4;
 	font-style: italic;
+	font-weight: bold;
+	background-color: #ffffff;
+}
+
+label{
+
+	color: #585858;
+	font-weight: bold;
+}
+
+
+legend{
+	
+	color: #b7e2ff;
+	font-weight: bold;
+	backgroun-color: white;
 }
 
 fieldset{
-	align-text: center;
-	color: black;
+	background-color:#e0ded8;
 }
