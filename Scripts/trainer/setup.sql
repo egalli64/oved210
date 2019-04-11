@@ -1,3 +1,4 @@
+drop sequence employees_seq;
 drop table employees;
 
 create table employees(
@@ -15,3 +16,5 @@ insert into employees (
     select employee_id, first_name, last_name, email, hire_date, job_id
     from hr.employees
 );
+
+create sequence employees_seq increment by 1 start with 300;
