@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Employee</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/myStyles.css}">
+</head>
+<body>
+	<h1>Employee</h1>
+	<div>
+		<p>Go to <a href="/trainer/employees">all employees</a> page</p>
+	</div>
+	<hr />
+	<div th:if="${employee}">
+		<p>Id: <span th:text="${employee.id}">42</span></p>
+		<p>First Name: <span th:text="${employee.firstName}">Linus</span></p>
+		<p>Last Name: <span th:text="${employee.lastName}">Torvalds</span></p>
+		<p>EMail: <span th:text="${employee.email}">LTORVALDS</span></p>
+		<p>Hired on: <span th:text="${employee.hireDate}">2018-12-31</span></p>
+		<p>Job id: <span th:text="${employee.jobId}">IT_PROG</span></p>
+	</div>
+	<div th:if="${id}">
+		Nothing found with id <span th:text="${id}"></span>
+	</div>
+</body>
+</html>
