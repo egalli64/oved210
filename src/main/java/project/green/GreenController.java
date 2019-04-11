@@ -3,11 +3,14 @@ package project.green;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 @Controller
 public class GreenController {
@@ -51,11 +54,13 @@ public class GreenController {
 	}
 
 	@GetMapping("/project/green/addedClients")
-	public String create(
-			@RequestParam String clientName,
-			@RequestParam String email,
-			@RequestParam Long phone,
+	public String create(@RequestParam String clientName, @RequestParam String email, @RequestParam Long phone,
 			Model model) {
+		if (clientName.isEmpty()) {
+			model.addAttribute("message", "Can't create client without a name!");
+			model.addAttribute("clients", repoClient.findAll());
+			return "/project/green/clients";
+		}
 
 		GreenClients client = new GreenClients();
 
@@ -65,6 +70,14 @@ public class GreenController {
 		repoClient.save(client);
 
 		log.trace("get all clients");
+		try {
+			repoClient.save(new GreenClients(clientName, email, phone));
+			model.addAttribute("message", String.format("NewClient %s %s correctly created", clientName, email));
+		} catch (Exception dive) {
+			String message = String.format("Can't create NewClient %s %s", clientName, email);
+			log.error(message);
+			model.addAttribute("message", message);
+		}
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
