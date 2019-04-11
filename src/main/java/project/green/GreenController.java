@@ -39,7 +39,7 @@ public class GreenController {
 	public String login(Model model) {
 		model.addAttribute("user", GreenController.user);
 
-		return "/project/green/response";
+		return "/project/green/welcomegreen";
 
 	}
 
