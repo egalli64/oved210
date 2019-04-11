@@ -25,14 +25,14 @@ public class EmployeeCtrl {
     @Autowired
     EmployeeRepository repo;
 
-    @GetMapping("/employees")
+    @GetMapping("/trainer/employees")
     public String allEmployees(Model model) {
         logger.debug("All employees");
         model.addAttribute("employees", repo.findAll());
-        return "employees";
+        return "/trainer/employees";
     }
 
-    @GetMapping("/pagedStClerk")
+    @GetMapping("/trainer/pagedStClerk")
     public String pagedEmployees( //
             @RequestParam int page, //
             Model model) {
@@ -43,10 +43,10 @@ public class EmployeeCtrl {
 
         model.addAttribute("employees", result);
         model.addAttribute("msg", " paged st_clerks");
-        return "employees";
+        return "/trainer/employees";
     }
 
-    @GetMapping("/pagedStClerk2")
+    @GetMapping("/trainer/pagedStClerk2")
     public String pagedEmployees2( //
             @RequestParam int page, //
             Model model) {
@@ -57,10 +57,10 @@ public class EmployeeCtrl {
 
         model.addAttribute("employees", result);
         model.addAttribute("msg", " paged st_clerks");
-        return "employees";
+        return "/trainer/employees";
     }
 
-    @GetMapping("/sortedStClerk")
+    @GetMapping("/trainer/sortedStClerk")
     public String sortedEmployees(Model model) {
         logger.debug("Sorted employees");
 
@@ -68,10 +68,10 @@ public class EmployeeCtrl {
 
         model.addAttribute("employees", result);
         model.addAttribute("msg", " st_clerks sorted by last name");
-        return "employees";
+        return "/trainer/employees";
     }
 
-    @GetMapping("/employee")
+    @GetMapping("/trainer/employee")
     public String find( //
             @RequestParam long id, //
             Model model) {
@@ -83,17 +83,17 @@ public class EmployeeCtrl {
         } else {
             model.addAttribute("id", id);
         }
-        return "employee";
+        return "/trainer/employee";
     }
 
-    @GetMapping("/coders")
+    @GetMapping("/trainer/coders")
     public String allCoders(Model model) {
         logger.debug("All coders");
         model.addAttribute("employees", repo.findByJobIdOrderById(CODER));
-        return "coders";
+        return "/trainer/coders";
     }
 
-    @GetMapping("/coders/order")
+    @GetMapping("/trainer/coders/order")
     public String orderCoders( //
             @RequestParam String by, //
             Model model) {
@@ -113,10 +113,10 @@ public class EmployeeCtrl {
         }
 
         model.addAttribute("employees", coders);
-        return "coders";
+        return "/trainer/coders";
     }
 
-    @GetMapping("/coders/create")
+    @GetMapping("/trainer/coders/create")
     public String createCoder( //
             @RequestParam String first, //
             @RequestParam String last, //
@@ -131,10 +131,10 @@ public class EmployeeCtrl {
             model.addAttribute("message", message);
         }
         model.addAttribute("employees", repo.findByJobIdOrderById(CODER));
-        return "coders";
+        return "/trainer/coders";
     }
 
-    @GetMapping("/coders/save")
+    @GetMapping("/trainer/coders/save")
     public String saveCoder( //
             @RequestParam long id, //
             @RequestParam String first, //
@@ -167,10 +167,10 @@ public class EmployeeCtrl {
         }
 
         model.addAttribute("employees", repo.findByJobIdOrderById(CODER));
-        return "coders";
+        return "/trainer/coders";
     }
 
-    @GetMapping("/coders/delete")
+    @GetMapping("/trainer/coders/delete")
     public String deleteCoder( //
             @RequestParam long id, //
             Model model) {
@@ -191,6 +191,6 @@ public class EmployeeCtrl {
         }
 
         model.addAttribute("employees", repo.findByJobIdOrderById(CODER));
-        return "coders";
+        return "/trainer/coders";
     }
 }

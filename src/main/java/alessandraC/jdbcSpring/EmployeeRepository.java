@@ -9,5 +9,9 @@ import alessandraC.jdbcSpring.Employee;
 public interface EmployeeRepository extends CrudRepository<Employee, String> {
 
 	List<Employee> findByLastName(String lastName); // fa una ricerca nella lista dei country sui nomi
+	
+	List<Employee> findByJobIdOrderById(String jobId);
+	
+	
 
 }

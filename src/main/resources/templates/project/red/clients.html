@@ -9,21 +9,44 @@
 
 <body id="clients">
 	<h3 class="backgroundtitles">Clients</h3>
-	<div>
-<a href="/project/red/insertClient.html"><button type="button" class="btn btn-info" aria-pressed="true">NEW CLIENT</button>
-</a>
-</div>
 <br>
+<div>
+<a href="/project/red/insertClient.html"><input type="button" value = "NEW CLIENT" class="btn btn-info" aria-pressed="true"/></a>
+<a href="/project/red/deleteClient.html"><input type="button" value = "DELETE CLIENT" class="btn btn-danger" aria-pressed="true"/></a>
+</div>
+
+<br>
+
+<div id="backgroundmessagescorrect">
+ <h4  th:text = "${clientSaved}"></h4>
+</div>
+<div id="backgroundmessagescorrect">
+ <h4  th:text = "${clientDeleted}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${duplicatedmail}"
+ 	th:catch = "${duplicatedmail}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${errorMessage}"
+ 	th:if = "${errorMessage}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${unexistingdId}"
+ 	th:catch = "${unexistingdId}"></h4>
+</div>
 	<div class="container-fluid">
 		<table class ="table table-hover">
 			<thead class = "thead-primary">
 			<tr>
+				<th>CLIENT ID</th>
 				<th>CLIENT NAME</th>
 				<th>EMAIL</th>
 				<th>PHONE</th>
 			</tr>
 			</thead>
 			<tr th:each="client: ${clients}" class ="table-danger">
+				<td th:text =${client.clientId}></td>
 				<td th:text =${client.clientName}></td>
 				<td th:text =${client.email}></td>
 				<td th:text =${client.phone}></td>

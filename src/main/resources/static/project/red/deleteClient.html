@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hotel</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="clients">
+<h3 class="backgroundtitles">Delete Client</h3>
+
+<br>
+<form id="newclient" name="frmLog" action="/project/red/deleteClient" method="get">
+		
+    
+  <div class="form-group">
+      <label>Id:</label>
+        <input name="clientId" type="text" class="form-control" placeholder="Enter Id">
+   </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
