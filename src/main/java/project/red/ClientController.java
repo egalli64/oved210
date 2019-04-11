@@ -36,14 +36,17 @@ public class ClientController {
 			
 			return "/project/red/clients";
 		}
-		
+		try {
 		Client client = new Client(clientName, email, phone);
 		repo.save(client);
 		model.addAttribute("clients", repo.findAll());
 		
 		String clientSaved = String.format("***New client inserted!***");
 		model.addAttribute("clientSaved", clientSaved); 
-		
+		} catch (Exception ex){ 
+			String duplicatedmail = String.format("***Mail already existing!***");
+			model.addAttribute("duplicatedmail", duplicatedmail);
+		}
 		return "/project/red/clients";
 		
 	}
@@ -58,19 +61,23 @@ public class ClientController {
 		
 		
 		if (clientId == null){ 
-			String errorMessage = String.format("***Impossible to remove without parameters!***");
+			String errorMessage = String.format("***Impossible to remove without inserting Id!***");
 			model.addAttribute("errorMessage", errorMessage);
 			
 			return "/project/red/clients";
 		}
 		
-		Long Id = clientId;
-		repo.deleteById(Id);
+		try {
+		repo.deleteById(clientId);
 		model.addAttribute("clients", repo.findAll());
 		
 		String clientDeleted = String.format("***Client deleted!***");
 		model.addAttribute("clientDeleted", clientDeleted);
-	
+		
+		} catch (Exception ex){ 
+			String unexistingdId = String.format("***Unexisting Id!***");
+			model.addAttribute("unexistingdId", unexistingdId);
+		}
 		
 		return "/project/red/clients";
 

@@ -24,8 +24,16 @@
  <h4  th:text = "${clientDeleted}"></h4>
 </div>
 <div id="backgroundmessageserror">
+ <h4  th:text = "${duplicatedmail}"
+ 	th:catch = "${duplicatedmail}"></h4>
+</div>
+<div id="backgroundmessageserror">
  <h4  th:text = "${errorMessage}"
  	th:if = "${errorMessage}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${unexistingdId}"
+ 	th:catch = "${unexistingdId}"></h4>
 </div>
 	<div class="container-fluid">
 		<table class ="table table-hover">
