@@ -3,3 +3,6 @@ https://docs.oracle.com/javase/specs/jls/se6/jls3.pdf
 
 The Java™ Tutorials
 https://docs.oracle.com/javase/tutorial/
+
+Thymeleaf
+https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.pdf
