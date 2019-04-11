@@ -8,7 +8,10 @@
 	
 	<link rel="stylesheet" type="text/css"
 	 href="/css/project/blue/bluestd.css" />
-	</head>
+	 
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
 
 <body>
 
@@ -25,12 +28,14 @@ th:if = "${errorMessage}">
 			<th>Client Name</th>
 			<th>Email</th>
 			<th>Phone</th>
+			<th></th>
 		</tr>
 		<tr th:each="client: ${clients}">
 			<td th:text="${client.clientId}"></td>
 			<td th:text="${client.clientName}"></td>
 			<td th:text="${client.email}"></td>
 			<td th:text="${client.phone}"></td>
+			<td><i style='font-size:24px' class='fas' href="">&#xf1f8;</i> </td>
 		</tr>
 	</table>
 	<hr>
