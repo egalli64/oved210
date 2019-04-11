@@ -42,11 +42,36 @@ public class ClientController {
 		model.addAttribute("clients", repo.findAll());
 		
 		String clientSaved = String.format("***New client inserted!***");
-		model.addAttribute("clientSaved", clientSaved);
+		model.addAttribute("clientSaved", clientSaved); 
 		
+		return "/project/red/clients";
 		
+	}
+
+	@GetMapping("/project/red/deleteClient")
+	public String delete(@RequestParam String clientName, @RequestParam String email, @RequestParam String phone,
+
+			Model model) {
+		
+		log.trace("get all clients");
+		model.addAttribute("clients", repo.findAll());
+		
+		if (clientName.isEmpty()) { 
+			String errorMessage = String.format("***Client name is missing!***");
+			model.addAttribute("errorMessage", errorMessage);
+			
+			return "/project/red/clients";
+		}
+		
+		Client deleteClient = new Client(clientName, email, phone);
+		repo.delete(deleteClient);
+		model.addAttribute("clients", repo.findAll());
+		
+		String clientDeleted = String.format("***Client deleted!***");
+		model.addAttribute("clientDeleted", clientDeleted);
 		
 		return "/project/red/clients";
 
 	}
+	
 }

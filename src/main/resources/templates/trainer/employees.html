@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Employees</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/myStyles.css}">
+</head>
+<body>
+	<h1>Employees<span th:if="${msg}" th:text="${msg}"></span></h1>
+
+	<h2>Employee details:</h2>
+	<form action="/trainer/employee">
+		<select name="id">
+			<option th:each="cur: ${employees}" th:value="${cur.id}"
+				th:text="|${cur.firstName} ${cur.lastName}| ">Linus Torvalds</option>
+		</select>
+		<div>
+			<button>Go!</button>
+		</div>
+	</form>
+
+	<p>
+<!-- 
+		Go to <a href="/trainer/regions">all regions</a> page<br />
+		Go to <a href="/trainer/countries">all countries</a> page<br />
+		Go to <a href="/trainer/coders">coders</a> page
+  -->
+	</p>
+
+	<hr />
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>FIRST NAME</th>
+			<th>LAST NAME</th>
+			<th>JOB ID</th>
+		</tr>
+		<tr th:each="cur: ${employees}">
+			<td th:text="${cur.id}">42</td>
+			<td th:text="${cur.firstName}">Linus</td>
+			<td th:text="${cur.lastName}">Torvalds</td>
+			<td th:text="${cur.jobId}">IT_PROG</td>
+		</tr>
+	</table>
+</body>
+</html>
