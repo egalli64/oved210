@@ -1,9 +1,11 @@
-drop table BLUE_BOOKINGS;
-drop table BLUE_HOTELS;
 drop sequence BLUE_HOTELS_SEQ;
-drop table BLUE_CLIENTS;
 drop sequence BLUE_CLIENTS_SEQ;
 drop sequence BLUE_BOOKING_SEQ;
+
+drop table BLUE_BOOKINGS;
+drop table BLUE_HOTELS;
+drop table BLUE_CLIENTS;
+
 
 create table BLUE_HOTELS (
 HOTEL_ID number (6) primary key,
@@ -11,6 +13,10 @@ HOTEL_NAME varchar2 (40),
 CITY varchar2 (30),
 ROOM_COUNTER number (6) 
 );
+
+SELECT * 
+FROM BLUE_HOTELS
+ORDER BY HOTEL_ID;
 
 create sequence BLUE_HOTELS_SEQ
 start with 1 increment by 1;
@@ -61,6 +67,10 @@ CLIENT_NAME varchar2(100),
 EMAIL varchar2(50),
 PHONE number (25));
 
+SELECT * 
+FROM BLUE_CLIENTS
+ORDER BY CLIENT_ID;
+
 create sequence BLUE_CLIENTS_SEQ
 start with 1 increment by 1;
 
@@ -89,6 +99,10 @@ CLIENT_ID number (4) references BLUE_CLIENTS(CLIENT_ID),
 AVAILABILITY date,
 PAYMENT number (5, 2) 
 );
+
+SELECT * 
+FROM BLUE_BOOKINGS
+ORDER BY BOOKING_ID;
 
 create sequence BLUE_BOOKING_SEQ
 start with 1 increment by 1;
