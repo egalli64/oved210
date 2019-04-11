@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 		private HotelRepository repo;
 
 		@GetMapping("/project/red/hotels")
-		public String allCountries(Model model) {
+		public String allHotels(Model model) {
 			log.trace("get all hotels");
 			model.addAttribute("hotels", repo.findAll());
 			return "/project/red/hotels";
