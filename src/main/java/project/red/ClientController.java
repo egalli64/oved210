@@ -56,7 +56,8 @@ public class ClientController {
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());
 		
-		if (clientId.equals(null)) { 
+		
+		if (clientId == null){ 
 			String errorMessage = String.format("***Impossible to remove without parameters!***");
 			model.addAttribute("errorMessage", errorMessage);
 			
