@@ -53,7 +53,7 @@ public class BlueController {
 	public String allClients(Model model) {
 		log.trace("get all clients");
 		model.addAttribute("clients", repClient.findAll());
-		return "project/blue/clients";
+		return "/project/blue/clients";
 	}
 
 	
