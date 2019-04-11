@@ -6,9 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface GreenClientsRepository extends CrudRepository< GreenClients, String> {
-	 void deleteById(String email);
-
+public interface GreenClientsRepository extends CrudRepository<GreenClients, Long> {
 }
 
 

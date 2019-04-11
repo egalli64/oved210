@@ -15,10 +15,8 @@ public class GreenClients {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Generate")
 	@SequenceGenerator(sequenceName = "Green_clients_seq", allocationSize = 1, name = "Generate")
-
-	
-	
 	private long clientId;
+
 	private String clientName;
 	private String email;
 	private Long phone;
