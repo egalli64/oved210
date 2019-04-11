@@ -1,0 +1,17 @@
+Clients
+- list all
+- new
+- edit
+- delete
+
+Hotels
+- list all
+- new
+- edit
+- delete
+
+Bookings
+- list all
+- new
+- edit
+- delete
