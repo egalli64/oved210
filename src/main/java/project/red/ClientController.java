@@ -27,7 +27,7 @@ public class ClientController {
 
 			Model model) {
 		
-		log.trace("get all clients");
+		log.trace("get new client");
 		model.addAttribute("clients", repo.findAll());
 		
 		if (clientName.isEmpty()) { 
@@ -53,7 +53,7 @@ public class ClientController {
 
 			Model model) {
 		
-		log.trace("get all clients");
+		log.trace("get deleted client");
 		model.addAttribute("clients", repo.findAll());
 		
 		if (clientId.equals(null)) { 
