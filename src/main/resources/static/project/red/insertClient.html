@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Hotel</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="clients">
+
+<form id="newclient" name="frmLog" action="/project/red/insertClient" method="get"
+		onsubmit="return add()">
+		
+    
+  <div class="form-group">
+      <label>Name and Surname:</label>
+        <input name="clientName" type="text" class="form-control"  placeholder="Enter Name and Surname">
+         
+    <label for="exampleInputEmail1">Email:</label>
+    <input name= "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
+  </div>
+  
+  <div class="form-group">
+      <label>Phone: </label>
+        <input name = "phone" type="text" class="form-control"  placeholder="Enter Phone Number">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

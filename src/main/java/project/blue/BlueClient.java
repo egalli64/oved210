@@ -1,6 +1,5 @@
 package project.blue;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +20,12 @@ public class BlueClient {
 	private String email;
 	private Long phone;
 	
-	public BlueClient() {
+	public BlueClient(String clientName, String email, Long phone) {
+		this.clientName = clientName;
+		this.email = email;
+		this.phone = phone;
+	}
+	protected BlueClient() {
 		
 	}
 
@@ -54,8 +58,6 @@ public class BlueClient {
 		return "BlueClient [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone="
 				+ phone + "]";
 	}
-
-
 
 	public Long getPhone() {
 		return phone;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ADDEDCLIENTS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body>
+
+<form name="frmLog" action="/project/green/addedClients" method="get"
+		onsubmit="return add()">
+		
+    
+  <div class="form-row">
+    <div class="col-7">
+      <input name="clientName" type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="col">
+      <input name= "email" type="text" class="form-control" placeholder="Email">
+    </div>
+    <div class="col">
+      <input name= "phone" type="text" class="form-control" placeholder="Phone">
+    </div>
+  </div>
+  
+  <div class="col-auto">
+  <button type="submit" class="btn btn-primary mb-2">Add</button> <div/>
+</form>
+
+</body>
+</html>
