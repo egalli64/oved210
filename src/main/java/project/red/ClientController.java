@@ -21,25 +21,31 @@ public class ClientController {
 		model.addAttribute("clients", repo.findAll());
 		return "/project/red/clients";
 	}
-	
+
 	@GetMapping("/project/red/insertClient")
-	public String create(
-			@RequestParam String clientName, 
-			@RequestParam String email,
-			@RequestParam String phone, 
+	public String create(@RequestParam String clientName, @RequestParam String email, @RequestParam String phone,
 
 			Model model) {
-//		model.addAttribute("Name", clientName);
-//		model.addAttribute("Email", email);
-//		model.addAttribute("Phone", phone);
-//		model.addAttribute("Hotel Id", hotelId);
-		
-		Client client = new Client(clientName, email, phone);
-		repo.save(client);
 		
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());
 		
+		if (clientName.isEmpty()) { 
+			String errorMessage = String.format("***Client name is missing!***");
+			model.addAttribute("errorMessage", errorMessage);
+			
+			return "/project/red/clients";
+		}
+		
+		Client client = new Client(clientName, email, phone);
+		repo.save(client);
+		
+		String clientSaved = String.format("***New client inserted!***");
+		model.addAttribute("clientSaved", clientSaved);
+		
+		
+		
 		return "/project/red/clients";
-	}	
+
+	}
 }

@@ -14,6 +14,14 @@
 </a>
 </div>
 <br>
+
+<div id="backgroundmessagescorrect">
+ <h4  th:text = "${clientSaved}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${errorMessage}"
+ 	th:if = "${errorMessage}"></h4>
+</div>
 	<div class="container-fluid">
 		<table class ="table table-hover">
 			<thead class = "thead-primary">
