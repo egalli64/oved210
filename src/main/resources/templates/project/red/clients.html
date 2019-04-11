@@ -9,19 +9,20 @@
 
 <body id="clients">
 	<h3 class="backgroundtitles">Clients</h3>
-	<div>
+<div>
 <a href="/project/red/insertClient.html"><button type="button" class="btn btn-info" aria-pressed="true">NEW CLIENT</button>
 </a>
-</div>
-
-<div>
 <a href="/project/red/deleteClient.html"><button type="button" class="btn btn-danger" aria-pressed="true">DELETE CLIENT</button>
 </a>
 </div>
+
 <br>
 
 <div id="backgroundmessagescorrect">
  <h4  th:text = "${clientSaved}"></h4>
+</div>
+<div id="backgroundmessagescorrect">
+ <h4  th:text = "${clientDeleted}"></h4>
 </div>
 <div id="backgroundmessageserror">
  <h4  th:text = "${errorMessage}"

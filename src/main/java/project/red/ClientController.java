@@ -57,7 +57,7 @@ public class ClientController {
 		model.addAttribute("clients", repo.findAll());
 		
 		if (clientName.isEmpty()) { 
-			String errorMessage = String.format("***Client name is missing!***");
+			String errorMessage = String.format("***Impossible to remove without parameters!***");
 			model.addAttribute("errorMessage", errorMessage);
 			
 			return "/project/red/clients";
@@ -65,10 +65,10 @@ public class ClientController {
 		
 		Client deleteClient = new Client(clientName, email, phone);
 		repo.delete(deleteClient);
-		model.addAttribute("clients", repo.findAll());
 		
 		String clientDeleted = String.format("***Client deleted!***");
 		model.addAttribute("clientDeleted", clientDeleted);
+		model.addAttribute("clients", repo.findAll());
 		
 		return "/project/red/clients";
 
