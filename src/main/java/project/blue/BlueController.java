@@ -85,24 +85,14 @@ public class BlueController {
 	//controller remove clients
 	@GetMapping("/project/blue/clients/remove")
 	public String removeClient( //
-			@RequestParam String clientId,
-			@RequestParam String name, //
-			@RequestParam String email, //
-			@RequestParam Long phone, //
+			@RequestParam Long clientId,
 			Model model) {
-		BlueClient client = new BlueClient();
-
-		client.setClientName(name);
-		client.setEmail(email);
-		client.setPhone(phone);
 		
 		
-		repClient.delete(client);
+		repClient.deleteById(clientId);
 
 		// log.trace("get all clients");
 		
-       //model.addAttribute("clients", repClient.findAll());
-	
 //		allClients(model);
 		return "project/blue/clients";
 	}

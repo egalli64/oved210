@@ -28,16 +28,6 @@ body {
 	background-color: rgba(255, 255, 255, 0.8);
 	color: #0c66c9;
 }
-#backgroundmessagescorrect{
-	background-color: rgba(255, 255, 255, 0.8);
-	color: #42bd73;
-}
-
-
-#backgroundmessageserror{
-	background-color: rgba(255, 255, 255, 0.8);
-	color: #ff0000;
-}
 
 #welcome {
 width: 600px;
@@ -54,5 +44,3 @@ table {
 	color: black;
 		background-color: rgba(255, 255, 255, 0.8);
 }
-
- 
