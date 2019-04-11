@@ -1,6 +1,6 @@
 package project.green;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +15,7 @@ public class GreenClients {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Generate")
 	@SequenceGenerator(sequenceName = "Green_clients_seq", allocationSize = 1, name = "Generate")
-	@Column(name = "CLIENTS_ID")
+	
 	
 	private long clientId;
 	private String clientName;

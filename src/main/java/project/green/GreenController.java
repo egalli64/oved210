@@ -49,13 +49,22 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
-	
+
 	@GetMapping("/project/green/addClients")
-	public String create(Model model) {
-		log.trace("get all clients");
-		model.addAttribute("clients", repoClient.findAll());
-		return "/project/green/clients";
+	public String create(
+			@RequestParam String clientName,
+			@RequestParam String email,
+			@RequestParam String phone,
+
+			Model model) {
+	//		GreenClients client = new GreenClients(clientName, email, phone);
+//			repoClient(client);
+
+			log.trace("get all clients");
+			model.addAttribute("clients", repoClient.findAll());
+			return "/project/green/clients";
 	}
+	
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
