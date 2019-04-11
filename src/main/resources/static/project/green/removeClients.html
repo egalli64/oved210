@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>REMOVECLIENTS</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="/css/project/green/green2.css">
+</head>
+
+<body>
+	<div class="container-fluid"> <br/>
+		<form name="frmLog" action="/project/green/removeClients" method="get"
+			onsubmit="return remove()">
+
+			<div class="form-row">
+
+				<div class="col">
+					<input name="email" type="text" class="form-control"
+						placeholder="Email">
+				</div>
+			</div>
+			<br/>
+			<div class="col-auto">
+				<button type="submit" class="btn btn-primary mb-2">Remove</button>
+				
+			</div>
+		</form>
+	</div>
+</body>
+</html>
