@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Countries</title>
+<title>GreenHotel</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
@@ -17,37 +17,20 @@
 				<thead class="thead-succes">
 					<tr>
 						<th>Booking Id</th>
-						<th>Hotel Id</th>
-						<th>Client Id</th>
 						<th>Availability</th>
 						<th>Payment</th>
 					</tr>
 					<tr th:each="booking: ${bookings}">
 						<td th:text="${booking.bookingId}"></td>
-						<td th:text="${booking.hotelId}"></td>
-						<td th:text="${booking.clientId}"></td>
 						<td th:text="${booking.availability}"></td>
 						<td th:text="${booking.payment}"></td>
 					</tr>
+				</thead>
 			</table>
 
-			<h3>check-in:</h3>
-			<select name="os">
-				<option value="month">Month</option>
-			</select><select name="os">
-				<option value="day">Day</option>
-			</select><select name="os">
-				<option value="year">Year</option>
-			</select>
-
-			<h3>check-out:</h3>
-			<select name="os">
-				<option value="month">Month</option>
-			</select><select name="os">
-				<option value="day">Day</option>
-			</select><select name="os">
-				<option value="year">Year</option>
-			</select>
+			<a href="/project/green/check-in-out.html"><button type="button">
+					Do your check!</button> </a> <br /> <a href="/project/green/login"><button
+					type="button">RETURN BACK</button> </a>
 		</div>
 	</div>
 </body>

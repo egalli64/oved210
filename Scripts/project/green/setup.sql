@@ -39,37 +39,37 @@ hotel_id number (6)
 
 
 insert into green_clients
-values (green_clients_seq.nextval, 'alan brie', 'a.brie@gmail.com',3675626954, 1);
+values (green_clients_seq.nextval, 'Alan Brie', 'a.brie@gmail.com',3675626954, 1);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'bill	clinton ', 'b.clinton@gmail.com',3475526924, 2);
+values (green_clients_seq.nextval, 'Bill Clinton ', 'b.clinton@gmail.com',3475526924, 2);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'steven	king ', 's.king@gmail.com',3275726254, 3);
+values (green_clients_seq.nextval, 'Steven	King ', 's.king@gmail.com',3275726254, 3);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'neena	kochhar ', 'n.kochhar@gmail.com',3285523253, 11);
+values (green_clients_seq.nextval, 'Neena	Kochhar ', 'n.kochhar@gmail.com',3285523253, 11);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'lex	de haan ', 'l.dehaan@gmail.com',3376789251, 4);
+values (green_clients_seq.nextval, 'Lex	De Haan ', 'l.dehaan@gmail.com',3376789251, 4);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'alexander	hunold ', 'a.hunold@gmail.com',3345716852, 5);
+values (green_clients_seq.nextval, 'Alexander Hunold ', 'a.hunold@gmail.com',3345716852, 5);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'bruce	ernst ', 'b.ernst@gmail.com',3675626954, 6);
+values (green_clients_seq.nextval, 'Bruce	Ernst ', 'b.ernst@gmail.com',3675626954, 6);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'daniel	faviet  ', 'd.faviet@gmail.com',3475526924, 7);
+values (green_clients_seq.nextval, 'Daniel	Faviet  ', 'd.faviet@gmail.com',3475526924, 7);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'valli	pataballa ', 'v.patabella@gmail.com',3275726254, 8);
+values (green_clients_seq.nextval, 'Valli	Pataballa ', 'v.patabella@gmail.com',3275726254, 8);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'diana	lorentz ', 'd.lorentz@gmail.com',3285523253, 9);
+values (green_clients_seq.nextval, 'Diana	Lorentz ', 'd.lorentz@gmail.com',3285523253, 9);
 
 insert into green_clients
-values (green_clients_seq.nextval, 'nancy	greenberg ', 'n.greenberg@gmail.com',3376789251, 10);
+values (green_clients_seq.nextval, 'Nancy	Greenberg ', 'n.greenberg@gmail.com',3376789251, 10);
 
 
 
@@ -82,46 +82,46 @@ room_counter number (6)
 
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel tulipano', 'milano', 10);
+values(green_hotels_seq.nextval , 'Hotel Tulipano', 'milano', 10);
 
 insert into green_hotels(hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel margherita', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Margherita', 'roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel girasole', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Girasole', 'firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel giglio', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Giglio', 'napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel orchidea', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Orchidea', 'venezia', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel fresia', 'milano', 10);
+values(green_hotels_seq.nextval , 'Hotel Fresia', 'milano', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel imperial', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Imperial', 'roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel grisalide', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Grisalide', 'firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel rosa', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Rosa', 'napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel violetta', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Violetta', 'venezia', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel xheko', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Xheko', 'roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel primula', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Primula', 'firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel pino', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Pino', 'napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'hotel stella', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Stella', 'venezia', 5);
 
 
 create table green_rooms (
