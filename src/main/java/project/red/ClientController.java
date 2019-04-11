@@ -36,6 +36,7 @@ public class ClientController {
 		
 		Client client = new Client(clientName, email, phone);
 		repo.save(client);
+		model.addAttribute("clients", repo.findAll());
 		
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());

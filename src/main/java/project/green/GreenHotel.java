@@ -14,6 +14,8 @@ public class GreenHotel {
 	@Id
 	private String hotelId;
 	private String hotelName;
+	private String city;
+	private long roomCounter;
 
 	public String getHotelId() {
 		return hotelId;
@@ -31,8 +33,26 @@ public class GreenHotel {
 		this.hotelName = hotelName;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public long getRoomCounter() {
+		return roomCounter;
+	}
+
+	public void setRoomCounter(long roomCounter) {
+		this.roomCounter = roomCounter;
+	}
+
 	@Override
 	public String toString() {
-		return "GreenHotel [hotelId=" + hotelId + ", hotelName=" + hotelName + "]";
+		return "GreenHotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", city=" + city + ", roomCounter="
+				+ roomCounter + "]";
 	}
+
 }
