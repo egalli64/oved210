@@ -49,7 +49,6 @@ client_id number (6) PRIMARY KEY,
 client_name varchar2(100),
 email varchar2(50),
 phone varchar2(25),
-hotel_id NUMBER (6) CONSTRAINT red_clients_hotel_id_fk REFERENCES red_hotels(hotel_id),
 CONSTRAINT uc_email UNIQUE (email)
 );
 
@@ -59,34 +58,34 @@ start with 001 increment by 1;
 
 --insert data in clients
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Ryan Reynolds', 'r.reynols@icloud.com','3335566781', 121);
+VALUES (red_client_seq.nextval, 'Ryan Reynolds', 'r.reynols@icloud.com','3335566781');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Brad Pitt', 'brangelina_no_more@outlook.com','3472625894', 121);
+VALUES (red_client_seq.nextval, 'Brad Pitt', 'brangelina_no_more@outlook.com','3472625894');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Luca Argentero', 'bigbrother3@gmail.com','3298765123', 122);
+VALUES (red_client_seq.nextval, 'Luca Argentero', 'bigbrother3@gmail.com','3298765123');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Gerry Scotti', 'g.scotti@gmail.com','3345632567', 122);
+VALUES (red_client_seq.nextval, 'Gerry Scotti', 'g.scotti@gmail.com','3345632567');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Raffaella Carrà', 'raffa.forever@gmail.com','3479067281', 125);
+VALUES (red_client_seq.nextval, 'Raffaella Carrà', 'raffa.forever@gmail.com','3479067281');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Julia Roberts', 'r.Julia@gmail.com','3365432178', 123);
+VALUES (red_client_seq.nextval, 'Julia Roberts', 'r.Julia@gmail.com','3365432178');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Gianni Sperti', 'giannismile@gmail.com','3287623416', 124);
+VALUES (red_client_seq.nextval, 'Gianni Sperti', 'giannismile@gmail.com','3287623416');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Angelina Jolie', 'angelina_alone@icloud.com','3298754231', 125);
+VALUES (red_client_seq.nextval, 'Angelina Jolie', 'angelina_alone@icloud.com','3298754231');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Tina Cipollari', 'gemma.hate@gmail.com','3479865123', 124);
+VALUES (red_client_seq.nextval, 'Tina Cipollari', 'gemma.hate@gmail.com','3479865123');
 
 INSERT INTO red_clients
-VALUES (red_client_seq.nextval, 'Ryan Gosling', 'dance.ryan@gmail.com','3362367154', 123);
+VALUES (red_client_seq.nextval, 'Ryan Gosling', 'dance.ryan@gmail.com','3362367154');
 
 
 
@@ -96,8 +95,8 @@ VALUES (red_client_seq.nextval, 'Ryan Gosling', 'dance.ryan@gmail.com','33623671
 
 create table red_bookings (
 booking_id number (6) PRIMARY key,
-hotel_id number (6) CONSTRAINT red_bookings_hotel_id_fk REFERENCES red_hotels(hotel_id),
-client_id number (6) CONSTRAINT red_bookings_client_id_fk REFERENCES red_clients(client_id),
+hotel_id number (6) CONSTRAINT red_bookings_hotel_id_fk REFERENCES red_hotels(hotel_id) ON DELETE CASCADE,
+client_id number (6)CONSTRAINT red_bookings_client_id_fk  REFERENCES red_clients(client_id) ON DELETE CASCADE,
 client_name varchar2(100),
 check_in date,
 check_out date,

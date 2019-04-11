@@ -79,13 +79,12 @@ public class GreenController {
 	}
 	
 	@GetMapping("/project/green/removeClients")
-	public String removeClients( @RequestParam String email,
+	public String removeClients(@RequestParam Long id,
 			Model model) {
 		log.trace("get all clients");
 		model.addAttribute("clients", repoClient.findAll());
 		
-		String Id = email;
-		repoClient.deleteById(Id);
+		repoClient.deleteById(id);
 		model.addAttribute("clients", repoClient.findAll());
 
 		String deletedmessage = String.format("Client %s %s correctly removed");
