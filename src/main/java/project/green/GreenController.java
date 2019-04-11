@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -52,26 +50,24 @@ public class GreenController {
 		return "/project/green/clients";
 	}
 
-	@GetMapping("/project/green/addClients")
+	@GetMapping("/project/green/addedClients")
 	public String create(
 			@RequestParam String clientName,
 			@RequestParam String email,
 			@RequestParam Long phone,
-
 			Model model) {
-			
+
 		GreenClients client = new GreenClients();
 
 		client.setClientName(clientName);
 		client.setEmail(email);
 		client.setPhone(phone);
-			repoClient.save(client);
+		repoClient.save(client);
 
-			log.trace("get all clients");
-			model.addAttribute("clients", repoClient.findAll());
-			return "/project/green/clients";
+		log.trace("get all clients");
+		model.addAttribute("clients", repoClient.findAll());
+		return "/project/green/clients";
 	}
-	
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
@@ -86,8 +82,5 @@ public class GreenController {
 		model.addAttribute("bookings", repoBooking.findAll());
 		return "project/green/bookings";
 	}
-
-	
-	
 
 }
