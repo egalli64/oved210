@@ -84,10 +84,11 @@ public class BlueController {
 
 	//controller remove clients
 	@GetMapping("/project/blue/remove")
-	public String removeClient( Long clientId, Model model) {
+	public String removeClient(
+			@RequestParam Long id, Model model) {
 	
 		
-		repClient.deleteById(clientId);
+		repClient.deleteById(id);
 
 		// log.trace("get all clients");
 		
