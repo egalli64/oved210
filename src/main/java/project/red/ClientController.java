@@ -49,26 +49,27 @@ public class ClientController {
 	}
 
 	@GetMapping("/project/red/deleteClient")
-	public String delete(@RequestParam String clientName, @RequestParam String email, @RequestParam String phone,
+	public String delete(@RequestParam Long clientId,
 
 			Model model) {
 		
 		log.trace("get all clients");
 		model.addAttribute("clients", repo.findAll());
 		
-		if (clientName.isEmpty()) { 
+		if (clientId.equals(null)) { 
 			String errorMessage = String.format("***Impossible to remove without parameters!***");
 			model.addAttribute("errorMessage", errorMessage);
 			
 			return "/project/red/clients";
 		}
 		
-		Client deleteClient = new Client(clientName, email, phone);
-		repo.delete(deleteClient);
+		Long Id = clientId;
+		repo.deleteById(Id);
+		model.addAttribute("clients", repo.findAll());
 		
 		String clientDeleted = String.format("***Client deleted!***");
 		model.addAttribute("clientDeleted", clientDeleted);
-		model.addAttribute("clients", repo.findAll());
+	
 		
 		return "/project/red/clients";
 
