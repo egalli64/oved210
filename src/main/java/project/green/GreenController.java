@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -54,11 +56,16 @@ public class GreenController {
 	public String create(
 			@RequestParam String clientName,
 			@RequestParam String email,
-			@RequestParam String phone,
+			@RequestParam Long phone,
 
 			Model model) {
-	//		GreenClients client = new GreenClients(clientName, email, phone);
-//			repoClient(client);
+			
+		GreenClients client = new GreenClients();
+
+		client.setClientName(clientName);
+		client.setEmail(email);
+		client.setPhone(phone);
+			repoClient.save(client);
 
 			log.trace("get all clients");
 			model.addAttribute("clients", repoClient.findAll());
