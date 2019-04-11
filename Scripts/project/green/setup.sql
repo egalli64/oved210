@@ -32,7 +32,7 @@ start with 1 increment by 1;
 create table green_clients (
 client_id number (4) constraint green_clients_pk primary key,
 client_name varchar2(100),
-email varchar2(50),
+email varchar2(50) CONSTRAINT email UNIQUE,
 phone number (25),
 hotel_id number (6) 
 );

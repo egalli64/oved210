@@ -1,14 +1,17 @@
 package project.green;
 
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -62,13 +65,6 @@ public class GreenController {
 			return "/project/green/clients";
 		}
 
-		GreenClients client = new GreenClients();
-
-		client.setClientName(clientName);
-		client.setEmail(email);
-		client.setPhone(phone);
-		repoClient.save(client);
-
 		log.trace("get all clients");
 		try {
 			repoClient.save(new GreenClients(clientName, email, phone));
@@ -81,7 +77,26 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
+	
+	@GetMapping("/project/green/removeClients")
+	public String removeClients( @RequestParam String email,
+			Model model) {
+		log.trace("get all clients");
+		model.addAttribute("clients", repoClient.findAll());
+		
+		String Id = email;
+		repoClient.deleteById(Id);
+		model.addAttribute("clients", repoClient.findAll());
 
+		String deletedmessage = String.format("Client %s %s correctly removed");
+			model.addAttribute("deletedmessage", deletedmessage);
+		
+		return "/project/green/clients";
+	}
+
+
+	
+	
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
 		log.trace("get all hotels");
@@ -95,5 +110,26 @@ public class GreenController {
 		model.addAttribute("bookings", repoBooking.findAll());
 		return "project/green/bookings";
 	}
-
+	
+	
+	
+//	 @GetMapping("/project/green/clients")
+//	    public String orderGreenClients( //
+//	            @RequestParam String by, //
+//	            Model model) {
+//	        log.debug("Order clients by clientName" + by);
+//
+//	        List<GreenClients> clients;
+//	        switch (by) {
+//	        case "ClientName":
+//	          //  clients = repoClient.findByClientNameOrderByClientName(clients);
+//	            break;
+//	        default:
+//	        //	clients = repoClient.findByClientNameOrderByClientName(clients);
+//	            break;
+//	        }
+//
+//	     //   model.addAttribute("clients", clients);
+//	        return "project/green/clients";
+//	    }
 }

@@ -42,7 +42,7 @@ client_name varchar2(100),
 email varchar2(50),
 phone varchar2(25),
 hotel_id NUMBER (6) CONSTRAINT red_clients_hotel_id_fk REFERENCES red_hotels(hotel_id),
-CONSTRAINTS unique_email UNIQUE (client_id, email)
+CONSTRAINT uc_email UNIQUE (email)
 );
 
 create sequence red_client_seq
