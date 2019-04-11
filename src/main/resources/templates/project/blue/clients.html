@@ -19,9 +19,28 @@
 th:if = "${errorMessage}">
 </h2>
 
-
-
 	<h3> Clients</h3>
+
+<fieldset class = "text-center">
+	<button class = "text-center" id = "add" >
+
+			<a href="/project/blue/clients/add.html"> <b>Add client</b> </a>
+			
+			
+
+	</button>
+	
+	
+	<button class = "text-center" id = "bck">
+	
+			<a href="/project/blue/login"> <b>Back to the list</b> </a>
+			
+			
+	
+	</button>
+	</fieldset>
+
+
 	<table class="table table-hover table-bordered table-striped" >
 		<tr>
 			<th>Client Id</th>
@@ -38,31 +57,9 @@ th:if = "${errorMessage}">
 			<td><i style='font-size:24px' class='fas' href="">&#xf1f8;</i> </td>
 		</tr>
 	</table>
+	<br>
 	<hr>
-	
-	<fieldset class = "text-center">
-	<button class = "text-center" id = "add" >
 
-			<a href="/project/blue/clients/add.html"> <b>Add client</b> </a>
-			
-			
-
-	</button>
-	
-	<button class = "text-center" id = "rmv">
-	
-			<a href="/project/blue/clients/remove.html"> <b>Remove client</b> </a>
-			
-			
-	</button>
 	
 	
-	<button class = "text-center" id = "bck">
-	
-			<a href="/project/blue/login"> <b>Back to the list</b> </a>
-			
-			
-	
-	</button>
-	</fieldset>
 </body>
