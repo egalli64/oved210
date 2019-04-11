@@ -27,7 +27,6 @@ public class ClientController {
 			@RequestParam String clientName, 
 			@RequestParam String email,
 			@RequestParam String phone, 
-			@RequestParam long hotelId,
 
 			Model model) {
 //		model.addAttribute("Name", clientName);
@@ -35,7 +34,7 @@ public class ClientController {
 //		model.addAttribute("Phone", phone);
 //		model.addAttribute("Hotel Id", hotelId);
 		
-		Client client = new Client(clientName, email, phone, hotelId);
+		Client client = new Client(clientName, email, phone);
 		repo.save(client);
 		
 		log.trace("get all clients");
