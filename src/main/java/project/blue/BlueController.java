@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BlueController {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 	private static String user;
 
@@ -30,14 +30,11 @@ public class BlueController {
 		model.addAttribute("user", user);
 
 		return "/project/blue/response";
-		
-		
+
 	}
-	
 
 	@GetMapping("/project/blue/login")
-	public String login(
-			Model model) {
+	public String login(Model model) {
 		model.addAttribute("user", BlueController.user);
 
 		return "/project/blue/response";
@@ -54,7 +51,7 @@ public class BlueController {
 		}
 		return "/project/blue/clients";
 	}
-	
+
 	// controller per aggiungere il cliente///
 
 	@GetMapping("/project/blue/clients/add")
@@ -64,50 +61,81 @@ public class BlueController {
 			@RequestParam Long phone, //
 			Model model) {
 		log.trace("get all clients");
-	try {	BlueClient client = new BlueClient();
-		
-		client.setClientName(name);
-		client.setEmail(email);
-		client.setPhone(phone);
-		
-		repClient.save(client);
-	model.addAttribute("clients", repClient.findAll());
-	
-	String SaveClient = String.format("--New client inserted!--");
-	model.addAttribute("SaveClient", SaveClient);
-	}
-		catch (Exception ex){ 
-		String duplicatedmail = String.format("--Mail already existing!--");
-		model.addAttribute("duplicatedmail", duplicatedmail);
-	}
+		try {
+			BlueClient client = new BlueClient();
+
+			client.setClientName(name);
+			client.setEmail(email);
+			client.setPhone(phone);
+
+			repClient.save(client);
+			model.addAttribute("clients", repClient.findAll());
+
+			String SaveClient = String.format("--New client inserted!--");
+			model.addAttribute("SaveClient", SaveClient);
+		} catch (Exception ex) {
+			String duplicatedmail = String.format("--Mail already existing!--");
+			model.addAttribute("duplicatedmail", duplicatedmail);
+		}
 		return "project/blue/clients";
 	}
 
-	//controller remove clients
+	// controller remove clients
 	@GetMapping("/project/blue/clients/remove")
-	
+
 	public String removeClient(@RequestParam Long id, Model model) {
 		log.trace("delete client");
 
-	try {
+		try {
 
-		repClient.deleteById(id);
+			repClient.deleteById(id);
 
-		model.addAttribute("clients", repClient.findAll());
-		String deleteClient = String.format("--Client deleted!--");
-		model.addAttribute("deleteClient", deleteClient);
-		
-		} catch (Exception ex){ 
+			model.addAttribute("clients", repClient.findAll());
+			String deleteClient = String.format("--Client deleted!--");
+			model.addAttribute("deleteClient", deleteClient);
+
+		} catch (Exception ex) {
 			String unexistingdId = String.format("--Unexisting Id!--");
 			model.addAttribute("unexistingdId", unexistingdId);
 		}
-		
+
 		return "/project/blue/clients";
 
 	}
 
+//controller editing
+	@GetMapping("/project/blue/clients/edit")
+	public String editClient( //
+			@RequestParam String name, //
+			@RequestParam String email, //
+			@RequestParam Long phone, //
+			@RequestParam Long id,
+			Model model) {
+		log.trace("get all clients");
+		
 	
-	
+		if(repClient.existsById(id)) {
+			try {
+				BlueClient client = new BlueClient();
+
+				client.setClientName(name);
+				client.setEmail(email);
+				client.setPhone(phone);
+		
+			repClient.save(client);
+			model.addAttribute("clients", repClient.findAll());
+		
+		String EditClient = String.format("--Client modified!--");
+		model.addAttribute("EditClient", EditClient);
+			}
+		 catch (Exception ex) {
+			String unexistingdId = String.format("--Unexisting Id!--");
+			model.addAttribute("unexistingdId", unexistingdId);
+		}
+		
+	}
+		return "/project/blue/clients";
+		}
 	// controller Hotels
 
 	@Autowired
@@ -131,22 +159,5 @@ public class BlueController {
 		model.addAttribute("bookings", repBooking.findAll());
 		return "project/blue/bookings";
 	}
-	
-	
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	
+}
