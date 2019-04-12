@@ -31,10 +31,9 @@ public class ClientController {
 		model.addAttribute("clients", repo.findAll());
 		
 		if (clientName.isEmpty()) { 
-			String errorMessage = String.format("***Client name is missing!***");
-			model.addAttribute("errorMessage", errorMessage);
+			model.addAttribute("errorClient", "***Client name is missing!***");
 			
-			return "/project/red/clients";
+			return "/project/red/insertClient";
 		}
 		try {
 		Client client = new Client(clientName, email, phone);
@@ -44,10 +43,9 @@ public class ClientController {
 		String clientSaved = String.format("***New client inserted!***");
 		model.addAttribute("clientSaved", clientSaved); 
 		} catch (Exception ex){ 
-			String duplicatedmail = String.format("***Mail already existing!***");
-			model.addAttribute("duplicatedmail", duplicatedmail);
+			model.addAttribute("errorEmail", "***Mail already existing!***");
 		}
-		return "/project/red/clients";
+		return "/project/red/insertClient";
 		
 	}
 
