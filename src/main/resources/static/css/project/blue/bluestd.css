@@ -62,4 +62,18 @@ th{
    color: white;
 }
  
-	
+#messagecorrect{
+	color: green;
+	background-color: #c4ffc4;
+	text-align: center;
+}	
+#messageerror2{
+	color: red;
+	background-color: #ffbe7d;
+	text-align: center;
+}
+#messageerror1{
+	color: #dfdf00;
+	background-color: #ffffbb;
+	text-align: center;
+}

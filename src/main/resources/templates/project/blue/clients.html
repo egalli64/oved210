@@ -5,48 +5,52 @@
 <title>Clients</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" type="text/css"
-	 href="/css/project/blue/bluestd.css" />
-	 
-	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-</head>
 
+<link rel="stylesheet" type="text/css"
+	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+</head>
 
 <body>
 
-<!-- <h2 th:text = "${errorMessage}"
-th:if = "${errorMessage}">
-</h2> -->
-<div id="messagescorrect">
- <h4  th:text = "${SaveClient}"></h4>
-</div>
-<div id="backgroundmessagescorrect">
- <h4  th:text = "${deleteClient}"></h4>
-</div>
-<div id="backgroundmessageserror">
- <h4  th:text = "${duplicatedmail}"
- 	th:catch = "${duplicatedmail}"></h4>
-</div>
 
-<div id="backgroundmessageserror">
- <h4  th:text = "${unexistingdId}"
- 	th:catch = "${unexistingdId}"></h4>
-</div>
-	<h3> Clients</h3>
-
-<fieldset class = "text-center">
+	<h3>Clients</h3>
 	
 
-	<a href="/project/blue/clients/add.html"><button class = "text-center" id = "add" > <b>Add client</b></button> </a>
-			
-	<a href="/project/blue/login"><button class = "text-center" id = "bck"> <b>Back to the list</b></button> </a>
-			
-	
+	<fieldset class="text-center">
+
+
+		<a href="/project/blue/clients/add.html"><button
+				class="text-center" id="add">
+				<b>Add client</b>
+			</button> </a> <a href="/project/blue/login"><button class="text-center"
+				id="bck">
+				<b>Back to the list</b>
+			</button> </a>
+
+
 	</fieldset>
 
+<div id="messagecorrect">
+		<h4 th:text="${SaveClient}" class="text-center"></h4>
+	</div>
+	<div id="messagecorrect">
+		<h4 th:text="${deleteClient}" class="text-center"></h4>
+	</div>
+	<div id="messageerror1">
+		<h4 th:text="${duplicatedmail}" th:catch="${duplicatedmail}"
+			class="text-center"></h4>
+	</div>
 
-	<table class="table table-hover table-bordered table-striped" >
+	<div id="messageerror2">
+		<h4 th:text="${unexistingdId}" th:catch="${unexistingdId}"
+			class="text-center"></h4>
+	</div>
+	<table class="table table-hover table-bordered table-striped">
 		<tr>
 			<th>Client Id</th>
 			<th>Client Name</th>
@@ -59,12 +63,16 @@ th:if = "${errorMessage}">
 			<td th:text="${client.clientName}"></td>
 			<td th:text="${client.email}"></td>
 			<td th:text="${client.phone}"></td>
-			<td><a href="/project/blue/clients/remove.html" th:href="@{/project/blue/clients/remove(id=${client.clientId})}"><button style='font-size:24px'> <i class='fas'> &#xf1f8;</i></button></a> </td>
+			<td><a href="/project/blue/clients/remove.html"
+				th:href="@{/project/blue/clients/remove(id=${client.clientId})}"><button
+						style='font-size: 24px'>
+						<i class='fas'> &#xf1f8;</i>
+					</button></a></td>
 		</tr>
 	</table>
 	<br>
 	<hr>
 
-	
-	
+
+
 </body>
