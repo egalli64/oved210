@@ -99,11 +99,20 @@ public class GreenController {
 		GreenClients clients;
 
 		model.addAttribute("clients", repoClient.findAll());
+		
 		return "/project/green/clients";
 		
 		
 	}
-
+	//@GetMapping("/project/green/client/saveedit")
+	//public String saveeditClient(@RequestParam Long clientId, Model model) {
+	
+		
+		//repoClient.save(new editClient);
+		//return "/project/green/clients";
+	//}
+	
+	
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
