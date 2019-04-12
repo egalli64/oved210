@@ -15,10 +15,27 @@
 
 <body>
 
-<h2 th:text = "${errorMessage}"
+<!-- <h2 th:text = "${errorMessage}"
 th:if = "${errorMessage}">
-</h2>
-
+</h2> -->
+<div id="messagescorrect">
+ <h4  th:text = "${clientSaved}"></h4>
+</div>
+<div id="backgroundmessagescorrect">
+ <h4  th:text = "${deleteClient}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${duplicatedmail}"
+ 	th:catch = "${duplicatedmail}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${errorMessage}"
+ 	th:if = "${errorMessage}"></h4>
+</div>
+<div id="backgroundmessageserror">
+ <h4  th:text = "${unexistingdId}"
+ 	th:catch = "${unexistingdId}"></h4>
+</div>
 	<h3> Clients</h3>
 
 <fieldset class = "text-center">
