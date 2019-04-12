@@ -10,10 +10,9 @@ body {
 	
 	font-weight: bold;
 }
-
-th{
-	
-	color: Black;
+tr{
+	text-align: center;
+	color: white;
 }
 
 #rmv{
