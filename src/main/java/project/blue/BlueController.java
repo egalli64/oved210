@@ -115,12 +115,17 @@ public class BlueController {
 		Optional<BlueClient> opt = repClient.findById(id);
 		if(opt.isPresent()) {
 			BlueClient client = opt.get();
-			model.addAttribute("client", client);
+		
+			//da vedere sotto lunedi 
+			model.addAttribute("Id", client.getClientId());
+			model.addAttribute("Name", client.getClientName());
+			model.addAttribute("email", client.getEmail());
+			model.addAttribute("phone", client.getPhone());
+			}
 			return "/project/blue/editClient";
 		}
 		
-		return "/project/blue/rejected";
-	}
+	
 	
 	@GetMapping("/project/blue/clients/editSecond")
 	public String editClientSecond( //

@@ -13,8 +13,9 @@
 <body>
 <div  class = "edit">
 	<h3> Edit Clients</h3>
-	<form action="/project/blue/clients/editFirst">
-	
+	<form id="newclient" name="frmLogInsert" action="/project/blue/clients/editFirst" method="get">
+	<input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${id}" > 
+ 
  <div width= 100px; height= 50px; border =1px  align=center>
 	
 <div id="newclient" class="contanier-fluid border border-info"	>
@@ -22,9 +23,7 @@
 
 			<legend>Edit client</legend>
 			<br>
-			<label class=text-left>  
-			<input type = "hidden" name = "name" class=text-left >
-			</label><br>
+			
 			<label class=text-left>Name:  
 			<input type = "text" name = "name" class=text-left >
 			</label><br>
