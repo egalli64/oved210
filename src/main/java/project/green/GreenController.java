@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 
-
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -81,15 +80,21 @@ public class GreenController {
 	@GetMapping("/project/green/removeClients")
 	public String removeClients(@RequestParam Long clientId,
 			Model model) {
+
 		log.trace("get delete client");
-		model.addAttribute("clients", repoClient.findAll());
-		
+		try {
 		repoClient.deleteById(clientId);
 		model.addAttribute("clients", repoClient.findAll());
-
-		String inesistentId = String.format("Client % d correctly removed", clientId);
-			model.addAttribute("inesistentId", inesistentId);
 		
+	} catch (Exception dive) {
+		
+
+		String messageRemove = String.format("Client % d correctly removed", clientId);
+		log.error(messageRemove);
+		model.addAttribute("message", messageRemove);
+
+}
+		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
 

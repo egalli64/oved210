@@ -18,9 +18,10 @@
 			<a href="/project/green/addedClients.html"><button type="button"
 					class="btn btn-outline-success">Add New Client</button> </a> <a
 				href="/project/green/removeClients.html"><button type="button"
+				
 					class="btn btn-outline-danger">Remove Client</button> </a>
 			<h2 th:text="${message}" th:if="${message}"></h2>
-			<h2 th:text="${deletedmessage}" th:if="${deletedmessage}"></h2>
+			<h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2>
 		</div>
 		<div class="container-fluid">
 			<table class="table table-hover">
