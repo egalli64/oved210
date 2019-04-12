@@ -1,5 +1,7 @@
 package project.blue;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,13 +105,21 @@ public class BlueController {
 
 	}
 
-//controller editing
+  //controller editing
 	@GetMapping("/project/blue/clients/editFirst")
 	public String editClientFirst( //
-			@RequestParam Long id, Model model) {
+			@RequestParam Long id, //
+			Model model) {
 		log.trace("edit client");
 	
-	return "/project/blue/clients";
+		Optional<BlueClient> opt = repClient.findById(id);
+		if(opt.isPresent()) {
+			BlueClient client = opt.get();
+			model.addAttribute("client", client);
+			return "/project/blue/editClient";
+		}
+		
+		return "/project/blue/rejected";
 	}
 	
 	@GetMapping("/project/blue/clients/editSecond")
@@ -122,8 +132,6 @@ public class BlueController {
 		log.trace("edit client");
 		
 	
-		if(repClient.existsById(id)) {
-			try {
 				BlueClient client = new BlueClient();
 
 				client.setClientName(name);
@@ -135,13 +143,9 @@ public class BlueController {
 		
 		String EditClient = String.format("--Client modified!--");
 		model.addAttribute("EditClient", EditClient);
-			}
-		 catch (Exception ex) {
-			String unexistingdId = String.format("--Unexisting Id!--");
-			model.addAttribute("unexistingdId", unexistingdId);
-		}
+			
 		
-	}
+	
 		return "/project/blue/clients";
 		}
 	// controller Hotels
