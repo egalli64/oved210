@@ -7,9 +7,17 @@ body {
 
 h1 {
 	text-align: center;
-	color: #0589eb;
+	color: #ffffff;
 	font-style: italic;
 	font-weight: bold;
+}
+
+h2 {
+	text-align: left;
+	font color: #ffffff;
+	font-style: italic;
+	font-weight: bold;
+	
 }
 
 label {

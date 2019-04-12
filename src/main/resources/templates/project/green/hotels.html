@@ -10,31 +10,35 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<h3 class="backgroundtitles">Welcome to:</h3>
-		<div class="container-fluid">
+		<br />
+		<h3>
+			<i>Our Hotels</i>
+		</h3>
+		<br />
+		<table class="table table-hover">
+			<thead class="thead-succes">
+				<tr>
+					<br />
+					<br />
 
-			<h3>Our Hotels</h3><br/>
-			<table class="table table-hover">
-				<thead class="thead-succes">
-					<tr>
-						<th>Hotel Id</th>
-						<th>Hotel Name</th>
-						<th>City</th>
-						<th>Room Counter</th>
-					</tr>
+					<th>Hotel Id</th>
+					<th>Hotel Name</th>
+					<th>City</th>
+					<th>Room Counter</th>
+				</tr>
 
-					<tr th:each="hotel: ${hotels}">
-						<td th:text="${hotel.hotelId}"></td>
-						<td th:text="${hotel.hotelName}"></td>
-						<td th:text="${hotel.city}"></td>
-						<td th:text="${hotel.roomCounter}"></td>
-					</tr>
-				</thead>
-			</table>
+				<tr th:each="hotel: ${hotels}">
+					<td th:text="${hotel.hotelId}"></td>
+					<td th:text="${hotel.hotelName}"></td>
+					<td th:text="${hotel.city}"></td>
+					<td th:text="${hotel.roomCounter}"></td>
+				</tr>
+			</thead>
+		</table>
 
-			<a href="/project/green/login"><button type="button">RETURN
-					BACK</button> </a>
-		</div>
+		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a>
+	</div>
 	</div>
 
 </body>

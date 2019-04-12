@@ -10,21 +10,25 @@
 </head>
 <body id="clients">
 	<div class="container-fluid">
-		<h3 class="backgroundtitles.bg-gradient-light"><i><b>Clients</b></i></h3>
-
+		<br />
+		<h3 class="backgroundtitles.bg-gradient-light">
+			<i>Clients</i>
+		</h3>
 		<div>
-			<a href="/project/green/addedClients.html"><button type="button">New
-					Client</button> </a>
-			<a href="/project/green/removeClients.html"><button type="button">Remove Client</button> </a>		
-					<h2 th:text="${message}"
-		         th:if="${message}"> </h2>
-		         <h2 th:text="${deletedmessage}"
-		         th:if="${deletedmessage}"> </h2>
+			<a href="/project/green/addedClients.html"><button type="button"
+					class="btn btn-outline-success">Add New Client</button> </a> <a
+				href="/project/green/removeClients.html"><button type="button"
+					class="btn btn-outline-danger">Remove Client</button> </a>
+			<h2 th:text="${message}" th:if="${message}"></h2>
+			<h2 th:text="${deletedmessage}" th:if="${deletedmessage}"></h2>
 		</div>
 		<div class="container-fluid">
 			<table class="table table-hover">
 				<thead class="thead-succes">
 					<tr>
+						<br />
+						<br />
+
 						<th>CLIENT NAME</th>
 						<th>EMAIL</th>
 						<th>PHONE</th>
@@ -39,9 +43,8 @@
 			</table>
 		</div>
 		<hr>
-		<a href="/project/green/login"><button type="button">
-				RETURN BACK</button> </a>
-				
+		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a>
 	</div>
 </body>
 </html>
