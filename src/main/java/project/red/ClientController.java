@@ -45,7 +45,7 @@ public class ClientController {
 		} catch (Exception ex){ 
 			model.addAttribute("errorEmail", "***Mail already existing!***");
 		}
-		return "/project/red/insertClient";
+		return "/project/red/insertClientEmail";
 		
 	}
 
