@@ -20,11 +20,17 @@ public class Client {
 	private String phone;
 
 
+	public Client(long clientId, String clientName, String email, String phone) {
+		this.clientId = clientId;
+		this.clientName = clientName;
+		this.email = email;
+		this.phone = phone;		
+	}
+
 	public Client(String clientName, String email, String phone) {
 		this.clientName = clientName;
 		this.email = email;
-		this.phone = phone;
-		
+		this.phone = phone;		
 	}
 	
 	

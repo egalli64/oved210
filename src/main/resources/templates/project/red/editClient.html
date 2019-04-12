@@ -14,7 +14,7 @@
 <br>
 
 
-<form id="newclient" name="frmLogInsert" action="/project/red/editClient" method="get">
+<form id="newclient" name="frmLogInsert" action="/project/red/saveClient" method="get">
 		
      <input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" >  
   
@@ -36,7 +36,8 @@
         <input name = "phone" type="text" class="form-control"  placeholder="Enter Phone Number" th:value = "${phone}" >            
   </div>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit"
+			class="btn btn-primary" aria-pressed="true">Save</button>
 </form>
 
 </body>
