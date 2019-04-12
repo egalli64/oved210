@@ -17,8 +17,12 @@
 		<div>
 			<a href="/project/green/addedClients.html"><button type="button"
 					class="btn btn-outline-success">Add New Client</button> </a> <a
+				href="/project/green/clientMain.html"><button type="button"
+					class="btn btn-outline-warning">Edit</button> </a> <a
 				href="/project/green/removeClients.html"><button type="button"
 					class="btn btn-outline-danger">Remove Client</button> </a>
+
+
 			<h2 th:text="${message}" th:if="${message}"></h2>
 			<h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2>
 		</div>
@@ -33,8 +37,8 @@
 						<th>EMAIL</th>
 						<th>PHONE</th>
 						<th></th>
-						<th>EDIT</th>
-						
+						<th></th>
+
 					</tr>
 				</thead>
 
@@ -42,11 +46,17 @@
 					<td th:text="${client.clientName}"></td>
 					<td th:text="${client.email}"></td>
 					<td th:text="${client.phone}"></td>
+					<td><a href="/project/green/clients/clientMain.html"
+						th:href="@{/project/green/clientMain(clientId=${client.clientId})}">
+							<button type="submit"
+								class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+							<!--<button type="submit" class="btn btn-danger btn-rounded">Edit</button> -->
+
+					</a></td>
 					<td><a href="/project/green/clients/removeClients.html"
 						th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
-					<button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+							<button type="submit" class="btn btn-danger btn-rounded">Delete</button>
 					</a></td>
-
 
 
 				</tr>
