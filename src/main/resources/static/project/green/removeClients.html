@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>REMOVECLIENTS</title>
@@ -12,21 +12,22 @@
 <body>
 	<div class="container-fluid">
 		<br />
-		<form name="clientName" action="/project/green/removeClients" method="get">
+		<form name="frmLog" action="/project/green/removeClients" method="get">
 			<div class="form-row">
-
 				<div class="col">
-					<input name="clientId" type="text" class="form-control" placeholder="Id">
+					<input name="clientId" type="text" class="form-control"
+						placeholder="Id">
 				</div>
 			</div>
 			<br />
-			<div class="col-auto">
-				<a href="/project/green/clients">
-					<button type="button" class="btn btn-outline-danger">Remove
-						Client</button> <a href="/project/green/clients"><button type="button"
-							class="btn btn-outline-dark">Go Back</button></a>
-			</div>
+			<button type="submit" class="btn btn-outline-danger">Remove
+				Client</button>
+
 		</form>
-	</div>
+		<br />
+		<div class="col-auto">
+			<a href="/project/green/clients"><button type="button"
+					class="btn btn-outline-dark">Go Back</button></a>
+		</div>
 </body>
 </html>

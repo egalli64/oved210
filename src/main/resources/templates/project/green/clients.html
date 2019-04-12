@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="utf-8">
 <title><h align=center>Clients</h></title>
@@ -32,6 +32,7 @@
 						<th>CLIENT NAME</th>
 						<th>EMAIL</th>
 						<th>PHONE</th>
+						<th>DELETE</th>
 					</tr>
 				</thead>
 
@@ -39,6 +40,12 @@
 					<td th:text="${client.clientName}"></td>
 					<td th:text="${client.email}"></td>
 					<td th:text="${client.phone}"></td>
+					<td ><a href="/project/green/clients/removeClients.html"
+					 th:href="@{/project/green/removeClients(clientId=${client.clientId})}"><button
+						style='font-size: 24px'>
+						<i class='fas'> &#xf1f8;</i>
+					</button></a></td>
+				
 				</tr>
 			</table>
 		</div>

@@ -1,7 +1,5 @@
 package project.green;
 
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -21,10 +17,8 @@ public class GreenController {
 
 	@Autowired
 	private GreenClientsRepository repoClient;
-
 	@Autowired
 	private GreenhotelRepository repoHotel;
-
 	@Autowired
 	private BookingsRepository repoBooking;
 
@@ -55,7 +49,8 @@ public class GreenController {
 		return "/project/green/clients";
 	}
 
-	@GetMapping("/project/green/addedClients")
+//controller per added
+	@GetMapping("/project/green/client/add")
 	public String create(@RequestParam String clientName, @RequestParam String email, @RequestParam Long phone,
 			Model model) {
 		if (clientName.isEmpty()) {
@@ -76,31 +71,25 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
-	
+
 	@GetMapping("/project/green/removeClients")
-	public String removeClients(@RequestParam Long clientId,
-			Model model) {
+	public String removeClients(@RequestParam Long clientId, Model model) {
 
 		log.trace("get delete client");
 		try {
-		repoClient.deleteById(clientId);
-		model.addAttribute("clients", repoClient.findAll());
-		
-	} catch (Exception dive) {
-		
+			repoClient.deleteById(clientId);
+			model.addAttribute("clients", repoClient.findAll());
 
-		String messageRemove = String.format("Client % d correctly removed", clientId);
-		log.error(messageRemove);
-		model.addAttribute("message", messageRemove);
+		} catch (Exception dive) {
+			String messageRemove = String.format("Client % d correctly removed", clientId);
+			log.error(messageRemove);
+			model.addAttribute("message", messageRemove);
 
-}
+		}
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
 
-
-	
-	
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
 		log.trace("get all hotels");
@@ -114,9 +103,9 @@ public class GreenController {
 		model.addAttribute("bookings", repoBooking.findAll());
 		return "project/green/bookings";
 	}
-	
-	
-	
+}
+
+
 //	 @GetMapping("/project/green/clients")
 //	    public String orderGreenClients( //
 //	            @RequestParam String by, //
@@ -136,4 +125,5 @@ public class GreenController {
 //	     //   model.addAttribute("clients", clients);
 //	        return "project/green/clients";
 //	    }
-}
+
+	
