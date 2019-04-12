@@ -22,22 +22,13 @@ th:if = "${errorMessage}">
 	<h3> Clients</h3>
 
 <fieldset class = "text-center">
-	<button class = "text-center" id = "add" >
+	
 
-			<a href="/project/blue/clients/add.html"> <b>Add client</b> </a>
+	<a href="/project/blue/clients/add.html"><button class = "text-center" id = "add" > <b>Add client</b></button> </a>
 			
-			
-
-	</button>
-	
-	
-	<button class = "text-center" id = "bck">
-	
-			<a href="/project/blue/login"> <b>Back to the list</b> </a>
-			
+	<a href="/project/blue/login"><button class = "text-center" id = "bck"> <b>Back to the list</b></button> </a>
 			
 	
-	</button>
 	</fieldset>
 
 
@@ -54,7 +45,7 @@ th:if = "${errorMessage}">
 			<td th:text="${client.clientName}"></td>
 			<td th:text="${client.email}"></td>
 			<td th:text="${client.phone}"></td>
-			<td><a href="/project/blue/clients.html" th:href="@{/project/blue/clients(id=${client.clientId})}"><button style='font-size:24px'> <i class='fas'> &#xf1f8;</i></button></a> </td>
+			<td><a href="/project/blue/clients/remove.html" th:href="@{/project/blue/clients/remove(id=${client.clientId})}"><button style='font-size:24px'> <i class='fas'> &#xf1f8;</i></button></a> </td>
 		</tr>
 	</table>
 	<br>
