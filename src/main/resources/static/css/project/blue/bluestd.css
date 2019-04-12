@@ -46,6 +46,21 @@ tr{
    color: white;
 }
  
+ #edit{
+  background-color: #ffffff;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+}
+#edit:hover{
+   background-color: #ff8346;
+   color: white;
+}
+ 
  #bck{
   background-color: #ffffff;
   border: none;
@@ -96,4 +111,11 @@ tr{
 }
 .table {
 	background-color: grey;
+}
+
+.edit{
+	margin:auto;
+	width:60%;
+	border:3px solid #e1e1e1;
+	padding: 10px;
 }
