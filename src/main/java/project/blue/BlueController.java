@@ -83,24 +83,20 @@ public class BlueController {
 	}
 
 	//controller remove clients
-	@GetMapping("/project/blue/remove")
+	@GetMapping("@{/project/blue/clients}")
 	public String removeClient(
 			@RequestParam Long id, Model model) {
 	
 		
 		repClient.deleteById(id);
 
-		// log.trace("get all clients");
+		log.trace("get deleted client");
 		
-       //model.addAttribute("clients", repClient.findAll());
+      model.addAttribute("clients", repClient.findAll());
 	
 //		allClients(model);
 		return "project/blue/clients";
 	}
-	
-	
-	
-	
 	
 	
 	
