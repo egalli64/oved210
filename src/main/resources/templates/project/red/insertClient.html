@@ -15,27 +15,30 @@
 
 
 <form id="newclient" name="frmLogInsert" action="/project/red/insertClient" method="get">
-		
-    
-  <div class="form-group">
-     
-      <label>Name and Surname:</label>
-        <input name="clientName" type="text" class="form-control"  placeholder="Enter Name and Surname" th:unless = "${errorClient}">  
-         <input name="clientName" type="text" class="border border-danger form-control "  placeholder="Enter Name and Surname" th:if = "${errorClient}">  
-       	 <small class= "error" th:if = "${errorClient}"> Name is missing!</small>
-   </div>
-  
-   <div class="form-group"> 
-    <label>Email:</label>
-    <input name= "email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
-  </div>
-  
-  <div class="form-group">
-      <label>Phone: </label>
-        <input name = "phone" type="text" class="form-control"  placeholder="Enter Phone Number" >            
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+		<div class="form-group">
+
+			<label>Name and Surname:</label> <input name="clientName" type="text"
+				class="form-control" placeholder="Enter Name and Surname"
+				th:unless="${errorClient}"> <input name="clientName"
+				type="text" class="border border-danger form-control "
+				placeholder="Enter Name and Surname" th:if="${errorClient}">
+			<small class="error" th:if="${errorClient}"> Name is missing!</small>
+		</div>
+
+		<div class="form-group">
+			<label>Email:</label> <input name="email" type="email"
+				class="form-control" id="exampleInputEmail1"
+				aria-describedby="emailHelp" placeholder="Enter Email">
+		</div>
+
+		<div class="form-group">
+			<label>Phone: </label> <input name="phone" type="text"
+				class="form-control" placeholder="Enter Phone Number">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </body>
