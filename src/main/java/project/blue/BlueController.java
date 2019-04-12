@@ -1,19 +1,13 @@
 package project.blue;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.slf4j.LoggerFactory;
 
 @Controller
 public class BlueController {
@@ -49,7 +43,7 @@ public class BlueController {
 		return "/project/blue/response";
 	}
 
-	@GetMapping("/project/blue/clients")
+	@GetMapping("/project/blue/clients/all")
 	public String allClients(Model model) {
 		log.trace("get all clients");
 		model.addAttribute("clients", repClient.findAll());
@@ -83,21 +77,28 @@ public class BlueController {
 	}
 
 	//controller remove clients
-	@GetMapping("@{/project/blue/clients}")
-	public String removeClient(
-			@RequestParam Long id, Model model) {
+	@GetMapping("/project/blue/clients/remove")
 	
-		
+	public String removeClient(@RequestParam Long id, Model model) {
+		log.trace("delete client");
+
+	try {
+
 		repClient.deleteById(id);
 
-		log.trace("get deleted client");
+		model.addAttribute("clients", repClient.findAll());
+		String deleteClient = String.format("Client deleted!");
+		model.addAttribute("deleteClient", deleteClient);
 		
-      model.addAttribute("clients", repClient.findAll());
-	
-//		allClients(model);
-		return "project/blue/clients";
+		} catch (Exception ex){ 
+			String unexistingdId = String.format("*Unexisting Id!*");
+			model.addAttribute("unexistingdId", unexistingdId);
+		}
+		
+		return "/project/blue/clients";
+
 	}
-	
+
 	
 	
 	// controller Hotels
@@ -127,4 +128,22 @@ public class BlueController {
 	
 	
 	
+	
+	
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
