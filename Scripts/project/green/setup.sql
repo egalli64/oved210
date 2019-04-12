@@ -149,13 +149,13 @@ values(5, green_rooms_seq.nextval);
 
 create table green_bookings (
 booking_id number (12) primary key,
-hotel_id number (6) references green_hotels(hotel_id),
-client_id number (4) references green_clients(client_id),
+hotel_id number (6) constraint green_bookings_hotel_id_fk references green_hotels(hotel_id),
+client_id number (4) constraint green_bookings_client_id_fk REFERENCES green_clients(client_id) on delete cascade,
 availability date,
 payment number (5, 2) 
 );
 
---insert
+
 insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
 values (green_bookings_seq.nextval, 1, 1,'01-apr-2019', 70.50);
 
