@@ -46,10 +46,14 @@ public class BlueController {
 	@GetMapping("/project/blue/clients/all")
 	public String allClients(Model model) {
 		log.trace("get all clients");
-		model.addAttribute("clients", repClient.findAll());
+		try {
+			model.addAttribute("clients", repClient.findAll());
+		} catch (Exception ex) {
+			log.error("Can't get clients", ex);
+			return "/project/blue/reject";
+		}
 		return "/project/blue/clients";
 	}
-
 	
 	// controller per aggiungere il cliente///
 
