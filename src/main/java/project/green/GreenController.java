@@ -89,6 +89,13 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
+	
+	@GetMapping("/project/green/client/edit")
+	public String editClient(@RequestParam Long clientId, Model model) {
+		return null;
+		
+	}
+
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
