@@ -35,7 +35,7 @@ th{
 #add{
   background-color: #ffffff;
   border: none;
-  color: #ffffff;
+  color: black;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
@@ -43,14 +43,14 @@ th{
   transition: 0.3s;
 }
 #add:hover{
-   background-color: #b0ffb0;
+   background-color: #00d76b;
    color: white;
 }
  
  #bck{
   background-color: #ffffff;
   border: none;
-  color: #ffffff;
+  color: #000000;
   padding: 16px 32px;
   text-align: center;
   font-size: 16px;
@@ -77,3 +77,22 @@ th{
 	background-color: #ffffbb;
 	text-align: center;
 }
+
+#newclient{
+	background-color:#cae4ff;
+}
+
+.add{
+	margin:auto;
+	width:60%;
+	border:3px solid #e1e1e1;
+	padding: 10px;
+}
+
+
+.legend{
+	face:verdana;
+	color:black;
+	
+}
+
