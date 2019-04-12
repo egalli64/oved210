@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+
+
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -92,7 +94,13 @@ public class GreenController {
 	
 	@GetMapping("/project/green/client/edit")
 	public String editClient(@RequestParam Long clientId, Model model) {
-		return null;
+		
+		repoClient.findById(clientId);
+		GreenClients clients;
+
+		model.addAttribute("clients", repoClient.findAll());
+		return "/project/green/clients";
+		
 		
 	}
 
