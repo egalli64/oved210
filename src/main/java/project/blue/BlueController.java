@@ -141,8 +141,8 @@ public class BlueController {
 			repClient.save(client);
 			model.addAttribute("clients", repClient.findAll());
 		
-		String EditClient = String.format("--Client modified!--");
-		model.addAttribute("EditClient", EditClient);
+		String editClient = String.format("--Client modified!--");
+		model.addAttribute("editClient", editClient);
 			
 		
 	

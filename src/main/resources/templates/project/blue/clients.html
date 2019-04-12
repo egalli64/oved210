@@ -29,13 +29,8 @@
 		<a href="/project/blue/clients/add.html"><button
 				class="text-center" id="add">
 				<b>Add client</b>
-	
 			</button> </a> 
-		<a href="/project/blue/clients/add.html"><button
-				class="text-center" id="edit">
-				<b>Edit client</b>
-				
-		</button> </a> 
+			
 			
 
 	</fieldset>
@@ -73,6 +68,10 @@
 						style='font-size: 24px'>
 						<i class='fas'> &#xf1f8;</i>
 					</button></a></td>
+			<td><a href="/project/blue/clients/edit.html"
+				th:href="@{/project/blue/clients/editFirst(id=${client.clientId})}">
+				<button style='font-size: 24px'> <i class= 'fas fa-pencil-ale'> &#xf303;</i>
+				</button></a></td>
 		</tr>
 	</table>
 	<br>
