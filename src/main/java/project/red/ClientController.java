@@ -28,7 +28,6 @@ public class ClientController {
 			Model model) {
 		
 		log.trace("get new client");
-		model.addAttribute("clients", repo.findAll());
 		
 		if (clientName.isEmpty()) { 
 			model.addAttribute("errorClient", "***Client name is missing!***");
@@ -42,11 +41,15 @@ public class ClientController {
 		
 		String clientSaved = String.format("***New client inserted!***");
 		model.addAttribute("clientSaved", clientSaved); 
-		} catch (Exception ex){ 
-			model.addAttribute("errorEmail", "***Mail already existing!***");
-		}
-		return "/project/red/insertClientEmail";
 		
+		return "/project/red/clients";
+		} catch (Exception ex) { 
+			model.addAttribute("errorEmail", "***Mail already existing!***");
+			model.addAttribute("email", email);
+			
+			return "/project/red/insertClient";
+		}
+			
 	}
 
 	@GetMapping("/project/red/deleteClient")
@@ -80,5 +83,28 @@ public class ClientController {
 		return "/project/red/clients";
 
 	}
+	
+	@GetMapping("/project/red/editClient")
+	public String edit(@RequestParam long clientId, @RequestParam String clientName, @RequestParam String email, @RequestParam String phone,
+			Model model) {
+		
+		log.trace("edit client");
+		
+		if (clientName.isEmpty()) { 
+			model.addAttribute("errorClient", "***Client name is missing!***");
+			
+			return "/project/red/editClient";
+		}
+		Client client = new Client(clientName, email, phone);
+		repo.save(client);
+		
+		model.addAttribute("clientName", clientName);
+		model.addAttribute("email", email);
+		model.addAttribute("phone", phone);
+		
+		return "/project/red/clients";
+		
+	}
+	
 		
 }
