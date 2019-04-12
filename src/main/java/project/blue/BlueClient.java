@@ -20,7 +20,8 @@ public class BlueClient {
 	private String email;
 	private Long phone;
 	
-	public BlueClient(String clientName, String email, Long phone) {
+	public BlueClient( String clientName, String email, Long phone) {
+		
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;
