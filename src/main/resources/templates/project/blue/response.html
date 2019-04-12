@@ -9,8 +9,29 @@
 </head>
 <body>
 	<h1 th:text="'Hello, ' + ${user} + '!'"></h1>
-	<p class= "text-center">A list of: <a href="/project/blue/clients/all">Clients</a></p>
-	<p class= "text-center">A list of: <a href="/project/blue/hotels">Hotels</a></p>
-	<p class= "text-center">A list of: <a href="/project/blue/bookings">Bookings</a></p>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-4">
+				<h4 class= "text-center"></h4>
+			</div>
+			<div class="col-4">
+				<h4 class= "text-center"></h4>
+			</div>
+			<div class="col-4">
+				<h4 class= "text-center"></h4>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<table class="table table-bordered table-striped table-light">
+		<tr>
+			<th><h4 class= "text-center">A list of: <a href="/project/blue/clients/all">Clients</a></h4></th>
+			<th><h4 class= "text-center">A list of: <a href="/project/blue/hotels">Hotels</a></h4></th>
+			<th><h4 class= "text-center">A list of: <a href="/project/blue/bookings">Bookings</a></h4></th>
+			
+		</tr>
 </body>
 </html>
