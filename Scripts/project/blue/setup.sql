@@ -64,7 +64,7 @@ values(BLUE_HOTELS_SEQ.NEXTVAL , 'Hotel Orchidea', 'Venezia', 5);
 create table BLUE_CLIENTS (
 CLIENT_ID number (4) primary key,
 CLIENT_NAME varchar2(100),
-EMAIL varchar2(50),
+EMAIL varchar2(50) unique,
 PHONE number (25));
 
 select * 
@@ -95,7 +95,7 @@ values (BLUE_CLIENTS_SEQ.NEXTVAL, 'Lady Gaga', 'l.gaga@gmail.com',3345716852);
 create table BLUE_BOOKINGS (
 BOOKING_ID number (12) primary key,
 HOTEL_ID number (6) constraint BLUE_BOOKINGS_ID_FK references BLUE_HOTELS(HOTEL_ID),
-CLIENT_ID number (4) references BLUE_CLIENTS(CLIENT_ID),
+CLIENT_ID number (4) constraint BLUE_BOOKING_ID_FK references BLUE_CLIENTS(CLIENT_ID) ON DELETE CASCADE ,
 AVAILABILITY date,
 PAYMENT number (5, 2) 
 );
@@ -136,3 +136,9 @@ values (BLUE_BOOKING_SEQ.NEXTVAL, 3, 2, '01-MAR-2019', 70.50);
 
 insert into BLUE_BOOKINGS(BOOKING_ID, CLIENT_ID, HOTEL_ID, AVAILABILITY, PAYMENT)
 values (BLUE_BOOKING_SEQ.NEXTVAL, 4, 3, '01-MAR-2019', 70.50);
+
+--ALTER TABLE BLUE_BOOKINGS
+--ADD CONSTRAINT BLUE_BOOKING_ID_FK
+--FOREIGN key (client_id)
+--REFERENCES BLUE_CLIENTS(client_id)
+--ON DELETE CASCADE;
