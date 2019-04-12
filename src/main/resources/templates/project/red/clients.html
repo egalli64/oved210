@@ -3,60 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Hotel</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+
 </head>
 
 <body id="clients">
 	<h3 class="backgroundtitles">Clients</h3>
-<br>
-<div>
-<a href="/project/red/insertClient.html"><input type="button" value = "NEW CLIENT" class="btn btn-info" aria-pressed="true"/></a>
-<a href="/project/red/deleteClient.html"><input type="button" value = "DELETE CLIENT" class="btn btn-danger" aria-pressed="true"/></a>
-</div>
+	<br>
+	<div>
+	<a href="/project/red/insertClient.html"><input type="button"
+			value="NEW CLIENT" class="btn btn-info" aria-pressed="true" /></a>
+			
+	<a href="/project/red/deleteClient.html"><input type="button"
+			value="DELETE CLIENT" class="btn btn-danger" aria-pressed="true" /></a>
+	</div>
 
-<br>
+	<br>
 
-<div id="backgroundmessagescorrect">
- <h4  th:text = "${clientSaved}"></h4>
-</div>
-<div id="backgroundmessagescorrect">
- <h4  th:text = "${clientDeleted}"></h4>
-</div>
-<div id="backgroundmessageserror">
- <h4  th:text = "${duplicatedmail}"
- 	th:catch = "${duplicatedmail}"></h4>
-</div>
-<div id="backgroundmessageserror">
- <h4  th:text = "${errorMessage}"
- 	th:if = "${errorMessage}"></h4>
-</div>
-<div id="backgroundmessageserror">
- <h4  th:text = "${unexistingdId}"
- 	th:catch = "${unexistingdId}"></h4>
-</div>
+	<div id="backgroundmessagescorrect">
+		<h4 th:text="${clientSaved}"></h4>
+	</div>
+	<div id="backgroundmessagescorrect">
+		<h4 th:text="${clientDeleted}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${duplicatedmail}" th:catch="${duplicatedmail}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${errorMessage}" th:if="${errorMessage}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${unexistingdId}" th:catch="${unexistingdId}"></h4>
+	</div>
 	<div class="container-fluid">
-		<table class ="table table-hover">
-			<thead class = "thead-primary">
-			<tr>
-				<th>CLIENT ID</th>
-				<th>CLIENT NAME</th>
-				<th>EMAIL</th>
-				<th>PHONE</th>
-			</tr>
+		<table id="tabella" class="table table-hover">
+			<thead class="thead-primary">
+				<tr>
+					<th>CLIENT ID</th>
+					<th>CLIENT NAME</th>
+					<th>EMAIL</th>
+					<th>PHONE</th>
+					<th>DELETE</th>
+				</tr>
 			</thead>
-			<tr th:each="client: ${clients}" class ="table-danger">
-				<td th:text =${client.clientId}></td>
-				<td th:text =${client.clientName}></td>
-				<td th:text =${client.email}></td>
-				<td th:text =${client.phone}></td>
+			<tr id="riga" th:each="client: ${clients}" class="table-danger">
+				<td th:text=${client.clientId}></td>
+				<td th:text=${client.clientName}></td>
+				<td th:text=${client.email}></td>
+				<td th:text=${client.phone}></td>
+				<td><a href="/project/red/deleteClient?clientId=" th:href="@{/project/red/deleteClient(clientId=${client.clientId})}"><input id="button" type="image" 
+				src="/img/project/red/x.png" width="5%" height="10%"></a>
+				</td>
 			</tr>
 		</table>
-	</div>	
+	</div>
 
-<hr>
-<a href="/project/red/login"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
-</a>
+
+	<hr>
+	<a href="/project/red/login"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
 
 
 </body>
