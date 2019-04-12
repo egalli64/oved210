@@ -104,14 +104,22 @@ public class BlueController {
 	}
 
 //controller editing
-	@GetMapping("/project/blue/clients/edit")
-	public String editClient( //
+	@GetMapping("/project/blue/clients/editFirst")
+	public String editClientFirst( //
+			@RequestParam Long id, Model model) {
+		log.trace("edit client");
+	
+	return "/project/blue/clients";
+	}
+	
+	@GetMapping("/project/blue/clients/editSecond")
+	public String editClientSecond( //
 			@RequestParam String name, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
 			@RequestParam Long id,
 			Model model) {
-		log.trace("get all clients");
+		log.trace("edit client");
 		
 	
 		if(repClient.existsById(id)) {
