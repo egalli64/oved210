@@ -1,27 +1,30 @@
+<!-- Tabella Edit -->
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>Clients</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" type="text/css"
-	 href="/css/project/blue/bluestd.css" />
-	</head>
-	
+
+<link rel="stylesheet" type="text/css"
+	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+</head>
 <body>
-<div  class = "add">
-	<h3> Add Clients</h3>
-	<form action="/project/blue/clients/add">
+<div  class = "edit">
+	<h3> Edit Clients</h3>
+	<form action="/project/blue/clients/editFirst">
 	
  <div width= 100px; height= 50px; border =1px  align=center>
 	
 <div id="newclient" class="contanier-fluid border border-info"	>
 <fieldset>
 
-			<legend>New client</legend>
+			<legend>Edit client</legend>
 			<br>
+			<label class=text-left>  
+			<input type = "hidden" name = "name" class=text-left >
+			</label><br>
 			<label class=text-left>Name:  
 			<input type = "text" name = "name" class=text-left >
 			</label><br>
@@ -33,16 +36,13 @@
 			</label>
 			<br />
 		
-		<button class = "text-center" id = "add client">
-			<a href="/project/blue/clients"> <b>Add this new client!</b></a>
+		<button class = "text-center" id = "edit client">
+			<a href="/project/blue/editSecond"> <b>Edit this client!</b></a>
 		</button> 
 	</form>
 	</fieldset>
 </div>
   </div>
 	</div>
-	</body>
-	</html>
-	
-	
-	
+</body>
+</html>
