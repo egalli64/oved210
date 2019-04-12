@@ -59,20 +59,23 @@ public class BlueController {
 			@RequestParam String email, //
 			@RequestParam Long phone, //
 			Model model) {
-		BlueClient client = new BlueClient();
-
+		log.trace("get all clients");
+	try {	BlueClient client = new BlueClient();
+		
 		client.setClientName(name);
 		client.setEmail(email);
 		client.setPhone(phone);
 		
-		
 		repClient.save(client);
-
-		// log.trace("get all clients");
-		
 	model.addAttribute("clients", repClient.findAll());
 	
-//		allClients(model);
+	String SaveClient = String.format("--New client inserted!--");
+	model.addAttribute("SaveClient", SaveClient);
+	}
+		catch (Exception ex){ 
+		String duplicatedmail = String.format("--Mail already existing!--");
+		model.addAttribute("duplicatedmail", duplicatedmail);
+	}
 		return "project/blue/clients";
 	}
 
@@ -87,11 +90,11 @@ public class BlueController {
 		repClient.deleteById(id);
 
 		model.addAttribute("clients", repClient.findAll());
-		String deleteClient = String.format("Client deleted!");
+		String deleteClient = String.format("--Client deleted!--");
 		model.addAttribute("deleteClient", deleteClient);
 		
 		} catch (Exception ex){ 
-			String unexistingdId = String.format("*Unexisting Id!*");
+			String unexistingdId = String.format("--Unexisting Id!--");
 			model.addAttribute("unexistingdId", unexistingdId);
 		}
 		

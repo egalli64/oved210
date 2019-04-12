@@ -19,7 +19,7 @@
 th:if = "${errorMessage}">
 </h2> -->
 <div id="messagescorrect">
- <h4  th:text = "${SavedClient}"></h4>
+ <h4  th:text = "${SaveClient}"></h4>
 </div>
 <div id="backgroundmessagescorrect">
  <h4  th:text = "${deleteClient}"></h4>
@@ -28,10 +28,7 @@ th:if = "${errorMessage}">
  <h4  th:text = "${duplicatedmail}"
  	th:catch = "${duplicatedmail}"></h4>
 </div>
-<div id="backgroundmessageserror">
- <h4  th:text = "${errorMessage}"
- 	th:if = "${errorMessage}"></h4>
-</div>
+
 <div id="backgroundmessageserror">
  <h4  th:text = "${unexistingdId}"
  	th:catch = "${unexistingdId}"></h4>
