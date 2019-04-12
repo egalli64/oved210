@@ -8,15 +8,15 @@ drop table BLUE_CLIENTS;
 
 
 create table BLUE_HOTELS (
-HOTEL_ID number (6) primary KEY,
+HOTEL_ID number (6) primary key,
 HOTEL_NAME varchar2 (40),
 CITY varchar2 (30),
 ROOM_COUNTER number (6) 
 );
 
-SELECT * 
-FROM BLUE_HOTELS
-ORDER BY HOTEL_ID;
+select * 
+from BLUE_HOTELS
+order by HOTEL_ID;
 
 create sequence BLUE_HOTELS_SEQ
 start with 1 increment by 1;
@@ -62,14 +62,14 @@ values(BLUE_HOTELS_SEQ.NEXTVAL , 'Hotel Orchidea', 'Venezia', 5);
 --values(104, BLUE_ROOMS_SEQ.NEXTVAL);
 
 create table BLUE_CLIENTS (
-CLIENT_ID number (4) primary KEY,
+CLIENT_ID number (4) primary key,
 CLIENT_NAME varchar2(100),
-EMAIL varchar2(50),
+EMAIL varchar2(50) unique,
 PHONE number (25));
 
-SELECT * 
-FROM BLUE_CLIENTS
-ORDER BY CLIENT_ID;
+select * 
+from BLUE_CLIENTS
+order by CLIENT_ID;
 
 create sequence BLUE_CLIENTS_SEQ
 start with 1 increment by 1;
@@ -93,16 +93,16 @@ insert into BLUE_CLIENTS
 values (BLUE_CLIENTS_SEQ.NEXTVAL, 'Lady Gaga', 'l.gaga@gmail.com',3345716852);
 
 create table BLUE_BOOKINGS (
-BOOKING_ID number (12) primary KEY,
+BOOKING_ID number (12) primary key,
 HOTEL_ID number (6) constraint BLUE_BOOKINGS_ID_FK references BLUE_HOTELS(HOTEL_ID),
 CLIENT_ID number (4) constraint BLUE_BOOKING_ID_FK references BLUE_CLIENTS(CLIENT_ID) ON DELETE CASCADE ,
 AVAILABILITY date,
 PAYMENT number (5, 2) 
 );
 
-SELECT * 
-FROM BLUE_BOOKINGS
-ORDER BY BOOKING_ID;
+select * 
+from BLUE_BOOKINGS
+order by BOOKING_ID;
 
 create sequence BLUE_BOOKING_SEQ
 start with 1 increment by 1;
@@ -139,6 +139,6 @@ values (BLUE_BOOKING_SEQ.NEXTVAL, 4, 3, '01-MAR-2019', 70.50);
 
 --ALTER TABLE BLUE_BOOKINGS
 --ADD CONSTRAINT BLUE_BOOKING_ID_FK
---FOREIGN KEY (client_id)
+--FOREIGN key (client_id)
 --REFERENCES BLUE_CLIENTS(client_id)
 --ON DELETE CASCADE;
