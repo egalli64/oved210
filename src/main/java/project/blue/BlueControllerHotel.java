@@ -18,7 +18,7 @@ public class BlueControllerHotel {
 	@Autowired
 	private BlueHotelRepository repHotel;
 	
-	@GetMapping("/project/blue/hotels/all")
+	@GetMapping("/project/blue/hotels")
 	public String allHotels(Model model) {
 		log.trace("get all hotels");
 		try {
@@ -31,9 +31,9 @@ public class BlueControllerHotel {
 	}
 
 	
-	// controller per aggiungere un hotel
+	// controller add hotels
 	
-	@GetMapping("/project/blue/clients/addHotel")
+	@GetMapping("/project/blue/hotels/addHotel")
 	public String addHotel( //
 			@RequestParam String hotelname, //
 			@RequestParam String city, //
@@ -53,20 +53,20 @@ public class BlueControllerHotel {
 			String SaveHotel = String.format("--New hotel inserted!--");
 			model.addAttribute("SaveClient", SaveHotel);
 
-		return "project/blue/hotels";
+		return "/project/blue/hotels";
 	}
 	
 	
 	
 	//controller remove hotels
-	@GetMapping("/project/blue/hotels/remove")
+	@GetMapping("/project/blue/deleteHotel")
 
-	public String removeClient(@RequestParam Long id, Model model) {
+	public String removeClient(@RequestParam Long hotelId, Model model) {
 		log.trace("delete hotel");
 
 		try {
 
-			repHotel.deleteById(id);
+			repHotel.deleteById(hotelId);
 
 			model.addAttribute("hotels", repHotel.findAll());
 			String deleteHotel = String.format("--Hotel deleted!--");
@@ -81,7 +81,7 @@ public class BlueControllerHotel {
 
 	}
 	
-	// controller editing
+	// controller edit hotels
 	@GetMapping("/project/blue/editHotel")
 	public String editHotelFirst( //
 			@RequestParam Long hotelId, //

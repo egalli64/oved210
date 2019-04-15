@@ -15,7 +15,7 @@ public class BlueHotel {
 	private String city;
 	private Long roomCounter;
 	
-	public BlueHotel(long hotelId, String hotelName, String city, Long roomCounter) {
+	public BlueHotel(long hotelId, String hotelName, String city, long roomCounter) {
 		this.hotelId = hotelId;
 		this.hotelName = hotelName;
 		this.city = city;
