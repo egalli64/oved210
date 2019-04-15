@@ -145,7 +145,8 @@ public class GreenController {
 	}
 	
 	
-	//////hotel add
+	//////hotel 
+
 	@GetMapping("/project/green/hotel/add")
 	public String createhotel(
 			@RequestParam String hotelName, 
@@ -162,13 +163,13 @@ public class GreenController {
 		try {
 			
 			repoHotel.save(new GreenHotel(hotelName, city, roomCounter));
-			model.addAttribute("message", String.format("NewHotel %s %s %d correctly created", hotelName, city));
+			model.addAttribute("message", String.format("NewHotel %s %s %d correctly created", hotelName, city, roomCounter));
 		} catch (Exception dive) {
 			String message = String.format("Can't create NewHotel %s %s %d", hotelName, city, roomCounter);
 			log.error(message);
 			model.addAttribute("message", message);
 		}
-		model.addAttribute("clients", repoClient.findAll());
+		model.addAttribute("hotels", repoHotel.findAll());
 		return "/project/green/hotels";
 	}
 	

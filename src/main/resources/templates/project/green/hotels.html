@@ -18,14 +18,17 @@
 		<div>
 			<a href="/project/green/addedHotels.html"><button type="button"
 					class="btn btn-outline-success">Add New Hotel</button> </a>
+			<h2 th:text="${message}" th:if="${message}"></h2>
 		</div>
 
 		<table class="table table-hover">
 			<thead class="thead-succes">
-				<tr>
-					<br />
-					<br />
 
+				<br />
+				<br />
+
+				<tr>
+					<th>HOTEL ID</th>
 					<th>Hotel Name</th>
 					<th>City</th>
 					<th>Room Counter</th>

@@ -13,7 +13,7 @@ public class GreenHotel {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Generate")
-	@SequenceGenerator(sequenceName = "Green_hotel_seq", allocationSize = 1, name = "Generate")
+	@SequenceGenerator(sequenceName = "Green_hotels_seq", allocationSize = 1, name = "Generate")
 	private long hotelId;
 
 	private String hotelName;
