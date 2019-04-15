@@ -8,17 +8,23 @@
 <link rel="stylesheet" type="text/css"
 	href="/css/project/green/green2.css">
 </head>
-<body>
+<body id="hotels">
 	<div class="container-fluid">
 		<br />
-		<h3>
+		<h3 class="backgroundtitles">
 			<i>Our Hotels</i>
 		</h3>
 		<br />
 		<div>
 			<a href="/project/green/addedHotels.html"><button type="button"
 					class="btn btn-outline-success">Add New Hotel</button> </a>
+					
+					<a href="/project/green/removeHotels.html"><button type="button"
+					value="delete hotel" class="btn btn-outline-danger">Remove
+					Hotel by ID <br /> (only staff)</button> </a>
+					
 			<h2 th:text="${message}" th:if="${message}"></h2>
+			<h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2>
 		</div>
 
 		<table class="table table-hover">
@@ -28,7 +34,7 @@
 				<br />
 
 				<tr>
-					<th>HOTEL ID</th>
+				<!--  	<th>HOTEL ID</th> -->
 					<th>Hotel Name</th>
 					<th>City</th>
 					<th>Room Counter</th>
@@ -38,7 +44,7 @@
 			</thead>
 
 			<tr th:each="hotel: ${hotels}">
-				<td th:text="${hotel.hotelId}"></td>
+				<!-- <td th:text="${hotel.hotelId}"></td> -->
 				<td th:text="${hotel.hotelName}"></td>
 				<td th:text="${hotel.city}"></td>
 				<td th:text="${hotel.roomCounter}"></td>
