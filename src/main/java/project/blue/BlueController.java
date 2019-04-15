@@ -105,51 +105,44 @@ public class BlueController {
 
 	}
 
-  //controller editing
+	// controller editing
 	@GetMapping("/project/blue/editClient")
 	public String editClientFirst( //
 			@RequestParam Long clientId, //
 			Model model) {
 		log.trace("edit client");
-	
+
 		Optional<BlueClient> opt = repClient.findById(clientId);
-		if(opt.isPresent()) {
+		if (opt.isPresent()) {
 			BlueClient client = opt.get();
-		
-			//da vedere sotto lunedi 
+
+			// da vedere sotto lunedi
 			model.addAttribute("clientId", client.getClientId());
 			model.addAttribute("clientName", client.getClientName());
 			model.addAttribute("email", client.getEmail());
 			model.addAttribute("phone", client.getPhone());
-			}
-			return "/project/blue/editClient";
 		}
-		
-	
-	
+		return "/project/blue/editClient";
+	}
+
 	@GetMapping("/project/blue/editSecond")
 	public String editClientSecond( //
-			@RequestParam Long clientId,
-			@RequestParam String clientName, //
+			@RequestParam Long clientId, @RequestParam String clientName, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
-		
+
 			Model model) {
 		log.trace("edit client");
-		
-	
-				BlueClient client = new BlueClient(clientId,clientName, email, phone);
-		
-			repClient.save(client);
-			model.addAttribute("clients", repClient.findAll());
-		
-		String editClient = String.format("--Client modified!--");
-		model.addAttribute("editClient", editClient);
-			
-		
-	
+
+		BlueClient client = new BlueClient(clientId, clientName, email, phone);
+
+		repClient.save(client);
+
+		model.addAttribute("editClient", "--Client modified!--");
+		model.addAttribute("clients", repClient.findAll());
+
 		return "/project/blue/clients";
-		}
+	}
 	// controller Hotels
 
 	@Autowired
