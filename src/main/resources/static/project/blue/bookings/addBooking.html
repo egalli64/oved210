@@ -11,29 +11,28 @@
 	</head>
 	
 <body class = "edit">
-	<h3> Add Booking</h3>
-	<form id= "addbooking"  name="frmLogInsert" action="/project/blue/clients/addBooking">
-	<div  class = "container-fluid border border-info" align= "center">	
-			<label class=text-left>Booking_id:  
-			<input type = "text" name = "booking_id" class=text-left >
+	<h3>Add Booking</h3>
+	<form id= "addbooking" name="frmLogInsert" action="/project/blue/clients/addBooking">
+	<div class = "container-fluid border border-info" align= "center">	
+	<input name="bookingId" type = "number" hidden="true" class="form-control" th:value ="${hotelId}">
+			
+			<label class=text-left> 
+			<input type = "number" name = "hotelId"  hidden="true" class=text-left>
 			</label><br>
-			<label class=text-left>Hotel_id :  
-			<input type = "text" name = "hotel_id" class=text-left>
-			</label><br>
-			<label class=text-left>Client_id:  
-			 <input type = "text" name = "client_id" class=text-left>
+			<label class=text-left>Client Id:  
+			 <input type = "number" name = "clientId" class=text-left>
 			</label>
 			<label class=text-left>Availability:  
-			 <input type = "text" name = "availability" class=text-left>
+			 <input type = "date" name = "availability" class=text-left>
 			</label>
-			<label class=text-left>:Payment  
-			 <input type = "text" name = "payment" class=text-left>
+			<label class=text-left>Payment:  
+			 <input type = "number" name = "payment" class=text-left>
 			</label>
 			
 			<br />
 		
-		<button type = "submit" class = "text-center" id = "add hotel">
-			 <b>Add this new hotel!</b>
+		<button type = "submit" class = "text-center" id = "addBooking">
+			 <b>Add this new booking!</b>
 		</button> 
 		</div>
 	</form>
