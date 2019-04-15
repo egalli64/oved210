@@ -34,10 +34,19 @@
 			<td th:text="${hotel.hotelName}"></td>
 			<td th:text="${hotel.city}"></td>
 			<td th:text="${hotel.roomCounter}"></td>
+	
+			<td><a href="/project/blue/hotels/remove.html"
+				th:href="@{/project/blue/hotels/remove(id=${hotel.hotelId})}"><button
+						style='font-size: 24px'>
+						<i class='fas'> &#xf1f8;</i>
+					</button></a></td>
+			<td><a
+				th:href="@{/project/blue/editHotel(hotelId=${hotel.hotelId})}">
+					<button style='font-size: 24px'>
+						<i class='fas fa-pencil-ale'> &#xf303;</i>
+					</button>
+			</a></td>
 		</tr>
-	
-	</table>
-	<hr>
-	
+		</table>
 	
 </body>
