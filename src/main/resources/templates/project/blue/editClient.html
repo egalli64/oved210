@@ -10,19 +10,17 @@
 <link rel="stylesheet" type="text/css"
 	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
 </head>
-<body>
-<div  class = "edit">
-	<h3> Edit Clients</h3>
+<body class="edit">
+
+	<h3>Edit Client</h3>
 	<form id="newclient" name="frmLogInsert" action="/project/blue/editSecond" method="get">
+	<div  class = "container-fluid border border-info" align="center">
 	<input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" > 
  
- <div width= 100px; height= 50px; border =1px  align=center>
-	
-<div id="newclient" class="contanier-fluid border border-info"	>
-<fieldset>
 
-			<legend>Edit client</legend>
-			<br>
+
+			
+			
 			<label><input type = "number" hidden= true class=text-left>
 			</label><br>
 			<label class=text-left>Name:  
@@ -39,10 +37,9 @@
 		<button type = "submit" class = "text-center" id = "editClient">
 		<b>Edit this client!</b>
 		</button> 
+		</div>
 	</form>
-	</fieldset>
-</div>
-  </div>
-	</div>
+
+
 </body>
 </html>

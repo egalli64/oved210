@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Clients</title>
+<script src="/js/project/blue/login.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -11,9 +12,9 @@
 	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
 </head>
 <body class = "edit">
-	<h3>Edit Hotels</h3>
-	<form id="newhotel" name="frmLogInsert" action="/project/blue/editHotel2" method="get" >
-	<div class = "container-fluid border border-info" align=center>
+	<h3>Edit Hotel</h3>
+	<form id="newhotel" name="frmLogInsert" action="/project/blue/editHotel2" onsubmit="return checkRooms()" method="get" >
+	<div class = "container-fluid border border-info" align="center">
 	
 	<input name = "hotelId" type="number" class="form-control" hidden = "true" th:value ="${hotelId}" > 
  
@@ -27,7 +28,7 @@
 			<input type = "text" name = "city" class=text-left th:value = "${city}">
 			</label><br>
 			<label class=text-left>Hotel Rooms:  
-			 <input type = "text" name = "roomCounter" class=text-left th:value = "${roomCounter}">
+			 <input type = "text" name = "roomCounter" id ="roomCounter" class=text-left th:value = "${roomCounter}"  >
 			</label>
 			<br />
 		

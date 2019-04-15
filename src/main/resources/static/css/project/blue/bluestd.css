@@ -75,7 +75,18 @@ tr{
    background-color: #95ddff;
    color: white;
 }
- 
+#newhotel{
+   background-color: #cae4ff;
+   color: black;
+}
+#addhotel{
+   background-color: #cae4ff;
+   color: black;
+}
+#newclient{
+   background-color: #cae4ff;
+   color: black;
+}
 #messagecorrect{
 	color: green;
 	background-color: #c4ffc4;
