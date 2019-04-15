@@ -123,7 +123,7 @@ public class BlueController {
 		return "/project/blue/editClient";
 	}
 
-	@GetMapping("/project/blue/editSecond")
+	@GetMapping("/project/blue/editReadClient")
 	public String editClientSecond( //
 			@RequestParam Long clientId, @RequestParam String clientName, //
 			@RequestParam String email, //
