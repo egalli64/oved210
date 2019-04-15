@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="hotels">
+
+	<h3 class="backgroundtitles">New Booking</h3>
+
+	<br>
+
+
+	<form id="new" name="frmLogInsert" action="/project/red/insertBooking"
+		method="get">
+		
+<!--  DA MODIFICARE TUTTO // questo è quello con gli ERRORI -->
+
+
+		<div class="form-group">
+
+			<label>Hotel name:</label> <input name="hotelName" type="text"
+				class="form-control" placeholder="Enter Hotel Name"
+				th:unless="${errorHotel}"> 
+				
+				<input name="hotelName"	type="text" class="border border-danger form-control"
+				placeholder="Enter Hotel Name" th:if="${errorHotel}"> 
+				<small class="error" th:if="${errorHotel}"> Name is missing!</small>
+		</div>
+
+		<div class="form-group">
+			<label>City:</label> <input name="city" type="text"
+				class="form-control" placeholder="Enter City"
+				th:unless="${errorCity}"> 
+				
+				<input name="city" type="text" class="border border-danger form-control" placeholder="Enter City"
+				th:if="${errorCity}" th:value="${city}"> 
+				<small class="error" th:if="${errorCity}"> City is missing!</small>
+		</div>
+
+		<div class="form-group">
+			<label>Rooms: </label> <input name="roomCounter" type="number"
+				class="form-control" placeholder="Enter Room Number" th:unless="${errorRooms}">
+				
+				<input name="roomCounter" type="number" class="border border-danger form-control" placeholder="Enter Room Number"
+				th:if="${errorRooms}" th:value="${roomCounter}"> 
+				<small class="error" th:if="${errorRooms}"> RoomCounter is missing!</small>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<hr>
+	<a href="/project/red/hotels"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
+</body>
+</html>

@@ -14,6 +14,8 @@
 	<a href="/project/red/login"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
 	</a>
 	<br>
+	<br>
+	<a href="/project/red/insertBooking.html"><input type="button" value="CHECK IN" class="btn btn-success" aria-pressed="true" /></a>
 	</div>
 	<br>
 </div>
@@ -27,6 +29,8 @@
 				<th>CHECK IN</th>
 				<th>CHECK OUT</th>
 				<th>PAYMENT</th>
+				<th>DELETE</th>
+				<th>MODIFY</th>
 			</tr>
 			</thead>
 			<tr th:each="booking: ${bookings}" class ="table-warning">
@@ -36,11 +40,22 @@
 				<td th:text =${booking.checkIn}></td>
 				<td th:text =${booking.checkOut}></td>
 				<td th:text =${booking.payment}></td>
+				
+				<td><a href="/project/red/deleteBooking?bookingId="
+					th:href="@{/project/red/deleteBooking(bookingId=${booking.bookingId})}">
+						<input id="button" type="image" src="/img/project/red/x.png"
+						width="30" height="35">
+				</a></td>
+
+				<td><a
+					th:href="@{/project/red/editBooking(bookingId=${booking.bookingId})}">
+						<input id="button" type="image" src="/img/project/red/edit.png"
+						width="30" height="35">
+				</a></td>
+				
 			</tr>
 		</table>
 	</div>	
-
-<hr>
 
 
 </body>
