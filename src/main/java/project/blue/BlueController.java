@@ -16,7 +16,6 @@ public class BlueController {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 	private static String user;
 
-	// controller Clients
 	@Autowired
 	private BlueClientRepository repClient;
 

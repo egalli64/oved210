@@ -25,9 +25,18 @@ public class HotelController {
 	}
 
 	@GetMapping("/project/red/insertHotel")
-	public String create(@RequestParam String hotelName, @RequestParam String city, @RequestParam long roomCounter,
+	public String create(@RequestParam String hotelName, @RequestParam String city, @RequestParam String roomCounter,
 
 			Model model) {
+		long rooms = 0;
+		try {
+		rooms = Long.parseLong(roomCounter);
+		
+		}catch (NumberFormatException nfe){
+			model.addAttribute("errorRooms", "***RoomCounter is missing!***");
+
+			return "/project/red/insertHotel";
+		}
 
 		log.trace("get new hotel");
 
@@ -36,8 +45,12 @@ public class HotelController {
 
 			return "/project/red/insertHotel";
 		}
-		try {
-			Hotel hotel = new Hotel(hotelName, city, roomCounter);
+		if (city.isEmpty()) {
+			model.addAttribute("errorCity", "***City is missing!***");
+
+			return "/project/red/insertHotel";
+		}
+			Hotel hotel = new Hotel(hotelName, city, rooms);
 			repo.save(hotel);
 			model.addAttribute("hotels", repo.findAll());
 
@@ -45,14 +58,8 @@ public class HotelController {
 			model.addAttribute("hotelSaved", hotelSaved);
 
 			return "/project/red/hotels";
-		} catch (Exception ex) {
-			model.addAttribute("errorCity", "***City is missing!***");
-			model.addAttribute("city", city);
-
-			return "/project/red/insertHotel";
 		}
 
-	}
 
 	@GetMapping("/project/red/deleteHotel")
 	public String delete(@RequestParam Long hotelId,

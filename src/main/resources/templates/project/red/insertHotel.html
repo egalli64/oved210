@@ -42,7 +42,11 @@
 
 		<div class="form-group">
 			<label>Rooms: </label> <input name="roomCounter" type="number"
-				class="form-control" placeholder="Enter Room Number">
+				class="form-control" placeholder="Enter Room Number" th:unless="${errorRooms}">
+				
+				<input name="roomCounter" type="number" class="border border-danger form-control" placeholder="Enter Room Number"
+				th:if="${errorRooms}" th:value="${roomCounter}"> 
+				<small class="error" th:if="${errorRooms}"> RoomCounter is missing!</small>
 		</div>
 
 		<button type="submit" class="btn btn-primary">Submit</button>
