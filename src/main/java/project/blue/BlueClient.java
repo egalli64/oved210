@@ -15,7 +15,6 @@ public class BlueClient {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ClientGen")
 	@SequenceGenerator(sequenceName = "BLUE_CLIENTS_SEQ", allocationSize = 1, name = "ClientGen")
 	private Long clientId;
-	
 	private String clientName;
 	private String email;
 	private Long phone;

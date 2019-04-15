@@ -2,7 +2,10 @@ package project.blue;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 public class BlueHotel {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "HotelGen")
+	@SequenceGenerator(sequenceName = "BLUE_HOTELS_SEQ", allocationSize = 1, name = "HotelGen")
 	private Long hotelId;
 	private String hotelName;
 	private String city;
