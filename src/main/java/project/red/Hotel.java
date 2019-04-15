@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Hotel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "HotGen")
-	@SequenceGenerator(sequenceName = "RED_HOTELS_SEQ", allocationSize = 1, name = "HotGen")
+	@SequenceGenerator(sequenceName = "RED_HOTEL_SEQ", allocationSize = 1, name = "HotGen")
 	private long hotelId;
 
 	private String hotelName;
