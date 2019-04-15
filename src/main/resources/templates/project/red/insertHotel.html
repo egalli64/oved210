@@ -22,7 +22,8 @@
       <label>Hotel name:</label>
         <input name="hotelName" type="text" class="form-control" 
         	placeholder="Enter Hotel Name" th:unless = "${errorHotel}">  
-         <input name="hotelName" type="text" class="border border-danger form-control " 
+        	
+         <input name="hotelName" type="text" class="border border-danger form-control" 
          	placeholder="Enter Hotel Name" th:if = "${errorHotel}">  
        	 <small class= "error" th:if = "${errorHotel}"> Name is missing!</small>
    </div>
