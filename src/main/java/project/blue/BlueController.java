@@ -105,54 +105,44 @@ public class BlueController {
 
 	}
 
-  //controller editing
-	@GetMapping("/project/blue/clients/editFirst")
+	// controller editing
+	@GetMapping("/project/blue/editClient")
 	public String editClientFirst( //
-			@RequestParam Long id, //
+			@RequestParam Long clientId, //
 			Model model) {
 		log.trace("edit client");
-	
-		Optional<BlueClient> opt = repClient.findById(id);
-		if(opt.isPresent()) {
+
+		Optional<BlueClient> opt = repClient.findById(clientId);
+		if (opt.isPresent()) {
 			BlueClient client = opt.get();
-		
-			//da vedere sotto lunedi 
-			model.addAttribute("Id", client.getClientId());
-			model.addAttribute("Name", client.getClientName());
+
+			// da vedere sotto lunedi
+			model.addAttribute("clientId", client.getClientId());
+			model.addAttribute("clientName", client.getClientName());
 			model.addAttribute("email", client.getEmail());
 			model.addAttribute("phone", client.getPhone());
-			}
-			return "/project/blue/editClient";
 		}
-		
-	
-	
-	@GetMapping("/project/blue/clients/editSecond")
+		return "/project/blue/editClient";
+	}
+
+	@GetMapping("/project/blue/editSecond")
 	public String editClientSecond( //
-			@RequestParam String name, //
+			@RequestParam Long clientId, @RequestParam String clientName, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
-			@RequestParam Long id,
+
 			Model model) {
 		log.trace("edit client");
-		
-	
-				BlueClient client = new BlueClient();
 
-				client.setClientName(name);
-				client.setEmail(email);
-				client.setPhone(phone);
-		
-			repClient.save(client);
-			model.addAttribute("clients", repClient.findAll());
-		
-		String editClient = String.format("--Client modified!--");
-		model.addAttribute("editClient", editClient);
-			
-		
-	
+		BlueClient client = new BlueClient(clientId, clientName, email, phone);
+
+		repClient.save(client);
+
+		model.addAttribute("editClient", "--Client modified!--");
+		model.addAttribute("clients", repClient.findAll());
+
 		return "/project/blue/clients";
-		}
+	}
 	// controller Hotels
 
 	@Autowired

@@ -21,11 +21,19 @@ public class GreenClients {
 	private String email;
 	private Long phone;
 	
-	public GreenClients(String clientName, String email, Long phone) {
+	public GreenClients(long clientId, String clientName, String email, Long phone) {
+		this.clientId = clientId;
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;
 	}
+	
+	public GreenClients(String clientName, String email, Long phone) {
+		this.clientName = clientName;
+		this.email = email;
+		this.phone = phone;		
+	}
+	
 
 	
 	public GreenClients() {
@@ -78,5 +86,6 @@ public class GreenClients {
 		return "GreenClients [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone="
 				+ phone + "]";
 	}
-
 }
+
+	
