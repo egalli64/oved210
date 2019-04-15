@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>EDITHOTELS</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="/css/project/green/green2.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<br />
+		<form id="newhotel" name="frmLog"
+			action="/project/green/hotel/saveedit" method="get">
+
+			<input name="hotelId" type="hidden" class="form-control"
+				th:value="${hotelId}">
+
+			<div class="form-group">
+				<label for="exampleInputhotel Name">Hotel Name</label> <input
+					name="hotelName" type="text" class="form-control"
+					th:value="${hotelName}">
+			</div>
+
+			<div class="form-group">
+				<label for="exampleInputCity">City</label> <input
+					name="city" type="text" class="form-control" th:value="${city}">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputRoom">Room Counter</label> <input
+					name="room" type="text" class="form-control" th:value="${room counter}">
+			</div>
+
+			<button type="submit" class="btn btn-outline-success">Edit!</button>
+
+		</form>
+	</div>
+	<br />
+	<div class="container-fluid">
+		<div class="col-auto">
+			<a href="/project/green/hotels"><button type="button"
+					class="btn btn-outline-dark">Go Back</button></a>
+		</div>
+	</div>
+</body>
+</html>

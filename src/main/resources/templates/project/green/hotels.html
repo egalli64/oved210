@@ -15,6 +15,11 @@
 			<i>Our Hotels</i>
 		</h3>
 		<br />
+		<div>
+			<a href="/project/green/addedHotels.html"><button type="button"
+					class="btn btn-outline-success">Add New Hotel</button> </a>
+		</div>
+
 		<table class="table table-hover">
 			<thead class="thead-succes">
 				<tr>
@@ -25,6 +30,8 @@
 					<th>Hotel Name</th>
 					<th>City</th>
 					<th>Room Counter</th>
+					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 
@@ -33,6 +40,16 @@
 				<td th:text="${hotel.hotelName}"></td>
 				<td th:text="${hotel.city}"></td>
 				<td th:text="${hotel.roomCounter}"></td>
+				<td><a href="/project/green/hotel/edit"
+					th:href="@{/project/green/hotel/edit(hotelId=${hotel.hotelId})}">
+						<button type="submit"
+							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+
+				</a></td>
+				<td><a href="/project/green/hotels/removeHotels.html"
+					th:href="@{/project/green/removeHotels(hotelId=${hotel.hotelId})}">
+						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
+				</a></td>
 			</tr>
 		</table>
 
