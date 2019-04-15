@@ -189,18 +189,47 @@ public class GreenController {
 		return "/project/green/hotels";
 	}
 	
+	/////edit hotel
+	@GetMapping("/project/green/hotels/edit")
+	public String editHotels(@RequestParam long hotelId, Model model) {
+		
+		log.trace("get edit hotels");
+		
+		 Optional<GreenHotel> opzione = repoHotel.findById(hotelId);
+		 if (opzione.isPresent()) {
+			 GreenHotel hotel = opzione.get();
+			 
+			 model.addAttribute("hotelId", hotel.getHotelId());
+			 model.addAttribute("hotelName", hotel.getHotelName());
+			 model.addAttribute("city", hotel.getCity());
+			 model.addAttribute("roomCounter", hotel.getRoomCounter());
+		 }
+		
+		return "/project/green/hotels/edit";	
+	}
 	
 	
+	@GetMapping("/project/green/hotel/saveedit")
+	public String saveeditHotel(
+			@RequestParam Long hotelId,
+			@RequestParam String hotelName, 
+			@RequestParam String city, 
+			@RequestParam Long roomCounter,		
+			Model model) {
+	
+		log.trace("save editing hotel");
+		
+		GreenHotel hotel = new GreenHotel(hotelId, hotelName, city, roomCounter);
+		
+		
+		repoHotel.save(hotel);
+		model.addAttribute("hotels", repoHotel.findAll());
+		return "/project/green/hotels";
+	}
+
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

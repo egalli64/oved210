@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REMOVEBOOKINGS</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="/css/project/green/green2.css">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<br />
+		<form name="frmLog" action="/project/green/removeBookings" method="get">
+			<div class="form-row">
+				<div class="col">
+					<input name="bookingId" type="text" class="form-control"
+						placeholder="Id">
+				</div>
+			</div>
+			<br />
+			<button type="submit" class="btn btn-outline-danger">Remove
+				Booking</button>
+
+		</form>
+	</div>
+	<br />
+	<div class="col-auto">
+		<a href="/project/green/bookings"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a>
+	</div>
+</body>
+</html>

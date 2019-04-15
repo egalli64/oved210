@@ -64,7 +64,7 @@ public class BlueControllerBooking {
 	
 	//controller remove bookings
 	
-	@GetMapping("/project/blue/hotels/remove")
+	@GetMapping("/project/blue/bookings/remove")
 
 	public String removeBooking(@RequestParam Long bookingId, Model model) {
 		log.trace("delete booking");
