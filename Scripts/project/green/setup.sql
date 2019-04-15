@@ -82,46 +82,46 @@ room_counter number (6)
 
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Tulipano', 'milano', 10);
+values(green_hotels_seq.nextval , 'Hotel Tulipano', 'Milano', 10);
 
 insert into green_hotels(hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Margherita', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Margherita', 'Roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Girasole', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Girasole', 'Firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Giglio', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Giglio', 'Napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Orchidea', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Fresia', 'milano', 10);
+values(green_hotels_seq.nextval , 'Hotel Fresia', 'Milano', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Imperial', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Imperial', 'Roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Grisalide', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Grisalide', 'Firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Rosa', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Rosa', 'Napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Violetta', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Violetta', 'Venezia', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Xheko', 'roma', 10);
+values(green_hotels_seq.nextval , 'Hotel Xheko', 'Roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Primula', 'firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Primula', 'Firenze', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Pino', 'napoli', 5);
+values(green_hotels_seq.nextval , 'Hotel Pino', 'Napoli', 5);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Stella', 'venezia', 5);
+values(green_hotels_seq.nextval , 'Hotel Stella', 'Venezia', 5);
 
 
 create table green_rooms (

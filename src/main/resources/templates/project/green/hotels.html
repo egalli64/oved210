@@ -26,19 +26,18 @@
 					<th>City</th>
 					<th>Room Counter</th>
 				</tr>
-
-				<tr th:each="hotel: ${hotels}">
-					<td th:text="${hotel.hotelId}"></td>
-					<td th:text="${hotel.hotelName}"></td>
-					<td th:text="${hotel.city}"></td>
-					<td th:text="${hotel.roomCounter}"></td>
-				</tr>
 			</thead>
+
+			<tr th:each="hotel: ${hotels}">
+				<td th:text="${hotel.hotelId}"></td>
+				<td th:text="${hotel.hotelName}"></td>
+				<td th:text="${hotel.city}"></td>
+				<td th:text="${hotel.roomCounter}"></td>
+			</tr>
 		</table>
 
 		<a href="/project/green/login"><button type="button"
 				class="btn btn-outline-dark">Go Back</button></a>
-	</div>
 	</div>
 
 </body>

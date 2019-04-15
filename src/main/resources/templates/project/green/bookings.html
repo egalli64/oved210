@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="utf-8">
 <title>GreenHotel</title>
@@ -10,27 +9,37 @@
 	href="/css/project/green/green2.css">
 </head>
 <body>
-	<div class="container-fluid"> <br />
-			<h3 class="backgroundtitles"><i>Booking</i></h3> 
-			<table class="table table-hover">
-				<thead class="thead-succes">
-					<tr>
-					<br/> <br />
-						<th>Booking Id</th>
-						<th>Availability</th>
-						<th>Payment</th>
-					</tr>
-					<tr th:each="booking: ${bookings}">
-						<td th:text="${booking.bookingId}"></td>
-						<td th:text="${booking.availability}"></td>
-						<td th:text="${booking.payment}"></td>
-					</tr>
-				</thead>
-			</table>
+	<div class="container-fluid">
+		<br />
+		<h3 class="backgroundtitles">
+			<i>Booking</i>
+		</h3>
+		<table class="table table-hover">
+			<thead class="thead-succes">
+				<tr>
+					<br />
+					<br />
+					<th>Booking Id</th>
+					<th>Availability</th>
+					<th>Payment</th>
+				</tr>
+			</thead>
 
-			<a href="/project/green/check-in-out.html"><button type="button" class="btn btn-outline-info">Do your check!
-			</button> </a> <br /> <br/>
-			<a href="/project/green/login"><button type="button" class="btn btn-outline-dark">Go Back</button></a>
-		</div>
+			<tr th:each="booking: ${bookings}">
+				<td th:text="${booking.bookingId}"></td>
+				<td th:text="${booking.availability}"></td>
+				<td th:text="${booking.payment}"></td>
+			</tr>
+		</table>
+	</div>
+		<div class="container-fluid">
+	
+	<a href="/project/green/check-in-out.html"><button type="button"
+			class="btn btn-outline-info">Do your check!</button> </a>
+	<br />
+	<br />
+	<a href="/project/green/login"><button type="button"
+			class="btn btn-outline-dark">Go Back</button></a>
+</div>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <body id="clients">
 	<div class="container-fluid">
 		<br />
-		<h3 class="backgroundtitles.bg-gradient-light">
+		<h3 class="backgroundtitles">
 			<i>Clients</i>
 		</h3>
 		<div>
@@ -26,42 +26,38 @@
 			<h2 th:text="${message}" th:if="${message}"></h2>
 			<h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2>
 		</div>
-		<div class="container-fluid">
-			<table class="table table-hover">
-				<thead class="thead-succes">
-					<tr>
-						<br />
-						<br />
-
-						<th>CLIENT NAME</th>
-						<th>EMAIL</th>
-						<th>PHONE</th>
-						<th></th>
-						<th></th>
-
-					</tr>
-				</thead>
-
-				<tr th:each="client: ${clients}">
-					<td th:text="${client.clientName}"></td>
-					<td th:text="${client.email}"></td>
-					<td th:text="${client.phone}"></td>
-					<td><a href="/project/green/clients/clientMain.html"
-						th:href="@{/project/green/clientMain(clientId=${client.clientId})}">
-							<button type="submit"
-								class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
-
-					</a></td>
-					<td><a href="/project/green/clients/removeClients.html"
-						th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
-							<button type="submit" class="btn btn-danger btn-rounded">Delete</button>
-					</a></td>
-
-
+		<table class="table table-hover">
+			<thead class="thead-succes">
+				<tr>
+					<br />
+					<br />
+					<th>CLIENT NAME</th>
+					<th>EMAIL</th>
+					<th>PHONE</th>
+					<th></th>
+					<th></th>
 				</tr>
-			</table>
-		</div>
-		<hr>
+			</thead>
+
+			<tr th:each="client: ${clients}">
+				<td th:text="${client.clientName}"></td>
+				<td th:text="${client.email}"></td>
+				<td th:text="${client.phone}"></td>
+				<td><a href="/project/green/clients/clientMain.html"
+					th:href="@{/project/green/clientMain(clientId=${client.clientId})}">
+						<button type="submit"
+							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+
+				</a></td>
+				<td><a href="/project/green/clients/removeClients.html"
+					th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
+						<button type="submit" class="btn btn-danger btn-rounded">Delete</button>
+				</a></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container-fluid">
+
 		<a href="/project/green/login"><button type="button"
 				class="btn btn-outline-dark">Go Back</button></a>
 	</div>
