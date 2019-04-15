@@ -32,13 +32,14 @@ public class BlueBooking {
 		
 	}
 	
-	public BlueBooking(Long clientId, Date availability, Long payment) {
+	public BlueBooking(Long hotelId, Long clientId, Date availability, Long payment) {
+		this.hotelId = hotelId;
 		this.clientId = clientId;
 		this.availability = availability;
 		this.payment = payment;
 	}
 	
-	protected BlueBooking() {
+	public BlueBooking() {
 		
 	}
 
@@ -46,57 +47,49 @@ public class BlueBooking {
 		return bookingId;
 	}
 
-
 	public void setBookingId(Long bookingId) {
 		this.bookingId = bookingId;
 	}
-
 
 	public Long getHotelId() {
 		return hotelId;
 	}
 
-
 	public void setHotelId(Long hotelId) {
 		this.hotelId = hotelId;
 	}
-
 
 	public Long getClientId() {
 		return clientId;
 	}
 
-
 	public void setClientId(Long clientId) {
 		this.clientId = clientId;
 	}
-
 
 	public Date getAvailability() {
 		return availability;
 	}
 
-
 	public void setAvailability(Date availability) {
 		this.availability = availability;
 	}
-
 
 	public Long getPayment() {
 		return payment;
 	}
 
-
 	public void setPayment(Long payment) {
 		this.payment = payment;
 	}
-
 
 	@Override
 	public String toString() {
 		return "BlueBooking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId
 				+ ", availability=" + availability + ", payment=" + payment + "]";
 	}
+
+
 
 
 	
