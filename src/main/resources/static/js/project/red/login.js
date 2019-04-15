@@ -18,5 +18,6 @@ function checkUser() {
 
 	// OK
 	return true;
+}
 
 }

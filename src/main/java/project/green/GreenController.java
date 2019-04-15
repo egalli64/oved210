@@ -57,7 +57,8 @@ public class GreenController {
 
 //controller per added
 	@GetMapping("/project/green/client/add")
-	public String create(@RequestParam String clientName, @RequestParam String email, @RequestParam Long phone,
+	public String create(@RequestParam String clientName, 
+			@RequestParam String email, @RequestParam Long phone,
 			Model model) {
 		if (clientName.isEmpty()) {
 			model.addAttribute("message", "Can't create client without a name!");
@@ -144,12 +145,13 @@ public class GreenController {
 	}
 	
 	
-	//////hotel add
+	//////hotel 
+
 	@GetMapping("/project/green/hotel/add")
 	public String createhotel(
 			@RequestParam String hotelName, 
 			@RequestParam String city, 
-			@RequestParam Long hotelId,
+			@RequestParam Long roomCounter,
 			Model model) {
 		if (hotelName.isEmpty()) {
 			model.addAttribute("message", "Can't create hotel without a name!");
@@ -160,14 +162,14 @@ public class GreenController {
 		log.trace("get all hotels");
 		try {
 			
-			repoHotel.save(new GreenHotel(hotelName, city, hotelId));
-			model.addAttribute("message", String.format("NewHotel %s %s %d correctly created", hotelName, city));
+			repoHotel.save(new GreenHotel(hotelName, city, roomCounter));
+			model.addAttribute("message", String.format("NewHotel %s %s %d correctly created", hotelName, city, roomCounter));
 		} catch (Exception dive) {
-			String message = String.format("Can't create NewHotel %s %s %d", hotelName, city);
+			String message = String.format("Can't create NewHotel %s %s %d", hotelName, city, roomCounter);
 			log.error(message);
 			model.addAttribute("message", message);
 		}
-		model.addAttribute("clients", repoClient.findAll());
+		model.addAttribute("hotels", repoHotel.findAll());
 		return "/project/green/hotels";
 	}
 	
