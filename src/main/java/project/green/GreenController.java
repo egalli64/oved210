@@ -190,10 +190,10 @@ public class GreenController {
 	}
 	
 	/////edit hotel
-	@GetMapping("/project/green/hotels/edit")
+	@GetMapping("/project/green/hotel/edit")
 	public String editHotels(@RequestParam long hotelId, Model model) {
 		
-		log.trace("get edit hotels");
+		log.trace("get edit hotel");
 		
 		 Optional<GreenHotel> opzione = repoHotel.findById(hotelId);
 		 if (opzione.isPresent()) {
@@ -205,7 +205,7 @@ public class GreenController {
 			 model.addAttribute("roomCounter", hotel.getRoomCounter());
 		 }
 		
-		return "/project/green/hotels/edit";	
+		return "/project/green/hotel/edit";	
 	}
 	
 	
@@ -228,11 +228,8 @@ public class GreenController {
 	}
 
 	
-	
 
-	
-	
-	
+
 	
 	@GetMapping("/project/green/bookings")
 	public String allBookings(Model model) {
