@@ -125,7 +125,7 @@ values(green_hotels_seq.nextval , 'Hotel Stella', 'Venezia', 5);
 
 
 create table green_rooms (
-hotel_id number (6) references green_hotels(hotel_id),
+hotel_id number (6) constraint green_rooms_fk references green_hotels(hotel_id) on delete cascade,
 room_id number (6)
 );
 

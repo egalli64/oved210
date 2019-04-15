@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bookings</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css"
+	 href="/css/project/blue/bluestd.css" />
+	</head>
+	
+<body class = "edit">
+	<h3>Add Booking</h3>
+	<form id= "addbooking" name="frmLogInsert" action="/project/blue/clients/addBooking">
+	<div class = "container-fluid border border-info" align= "center">	
+	<input name="bookingId" type = "number" hidden="true" class="form-control" th:value ="${hotelId}">
+			
+			<label class=text-left> 
+			<input type = "number" name = "hotelId"  hidden="true" class=text-left>
+			</label><br>
+			<label class=text-left>Client Id:  
+			 <input type = "number" name = "clientId" class=text-left>
+			</label>
+			<label class=text-left>Availability:  
+			 <input type = "date" name = "availability" class=text-left>
+			</label>
+			<label class=text-left>Payment:  
+			 <input type = "number" name = "payment" class=text-left>
+			</label>
+			
+			<br />
+		
+		<button type = "submit" class = "text-center" id = "addBooking">
+			 <b>Add this new booking!</b>
+		</button> 
+		</div>
+	</form>
+ 
+
+
+			
+	</body>
+	</html>
+	
+	

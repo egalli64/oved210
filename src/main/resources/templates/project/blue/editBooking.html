@@ -1,0 +1,41 @@
+<!-- Tabella Edit -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Booking</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css"
+	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+</head>
+<body class="edit">
+
+	<h3>Edit your Booking</h3>
+	<form id="newbooking" name="frmLogInsert" action="/project/blue/editReadBooking" method="get">
+	<div  class = "container-fluid border border-info" align="center">
+	<input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" > 
+
+			<label><input type = "number" hidden= true class=text-left>
+			</label><br>
+			<label class=text-left>Client Id:  
+			<input type = "number" name = "clientId" class=text-left th:value = "${clientId}">
+			</label><br>
+			<label class=text-left>Availability:  
+			<input type = "date" name = "availability" class=text-left th:value = "${availability}">
+			</label><br>
+			<label class=text-left>Payment:  
+			 <input type = "number" name = "payment" class=text-left th:value = "${payment}">
+			</label>
+			<br />
+		
+		<button type = "submit" class = "text-center" id = "editBooking">
+		<b>Edit this booking!</b>
+		</button> 
+		</div>
+	</form>
+
+
+</body>
+</html>

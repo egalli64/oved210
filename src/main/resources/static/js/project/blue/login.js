@@ -8,7 +8,7 @@ function checkUser() {
 		return false;
 	}
 
-	//  check password
+	// check password
 	let password = document.getElementById("pwdId");
 	if (password.value.length == 0) {
 		alert("Password is missing!");
@@ -19,4 +19,16 @@ function checkUser() {
 	// 
 	return true;
 
+}
+
+function checkRooms() {
+	let roomCounter = document.getElementById("roomCounter");
+	if (roomCounter.value <= 0) {
+		alert("The number of rooms is incorrect!");
+		roomCounter.focus();
+		return false;
+
+	}
+
+	return true;
 }

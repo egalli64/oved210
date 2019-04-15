@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BlueControllerHotel {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
-	private static String user;
+
 	
 	@Autowired
 	private BlueHotelRepository repHotel;
@@ -30,7 +30,6 @@ public class BlueControllerHotel {
 		return "/project/blue/hotels";
 	}
 
-	
 	// controller add hotels
 	
 	@GetMapping("/project/blue/hotels/addHotel")
@@ -103,9 +102,10 @@ public class BlueControllerHotel {
 		return "/project/blue/editHotel";
 	}
 
-	@GetMapping("/project/blue/editHotel2")
-	public String editClientSecond( //
-			@RequestParam Long hotelId, @RequestParam String hotelName, //
+	@GetMapping("/project/blue/editReadHotel")
+	public String editHotelSecond( //
+			@RequestParam Long hotelId, //
+			@RequestParam String hotelName, //
 			@RequestParam String city, //
 			@RequestParam Long roomCounter, //
 
