@@ -59,7 +59,8 @@ public class BlueControllerHotel {
 	
 	
 	//controller remove hotels
-	@GetMapping("/project/blue/deleteHotel")
+	
+	@GetMapping("/project/blue/hotels/remove")
 
 	public String removeClient(@RequestParam Long hotelId, Model model) {
 		log.trace("delete hotel");
@@ -71,6 +72,7 @@ public class BlueControllerHotel {
 			model.addAttribute("hotels", repHotel.findAll());
 			String deleteHotel = String.format("--Hotel deleted!--");
 			model.addAttribute("deleteHotel", deleteHotel);
+		
 
 		} catch (Exception ex) {
 			String unexistingdId = String.format("--Unexisting Id!--");
@@ -82,6 +84,7 @@ public class BlueControllerHotel {
 	}
 	
 	// controller edit hotels
+	
 	@GetMapping("/project/blue/editHotel")
 	public String editHotelFirst( //
 			@RequestParam Long hotelId, //
