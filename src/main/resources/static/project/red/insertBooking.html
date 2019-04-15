@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="hotels">
+
+	<h3 class="backgroundtitles">New Booking</h3>
+<br>
+	<div class = "left">
+	<a href="/project/red/bookings"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
+	</a>
+	<br>
+	</div>
+	<br>
+
+	<form id="new" name="frmLogInsert" action="/project/red/insertBooking"
+		method="get">
+
+<!--  DA MODIFICARE TUTTO -->
+
+		<div class="form-group">
+
+			<label>Hotel Id:</label> <input name="hotelId" type="number"
+				class="form-control" placeholder="Enter Hotel Id"> 
+				</div>
+
+		<div class="form-group">
+			<label>Client Name:</label> <input name="clientName" type="text"
+				class="form-control" placeholder="Enter Client">
+		
+		</div>
+
+		<div class="form-group">
+			<label>Check in: </label> <input name="checkIn" type="date"
+				class="form-control" placeholder="Enter Check-In Date">
+		</div>
+		
+				<div class="form-group">
+			<label>Check out: </label> <input name="checkOut" type="date"
+				class="form-control" placeholder="Enter Check-Out Date">
+		</div>
+		
+			<div class="form-group">
+			<label>Payment: </label> 
+			<input type="radio" name="lang" value=""  />Credit card <img src="/img/project/red/carte.png"
+						width="30" height="35"></img>
+			<input type="radio" name="lang" value="" /><img src="/img/project/red/paypal.png"
+						width="30" height="35"></img>
+			<input type="radio" name="lang" value="" /><img src="/img/project/red/cash.png"
+						width="30" height="35"></img>
+
+		</div>
+		
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+
+	
+		
+		<div>
+		<input type="date">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<a href="/project/red/bookings"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
+</body>
+</html>

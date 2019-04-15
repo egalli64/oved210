@@ -80,8 +80,9 @@
 	<div class = "container-fluid">
 	<h3 class="backgroundtitles">Choose your hotel</h3>
 	</div>
+	 
 	<div class="input-group container-fluid">
-		<select class="custom-select" id="inputGroupSelect04">
+			<select class="custom-select" id="inputGroupSelect04">
 			<option selected>Choose...</option>
 			<option th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
 				th:text="${hotel.hotelName}"></option>
@@ -91,6 +92,22 @@
 		</div>
 	</div>
 
+<!--  
+	<select class="custom-select" id="inputGroupSelect04"
+	name="url" onchange="location.href = this.value;">
+	<option value="#" selected="selected" >-------------</option>
+	
+	<option value="http://www.google.it" th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+				th:text="${hotel.hotelName}">Google</option>
+				
+	<option value="http://www.yahoo.it" th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+				th:text="${hotel.hotelName}">Yahoo</option>
+				
+	<option value="http://www.altervista.org"th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+				th:text="${hotel.hotelName}">AlterVista</option>
+				
+</select>
+-->
 
 
 
