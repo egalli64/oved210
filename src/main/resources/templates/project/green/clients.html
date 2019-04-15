@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title><h align=center>Clients</h></title>
+<title>Clients</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
@@ -26,11 +26,11 @@
 			<h2 th:text="${message}" th:if="${message}"></h2>
 			<h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2>
 		</div>
+					<br />
+					<br />
 		<table class="table table-hover">
 			<thead class="thead-succes">
 				<tr>
-					<br />
-					<br />
 					<th>CLIENT NAME</th>
 					<th>EMAIL</th>
 					<th>PHONE</th>
@@ -43,8 +43,8 @@
 				<td th:text="${client.clientName}"></td>
 				<td th:text="${client.email}"></td>
 				<td th:text="${client.phone}"></td>
-				<td><a href="/project/green/clients/clientMain.html"
-					th:href="@{/project/green/clientMain(clientId=${client.clientId})}">
+				<td><a href="/project/green/client/edit"
+					th:href="@{/project/green/client/edit(clientId=${client.clientId})}">
 						<button type="submit"
 							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
 

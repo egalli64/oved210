@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-
-
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -57,7 +53,9 @@ public class GreenController {
 
 //controller per added
 	@GetMapping("/project/green/client/add")
-	public String create(@RequestParam String clientName, @RequestParam String email, @RequestParam Long phone,
+	public String create(@RequestParam String clientName, 
+			@RequestParam String email, 
+			@RequestParam Long phone,
 			Model model) {
 		if (clientName.isEmpty()) {
 			model.addAttribute("message", "Can't create client without a name!");
@@ -79,7 +77,7 @@ public class GreenController {
 	}
 
 	@GetMapping("/project/green/removeClients")
-	public String removeClients(@RequestParam Long clientId, Model model) {
+	public String removeClients(@RequestParam long clientId, Model model) {
 
 		log.trace("get delete client");
 		try {
@@ -95,46 +93,37 @@ public class GreenController {
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
-	
+
 	@GetMapping("/project/green/client/edit")
 	public String editClient(@RequestParam long clientId, Model model) {
-		
+
 		log.trace("get edit client");
-		
-		 Optional<GreenClients> opzione = repoClient.findById(clientId);
-		 if (opzione.isPresent()) {
-			 GreenClients client = opzione.get();
-			 
-			 model.addAttribute("clientId", client.getClientId());
-			 model.addAttribute("clientName", client.getClientName());
-			 model.addAttribute("email", client.getEmail());
-			 model.addAttribute("phone", client.getPhone());
-		 }
-		
-		return "/project/green/client/edit";	
+
+		Optional<GreenClients> opzione = repoClient.findById(clientId);
+		if (opzione.isPresent()) {
+			GreenClients client = opzione.get();
+
+			model.addAttribute("clientId", client.getClientId());
+			model.addAttribute("clientName", client.getClientName());
+			model.addAttribute("email", client.getEmail());
+			model.addAttribute("phone", client.getPhone());
+		}
+
+		return "/project/green/client/edit";
 	}
-	
-	
+
 	@GetMapping("/project/green/client/saveedit")
-	public String saveeditClient(
-			@RequestParam long clientId, 
-			@RequestParam String clientName, 
-			@RequestParam String email, 
-			@RequestParam Long phone,			
-			Model model) {
-	
+	public String saveeditClient(@RequestParam long clientId, @RequestParam String clientName,
+			@RequestParam String email, @RequestParam Long phone, Model model) {
+
 		log.trace("save editing client");
-		
+
 		GreenClients client = new GreenClients(clientId, clientName, email, phone);
-		
-		
+
 		repoClient.save(client);
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
-
-	
-	
 
 	@GetMapping("/project/green/hotels")
 	public String allHotels(Model model) {
@@ -150,7 +139,6 @@ public class GreenController {
 		return "project/green/bookings";
 	}
 }
-
 
 //	 @GetMapping("/project/green/clients")
 //	    public String orderGreenClients( //
@@ -171,5 +159,3 @@ public class GreenController {
 //	     //   model.addAttribute("clients", clients);
 //	        return "project/green/clients";
 //	    }
-
-	
