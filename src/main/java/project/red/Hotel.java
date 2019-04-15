@@ -1,4 +1,4 @@
-package project.red;
+	package project.red;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,22 +19,22 @@ public class Hotel {
 	private String city;
 	private long roomCounter;
 
-	public Hotel( String hotelName, String city, long roomCounter) {
-		
-		this.hotelName = hotelName;
-		this.city = city;
-		this.roomCounter = roomCounter;
-	}
-
-	public Hotel (long hotelId, String hotelName, String city, long roomCounter) {
-		
+	public Hotel(long hotelId, String hotelName, String city, long roomCounter) {
 		this.hotelId = hotelId;
+
 		this.hotelName = hotelName;
 		this.city = city;
 		this.roomCounter = roomCounter;
 	}
 
-	protected Hotel() {
+	public Hotel(String hotelName, String city, long roomCounter) {
+
+		this.hotelName = hotelName;
+		this.city = city;
+		this.roomCounter = roomCounter;
+	}
+
+	public Hotel() {
 
 	}
 
