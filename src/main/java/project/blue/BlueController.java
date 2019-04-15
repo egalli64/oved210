@@ -13,12 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BlueController {
-
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 	private static String user;
 
 	// controller Clients
-
 	@Autowired
 	private BlueClientRepository repClient;
 
@@ -54,7 +52,7 @@ public class BlueController {
 		return "/project/blue/clients";
 	}
 
-	// controller per aggiungere il cliente///
+	// controller per aggiungere il cliente
 
 	@GetMapping("/project/blue/clients/add")
 	public String addClient( //
@@ -116,7 +114,6 @@ public class BlueController {
 		if (opt.isPresent()) {
 			BlueClient client = opt.get();
 
-			// da vedere sotto lunedi
 			model.addAttribute("clientId", client.getClientId());
 			model.addAttribute("clientName", client.getClientName());
 			model.addAttribute("email", client.getEmail());
@@ -143,18 +140,13 @@ public class BlueController {
 
 		return "/project/blue/clients";
 	}
-	// controller Hotels
 
-	@Autowired
-	private BlueHotelRepository repHotel;
 
-	@GetMapping("/project/blue/hotels")
-	public String allHotels(Model model) {
-		log.trace("get all hotels");
-		model.addAttribute("hotels", repHotel.findAll());
-		return "project/blue/hotels";
-	}
-
+	
+	
+	
+	
+	
 	// controller Bookings
 
 	@Autowired
