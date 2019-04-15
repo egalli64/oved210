@@ -7,7 +7,8 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css"
-	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+	href="/css/project/blue/bluestd.css"
+	th:href="@{/css/project/blue/bluestd.css}" />
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -19,23 +20,22 @@
 
 
 	<h3>Clients</h3>
-	<a href="/project/blue/login"><button class="text-center"
-				id="bck">
-				<b>Back to the list</b>
-			</button> </a>
-	
-<fieldset class="text-center">
+	<a href="/project/blue/login"><button class="text-center" id="bck">
+			<b>Back to the list</b>
+		</button> </a>
+
+	<fieldset class="text-center">
 
 		<a href="/project/blue/clients/add.html"><button
 				class="text-center" id="add">
 				<b>Add client</b>
-			</button> </a> 
-			
-			
+			</button> </a>
+
+
 
 	</fieldset>
 
-<div id="messagecorrect">
+	<div id="messagecorrect">
 		<h4 th:text="${SaveClient}" class="text-center"></h4>
 	</div>
 	<div id="messagecorrect">
@@ -44,6 +44,9 @@
 	<div id="messageerror1">
 		<h4 th:text="${duplicatedmail}" th:catch="${duplicatedmail}"
 			class="text-center"></h4>
+	</div>
+	<div id="messagecorrect">
+		<h4 th:text="${editClient}" class="text-center"></h4>
 	</div>
 
 	<div id="messageerror2">
@@ -68,10 +71,12 @@
 						style='font-size: 24px'>
 						<i class='fas'> &#xf1f8;</i>
 					</button></a></td>
-			<td><a 
+			<td><a
 				th:href="@{/project/blue/editClient(clientId=${client.clientId})}">
-				<button style='font-size: 24px'> <i class= 'fas fa-pencil-ale'> &#xf303;</i>
-				</button></a></td>
+					<button style='font-size: 24px'>
+						<i class='fas fa-pencil-ale'> &#xf303;</i>
+					</button>
+			</a></td>
 		</tr>
 	</table>
 	<br>
