@@ -10,21 +10,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+@Controller
+public class HotelController {
+	private static final Logger log = LoggerFactory.getLogger(HotelController.class);
 
-	@Controller
-	public class HotelController {
-		private static final Logger log = LoggerFactory.getLogger(HotelController.class);
+	@Autowired
+	private HotelRepository repo;
 
-		@Autowired
-		private HotelRepository repo;
-
-		@GetMapping("/project/red/hotels")
-		public String allHotels(Model model) {
-			log.trace("get all hotels");
-			model.addAttribute("hotels", repo.findAll());
-			return "/project/red/hotels";
-		}
-	
+	@GetMapping("/project/red/hotels")
+	public String allHotels(Model model) {
+		log.trace("get all hotels");
+		model.addAttribute("hotels", repo.findAll());
+		return "/project/red/hotels";
+	}
 
 	@GetMapping("/project/red/insertHotel")
 	public String create(@RequestParam String hotelName, @RequestParam String city, @RequestParam long roomCounter,
@@ -47,8 +45,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 			model.addAttribute("hotelSaved", hotelSaved);
 
 			return "/project/red/hotels";
-		} 
-			catch (Exception ex) {
+		} catch (Exception ex) {
 			model.addAttribute("errorCity", "***City is missing!***");
 			model.addAttribute("city", city);
 
@@ -92,7 +89,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 		Optional<Hotel> opt = repo.findById(hotelId);
 		if (opt.isPresent()) {
-			Hotel hotel= opt.get();
+			Hotel hotel = opt.get();
 
 			model.addAttribute("hotelId", hotel.getHotelId());
 			model.addAttribute("hotelName", hotel.getHotelName());
@@ -105,15 +102,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 	}
 
 	@GetMapping("/project/red/saveHotel")
-	public String save(@RequestParam long hotelId, @RequestParam String hotelName, @RequestParam String city, 
-			@RequestParam long roomCounter, 
-			Model model) {
+	public String save(@RequestParam long hotelId, @RequestParam String hotelName, @RequestParam String city,
+			@RequestParam long roomCounter, Model model) {
 
 		log.trace("saving modified hotel");
 		Hotel hotel = new Hotel(hotelId, hotelName, city, roomCounter);
 		repo.save(hotel);
+		model.addAttribute("okEdit", "***Hotel modified!***");
 		model.addAttribute("hotels", repo.findAll());
 
 		return "/project/red/hotels";
 	}
-	}
+}

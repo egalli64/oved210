@@ -17,14 +17,32 @@
 
 		<div>
 			<a href="/project/red/insertHotel"><input type="button"
-				value="NEW HOTEL" class="btn btn-info" aria-pressed="true" /></a> 
-				
-			<a href="/project/red/deleteHotel"><input type="button"
+				value="NEW HOTEL" class="btn btn-info" aria-pressed="true" /></a> <a
+				href="/project/red/deleteHotel"><input type="button"
 				value="DELETE HOTEL BY ID" class="btn btn-danger"
 				aria-pressed="true" /></a>
 		</div>
 
 		<br>
+			<div id="backgroundmessagescorrect">
+		<h4 th:text="${hotelSaved}"></h4>
+	</div>
+	<div id="backgroundmessagescorrect">
+		<h4 th:text="${hotelDeleted}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${errorCity}" th:catch="${duplicatedmail}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${errorMessage}" th:if="${errorMessage}"></h4>
+	</div>
+	<div id="backgroundmessageserror">
+		<h4 th:text="${unexistingdId}" th:catch="${unexistingdId}"></h4>
+	</div>
+	<div id="backgroundmessagescorrect">
+		<h4 th:text="${okEdit}"></h4>
+	</div>	
+		
 		<table class="table table-hover">
 			<thead class="thead-primary">
 				<tr>
