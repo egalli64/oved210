@@ -59,7 +59,8 @@ public class BlueControllerHotel {
 	
 	
 	//controller remove hotels
-	@GetMapping("/project/blue/deleteHotel")
+	
+	@GetMapping("/project/blue/hotels/remove")
 
 	public String removeClient(@RequestParam Long hotelId, Model model) {
 		log.trace("delete hotel");
@@ -82,6 +83,7 @@ public class BlueControllerHotel {
 	}
 	
 	// controller edit hotels
+	
 	@GetMapping("/project/blue/editHotel")
 	public String editHotelFirst( //
 			@RequestParam Long hotelId, //
