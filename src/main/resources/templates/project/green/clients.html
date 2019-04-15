@@ -22,15 +22,11 @@
 					Remove Client by ID <br /> (only staff)
 				</button></a> <br />
 				<br />
-			<div id="messagecorrect">
+			<div>
 				<h4 th:text="${message}" th:if="${message}"
 					class="alert alert-success text-center"></h4>
-			</div>
-			<div id="messagecorrect">
 				<h4 th:text="${messageRemove}" th:if="${messageRemove}"
 					class="alert alert-danger text-center"></h4>
-			</div>
-			<div id="messagecorrect">
 				<h2 th:text="${messageEdit}" th:if="${messageEdit}"
 					class="alert alert-warning text-center"></h2>
 			</div>
@@ -61,8 +57,6 @@
 				<td><a href="/project/green/clients/removeClients.html"
 					th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
 						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
-
-
 				</a></td>
 			</tr>
 		</table>

@@ -22,6 +22,7 @@
 					<th>Booking Id</th>
 					<th>Availability</th>
 					<th>Payment</th>
+					<th></th>
 				</tr>
 			</thead>
 
@@ -29,17 +30,19 @@
 				<td th:text="${booking.bookingId}"></td>
 				<td th:text="${booking.availability}"></td>
 				<td th:text="${booking.payment}"></td>
+				<td><a href="/project/green/bookings/removeBookings.html"
+					th:href="@{/project/green/removeBookings(bookingId=${booking.bookingId})}">
+						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
+				</a></td>
 			</tr>
 		</table>
 	</div>
-		<div class="container-fluid">
-	
-	<a href="/project/green/check-in-out.html"><button type="button"
-			class="btn btn-outline-info">Do your check!</button> </a>
-	<br />
-	<br />
-	<a href="/project/green/login"><button type="button"
-			class="btn btn-outline-dark">Go Back</button></a>
-</div>
+	<div class="container-fluid">
+
+		<a href="/project/green/check-in-out.html"><button type="button"
+				class="btn btn-outline-info">Do your check!</button> </a> <br /> <br />
+		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a>
+	</div>
 </body>
 </html>
