@@ -141,23 +141,5 @@ public class BlueController {
 
 		return "/project/blue/clients";
 	}
-
-
 	
-	
-	
-	
-	
-	// controller Bookings
-
-	@Autowired
-	private BlueBookingRepository repBooking;
-
-	@GetMapping("/project/blue/bookings")
-	public String allBookings(Model model) {
-		log.trace("get all bookings");
-		model.addAttribute("bookings", repBooking.findAll());
-		return "project/blue/bookings";
-	}
-
 }
