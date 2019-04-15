@@ -113,6 +113,7 @@ public class ClientController {
 		Client client = new Client(clientId, clientName, email, phone);
 		
 		repo.save(client);
+		model.addAttribute("messageEdit", "***Client modified!***");
 		model.addAttribute("clients", repo.findAll());
 
 		return "/project/red/clients";
