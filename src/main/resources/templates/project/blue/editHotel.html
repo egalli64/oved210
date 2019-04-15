@@ -10,19 +10,14 @@
 <link rel="stylesheet" type="text/css"
 	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
 </head>
-<body>
-<div  class = "edit">
-	<h3> Edit Hotels</h3>
-	<form id="newhotel" name="frmLogInsert" action="/project/blue/editHotel2" method="get">
+<body class = "edit">
+	<h3>Edit Hotels</h3>
+	<form id="newhotel" name="frmLogInsert" action="/project/blue/editHotel2" method="get" >
+	<div class = "container-fluid border border-info" align=center>
+	
 	<input name = "hotelId" type="number" class="form-control" hidden = "true" th:value ="${hotelId}" > 
  
- <div width= 100px; height= 50px; border =1px  align=center>
 	
-<div id="newclient" class="contanier-fluid border border-info"	>
-<fieldset>
-
-			<legend>Edit hotel</legend>
-			<br>
 			<label><input type = "number" hidden= true class=text-left>
 			</label><br>
 			<label class=text-left>Hotel Name:  
@@ -39,10 +34,9 @@
 		<button type = "submit" class = "text-center" id = "editHotel">
 		<b>Edit this hotel!</b>
 		</button> 
-	</form>
-	</fieldset>
-</div>
-  </div>
 	</div>
+	</form>
+
+ 
 </body>
 </html>
