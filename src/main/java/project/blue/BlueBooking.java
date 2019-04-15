@@ -23,7 +23,8 @@ public class BlueBooking {
 	private Long payment;
 	
 	
-	public BlueBooking(Long hotelId, Long clientId, Date availability, Long payment) {
+	public BlueBooking(Long bookingId, Long hotelId, Long clientId, Date availability, Long payment) {
+		this.bookingId = bookingId;
 		this.hotelId = hotelId;
 		this.clientId = clientId;
 		this.availability = availability;
