@@ -2,7 +2,6 @@ package project.blue;
 
 import java.sql.Date;
 import java.util.Optional;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +63,7 @@ public class BlueControllerBooking {
 	
 	//controller remove bookings
 	
-	@GetMapping("/project/blue/bookings/remove")
+	@GetMapping("/project/blue/hotels/remove")
 
 	public String removeBooking(@RequestParam Long bookingId, Model model) {
 		log.trace("delete booking");
@@ -123,7 +122,7 @@ public class BlueControllerBooking {
 		log.trace("edit booking");
 
 	
-		BlueBooking booking = new BlueBooking(bookingId, hotelId, availability, payment);
+		BlueBooking booking = new BlueBooking(bookingId, hotelId, payment, availability, payment);
 
 		repBooking.save(booking);
 
