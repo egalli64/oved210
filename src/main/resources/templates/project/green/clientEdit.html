@@ -12,8 +12,11 @@
 <body>
 	<div class="container-fluid">
 		<br />
-		<form name="frmLog" action="/project/green/client/edit" method="get">
+		<form name="frmLog" action="/project/green/client/saveedit" method="get">
 
+			<input name="clientId" type="hidden" class="form-control"
+					placeholder="Client Id">
+					
 			<div class="form-group">
 				<label for="exampleInputClient Name">Client Name</label> <input
 					name="clientName" type="text" class="form-control"

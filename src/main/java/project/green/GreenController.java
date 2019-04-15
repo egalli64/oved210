@@ -1,5 +1,7 @@
 package project.green;
 
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 
@@ -93,24 +97,42 @@ public class GreenController {
 	}
 	
 	@GetMapping("/project/green/client/edit")
-	public String editClient(@RequestParam Long clientId, Model model) {
+	public String editClient(@RequestParam long clientId, Model model) {
 		
-		repoClient.findById(clientId);
-		GreenClients clients;
-
-		model.addAttribute("clients", repoClient.findAll());
+		log.trace("get edit client");
 		
-		return "/project/green/clients";
+		 Optional<GreenClients> opzione = repoClient.findById(clientId);
+		 if (opzione.isPresent()) {
+			 GreenClients client = opzione.get();
+			 
+			 model.addAttribute("clientId", client.getClientId());
+			 model.addAttribute("clientName", client.getClientName());
+			 model.addAttribute("email", client.getEmail());
+			 model.addAttribute("phone", client.getPhone());
+		 }
 		
-		
+		return "/project/green/client/edit";	
 	}
-	//@GetMapping("/project/green/client/saveedit")
-	//public String saveeditClient(@RequestParam Long clientId, Model model) {
 	
+	
+	@GetMapping("/project/green/client/saveedit")
+	public String saveeditClient(
+			@RequestParam long clientId, 
+			@RequestParam String clientName, 
+			@RequestParam String email, 
+			@RequestParam Long phone,			
+			Model model) {
+	
+		log.trace("save editing client");
 		
-		//repoClient.save(new editClient);
-		//return "/project/green/clients";
-	//}
+		GreenClients client = new GreenClients(clientId, clientName, email, phone);
+		
+		
+		repoClient.save(client);
+		model.addAttribute("clients", repoClient.findAll());
+		return "/project/green/clients";
+	}
+
 	
 	
 
