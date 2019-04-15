@@ -22,7 +22,7 @@
 		<a href="/project/blue/login"><button class="text-center" id="bck">
 				<b>Back to the list</b>
 			</button> </a>
-			
+
 		<fieldset class="text-center">
 
 			<a href="/project/blue/booking/add.html"><button
@@ -31,13 +31,18 @@
 				</button> </a>
 		</fieldset>
 	</div>
-	
+
+	<div id="messagecorrect">
+		<h4 th:text="${SaveBooking}" class="text-center"></h4>
+	</div>
+	<div id="messagecorrect">
+		<h4 th:text="${deleteBooking}" class="text-center"></h4>
+	</div>
+	<div id="messagecorrect">
+		<h4 th:text="${editBooking}" class="text-center"></h4>
+	</div>
+
 	<table class="table table-hover table-bordered table-striped">
-
-
-
-
-
 
 		<tr class="tr-dark">
 			<th>Booking Id</th>
