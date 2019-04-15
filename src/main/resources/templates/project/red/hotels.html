@@ -14,10 +14,14 @@
 	<div class="container-fluid">
 		<h3 class="backgroundtitles">Hotels</h3>
 		<br>
-
-		<div>
+<div class="left">
+	<a href="/project/red/login"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+			</div>
+<br>
+		<div class="left">
 			<a href="/project/red/insertHotel.html"><input type="button"
-				value="NEW HOTEL" class="btn btn-info" aria-pressed="true" /></a> 
+				value="NEW HOTEL" class="btn btn-success" aria-pressed="true" /></a> 
 		</div>
 
 		<br>
@@ -73,9 +77,10 @@
 		</table>
 	</div>
 
-
+	<div class = "container-fluid">
 	<h3 class="backgroundtitles">Choose your hotel</h3>
-	<div class="input-group">
+	</div>
+	<div class="input-group container-fluid">
 		<select class="custom-select" id="inputGroupSelect04">
 			<option selected>Choose...</option>
 			<option th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
@@ -86,10 +91,8 @@
 		</div>
 	</div>
 
-	<hr>
 
-	<a href="/project/red/login"><button type="button"
-			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
 
 
 </body>

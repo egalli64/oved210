@@ -4,19 +4,24 @@
 <meta charset="UTF-8">
 
 <title>Clients</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
 </head>
 
 <body id="clients">
-
+    <div class="container-fluid">
 	<h3 class="backgroundtitles">Clients</h3>
 	<br>
-	<div>
-	<a href="/project/red/insertClient.html"><input type="button"
-			value="NEW CLIENT" class="btn btn-info" aria-pressed="true" /></a>
+	
+	<div class = "left">
+	
+		<a href="/project/red/login"><input type="button" value="Go back" class="btn btn-info" aria-pressed="true"/></a>
+		<br>
+		<br>
+		<a href="/project/red/insertClient.html"><input type="button" value="NEW CLIENT" class="btn btn-success" aria-pressed="true" /></a>
 	</div>
-
+</div>
 	<br>
 
 	<div id="backgroundmessagescorrect">
@@ -40,7 +45,7 @@
 	<div class="container-fluid">
 		<table class="table table-hover">
 			<thead class="thead-primary">
-				<tr>				
+				<tr>
 					<th>CLIENT ID</th>
 					<th>CLIENT NAME</th>
 					<th>EMAIL</th>
@@ -49,29 +54,28 @@
 					<th>MODIFY</th>
 				</tr>
 			</thead>
-			
+
 			<tr th:each="client: ${clients}" class="table-danger">
 				<td th:text=${client.clientId}></td>
 				<td th:text=${client.clientName}></td>
 				<td th:text=${client.email}></td>
 				<td th:text=${client.phone}></td>
-				
-				<td><a href="/project/red/deleteClient?clientId=" th:href="@{/project/red/deleteClient(clientId=${client.clientId})}">
-				<input id="button" type="image" 
-				src="/img/project/red/x.png" width="30" height="35"></a>
-				</td>
-		
-				<td>
-				<a th:href="@{/project/red/editClient(clientId=${client.clientId})}">
-				<input id="button" type="image" src="/img/project/red/edit.png" width="30" height="35"></a>
-				</td>
+
+				<td><a href="/project/red/deleteClient?clientId="
+					th:href="@{/project/red/deleteClient(clientId=${client.clientId})}">
+						<input id="button" type="image" src="/img/project/red/x.png"
+						width="30" height="35">
+				</a></td>
+
+				<td><a
+					th:href="@{/project/red/editClient(clientId=${client.clientId})}">
+						<input id="button" type="image" src="/img/project/red/edit.png"
+						width="30" height="35">
+				</a></td>
 			</tr>
 		</table>
 	</div>
 
-	<hr>
-	<a href="/project/red/login"><button type="button"
-			class="btn btn-info" aria-pressed="true">Go back</button> </a>
 
 
 </body>
