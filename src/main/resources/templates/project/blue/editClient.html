@@ -13,8 +13,8 @@
 <body>
 <div  class = "edit">
 	<h3> Edit Clients</h3>
-	<form id="newclient" name="frmLogInsert" action="/project/blue/clients/editFirst" method="get">
-	<input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${id}" > 
+	<form id="newclient" name="frmLogInsert" action="/project/blue/editSecond" method="get">
+	<input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" > 
  
  <div width= 100px; height= 50px; border =1px  align=center>
 	
@@ -26,18 +26,18 @@
 			<label><input type = "number" hidden= true class=text-left>
 			</label><br>
 			<label class=text-left>Name:  
-			<input type = "text" name = "name" class=text-left >
+			<input type = "text" name = "name" class=text-left th:value = "${clientName}">
 			</label><br>
 			<label class=text-left>Email:  
-			<input type = "text" name = "email" class=text-left>
+			<input type = "text" name = "email" class=text-left th:value = "${email}">
 			</label><br>
 			<label class=text-left>Phone:  
-			 <input type = "text" name = "phone" class=text-left>
+			 <input type = "text" name = "phone" class=text-left th:value = "${phone}">
 			</label>
 			<br />
 		
-		<button class = "text-center" id = "edit client">
-			<a href="/project/blue/editSecond"> <b>Edit this client!</b></a>
+		<button type = "submit" class = "text-center" id = "edit client">
+		<b>Edit this client!</b>
 		</button> 
 	</form>
 	</fieldset>

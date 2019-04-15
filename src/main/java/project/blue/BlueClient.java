@@ -20,6 +20,13 @@ public class BlueClient {
 	private String email;
 	private Long phone;
 	
+	public BlueClient(long clientId, String clientName, String email, Long phone) {
+		this.clientId = clientId;
+		this.clientName = clientName;
+		this.email = email;
+		this.phone = phone;		
+	}
+	
 	public BlueClient( String clientName, String email, Long phone) {
 		
 		this.clientName = clientName;
