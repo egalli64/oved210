@@ -94,7 +94,7 @@ values (BLUE_CLIENTS_SEQ.NEXTVAL, 'Lady Gaga', 'l.gaga@gmail.com',3345716852);
 
 create table BLUE_BOOKINGS (
 BOOKING_ID number (12) primary key,
-HOTEL_ID number (6) constraint BLUE_BOOKINGS_ID_FK references BLUE_HOTELS(HOTEL_ID),
+HOTEL_ID number (6) constraint BLUE_BOOKINGS_ID_FK references BLUE_HOTELS(HOTEL_ID) ON DELETE CASCADE,
 CLIENT_ID number (4) constraint BLUE_BOOKING_ID_FK references BLUE_CLIENTS(CLIENT_ID) ON DELETE CASCADE ,
 AVAILABILITY date,
 PAYMENT number (5, 2) 
