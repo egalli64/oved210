@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>Hotel</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
 
 </head>
@@ -12,45 +13,68 @@
 
 	<div class="container-fluid">
 		<h3 class="backgroundtitles">Hotels</h3>
-	<br>
-			<table class="table table-hover">
-			<thead class= "thead-primary">
-			<tr>
-				<th>HOTEL ID</th>
-				<th>HOTEL NAME</th>
-				<th>CITY</th>
-				<th>ROOM COUNTER</th>
-			</tr>
+		<br>
+
+		<div>
+			<a href="/project/red/insertHotel"><input type="button"
+				value="NEW HOTEL" class="btn btn-info" aria-pressed="true" /></a> <a
+				href="/project/red/deleteHotel"><input type="button"
+				value="DELETE HOTEL BY ID" class="btn btn-danger"
+				aria-pressed="true" /></a>
+		</div>
+
+		<br>
+		<table class="table table-hover">
+			<thead class="thead-primary">
+				<tr>
+					<th>HOTEL ID</th>
+					<th>HOTEL NAME</th>
+					<th>CITY</th>
+					<th>ROOM COUNTER</th>
+					<th>DELETE</th>
+					<th>MODIFY</th>
+				</tr>
 			</thead>
 			<tr class="table-success" th:each="hotel: ${hotels}">
-				<td th:text =${hotel.hotelId}></td>
-				<td th:text =${hotel.hotelName}></td>
-				<td th:text =${hotel.city}></td>
-				<td th:text =${hotel.roomCounter}></td>
+				<td th:text=${hotel.hotelId}></td>
+				<td th:text=${hotel.hotelName}></td>
+				<td th:text=${hotel.city}></td>
+				<td th:text=${hotel.roomCounter}></td>
+
+				<td><a href="/project/red/deleteHotel?hotelId="
+					th:href="@{/project/red/deleteHotel(hotelId=${hotel.hotelId})}">
+						<input id="button" type="image" src="/img/project/red/x.png"
+						width="30" height="35">
+				</a></td>
+
+				<td><a
+					th:href="@{/project/red/editHotel(hotelId=${hotel.hotelId})}">
+						<input id="button" type="image" src="/img/project/red/edit.png"
+						width="30" height="35">
+				</a></td>
 			</tr>
+
 		</table>
-	</div>	
+	</div>
 
-	
-	 <h3 class="backgroundtitles">Choose your hotel</h3>
+
+	<h3 class="backgroundtitles">Choose your hotel</h3>
 	<div class="input-group">
-  <select class="custom-select" id="inputGroupSelect04">
-    <option selected>Choose...</option>
-		<option th:each = "hotel: ${hotels}"
-			th:value="${hotel.hotelId}"
-			th:text="${hotel.hotelName}">	
-		</option>
-  </select>
-  <div class="input-group-append">
-    <button class="btn btn-info" type="button">GO</button>
-  </div>
-</div>
+		<select class="custom-select" id="inputGroupSelect04">
+			<option selected>Choose...</option>
+			<option th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+				th:text="${hotel.hotelName}"></option>
+		</select>
+		<div class="input-group-append">
+			<button class="btn btn-info" type="button">GO</button>
+		</div>
+	</div>
 
-<hr>
+	<hr>
 
-<a href="/project/red/login"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
-</a>
-	
+	<a href="/project/red/login"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
 
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="hotels">
+
+	<h3 class="backgroundtitles">Edit Hotel</h3>
+
+	<br>
+
+
+	<form id="newhotel" name="frmLogInsert" action="/project/red/saveHotel"
+		method="get">
+
+
+		<div class="form-group">
+
+			<label>Hotel name:</label> <input name="hotelName" type="text"
+				class="form-control" placeholder="Enter Hotel Name"
+				th:value="${hotelName}">
+		</div>
+
+		<div class="form-group">
+			<label>City:</label> <input name="city" type="text"
+				class="form-control" placeholder="Enter City" th:value="${city}">
+		</div>
+
+
+		<div class="form-group">
+			<label>Rooms: </label> <input name="rooms" type="number"
+				class="form-control" placeholder="Enter Room Number"
+				th:value="${roomCounter}">
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	<hr>
+	<a href="/project/red/hotels"><button type="button"
+			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
+</body>
+</html>
