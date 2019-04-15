@@ -33,6 +33,21 @@
 			</button> </a>
 	</fieldset>
 
+<div id="messagecorrect">
+		<h4 th:text="${SaveHotel}" class="text-center"></h4>
+	</div>
+	<div id="messagecorrect">
+		<h4 th:text="${deleteHotel}" class="text-center"></h4>
+	</div>
+	
+	<div id="messagecorrect">
+		<h4 th:text="${editHotel}" class="text-center"></h4>
+	</div>
+
+	<div id="messageerror2">
+		<h4 th:text="${unexistingdId}" th:catch="${unexistingdId}"
+			class="text-center"></h4>
+	</div>
 	<table class="table table-hover table-bordered table-striped">
 		<tr>
 			<th>Hotel Id</th>
@@ -47,7 +62,7 @@
 			<td th:text="${hotel.roomCounter}"></td>
 
 			<td><a href="/project/blue/hotels/remove.html"
-				th:href="@{/project/blue/hotels/remove(id=${hotel.hotelId})}"><button
+				th:href="@{/project/blue/hotels/remove(hotelId=${hotel.hotelId})}"><button
 						style='font-size: 24px'>
 						<i class='fas'> &#xf1f8;</i>
 					</button></a></td>
