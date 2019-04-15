@@ -8,11 +8,11 @@
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
 </head>
 
-<body id="hotels">
+<body id="booking">
 
-	<h3 class="backgroundtitles">New Booking</h3>
+	<h3 class="container-fluid backgroundtitles">New Booking</h3>
 <br>
-	<div class = "left">
+	<div class = "container-fluid left">
 	<a href="/project/red/bookings"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
 	</a>
 	<br>
@@ -20,9 +20,7 @@
 	<br>
 
 	<form id="new" name="frmLogInsert" action="/project/red/insertBooking"
-		method="get">
-
-<!--  DA MODIFICARE TUTTO -->
+		method="get" class="container-fluid left">
 
 		<div class="form-group">
 
@@ -48,29 +46,20 @@
 		
 			<div class="form-group">
 			<label>Payment: </label> 
-			<input type="radio" name="lang" value=""  />Credit card <img src="/img/project/red/carte.png"
-						width="30" height="35"></img>
-			<input type="radio" name="lang" value="" /><img src="/img/project/red/paypal.png"
-						width="30" height="35"></img>
-			<input type="radio" name="lang" value="" /><img src="/img/project/red/cash.png"
-						width="30" height="35"></img>
-
+			<br>
+			<input type="radio" name="lang" value=""  />Credit card<img src="/img/project/red/carte.png"
+						width="30" height="35"></img><br>
+			<input type="radio" name="lang" value="" />Paypal<img src="/img/project/red/paypal.png"
+						width="30" height="35"></img><br>
+			<input type="radio" name="lang" value="" />Cash<img src="/img/project/red/cash.png"
+						width="30" height="35"></img><br>
 		</div>
-		
-
-		<button type="submit" class="btn btn-primary">Submit</button>
-
-	
-		
 		<div>
-		<input type="date">
+		<button type="submit" class="btn btn-primary">BOOK NOW</button>
 		</div>
+<br>
+		</form>
 
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-
-	<a href="/project/red/bookings"><button type="button"
-			class="btn btn-info" aria-pressed="true">Go back</button> </a>
 
 </body>
 </html>
