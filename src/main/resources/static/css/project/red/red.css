@@ -29,13 +29,13 @@ body {
 	color: #0c66c9;
 }
 #backgroundmessagescorrect{
-	background-color: rgba(255, 255, 255, 0.8);
-	color: #42bd73;
+	background-color: rgba(123, 239, 178, 0.6);
+	color: green;
 }
 
 #backgroundmessageserror{
-	background-color: rgba(255, 255, 255, 0.8);
-	color: #ff0000;
+	background-color: rgba(214, 69, 65, 0.6);
+	color: #800000;
 }
 
 #welcome {
@@ -61,4 +61,7 @@ table {
  
 .left{
 	text-align: left;
+}
+.center {
+	text-align:center;
 }

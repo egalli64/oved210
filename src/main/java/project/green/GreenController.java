@@ -147,7 +147,7 @@ public class GreenController {
 	
 	//////hotel 
 
-	@GetMapping("/project/green/hotel/add")
+	@GetMapping("/project/green/hotels/add")
 	public String createhotel(
 			@RequestParam String hotelName, 
 			@RequestParam String city, 
@@ -169,6 +169,22 @@ public class GreenController {
 			log.error(message);
 			model.addAttribute("message", message);
 		}
+		model.addAttribute("hotels", repoHotel.findAll());
+		return "/project/green/hotels";
+	}
+	
+	@GetMapping("/project/green/removeHotels")
+	public String removeHotel(@RequestParam Long hotelId, Model model) {
+
+		log.trace("get delete hotel");
+		try {
+			repoHotel.deleteById(hotelId);
+		} catch (Exception ex) {
+			String messageRemove = String.format("Hotel %d correctly removed", hotelId);
+			log.error(messageRemove);
+			model.addAttribute("message", messageRemove);
+		}
+		
 		model.addAttribute("hotels", repoHotel.findAll());
 		return "/project/green/hotels";
 	}

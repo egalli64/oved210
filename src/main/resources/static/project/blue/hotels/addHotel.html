@@ -10,18 +10,11 @@
 	 href="/css/project/blue/bluestd.css" />
 	</head>
 	
-<body>
-<div  class = "add">
-	<h3>Add Hotels</h3>
-	<form action="/project/blue/hotels/addHotel">
-	
- <div width= 100px; height= 50px; border =1px  align=center>
-	
-<div id="newhotel" class="container-fluid border border-info"	>
+<body class="edit">
 
-
-			<legend>New hotel</legend>
-			<br>
+	<h3>Add Hotel</h3>
+	<form id= "addhotel"  name="frmLogInsert" action="/project/blue/hotels/addHotel">
+	<div  class = "container-fluid border border-info" align= "center">	
 			<label class=text-left>Hotel Name:  
 			<input type = "text" name = "hotelName" class=text-left >
 			</label><br>
@@ -33,13 +26,13 @@
 			</label>
 			<br />
 		
-		<button class = "text-center" id = "add hotel">
-			<a href="/project/blue/hotels"> <b>Add this new hotel!</b></a>
+		<button type = "submit" class = "text-center" id = "add hotel">
+			 <b>Add this new hotel!</b>
 		</button> 
+		</div>
 	</form>
-</div>
-  </div>
-	</div>
+
+  
 	</body>
 	</html>
 	
