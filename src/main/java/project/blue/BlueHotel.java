@@ -15,7 +15,20 @@ public class BlueHotel {
 	private String city;
 	private Long roomCounter;
 	
-public BlueHotel() {
+	public BlueHotel(long hotelId, String hotelName, String city, Long roomCounter) {
+		this.hotelId = hotelId;
+		this.hotelName = hotelName;
+		this.city = city;
+		this.roomCounter = roomCounter;		
+	}
+	
+	public BlueHotel(String hotelName, String city, Long roomCounter) {
+		
+		this.hotelName = hotelName;
+		this.city = city;
+		this.roomCounter = roomCounter;	
+	}
+protected BlueHotel() {
 		
 	}
 
