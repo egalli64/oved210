@@ -25,7 +25,7 @@ public class BookingController {
 		return "/project/red/bookings";
 	}
 
-	@GetMapping("/project/red/insertClient")
+	@GetMapping("/project/red/insertBooking")
 	public String create(@RequestParam long hotelId, @RequestParam long clientId, @RequestParam String clientName, @RequestParam Date checkIn,
 							@RequestParam Date chekOut, @RequestParam long payment,
 							
@@ -54,7 +54,7 @@ public class BookingController {
 
 	}
 	
-	@GetMapping("/project/red/deleteClient")
+	@GetMapping("/project/red/deleteBooking")
 	public String delete(@RequestParam Long bookingId,
 
 			Model model) {
@@ -82,7 +82,7 @@ public class BookingController {
 
 	}
 	
-	@GetMapping("/project/red/editClient")
+	@GetMapping("/project/red/editBooking")
 	public String edit(@RequestParam long bookingId, Model model) {
 
 		log.trace("edit client");
@@ -103,7 +103,7 @@ public class BookingController {
 
 	}
 	
-	@GetMapping("/project/red/saveClient")
+	@GetMapping("/project/red/saveBooking")
 	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam long clientId, @RequestParam String clientName, @RequestParam Date checkIn,
 			@RequestParam Date chekOut, @RequestParam long payment,
 			
