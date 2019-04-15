@@ -72,6 +72,7 @@ public class BlueControllerHotel {
 			model.addAttribute("hotels", repHotel.findAll());
 			String deleteHotel = String.format("--Hotel deleted!--");
 			model.addAttribute("deleteHotel", deleteHotel);
+		
 
 		} catch (Exception ex) {
 			String unexistingdId = String.format("--Unexisting Id!--");
