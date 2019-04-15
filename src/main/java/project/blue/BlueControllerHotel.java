@@ -35,23 +35,23 @@ public class BlueControllerHotel {
 	
 	@GetMapping("/project/blue/hotels/addHotel")
 	public String addHotel( //
-			@RequestParam String hotelname, //
+			@RequestParam String hotelName, //
 			@RequestParam String city, //
-			@RequestParam Long roomcounter, //
+			@RequestParam Long roomCounter, //
 			Model model) {
 		log.trace("get all hotels");
 
 			BlueHotel hotel = new BlueHotel();
 
-			hotel.setHotelName(hotelname);
+			hotel.setHotelName(hotelName);
 			hotel.setCity(city);
-			hotel.setRoomCounter(roomcounter);
+			hotel.setRoomCounter(roomCounter);
 
 			repHotel.save(hotel);
 			model.addAttribute("hotels", repHotel.findAll());
 
 			String SaveHotel = String.format("--New hotel inserted!--");
-			model.addAttribute("SaveClient", SaveHotel);
+			model.addAttribute("SaveHotel", SaveHotel);
 
 		return "/project/blue/hotels";
 	}

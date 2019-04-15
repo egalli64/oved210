@@ -34,7 +34,7 @@ public class Hotel {
 		this.roomCounter = roomCounter;
 	}
 
-	public Hotel() {
+	protected Hotel() {
 
 	}
 
