@@ -52,7 +52,7 @@ public class BlueController {
 		return "/project/blue/clients";
 	}
 
-	// controller per aggiungere il cliente
+	// controller add clients
 
 	@GetMapping("/project/blue/clients/add")
 	public String addClient( //
@@ -81,6 +81,7 @@ public class BlueController {
 	}
 
 	// controller remove clients
+	
 	@GetMapping("/project/blue/clients/remove")
 
 	public String removeClient(@RequestParam Long id, Model model) {
@@ -103,7 +104,8 @@ public class BlueController {
 
 	}
 
-	// controller editing
+	// controller edit clients
+	
 	@GetMapping("/project/blue/editClient")
 	public String editClientFirst( //
 			@RequestParam Long clientId, //
