@@ -1,5 +1,6 @@
 package project.green;
 
+
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -11,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+
 
 
 
@@ -85,11 +88,10 @@ public class GreenController {
 		log.trace("get delete client");
 		try {
 			repoClient.deleteById(clientId);
-			model.addAttribute("messageRemoved", String.format("Well Done!", clientId));
 			model.addAttribute("clients", repoClient.findAll());
-			
+
 		} catch (Exception dive) {
-			String messageRemove = String.format("Can't remove client without ID!", clientId);
+			String messageRemove = String.format("Client % d correctly removed", clientId);
 			log.error(messageRemove);
 			model.addAttribute("messageRemove", messageRemove);
 
@@ -131,7 +133,6 @@ public class GreenController {
 		
 		
 		repoClient.save(client);
-		model.addAttribute("clientEdit", "Client Modified");
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
@@ -181,9 +182,8 @@ public class GreenController {
 		log.trace("delete hotel");
 		try {
 			repoHotel.deleteById(hotelId);
-			model.addAttribute("deleteHotel", String.format("Hotel is correctly removed", hotelId));
 		} catch (Exception ex) {
-			String messageRemove = String.format("Can't delete Hotel", hotelId);
+			String messageRemove = String.format("Hotel is correctly removed", hotelId);
 			log.error(messageRemove);
 			model.addAttribute("messageRemove", messageRemove);
 		}
@@ -241,9 +241,32 @@ public class GreenController {
 		model.addAttribute("bookings", repoBooking.findAll());
 		return "project/green/bookings";
 	}
+	
+	@GetMapping("/project/green/addBooking")
+	public String createbooking(
+			@RequestParam Long bookingId,
+			@RequestParam Long hotelId,
+		    @RequestParam Long clientId,
+							
+							Model model) {
+		log.trace("get new booking");
+
+		
+			//model.addAttribute("errorClient", "Client name is missing!");
+		
+			Booking booking = new Booking (bookingId, hotelId, clientId);
+			repoBooking.save(booking);
+			model.addAttribute("bookings", repoBooking.findAll());
+
+			
+			String SaveNewBooking = String.format("booking insered");
+			model.addAttribute("SaveNewBooking", SaveNewBooking);
+
+			return "/project/green/bookings";
+
+	}
+	
 }
-
-
 //	 @GetMapping("/project/green/clients")
 //	    public String orderGreenClients( //
 //	            @RequestParam String by, //
