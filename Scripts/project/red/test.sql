@@ -139,3 +139,9 @@ values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', '2-FEB-2019', 90.50);
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', '18-OTT-2019', 70.60);
 
+
+
+SELECT c.CLIENT_NAME, b.check_in
+FROM RED_CLIENTS c JOIN RED_BOOKINGS b
+USING (CLIENT_ID);
+

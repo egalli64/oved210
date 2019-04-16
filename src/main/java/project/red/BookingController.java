@@ -26,25 +26,20 @@ public class BookingController {
 	}
 
 	@GetMapping("/project/red/insertBooking")
-	public String create(@RequestParam long hotelId, @RequestParam long clientId, @RequestParam String clientName, @RequestParam Date checkIn,
-							@RequestParam Date chekOut, @RequestParam long payment,
+	public String create(@RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
+							@RequestParam Date checkOut, @RequestParam long payment,
 							
 							Model model) {
 
 		log.trace("get new booking");
 
-		if (clientName.isEmpty()) {
-			model.addAttribute("errorClient", "***Client name is missing!***");
-
-			return "/project/red/insertBooking";
-		}
 		if (hotelId == 0) {
 			model.addAttribute("errorHotel", "***Hotel is missing!***");
 
 			return "/project/red/insertBooking";
 		}
 		
-			Booking booking = new Booking (hotelId, clientId, clientName, checkIn, chekOut, payment);
+			Booking booking = new Booking (hotelId, clientId, checkIn, checkOut, payment);
 			repo.save(booking);
 			model.addAttribute("bookings", repo.findAll());
 
@@ -93,7 +88,6 @@ public class BookingController {
 			
 			model.addAttribute("bookingId", booking.getBookingId());
 			model.addAttribute("clientId", booking.getClientId());
-			model.addAttribute("clientName", booking.getClientName());
 			model.addAttribute("checkIn", booking.getCheckIn());
 			model.addAttribute("checkOut", booking.getCheckOut());
 			model.addAttribute("payment", booking.getPayment());
@@ -104,14 +98,14 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/saveBooking")
-	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam long clientId, @RequestParam String clientName, @RequestParam Date checkIn,
-			@RequestParam Date chekOut, @RequestParam long payment,
+	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
+			@RequestParam Date checkOut, @RequestParam long payment,
 			
 			Model model) {
 
 		log.trace("saving modified booking");
 
-		Booking booking = new Booking (bookingId, hotelId, clientId, clientName, checkIn, chekOut, payment);
+		Booking booking = new Booking (bookingId, hotelId, clientId, checkIn, checkOut, payment);
 		
 		repo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");
