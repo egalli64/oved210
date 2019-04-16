@@ -21,7 +21,10 @@
 		<br />
 		
 		<div>
-		<h4 th:text= "${addBookings}" class="alert alert-success text-center"> </h4>
+		<h4 th:text= "${addBookings}" th:if="${addBookings}" class="alert alert-success text-center"> </h4>
+		<h4 th:text="${removeBooking}" th:if="${removeBooking}" class="alert alert-danger text-center"></h4>
+		<h4 th:text="${deleteBooking}" th:if="${deleteBooking}" class="alert alert-danger text-center"></h4>
+		
 		</div>
 		
 		<table class="table table-hover">

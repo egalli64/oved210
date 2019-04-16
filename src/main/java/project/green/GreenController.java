@@ -271,19 +271,21 @@ public class GreenController {
 	}
 	
 	@GetMapping("/project/green/removeBooking")
-	public String removeBooking(@RequestParam Long BookingId, Model model) {
+	public String removeBooking(@RequestParam Long bookingId, Model model) {
 
-		log.trace("delete hotel");
+		log.trace("delete booking");
 		try {
-			repoBooking.deleteById(BookingId);
-			model.addAttribute("deleteBooking", "Booking Deleted");
+			repoBooking.deleteById(bookingId);
+			model.addAttribute("deleteBooking", String.format("deleteBooking", bookingId));
+			model.addAttribute("bookings", repoBooking.findAll());
+
 		} catch (Exception ex) {
-			String RemoveBooking = String.format("Can't delete Booking", BookingId);
-			log.error(RemoveBooking);
-			model.addAttribute("RemoveBooking", RemoveBooking);
+			String removeBooking = String.format("Can't delete Booking", bookingId);
+			log.error(removeBooking);
+			model.addAttribute("removeBooking", removeBooking);
 		}
 		
-		model.addAttribute("bookings", repoHotel.findAll());
+		model.addAttribute("bookings", repoBooking.findAll());
 		
 		return "/project/green/bookings";
 	}
@@ -308,5 +310,4 @@ public class GreenController {
 //	     //   model.addAttribute("clients", clients);
 //	        return "project/green/clients";
 //	    }
-
 	
