@@ -1,11 +1,17 @@
 package project.red;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "RED_CLIENTS")
@@ -13,12 +19,22 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CliGen")
 	@SequenceGenerator(sequenceName = "RED_CLIENTS_SEQ", allocationSize = 1, name = "CliGen")
+	
+	@Column (name = "client_id")
 	private long clientId;
 
+	@Column(name="client_name")
 	private String clientName;
+
+	@Column (name="email")
 	private String email;
+
+	@Column (name="phone")
 	private String phone;
 
+	@OneToMany(mappedBy="client_id", cascade = CascadeType.ALL)
+	private Set<Client> client;
+	
 
 	public Client(long clientId, String clientName, String email, String phone) {
 		this.clientId = clientId;
@@ -71,7 +87,6 @@ public class Client {
 	}
 
 	
-
 	@Override
 	public String toString() {
 		return "Client [clientId=" + clientId + ", clientName=" + clientName + ", email=" + email + ", phone=" + phone

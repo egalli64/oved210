@@ -2,10 +2,13 @@ package project.red;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -15,14 +18,31 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BokGen")
 	@SequenceGenerator(sequenceName = "red_bookings_seq", allocationSize = 1, name = "BokGen")
+
+	@Column(name="BOOKING_ID")
 	private long bookingId;
 
+	@Column (name="hotel_id")
 	private long hotelId;
+	
+	@ManyToOne
+	@JoinColumn(name="client_id")
+	private Client client;
+		
 	private long clientId;
+	
+	@Column (name="check_in")
 	private Date checkIn;
+	
+	@Column (name="check_out")
 	private Date checkOut;
+
+	@Column (name="payment")
 	private String payment;
 
+	
+	
+	
 	public Booking(long bookingId, long hotelId, long clientId, Date checkIn, Date checkOut,
 			String payment) {
 		this.bookingId = bookingId;

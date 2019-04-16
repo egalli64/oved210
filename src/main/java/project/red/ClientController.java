@@ -15,12 +15,15 @@ public class ClientController {
 	private static final Logger log = LoggerFactory.getLogger(ClientController.class);
 
 	@Autowired
-	private ClientRepository repo;
+	private ClientRepository crepo;
+	
+	@Autowired
+	private BookingRepository brepo;
 
 	@GetMapping("/project/red/clients")
 	public String allClients(Model model) {
 		log.trace("get all clients");
-		model.addAttribute("clients", repo.findAll());
+		model.addAttribute("clients", crepo.findAll());
 		return "/project/red/clients";
 	}
 
@@ -38,8 +41,8 @@ public class ClientController {
 		}
 		try {
 			Client client = new Client(clientName, email, phone);
-			repo.save(client);
-			model.addAttribute("clients", repo.findAll());
+			crepo.save(client);
+			model.addAttribute("clients", crepo.findAll());
 
 			String clientSaved = String.format("***New client inserted!***");
 			model.addAttribute("clientSaved", clientSaved);
@@ -60,7 +63,7 @@ public class ClientController {
 			Model model) {
 
 		log.trace("get deleted client");
-		model.addAttribute("clients", repo.findAll());
+		model.addAttribute("clients", crepo.findAll());
 
 		if (clientId == null) {
 			String errorMessage = String.format("***Impossible to remove without inserting Id!***");
@@ -70,8 +73,8 @@ public class ClientController {
 		}
 
 		try {
-			repo.deleteById(clientId);
-			model.addAttribute("clients", repo.findAll());
+			crepo.deleteById(clientId);
+			model.addAttribute("clients", crepo.findAll());
 
 			String clientDeleted = String.format("***Client deleted!***");
 			model.addAttribute("clientDeleted", clientDeleted);
@@ -90,7 +93,7 @@ public class ClientController {
 
 		log.trace("edit client");
 
-		Optional<Client> opt = repo.findById(clientId);
+		Optional<Client> opt = crepo.findById(clientId);
 		if (opt.isPresent()) {
 			Client client = opt.get();
 
@@ -112,9 +115,9 @@ public class ClientController {
 
 		Client client = new Client(clientId, clientName, email, phone);
 		
-		repo.save(client);
+		crepo.save(client);
 		model.addAttribute("messageEdit", "***Client modified!***");
-		model.addAttribute("clients", repo.findAll());
+		model.addAttribute("clients", crepo.findAll());
 
 		return "/project/red/clients";
 	}

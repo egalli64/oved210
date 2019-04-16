@@ -16,12 +16,15 @@ public class BookingController {
 	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
 
 	@Autowired
-	private BookingRepository repo;
+	private BookingRepository brepo;
+	
+	@Autowired
+	private ClientRepository crepo;
 
 	@GetMapping("/project/red/bookings")
 	public String allBookings(Model model) {
 		log.trace("get all bookings");
-		model.addAttribute("bookings", repo.findAll());
+		model.addAttribute("bookings", brepo.findAll());
 		return "/project/red/bookings";
 	}
 
@@ -40,8 +43,8 @@ public class BookingController {
 		}
 		
 			Booking booking = new Booking (hotelId, clientId, checkIn, checkOut, payment);
-			repo.save(booking);
-			model.addAttribute("bookings", repo.findAll());
+			brepo.save(booking);
+			model.addAttribute("bookings", brepo.findAll());
 
 			model.addAttribute("bookingSaved", "***Booking saved!***");
 
@@ -55,7 +58,7 @@ public class BookingController {
 			Model model) {
 
 		log.trace("get deleted booking");
-		model.addAttribute("bookings", repo.findAll());
+		model.addAttribute("bookings", brepo.findAll());
 
 		if (bookingId == null) {
 			String errorMessage = String.format("***Impossible to remove without inserting Id!***");
@@ -65,8 +68,8 @@ public class BookingController {
 		}
 
 		try {
-			repo.deleteById(bookingId);
-			model.addAttribute("bookings", repo.findAll());
+			brepo.deleteById(bookingId);
+			model.addAttribute("bookings", brepo.findAll());
 			model.addAttribute("bookingDeleted", "***Booking deleted!***");
 
 		} catch (Exception ex) {
@@ -82,7 +85,7 @@ public class BookingController {
 
 		log.trace("edit booking");
 
-		Optional<Booking> opt = repo.findById(bookingId);
+		Optional<Booking> opt = brepo.findById(bookingId);
 		if (opt.isPresent()) {
 			Booking booking = opt.get();
 			
@@ -107,9 +110,9 @@ public class BookingController {
 
 		Booking booking = new Booking (bookingId, hotelId, clientId, checkIn, checkOut, payment);
 		
-		repo.save(booking);
+		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");
-		model.addAttribute("bookings", repo.findAll());
+		model.addAttribute("bookings", brepo.findAll());
 
 		return "/project/red/bookings";
 	}
