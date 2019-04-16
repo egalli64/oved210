@@ -16,33 +16,33 @@
 
 <form id="new" name="frmLogInsert" action="/project/red/saveClient" method="get">
 		
-     <input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" >  
-  
-  <div class="form-group">
-      <label>Name and Surname:</label>
-        <input name="clientName" type="text" class="form-control" 
-        	placeholder="Enter Name and Surname" th:value = "${clientName}">  
-       
-   </div>
-  
-   <div class="form-group"> 
-    <label>Email:</label>
-    <input name= "email" type="email" class="form-control" id="exampleInputEmail1"
-    	aria-describedby="emailHelp" placeholder="Enter Email"  th:value = "${email}" >
-      </div>
-  
-  <div class="form-group">
-      <label>Phone: </label>
-        <input name = "phone" type="text" class="form-control"  placeholder="Enter Phone Number" th:value = "${phone}" >            
-  </div>
-  
-	<button type="submit"
-			class="btn btn-primary" aria-pressed="true">Save</button>
+     <input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" >
+
+		<div class="form-group">
+			<label>Name and Surname:</label> <input name="clientName" type="text"
+				class="form-control" placeholder="Enter Name and Surname"
+				th:value="${clientName}">
+
+		</div>
+
+		<div class="form-group">
+			<label>Email:</label> <input name="email" type="email"
+				class="form-control" id="exampleInputEmail1"
+				aria-describedby="emailHelp" placeholder="Enter Email"
+				th:value="${email}">
+		</div>
+
+		<div class="form-group">
+			<label>Phone: </label> <input name="phone" type="text"
+				class="form-control" placeholder="Enter Phone Number"
+				th:value="${phone}">
+		</div>
+
+		<button type="submit" class="btn btn-primary" aria-pressed="true">Save</button>
 </form>
 
 <hr>
-<a href="/project/red/clients"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
-</a>
+<a href="/project/red/clients"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> </a>
 
 </body>
 </html>
