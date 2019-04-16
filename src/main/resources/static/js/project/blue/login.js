@@ -32,3 +32,20 @@ function checkRooms() {
 
 	return true;
 }
+
+function checkId() {
+	let clientId = document.getElementById("clientId");
+	let hotelId =  document.getElementById("hotelId");
+	let room = document.getElementById("room");
+	if (clientId.value <= 0 || hotelId.value <= 0 || room.value <= 0 ) {
+		alert("You can't insert negative values!");
+		clientId.focus();
+		hotelId.focus();
+		room.focus();
+		
+		return false;
+
+	}
+
+	return true;
+}

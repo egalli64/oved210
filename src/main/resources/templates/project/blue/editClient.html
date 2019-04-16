@@ -9,11 +9,12 @@
 
 <link rel="stylesheet" type="text/css"
 	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+	  <script src="/js/project/blue/login.js"></script>
 </head>
 <body class="edit">
 
 	<h3>Edit Client</h3>
-	<form id="newclient" name="frmLogInsert" action="/project/blue/editReadClient" method="get">
+	<form id="newclient" name="frmLogInsert" action="/project/blue/editReadClient" method="get" onsubmit="return checkId()">
 	<div  class = "container-fluid border border-info" align="center">
 	<input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" > 
  

@@ -8,12 +8,14 @@
 	
 	<link rel="stylesheet" type="text/css"
 	 href="/css/project/blue/bluestd.css" />
+	  <script src="/js/project/blue/login.js"></script>
+	 
 	</head>
 	
 <body class="edit">
 
 	<h3>Add Hotel</h3>
-	<form id= "addhotel"  name="frmLogInsert" action="/project/blue/hotels/addHotel">
+	<form id= "addhotel"  name="frmLogInsert" action="/project/blue/hotels/addHotel" onsubmit="return checkId()">
 	<div  class = "container-fluid border border-info" align= "center">	
 			<label class=text-left>Hotel Name:  
 			<input type = "text" name = "hotelName" class=text-left >

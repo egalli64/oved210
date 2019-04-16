@@ -7,12 +7,14 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	
 	<link rel="stylesheet" type="text/css"
-	 href="/css/project/blue/bluestd.css" />
+	 href="/css/project/blue/bluestd.css" /> 
+	 <script src="/js/project/blue/login.js"></script>
+	 
 	</head>
 	
 <body class = "edit">
 	<h3>Add Booking</h3>
-	<form id= "addbooking" name="frmLogInsert" action="/project/blue/bookings/addBooking">
+	<form id= "addbooking" name="frmLogInsert" action="/project/blue/bookings/addBooking" onsubmit="return checkId()">
 	<div class = "container-fluid border border-info" align= "center">	
 	
 			
