@@ -26,7 +26,11 @@
 
 			<label>Hotel Id:</label> <input name="hotelId" type="number"
 				class="form-control" placeholder="Enter Hotel Id"> 
-				</div>
+												
+         <input name="hotelId" type="number" class="border border-danger form-control " 
+         	placeholder="Enter Name and Surname" th:if = "${errorHotel}">  
+       	 <small class= "error" th:if = "${errorHotel}"> Hotel Id is missing!</small>
+			</div>
 
 		<div class="form-group">
 			<label>Client Name:</label> <input name="clientName" type="text"

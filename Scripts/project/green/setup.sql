@@ -149,7 +149,7 @@ values(5, green_rooms_seq.nextval);
 
 create table green_bookings (
 booking_id number (12) primary key,
-hotel_id number (6) constraint green_bookings_hotel_id_fk references green_hotels(hotel_id),
+hotel_id number (6) constraint green_bookings_hotel_id_fk references green_hotels(hotel_id) on delete cascade,
 client_id number (4) constraint green_bookings_client_id_fk REFERENCES green_clients(client_id) on delete cascade,
 availability date,
 payment number (5, 2) 
