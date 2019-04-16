@@ -29,7 +29,7 @@ public class BlueBooking {
 		this.hotelId = hotelId;
 		this.clientId = clientId;
 		this.checkIn = checkIn;
-		this.checkIn = checkOut;
+		this.checkOut = checkOut;
 		this.room = room;
 		
 	}
