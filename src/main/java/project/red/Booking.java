@@ -20,16 +20,11 @@ public class Booking {
 	@SequenceGenerator(sequenceName = "red_bookings_seq", allocationSize = 1, name = "BokGen")
 
 	
-	@Column(name="BOOKING_ID")
+	@Column(name="booking_id")
 	private long bookingId;
 
 	@Column (name="hotel_id")
 	private long hotelId;
-	
-	@ManyToOne
-	@JoinColumn(name="client_id")
-	private Client client;
-
 	
 	@Column (name="check_in")
 	private Date checkIn;
@@ -39,6 +34,11 @@ public class Booking {
 
 	@Column (name="payment")
 	private String payment;
+
+	
+	@ManyToOne
+	@JoinColumn(name="client_id")
+	private Client client;
 
 		
 	public Booking(long bookingId, long hotelId, Client client, Date checkIn, Date checkOut,
