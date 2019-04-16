@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Countries Manager</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/myStyles.css}">
+</head>
+<body>
+	<h1>Countries<span th:text=" ${message}" th:if="${message}"></span></h1>
+
+	<p>
+		Go to <a href="/trainer/employees">all employees</a> page<br/>
+		Go to <a href="/trainer/regions">all regions</a> page
+<!-- 
+		<br/>
+		Go to <a href="/organizations">organizations</a> page
+  -->
+	</p>
+
+	<hr />
+	
+	<br/>
+	<form action="/trainer/countries/select">
+		<label>Get country by id: <select name="id">
+			<option th:each="cur: ${countries}" th:value="${cur.id}"
+				th:text="${cur.id}">IT</option>
+		</select></label>
+		<div>
+			<button>Go!</button>
+		</div>
+	</form>
+	
+	<h2>Countries by name</h2>
+	<form action="/trainer/countries/startingBy">
+		<label>Starting by: <input name="name" required="required"></label>
+		<div>
+			<button>Go!</button>
+		</div>
+	</form>
+
+	<br />
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>REGION</th>
+		</tr>
+		<tr th:each="cur: ${countries}">
+			<td th:text="${cur.id}">IT</td>
+			<td th:text="${cur.name}">Italy</td>
+			<td th:text="${cur.region.name}">Europe</td>
+		</tr>
+	</table>
+</body>
+</html>

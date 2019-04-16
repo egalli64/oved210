@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Country</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/myStyles.css}">
+</head>
+<body>
+	<h2>
+		Country <span th:text="${country.id}">IT</span> is
+		<span th:text="${country.name}">Italy</span><span th:if="${country.region}">, region
+			<span th:text="${country.region.name}">Europe</span>
+		</span>
+	</h2>
+	<p>Go to <a href="/trainer/countries">all countries</a> page</p>
+</body>
+</html>
