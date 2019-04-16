@@ -8,15 +8,26 @@
 <link rel="stylesheet" type="text/css" href="/css/project/blue/bluestd.css"/>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/css/project/blue/blue.css" />
 </head>
 
 <body>
 <h3> Insert your information:</h3>
+<div align="left">
+	<a href="/project/blue/request.html"><button >
+			<i style='font-size:48px; color:black' class='fas'>&#xf015;</i>
+		</button> </a>
 
-	<form id= "regclient" name="frmRegInsert" action="/project/blue/registration">
-	<div  class = "container-fluid border border-info" align="center">
 
 
+	<form id= "regclient" name="frmRegInsert" action="/project/blue/registration.html">
+	<div  class = "container-fluid border border-info" align="center" id = "contact">
+
+<br>
 			<label class= text-left>Full Name:  
 			<input type = "text" name = "name" class=text-left >
 			</label><br>
@@ -27,10 +38,10 @@
 			 <input type = "text" name = "phone" class=text-left>
 			</label>
 			<br />
-		
+		<a href="/project/blue/registration">
 		<button type="submit" class = "text-center" id = "register">
 			<b>Done!</b>
-		</button>
+		</button></a>
 		</div> 
 	</form>
 	

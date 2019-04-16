@@ -142,4 +142,34 @@ public class BlueController {
 		return "/project/blue/clients";
 	}
 	
+	
+	//controller per cliente esterno
+	@GetMapping("/project/blue/registration")
+	public String registerClient( //
+			@RequestParam String name, //
+			@RequestParam String email, //
+			@RequestParam Long phone, //
+			Model model) {
+		log.trace("get all clients");
+		try {
+			BlueClient client = new BlueClient();
+
+			client.setClientName(name);
+			client.setEmail(email);
+			client.setPhone(phone);
+
+			repClient.save(client);
+			model.addAttribute("clients", repClient.findAll());
+
+			String SaveClient = String.format("--New client inserted!--");
+			model.addAttribute("SaveClient", SaveClient);
+		} catch (Exception ex) {
+			String duplicatedmail = String.format("--Mail already existing!--");
+			model.addAttribute("duplicatedmail", duplicatedmail);
+		}
+		return "project/blue/clients";
+	}
+
+	
+	
 }
