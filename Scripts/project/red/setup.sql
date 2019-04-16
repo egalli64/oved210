@@ -8,13 +8,15 @@ drop table red_hotels;
 
 
 
+
 --hotels
 
 create table red_hotels (
 hotel_id number (6) primary key,
 hotel_name varchar2 (40),
 city varchar2 (30),
-room_counter number (6) 
+room_counter number (6),
+CONSTRAINT uq_hotel_name_City UNIQUE (hotel_name, city)
 );
 
 create sequence red_hotel_seq
