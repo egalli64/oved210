@@ -9,18 +9,20 @@
 </head>
 
 <body id="hotels">
-<div class="container-fluid">
 
-	<h3 class="backgroundtitles">New Hotel</h3>
+
+	<h3 class="container-fluid backgroundtitles">New Hotel</h3>
 <br>
-<div class="left">
+<div class="container-fluid left">
+	<div></div>
 	<a href="/project/red/hotels"><button type="button"
 			class="btn btn-info" aria-pressed="true">Go back</button> </a>
+	</div>
 	<br>
 
 
 	<form id="new" name="frmLogInsert" action="/project/red/insertHotel"
-		method="get">
+		method="get" class="container-fluid left">
 
 
 		<div class="form-group">
@@ -39,10 +41,11 @@
 			<label>Rooms: </label> <input min="2" name="roomCounter" type="number"
 				class="form-control" placeholder="Enter Room Number">
 		</div>
-
+		<div class="container-fluid left">
 		<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<br>
 	</form>
-</div>
 </div>
 
 
