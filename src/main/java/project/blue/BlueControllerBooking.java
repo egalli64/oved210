@@ -35,7 +35,7 @@ public class BlueControllerBooking {
 	
 	@GetMapping("/project/blue/bookings/addBooking")
 	public String addBooking( //
-			@RequestParam Long bookingId, //
+			//@RequestParam Long bookingId, //
 			@RequestParam Long hotelId, //
 			@RequestParam Long clientId , //
 			@RequestParam Date checkIn , //
@@ -46,7 +46,7 @@ public class BlueControllerBooking {
 
 			BlueBooking booking = new BlueBooking();
 
-			booking.setBookingId(bookingId);
+			//booking.setBookingId(bookingId);
 			booking.setHotelId(hotelId);
 			booking.setClientId(clientId);
 			booking.setCheckIn(checkIn);

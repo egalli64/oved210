@@ -35,6 +35,7 @@ public class BlueBooking {
 	}
 	
 	public BlueBooking(Long hotelId, Long clientId, Date checkIn, Date checkOut, Long room) {
+		
 		this.hotelId = hotelId;
 		this.clientId = clientId;
 		this.checkIn = checkIn;
