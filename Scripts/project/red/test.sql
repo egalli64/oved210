@@ -99,47 +99,45 @@ hotel_id number (6) CONSTRAINT red_bookings_hotel_id_fk REFERENCES red_hotels(ho
 client_id number (6)CONSTRAINT red_bookings_client_id_fk  REFERENCES red_clients(client_id) ON DELETE CASCADE,
 check_in date,
 check_out date,
-payment number (5, 2)
+payment varchar (100)
 );
 
 
 create sequence red_bookings_seq
 start with 001 increment by 1;
 
-drop sequence red_bookings_seq;
+
 
 --insert data in bookings
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 121, 1,'10-APR-2019', '15-APR-2019', 80.50);
+values (red_bookings_seq.nextval, 121, 1,'10-APR-2019', '15-APR-2019', 'credit card');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 2, '06-MAR-2019', '08-MAR-2019', 100.70);
+values (red_bookings_seq.nextval, 122, 2, '06-MAR-2019', '08-MAR-2019', 'cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 3, '11-AGO-2019','13-AGO-2019', 60.20);
+values (red_bookings_seq.nextval, 123, 3, '11-AGO-2019','13-AGO-2019', 'cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 124, 4,'21-DIC-2019', '23-DIC-2019', 200.60);
+values (red_bookings_seq.nextval, 124, 4,'21-DIC-2019', '23-DIC-2019', 'paypal');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 5,'25-AGO-2019', '28-AGO-2019', 120.60);
+values (red_bookings_seq.nextval, 125, 5,'25-AGO-2019', '28-AGO-2019', 'credit card');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval,121, 6,'23-GEN-2019', '25-GEN-2019', 60.80);
+values (red_bookings_seq.nextval,121, 6,'23-GEN-2019', '25-GEN-2019', 'cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 7,'19-FEB-2019', '22-FEB-2019', 124.60);
-
-insert into red_bookings(booking_id, hotel_id, client_id,check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 8, '12-LUG-2019','15-LUG-2019', 89.60);
+values (red_bookings_seq.nextval, 122, 7,'19-FEB-2019', '22-FEB-2019', 'cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', '2-FEB-2019', 90.50);
+values (red_bookings_seq.nextval, 123, 8,'12-LUG-2019','15-LUG-2019', 'paypal');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', '18-OTT-2019', 70.60);
+values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', '2-FEB-2019', 'cash');
 
-
+insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
+values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', '18-OTT-2019', 'paypal');
 
 SELECT c.CLIENT_NAME, b.check_in
 FROM RED_CLIENTS c JOIN RED_BOOKINGS b

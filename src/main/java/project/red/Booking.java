@@ -21,10 +21,10 @@ public class Booking {
 	private long clientId;
 	private Date checkIn;
 	private Date checkOut;
-	private long payment;
+	private String payment;
 
 	public Booking(long bookingId, long hotelId, long clientId, Date checkIn, Date checkOut,
-			long payment) {
+			String payment) {
 		this.bookingId = bookingId;
 		this.hotelId = hotelId;
 		this.clientId = clientId;
@@ -33,7 +33,7 @@ public class Booking {
 		this.payment = payment;
 	}
 
-	public Booking(long hotelId, long clientId, Date checkIn, Date checkOut, long payment) {
+	public Booking(long hotelId, long clientId, Date checkIn, Date checkOut, String payment) {
 
 		this.hotelId = hotelId;
 		this.clientId = clientId;
@@ -87,11 +87,12 @@ public class Booking {
 		this.checkOut = checkOut;
 	}
 
-	public long getPayment() {
+
+	public String getPayment() {
 		return payment;
 	}
 
-	public void setPayment(long payment) {
+	public void setPayment(String payment) {
 		this.payment = payment;
 	}
 

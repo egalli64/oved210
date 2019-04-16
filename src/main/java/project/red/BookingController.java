@@ -27,7 +27,7 @@ public class BookingController {
 
 	@GetMapping("/project/red/insertBooking")
 	public String create(@RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
-							@RequestParam Date checkOut, @RequestParam long payment,
+							@RequestParam Date checkOut, @RequestParam String payment,
 							
 							Model model) {
 
@@ -99,7 +99,7 @@ public class BookingController {
 	
 	@GetMapping("/project/red/saveBooking")
 	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
-			@RequestParam Date checkOut, @RequestParam long payment,
+			@RequestParam Date checkOut, @RequestParam String payment,
 			
 			Model model) {
 
