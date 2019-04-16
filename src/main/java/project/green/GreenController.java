@@ -269,6 +269,24 @@ public class GreenController {
 		return "/project/green/bookings";
 
 	}
+	
+	@GetMapping("/project/green/removeBooking")
+	public String removeBooking(@RequestParam Long BookingId, Model model) {
+
+		log.trace("delete hotel");
+		try {
+			repoBooking.deleteById(BookingId);
+			model.addAttribute("deleteBooking", "Booking Deleted");
+		} catch (Exception ex) {
+			String RemoveBooking = String.format("Can't delete Booking", BookingId);
+			log.error(RemoveBooking);
+			model.addAttribute("RemoveBooking", RemoveBooking);
+		}
+		
+		model.addAttribute("bookings", repoHotel.findAll());
+		
+		return "/project/green/bookings";
+	}
 
 }
 //	 @GetMapping("/project/green/clients")
