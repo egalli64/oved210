@@ -20,18 +20,19 @@
 				href="/project/green/removeClients.html"><button type="button"
 					value="delete client" class="btn btn-outline-danger">
 					Remove Client by ID <br /> (only staff)
-				</button></a> <br />
-				<br />
-				
+				</button></a> <br /> <br />
+
 			<div>
 				<h4 th:text="${message}" th:if="${message}"
 					class="alert alert-success text-center"></h4>
+					
 				<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
-					class="alert alert-danger text-center"></h4>
-				<h4 th:text="${messageEdit}" th:if="${messageEdit}"
-					class="alert alert-warning text-center"></h4>
+					class="alert alert-danger text-center"></h4>		
+							
+				<h4 th:text="${clientEdit}" th:if="${clientEdit}"
+				class="alert alert-warning text-center"></h4>
 			</div>
-	<h4 th:text="${clientEdit}"></h4>
+
 		</div>
 		<br /> <br />
 		<table class="table table-hover">
@@ -58,7 +59,7 @@
 				<td><a href="/project/green/clients/removeClients.html"
 					th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
 						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
-						
+
 				</a></td>
 			</tr>
 		</table>
@@ -66,6 +67,8 @@
 	<div class="container-fluid">
 		<a href="/project/green/login"><button type="button"
 				class="btn btn-outline-dark">Go Back</button></a>
+				
+	
 	</div>
 </body>
 </html>

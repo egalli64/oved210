@@ -17,60 +17,67 @@
 		<br />
 		<div>
 
-
 			<a href="/project/green/addedHotels.html"><button type="button"
 					class="btn btn-outline-success">Add New Hotel</button> </a> <a
 				href="/project/green/removeHotels.html"><button type="button"
 					value="delete hotel" class="btn btn-outline-danger">
 					Remove Hotel by ID <br /> (only staff)
 				</button> </a>
-
-			<h2 th:text="${message}" th:if="${message}"></h2>
-			<!-- <h2 th:text="${messageRemove}" th:if="${messageRemove}"></h2> -->
 		</div>
 
+		<br /> 
+		
+		<div>
+			<h4 th:text="${message}" th:if="${message}"
+				class="alert alert-success text-center"></h4>
 
-	</div>
-	<br>
-	<h4 th:text="${editingDone}"></h4>
-	<h4 th:text="${deleteHotel}"></h4>
-	<h4 th:text="${messageRemove}"></h4>
-	<table class="table table-hover">
-		<thead class="thead-succes">
+			<h4 th:text="${messageRemove}" th:if="${messageRemove}"
+				class="alert alert-danger text-center"></h4>
 
-			<br />
-			<br />
+			<h4 th:text="${deleteHotel}" th:if="${deleteHotel}"
+				class="alert alert-danger text-center"></h4>
 
-			<tr>
-				<!--  	<th>HOTEL ID</th> -->
-				<th>Hotel Name</th>
-				<th>City</th>
-				<th>Room Counter</th>
-				<th></th>
-				<th></th>
+
+			<h4 th:text="${editingDone}" th:if="${editingDone}"
+				class="alert alert-warning text-center"></h4>
+
+		</div>
+		<br>
+		<table class="table table-hover">
+			<thead class="thead-succes">
+
+				<br />
+				<br />
+
+				<tr>
+					<th>Hotel Name</th>
+					<th>City</th>
+					<th>Room Counter</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tr th:each="hotel: ${hotels}">
+				<!-- <td th:text="${hotel.hotelId}"></td> -->
+				<td th:text="${hotel.hotelName}"></td>
+				<td th:text="${hotel.city}"></td>
+				<td th:text="${hotel.roomCounter}"></td>
+				<td><a href="/project/green/hotel/edit"
+					th:href="@{/project/green/hotel/edit(hotelId=${hotel.hotelId})}">
+						<button type="submit"
+							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+
+				</a></td>
+				<td><a href="/project/green/hotels/removeHotels.html"
+					th:href="@{/project/green/removeHotels(hotelId=${hotel.hotelId})}">
+						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
+				</a></td>
 			</tr>
-		</thead>
+		</table>
 
-		<tr th:each="hotel: ${hotels}">
-			<!-- <td th:text="${hotel.hotelId}"></td> -->
-			<td th:text="${hotel.hotelName}"></td>
-			<td th:text="${hotel.city}"></td>
-			<td th:text="${hotel.roomCounter}"></td>
-			<td><a href="/project/green/hotel/edit"
-				th:href="@{/project/green/hotel/edit(hotelId=${hotel.hotelId})}">
-					<button type="submit"
-						class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
-
-			</a></td>
-			<td><a href="/project/green/hotels/removeHotels.html"
-				th:href="@{/project/green/removeHotels(hotelId=${hotel.hotelId})}">
-					<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
-			</a></td>
-		</tr>
-	</table>
-
-	<a href="/project/green/login"><button type="button"
-			class="btn btn-outline-dark">Go Back</button></a>
+		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a>
 	</div>
 
 </body>

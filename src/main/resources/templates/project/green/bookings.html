@@ -14,6 +14,10 @@
 		<h3 class="backgroundtitles">
 			<i>Booking</i>
 		</h3>
+		<div>
+			<a href="/project/green/addedBookings.html"><button type="button"
+					class="btn btn-outline-success">Add New Booking</button> </a>
+		</div>
 		<table class="table table-hover">
 			<thead class="thead-succes">
 				<tr>
@@ -23,6 +27,7 @@
 					<th>Availability</th>
 					<th>Payment</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 
@@ -30,10 +35,16 @@
 				<td th:text="${booking.bookingId}"></td>
 				<td th:text="${booking.availability}"></td>
 				<td th:text="${booking.payment}"></td>
+				<td><a href="/project/green/booking/edit.html"
+					th:href="@{/project/green/booking/edit(bookingId=${booking.bookingId})}">
+						<button type="submit"
+							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+				</a></td>
 				<td><a href="/project/green/bookings/removeBookings.html"
 					th:href="@{/project/green/removeBookings(bookingId=${booking.bookingId})}">
 						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
 				</a></td>
+
 			</tr>
 		</table>
 	</div>
