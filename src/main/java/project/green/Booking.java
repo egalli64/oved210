@@ -21,6 +21,7 @@ public class Booking {
 	private Date availability;
 	private long payment;
 
+	//new
 	public Booking(Long bookingId, Long hotelId, Long clientId, Date availability, Long payment) {
 		this.bookingId = bookingId;
 		this.hotelId = hotelId;
@@ -28,11 +29,16 @@ public class Booking {
 		this.availability = availability;
 		this.payment=payment;
 	}
-	public Booking(Long hotelId, Long clientId, Long payment) {
+
+	// edit
+	public Booking(Long hotelId, Long clientId, Date availability, Long payment) {
 		this.hotelId = hotelId;
-		this.clientId = clientId;
-		this.payment = payment;
+		this.clientId =clientId;
+		this.availability = availability;
+		this.payment=payment;
 	}
+
+
 	public Booking() {
 	}
 	public long getBookingId() {
