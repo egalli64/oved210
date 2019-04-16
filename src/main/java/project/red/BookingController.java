@@ -36,10 +36,10 @@ public class BookingController {
 		if (clientName.isEmpty()) {
 			model.addAttribute("errorClient", "***Client name is missing!***");
 
-			return "/project/red/insertClient";
+			return "/project/red/insertBooking";
 		}
 		if (hotelId == 0) {
-			model.addAttribute("errorClient", "***Hotel name is missing!***");
+			model.addAttribute("errorHotel", "***Hotel is missing!***");
 
 			return "/project/red/insertBooking";
 		}
@@ -85,7 +85,7 @@ public class BookingController {
 	@GetMapping("/project/red/editBooking")
 	public String edit(@RequestParam long bookingId, Model model) {
 
-		log.trace("edit client");
+		log.trace("edit booking");
 
 		Optional<Booking> opt = repo.findById(bookingId);
 		if (opt.isPresent()) {
