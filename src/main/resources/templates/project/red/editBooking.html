@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+</head>
+
+<body id="bookings">
+
+<h3 class="backgroundtitles">Edit Booking</h3>
+
+<br>
+
+	<form id="new" name="frmLogInsert" action="/project/red/saveBooking" method="get">
+		
+     <input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" >
+
+		<div class="form-group">
+			<label>Hotel id:</label> <input name="hotelId" type="text"
+				class="form-control" placeholder="Enter Hotel Id"
+				th:value="${hotelId}">
+		</div>
+
+		<div class="form-group">
+			<label>Client Name:</label> <input name="clientName" type="text"
+				class="form-control" placeholder="Enter Client"
+				th:value="${clientName}">
+		</div>
+
+		<div class="form-group">
+			<label>Check in:</label> <input name="checkIn" type="date"
+				class="form-control" placeholder="Enter Check-in Date"
+				th:value="${checkIn}">
+		</div>
+
+		<div class="form-group">
+			<label>Check out:</label> <input name="checkOut" type="date"
+				class="form-control" placeholder="Enter Check-Out Date">
+		</div>
+
+		<div class="form-group">
+			<label>Payment:</label> <br> 
+			<input type="radio" name="lang"
+				value="" />Credit card<img src="/img/project/red/carte.png"
+				width="30" height="35"></img><br> <input type="radio"
+				name="lang" value="" />Paypal<img src="/img/project/red/paypal.png"
+				width="30" height="35"></img><br> <input type="radio"
+				name="lang" value="" />Cash<img src="/img/project/red/cash.png"
+				width="30" height="35"></img><br>
+			
+		</div>
+		<div>
+		<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+		
+		<br>
+	</form>
+	
+	<hr>
+	<a href="/project/red/clients"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
+</body>
+</html>
+		
+		
+		
+	
+		
+		
