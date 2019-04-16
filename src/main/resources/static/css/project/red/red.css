@@ -1,6 +1,6 @@
 body {
 	background-image: url('/img/project/red/img.png');
-	background-size:40%;
+	background-size: 40%;
 	color: #1093c5;
 	text-align: center;
 }
@@ -8,15 +8,16 @@ body {
 #error {
 	background-color: black;
 }
-#hotels{
+
+#hotels {
 	background-color: #d8fee0;
 }
 
-#booking{
+#booking {
 	background-color: #ffffdd;
 }
 
-#clients{
+#clients {
 	background-color: #ffdddd;
 }
 
@@ -24,25 +25,26 @@ body {
 	color: #0c66c9;
 }
 
-.backgroundtitles{
+.backgroundtitles {
 	background-color: rgba(255, 255, 255, 0.8);
 	color: #0c66c9;
 }
-#backgroundmessagescorrect{
+
+#backgroundmessagescorrect {
 	background-color: rgba(123, 239, 178, 0.6);
 	color: green;
 }
 
-#backgroundmessageserror{
+#backgroundmessageserror {
 	background-color: rgba(214, 69, 65, 0.6);
 	color: #800000;
 }
 
 #welcome {
-width: 600px;
-height: 300px;
-background-color: rgba(255, 255, 255, 0.8);
-text-align:center;
+	width: 600px;
+	height: 300px;
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
 }
 
 .error {
@@ -53,19 +55,19 @@ table {
 	background-color: white;
 }
 
-#new{
+#new {
 	color: black;
-		background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.8);
 }
- 
- 
-.left{
+
+.left {
 	text-align: left;
 }
 
 .right {
 	text-align: right;
 }
+
 .center {
-	text-align:center;
+	text-align: center;
 }
