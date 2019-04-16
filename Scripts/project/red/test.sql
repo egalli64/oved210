@@ -136,3 +136,6 @@ values (red_bookings_seq.nextval, 123, 9, 'Tina Cipollari','30-GEN-2019', '2-FEB
 insert into red_bookings(booking_id, hotel_id, client_id, client_name, check_in, check_out, payment)
 values (red_bookings_seq.nextval, 125, 10, 'Ryan Gosling','16-OTT-2019', '18-OTT-2019', 70.60);
 
+
+SELECT *
+FROM RED_BOOKINGS
