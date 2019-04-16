@@ -1,9 +1,14 @@
 	package project.red;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -13,11 +18,22 @@ public class Hotel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "HotGen")
 	@SequenceGenerator(sequenceName = "RED_HOTEL_SEQ", allocationSize = 1, name = "HotGen")
+	
+	@Column(name="hotel_id")
 	private long hotelId;
-
+	
+	@Column(name="hotel_name")
 	private String hotelName;
+	
+	@Column(name="city")
 	private String city;
+	
+	@Column(name="room_counter")
 	private long roomCounter;
+	
+	@OneToMany(mappedBy="hotel", cascade = CascadeType.ALL)
+	private Set<Booking> bookings;
+	
 
 	public Hotel(long hotelId, String hotelName, String city, long roomCounter) {
 		this.hotelId = hotelId;

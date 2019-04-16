@@ -35,7 +35,7 @@
 			</thead>
 			<tr th:each="booking: ${bookings}" class ="table-warning">
 				<td th:text =${booking.bookingId}></td>
-				<td th:text =${booking.hotelId}></td>
+				<td th:text =${booking.hotel.hotelId}></td>
 				<td th:text =${booking.client.clientName}></td>
 				<td th:text =${booking.checkIn}></td>
 				<td th:text =${booking.checkOut}></td>

@@ -29,20 +29,21 @@ public class BookingController {
 	}
 
 	@GetMapping("/project/red/insertBooking")
-	public String create(@RequestParam long hotelId, @RequestParam Client client, @RequestParam Date checkIn,
+	public String create(@RequestParam Hotel hotel, @RequestParam Client client, @RequestParam Date checkIn,
 							@RequestParam Date checkOut, @RequestParam String payment,
 							
 							Model model) {
 
 		log.trace("get new booking");
 
-		if (hotelId == 0) {
-			model.addAttribute("errorHotel", "***Hotel is missing!***");
+//		if (hotel.hotelId) == null) {
+//			model.addAttribute("errorHotel", "***Hotel is missing!***");
+//
+//			return "/project/red/insertBooking";
+//		}
 
-			return "/project/red/insertBooking";
-		}
 		
-			Booking booking = new Booking (hotelId, client, checkIn, checkOut, payment);
+			Booking booking = new Booking (hotel, client, checkIn, checkOut, payment);
 			brepo.save(booking);
 			model.addAttribute("bookings", brepo.findAll());
 
@@ -101,14 +102,14 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/saveBooking")
-	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam Client client, @RequestParam Date checkIn,
+	public String save (@RequestParam long bookingId, @RequestParam Hotel hotel, @RequestParam Client client, @RequestParam Date checkIn,
 			@RequestParam Date checkOut, @RequestParam String payment,
 			
 			Model model) {
 
 		log.trace("saving modified booking");
 
-		Booking booking = new Booking (bookingId, hotelId, client, checkIn, checkOut, payment);
+		Booking booking = new Booking (bookingId, hotel, client, checkIn, checkOut, payment);
 		
 		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");

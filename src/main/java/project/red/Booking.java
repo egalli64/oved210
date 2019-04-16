@@ -19,12 +19,8 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BokGen")
 	@SequenceGenerator(sequenceName = "red_bookings_seq", allocationSize = 1, name = "BokGen")
 
-	
 	@Column(name="booking_id")
 	private long bookingId;
-
-	@Column (name="hotel_id")
-	private long hotelId;
 	
 	@Column (name="check_in")
 	private Date checkIn;
@@ -40,20 +36,24 @@ public class Booking {
 	@JoinColumn(name="client_id")
 	private Client client;
 
+	@ManyToOne
+	@JoinColumn (name="hotel_id")
+	private Hotel hotel;
+
 		
-	public Booking(long bookingId, long hotelId, Client client, Date checkIn, Date checkOut,
+	public Booking(long bookingId, Hotel hotel, Client client, Date checkIn, Date checkOut,
 			String payment) {
 		this.bookingId = bookingId;
-		this.hotelId = hotelId;
+		this.hotel = hotel;
 		this.client = client;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		this.payment = payment;
 	}
 
-	public Booking(long hotelId, Client client, Date checkIn, Date checkOut, String payment) {
+	public Booking(Hotel hotel, Client client, Date checkIn, Date checkOut, String payment) {
 
-		this.hotelId = hotelId;
+		this.hotel = hotel;
 		this.client = client;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
@@ -73,13 +73,6 @@ public class Booking {
 		this.bookingId = bookingId;
 	}
 
-	public long getHotelId() {
-		return hotelId;
-	}
-
-	public void setHotelId(long hotelId) {
-		this.hotelId = hotelId;
-	}
 
 	public Client getClient() {
 		return client;
@@ -113,10 +106,18 @@ public class Booking {
 		this.payment = payment;
 	}
 
+	public Hotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(Hotel hotel) {
+		this.hotel = hotel;
+	}
+
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", client=" + client + ", checkIn="
-				+ checkIn + ", checkOut=" + checkOut + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payment="
+				+ payment + ", client=" + client + ", hotel=" + hotel + "]";
 	}
 
 
