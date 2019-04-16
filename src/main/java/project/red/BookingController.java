@@ -29,7 +29,7 @@ public class BookingController {
 	}
 
 	@GetMapping("/project/red/insertBooking")
-	public String create(@RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
+	public String create(@RequestParam long hotelId, @RequestParam Client client, @RequestParam Date checkIn,
 							@RequestParam Date checkOut, @RequestParam String payment,
 							
 							Model model) {
@@ -42,7 +42,7 @@ public class BookingController {
 			return "/project/red/insertBooking";
 		}
 		
-			Booking booking = new Booking (hotelId, clientId, checkIn, checkOut, payment);
+			Booking booking = new Booking (hotelId, client, checkIn, checkOut, payment);
 			brepo.save(booking);
 			model.addAttribute("bookings", brepo.findAll());
 
@@ -90,7 +90,7 @@ public class BookingController {
 			Booking booking = opt.get();
 			
 			model.addAttribute("bookingId", booking.getBookingId());
-			model.addAttribute("clientId", booking.getClientId());
+			model.addAttribute("clientId", booking.getClient());
 			model.addAttribute("checkIn", booking.getCheckIn());
 			model.addAttribute("checkOut", booking.getCheckOut());
 			model.addAttribute("payment", booking.getPayment());
@@ -101,14 +101,14 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/saveBooking")
-	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam long clientId, @RequestParam Date checkIn,
+	public String save (@RequestParam long bookingId, @RequestParam long hotelId, @RequestParam Client client, @RequestParam Date checkIn,
 			@RequestParam Date checkOut, @RequestParam String payment,
 			
 			Model model) {
 
 		log.trace("saving modified booking");
 
-		Booking booking = new Booking (bookingId, hotelId, clientId, checkIn, checkOut, payment);
+		Booking booking = new Booking (bookingId, hotelId, client, checkIn, checkOut, payment);
 		
 		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");

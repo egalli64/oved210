@@ -19,6 +19,7 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BokGen")
 	@SequenceGenerator(sequenceName = "red_bookings_seq", allocationSize = 1, name = "BokGen")
 
+	
 	@Column(name="BOOKING_ID")
 	private long bookingId;
 
@@ -28,7 +29,7 @@ public class Booking {
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private Client client;
-	private long clientId;
+
 	
 	@Column (name="check_in")
 	private Date checkIn;
@@ -40,20 +41,20 @@ public class Booking {
 	private String payment;
 
 		
-	public Booking(long bookingId, long hotelId, long clientId, Date checkIn, Date checkOut,
+	public Booking(long bookingId, long hotelId, Client client, Date checkIn, Date checkOut,
 			String payment) {
 		this.bookingId = bookingId;
 		this.hotelId = hotelId;
-		this.clientId = clientId;
+		this.client = client;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		this.payment = payment;
 	}
 
-	public Booking(long hotelId, long clientId, Date checkIn, Date checkOut, String payment) {
+	public Booking(long hotelId, Client client, Date checkIn, Date checkOut, String payment) {
 
 		this.hotelId = hotelId;
-		this.clientId = clientId;
+		this.client = client;
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 		this.payment = payment;
@@ -80,12 +81,12 @@ public class Booking {
 		this.hotelId = hotelId;
 	}
 
-	public long getClientId() {
-		return clientId;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setClientId(long clientId) {
-		this.clientId = clientId;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public Date getCheckIn() {
@@ -104,7 +105,6 @@ public class Booking {
 		this.checkOut = checkOut;
 	}
 
-
 	public String getPayment() {
 		return payment;
 	}
@@ -115,7 +115,10 @@ public class Booking {
 
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", checkIn=" + checkIn + ", checkOut=" + checkOut + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", client=" + client + ", checkIn="
+				+ checkIn + ", checkOut=" + checkOut + ", payment=" + payment + "]";
 	}
+
+
 
 }

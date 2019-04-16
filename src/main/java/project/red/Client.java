@@ -32,8 +32,8 @@ public class Client {
 	@Column (name="phone")
 	private String phone;
 
-	@OneToMany(mappedBy="client_id", cascade = CascadeType.ALL)
-	private Set<Booking> booking;
+	@OneToMany(mappedBy="client", cascade = CascadeType.ALL)
+	private Set<Booking> red_bookings;
 	
 
 	public Client(long clientId, String clientName, String email, String phone) {
