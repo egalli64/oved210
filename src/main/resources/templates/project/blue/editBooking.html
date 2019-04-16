@@ -17,7 +17,8 @@
 	<div  class = "container-fluid border border-info" align="center">
 	<input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" > 
 
-			<label><input type = "number" hidden= true class=text-left>
+			<label class=text-left>Hotel Id:  
+			<input type = "number" name = "hotelId" class=text-left th:value = "${hotelId}">
 			</label><br>
 			<label class=text-left>Client Id:  
 			<input type = "number" name = "clientId" class=text-left th:value = "${clientId}">
@@ -28,7 +29,7 @@
 			<label class=text-left>Check Out:  
 			<input type = "date" name = "checkOut" class=text-left th:value = "${checkOut}">
 			</label><br><label class=text-left>Rooms:  
-			<input type = "date" name = "room" class=text-left th:value = "${room}">
+			<input type = "number" name = "room" class=text-left th:value = "${room}">
 			</label><br>
 			<br />
 		
