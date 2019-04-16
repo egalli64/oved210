@@ -19,30 +19,32 @@ public class BlueBooking {
 	private Long bookingId;
 	private Long hotelId;
 	private Long clientId;
-	private Date availability;
-	private Long payment;
+	private Date checkIn;
+	private Date checkOut;
+	private Long room;
 	
 	
-	public BlueBooking(Long bookingId, Long hotelId, Long clientId, Date availability, Long payment) {
+	public BlueBooking(Long bookingId, Long hotelId, Long clientId, Date checkIn,Date checkOut, Long room) {
 		this.bookingId = bookingId;
 		this.hotelId = hotelId;
 		this.clientId = clientId;
-		this.availability = availability;
-		this.payment = payment;
+		this.checkIn = checkIn;
+		this.checkIn = checkOut;
+		this.room = room;
 		
 	}
 	
-	public BlueBooking(Long hotelId, Long clientId, Date availability, Long payment) {
+	public BlueBooking(Long hotelId, Long clientId, Date checkIn, Date checkOut, Long room) {
 		this.hotelId = hotelId;
 		this.clientId = clientId;
-		this.availability = availability;
-		this.payment = payment;
-	}
-	
-	public BlueBooking() {
-		
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
+		this.room = room;
 	}
 
+	protected BlueBooking(){
+		
+	}
 	public Long getBookingId() {
 		return bookingId;
 	}
@@ -67,29 +69,36 @@ public class BlueBooking {
 		this.clientId = clientId;
 	}
 
-	public Date getAvailability() {
-		return availability;
+	public Date getCheckIn() {
+		return checkIn;
 	}
 
-	public void setAvailability(Date availability) {
-		this.availability = availability;
+	public void setCheckIn(Date checkIn) {
+		this.checkIn = checkIn;
 	}
 
-	public Long getPayment() {
-		return payment;
+	public Date getCheckOut() {
+		return checkOut;
 	}
 
-	public void setPayment(Long payment) {
-		this.payment = payment;
+	public void setCheckOut(Date checkOut) {
+		this.checkOut = checkOut;
+	}
+
+	public Long getRoom() {
+		return room;
+	}
+
+	public void setRoom(Long room) {
+		this.room = room;
 	}
 
 	@Override
 	public String toString() {
-		return "BlueBooking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId
-				+ ", availability=" + availability + ", payment=" + payment + "]";
+		return "BlueBooking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", checkIn="
+				+ checkIn + ", checkOut=" + checkOut + ", room=" + room + "]";
 	}
-
-
+	
 
 
 	

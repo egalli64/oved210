@@ -38,8 +38,9 @@ public class BlueControllerBooking {
 			@RequestParam Long bookingId, //
 			@RequestParam Long hotelId, //
 			@RequestParam Long clientId , //
-			@RequestParam Date availability , //
-			@RequestParam Long payment, //
+			@RequestParam Date checkIn , //
+			@RequestParam Date checkOut , //
+			@RequestParam Long room, //
 			Model model) {
 		log.trace("get all bookings");
 
@@ -48,8 +49,9 @@ public class BlueControllerBooking {
 			booking.setBookingId(bookingId);
 			booking.setHotelId(hotelId);
 			booking.setClientId(clientId);
-			booking.setAvailability(availability);
-			booking.setPayment(payment);
+			booking.setCheckIn(checkIn);
+			booking.setCheckOut(checkOut);
+			booking.setRoom(room);
 		
 	
 			repBooking.save(booking);
@@ -102,9 +104,9 @@ public class BlueControllerBooking {
 			model.addAttribute("bookingId", booking.getBookingId());
 			model.addAttribute("hotelId", booking.getHotelId());
 			model.addAttribute("clientId", booking.getClientId());
-			model.addAttribute("availability", booking.getAvailability());
-			model.addAttribute("payment", booking.getPayment());
-
+			model.addAttribute("checkIn", booking.getCheckIn());
+			model.addAttribute("checkOut", booking.getCheckOut());
+			model.addAttribute("room", booking.getRoom());
 		}
 		return "/project/blue/editBooking";
 	}
@@ -114,15 +116,16 @@ public class BlueControllerBooking {
 			@RequestParam Long bookingId, // 
 			@RequestParam Long hotelId, // 
 			@RequestParam Long clientId, // 
-			@RequestParam Date availability, // 
-			@RequestParam Long payment, // 
+			@RequestParam Date checkIn, // 
+			@RequestParam Date checkOut, // 
+			@RequestParam Long room, // 
 		
 
 			Model model) {
 		log.trace("edit booking");
 
 	
-		BlueBooking booking = new BlueBooking(bookingId, hotelId, payment, availability, payment);
+		BlueBooking booking = new BlueBooking();
 
 		repBooking.save(booking);
 

@@ -25,7 +25,7 @@
 
 		<fieldset class="text-center">
 
-			<a href="/project/blue/booking/add.html"><button
+			<a href="/project/blue/bookings/addBooking.html"><button
 					class="text-center" id="add">
 					<b> Add Bookings</b>
 				</button> </a>
@@ -58,8 +58,9 @@
 			<td th:text="${booking.bookingId}"></td>
 			<td th:text="${booking.hotelId}"></td>
 			<td th:text="${booking.clientId}"></td>
-			<td th:text="${booking.availability}"></td>
-			<td th:text="${booking.payment}"></td>
+			<td th:text="${booking.checkIn}"></td>
+			<td th:text="${booking.checkOut}"></td>
+			<td th:text="${booking.priceRoom}"></td>
 			<td><a href="/project/blue/bookings/remove.html"
 				th:href="@{/project/blue/bookings/remove(id=${booking.bookingId})}"><button
 						style='font-size: 24px'>
