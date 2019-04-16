@@ -28,7 +28,6 @@ public class Booking {
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private Client client;
-		
 	private long clientId;
 	
 	@Column (name="check_in")
@@ -40,9 +39,7 @@ public class Booking {
 	@Column (name="payment")
 	private String payment;
 
-	
-	
-	
+		
 	public Booking(long bookingId, long hotelId, long clientId, Date checkIn, Date checkOut,
 			String payment) {
 		this.bookingId = bookingId;

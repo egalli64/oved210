@@ -33,7 +33,7 @@ public class Client {
 	private String phone;
 
 	@OneToMany(mappedBy="client_id", cascade = CascadeType.ALL)
-	private Set<Client> client;
+	private Set<Booking> booking;
 	
 
 	public Client(long clientId, String clientName, String email, String phone) {
