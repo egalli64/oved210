@@ -53,6 +53,7 @@
 					<th>ROOM COUNTER</th>
 					<th>DELETE</th>
 					<th>MODIFY</th>
+					<th>DETAILS</th>
 				</tr>
 			</thead>
 			<tr class="table-success" th:each="hotel: ${hotels}">
@@ -72,37 +73,21 @@
 						<input id="button" type="image" src="/img/project/red/edit.png"
 						width="30" height="35">
 				</a></td>
+				
+				<td><a
+					th:href="@{'/project/red/hotelTulipanoMilano' + ${hotel.hotelName} + ${hotel.city} + '.html'}">
+						<input id="button" type="image" src="/img/project/red/info.png"
+						width="50" height="30">
+				</a></td>
 			</tr>
 
 		</table>
 	</div>
 
-	<div class = "container-fluid">
+	<!--<div class = "container-fluid">
 	<h3 class="backgroundtitles">Choose your hotel</h3>
-	</div>
+	</div>-->
 	
-	<div class="center"> 
-	<div class="btn-group mr-2 center" role="group" aria-label="Hotel Tulipano">
-	<a href="/project/red/hotelTulipanoMilano.html">
-	<button type="button" class="btn btn-info">Hotel Tulipano</button></a>
-	</div>
-	<div class="btn-group mr-2 center" role="group" aria-label="Hotel Orchidea">
-	<a href="/project/red/hotelOrchideaVenezia.html">
-	<button type="button" class="btn btn-info">Hotel Orchidea</button></a>
-	</div>
-	<div class="btn-group mr-2 center" role="group" aria-label="Hotel Margherita">
-	<a href="/project/red/hotelMargheritaRoma.html">
-	<button type="button" class="btn btn-info">Hotel Margherita</button></a>
-	</div>
-	<div class="btn-group mr-2 center" role="group" aria-label="Hotel Girasole">
-	<a href="/project/red/hotelGirasoleFirenze.html">
-	<button type="button" class="btn btn-info">Hotel Girasole</button></a>
-	</div>
-	<div class="btn-group mr-2 center" role="group" aria-label="Hotel Giglio">
-	<a href="/project/red/hotelGiglioNapoli.html">
-	<button type="button" class="btn btn-info">Hotel Giglio</button></a>
-	</div>
-	</div>
 
 <!--  
 	<select class="custom-select" id="inputGroupSelect04"
