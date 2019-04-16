@@ -13,7 +13,7 @@
 	<div class="container-fluid">
 		<br />
 		<form name="frmLog" action="/project/green/addBooking" method="get">
-      
+
 
 			<div class="form-group">
 				<label for="exampleInputAvailability">Availability</label> <input
@@ -26,16 +26,20 @@
 					name="payment" type="text" class="form-control"
 					aria-describedby="payment" placeholder="Payment">
 			</div>
-			
+
+	<!-- 	<div class="form-group">
+				<label for="exampleInputHotel">Hotel</label> <input
+					name="hotel" type="text" class="form-control"
+					aria-describedby="hotel" placeholder="hotel">
+			</div>   -->	
+
 			<div class="form-group">
-				  <input name="hotelId" type="hidden" 
-				  class="form-control"
-					th:value="${hotelId}" >
-					
+				<input name="hotelId" type="hidden" class="form-control"
+					th:value="${hotelId}">
+
 			</div>
 			<div class="form-group">
-				<input 
-					name="clientId" type="hidden" class="form-control"
+				<input name="clientId" type="hidden" class="form-control"
 					th:value="clientId">
 			</div>
 
@@ -46,8 +50,8 @@
 	<br />
 	<div class="col-auto">
 		<a href="/project/green/bookings"><button type="button"
-				class="btn btn-outline-dark">Go Back</button></a>
-		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a> <a
+			href="/project/green/login"><button type="button"
 				class="btn btn-outline-light">Home</button></a>
 	</div>
 </body>
