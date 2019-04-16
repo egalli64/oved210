@@ -16,10 +16,10 @@ public class BookingController {
 	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
 
 	@Autowired
-	private BookingRepository brepo;
+	BookingRepository brepo;
 	
 	@Autowired
-	private ClientRepository crepo;
+	ClientRepository crepo;
 
 	@GetMapping("/project/red/bookings")
 	public String allBookings(Model model) {

@@ -17,8 +17,6 @@ public class ClientController {
 	@Autowired
 	private ClientRepository crepo;
 	
-	@Autowired
-	private BookingRepository brepo;
 
 	@GetMapping("/project/red/clients")
 	public String allClients(Model model) {
