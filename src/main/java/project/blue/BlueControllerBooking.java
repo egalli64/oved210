@@ -66,13 +66,12 @@ public class BlueControllerBooking {
 	//controller remove bookings
 	
 	@GetMapping("/project/blue/bookings/remove")
-
-	public String removeBooking(@RequestParam Long bookingId, Model model) {
+	public String removeBooking(@RequestParam Long id, Model model) {
 		log.trace("delete booking");
-
+ 
 		try {
 
-			repBooking.deleteById(bookingId);
+			repBooking.deleteById(id);
 
 			model.addAttribute("bookings", repBooking.findAll());
 			String deleteBooking = String.format("--Booking deleted!--");
@@ -125,9 +124,9 @@ public class BlueControllerBooking {
 		log.trace("edit booking");
 
 	
-		BlueBooking booking = new BlueBooking(bookingId, hotelId, clientId, checkIn, checkOut, room);
+		BlueBooking book = new BlueBooking(bookingId, hotelId, clientId, checkIn, checkOut, room);
 
-		repBooking.save(booking);
+		repBooking.save(book);
 
 		model.addAttribute("editBooking", "--Booking modified!--");
 		model.addAttribute("bookings", repBooking.findAll());
