@@ -90,7 +90,7 @@ public class GreenController {
 		} catch (Exception dive) {
 			String messageRemove = String.format("Client % d correctly removed", clientId);
 			log.error(messageRemove);
-			model.addAttribute("message", messageRemove);
+			model.addAttribute("messageRemove", messageRemove);
 
 		}
 		model.addAttribute("clients", repoClient.findAll());
