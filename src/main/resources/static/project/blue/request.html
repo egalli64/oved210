@@ -11,7 +11,7 @@
 </head>
 <body>
 	<h1>Welcome!</h1>
-	<fieldset class="text-center">
+	<fieldset class="text-center" id="log">
 
 		<form name="frmLog" action="/project/blue/login" method="post"
 			onsubmit="return checkUser()">
@@ -28,20 +28,22 @@
 
 
 		<div>
-			<button class= "button">Register now!</button>
+			<button class="button">Register now!</button>
 		</div>
 
-		<br/>
-
-	</fieldset>
-
-	<fieldset class="text-center">
-		<h6>CONTACTS:</h6>
-		<h7> <u>Email address: blueprojecthotels@gmail.com</u></h7>
 		<br />
-		<h7> <u>Tel: +39 02875966</u></h7>
-		<br/>
 
 	</fieldset>
-	</body>
-	</html>
+	<br />
+
+
+	<div class = "container-fluid border border-info" align="center" id = "contact"> <br/>
+		<h5>CONTACTS:</h5>
+		<h6>Email: blueprojecthotels@gmail.com</h6>
+		<br />
+		<h6>Tel: +39 02875966</h6>
+		<br />
+	</div> 
+
+</body>
+</html>
