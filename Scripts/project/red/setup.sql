@@ -23,19 +23,19 @@ start with 121 increment by 1;
 
 --insert data in hotels
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
-values(red_hotel_seq.nextval , 'Hotel Tulipano', 'Milano', 10);
+values(red_hotel_seq.nextval , 'Tulipano', 'Milano', 10);
 
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
-values(red_hotel_seq.nextval , 'Hotel Margherita', 'Roma', 10);
+values(red_hotel_seq.nextval , 'Margherita', 'Roma', 10);
 
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
-values(red_hotel_seq.nextval , 'Hotel Girasole', 'Firenze', 7);
+values(red_hotel_seq.nextval , 'Girasole', 'Firenze', 7);
 
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
-values(red_hotel_seq.nextval , 'Hotel Giglio', 'Napoli', 5);
+values(red_hotel_seq.nextval , 'Giglio', 'Napoli', 5);
 
 insert into red_hotels (hotel_id, hotel_name, city, room_counter)
-values(red_hotel_seq.nextval , 'Hotel Orchidea', 'Venezia', 5);
+values(red_hotel_seq.nextval , 'Orchidea', 'Venezia', 5);
 
 
 
