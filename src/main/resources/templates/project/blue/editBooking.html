@@ -9,11 +9,13 @@
 
 <link rel="stylesheet" type="text/css"
 	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
+	  <script src="/js/project/blue/login.js"></script>
+	
 </head>
 <body class="edit">
 
 	<h3>Edit your Booking</h3>
-	<form id="newbooking" name="frmLogInsert" action="/project/blue/editReadBooking" method="get">
+	<form id="newbooking" name="frmLogInsert" action="/project/blue/editReadBooking" method="get" onsubmit="return checkId()">
 	<div  class = "container-fluid border border-info" align="center">
 	<input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" > 
 
