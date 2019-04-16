@@ -85,10 +85,11 @@ public class GreenController {
 		log.trace("get delete client");
 		try {
 			repoClient.deleteById(clientId);
+			model.addAttribute("messageRemoved", String.format("Well Done!", clientId));
 			model.addAttribute("clients", repoClient.findAll());
-
+			
 		} catch (Exception dive) {
-			String messageRemove = String.format("Client % d correctly removed", clientId);
+			String messageRemove = String.format("Can't remove client without ID!", clientId);
 			log.error(messageRemove);
 			model.addAttribute("messageRemove", messageRemove);
 
@@ -130,6 +131,7 @@ public class GreenController {
 		
 		
 		repoClient.save(client);
+		model.addAttribute("clientEdit", "Client Modified");
 		model.addAttribute("clients", repoClient.findAll());
 		return "/project/green/clients";
 	}
@@ -179,8 +181,9 @@ public class GreenController {
 		log.trace("delete hotel");
 		try {
 			repoHotel.deleteById(hotelId);
+			model.addAttribute("deleteHotel", String.format("Hotel is correctly removed", hotelId));
 		} catch (Exception ex) {
-			String messageRemove = String.format("Hotel is correctly removed", hotelId);
+			String messageRemove = String.format("Can't delete Hotel", hotelId);
 			log.error(messageRemove);
 			model.addAttribute("messageRemove", messageRemove);
 		}
