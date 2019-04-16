@@ -163,9 +163,9 @@ public class GreenController {
 		try {
 			
 			repoHotel.save(new GreenHotel(hotelName, city, roomCounter));
-			model.addAttribute("message", String.format("NewHotel %s %s %d correctly created", hotelName, city, roomCounter));
+			model.addAttribute("message", String.format("NewHotel is correctly created", hotelName, city, roomCounter));
 		} catch (Exception dive) {
-			String message = String.format("Can't create NewHotel %s %s %d", hotelName, city, roomCounter);
+			String message = String.format("Can't create NewHotel", hotelName, city, roomCounter);
 			log.error(message);
 			model.addAttribute("message", message);
 		}
@@ -176,13 +176,13 @@ public class GreenController {
 	@GetMapping("/project/green/removeHotels")
 	public String removeHotel(@RequestParam Long hotelId, Model model) {
 
-		log.trace("get delete hotel");
+		log.trace("delete hotel");
 		try {
 			repoHotel.deleteById(hotelId);
 		} catch (Exception ex) {
-			String messageRemove = String.format("Hotel %d correctly removed", hotelId);
+			String messageRemove = String.format("Hotel is correctly removed", hotelId);
 			log.error(messageRemove);
-			model.addAttribute("message", messageRemove);
+			model.addAttribute("messageRemove", messageRemove);
 		}
 		
 		model.addAttribute("hotels", repoHotel.findAll());
@@ -223,6 +223,7 @@ public class GreenController {
 		
 		
 		repoHotel.save(hotel);
+		model.addAttribute("editingDone", "HOTEL MODIFIED");
 		model.addAttribute("hotels", repoHotel.findAll());
 		return "/project/green/hotels";
 	}
