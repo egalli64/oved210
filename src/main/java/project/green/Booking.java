@@ -15,11 +15,11 @@ public class Booking {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BookingGen")
 	@SequenceGenerator(sequenceName = "green_bookings_seq", allocationSize = 1, name = "BookingGen")
-	private long bookingId;
-	private long hotelId;
-	private long clientId;
+	private Long bookingId;
+	private Long hotelId;
+	private Long clientId;
 	private Date availability;
-	private long payment;
+	private Long payment;
 
 	//new
 	public Booking(Long bookingId, Long hotelId, Long clientId, Date availability, Long payment) {
@@ -41,36 +41,47 @@ public class Booking {
 
 	public Booking() {
 	}
-	public long getBookingId() {
+
+	public Long getBookingId() {
 		return bookingId;
 	}
-	public void setBookingId(long bookingId) {
+
+	public void setBookingId(Long bookingId) {
 		this.bookingId = bookingId;
 	}
-	public long getHotelId() {
+
+	public Long getHotelId() {
 		return hotelId;
 	}
-	public void setHotelId(long hotelId) {
+
+	public void setHotelId(Long hotelId) {
 		this.hotelId = hotelId;
 	}
-	public long getClientId() {
+
+	public Long getClientId() {
 		return clientId;
 	}
-	public void setClientId(long clientId) {
+
+	public void setClientId(Long clientId) {
 		this.clientId = clientId;
 	}
+
 	public Date getAvailability() {
 		return availability;
 	}
+
 	public void setAvailability(Date availability) {
 		this.availability = availability;
 	}
-	public long getPayment() {
+
+	public Long getPayment() {
 		return payment;
 	}
-	public void setPayment(long payment) {
+
+	public void setPayment(Long payment) {
 		this.payment = payment;
 	}
+
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", availability="

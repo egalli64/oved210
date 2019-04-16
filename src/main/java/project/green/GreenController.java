@@ -250,28 +250,26 @@ public class GreenController {
 	
 	@GetMapping("/project/green/addBooking")
 	public String createbooking(
-			
-			@RequestParam Long hotelId,
-		    @RequestParam Long clientId,
-		    @RequestParam Date availability,
-		    @RequestParam Long payement,
-							
-							Model model) {
+
+			@RequestParam Long hotelId, @RequestParam Long clientId, @RequestParam Date availability,
+			@RequestParam Long payment,
+
+			Model model) {
 		log.trace("get new booking");
 
+		Booking booking = new Booking(hotelId, clientId, availability, payment);
+		repoBooking.save(booking);
 		
-			Booking booking = new Booking ( hotelId, clientId, availability, payement);
-			repoBooking.save(booking);
-			model.addAttribute("bookings", repoBooking.findAll());
+		model.addAttribute("addBookings", "New Booking inserted!");
+		model.addAttribute("bookings", repoBooking.findAll());
 
-			
-			String SaveNewBooking = String.format("booking insered");
-			model.addAttribute("SaveNewBooking", SaveNewBooking);
+		String SaveNewBooking = String.format("booking insered");
+		model.addAttribute("SaveNewBooking", SaveNewBooking);
 
-			return "/project/green/bookings";
+		return "/project/green/bookings";
 
 	}
-	
+
 }
 //	 @GetMapping("/project/green/clients")
 //	    public String orderGreenClients( //

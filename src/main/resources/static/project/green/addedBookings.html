@@ -28,14 +28,15 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="exampleInputPayment">ID hotel</label> <input
-					name="hotelId" type="text" class="form-control"
-					aria-describedby="hotelId" placeholder="id">
+				  <input name="hotelId" type="hidden" 
+				  class="form-control"
+					th:value="${hotelId}" >
+					
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPayment">ID client</label> <input
-					name="clientId" type="text" class="form-control"
-					aria-describedby="clientId" placeholder="id">
+				<input 
+					name="clientId" type="hidden" class="form-control"
+					th:value="clientId">
 			</div>
 
 			<button type="submit" class="btn btn-outline-success">Add
