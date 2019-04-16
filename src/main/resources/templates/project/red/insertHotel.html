@@ -10,39 +10,43 @@
 
 <body id="hotels">
 
-<div class="container-fluid">
+<div>
 
 	<h3 class="backgroundtitles">New Hotel</h3>
 <br>
-<div class="left">
+<div class="left container-fluid">
 	<a href="/project/red/hotels"><button type="button"
-			class="btn btn-info" aria-pressed="true">Go back</button> </a>
-	<br>
+			class="btn btn-info " aria-pressed="true">Go back</button> </a>
+	
 </div>
+<br>
 
 	<form id="new" name="frmLogInsert" action="/project/red/insertHotel"
-		method="get" class="left">
+		method="get" class="left container-fluid">
 
 
 		<div class="form-group">
 
 			<label>Hotel name:</label> <input name="hotelName" type="text"
 				class="form-control" placeholder="Enter Hotel Name"
-				th:unless="${errorHotel}"> 
+				th:unless="${errorHotel} or ${sameHotelCity}"> 
+				
 				
 				<input name="hotelName"	type="text" class="border border-danger form-control"
-				placeholder="Enter Hotel Name" th:if="${errorHotel}"> 
+				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity}" > 
 				<small class="error" th:if="${errorHotel}"> Name is missing!</small>
+				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
 		</div>
 
 		<div class="form-group">
 			<label>City:</label> <input name="city" type="text"
 				class="form-control" placeholder="Enter City"
-				th:unless="${errorCity}"> 
+				th:unless="${errorCity} or ${sameHotelCity}"> 
 				
 				<input name="city" type="text" class="border border-danger form-control" placeholder="Enter City"
-				th:if="${errorCity}" th:value="${city}"> 
-				<small class="error" th:if="${errorCity}"> City is missing!</small>
+				th:if="${errorCity} or ${sameHotelCity}" th:value="${city}"> 
+				<small class="error" th:if="${errorCity}"> City is missing!</small> 
+				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
 		</div>
 
 		<div class="form-group">

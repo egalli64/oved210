@@ -30,9 +30,9 @@ public class HotelController {
 			Model model) {
 		long rooms = 0;
 		try {
-		rooms = Long.parseLong(roomCounter);
-		
-		}catch (NumberFormatException nfe){
+			rooms = Long.parseLong(roomCounter);
+
+		} catch (NumberFormatException nfe) {
 			model.addAttribute("errorRooms", "***RoomCounter is missing!***");
 
 			return "/project/red/insertHotel";
@@ -50,16 +50,21 @@ public class HotelController {
 
 			return "/project/red/insertHotel";
 		}
+		try {
 			Hotel hotel = new Hotel(hotelName, city, rooms);
 			repo.save(hotel);
 			model.addAttribute("hotels", repo.findAll());
 
 			String hotelSaved = String.format("***New hotel inserted!***");
 			model.addAttribute("hotelSaved", hotelSaved);
+		} catch (Exception ex) {
+			model.addAttribute("sameHotelCity", "***This Hotel already exists in this city!***");
 
-			return "/project/red/hotels";
+			return "/project/red/insertHotel";
 		}
 
+		return "/project/red/hotels";
+	}
 
 	@GetMapping("/project/red/deleteHotel")
 	public String delete(@RequestParam Long hotelId,
