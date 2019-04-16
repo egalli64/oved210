@@ -14,11 +14,11 @@
 <body class = "edit">
 
 	<h3>Add Client</h3>
-	<form id= "newclient" name="frmLogInsert" action="/project/blue/clients/add">
+	<form id= "newclient" name="frmLogInsert" action="/project/blue/clients/add" >
 	<div  class = "container-fluid border border-info" align="center" onsubmit="return checkId()">
 
 
-	
+			<input type = "text" name = "mode" hidden="true" >
 			<label class=text-left>Name:  
 			<input type = "text" name = "name" class=text-left >
 			</label><br>

@@ -24,10 +24,10 @@
 
 
 
-	<form id= "regclient" name="frmRegInsert" action="/project/blue/registration.html">
+	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add" >
 	<div  class = "container-fluid border border-info" align="center" id = "contact">
 
-<br>
+<br>		<input type = "text" name = "mode" hidden="true" >
 			<label class= text-left>Full Name:  
 			<input type = "text" name = "name" class=text-left >
 			</label><br>
@@ -38,7 +38,7 @@
 			 <input type = "text" name = "phone" class=text-left>
 			</label>
 			<br />
-		<a href="/project/blue/registration">
+		<a href="/project/blue/clients">
 		<button type="submit" class = "text-center" id = "register">
 			<b>Done!</b>
 		</button></a>

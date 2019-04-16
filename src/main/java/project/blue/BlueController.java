@@ -58,6 +58,7 @@ public class BlueController {
 			@RequestParam String name, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
+			@RequestParam Long mode,
 			Model model) {
 		log.trace("get all clients");
 		try {
@@ -76,7 +77,11 @@ public class BlueController {
 			String duplicatedmail = String.format("--Mail already existing!--");
 			model.addAttribute("duplicatedmail", duplicatedmail);
 		}
-		return "project/blue/clients";
+		if(mode== 0 ) {
+		return "/project/blue/clients";
+		}else {
+			return "/project/blue/clients";  // TODO: da modificare 
+		}
 	}
 
 	// controller remove clients
@@ -143,32 +148,7 @@ public class BlueController {
 	}
 	
 	
-	//controller per cliente esterno
-	@GetMapping("/project/blue/registration")
-	public String registerClient( //
-			@RequestParam String name, //
-			@RequestParam String email, //
-			@RequestParam Long phone, //
-			Model model) {
-		log.trace("get all clients");
-		try {
-			BlueClient client = new BlueClient();
-
-			client.setClientName(name);
-			client.setEmail(email);
-			client.setPhone(phone);
-
-			repClient.save(client);
-			model.addAttribute("clients", repClient.findAll());
-
-			String SaveClient = String.format("--New client inserted!--");
-			model.addAttribute("SaveClient", SaveClient);
-		} catch (Exception ex) {
-			String duplicatedmail = String.format("--Mail already existing!--");
-			model.addAttribute("duplicatedmail", duplicatedmail);
-		}
-		return "project/blue/clients";
-	}
+	
 
 	
 	
