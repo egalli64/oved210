@@ -276,8 +276,8 @@ public class GreenController {
 		log.trace("delete booking");
 		try {
 			repoBooking.deleteById(bookingId);
-			model.addAttribute("deleteBooking", String.format("deleteBooking", bookingId));
-			model.addAttribute("bookings", repoBooking.findAll());
+			model.addAttribute("deleteBooking", "Booking Deleted");
+			//model.addAttribute("bookings", repoBooking.findAll());
 
 		} catch (Exception ex) {
 			String removeBooking = String.format("Can't delete Booking", bookingId);
