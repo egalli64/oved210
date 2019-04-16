@@ -48,8 +48,9 @@
 			<th>Booking Id</th>
 			<th>Hotel Id</th>
 			<th>Client Id</th>
-			<th>Availability</th>
-			<th>Payment</th>
+			<th>Check In</th>
+			<th>Check Out</th>
+			<th>Rooms</th>
 
 
 
@@ -60,7 +61,7 @@
 			<td th:text="${booking.clientId}"></td>
 			<td th:text="${booking.checkIn}"></td>
 			<td th:text="${booking.checkOut}"></td>
-			<td th:text="${booking.priceRoom}"></td>
+			<td th:text="${booking.room}"></td>
 			<td><a href="/project/blue/bookings/remove.html"
 				th:href="@{/project/blue/bookings/remove(id=${booking.bookingId})}"><button
 						style='font-size: 24px'>
