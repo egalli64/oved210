@@ -28,9 +28,10 @@
 				class="form-control" placeholder="Enter Hotel Id"> 
 												
          <input name="hotelId" type="number" class="border border-danger form-control " 
-         	placeholder="Enter Name and Surname" th:if = "${errorHotel}" th:value="${hotelId}">  
+         	placeholder="Enter Name and Surname" th:if = "${errorHotel} or ${unexistingdId}" th:value="${hotelId}">  
        	 <small class= "error" th:if = "${errorHotel}"> Hotel Id is missing!</small>
-			</div>
+       	 <small class= "error" th:if = "${unexistingdId}"> This Hotel Id doesn't exist!</small>
+       	 </div>
 
 		<div class="form-group">
 			<label>Client Name:</label> <input name="clientName" type="text"

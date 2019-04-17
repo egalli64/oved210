@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class BookingController {
 	private static final Logger log = LoggerFactory.getLogger(BookingController.class);
-
+	
+	@Autowired
+	HotelRepository repo;
+	
 	@Autowired
 	BookingRepository brepo;
 	
@@ -29,28 +32,32 @@ public class BookingController {
 	}
 
 	@GetMapping("/project/red/insertBooking")
-	public String create(@RequestParam Hotel hotel, @RequestParam Client client, @RequestParam Date checkIn,
-							@RequestParam Date checkOut, @RequestParam String payment,
-							
+	public String create(@RequestParam long hotelId,
+						 @RequestParam long clientId, 
+						 @RequestParam Date checkIn,
+						 @RequestParam Date checkOut, 
+						 @RequestParam String payment,
 							Model model) {
-
-		log.trace("get new booking");
-
-//		if (hotel.hotelId) == null) {
-//			model.addAttribute("errorHotel", "***Hotel is missing!***");
-//
-//			return "/project/red/insertBooking";
-//		}
-
-		
-			Booking booking = new Booking (hotel, client, checkIn, checkOut, payment);
+		Optional<Hotel> hotel = repo.findById(hotelId);
+		Optional<Client> client = crepo.findById(clientId);
+		if (client.isPresent() && hotel.isPresent()) {
+			Client cur = client.get();
+			Hotel cus = hotel.get();
+			Booking booking = new Booking (cus, cur, checkIn, checkOut, payment);
+			log.trace("get new booking");
 			brepo.save(booking);
 			model.addAttribute("bookings", brepo.findAll());
 
 			model.addAttribute("bookingSaved", "***Booking saved!***");
 
 			return "/project/red/bookings";
+			
+		} else {
+			
+			model.addAttribute("unexistingdId", "***Unexisting Id!***");
+		}
 
+		return "/project/red/insertBooking";
 	}
 	
 	@GetMapping("/project/red/deleteBooking")
