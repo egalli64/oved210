@@ -61,6 +61,10 @@ public class BlueController {
 	}
 
 	// controller add clients
+	@GetMapping("/project/blue/city/view")
+	public String viewCity(Model model) {
+		return "/project/blue/hotelDescription";  // TODO: da modificare 
+	}
 
 	@GetMapping("/project/blue/clients/add")
 	public String addClient( //
@@ -87,7 +91,7 @@ public class BlueController {
 		if(mode== 0 ) {
 		return "/project/blue/clients";
 		}else {
-			return "/project/blue/hotelDescription";  // TODO: da modificare 
+			return viewCity(model);
 		}
 	}
 

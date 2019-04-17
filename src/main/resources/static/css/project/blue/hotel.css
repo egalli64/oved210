@@ -27,6 +27,12 @@
 	background-size: 110%;
 }
 
+#napoliBody{
+background-image: url('/img/project/blue/hotelNapoli/napoliSfondo.jpg');
+	color: #000040;
+	background-size: 110%;	
+}
+
 h1 {
 	text-align: center;
 	color: #000000;
@@ -45,7 +51,7 @@ p{
 
 #addbooking{
 	background-color:white;
-	opacity:0.6;
+	opacity:0.8;
 	margin:auto;
 	width:40%;
 	border:3px solid #e1e1e1;
