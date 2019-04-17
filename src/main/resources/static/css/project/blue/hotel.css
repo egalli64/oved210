@@ -1,8 +1,8 @@
 #romaBody {
-	background-image: url('/img/project/blue/hotelRoma/HotelRoma1.jpg');
+	background-image: url('/img/project/blue/hotelRoma/romaSfondo.jpg');
 	
 	color: #000040;
-	background-size: 95%;
+	background-size: 97%;
 }
 
 
@@ -13,3 +13,12 @@ h1 {
 	font-weight: bold;
 	background-color: #ffffff;
 }
+
+p{ 
+	font-style: italic;
+	font-weight: bold;
+	color:black;
+	background-color:white;
+	opacity:0.6;
+}
+
