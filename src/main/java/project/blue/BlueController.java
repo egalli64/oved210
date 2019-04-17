@@ -34,8 +34,16 @@ public class BlueController {
 			@RequestParam(name = "password") String password, //
 			Model model) {
 		
+	
+		
 		if (user.equals(admin) && password.equals(adminPassword)) {
-			return "project/blue/response";
+			
+
+			model.addAttribute("user", admin);
+			model.addAttribute("password", adminPassword);
+			
+		 return "project/blue/response";
+
 		}
 		return "project/blue/reject";
 	}
