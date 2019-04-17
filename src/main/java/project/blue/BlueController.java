@@ -60,12 +60,12 @@ public class BlueController {
 		return "/project/blue/clients";
 	}
 
-	// controller add clients
+	// controller per tornare hotelDescription
 	@GetMapping("/project/blue/city/view")
 	public String viewCity(Model model) {
 		return "/project/blue/hotelDescription";  // TODO: da modificare 
 	}
-
+	// controller add clients
 	@GetMapping("/project/blue/clients/add")
 	public String addClient( //
 			@RequestParam String name, //
