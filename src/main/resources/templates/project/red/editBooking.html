@@ -10,10 +10,15 @@
 <body id="bookings">
 
 <h3 class="backgroundtitles">Edit Booking</h3>
-
-<br>
-
-	<form id="new" name="frmLogInsert" action="/project/red/saveBooking" method="get">
+<!--  DA RIVEDERE -->
+	<div class = "container-fluid left">
+	<a href="/project/red/bookings"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button>
+	</a>
+	<br>
+	</div>
+	<br>
+	
+	<form class="left" id="new" name="frmLogInsert" action="/project/red/saveBooking" method="get">
 		
      <input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" >
 
@@ -46,20 +51,18 @@
 			<input type="radio" name="lang"
 				value="" />Credit card<img src="/img/project/red/carte.png"
 				width="30" height="35"></img><br> <input type="radio"
-				name="lang" value="" />Paypal<img src="/img/project/red/paypal.png"
+				name="lang" value="" />Pay pal<img src="/img/project/red/paypal.png"
 				width="30" height="35"></img><br> <input type="radio"
 				name="lang" value="" />Cash<img src="/img/project/red/cash.png"
 				width="30" height="35"></img><br>	
 		</div>
 		<div>
-		<button type="submit" class="btn btn-primary">Save</button>
+		<button type="submit" class="btn btn-primary">SAVE</button>
 		</div>
 		
 		<br>
 	</form>
 	
-	<hr>
-	<a href="/project/red/bookings"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> </a>
 
 </body>
 </html>
