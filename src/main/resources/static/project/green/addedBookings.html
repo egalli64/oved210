@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>ADDEDBOOKINGS</title>
@@ -13,34 +13,48 @@
 	<div class="container-fluid">
 		<br />
 		<form name="frmLog" action="/project/green/addBooking" method="get">
-
-
 			<div class="form-group">
-				<label for="exampleInputAvailability">Availability</label> <input
-					name="availability" type="text" class="form-control"
-					placeholder="Availability">
+				<label for="exampleInputCheckIn">Check-In</label> <input
+					name="checkIn" type="date" class="form-control"
+					placeholder="CheckIn">
+					
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputCheckOut">Check-Out</label> <input
+					name="checkOut" type="date" class="form-control"
+					placeholder="CheckOut">
 			</div>
 
 			<div class="form-group">
-				<label for="exampleInputPayment">Payment</label> <input
-					name="payment" type="text" class="form-control"
-					aria-describedby="payment" placeholder="Payment">
+				<label for="exampleInputPayment">Payment: </label> <br />
+				<input name="payment" type="checkbox"> Credit Card
+					<br />
+					<input name="payment" type="checkbox"> Debit Card
+					<br />
+					<input name="payment" type="checkbox"> Paypal
+					<br /> 
 			</div>
 
-	<!-- 	<div class="form-group">
-				<label for="exampleInputHotel">Hotel</label> <input
-					name="hotel" type="text" class="form-control"
-					aria-describedby="hotel" placeholder="hotel">
-			</div>   -->	
-
 			<div class="form-group">
+		
 				<input name="hotelId" type="hidden" class="form-control"
-					th:value="${hotelId}">
-
-			</div>
+					>
+					</div>
 			<div class="form-group">
-				<input name="clientId" type="hidden" class="form-control"
-					th:value="clientId">
+			<label>Client Name: <select name="clientId">
+			<option th:each="client:${Booking}" th:value="${client.clientId}"
+			th:text="${client.clientId}"></option>
+			</select></label>
+			</div>
+
+			<div class="form-group">
+			<label>Hotel Name</label>
+				<input type="text" class="form-control">
+			</div>
+			
+			<div class="form-group">
+				<input name="clientId" type="hidden" class="form-control">
 			</div>
 
 			<button type="submit" class="btn btn-outline-success">Add

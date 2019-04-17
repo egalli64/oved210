@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface GreenClientsRepository extends CrudRepository<GreenClients, Long> {
+public interface GreenClientsRepository extends CrudRepository<GreenClient, Long> {
 }
 
 

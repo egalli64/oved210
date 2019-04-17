@@ -72,7 +72,7 @@ public class GreenController {
 
 		log.trace("get all clients");
 		try {
-			repoClient.save(new GreenClients(clientName, email, phone));
+			repoClient.save(new GreenClient(clientName, email, phone));
 			model.addAttribute("message", String.format("NewClient %s %s correctly created", clientName, email));
 		} catch (Exception dive) {
 			String message = String.format("Can't create NewClient %s %s", clientName, email);
@@ -108,9 +108,9 @@ public class GreenController {
 		
 		log.trace("get edit client");
 		
-		 Optional<GreenClients> opzione = repoClient.findById(clientId);
+		 Optional<GreenClient> opzione = repoClient.findById(clientId);
 		 if (opzione.isPresent()) {
-			 GreenClients client = opzione.get();
+			 GreenClient client = opzione.get();
 			 
 			 model.addAttribute("clientId", client.getClientId());
 			 model.addAttribute("clientName", client.getClientName());
@@ -132,7 +132,7 @@ public class GreenController {
 	
 		log.trace("save editing client");
 		
-		GreenClients client = new GreenClients(clientId, clientName, email, phone);
+		GreenClient client = new GreenClient(clientId, clientName, email, phone);
 		
 		
 		repoClient.save(client);
@@ -251,21 +251,34 @@ public class GreenController {
 	@GetMapping("/project/green/addBooking")
 	public String createbooking(
 
-			@RequestParam Long hotelId, @RequestParam Long clientId, @RequestParam Date availability,
+		
+			@RequestParam Long hotelId,
+			@RequestParam Long clientId, 
+			@RequestParam Date checkIn, 
+			@RequestParam Date checkOut,
 			@RequestParam Long payment,
 
 			Model model) {
 		log.trace("get new booking");
 
-		Booking booking = new Booking(hotelId, clientId, availability, payment);
-		repoBooking.save(booking);
+		Optional<GreenHotel> optHotel = repoHotel.findById(hotelId);
+		Optional<GreenClient> optClient = repoClient.findById(clientId);
 		
-		model.addAttribute("addBookings", "New Booking inserted!");
-		model.addAttribute("bookings", repoBooking.findAll());
+		if(optHotel.isPresent() && optClient.isPresent()) {
+			GreenHotel hotel = optHotel.get();
+			GreenClient client = optClient.get();
+			
+			Booking booking = new Booking(hotel, client, checkIn, checkOut, payment);
+			repoBooking.save(booking);
+			
+			model.addAttribute("addBookings", "New Booking inserted!");
+			model.addAttribute("bookings", repoBooking.findAll());
 
-		String SaveNewBooking = String.format("booking insered");
-		model.addAttribute("SaveNewBooking", SaveNewBooking);
+			String SaveNewBooking = String.format("booking insered");
+			model.addAttribute("SaveNewBooking", SaveNewBooking);			
+		}
 
+		// TODO: what if missing hotel or client?
 		return "/project/green/bookings";
 
 	}

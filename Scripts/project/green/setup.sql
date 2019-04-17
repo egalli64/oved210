@@ -151,40 +151,41 @@ create table green_bookings (
 booking_id number (12) primary key,
 hotel_id number (6) constraint green_bookings_hotel_id_fk references green_hotels(hotel_id) on delete cascade,
 client_id number (4) constraint green_bookings_client_id_fk REFERENCES green_clients(client_id) on delete cascade,
-availability date,
+check_in date,
+check_out date,
 payment number (5, 2) 
 );
 
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 1, 1,'01-apr-2019', 70.50);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out,payment)
+values (green_bookings_seq.nextval, 1, 1,'07-gen-2019','10-gen-2019', 70.50);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 2, 1, '17-giu-2019', 92.70);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 2, 1, '09-gen-2019','15-gen-2019', 92.70);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 3, 2, '14-ago-2019', 135.20);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 3, 2, '04-feb-2019','15-feb-2019', 135.20);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 4, 3, '30-set-2019', 99.10);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 4, 3, '15-mar-2019','20-mar-2019', 99.10);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 5, 4, '05-set-2019', 81.68);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 5, 4, '25-apr-2019','30-apr-2019', 81.68);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 6, 5, '12-ott-2019', 60.00);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 6, 5, '10-mag-2019','15-mag-2019', 60.00);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 5, 6, '01-mar-2019', 70.50);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 5, 6, '09-giu-2019','15-giu-2019', 70.50);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 4, 7, '01-mar-2019', 70.50);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 4, 7, '15-giu-2019','20-giu-2019', 70.50);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 3, 8, '01-mar-2019', 70.50);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 3, 8, '16-giu-2019','18-giu-2019', 70.50);
 
-insert into green_bookings(booking_id, client_id, hotel_id, availability, payment)
-values (green_bookings_seq.nextval, 2, 9, '01-mar-2019', 70.50);
+insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
+values (green_bookings_seq.nextval, 2, 9, '27-lug-2019','30-lug-2019', 70.50);
 
 
 

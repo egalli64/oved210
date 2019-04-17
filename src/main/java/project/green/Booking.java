@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -16,30 +18,41 @@ public class Booking {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BookingGen")
 	@SequenceGenerator(sequenceName = "green_bookings_seq", allocationSize = 1, name = "BookingGen")
 	private Long bookingId;
-	private Long hotelId;
-	private Long clientId;
-	private Date availability;
+	
+	@ManyToOne
+	@JoinColumn (name="HOTEL_ID")
+	private GreenHotel hotel;
+
+	@ManyToOne
+	@JoinColumn(name="CLIENT_ID")
+	private GreenClient client;
+	
+	private Date checkIn;
+	private Date checkOut;
 	private Long payment;
 
 	//new
-	public Booking(Long bookingId, Long hotelId, Long clientId, Date availability, Long payment) {
+	public Booking(Long bookingId, GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, Long payment) {
 		this.bookingId = bookingId;
-		this.hotelId = hotelId;
-		this.clientId =clientId;
-		this.availability = availability;
+		this.hotel = hotel;
+		this.client =client;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
 		this.payment=payment;
 	}
 
 	// edit
-	public Booking(Long hotelId, Long clientId, Date availability, Long payment) {
-		this.hotelId = hotelId;
-		this.clientId =clientId;
-		this.availability = availability;
+	public Booking(GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, Long payment) {
+		this.hotel = hotel;
+		this.client = client;
+		this.checkIn = checkIn;
+		this.checkOut = checkOut;
 		this.payment=payment;
 	}
 
 
 	public Booking() {
+		
 	}
 
 	public Long getBookingId() {
@@ -50,28 +63,20 @@ public class Booking {
 		this.bookingId = bookingId;
 	}
 
-	public Long getHotelId() {
-		return hotelId;
+	public Date getCheckIn() {
+		return checkIn;
 	}
 
-	public void setHotelId(Long hotelId) {
-		this.hotelId = hotelId;
+	public void setCheckIn(Date checkIn) {
+		this.checkIn = checkIn;
 	}
 
-	public Long getClientId() {
-		return clientId;
+	public Date getCheckOut() {
+		return checkOut;
 	}
 
-	public void setClientId(Long clientId) {
-		this.clientId = clientId;
-	}
-
-	public Date getAvailability() {
-		return availability;
-	}
-
-	public void setAvailability(Date availability) {
-		this.availability = availability;
+	public void setCheckOut(Date checkOut) {
+		this.checkOut = checkOut;
 	}
 
 	public Long getPayment() {
@@ -82,9 +87,25 @@ public class Booking {
 		this.payment = payment;
 	}
 
+	public GreenHotel getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(GreenHotel hotel) {
+		this.hotel = hotel;
+	}
+
+	public GreenClient getClient() {
+		return client;
+	}
+
+	public void setClient(GreenClient client) {
+		this.client = client;
+	}
+
 	@Override
 	public String toString() {
-		return "Booking [bookingId=" + bookingId + ", hotelId=" + hotelId + ", clientId=" + clientId + ", availability="
-				+ availability + ", payment=" + payment + "]";
+		return "Booking [bookingId=" + bookingId + ", hotel=" + hotel + ", client=" + client + ", checkIn=" + checkIn
+				+ ", checkOut=" + checkOut + ", payment=" + payment + "]";
 	}
 }

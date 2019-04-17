@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="GREEN_CLIENTS")
-public class GreenClients { 
+public class GreenClient { 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Generate")
@@ -21,14 +21,14 @@ public class GreenClients {
 	private String email;
 	private Long phone;
 	
-	public GreenClients(long clientId, String clientName, String email, Long phone) {
+	public GreenClient(long clientId, String clientName, String email, Long phone) {
 		this.clientId = clientId;
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;
 	}
 	
-	public GreenClients(String clientName, String email, Long phone) {
+	public GreenClient(String clientName, String email, Long phone) {
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;		
@@ -36,7 +36,7 @@ public class GreenClients {
 	
 
 	
-	public GreenClients() {
+	public GreenClient() {
 		
 	}
 
