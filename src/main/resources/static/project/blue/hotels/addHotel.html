@@ -14,8 +14,14 @@
 	
 <body class="edit">
 
+<div align="left">
+		<a href="/project/blue/hotels"><button class="text-center" id="bck">
+				<b>Back to Hotels list</b>
+			</button> </a>
+			</div>
+
 	<h3>Add Hotel</h3>
-	<form id= "addhotel"  name="frmLogInsert" action="/project/blue/hotels/addHotel" onsubmit="return checkId()">
+	<form id= "addhotel"  name="frmLogInsert" action="/project/blue/hotels/addHotel" onsubmit="return checkRooms()">
 	<div  class = "container-fluid border border-info" align= "center">	
 			<label class=text-left>Hotel Name:  
 			<input type = "text" name = "hotelName" class=text-left >
@@ -24,7 +30,7 @@
 			<input type = "text" name = "city" class=text-left>
 			</label><br>
 			<label class=text-left>Hotel Rooms:  
-			 <input type = "text" name = "roomCounter" class=text-left>
+			 <input type = "text" name = "roomCounter" id = "roomCounter" class=text-left>
 			</label>
 			<br />
 		
