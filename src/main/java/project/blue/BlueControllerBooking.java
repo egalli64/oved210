@@ -59,26 +59,13 @@ public class BlueControllerBooking {
 			model.addAttribute("bookings", repBooking.findAll());
 			model.addAttribute("SaveBooking", "--New booking inserted!--");
 	
-	if (mode==0) {
-		return "/project/blue/confirm ";
-	}
-	if (mode==1) {
-		return "/project/blue/confirm ";
-	}
-	if (mode==2) {
-		return "/project/blue/confirm ";
-	}
-	if (mode==3) {
-		return "/project/blue/confirm ";
-	}
-	if (mode==4) {
-		return "/project/blue/confirm ";
-	}
-	if (mode==5) {
-		return "/project/blue/bookings";
+	switch (mode) {
+	case 5:
+		return "/project/blue/addBooking";
+	default:
+		return "/project/blue/confirm";
 	}
 
-	return "/project/blue/bookings";
 }
 
 	//controller remove bookings
