@@ -46,11 +46,9 @@ public class BookingController {
 						 @RequestParam Date checkOut, 
 						 @RequestParam String payment,
 							Model model) {
+		
 		Optional<Hotel> hotel = repo.findById(hotelId);
 		Optional<Client> client = crepo.findById(clientId);
-		
-		model.addAttribute("bookings", brepo.findAll());
-
 		
 		if (client.isPresent() && hotel.isPresent()) {
 			Client cur = client.get();
@@ -58,11 +56,13 @@ public class BookingController {
 			Booking booking = new Booking (cus, cur, checkIn, checkOut, payment);
 			log.trace("get new booking");
 			brepo.save(booking);
+			model.addAttribute("bookings", brepo.findAll());
 			
 			model.addAttribute("bookingSaved", "***Booking saved!***");
 			return "/project/red/bookings";
 		}
-			
+
+		model.addAttribute("bookings", brepo.findAll());
 		model.addAttribute("unexistingdId", "***Unexisting Id!***");
 		return "/project/red/insertBooking";
 	}
@@ -96,15 +96,18 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/editBooking")
-	public String edit(@RequestParam long bookingId, Model model) {
+	public String edit(@RequestParam long bookingId,
+			Model model) {
 
 		log.trace("edit booking");
 
 		Optional<Booking> opt = brepo.findById(bookingId);
+	
 		if (opt.isPresent()) {
 			Booking booking = opt.get();
-			
+				
 			model.addAttribute("bookingId", booking.getBookingId());
+			model.addAttribute("hotelId", booking.getHotel());
 			model.addAttribute("clientId", booking.getClient());
 			model.addAttribute("checkIn", booking.getCheckIn());
 			model.addAttribute("checkOut", booking.getCheckOut());
