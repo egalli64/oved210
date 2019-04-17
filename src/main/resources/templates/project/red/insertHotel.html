@@ -29,13 +29,14 @@
 
 			<label>Hotel name:</label> <input name="hotelName" type="text"
 				class="form-control" placeholder="Enter Hotel Name"
-				th:unless="${errorHotel} or ${sameHotelCity}"> 
+				th:unless="${errorHotel} or ${sameHotelCity} or ${message}"> 
 				
 				
 				<input name="hotelName"	type="text" class="border border-danger form-control"
-				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity}" > 
+				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity} or ${message}" > 
 				<small class="error" th:if="${errorHotel}"> Name is missing!</small>
 				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
+				<small class="error" th:if="${message}"> This Hotel already exists in this city!</small>
 		</div>
 
 		<div class="form-group">
