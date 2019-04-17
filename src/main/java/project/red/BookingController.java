@@ -40,22 +40,21 @@ public class BookingController {
 							Model model) {
 		Optional<Hotel> hotel = repo.findById(hotelId);
 		Optional<Client> client = crepo.findById(clientId);
+		
+		model.addAttribute("bookings", brepo.findAll());
+		
 		if (client.isPresent() && hotel.isPresent()) {
 			Client cur = client.get();
 			Hotel cus = hotel.get();
 			Booking booking = new Booking (cus, cur, checkIn, checkOut, payment);
 			log.trace("get new booking");
 			brepo.save(booking);
-			model.addAttribute("bookings", brepo.findAll());
-
-			model.addAttribute("bookingSaved", "***Booking saved!***");
-
-			return "/project/red/bookings";
 			
+			model.addAttribute("bookingSaved", "***Booking saved!***");
+			return "/project/red/bookings";
 		}
 			
-			model.addAttribute("unexistingdId", "***Unexisting Id!***");
-
+		model.addAttribute("unexistingdId", "***Unexisting Id!***");
 		return "/project/red/insertBooking";
 	}
 	

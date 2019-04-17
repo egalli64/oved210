@@ -24,8 +24,13 @@
 
 		<div class="form-group">
 
-			<label>Hotel Id:</label> <input name="hotelId" type="number"
+			<label>Hotel:</label> <input name="hotelId" type="number"
 				class="form-control" placeholder="Enter Hotel Id"> 
+		
+		<select>
+		<option th:each="booking:${bookings}" th:value="${booking.hotel.hotelId}"
+			th:text="${booking.hotel.hotelName}"></option>
+		</select>
 											
          
          <input name="hotelId" type="number" class="border border-danger form-control " 
