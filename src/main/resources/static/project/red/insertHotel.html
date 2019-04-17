@@ -20,13 +20,13 @@
 	<br>
 
 
-	<form id="new" name="frmLogInsert" action="/project/red/hotels/insert"
+	<form id="new" name="frmLogInsert" action="/project/red/insertHotel"
 		method="get" class="container-fluid left" onsubmit = "return capitalize()">
 
 
 		<div class="form-group">
 
-			<label>Hotel name:</label> <input name="name" type="text"
+			<label>Hotel name:</label> <input name="hotelName" type="text"
 				class="form-control" placeholder="Enter Hotel Name"> 
 				</div>
 
@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="form-group">
-			<label>Rooms: </label> <input min="2" max= "100" name="room" type="number"
+			<label>Rooms: </label> <input min="2" max= "100" name="roomCounter" type="number"
 				class="form-control" placeholder="Enter Room Number">
 		</div>
 		<div class="container-fluid left">
