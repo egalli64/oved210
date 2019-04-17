@@ -5,34 +5,53 @@
 <title>Welcome</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/project/blue/blue.css" />
 </head>
 <body>
+
+
 	<h1 th:text="'Hello, ' + ${user} + '!'"></h1>
 	
+	<a href="/project/blue/request.html"><button>
+			<i style='font-size: 48px; color: black' class='fas'>&#xf015;</i>
+		</button> </a>
+
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-4">
-				<h4 class= "text-center"></h4>
+				<h4 class="text-center"></h4>
 			</div>
 			<div class="col-4">
-				<h4 class= "text-center"></h4>
+				<h4 class="text-center"></h4>
 			</div>
 			<div class="col-4">
-				<h4 class= "text-center"></h4>
+				<h4 class="text-center"></h4>
 			</div>
 		</div>
 	</div>
-	
-	
-	
+
+
+
 	<table class="table table-bordered table-striped table-light">
 		<tr>
-			<th><h4 class= "text-center">A list of: <a href="/project/blue/clients/all">Clients</a></h4></th>
-			<th><h4 class= "text-center">A list of: <a href="/project/blue/hotels">Hotels</a></h4></th>
-			<th><h4 class= "text-center">A list of: <a href="/project/blue/bookings">Bookings</a></h4></th>
-			
+			<th><h4 class="text-center">
+					A list of: <a href="/project/blue/clients/all">Clients</a>
+				</h4></th>
+			<th><h4 class="text-center">
+					A list of: <a href="/project/blue/hotels">Hotels</a>
+				</h4></th>
+			<th><h4 class="text-center">
+					A list of: <a href="/project/blue/bookings">Bookings</a>
+				</h4></th>
+
 		</tr>
-		</table>
+	</table>
+
+	
 </body>
 </html>

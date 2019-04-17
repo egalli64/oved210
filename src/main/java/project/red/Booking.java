@@ -60,6 +60,8 @@ public class Booking {
 		this.payment = payment;
 
 	}
+	
+
 
 	public Booking() {
 

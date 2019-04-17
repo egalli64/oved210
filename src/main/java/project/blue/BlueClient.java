@@ -19,6 +19,7 @@ public class BlueClient {
 	private String email;
 	private Long phone;
 	
+	
 	public BlueClient(Long clientId, String clientName, String email, Long phone) {
 		this.clientId = clientId;
 		this.clientName = clientName;
@@ -26,10 +27,11 @@ public class BlueClient {
 		this.phone = phone;		
 	}
 	
-	public BlueClient(String clientName, String email, Long phone) {
+	public BlueClient(String clientName, String email, Long phone, Long mode) {
 		this.clientName = clientName;
 		this.email = email;
 		this.phone = phone;
+		
 	}
 	protected BlueClient() {
 		
@@ -72,6 +74,8 @@ public class BlueClient {
 	public void setPhone(Long phone) {
 		this.phone = phone;
 	}
+
+	
 
 	
 }
