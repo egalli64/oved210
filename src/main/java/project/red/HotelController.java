@@ -146,8 +146,9 @@ public class HotelController {
 			@RequestParam long room,
 			Model model){  
 	    String hotelName = capitalize(name);
+	    String hotelCity = capitalize (city);
 	    
-	    Hotel hotel = new Hotel(hotelName, city, room);
+	    Hotel hotel = new Hotel(hotelName, hotelCity, room);
 	    repo.save(hotel);
 	    model.addAttribute("hotels", repo.findAll());
 	    return "/project/red/hotels";  
