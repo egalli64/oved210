@@ -21,6 +21,11 @@
 	background-size: 120%;
 	
 }
+#milanoBody{
+	background-image: url('/img/project/blue/hotelMilano/milanoSfondo.jpg');
+	color: #000040;
+	background-size: 110%;
+}
 
 h1 {
 	text-align: center;
