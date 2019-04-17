@@ -1,0 +1,15 @@
+#romaBody {
+	background-image: url('/img/project/blue/hotelRoma/HotelRoma1.jpg');
+	
+	color: #000040;
+	background-size: 95%;
+}
+
+
+h1 {
+	text-align: center;
+	color: #000000;
+	font-style: italic;
+	font-weight: bold;
+	background-color: #ffffff;
+}
