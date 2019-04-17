@@ -30,6 +30,14 @@ public class BookingController {
 		model.addAttribute("bookings", brepo.findAll());
 		return "/project/red/bookings";
 	}
+	
+	@GetMapping("/project/red/prepareBooking")
+	public String prepare(Model model) {
+		model.addAttribute("bookings", brepo.findAll());
+		model.addAttribute("hotels", repo.findAll());
+		model.addAttribute("clients", crepo.findAll());
+	return "/project/red/insertBooking";
+}
 
 	@GetMapping("/project/red/insertBooking")
 	public String create(@RequestParam long hotelId,
@@ -42,6 +50,7 @@ public class BookingController {
 		Optional<Client> client = crepo.findById(clientId);
 		
 		model.addAttribute("bookings", brepo.findAll());
+
 		
 		if (client.isPresent() && hotel.isPresent()) {
 			Client cur = client.get();
