@@ -4,11 +4,22 @@
 	color: #000040;
 	background-size: 97%;
 }
+
 #veneziaBody {
 	background-image: url('/img/project/blue/hotelVenezia/VeneziaSfondo.jpg');
 	
 	color: #000040;
 	background-size: 97%;
+}
+
+
+#firenzeBody{
+	
+	background-image: url('/img/project/blue/hotelFirenze/FirenzePaesaggio2.jpg');
+	
+	color: #000040;
+	background-size: 97%;
+	
 }
 
 h1 {
