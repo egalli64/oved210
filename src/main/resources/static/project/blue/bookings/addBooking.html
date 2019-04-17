@@ -5,49 +5,71 @@
 <title>Bookings</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	
-	<link rel="stylesheet" type="text/css"
-	 href="/css/project/blue/bluestd.css" /> 
-	 <script src="/js/project/blue/login.js"></script>
-	 
-	</head>
-	
-<body class = "edit">
-	<h3>Add Booking</h3>
-	<form id= "addbooking" name="frmLogInsert" action="/project/blue/bookings/addBooking" onsubmit="return checkId()" method="get">
-	<div class = "container-fluid border border-info" align= "center">	
-	
-			
-			
-			<label class=text-left>Client Id:  
-			 <input type = "number" name = "clientId" class=text-left>
-			</label>
-			<label class=text-left> Hotel Id:  
-			 <input type = "number" name = "hotelId" class=text-left>
-			</label>
 
-			<label class=text-left>Check-In:  
-			 <input type = "date" name = "checkIn" class=text-left>
-			</label>
-			<label class=text-left>Check-Out:  
-			 <input type = "date" name = "checkOut" class=text-left>
-			</label>
-			<label class=text-left> Rooms:  
-			 <input type = "number" name = "room" id="room" class=text-left>
-			</label>
+<link rel="stylesheet" type="text/css"
+	href="/css/project/blue/bluestd.css" />
+<script src="/js/project/blue/login.js"></script>
+
+</head>
+
+<body class="edit">
+	<div align="left">
+		<a href="/project/blue/bookings"><button class="text-center"
+				id="bck">
+				<b>Back to Bookings list</b>
+			</button> </a>
+	</div>
+	<h3>Add Booking</h3>
+	<form id="addbooking" name="frmLogInsert"
+		action="/project/blue/bookings/addBooking"
+		onsubmit="return checkBooking()" method="get">
+		<div class="container-fluid border border-info" align="center">
+
+
+			<!--  
+	<p>
+			Select Client Id: <br /> <select name="clientId" class = text-left>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+			</select>
+		</p>
 			
-			<br />
-		
-		<button type = "submit" class = "text-center" id = "addBooking">
-			 <b>Add this new booking!</b>
-		</button> 
+				<p>
+			Select Hotel Id: <br /> <select name="hotelId" class = text-left>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3 </option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			
+			</select>
+		</p> -->
+
+			<label class=text-left>Client Id: <input type="number"
+				name="clientId" id=clientId class=text-left>
+			</label> <label class=text-left> Hotel Id: <input type="number"
+				name="hotelId" id=hotelId class=text-left>
+			</label> <label class=text-left>Check-In: <input type="date"
+				name="checkIn" id="checkIn" class=text-left>
+			</label> <label class=text-left>Check-Out: <input type="date"
+				name="checkOut" id="checkOut" class=text-left>
+			</label> <label class=text-left> Rooms: <input type="number"
+				name="room" id="room" class=text-left>
+			</label> <br />
+
+			<button type="submit" class="text-center" id="addBooking">
+				<b>Add this new booking!</b>
+			</button>
 		</div>
 	</form>
- 
 
 
-			
-	</body>
-	</html>
-	
-	
+
+
+</body>
+</html>
+

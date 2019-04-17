@@ -8,36 +8,42 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <link rel="stylesheet" type="text/css"
-	href="/css/project/blue/bluestd.css" th:href="@{/css/project/blue/bluestd.css}"/>
-	  <script src="/js/project/blue/login.js"></script>
-	
+	href="/css/project/blue/bluestd.css"
+	th:href="@{/css/project/blue/bluestd.css}" />
+<script src="/js/project/blue/login.js"></script>
+
 </head>
 <body class="edit">
+	<div align="left">
+		<a href="/project/blue/bookings"><button class="text-center"
+				id="bck">
+				<b>Back to Bookings list</b>
+			</button> </a>
+	</div>
 
 	<h3>Edit your Booking</h3>
-	<form id="newbooking" name="frmLogInsert" action="/project/blue/editReadBooking" method="get" onsubmit="return checkId()">
-	<div  class = "container-fluid border border-info" align="center">
-	<input name = "bookingId" type="number" class="form-control" hidden = "true" th:value ="${bookingId}" > 
+	<form id="newbooking" name="frmLogInsert"
+		action="/project/blue/editReadBooking" method="get"
+		onsubmit="return checkBooking()">
+		<div class="container-fluid border border-info" align="center">
+			<input name="bookingId" type="number" class="form-control"
+				hidden="true" th:value="${bookingId}"> <label
+				class=text-left>Hotel Id: <input type="number"
+				name="hotelId" class=text-left id = "hotelId" th:value="${hotelId}">
+			</label><br> <label class=text-left>Client Id: <input
+				type="number" name="clientId" class=text-left id = "clientId" th:value="${clientId}">
+			</label><br> <label class=text-left>Check In: <input type="date"
+				name="checkIn" class=text-left id = "checkIn" th:value="${checkIn}">
+			</label><br> <label class=text-left>Check Out: <input
+				type="date" name="checkOut" class=text-left id = "checkOut" th:value="${checkOut}">
+			</label><br>
+			<label class=text-left>Rooms: <input type="number"
+				name="room" class=text-left id="room" th:value="${room}">
+			</label><br> <br />
 
-			<label class=text-left>Hotel Id:  
-			<input type = "number" name = "hotelId" class=text-left th:value = "${hotelId}">
-			</label><br>
-			<label class=text-left>Client Id:  
-			<input type = "number" name = "clientId" class=text-left th:value = "${clientId}">
-			</label><br>
-			<label class=text-left>Check In:  
-			<input type = "date" name = "checkIn" class=text-left th:value = "${checkIn}">
-			</label><br>
-			<label class=text-left>Check Out:  
-			<input type = "date" name = "checkOut" class=text-left th:value = "${checkOut}">
-			</label><br><label class=text-left>Rooms:  
-			<input type = "number" name = "room" class=text-left id="room" th:value = "${room}">
-			</label><br>
-			<br />
-		
-		<button type = "submit" class = "text-center" id = "editBooking">
-		<b>Edit this booking!</b>
-		</button> 
+			<button type="submit" class="text-center" id="editBooking">
+				<b>Edit this booking!</b>
+			</button>
 		</div>
 	</form>
 
