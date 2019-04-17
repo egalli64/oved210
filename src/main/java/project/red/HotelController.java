@@ -125,4 +125,31 @@ public class HotelController {
 
 		return "/project/red/hotels";
 	}
+
+	private String capitalize(String input) {
+	    String words[] = input.split("\\s");  
+	    StringBuilder buffer = new StringBuilder();  
+	    for(String w : words) {  
+	        String first = w.substring(0,1);  
+	        String afterfirst = w.substring(1);  
+	        buffer.append(first.toUpperCase() + afterfirst.toLowerCase() + " "); 
+	    }
+	    return buffer.substring(0, buffer.length() - 1);
+	}
+
+	
+	
+	@GetMapping("/project/red/hotels/insert")
+	public String insertHotel(
+			@RequestParam String name,
+			@RequestParam String city,
+			@RequestParam long room,
+			Model model){  
+	    String hotelName = capitalize(name);
+	    
+	    Hotel hotel = new Hotel(hotelName, city, room);
+	    repo.save(hotel);
+	    model.addAttribute("hotels", repo.findAll());
+	    return "/project/red/hotels";  
+	}  
 }
