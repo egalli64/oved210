@@ -11,6 +11,7 @@
 <body id="clients">
 	<div class="container-fluid">
 		<br />
+
 		<h3 class="backgroundtitles">
 			<i>Clients</i>
 		</h3>
@@ -20,17 +21,19 @@
 				href="/project/green/removeClients.html"><button type="button"
 					value="delete client" class="btn btn-outline-danger">
 					Remove Client by ID <br /> (only staff)
-				</button></a> <br /> <br />
+				</button></a>
+				
+			<br /> <br />
 
 			<div>
 				<h4 th:text="${message}" th:if="${message}"
 					class="alert alert-success text-center"></h4>
-					
+
 				<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
-					class="alert alert-danger text-center"></h4>		
-							
+					class="alert alert-danger text-center"></h4>
+
 				<h4 th:text="${clientEdit}" th:if="${clientEdit}"
-				class="alert alert-warning text-center"></h4>
+					class="alert alert-warning text-center"></h4>
 			</div>
 
 		</div>
@@ -67,8 +70,8 @@
 	<div class="container-fluid">
 		<a href="/project/green/login"><button type="button"
 				class="btn btn-outline-dark">Go Back</button></a>
-				
-	
+
+
 	</div>
 </body>
 </html>
