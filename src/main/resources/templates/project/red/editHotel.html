@@ -16,7 +16,7 @@
 
 
 	<form id="new" name="frmLogInsert" action="/project/red/saveHotel"
-		method="get">
+		method="get" onsubmit = "return capitalize()">
 	
 	 <input name = "hotelId" type="number" class="form-control" hidden = "true" th:value ="${hotelId}" >  
 
