@@ -40,7 +40,8 @@ public class BlueControllerBooking {
 			@RequestParam Long clientId , //
 			@RequestParam Date checkIn , //
 			@RequestParam Date checkOut , //
-			@RequestParam Long room, //
+			@RequestParam Long room,
+			@RequestParam int mode,//
 			Model model) {
 		log.trace("get all bookings");
 
@@ -56,13 +57,30 @@ public class BlueControllerBooking {
 	
 			repBooking.save(booking);
 			model.addAttribute("bookings", repBooking.findAll());
-
-			String SaveBooking = String.format("--New booking inserted!--");
-			model.addAttribute("SaveBooking", SaveBooking);
-
+			model.addAttribute("SaveBooking", "--New booking inserted!--");
+	
+	if (mode==0) {
+		return "/project/blue/confirm ";
+	}
+	if (mode==1) {
+		return "/project/blue/confirm ";
+	}
+	if (mode==2) {
+		return "/project/blue/confirm ";
+	}
+	if (mode==3) {
+		return "/project/blue/confirm ";
+	}
+	if (mode==4) {
+		return "/project/blue/confirm ";
+	}
+	if (mode==5) {
 		return "/project/blue/bookings";
 	}
-	
+
+	return "/project/blue/bookings";
+}
+
 	//controller remove bookings
 	
 	@GetMapping("/project/blue/bookings/remove")
