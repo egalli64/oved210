@@ -58,7 +58,7 @@ public class BlueController {
 			@RequestParam String name, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
-			@RequestParam Long mode,
+			@RequestParam int mode,
 			Model model) {
 		log.trace("get all clients");
 		try {
@@ -67,15 +67,13 @@ public class BlueController {
 			client.setClientName(name);
 			client.setEmail(email);
 			client.setPhone(phone);
+			
 
 			repClient.save(client);
 			model.addAttribute("clients", repClient.findAll());
-
-			String SaveClient = String.format("--New client inserted!--");
-			model.addAttribute("SaveClient", SaveClient);
+			model.addAttribute("SaveClient", "--New client inserted!--");
 		} catch (Exception ex) {
-			String duplicatedmail = String.format("--Mail already existing!--");
-			model.addAttribute("duplicatedmail", duplicatedmail);
+			model.addAttribute("duplicatedmail", "--Mail already existing!--");
 		}
 		if(mode== 0 ) {
 		return "/project/blue/clients";

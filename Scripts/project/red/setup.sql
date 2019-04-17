@@ -107,32 +107,32 @@ start with 001 increment by 1;
 
 --insert data in bookings
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 121, 1,'10-APR-2019', '15-APR-2019', 'credit card');
+values (red_bookings_seq.nextval, 121, 1,'10-APR-2019', '15-APR-2019', 'Credit Card');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 2, '06-MAR-2019', '08-MAR-2019', 'cash');
+values (red_bookings_seq.nextval, 122, 2, '06-MAR-2019', '08-MAR-2019', 'Cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 3, '11-AGO-2019','13-AGO-2019', 'cash');
+values (red_bookings_seq.nextval, 123, 3, '11-AGO-2019','13-AGO-2019', 'Cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 124, 4,'21-DIC-2019', '23-DIC-2019', 'paypal');
+values (red_bookings_seq.nextval, 124, 4,'21-DIC-2019', '23-DIC-2019', 'Paypal');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 5,'25-AGO-2019', '28-AGO-2019', 'credit card');
+values (red_bookings_seq.nextval, 125, 5,'25-AGO-2019', '28-AGO-2019', 'Credit Card');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval,121, 6,'23-GEN-2019', '25-GEN-2019', 'cash');
+values (red_bookings_seq.nextval,121, 6,'23-GEN-2019', '25-GEN-2019', 'Cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 122, 7,'19-FEB-2019', '22-FEB-2019', 'cash');
+values (red_bookings_seq.nextval, 122, 7,'19-FEB-2019', '22-FEB-2019', 'Cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 8,'12-LUG-2019','15-LUG-2019', 'paypal');
+values (red_bookings_seq.nextval, 123, 8,'12-LUG-2019','15-LUG-2019', 'Paypal');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', '2-FEB-2019', 'cash');
+values (red_bookings_seq.nextval, 123, 9,'30-GEN-2019', '2-FEB-2019', 'Cash');
 
 insert into red_bookings(booking_id, hotel_id, client_id, check_in, check_out, payment)
-values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', '18-OTT-2019', 'paypal');
+values (red_bookings_seq.nextval, 125, 10,'16-OTT-2019', '18-OTT-2019', 'Paypal');
 
