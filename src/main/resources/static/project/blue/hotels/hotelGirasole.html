@@ -7,8 +7,21 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
 	href="/css/project/blue/hotel.css" />
+	
+	
+	<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
 </head>
 <body id="firenzeBody">
+
+	<a href="/project/blue/request.html"><button>
+			<i style='font-size: 48px; color: black' class='fas'>&#xf015;</i>
+		</button> </a>
+
+
+
 	<br>
 	<h1>Hotel Girasole</h1>
 	<br>
@@ -52,6 +65,39 @@
 		ed è disponibile un centro fitness.</p>
 
 	<br>
+	
+	<div class="container-fluid" align="center">
+		<div class="row">
+
+	<form id="addbooking" name="frmLogInsert"
+		action="/project/blue/bookings/addBooking"
+		onsubmit="return checkBooking()" method="get">
+		
+		<div class="col-6" align="left">
+	<h3>Add Booking</h3>
+			<label class=text-left> <input type="number"
+				name="clientId" id=clientId class=text-left hidden="true">
+			</label>
+			 <label class=text-left>  <input type="number"
+				name="hotelId" id=hotelId class=text-left hidden="true">
+			</label> 
+			<label class=text-left>Check-In: <input type="date"
+				name="checkIn" id="checkIn" class=text-left>
+			</label> 
+			<label class=text-left>Check-Out: <input type="date"
+				name="checkOut" id="checkOut" class=text-left>
+			</label> 
+			<label class=text-left > Rooms: <input type="number"
+				name="room" id="room" class=text-left>
+			</label> 
+			<br />
+
+			<button type="submit" class="text-center" id="addBooking" align= "left">
+				<b>Add this new booking!</b>
+			</button>
+		  </div>
+	</form>
+
 
 	<div align="right">
 		<iframe
