@@ -153,39 +153,39 @@ hotel_id number (6) constraint green_bookings_hotel_id_fk references green_hotel
 client_id number (4) constraint green_bookings_client_id_fk REFERENCES green_clients(client_id) on delete cascade,
 check_in date,
 check_out date,
-payment number (5, 2) 
+payment varchar(50) 
 );
 
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out,payment)
-values (green_bookings_seq.nextval, 1, 1,'07-gen-2019','10-gen-2019', 70.50);
+values (green_bookings_seq.nextval, 1, 1,'07-gen-2019','10-gen-2019', 'Credit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 2, 1, '09-gen-2019','15-gen-2019', 92.70);
+values (green_bookings_seq.nextval, 2, 1, '09-gen-2019','15-gen-2019', 'Debit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 3, 2, '04-feb-2019','15-feb-2019', 135.20);
+values (green_bookings_seq.nextval, 3, 2, '04-feb-2019','15-feb-2019', 'Paypal');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 4, 3, '15-mar-2019','20-mar-2019', 99.10);
+values (green_bookings_seq.nextval, 4, 3, '15-mar-2019','20-mar-2019', 'Paypal');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 5, 4, '25-apr-2019','30-apr-2019', 81.68);
+values (green_bookings_seq.nextval, 5, 4, '25-apr-2019','30-apr-2019', 'Debit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 6, 5, '10-mag-2019','15-mag-2019', 60.00);
+values (green_bookings_seq.nextval, 6, 5, '10-mag-2019','15-mag-2019', 'Credit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 5, 6, '09-giu-2019','15-giu-2019', 70.50);
+values (green_bookings_seq.nextval, 5, 6, '09-giu-2019','15-giu-2019', 'Debit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 4, 7, '15-giu-2019','20-giu-2019', 70.50);
+values (green_bookings_seq.nextval, 4, 7, '15-giu-2019','20-giu-2019', 'Credit Card');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 3, 8, '16-giu-2019','18-giu-2019', 70.50);
+values (green_bookings_seq.nextval, 3, 8, '16-giu-2019','18-giu-2019', 'Paypal');
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
-values (green_bookings_seq.nextval, 2, 9, '27-lug-2019','30-lug-2019', 70.50);
+values (green_bookings_seq.nextval, 2, 9, '27-lug-2019','30-lug-2019', 'Credit Card');
 
 
 

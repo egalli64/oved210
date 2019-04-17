@@ -29,10 +29,10 @@ public class Booking {
 	
 	private Date checkIn;
 	private Date checkOut;
-	private Long payment;
+	private String payment;
 
 	//new
-	public Booking(Long bookingId, GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, Long payment) {
+	public Booking(Long bookingId, GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, String payment) {
 		this.bookingId = bookingId;
 		this.hotel = hotel;
 		this.client =client;
@@ -42,7 +42,7 @@ public class Booking {
 	}
 
 	// edit
-	public Booking(GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, Long payment) {
+	public Booking(GreenHotel hotel, GreenClient client, Date checkIn,  Date checkOut, String payment) {
 		this.hotel = hotel;
 		this.client = client;
 		this.checkIn = checkIn;
@@ -63,30 +63,6 @@ public class Booking {
 		this.bookingId = bookingId;
 	}
 
-	public Date getCheckIn() {
-		return checkIn;
-	}
-
-	public void setCheckIn(Date checkIn) {
-		this.checkIn = checkIn;
-	}
-
-	public Date getCheckOut() {
-		return checkOut;
-	}
-
-	public void setCheckOut(Date checkOut) {
-		this.checkOut = checkOut;
-	}
-
-	public Long getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Long payment) {
-		this.payment = payment;
-	}
-
 	public GreenHotel getHotel() {
 		return hotel;
 	}
@@ -103,9 +79,34 @@ public class Booking {
 		this.client = client;
 	}
 
+	public Date getCheckIn() {
+		return checkIn;
+	}
+
+	public void setCheckIn(Date checkIn) {
+		this.checkIn = checkIn;
+	}
+
+	public Date getCheckOut() {
+		return checkOut;
+	}
+
+	public void setCheckOut(Date checkOut) {
+		this.checkOut = checkOut;
+	}
+
+	public String getPayment() {
+		return payment;
+	}
+
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
+
 	@Override
 	public String toString() {
 		return "Booking [bookingId=" + bookingId + ", hotel=" + hotel + ", client=" + client + ", checkIn=" + checkIn
 				+ ", checkOut=" + checkOut + ", payment=" + payment + "]";
 	}
+
 }

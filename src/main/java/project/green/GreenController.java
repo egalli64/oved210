@@ -262,7 +262,7 @@ public class GreenController {
 			@RequestParam Long clientId, 
 			@RequestParam Date checkIn, 
 			@RequestParam Date checkOut,
-			@RequestParam Long payment,
+			@RequestParam String payment,
 			Model model) {
 		log.trace("save new booking");
 
