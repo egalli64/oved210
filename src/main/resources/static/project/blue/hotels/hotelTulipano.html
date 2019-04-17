@@ -56,7 +56,7 @@
 
 	<form id="addbooking" name="frmLogInsert"
 		action="/project/blue/bookings/addBooking"
-		onsubmit="return checkBooking()" method="get">
+		onsubmit="return checkRooms()" method="get">
 		
 		<div class="col-6" align="left">
 	<h3>Add Booking</h3>
@@ -74,7 +74,7 @@
 				name="checkOut" id="checkOut" class=text-left>
 			</label> 
 			<label class=text-left >Rooms: <input type="number"
-				name="room" id="room" class=text-left>
+				name="room" id="roomCounter" class=text-left>
 			</label> 
 			<br />
 
