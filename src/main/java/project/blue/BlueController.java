@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BlueController {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 	private static String user;
+	private static String password;
+	
+	@Value("${admin}")
+	private String admin;
+
+	@Value("${admin.password}")
+	private String adminPassword;
+
 
 	@Autowired
 	private BlueClientRepository repClient;
@@ -24,13 +33,13 @@ public class BlueController {
 			@RequestParam(name = "user") String user, //
 			@RequestParam(name = "password") String password, //
 			Model model) {
-
-		BlueController.user = user;
-		model.addAttribute("user", user);
-
-		return "/project/blue/response";
-
+		
+		if (user.equals(admin) && password.equals(adminPassword)) {
+			return "project/blue/response";
+		}
+		return "project/blue/reject";
 	}
+
 
 	@GetMapping("/project/blue/login")
 	public String login(Model model) {

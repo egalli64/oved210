@@ -2,9 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>Welcome</title>
+<title>Reject</title>
+<link rel="stylesheet" type="text/css"
+	href="/css/project/blue/blue.css" />
+
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+
 </head>
 <body>
-	<h1 th:text="'Wrong Username or Password '"></h1>
+	<a href="/project/blue/request.html"><button>
+			<i style='font-size: 48px; color: black' class='fas'>&#xf015;</i>
+		</button> </a>
+
+
+<fieldset class = "text-center" id = "reject">
+
+
+	<h3 th:text="'Wrong Username or Password - Check the Home page'"></h3>
+</fieldset>
+
 </body>
 </html>

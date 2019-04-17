@@ -27,7 +27,7 @@ legend{
 	backgroun-color: white;
 }
 
-fieldset{
+#idLogUser{
 	background-color:#e0ded8;
 }
 
@@ -64,3 +64,8 @@ p{
   color: white;
 }
 
+#reject {
+	background-color:white; color: black; opacity: 0.5;
+	text-align: center;
+
+}
