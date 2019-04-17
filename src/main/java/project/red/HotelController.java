@@ -28,6 +28,8 @@ public class HotelController {
 	public String create(@RequestParam String hotelName, @RequestParam String city, @RequestParam String roomCounter,
 
 			Model model) {
+	    hotelName = capitalize(hotelName);
+	    city = capitalize (city);
 		long rooms = 0;
 		try {
 			rooms = Long.parseLong(roomCounter);
@@ -127,6 +129,10 @@ public class HotelController {
 	}
 
 	private String capitalize(String input) {
+		if(input == null || input.isEmpty()) {
+			return "";
+		}
+
 	    String words[] = input.split("\\s");  
 	    StringBuilder buffer = new StringBuilder();  
 	    for(String w : words) {  
@@ -137,20 +143,5 @@ public class HotelController {
 	    return buffer.substring(0, buffer.length() - 1);
 	}
 
-	
-	
-	@GetMapping("/project/red/hotels/insert")
-	public String insertHotel(
-			@RequestParam String name,
-			@RequestParam String city,
-			@RequestParam long room,
-			Model model){  
-	    String hotelName = capitalize(name);
-	    String hotelCity = capitalize (city);
-	    
-	    Hotel hotel = new Hotel(hotelName, hotelCity, room);
-	    repo.save(hotel);
-	    model.addAttribute("hotels", repo.findAll());
-	    return "/project/red/hotels";  
-	}  
+	 
 }
