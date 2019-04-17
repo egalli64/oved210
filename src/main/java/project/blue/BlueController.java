@@ -87,7 +87,7 @@ public class BlueController {
 		if(mode== 0 ) {
 		return "/project/blue/clients";
 		}else {
-			return "/project/blue/clients";  // TODO: da modificare 
+			return "/project/blue/hotelDescription";  // TODO: da modificare 
 		}
 	}
 
