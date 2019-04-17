@@ -32,8 +32,13 @@
 					<br />
 					<br />
 				<tr>
-					<th>Booking Id</th>
-					<th>Availability</th>
+					<!--<th>Booking Id</th> -->
+					<th>client Name</th> 
+					<th>Hotel Name</th>
+				<!--	<th>Hotel Id</th> -->
+				<!--  	<th>Client Id</th> -->
+					<th>Check-In</th>
+					<th>Check-Out</th>
 					<th>Payment</th>
 					<th></th>
 					<th></th>
@@ -41,15 +46,20 @@
 			</thead>
 
 			<tr th:each="booking: ${bookings}">
-				<td th:text="${booking.bookingId}"></td>
-				<td th:text="${booking.availability}"></td>
+				<!--	<td th:text="${booking.bookingId}"></td>  -->
+		  <td th:text="${booking.client.clientName}"></td>
+				<td th:text="${booking.hotel.hotelName}"></td>
+				<!--	<td th:text="${booking.hotel.hotelId}"></td>  -->
+				<!--	<td th:text="${booking.client.clientId}"></td>  -->
+				<td th:text="${booking.checkIn}"></td>
+				<td th:text="${booking.checkOut}"></td>
 				<td th:text="${booking.payment}"></td>
 				<td><a href="/project/green/booking/edit.html"
 					th:href="@{/project/green/booking/edit(bookingId=${booking.bookingId})}">
 						<button type="submit"
 							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
 				</a></td>
-				<td><a href="..."
+				<td><a href="/project/green/bookings/removeBooking.html"
 					th:href="@{/project/green/removeBooking(bookingId=${booking.bookingId})}">
 						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
 				</a></td>
