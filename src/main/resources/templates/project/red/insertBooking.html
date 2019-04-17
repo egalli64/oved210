@@ -26,11 +26,13 @@
 
 			<label>Hotel Id:</label> <input name="hotelId" type="number"
 				class="form-control" placeholder="Enter Hotel Id"> 
-												
+											
+         
          <input name="hotelId" type="number" class="border border-danger form-control " 
          	placeholder="Enter Hotel Id" th:if = "${errorHotel} or ${unexistingdId}" th:value="${hotelId}">  
        	 <small class= "error" th:if = "${errorHotel}"> Hotel Id is missing!</small>
        	 <small class= "error" th:if = "${unexistingdId}"> This Hotel Id doesn't exist!</small>
+       	 
        	 </div>
 
 		<div class="form-group">
@@ -50,10 +52,9 @@
 				<input name="checkIn" type="date" class="border border-danger form-control" placeholder="Enter Check-In"
 				th:if="${errorCheckIn}" th:value="${checkIn}"> 
 				<small class="error" th:if="${errorCheckIn}"> Check-in date is missing!</small>
-				
 		</div>
 		
-				<div class="form-group">
+		<div class="form-group">
 			<label>Check out: </label> <input name="checkOut" type="date"
 				class="form-control" placeholder="Enter Check-Out Date"  th:unless = "${errorCheckOut}">
 				
@@ -64,13 +65,13 @@
 		
 		<div class="form-group">
 			<label>Payment: </label> <br> 
-			<input type="radio" name="payment"/> Credit card
+			<input type="radio" name="payment" value="Credit Card"/> Credit Card
 			<img src="/img/project/red/carte.png" width="30" height="35"></img>
 			<br> 
-			<input type="radio" name="payment"/> Paypal
+			<input type="radio" name="payment" value="Pay pal"/> Paypal
 			<img src="/img/project/red/paypal.png" width="30" height="35"></img>
 			<br> 
-			<input type="radio" name="payment"/> Cash
+			<input type="radio" name="payment" value="Cash"/> Cash
 			<img src="/img/project/red/cash.png" width="30" height="35"></img>
 			<br>
 		</div>
