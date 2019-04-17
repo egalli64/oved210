@@ -31,3 +31,22 @@ p{
 	opacity:0.6;
 }
 
+#addbooking{
+	background-color:white;
+	opacity:0.6;
+	margin:auto;
+	width:40%;
+	border:3px solid #e1e1e1;
+	padding: 10px;
+	font-style: italic;
+	font-weight: bold;
+	color: #000000;
+}
+
+h3{
+	text-align: center;
+	color: #000000;
+	font-style: italic;
+	font-weight: bold;
+	
+}
