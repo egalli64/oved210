@@ -52,10 +52,9 @@ public class BookingController {
 
 			return "/project/red/bookings";
 			
-		} else {
+		}
 			
 			model.addAttribute("unexistingdId", "***Unexisting Id!***");
-		}
 
 		return "/project/red/insertBooking";
 	}
