@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>ADDEDBOOKINGS</title>
+<title>PREPAREBOOKINGS</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
@@ -10,9 +10,11 @@
 </head>
 
 <body>
+	<!--  <p th:text="${clients}"></p>-->
+ 
 	<div class="container-fluid">
 		<br />
-		<form name="frmLog" action="/project/green/addBooking" method="get">
+		<form name="frmLog" action="/project/green/booking/insert" method="get">
 			<div class="form-group">
 				<label for="exampleInputCheckIn">Check-In</label> <input
 					name="checkIn" type="date" class="form-control"
@@ -38,19 +40,35 @@
 
 			<div class="form-group">
 		
-				<input name="hotelId" type="hidden" class="form-control"
-					>
+				<input name="hotelId" type="hidden" class="form-control">
 					</div>
+			<!--  <div class="form-group"> -->
+			
+			
 			<div class="form-group">
-			<label>Client Name: <select name="clientId">
-			<option th:each="client:${Booking}" th:value="${client.clientId}"
-			th:text="${client.clientId}"></option>
-			</select></label>
+			<label> Select Client Name: <select >
+			<option th:each="client:${clients}"  th:value="${client.clientId}"
+			th:text="${client.clientName}">  </option>
+			
+			</select>
+			</label>
 			</div>
 
-			<div class="form-group">
-			<label>Hotel Name</label>
-				<input type="text" class="form-control">
+			<!--  <div class="form-group">
+			<label>Select Hotel Name: </label> <select name="hotelId" >
+			<option th:each="hotel: ${booking.hotel.hotelName}" > name </option>
+			</select> -->
+		<div class="form-group">
+			<label> Select Hotel Name: <select >
+			<option th:each="hotel:${hotels}"  th:value="${hotel.hotelId}"
+			th:text="${hotel.hotelName}">  </option>
+			
+			</select>
+			</label>
+			</div>
+		
+		
+		
 			</div>
 			
 			<div class="form-group">
