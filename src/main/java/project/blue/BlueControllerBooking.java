@@ -61,7 +61,7 @@ public class BlueControllerBooking {
 	
 	switch (mode) {
 	case 5:
-		return "/project/blue/addBooking";
+		return "/project/blue/bookings";
 	default:
 		return "/project/blue/confirm";
 	}
