@@ -106,8 +106,12 @@ public class ClientController {
 	}
 
 	@GetMapping("/project/red/saveClient")
-	public String save(@RequestParam long clientId, @RequestParam String clientName, @RequestParam String email,
-			@RequestParam String phone, Model model) {
+	public String save(
+			@RequestParam long clientId, // 
+			@RequestParam String clientName, // 
+			@RequestParam String email, //
+			@RequestParam String phone, // 
+			Model model) {
 
 		log.trace("saving modified client");
 
