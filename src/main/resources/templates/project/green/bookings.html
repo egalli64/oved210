@@ -32,11 +32,8 @@
 					<br />
 					<br />
 				<tr>
-					<!--<th>Booking Id</th> -->
-					<th>client Name</th> 
+					<th>Client Name</th> 
 					<th>Hotel Name</th>
-				<!--	<th>Hotel Id</th> -->
-				<!--  	<th>Client Id</th> -->
 					<th>Check-In</th>
 					<th>Check-Out</th>
 					<th>Payment</th>
@@ -46,11 +43,8 @@
 			</thead>
 
 			<tr th:each="booking: ${bookings}">
-				<!--	<td th:text="${booking.bookingId}"></td>  -->
 		  <td th:text="${booking.client.clientName}"></td>
 				<td th:text="${booking.hotel.hotelName}"></td>
-				<!--	<td th:text="${booking.hotel.hotelId}"></td>  -->
-				<!--	<td th:text="${booking.client.clientId}"></td>  -->
 				<td th:text="${booking.checkIn}"></td>
 				<td th:text="${booking.checkOut}"></td>
 				<td th:text="${booking.payment}"></td>
