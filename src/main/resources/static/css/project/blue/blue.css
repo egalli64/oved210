@@ -1,9 +1,6 @@
-body {
-	background-image: url('/img/project/blue/hotels.jpg');
-	
-	color: #000040;
-	background-size: 100%;
-}
+#requestBody {
+	background-color:white;
+	}
 
 h1 {
 	text-align: center;
