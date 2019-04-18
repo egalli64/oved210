@@ -25,14 +25,14 @@
 			hidden="true" th:value="${bookingId}">
 
 		<div class="form-group">
-			<label>Hotel:</label> <select name="hotelId" th:value="${hotelId}">
+			<label>Hotel:</label> <select name="hotelId" th:value="${hotelId}" class="form-control">
 				<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
 					th:text="${hotel.hotelName}"></option>
 			</select>
 		</div>
 
 		<div class="form-group">
-			<label>Client:</label> <select name="clientId" th:value="${clientId}">
+			<label>Client:</label> <select name="clientId" th:value="${clientId}" class="form-control">
 				<option th:each="client:${clients}" th:value="${client.clientId}"
 					th:text="${client.clientName}"></option>
 			</select>
