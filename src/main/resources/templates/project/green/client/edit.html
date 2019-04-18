@@ -19,13 +19,13 @@
 
 			<div class="form-group">
 				<label for="exampleInputClient Name">Client Name</label> <input
-					name="clientName" type="text" class="form-control"
+					name="clientName" type="text" class="form-control" pattern="[a-zA-z ]+"
 					th:value="${clientName}">
 			</div>
 
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label> <input
-					name="email" type="text" class="form-control" th:value="${email}">
+					name="email" type="text" class="form-control"  pattern=".+@.+..+" th:value="${email}">
 			</div>
 
 			<div class="form-group">
