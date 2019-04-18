@@ -139,10 +139,13 @@ public class BookingController {
 		log.trace("saving modified booking");
 
 		Booking booking = new Booking(bookingId, hotel, client, checkIn, checkOut, payment);
-
+		model.addAttribute("hotels", repo.findAll());
+		model.addAttribute("clients", crepo.findAll());
 		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");
 		model.addAttribute("bookings", brepo.findAll());
+		
+	
 
 		return "/project/red/bookings";
 	}

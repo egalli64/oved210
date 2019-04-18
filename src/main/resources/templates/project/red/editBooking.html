@@ -60,15 +60,16 @@
 		</div>
 
 		<div class="form-group">
-			<label>Payment: </label> <br> <input type="radio" name="payment"
-				value="Credit Card" th:if="${payment}" checked="checked" /> Credit
-			Card <img src="/img/project/red/carte.png" width="30" height="35"></img>
-			<br> <input type="radio" name="payment" value="Paypal"
-				th:if="${payment}" checked="checked" /> Paypal <img
-				src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
-			<input type="radio" name="payment" value="Cash" th:if="${payment}"
-				checked="checked" /> Cash <img src="/img/project/red/cash.png"
-				width="30" height="35"></img> <br>
+			<label>Payment: </label> <br> 
+			<input type="radio" name="payment" value="Credit Card" th:checked="${payment} == 'Credit Card'" /> Credit Card 
+			<img src="/img/project/red/carte.png" width="30" height="35"></img> <br>
+		
+			<input type="radio" name="payment" value="Paypal" th:checked="${payment} == 'Paypal'" /> Paypal 
+			<img src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
+			
+			<input type="radio" name="payment" value="Cash" th:checked="${payment} == 'Cash'" /> Cash 
+			<img src="/img/project/red/cash.png" width="30" height="35"></img> <br>
+			
 		</div>
 		<div>
 			<button type="submit" class="btn btn-primary">SAVE</button>
