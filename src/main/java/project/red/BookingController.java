@@ -25,27 +25,30 @@ public class BookingController {
 	ClientRepository crepo;
 
 	@GetMapping("/project/red/bookings")
-	public String allBookings(Model model) {
+	public String allBookings(
+			Model model) {
 		log.trace("get all bookings");
 		model.addAttribute("bookings", brepo.findAll());
 		return "/project/red/bookings";
 	}
 	
 	@GetMapping("/project/red/prepareBooking")
-	public String prepare(Model model) {
+	public String prepare(
+			Model model) {
 		model.addAttribute("bookings", brepo.findAll());
 		model.addAttribute("hotels", repo.findAll());
 		model.addAttribute("clients", crepo.findAll());
-	return "/project/red/insertBooking";
-}
+		return "/project/red/insertBooking";
+	}
 
 	@GetMapping("/project/red/insertBooking")
-	public String create(@RequestParam long hotelId,
-						 @RequestParam long clientId, 
-						 @RequestParam Date checkIn,
-						 @RequestParam Date checkOut, 
-						 @RequestParam String payment,
-							Model model) {
+	public String create(
+			@RequestParam long hotelId, //
+			@RequestParam long clientId, //
+			@RequestParam Date checkIn, //
+			@RequestParam Date checkOut, //
+			@RequestParam String payment,//
+			Model model) {
 		
 		Optional<Hotel> hotel = repo.findById(hotelId);
 		Optional<Client> client = crepo.findById(clientId);
@@ -53,11 +56,11 @@ public class BookingController {
 		if (client.isPresent() && hotel.isPresent()) {
 			Client cur = client.get();
 			Hotel cus = hotel.get();
-			Booking booking = new Booking (cus, cur, checkIn, checkOut, payment);
+			Booking booking = new Booking(cus, cur, checkIn, checkOut, payment);
 			log.trace("get new booking");
 			brepo.save(booking);
 			model.addAttribute("bookings", brepo.findAll());
-			
+
 			model.addAttribute("bookingSaved", "***Booking saved!***");
 			return "/project/red/bookings";
 		}
@@ -68,8 +71,8 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/deleteBooking")
-	public String delete(@RequestParam Long bookingId,
-
+	public String delete(
+			@RequestParam Long bookingId, //
 			Model model) {
 
 		log.trace("get deleted booking");
@@ -96,16 +99,17 @@ public class BookingController {
 	}
 	
 	@GetMapping("/project/red/editBooking")
-	public String edit(@RequestParam long bookingId,
+	public String edit(
+			@RequestParam long bookingId, //
 			Model model) {
 
 		log.trace("edit booking");
 
 		Optional<Booking> opt = brepo.findById(bookingId);
-	
+
 		if (opt.isPresent()) {
 			Booking booking = opt.get();
-				
+
 			model.addAttribute("bookingId", booking.getBookingId());
 			model.addAttribute("hotelId", booking.getHotel());
 			model.addAttribute("clientId", booking.getClient());
@@ -117,17 +121,21 @@ public class BookingController {
 		return "/project/red/editBooking";
 
 	}
-	
+
 	@GetMapping("/project/red/saveBooking")
-	public String save (@RequestParam long bookingId, @RequestParam Hotel hotel, @RequestParam Client client, @RequestParam Date checkIn,
-			@RequestParam Date checkOut, @RequestParam String payment,
-			
+	public String save(
+			@RequestParam long bookingId, //
+			@RequestParam Hotel hotel, //
+			@RequestParam Client client, //
+			@RequestParam Date checkIn, //
+			@RequestParam Date checkOut, //
+			@RequestParam String payment, //
 			Model model) {
 
 		log.trace("saving modified booking");
 
-		Booking booking = new Booking (bookingId, hotel, client, checkIn, checkOut, payment);
-		
+		Booking booking = new Booking(bookingId, hotel, client, checkIn, checkOut, payment);
+
 		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");
 		model.addAttribute("bookings", brepo.findAll());

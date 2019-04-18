@@ -26,48 +26,44 @@
 
 		<!-- RIVEDERE LE SELECT  -->
 		<div class="form-group">
-			<label>Hotel:</label> <select name="hotelId" th:value="${hotelId}">
+			<label>Hotel:</label> 
+			<select name="hotelId" th:value="${hotelId}">
 				<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
 					th:text="${hotel.hotelName}"></option>
 			</select>
 		</div>
 
 		<div class="form-group">
-			<label>Client:</label> <select name="clientId" th:value="${clientId}">
+			<label>Client:</label> 
+			<select name="clientId" th:value="${clientId}">
 				<option th:each="client:${clients}" th:value="${client.clientId}"
 					th:text="${client.clientName}"></option>
 			</select>
 		</div>
 
 		<div class="form-group">
-			<label>Check in: </label> <input name="checkIn" type="date"
-				class="form-control" placeholder="Enter Check-In Date"
-				th:value="${checkIn}" th:unless="${errorCheckIn}"> <input
-				name="checkIn" type="date" class="border border-danger form-control"
-				placeholder="Enter Check-In" th:if="${errorCheckIn}"
-				th:value="${checkIn}"> <small class="error"
-				th:if="${errorCheckIn}"> Check-in date is missing!</small>
+			<label>Check in: </label> 
+				<input name="checkIn" type="date" class="form-control" placeholder="Enter Check-In Date"
+					th:value="${checkIn}" th:unless="${errorCheckIn}"> 
+				<input name="checkIn" type="date" class="border border-danger form-control" placeholder="Enter Check-In" 
+					th:if="${errorCheckIn}" th:value="${checkIn}"> 
+				<small class="error" th:if="${errorCheckIn}"> Check-in date is missing!</small>
 		</div>
 
 		<div class="form-group">
-			<label>Check out: </label> <input name="checkOut" type="date"
-				class="form-control" placeholder="Enter Check-Out Date"
-				th:value="${checkOut}" th:unless="${errorCheckOut}"> <input
-				name="checkOut" type="date"
-				class="border border-danger form-control"
-				placeholder="Enter Check-Out" th:if="${errorCheckOut}"
-				th:value="${checkOut}"> <small class="error"
-				th:if="${errorCheckOut}"> Check-out date is missing!</small>
+			<label>Check out: </label> 
+				<input name="checkOut" type="date" class="form-control" placeholder="Enter Check-Out Date"
+					th:value="${checkOut}" th:unless="${errorCheckOut}"> 
+				<input name="checkOut" type="date" class="border border-danger form-control"
+					placeholder="Enter Check-Out" th:if="${errorCheckOut}" th:value="${checkOut}"> 
+				<small class="error" th:if="${errorCheckOut}"> Check-out date is missing!</small>
 		</div>
 
 		<div class="form-group">
-			<label th:value="${payment}">Payment: </label> <br> <input
-				type="radio" name="payment" value="Credit Card" /> Credit Card <img
-				src="/img/project/red/carte.png" width="30" height="35"></img> <br>
-			<input type="radio" name="payment" value="Paypal" /> Paypal <img
-				src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
-			<input type="radio" name="payment" value="Cash" /> Cash <img
-				src="/img/project/red/cash.png" width="30" height="35"></img> <br>
+			<label th:value="${payment}">Payment: </label> <br> 
+				<input type="radio" name="payment" value="Credit Card" /> Credit Card <img src="/img/project/red/carte.png" width="30" height="35"></img> <br>
+				<input type="radio" name="payment" value="Paypal" /> Paypal <img src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
+				<input type="radio" name="payment" value="Cash" /> Cash <img src="/img/project/red/cash.png" width="30" height="35"></img> <br>
 		</div>
 		<div>
 			<button type="submit" class="btn btn-primary">SAVE</button>
