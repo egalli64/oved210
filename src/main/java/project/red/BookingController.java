@@ -107,7 +107,7 @@ public class BookingController {
 
 		Optional<Booking> opt = brepo.findById(bookingId);
 
-		// TODO: exception
+		// TODO: excetpion
 		if (opt.isPresent()) {
 			Booking booking = opt.get();
 
@@ -120,6 +120,7 @@ public class BookingController {
 			
 			model.addAttribute("hotels", repo.findAll());
 			model.addAttribute("clients", crepo.findAll());
+
 		}
 
 		return "/project/red/editBooking";
@@ -144,9 +145,10 @@ public class BookingController {
 		brepo.save(booking);
 		model.addAttribute("messageEdit", "***Booking modified!***");
 		model.addAttribute("bookings", brepo.findAll());
-		
-	
 
 		return "/project/red/bookings";
 	}
+	
+	
+	
 }
