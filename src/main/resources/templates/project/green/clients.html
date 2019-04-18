@@ -21,57 +21,51 @@
 				href="/project/green/removeClients.html"><button type="button"
 					value="delete client" class="btn btn-outline-danger">
 					Remove Client by ID <br /> (only staff)
-				</button></a>
-				
-			<br /> <br />
-
-			<div>
-				<h4 th:text="${message}" th:if="${message}"
-					class="alert alert-success text-center"></h4>
-
-				<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
-					class="alert alert-danger text-center"></h4>
-
-				<h4 th:text="${clientEdit}" th:if="${clientEdit}"
-					class="alert alert-warning text-center"></h4>
-			</div>
-
+				</button></a> <br /> <br /> <a href="/project/green/login"><button
+					type="button" class="btn btn-outline-dark">Go Back</button></a>
 		</div>
-		<br /> <br />
-		<table class="table table-hover">
-			<thead class="thead-succes">
-				<tr>
-					<th>CLIENT NAME</th>
-					<th>EMAIL</th>
-					<th>PHONE</th>
-					<th></th>
-					<th></th>
-				</tr>
-			</thead>
 
-			<tr th:each="client: ${clients}">
-				<td th:text="${client.clientName}"></td>
-				<td th:text="${client.email}"></td>
-				<td th:text="${client.phone}"></td>
-				<td><a href="/project/green/client/edit"
-					th:href="@{/project/green/client/edit(clientId=${client.clientId})}">
-						<button type="submit"
-							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
+		<div>
+			<h4 th:text="${message}" th:if="${message}"
+				class="alert alert-success text-center"></h4>
 
-				</a></td>
-				<td><a href="/project/green/clients/removeClients.html"
-					th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
-						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
+			<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
+				class="alert alert-danger text-center"></h4>
 
-				</a></td>
+			<h4 th:text="${clientEdit}" th:if="${clientEdit}"
+				class="alert alert-warning text-center"></h4>
+		</div>
+
+	</div>
+	<br />
+	<br />
+	<table class="table table-hover">
+		<thead class="thead-succes">
+			<tr>
+				<th>Client Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th></th>
+				<th></th>
 			</tr>
-		</table>
-	</div>
-	<div class="container-fluid">
-		<a href="/project/green/login"><button type="button"
-				class="btn btn-outline-dark">Go Back</button></a>
+		</thead>
 
+		<tr th:each="client: ${clients}">
+			<td th:text="${client.clientName}"></td>
+			<td th:text="${client.email}"></td>
+			<td th:text="${client.phone}"></td>
+			<td><a href="/project/green/client/edit"
+				th:href="@{/project/green/client/edit(clientId=${client.clientId})}">
+					<button type="submit"
+						class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
 
-	</div>
+			</a></td>
+			<td><a href="/project/green/clients/removeClients.html"
+				th:href="@{/project/green/removeClients(clientId=${client.clientId})}">
+					<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
+
+			</a></td>
+		</tr>
+	</table>
 </body>
 </html>

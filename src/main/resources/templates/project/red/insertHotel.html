@@ -29,11 +29,11 @@
 
 			<label>Hotel name:</label> <input name="hotelName" type="text"
 				class="form-control" placeholder="Enter Hotel Name"
-				th:unless="${errorHotel} or ${sameHotelCity} or ${message}"> 
+				th:unless="${errorHotel} or ${sameHotelCity} or ${message}" pattern="[a-zA-z ]+"> 
 				
 				
 				<input name="hotelName"	type="text" class="border border-danger form-control"
-				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity} or ${message}" > 
+				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity} or ${message}" pattern="[a-zA-z ]+" > 
 				<small class="error" th:if="${errorHotel}"> Name is missing!</small>
 				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
 				<small class="error" th:if="${message}"> This Hotel already exists in this city!</small>
@@ -42,10 +42,10 @@
 		<div class="form-group">
 			<label>City:</label> <input name="city" type="text"
 				class="form-control" placeholder="Enter City"
-				th:unless="${errorCity} or ${sameHotelCity}"> 
+				th:unless="${errorCity} or ${sameHotelCity}" pattern="[a-zA-z ]+"> 
 				
 				<input name="city" type="text" class="border border-danger form-control" placeholder="Enter City"
-				th:if="${errorCity} or ${sameHotelCity}" th:value="${city}"> 
+				th:if="${errorCity} or ${sameHotelCity}" th:value="${city}" pattern="[a-zA-z ]+"> 
 				<small class="error" th:if="${errorCity}"> City is missing!</small> 
 				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
 		</div>

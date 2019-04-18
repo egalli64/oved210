@@ -24,9 +24,9 @@
      
       <label>Name and Surname:</label>
         <input name="clientName" type="text" class="form-control" 
-        	placeholder="Enter Name and Surname" th:unless = "${errorClient}">  
+        	placeholder="Enter Name and Surname" th:unless = "${errorClient}" pattern="[a-zA-z ]+">  
          <input name="clientName" type="text" class="border border-danger form-control " 
-         	placeholder="Enter Name and Surname" th:if = "${errorClient}">  
+         	placeholder="Enter Name and Surname" th:if = "${errorClient}" pattern="[a-zA-z ]+">  
        	 <small class= "error" th:if = "${errorClient}"> Name is missing!</small>
    </div>
   
@@ -42,7 +42,7 @@
  
   <div class="form-group">
       <label>Phone: </label>
-        <input name = "phone" type="text" class="form-control"  placeholder="Enter Phone Number" >            
+        <input name = "phone" type="number" class="form-control"  placeholder="Enter Phone Number" pattern = "d{0,9}">            
   </div>
 
   <div class = "container-fluid left">

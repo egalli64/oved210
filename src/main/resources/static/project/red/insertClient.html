@@ -24,7 +24,7 @@
 
 		<div class="form-group">
 			<label>Name and Surname:</label> <input name="clientName" type="text"
-				class="form-control" placeholder="Enter Name and Surname">
+				class="form-control" placeholder="Enter Name and Surname" pattern="[a-zA-z ]+">
 		</div>
 
 		<div class="form-group">
@@ -34,8 +34,8 @@
 		</div>
 
 		<div class="form-group">
-			<label>Phone: </label> <input name="phone" type="text"
-				class="form-control" placeholder="Enter Phone Number">
+			<label>Phone: </label> <input name="phone" type="number"
+				class="form-control" placeholder="Enter Phone Number" pattern = "d{0,9}">
 		</div>
 
 		<div class = "container-fluid left">

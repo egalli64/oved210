@@ -12,16 +12,19 @@
 <h3 class="backgroundtitles">Edit Client</h3>
 
 <br>
+<div class ="container-fluid left">
+<a href="/project/red/clients"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> </a>
+</div>
+<br>
 
-
-<form id="new" name="frmLogInsert" action="/project/red/saveClient" method="get">
+<form id="new" name="frmLogInsert" action="/project/red/saveClient" method="get" class ="container-fluid left">
 		
      <input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" >
 
 		<div class="form-group">
 			<label>Name and Surname:</label> <input name="clientName" type="text"
 				class="form-control" placeholder="Enter Name and Surname"
-				th:value="${clientName}">
+				th:value="${clientName}" pattern="[a-zA-z ]+">
 
 		</div>
 
@@ -33,16 +36,20 @@
 		</div>
 
 		<div class="form-group">
-			<label>Phone: </label> <input name="phone" type="text"
+			<label>Phone: </label> <input name="phone" type="number"
 				class="form-control" placeholder="Enter Phone Number"
-				th:value="${phone}">
+				th:value="${phone}" pattern = "d{0,9}">
 		</div>
-
-		<button type="submit" class="btn btn-primary" aria-pressed="true">Save</button>
+		
+		<div>
+		<button type="submit" class="btn btn-primary" aria-pressed="true">Submit</button>
+		<br>
+		</div>
+		<br>
 </form>
 
-<hr>
-<a href="/project/red/clients"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> </a>
+
+
 
 </body>
 </html>
