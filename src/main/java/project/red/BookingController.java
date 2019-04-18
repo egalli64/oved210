@@ -118,6 +118,9 @@ public class BookingController {
 			model.addAttribute("checkOut", booking.getCheckOut());
 			model.addAttribute("payment", booking.getPayment());
 			
+		// model.addAttribute("bookings", booking);
+		// nell'editBooking inserire i valori con booking.valore
+			
 			model.addAttribute("hotels", repo.findAll());
 			model.addAttribute("clients", crepo.findAll());
 
