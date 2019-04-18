@@ -25,13 +25,13 @@
 			<label><input type = "number" hidden= true class=text-left>
 			</label><br>
 			<label class=text-left>Name:  
-			<input type = "text" name = "clientName" class=text-left th:value = "${clientName}">
+			<input type = "text" name = "clientName" pattern = "[ a-zA-z]+" placeholder = "Name and Surname"  id = "name" class=text-left th:value = "${clientName}">
 			</label><br>
 			<label class=text-left>Email:  
-			<input type = "text" name = "email" class=text-left th:value = "${email}">
+			<input type  = "email" name = "email" autocomplete= "on" placeholder="email@domain.ext"  id = "email"class=text-left th:value = "${email}">
 			</label><br>
 			<label class=text-left>Phone:  
-			 <input type = "text" name = "phone" class=text-left th:value = "${phone}">
+			 <input type = "number" name = "phone" pattern="[0,9]{8,12}" autocomplete= "on" placeholder="Phone number" id = "phone" class=text-left th:value = "${phone}">
 			</label>
 			<br />
 		

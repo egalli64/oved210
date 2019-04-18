@@ -42,6 +42,8 @@ public class BlueControllerBooking {
 			@RequestParam Date checkOut, //
 			@RequestParam Long room, @RequestParam int mode, //
 			Model model) {
+		
+		
 		log.trace("get all bookings");
 
 		BlueBooking booking = new BlueBooking();

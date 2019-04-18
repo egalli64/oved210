@@ -23,16 +23,76 @@ function checkUser() {
 
 }
 
-function checkRooms() {
-	let roomCounter = document.getElementById("roomCounter");
-	if (roomCounter.value <= 0 || roomCounter.value >= 50) {
-		alert("The number of rooms is incorrect!");
-		roomCounter.focus();
-		return false;
+function checkId() {
+	let name = document.getElementById("name");
+	let email = document.getElementById("email");
+	let phone = document.getElementById("phone");
+	if (name.value == 0) {
+		alert("Missing info - Insert your name!");
+		{
+			name.focus();
+			return false;
 
+		}
+
+		return true;
 	}
 
-	return true;
+	if (email.value == 0) {
+		alert("Missing info - Insert your email!");
+		{
+			email.focus();
+			return false;
+
+		}
+
+		return true;
+	}
+	if (phone.value == 0) {
+		alert("Missing info - Insert your phone!");
+		{
+			phone.focus();
+			return false;
+
+		}
+
+		return true;
+	}
+}
+
+function checkRooms() {
+	let roomCounter = document.getElementById("roomCounter");
+	let hotelName = document.getElementById("hotelName");
+	let cityName = document.getElementById("cityName");
+
+	if (hotelName.value == 0) {
+		alert("Missing info - Fill the input Hotel Name!");
+		{
+			hotelName.focus();
+			return false;
+		}
+
+		return true;
+	}
+	if (cityName.value == 0) {
+		alert("Missing info - Fill the input Ciy Name!");
+		{
+			cityName.focus();
+			return false;
+		}
+
+		return true;
+	}
+	if (roomCounter.value <= 0 || roomCounter.value >= 50) {
+		alert("The number of rooms is incorrect!");
+		{
+			roomCounter.focus();
+			return false;
+		}
+
+		return true;
+
+	}
 }
 
 function checkBooking() {
