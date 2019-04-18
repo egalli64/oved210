@@ -25,7 +25,7 @@ function checkUser() {
 
 function checkRooms() {
 	let roomCounter = document.getElementById("roomCounter");
-	if (roomCounter.value <= 0 || roomCounter.value > 50) {
+	if (roomCounter.value <= 0 || roomCounter.value >= 50) {
 		alert("The number of rooms is incorrect!");
 		roomCounter.focus();
 		return false;

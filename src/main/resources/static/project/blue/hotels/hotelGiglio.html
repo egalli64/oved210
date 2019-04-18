@@ -11,88 +11,96 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
+
+<script src="/js/project/blue/login.js"></script>
+
 </head>
-<body id="napoliBody" >
-<br>
-<div align="left">
-	<a href="/project/blue/city/view"><button >
-			<i style='font-size:48px; color:black' class='fas'>&#xf015;</i>
-		</button> </a>
-</div>
+<body id="napoliBody">
+	<br>
+	<div align="left">
+		<a href="/project/blue/city/view"><button>
+				<i style='font-size: 48px; color: black' class='fas'>&#xf015;</i>
+			</button> </a>
+	</div>
 
-<h1>Hotel Giglio</h1>
-<br>
+	<h1>Hotel Giglio</h1>
+	<br>
 
 
-<div class="container-fluid" align="center">
+	<div class="container-fluid" align="center">
 		<div class="row">
-		<div class="col-4" align="center">
-			  <img src="/img/project/blue/hotelNapoli/napoli1.jpg" width=80% height= 80% >
-			</div>
-		<div class="col-4" align="center">
-			  <img src="/img/project/blue/hotelNapoli/napoli3.jpg" width=80% height= 80% >
+			<div class="col-4" align="center">
+				<img src="/img/project/blue/hotelNapoli/napoli1.jpg" width=80%
+					height=80%>
 			</div>
 			<div class="col-4" align="center">
-			  <img src="/img/project/blue/hotelNapoli/napoli4.jpg" width=80% height= 80% >
+				<img src="/img/project/blue/hotelNapoli/napoli3.jpg" width=80%
+					height=80%>
+			</div>
+			<div class="col-4" align="center">
+				<img src="/img/project/blue/hotelNapoli/napoli4.jpg" width=80%
+					height=80%>
 			</div>
 		</div>
 	</div>
 
-<p align="center">
-Situato nel centro storico di Napoli, a 300 metri dalla stazione della metropolitana Dante, l'Hotel Piazza Bellini si trova in un edificio risalente al XVI secolo, e offre la connessione WiFi gratuita, 
-e camere arredate in modo personalizzato combinando un design moderno e oggetti d'arte.
-Impreziosite dai dipinti originali dell'artista locale Alessandro Cocchia, le sistemazioni sono dotate di aria condizionata, TV a schermo piatto, pavimenti in legno, e in alcuni casi presentano un balcone.
-Inizierete la giornata con una ricca colazione a buffet a base di pancetta, uova strapazzate, mozzarella, cornetti e torte fatte in casa, e su richiesta avrete a disposizione anche prodotti senza glutine.
-</p>
+	<p align="center">Situato nel centro storico di Napoli, a 300 metri
+		dalla stazione della metropolitana Dante, l'Hotel Piazza Bellini si
+		trova in un edificio risalente al XVI secolo, e offre la connessione
+		WiFi gratuita, e camere arredate in modo personalizzato combinando un
+		design moderno e oggetti d'arte. Impreziosite dai dipinti originali
+		dell'artista locale Alessandro Cocchia, le sistemazioni sono dotate di
+		aria condizionata, TV a schermo piatto, pavimenti in legno, e in
+		alcuni casi presentano un balcone. Inizierete la giornata con una
+		ricca colazione a buffet a base di pancetta, uova strapazzate,
+		mozzarella, cornetti e torte fatte in casa, e su richiesta avrete a
+		disposizione anche prodotti senza glutine.</p>
 
-<br>
-<div class="container-fluid" align="center">
+	<br>
+	<div class="container-fluid" align="center">
 		<div class="row">
 
-	<form id="addbooking" name="frmLogInsert"
-		action="/project/blue/bookings/addBooking"
-		onsubmit="return checkRooms()" method="get">
-		
-		<div class="col-6" align="left">
-	<h3>Add Booking</h3>
-	<input type = "text" name = "mode" hidden="true" value="4" >
-			<label class=text-left> <input type="number"
-				name="clientId" id=clientId class=text-left hidden="true">
-			</label>
-			 <label class=text-left>  <input type="number"
-				name="hotelId" id=hotelId class=text-left hidden="true">
-			</label> 
-			<label class=text-left>Check-In: <input type="date"
-				name="checkIn" id="checkIn" class=text-left>
-			</label> 
-			<label class=text-left>Check-Out: <input type="date"
-				name="checkOut" id="checkOut" class=text-left>
-			</label> 
-			<label class=text-left > Rooms: <input type="number"
-				name="room" id="roomCounter" class=text-left>
-			</label> 
-			<br />
-<button type="submit" class="text-center" id="addBooking" align= "left">
-				<b>Add this new booking!</b>
-			</button>
-		  </div>
-	</form>
-	<div class="col-6" align="right">
+			<form id="addbooking" name="frmLogInsert"
+				action="/project/blue/bookings/addBooking"
+				onsubmit="return checkRooms()" method="get">
 
-<iframe src= https://www.google.com/maps?q=Hotel+Piazza+Bellini&amp;output=embed
-width="500" height="350">
-</iframe>
-</div>
-</div>
-</div>
+				<div class="col-6" align="left">
+					<h3>Add Booking</h3>
+					<input type="text" name="mode" hidden="true" value="4"> <label
+						class=text-left> <input type="number" name="clientId"
+						id=clientId class=text-left hidden="true">
+					</label> <label class=text-left> <input type="number"
+						name="hotelId" id=hotelId class=text-left hidden="true">
+					</label> <label class=text-left>Check-In: <input type="date"
+						name="checkIn" id="checkIn" class=text-left>
+					</label> <label class=text-left>Check-Out: <input type="date"
+						name="checkOut" id="checkOut" class=text-left>
+					</label> <label class=text-left> Rooms: <input type="number"
+						name="room" id="roomCounter" class=text-left>
+					</label> <br />
+					<button type="submit" class="text-center" id="addBooking"
+						align="left">
+						<b>Add this new booking!</b>
+					</button>
+				</div>
+			</form>
+			<div class="col-6" align="right">
 
-<br>
+				<iframe
+					src=https://www.google.com/maps?q=Hotel+Piazza+Bellini&amp;output=embed
+					width="500" height="350"> </iframe>
+			</div>
+		</div>
+	</div>
 
-<div class = "container">
-<p class="backgroundtitles rounded float-center" align="center"> Indirizzo: Via S.M. Di Costantinopoli 101, Centro storico di Napoli, 80134 Napoli (NA) <br>
-Tel: +39 081 451732 <br>
-Email: hotelGiglio@gmail.com<br>
-</p>
+	<br>
 
-</div>
+	<div class="container">
+		<p class="backgroundtitles rounded float-center" align="center">
+			Indirizzo: Via S.M. Di Costantinopoli 101, Centro storico di Napoli,
+			80134 Napoli (NA) <br> Tel: +39 081 451732 <br> Email:
+			hotelGiglio@gmail.com<br>
+		</p>
+
+	</div>
 </body>
