@@ -13,6 +13,22 @@ h3 {
 table {
 	text-align: center;
 }
+
 th {
 	text-align: center;
+}
+
+.google-maps {
+	position: relative;
+	padding-bottom: 75%; 
+	height: 0;
+	overflow: hidden;
+}
+
+.google-maps > iframe {
+	position: absolute;
+	top: 100;
+	left: 100;
+	width: 100% !important;
+	heigth: 100% !important;
 }
