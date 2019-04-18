@@ -1,0 +1,20 @@
+body {
+	background-color:  #d5ffd5;
+	
+}
+
+h1 {
+	text-align: center;
+	color: #009797;
+    background-color: white; color:black; opacity: 0.5;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#h1 {
+	text-align: center;
+    width: 350px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+}
