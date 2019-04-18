@@ -20,15 +20,31 @@ th {
 
 .google-maps {
 	position: relative;
-	padding-bottom: 75%; 
+	padding-bottom: 75%;
 	height: 0;
 	overflow: hidden;
 }
 
-.google-maps > iframe {
+.google-maps>iframe {
 	position: absolute;
 	top: 100;
 	left: 100;
 	width: 100% !important;
 	heigth: 100% !important;
+}
+
+.box {
+	position: relative;
+	width: 191px !important;
+	height: 190px !important;
+	padding: 4px;
+	border: 1px solid #EEE;
+	border-right: 0 solid;
+	background: url(gradient.png) repeat-x fixed top left;
+	overflow: auto
+}
+
+.myCarousel {
+	width: 300px;
+	heigth: 300px;
 }
