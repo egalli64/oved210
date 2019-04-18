@@ -24,7 +24,7 @@
 
 		<div class="form-group">
 			<label>Hotel:</label> 		
-		<select name="hotelId">
+		<select name="hotelId" class="form-control">
 			<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
 			th:text="${hotel.hotelName}"></option>
 		</select>						     	 
@@ -32,7 +32,7 @@
 
 		<div class="form-group">
 			<label>Client:</label> 
-		<select name="clientId">
+		<select name="clientId" class="form-control">
 			<option th:each="client:${clients}" th:value="${client.clientId}"
 			th:text="${client.clientName}"></option>
 		</select>			
