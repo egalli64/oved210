@@ -38,9 +38,7 @@ p {
 }
 
 #welcome {
-	background-color: white;
-	color: black;
-	opacity: 0.5;
+	background-color: white ; color: black; opacity: 0.5;
 	width: 350px;
 	padding-left: 10px;
 	padding-right: 10px;
