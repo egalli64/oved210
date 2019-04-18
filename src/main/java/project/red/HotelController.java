@@ -142,6 +142,22 @@ public class HotelController {
 	    }
 	    return buffer.substring(0, buffer.length() - 1);
 	}
-
-	 
+	@GetMapping("/project/red/showHotel")
+	 public String showPage (@RequestParam int hotelId, Model model) {
+		 switch(hotelId) {
+		 case 121:
+			 return "/project/red/location/hotelTulipano";
+		 case 122:
+			 return "/project/red/location/hotelMargherita";
+		 case 123:
+			 return "/project/red/location/hotelGirasole";
+		 case 124:
+			 return "/project/red/location/hotelGiglio";
+		 case 125:
+			 return "/project/red/location/hotelOrchidea";
+		 default:
+			 return "/project/red/location/hotel";		 
+		 }
+		 
+	 }
 }
