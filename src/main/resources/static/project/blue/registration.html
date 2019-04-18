@@ -29,13 +29,13 @@
 
 <br>		<input type = "text" name = "mode" hidden="true" value="1" >
 			<label class= text-left>Full Name:  
-			<input type = "text" name = "name" class=text-left >
+			<input type = "text" pattern = "[ A-Za-z]+" placeholder="Name and Surname" name = "name" class=text-left >
 			</label><br>
 			<label class=text-left>Email:  
 			<input type = "email" name = "email" autocomplete = "on" placeholder="email@domain.ext" class=text-left>
 			</label><br>
 			<label class=text-left>Phone:  
-			 <input type = "number" name = "phone" class=text-left>
+			 <input type = "number" pattern="[0,9]{8,12}" name = "phone" autocomplete = "on" placeholder="Phone number" class=text-left>
 			</label>
 			<br />
 		<a href="/project/blue/clients">
