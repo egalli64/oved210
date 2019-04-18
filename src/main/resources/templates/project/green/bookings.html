@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/css/project/green/green2.css">
 </head>
-<body id ='bookings'>
+<body id='bookings'>
 	<div class="container-fluid">
 		<br />
 		<h3 class="backgroundtitles">
@@ -16,23 +16,29 @@
 		</h3>
 		<div>
 			<a href="/project/green/booking/prepare"><button type="button"
-					class="btn btn-outline-success">Add New Booking</button> </a>
+					class="btn btn-outline-success">Add New Booking</button> </a><br /> <br />
+			<a href="/project/green/login"><button type="button"
+					class="btn btn-outline-dark">Go Back</button></a>
+
 		</div>
 		<br />
-		
+
 		<div>
-		<h4 th:text= "${addBookings}" th:if="${addBookings}" class="alert alert-success text-center"> </h4>
-		<h4 th:text="${removeBooking}" th:if="${removeBooking}" class="alert alert-danger text-center"></h4>
-		<h4 th:text="${deleteBooking}" th:if="${deleteBooking}" class="alert alert-danger text-center"></h4>
-		
+			<h4 th:text="${addBookings}" th:if="${addBookings}"
+				class="alert alert-success text-center"></h4>
+			<h4 th:text="${removeBooking}" th:if="${removeBooking}"
+				class="alert alert-danger text-center"></h4>
+			<h4 th:text="${deleteBooking}" th:if="${deleteBooking}"
+				class="alert alert-danger text-center"></h4>
+
 		</div>
-		
+
 		<table class="table table-hover">
 			<thead class="thead-succes">
-					<br />
-					<br />
+				<br />
+				<br />
 				<tr>
-					<th>Client Name</th> 
+					<th>Client Name</th>
 					<th>Hotel Name</th>
 					<th>Check-In</th>
 					<th>Check-Out</th>
@@ -43,7 +49,7 @@
 			</thead>
 
 			<tr th:each="booking: ${bookings}">
-		  <td th:text="${booking.client.clientName}"></td>
+				<td th:text="${booking.client.clientName}"></td>
 				<td th:text="${booking.hotel.hotelName}"></td>
 				<td th:text="${booking.checkIn}"></td>
 				<td th:text="${booking.checkOut}"></td>
@@ -65,8 +71,6 @@
 
 		<a href="/project/green/check-in-out.html"><button type="button"
 				class="btn btn-outline-info">Do your check!</button> </a> <br /> <br />
-		<a href="/project/green/login"><button type="button"
-				class="btn btn-outline-dark">Go Back</button></a>
 	</div>
 </body>
 </html>

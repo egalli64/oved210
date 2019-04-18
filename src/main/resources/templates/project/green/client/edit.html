@@ -14,7 +14,6 @@
 		<br />
 		<form id="newclient" name="frmLog"
 			action="/project/green/client/saveedit" method="get">
-
 			<input name="clientId" type="hidden" class="form-control"
 				th:value="${clientId}">
 
@@ -28,6 +27,7 @@
 				<label for="exampleInputEmail1">Email address</label> <input
 					name="email" type="text" class="form-control" th:value="${email}">
 			</div>
+
 			<div class="form-group">
 				<label for="exampleInputTelephone number">Telephone number</label> <input
 					name="phone" type="text" class="form-control" th:value="${phone}">
@@ -38,12 +38,12 @@
 		</form>
 	</div>
 	<br />
-		<div class="col-auto">
-			<a href="/project/green/clients"><button type="button"
-					class="btn btn-outline-dark">Go Back</button></a>
-			<a href="/project/green/login"><button type="button"
+	<div class="col-auto">
+		<a href="/project/green/clients"><button type="button"
+				class="btn btn-outline-dark">Go Back</button></a> <a
+			href="/project/green/login"><button type="button"
 				class="btn btn-outline-light">Home</button></a>
-		</div>
+	</div>
 
 </body>
 </html>
