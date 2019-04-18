@@ -9,39 +9,48 @@
 	href="/css/project/green/green2.css">
 </head>
 
-<body>
+<body id="bookings">
 	<div class="container-fluid">
 		<br />
 		<br />
-		<form id="newclient" name="frmLog"
+		<form id="newbooking"
 			action="/project/green/booking/saveEditBook" method="get">
+			
 			<input name="bookingId" type="hidden" class="form-control"
 				th:value="${bookingId}">
 
 			<div class="form-group">
-				<label>Client:</label> <select name="clientlId"
+				<label>Client:</label>
+				<select name="clientId"
 					th:value="${clientId}">
+					
 					<option th:each="client:${clients}" th:value="${client.clientId}"
-						th:text="${client.clientName}"></option>
-				</select> <label>Hotel:</label> <select name="hotelId" th:value="${hotel}">
-					<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
-						th:text="${hotel.hotelName}"></option>
+						th:text="${client.clientName}"
+						th:selected="${client.clientId == booking.client.clientId}"></option>
+						
+				</select>
+				<label>Hotel:</label>
+				<select name="hotelId">
+					<option th:each="hotel: ${hotels}" th:value="${hotel.hotelId}"
+						th:text="${hotel.hotelName}"
+						th:selected="${hotel.hotelId == booking.hotel.hotelId}">
+					</option>
 				</select>
 			</div>
 			<br />
-
+<!--
 			<div class="form-group">
 				<label for="exampleInputCheckIn">Email</label> <input name="email"
 					type="text" class="form-control" placeholder="Insert your email">
 			</div>
-			<br />
+			<br /> -->
 
-			<!-- 		<p>
+				<!-- 	<p>
 				<b> Payment </b><br /> <input type="checkbox" name="ds" value="map" />Credit
 				Card<br /> <input type="checkbox" name="ds" value="list" />Debit
 				Card<br /> <input type="checkbox" name="ds" value="set"
 					checked="checked" />Paypal<br />
-			</p>
+			</p>  -->
 
 			<div class="form-group">
 				<label for="exampleInputCheckIn">Check-In</label> <input
@@ -53,29 +62,27 @@
 					name="checkOut" type="date" class="form-control"
 					th:value="${booking.checkOut}">
 			</div>
--->
 
-			<p>
-				Check In <input type="date" name="delivery" /> Check Out <input
-					type="date" name="delivery" />
-			</p>
+  
+			
 			<br />
 
 			<div class="form-group">
-				<label>Payment:</label> <select name="os">
+				<label>Payment:</label>
+				<select name="payment">
 					<option value="creditcard">Credit Card</option>
 					<option value="debitcard">Debit Card</option>
 					<option value="paypal">Paypal</option>
 				</select>
 			</div>
 			<br />
-			<!--
+			<!--  
 			<div class="form-group">
 				<label for="exampleInputPayment">Payment</label> <input
 					name="payment" type="text" class="form-control"
 					th:value="${booking.payment}">
-			</div>
--->
+			</div>    -->
+
 			<button type="submit" class="btn btn-outline-success">Edit!</button>
 
 		</form>
