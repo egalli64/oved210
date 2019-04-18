@@ -105,11 +105,11 @@ public class BookingController {
 
 		log.trace("edit booking");
 
-		Optional<Booking> opt = brepo.findById(bookingId);
+		Optional<Booking> optBooking = brepo.findById(bookingId);
 
 		// TODO: exception
-		if (opt.isPresent()) {
-			Booking booking = opt.get();
+		if (optBooking.isPresent()) {
+			Booking booking = optBooking.get();
 
 			model.addAttribute("bookingId", booking.getBookingId());
 			model.addAttribute("hotelId", booking.getHotel());
