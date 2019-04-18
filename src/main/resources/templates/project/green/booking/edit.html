@@ -12,12 +12,11 @@
 <body>
 	<div class="container-fluid">
 		<br />
+		<br />
 		<form id="newclient" name="frmLog"
 			action="/project/green/booking/saveEditBook" method="get">
-
 			<input name="bookingId" type="hidden" class="form-control"
 				th:value="${bookingId}">
-
 
 			<div class="form-group">
 				<label>Client:</label> <select name="clientlId"
@@ -29,11 +28,13 @@
 						th:text="${hotel.hotelName}"></option>
 				</select>
 			</div>
+			<br />
 
 			<div class="form-group">
 				<label for="exampleInputCheckIn">Email</label> <input name="email"
-					type="date" class="form-control" th:value="${booking.checkIn}">
+					type="text" class="form-control" placeholder="Insert your email">
 			</div>
+			<br />
 
 			<!-- 		<p>
 				<b> Payment </b><br /> <input type="checkbox" name="ds" value="map" />Credit
@@ -58,13 +59,23 @@
 				Check In <input type="date" name="delivery" /> Check Out <input
 					type="date" name="delivery" />
 			</p>
+			<br />
 
+			<div class="form-group">
+				<label>Payment:</label> <select name="os">
+					<option value="creditcard">Credit Card</option>
+					<option value="debitcard">Debit Card</option>
+					<option value="paypal">Paypal</option>
+				</select>
+			</div>
+			<br />
+			<!--
 			<div class="form-group">
 				<label for="exampleInputPayment">Payment</label> <input
 					name="payment" type="text" class="form-control"
 					th:value="${booking.payment}">
 			</div>
-
+-->
 			<button type="submit" class="btn btn-outline-success">Edit!</button>
 
 		</form>
@@ -74,6 +85,5 @@
 			href="/project/green/login"><button type="button"
 				class="btn btn-outline-light">Home</button></a>
 	</div>
-
 </body>
 </html>
