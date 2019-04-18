@@ -308,6 +308,52 @@ public class GreenController {
 		return "/project/green/bookings";
 	}
 
+	@GetMapping("/project/green/booking/edit")
+	public String editBooking(@RequestParam Long bookingId, Model model) {
+		//public String prepareBookingInsert(Model model) {
+			//log.trace("prepare booking insert");
+			//
+			//model.addAttribute("hotels", repoHotel.findAll());
+			//return "project/green/booking/insert";
+		//}
+		
+		log.trace("get edit booking");
+		
+		 Optional<Booking> booking = repoBooking.findById(bookingId);
+		 if (booking.isPresent()) {			 
+			 model.addAttribute("booking", booking.get());			 
+			 model.addAttribute("clients", repoClient.findAll());
+			 model.addAttribute("hotels", repoHotel.findAll());
+				return "/project/green/booking/edit";	
+		 } else {
+			 // TODO: ???
+				return "/project/green/booking/edit";	
+		 }
+	}
+	
+	
+	@GetMapping("/project/green/booking/saveEditBook")
+	public String saveeditBooking(
+			@RequestParam Long bookingId,
+			@RequestParam GreenHotel hotel,
+			@RequestParam GreenClient client, 
+			@RequestParam Date checkIn,
+			@RequestParam Date checkOut,
+			@RequestParam String payment,
+			Model model) {
+	
+		log.trace("save editing booking");
+		
+		Booking booking = new Booking(bookingId, hotel, client, checkIn, checkOut, payment);
+		model.addAttribute("clients", repoClient.findAll());
+		model.addAttribute("hotels", repoHotel.findAll());
+		
+		repoBooking.save(booking);
+		model.addAttribute("editingDone", "BOOKING MODIFIED");
+		model.addAttribute("bookings", repoBooking.findAll());
+		return "/project/green/bookings";
+	}
+	
 }
 //	 @GetMapping("/project/green/clients")
 //	    public String orderGreenClients( //

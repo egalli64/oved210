@@ -35,38 +35,36 @@ public class BlueControllerBooking {
 	
 	@GetMapping("/project/blue/bookings/addBooking")
 	public String addBooking( //
-			//@RequestParam Long bookingId, //
+			// @RequestParam Long bookingId, //
 			@RequestParam Long hotelId, //
-			@RequestParam Long clientId , //
-			@RequestParam Date checkIn , //
-			@RequestParam Date checkOut , //
-			@RequestParam Long room,
-			@RequestParam int mode,//
+			@RequestParam Long clientId, //
+			@RequestParam Date checkIn, //
+			@RequestParam Date checkOut, //
+			@RequestParam Long room, @RequestParam int mode, //
 			Model model) {
 		log.trace("get all bookings");
 
-			BlueBooking booking = new BlueBooking();
+		BlueBooking booking = new BlueBooking();
 
-			//booking.setBookingId(bookingId);
-			booking.setHotelId(hotelId);
-			booking.setClientId(clientId);
-			booking.setCheckIn(checkIn);
-			booking.setCheckOut(checkOut);
-			booking.setRoom(room);
-		
-	
-			repBooking.save(booking);
+		// booking.setBookingId(bookingId);
+		booking.setHotelId(hotelId);
+		booking.setClientId(clientId);
+		booking.setCheckIn(checkIn);
+		booking.setCheckOut(checkOut);
+		booking.setRoom(room);
+
+		repBooking.save(booking);
+
+		switch (mode) {
+		case 5:
 			model.addAttribute("bookings", repBooking.findAll());
 			model.addAttribute("SaveBooking", "--New booking inserted!--");
-	
-	switch (mode) {
-	case 5:
-		return "/project/blue/addBooking";
-	default:
-		return "/project/blue/confirm";
+			return "/project/blue/bookings";
+		default:
+			model.addAttribute("booking", booking);
+			return "/project/blue/confirm";
+		}
 	}
-
-}
 
 	//controller remove bookings
 	

@@ -18,13 +18,12 @@
 	</div>
 	<br>
 
-	<form class="left" id="new" name="frmLogInsert"
+	<form class="container-fluid left" id="new" name="frmLogInsert"
 		action="/project/red/saveBooking" method="get">
 
 		<input name="bookingId" type="number" class="form-control"
 			hidden="true" th:value="${bookingId}">
 
-		<!-- RIVEDERE LE SELECT  -->
 		<div class="form-group">
 			<label>Hotel:</label> <select name="hotelId" th:value="${hotelId}">
 				<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
@@ -61,13 +60,16 @@
 		</div>
 
 		<div class="form-group">
-			<label th:value="${payment}">Payment: </label> <br> <input
-				type="radio" name="payment" value="Credit Card" /> Credit Card <img
-				src="/img/project/red/carte.png" width="30" height="35"></img> <br>
-			<input type="radio" name="payment" value="Paypal" /> Paypal <img
-				src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
-			<input type="radio" name="payment" value="Cash" /> Cash <img
-				src="/img/project/red/cash.png" width="30" height="35"></img> <br>
+			<label>Payment: </label> <br> 
+			<input type="radio" name="payment" value="Credit Card" th:checked="${payment} == 'Credit Card'" /> Credit Card 
+			<img src="/img/project/red/carte.png" width="30" height="35"></img> <br>
+		
+			<input type="radio" name="payment" value="Paypal" th:checked="${payment} == 'Paypal'" /> Paypal 
+			<img src="/img/project/red/paypal.png" width="30" height="35"></img> <br>
+			
+			<input type="radio" name="payment" value="Cash" th:checked="${payment} == 'Cash'" /> Cash 
+			<img src="/img/project/red/cash.png" width="30" height="35"></img> <br>
+			
 		</div>
 		<div>
 			<button type="submit" class="btn btn-primary">SAVE</button>

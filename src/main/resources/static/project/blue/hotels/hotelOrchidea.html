@@ -11,6 +11,7 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="veneziaBody">
 	<br>
@@ -55,7 +56,7 @@
 
 	<form id="addbooking" name="frmLogInsert"
 		action="/project/blue/bookings/addBooking"
-		onsubmit="return checkRooms()" method="get">
+		onsubmit="return checkBooking()" method="get">
 		
 		<div class="col-6" align="left">
 	<h3>Add Booking</h3>
@@ -73,17 +74,17 @@
 				name="checkOut" id="checkOut" class=text-left>
 			</label> 
 			<label class=text-left >Rooms: <input type="number"
-				name="room" id="roomCounter" class=text-left>
+				name="room" id="room" class=text-left>
 			</label> 
 			<br />
 
-			<button type="submit" class="text-center" id="addBooking" align= "left">
-				<b>Add this new booking!</b>
+			<button type="submit" class="text-center" id="addBooking">
+			Add this new booking! <i class="fa fa-pencil-square-o"></i>
 			</button>
 		  </div>
 	</form>
 	
-	<div align="right">
+	<div class="col-6" align="right">
 		<iframe
 			src=http://maps.google.com/maps?q=Four+Seasons+Hotel+Venice&amp;output=embed
 			width="500" height="350"> </iframe>
@@ -92,7 +93,10 @@
 	<div class="container">
 		<p class="backgroundtitles rounded float-center" align="center">
 			Indirizzo: via Circonvallazione, 24, 30100 Venezia (VE)<br> Tel: +39
-			0463.89.63.97 <br> Email: hotelOrchidea@gmail.com<br>
+			0463.89.63.97 /+39 3346895786 <img src="https://img.icons8.com/color/48/000000/whatsapp.png" > <br> Email: hotelOrchidea@gmail.com<br>
+		<a href="https://it-it.facebook.com/"><button><img src="https://img.icons8.com/color/48/000000/facebook.png"></button></a>
+		<a href="https://www.instagram.com/?hl=it"><button><img src="https://img.icons8.com/color/48/000000/instagram-new.png"> </button></a>
+		<a href="https://accounts.google.com/signin/v2/sl/pwd?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><button><img src="https://img.icons8.com/color/32/000000/gmail.png"></button></a>
 		</p>
 
 	</div>

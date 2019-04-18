@@ -11,6 +11,7 @@
 	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="napoliBody" >
 <br>
@@ -51,7 +52,7 @@ Inizierete la giornata con una ricca colazione a buffet a base di pancetta, uova
 
 	<form id="addbooking" name="frmLogInsert"
 		action="/project/blue/bookings/addBooking"
-		onsubmit="return checkRooms()" method="get">
+		onsubmit="return checkBooking()" method="get">
 		
 		<div class="col-6" align="left">
 	<h3>Add Booking</h3>
@@ -69,11 +70,11 @@ Inizierete la giornata con una ricca colazione a buffet a base di pancetta, uova
 				name="checkOut" id="checkOut" class=text-left>
 			</label> 
 			<label class=text-left > Rooms: <input type="number"
-				name="room" id="roomCounter" class=text-left>
+				name="room" id="room" class=text-left>
 			</label> 
 			<br />
 <button type="submit" class="text-center" id="addBooking" align= "left">
-				<b>Add this new booking!</b>
+			Add this new booking! <i class="fa fa-pencil-square-o"></i>
 			</button>
 		  </div>
 	</form>
@@ -90,8 +91,11 @@ width="500" height="350">
 
 <div class = "container">
 <p class="backgroundtitles rounded float-center" align="center"> Indirizzo: Via S.M. Di Costantinopoli 101, Centro storico di Napoli, 80134 Napoli (NA) <br>
-Tel: +39 081 451732 <br>
+Tel: +39 081 451732 /+39 3346895786 <img src="https://img.icons8.com/color/48/000000/whatsapp.png" > <br>
 Email: hotelGiglio@gmail.com<br>
+<a href="https://it-it.facebook.com/"><button><img src="https://img.icons8.com/color/48/000000/facebook.png"></button></a>
+<a href="https://www.instagram.com/?hl=it"><button><img src="https://img.icons8.com/color/48/000000/instagram-new.png"> </button></a>
+<a href="https://accounts.google.com/signin/v2/sl/pwd?flowName=GlifWebSignIn&flowEntry=ServiceLogin"><button><img src="https://img.icons8.com/color/32/000000/gmail.png"></button></a>
 </p>
 
 </div>
