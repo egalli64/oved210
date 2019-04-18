@@ -312,26 +312,23 @@ public class GreenController {
 	public String editBooking(@RequestParam Long bookingId, Model model) {
 		//public String prepareBookingInsert(Model model) {
 			//log.trace("prepare booking insert");
-			//model.addAttribute("clients", repoClient.findAll());
+			//
 			//model.addAttribute("hotels", repoHotel.findAll());
 			//return "project/green/booking/insert";
 		//}
 		
 		log.trace("get edit booking");
 		
-		 Optional<Booking> opzione = repoBooking.findById(bookingId);
-		 if (opzione.isPresent()) {
-			 Booking booking = opzione.get();
-			 
-			 model.addAttribute("bookingId", booking.getBookingId());
-			 model.addAttribute("hotelId", booking.getHotel());
-			 model.addAttribute("clientId", booking.getClient());
-			 model.addAttribute("checkIn", booking.getCheckIn());
-			 model.addAttribute("checkOut", booking.getCheckOut());
-			 model.addAttribute("payment", booking.getPayment());
+		 Optional<Booking> booking = repoBooking.findById(bookingId);
+		 if (booking.isPresent()) {			 
+			 model.addAttribute("booking", booking.get());			 
+			 model.addAttribute("clients", repoClient.findAll());
+			 model.addAttribute("hotels", repoHotel.findAll());
+				return "/project/green/booking/edit";	
+		 } else {
+			 // TODO: ???
+				return "/project/green/booking/edit";	
 		 }
-		
-		return "/project/green/booking/edit";	
 	}
 	
 	
@@ -348,7 +345,8 @@ public class GreenController {
 		log.trace("save editing booking");
 		
 		Booking booking = new Booking(bookingId, hotel, client, checkIn, checkOut, payment);
-		
+		model.addAttribute("clients", repoClient.findAll());
+		model.addAttribute("hotels", repoHotel.findAll());
 		
 		repoBooking.save(booking);
 		model.addAttribute("editingDone", "BOOKING MODIFIED");

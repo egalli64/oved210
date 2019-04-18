@@ -12,20 +12,20 @@
 <body>
 	<div class="container-fluid">
 		<br />
-		<form id="newclient" name="frmLog"
-			action="/project/green/booking/saveEditBook" method="get">
+	<form id="newclient" name="frmLog" action="/project/green/booking/saveEditBook" method="get">
 
 			<input name="bookingId" type="hidden" class="form-control"
 				th:value="${bookingId}">
 
 
 				<div class="form-group">
-			<label>Hotel:</label> <select name="hotelId" th:value="${hotelId}">
+			<label>Hotel:</label> <select name="hotelId" th:value="${hotel}">
 				<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
 					th:text="${hotel.hotelName}"></option>
 			</select>
-			
 		</div>
+		
+		
 
 <div class="form-group">
 			<label>Client:</label> <select name="clientlId" th:value="${clientId}">
@@ -37,18 +37,18 @@
 
 <div class="form-group">
 				<label for="exampleInputCheckIn">Check-In</label> <input
-					name="checkIn" type="date" class="form-control" th:value="${checkIn}">
+					name="checkIn" type="date" class="form-control" th:value="${booking.checkIn}">
 			</div>
 
 			<div class="form-group">
 				<label for="exampleInputPayment">Payment</label> <input
-					name="payment" type="text" class="form-control" th:value="${payment}">
+					name="payment" type="text" class="form-control" th:value="${booking.payment}">
 			</div>
 
 			<button type="submit" class="btn btn-outline-success">Edit!</button>
 
 		</form>
-	</div>
+	
 	<br />
 		<div class="col-auto">
 			<a href="/project/green/bookings"><button type="button"
@@ -56,6 +56,6 @@
 			<a href="/project/green/login"><button type="button"
 				class="btn btn-outline-light">Home</button></a>
 		</div>
-
+</div>
 </body>
 </html>
