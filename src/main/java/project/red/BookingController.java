@@ -107,7 +107,7 @@ public class BookingController {
 
 		Optional<Booking> opt = brepo.findById(bookingId);
 
-		// TODO: excetpion
+		// TODO: exception
 		if (opt.isPresent()) {
 			Booking booking = opt.get();
 
