@@ -20,7 +20,7 @@ th {
 
 .google-maps {
 	position: relative;
-	padding-bottom: 75%;
+	padding-bottom: 25%;
 	height: 0;
 	overflow: hidden;
 }
@@ -29,8 +29,8 @@ th {
 	position: absolute;
 	top: 100;
 	left: 100;
-	width: 100% !important;
-	heigth: 100% !important;
+/*	width: 100% !important;
+	heigth: 100% !important;*/
 }
 
 .box {
