@@ -64,10 +64,18 @@ public class BookingController {
 			model.addAttribute("bookingSaved", "***Booking saved!***");
 			return "/project/red/bookings";
 		}
+			
+		
 
-		model.addAttribute("bookings", brepo.findAll());
-		model.addAttribute("unexistingdId", "***Unexisting Id!***");
-		return "/project/red/insertBooking";
+		try{
+			model.addAttribute("bookings", brepo.findAll());
+			model.addAttribute("unexistingdId", "***Unexisting Id!***");
+			return "/project/red/insertBooking";
+		} catch (Exception ex){
+			
+			model.addAttribute("insertDate", "***Insert Date!***");
+			return "/project/red/insertBooking";
+		}
 	}
 	
 	@GetMapping("/project/red/deleteBooking")
@@ -107,7 +115,7 @@ public class BookingController {
 
 		Optional<Booking> optBooking = brepo.findById(bookingId);
 
-		// TODO: exception
+		
 		if (optBooking.isPresent()) {
 			Booking booking = optBooking.get();
 
