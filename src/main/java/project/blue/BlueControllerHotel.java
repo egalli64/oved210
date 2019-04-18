@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BlueControllerHotel {
 	private static final Logger log = LoggerFactory.getLogger(BlueController.class);
 
-	
 	@Autowired
 	private BlueHotelRepository repHotel;
-	
+
 	@GetMapping("/project/blue/hotels")
 	public String allHotels(Model model) {
 		log.trace("get all hotels");
@@ -31,34 +30,38 @@ public class BlueControllerHotel {
 	}
 
 	// controller add hotels
-	
+
 	@GetMapping("/project/blue/hotels/addHotel")
 	public String addHotel( //
 			@RequestParam String hotelName, //
 			@RequestParam String city, //
 			@RequestParam Long roomCounter, //
 			Model model) {
+		hotelName = capitalize(hotelName);
+		city = capitalize(city);
 		log.trace("get all hotels");
 
-			BlueHotel hotel = new BlueHotel();
+		BlueHotel hotel = new BlueHotel();
 
-			hotel.setHotelName(hotelName);
-			hotel.setCity(city);
-			hotel.setRoomCounter(roomCounter);
+		hotel.setHotelName(hotelName);
+		hotel.setCity(city);
+		hotel.setRoomCounter(roomCounter);
 
-			repHotel.save(hotel);
-			model.addAttribute("hotels", repHotel.findAll());
+		repHotel.save(hotel);
+		model.addAttribute("hotels", repHotel.findAll());
 
-			String SaveHotel = String.format("--New hotel inserted!--");
-			model.addAttribute("SaveHotel", SaveHotel);
+		String SaveHotel = String.format("--New hotel inserted!--");
+		model.addAttribute("SaveHotel", SaveHotel);
 
 		return "/project/blue/hotels";
 	}
-	
-	
-	
-	//controller remove hotels
-	
+
+	private String capitalize(String hotelName) {
+	return "";
+	}
+		
+	 // controller remove hotels
+
 	@GetMapping("/project/blue/hotels/remove")
 
 	public String removeClient(@RequestParam Long hotelId, Model model) {
@@ -71,7 +74,6 @@ public class BlueControllerHotel {
 			model.addAttribute("hotels", repHotel.findAll());
 			String deleteHotel = String.format("--Hotel deleted!--");
 			model.addAttribute("deleteHotel", deleteHotel);
-		
 
 		} catch (Exception ex) {
 			String unexistingdId = String.format("--Unexisting Id!--");
@@ -81,9 +83,9 @@ public class BlueControllerHotel {
 		return "/project/blue/hotels";
 
 	}
-	
+
 	// controller edit hotels
-	
+
 	@GetMapping("/project/blue/editHotel")
 	public String editHotelFirst( //
 			@RequestParam Long hotelId, //
@@ -119,10 +121,8 @@ public class BlueControllerHotel {
 		model.addAttribute("editHotel", "--Hotel modified!--");
 		model.addAttribute("hotels", repHotel.findAll());
 
-		return "/project/blue/hotels";	
-	
-	
+		return "/project/blue/hotels";
+
 	}
 
 }
-

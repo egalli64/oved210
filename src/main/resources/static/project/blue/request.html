@@ -2,36 +2,119 @@
 <html>
 <head>
 <meta charset="utf-8">
+
 <title>Welcome here!</title>
 
 <script src="/js/project/blue/login.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/project/blue/blue.css" />
+<link rel="stylesheet" type="text/css" href="/css/project/blue/request.css" />
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body id="requestBody">
 
+<div class="container-fluid" align="center">
+		<div class="row">
+
+<div class="col-4" align="Center">
 <a href="/project/blue/staffWelcome.html">	<button class="button" id="sfattWelcome" >
-		Welcome!</button></a>
+		Supporto</button></a>
+</div>
 
-		<div>
-		<a href="/project/blue/registration.html">	<button class="button" id="regclient" >
+<div class="col-4" align="center">
+<a href="/project/blue/registration.html">	<button class="button" id="regclient" >
 		Register now!</button></a>
-		</div>
+</div>
 
-		<br />
+<div class="col-4" align="Center">
+<a href="/project/blue/registration.html">	<button class="button" id="regclient" >
+		Accedi</button></a>
+</div>
 
-	</fieldset>
-	<br />
+</div>
+</div>
+
+<!-- Codice del Carousel -->
 
 
-	<div class = "container-fluid border border-info" align="center" id = "contact"> <br/>
-		<h5>CONTACTS:</h5>
-		<h6>Email: blueprojecthotels@gmail.com</h6>
-		<br />
-		<h6>Tel: +39 02875966</h6>
-		<br />
-	</div> 
+<!-- Carousel -->
+<div class="container-fluid">
+<br>
+<h3> Welcome in Blue Page!</h3>
+<br>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+ <!-- Indicatori di posizione -->
+ <ol class="carousel-indicators">
+  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+  <li data-target="#myCarousel" data-slide-to="1"></li>
+  <li data-target="#myCarousel" data-slide-to="2"></li>
+  <li data-target="#myCarousel" data-slide-to="3"></li>
+  <li data-target="#myCarousel" data-slide-to="4"></li>
+  <li data-target="#myCarousel" data-slide-to="5"></li>
+ </ol>
+ 
+ <div class="carousel-inner">
+  <div class="item active" align="center">
+   <img src="/img/project/blue/hotelRoma/roma.jpg" alt= "Roma" width=100% height=70%>
+  </div>
+  
+  <div class="item " align="center">
+   <img src="/img/project/blue/hotelMilano/milano.jpg" alt="Milano" width=100% height=70%>
+  </div>
+  
+  <div class="item " align="center">
+   <img src="/img/project/blue/hotelVenezia/veneziaRequest.jpg" alt="Venezia" width=100% height=70%>
+  </div>
+  
+  <div class="item " align="center">
+   <img src="/img/project/blue/hotelFirenze/firenzeRequest.jpg" alt="Firenze" width=100% height=70%>
+  </div>
+  
+   
+   
+  <div class="item " align="center">
+   <img src="/img/project/blue/hotelNapoli/napoliRequest.jpg" alt="Napoli" width=100% height=70%>
+  </div>  
+   
+</div>
+
+ <!-- Controlli -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+<br>
+</div>
+
+
+
+
+
+
+		
+
+	
+<br>
+<br>
+<br>
+<br>
+<div class = "container" id="contact">
+	<p class="backgroundtitles rounded float-center" align="center">
+		CONTACTS: <br>
+Email: blueprojecthotels@gmail.com
+<br />Tel: +39 02875966<br />
+</p>
+</div>
 
 </body>
 </html>

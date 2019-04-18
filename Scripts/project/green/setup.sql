@@ -82,13 +82,13 @@ room_counter number (6)
 
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Tulipano', 'Milano', 10);
+values(green_hotels_seq.nextval , 'Hotel Tulipano', 'Firenze', 10);
 
 insert into green_hotels(hotel_id, hotel_name, city, room_counter)
 values(green_hotels_seq.nextval , 'Hotel Margherita', 'Roma', 10);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
-values(green_hotels_seq.nextval , 'Hotel Girasole', 'Firenze', 7);
+values(green_hotels_seq.nextval , 'Hotel Girasole', 'Milano', 7);
 
 insert into green_hotels (hotel_id, hotel_name, city, room_counter)
 values(green_hotels_seq.nextval , 'Hotel Giglio', 'Napoli', 5);
