@@ -70,25 +70,25 @@ public class BlueController {
 
 	// controller per tornare hotelDescription
 	@GetMapping("/project/blue/city/view")
-	public String viewCity(Model model) {
+	public String viewCity(Model model, Long clientId) {
+		model.addAttribute("clientId", clientId);
 		return "/project/blue/hotelDescription";  // TODO: da modificare 
 	}
+
 	// controller add clients
 	@GetMapping("/project/blue/clients/add")
 	public String addClient( //
 			@RequestParam String name, //
 			@RequestParam String email, //
 			@RequestParam Long phone, //
-			@RequestParam int mode,
+			@RequestParam int mode, //
 			Model model) {
-		log.trace("get all clients");
+		log.trace("add client " + name);
+		BlueClient client = new BlueClient();
 		try {
-			BlueClient client = new BlueClient();
-
 			client.setClientName(name);
 			client.setEmail(email);
 			client.setPhone(phone);
-			
 
 			repClient.save(client);
 			model.addAttribute("clients", repClient.findAll());
@@ -96,10 +96,10 @@ public class BlueController {
 		} catch (Exception ex) {
 			model.addAttribute("duplicatedmail", "--Mail already existing!--");
 		}
-		if(mode== 0 ) {
-		return "/project/blue/clients";
-		}else {
-			return viewCity(model);
+		if (mode == 0) {
+			return "/project/blue/clients";
+		} else {
+			return viewCity(model, client.getClientId());
 		}
 	}
 
