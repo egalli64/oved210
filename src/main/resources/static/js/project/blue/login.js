@@ -203,3 +203,4 @@ function checkBooking() {
 	}
 
 }
+

@@ -37,30 +37,30 @@ public class BlueControllerHotel {
 			@RequestParam String city, //
 			@RequestParam Long roomCounter, //
 			Model model) {
-		hotelName = capitalize(hotelName);
-		city = capitalize(city);
+		// hotelName = capitalize(hotelName);
+		// city = capitalize(city);
 		log.trace("get all hotels");
 
 		BlueHotel hotel = new BlueHotel();
+		try {
+			hotel.setHotelName(hotelName);
+			hotel.setCity(city);
+			hotel.setRoomCounter(roomCounter);
 
-		hotel.setHotelName(hotelName);
-		hotel.setCity(city);
-		hotel.setRoomCounter(roomCounter);
+			repHotel.save(hotel);
+			model.addAttribute("hotels", repHotel.findAll());
 
-		repHotel.save(hotel);
-		model.addAttribute("hotels", repHotel.findAll());
-
-		String SaveHotel = String.format("--New hotel inserted!--");
-		model.addAttribute("SaveHotel", SaveHotel);
+			String SaveHotel = String.format("--New hotel inserted!--");
+			model.addAttribute("SaveHotel", SaveHotel);
+		} catch (Exception exc) {
+			log.error("Can't add this hotel", exc);
+			return "/project/blue/rejectAddHotel";
+		}
 
 		return "/project/blue/hotels";
 	}
 
-	private String capitalize(String hotelName) {
-	return "";
-	}
-		
-	 // controller remove hotels
+	// controller remove hotels
 
 	@GetMapping("/project/blue/hotels/remove")
 
