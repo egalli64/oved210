@@ -29,8 +29,6 @@ function checkDate() {
 	
 	if(date1 < now) {
 		alert("Check in date cannot be previous to the current date!");
-		dateIn.focus();
-		
 		return false;
 		
 	}
@@ -38,7 +36,6 @@ function checkDate() {
 	
 	if(date2 < date1) {
 		alert("Check out date cannot be previous to the check in date!");
-		dateOut.focus();
 		return false;
 		
 	}
