@@ -73,44 +73,18 @@
 				<td th:text="${hotel.city}"></td>
 				<td th:text="${hotel.roomCounter}"></td>
 
-				<!-- 
-				<td><a href="/project/green/infoGirasole"
-					th:href="@{/project/green/infoGirasole(hotelId=${hotel.hotelId})}">
-						<button type="button" class="btn btn-default btn-sm btn btn-info">
-							<span class="glyphicon glyphicon-eye-open"></span> Info
-						</button>
-				</a></td>  -->
-
-				<td><a href="..."
-					th:href="@{/project/green/infohotels/info} + ${hotel.hotelId} + '.html'">
-						<button type="submit"
-							class="btn btn-outline-info btn-rounded waves-effect">Info</button>
+				<td><a th:href="@{/project/green/hotel/info(hotelId=${hotel.hotelId})}">
+						<button type="submit" class="btn btn-outline-info btn-rounded waves-effect">Info</button>
 				</a></td>
-
-				<!-- <td><a href="/project/green/hotel/edit"
-					th:href="@{/project/green/hotel/edit(hotelId=${hotel.hotelId})}">
-						<button type="button"
-							class="btn btn-default btn-sm btn btn-warning">
-							<span class="glyphicon glyphicon-edit"></span> Edit
-						</button>
-				</a></td>  -->
-				<td><a href="/project/green/hotel/edit"
+	
+					<td><a href="/project/green/hotel/edit"
 					th:href="@{/project/green/hotel/edit(hotelId=${hotel.hotelId})}">
 						<button type="submit"
 							class="btn btn-outline-warning btn-rounded waves-effect">Edit</button>
 				</a></td>
 
 
-				<!--	<td><a href="/project/green/hotels/removeHotels.html"
-					th:href="@{/project/green/removeHotels(hotelId=${hotel.hotelId})}">
-						<button type="button"
-							class="btn btn-default btn-sm btn btn-danger">
-							<span class="glyphicon glyphicon-pencil"></span> Remove
-						</button>
-				</a></td> -->
-
-
-				<td><a href="/project/green/hotels/removeHotels.html"
+					<td><a href="/project/green/hotels/removeHotels.html"
 					th:href="@{/project/green/removeHotels(hotelId=${hotel.hotelId})}">
 						<button type="submit" class="btn btn-danger btn-rounded">Remove</button>
 				</a></td>

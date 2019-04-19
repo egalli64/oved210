@@ -15,13 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-
-
-
-
-
-
-
 @Controller
 public class GreenController {
 	private static final Logger log = LoggerFactory.getLogger(GreenController.class);
@@ -294,8 +287,7 @@ public class GreenController {
 			model.addAttribute("bookings", repoBooking.findAll());
 
 			String SaveNewBooking = String.format("booking insered");
-			model.addAttribute("SaveNewBooking", SaveNewBooking);	
-			
+			model.addAttribute("SaveNewBooking", SaveNewBooking);			
 		}
 
 		// TODO: what if missing hotel or client?
@@ -372,6 +364,27 @@ public class GreenController {
 	}
 		return "/project/green/bookings";
 	}
+
+	
+@GetMapping("/project/green/hotel/info")
+public String showPage (@RequestParam int hotelId, Model model) {
+	 switch(hotelId) {
+	 case 1:
+		 return "/project/green/hotel/info/info1";
+	 case 2:
+		 return "/project/green/hotel/info/info2";
+	 case 3:
+		 return "/project/green/hotel/info/info3";
+	 case 4:
+		 return "/project/green/hotel/info/info4";
+	 case 5:
+		 return "/project/green/hotel/info/info5";
+
+	 default:
+		 return "/project/green/hotel/info/default";		 
+	 }
+
+}
 }
 
 
