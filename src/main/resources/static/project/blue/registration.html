@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Registration form</title>
 
-
+  <script src="/js/project/blue/login.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/project/blue/bluestd.css"/>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -24,18 +24,18 @@
 
 </div>
 
-	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add" >
+	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add" method = "get" onsubmit="return checkId()">
 	<div  class = "container-fluid border border-info" align="center" id = "contact">
 
 <br>		<input type = "text" name = "mode" hidden="true" value="1" >
 			<label class= text-left>Full Name:  
-			<input type = "text" pattern = "[ A-Za-z]+" placeholder="Name and Surname" name = "name" class=text-left >
+			<input type = "text" pattern = "[ A-Za-z]+" placeholder="Name and Surname" name = "name" id="name" class=text-left >
 			</label><br>
 			<label class=text-left>Email:  
-			<input type = "email" name = "email" autocomplete = "on" placeholder="email@domain.ext" class=text-left>
+			<input type = "email" name = "email" id="email" autocomplete = "on" placeholder="email@domain.ext" class=text-left>
 			</label><br>
 			<label class=text-left>Phone:  
-			 <input type = "number" pattern="[0,9]{8,12}" name = "phone" autocomplete = "on" placeholder="Phone number" class=text-left>
+			 <input type = "number"  name = "phone" id="phone" autocomplete = "on" placeholder="Phone number" class=text-left>
 			</label>
 			<br />
 		<a href="/project/blue/clients">
