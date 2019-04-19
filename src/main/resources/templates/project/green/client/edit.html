@@ -30,7 +30,7 @@
 
 			<div class="form-group">
 				<label for="exampleInputTelephone number">Telephone number</label> <input
-					name="phone" type="text" class="form-control" th:value="${phone}">
+					name="phone" type="text" class="form-control" th:value="${phone}" pattern="[0-9]{10}">
 			</div>
 
 			<button type="submit" class="btn btn-outline-success">Edit!</button>
