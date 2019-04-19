@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import project.red.RedController;
-
-
-
-
 
 
 
@@ -293,6 +288,7 @@ public class GreenController {
 			model.addAttribute("addBookings", "New Booking inserted!");
 			model.addAttribute("bookings", repoBooking.findAll());
 
+
 			String SaveNewBooking = String.format("booking insered");
 			model.addAttribute("SaveNewBooking", SaveNewBooking);			
 		}
@@ -371,6 +367,27 @@ public class GreenController {
 	}
 		return "/project/green/bookings";
 	}
+	
+	@GetMapping("/project/green/hotel/info")
+	 public String showPage (@RequestParam int hotelId, Model model) {
+		 switch(hotelId) {
+		 case 1:
+			 return "/project/green/hotel/info/tulipano";
+		 case 2:
+			 return "/project/green/hotel/info/margherita";
+		 case 3:
+			 return "/project/green/hotel/info/girasole";
+		 case 4:
+			 return "/project/green/hotel/info/giglio";
+		 case 5:
+			 return "/project/green/hotel/info/orchidea";
+			 
+		 default:
+			 return "/project/green/hotel/info/default";		 
+		 }
+		 
+	 }
+	
 }
 
 

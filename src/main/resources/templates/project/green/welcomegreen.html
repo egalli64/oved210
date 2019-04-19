@@ -8,65 +8,65 @@
 </head>
 
 <body>
-	
-	<fieldset class="text-center">
-		<br /> <br /> <br />
-		<h3 th:text="'You are Welcome ' + ${user} + '!'"></h3>
+
+		<br /> 
+	<div class="right">
+		<a href="/project/green/request.html"><button type="button"
+				class="btn btn-outline-secondary">LOGOUT</button></a> <br>
+	</div>
+		<br>
+		
+		<br /> <br />
+		<h3 class="center" th:text="'You are Welcome ' + ${user} + '!'"></h3>
 		<br />
-		<div class="container-fluid">
+		<br>
+
+		<div class="container-fluid center">
 			<table class="table table-hover">
 				<thead class="thead-succes">
 					<tr>
-						<br />
-						<br />
-						<br />
-						<br />
-						<br />
-						<th>SELECT <a href="/project/green/clients"><I>Clients</I></a></th>
-						<th>SELECT <a href="/project/green/hotels"><i>Hotels</i></a></th>
-						<th>SELECT <a href="/project/green/bookings"><i>Bookings</i></a></th>
+						<th scope="col-4"><a href="/project/green/clients"><I>Clients</I></a></th>
+						<th scope="col-4"><a href="/project/green/hotels"><i>Hotels</i></a></th>
+						<th scope="col-4"><a href="/project/green/bookings"><i>Bookings</i></a></th>
 					</tr>
 				</thead>
 			</table>
 		</div>
-	</fieldset>
+
 	<br />
 	<br />
 	<br />
-	<div class="container-fluid">
+	<div class="container-fluid center">
 		<table class="table table-hover">
 			<thead class="thead-succes">
 				<tr>
-					<!-- <th><i>Contacts:</i><br />Indirizzo: Litoranea
-						Mattinata/Vieste, 71030 Mattinata FG <br />Telefono: 0884 550155</a></th>
- -->
- 		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-					<th><i>Where we are:</i></th>
+ 		<br>
+		<br>
+	
+		<th><i>Where we are:</i></th>
 				</tr>
 			</thead>
 		</table>
 		<div class="container-fluid">
 		<iframe class="googleframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11907.03486035814!2d16.144816!3d41.747297!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3dbafa4803774067!2sHotel+Baia+Delle+Zagare!5e0!3m2!1sit!2sit!4v1555664050730!5m2!1sit!2sit" 
-		width="600" height="300" frameborder="0" style="border:0"></iframe>
+		width="600" height="300" frameborder="0"></iframe>
 		</div>
 		
 		<br>
-		<div class="container-fluid">
+		<div class="container-fluid center">
 			<table class="table table-hover">
 				<thead class="thead-succes">
 					<tr>
-						<th><i>Contacts:</i><br />Indirizzo: Litoranea
-							Mattinata/Vieste, 71030 Mattinata FG <br />Telefono: 0884 550155</th>
+						<th><i>Contacts:</i><br />
+						Indirizzo: Litoranea Mattinata/Vieste, 71030, Mattinata (FG) 
+						<br />
+						Telefono: 0884 550155</th>
 					</tr>
 				</thead>
 			</table>
 		</div>
 	</div>
+	<br>
+	<br>
 </body>
 </html>

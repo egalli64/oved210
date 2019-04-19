@@ -48,8 +48,8 @@ function checkId() {
 
 		return true;
 	}
-	if (phone.value == 0) {
-		alert("Missing info - Insert your phone!");
+	if (phone.value <= 0) {
+		alert("You can't insert a negative phone number!");
 		{
 			phone.focus();
 			return false;

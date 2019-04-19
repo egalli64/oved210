@@ -9,7 +9,12 @@
 	href="/css/project/green/green2.css">
 </head>
 <body>
+<br>
+		<a href="/project/green/login"><button type="button"
+				class="btn btn-outline-light left">Home</button></a>
 	<br />
+	<form name="frmLog" action="/project/green/booking/insert"
+			method="get">
 	<div class="container-fluid">
 		<div class="form-group">
 			<label> Select Client Name: <select name="clientId">
@@ -23,6 +28,7 @@
 			<label>Select Hotel Name: </label> <select name="hotelId" >
 			<option th:each="hotel: ${booking.hotel.hotelName}" > name </option>
 			</select> -->
+			
 		<div class="form-group">
 			<label> Select Hotel Name: <select name="hotelId">
 					<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
@@ -35,18 +41,17 @@
 	</div>
 	<div class="container-fluid">
 		<br />
-		<form name="frmLog" action="/project/green/booking/insert"
-			method="get">
+		
 			<div class="form-group">
 				<label for="exampleInputCheckIn">Check-In</label> <input
 					name="checkIn" type="date" class="form-control"
-					placeholder="CheckIn" width="70" height="75">
+					placeholder="CheckIn" width="70" height="75" required="required">
 			</div>
 
 			<div class="form-group">
 				<label for="exampleInputCheckOut">Check-Out</label> <input
 					name="checkOut" type="date" class="form-control"
-					placeholder="CheckOut">
+					placeholder="CheckOut" required="required">
 			</div>
 
 			<div class="form-group">
@@ -62,9 +67,8 @@
 		</form>
 		<br /> <br /> 
 		<a href="/project/green/bookings"><button
-				type="button" class="btn btn-outline-dark">Go Back</button></a> <a
-			href="/project/green/login"><button type="button"
-				class="btn btn-outline-light">Home</button></a>
+				type="button" class="btn btn-outline-dark">Go Back</button></a> 
+
 	</div>
 </body>
 </html>
