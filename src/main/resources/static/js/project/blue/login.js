@@ -48,8 +48,8 @@ function checkId() {
 
 		return true;
 	}
-	if (phone.value == 0) {
-		alert("Missing info - Insert your phone!");
+	if (phone.value <= 0) {
+		alert("You can't insert a negative phone number!");
 		{
 			phone.focus();
 			return false;
@@ -96,16 +96,18 @@ function checkRooms() {
 }
 
 function checkBooking() {
-
+	let checkIn = document.getElementById("checkIn");
+	let checkOut = document.getElementById("checkOut");
 	let clientId = document.getElementById("clientId");
 	let hotelId = document.getElementById("hotelId");
 	let room = document.getElementById("room");
 
 	if ((room.value <= 0 || room.value > 50) && clientId.value <= 0
-			&& hotelId.value <= 0) {
-		alert("*Rooms requires a value between 0-50 & Hotel Id and Client Id must be a positive value*");
+			&& hotelId.value <= 0 && checkIn.value == 0 && checkOut == 0) {
+		alert("*Fill all form!*");
 		{
-
+			checkIn.focus();
+			checkOut.focus();
 			room.focus();
 			clientId.focus();
 			hotelId.focus();

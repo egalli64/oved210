@@ -1,6 +1,7 @@
 package project.blue;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,6 +46,13 @@ public class BlueControllerBooking {
 		
 		
 		log.trace("get all bookings");
+		
+		Date now = Date.valueOf(LocalDate.now());
+	if(checkIn.before(now) || checkOut.before(checkIn)) {
+		String wrongDate = String.format("--Correct your check-in or check-out!--");
+		model.addAttribute("wrongDate", wrongDate);
+	}
+		
 
 		BlueBooking booking = new BlueBooking();
 
@@ -55,7 +63,12 @@ public class BlueControllerBooking {
 		booking.setCheckOut(checkOut);
 		booking.setRoom(room);
 
-		repBooking.save(booking);
+		try {
+			repBooking.save(booking);
+		} catch (Exception e) {
+			// TODO: handle exception
+			return "/project/blue/reject";
+		}
 
 		switch (mode) {
 		case 5:
