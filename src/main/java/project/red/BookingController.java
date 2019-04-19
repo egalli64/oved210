@@ -43,8 +43,8 @@ public class BookingController {
 
 	@GetMapping("/project/red/insertBooking")
 	public String create(
-			@RequestParam long hotelId, //
-			@RequestParam long clientId, //
+			@RequestParam Long hotelId, //
+			@RequestParam Long clientId, //
 			@RequestParam Date checkIn, //
 			@RequestParam Date checkOut, //
 			@RequestParam String payment,//
@@ -52,6 +52,7 @@ public class BookingController {
 		
 		Optional<Hotel> hotel = repo.findById(hotelId);
 		Optional<Client> client = crepo.findById(clientId);
+
 		
 		if (client.isPresent() && hotel.isPresent()) {
 			Client cur = client.get();

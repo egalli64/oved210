@@ -26,8 +26,8 @@
 
 		<div class="form-group">
 			<label>Hotel:</label> 		
-		<select name="hotelId" class="form-control" >
-		  <option selected disabled>Choose...</option>
+		<select name="hotelId" class="form-control" required="required">
+		<option value=""></option>
 			<option th:each="hotel:${hotels}" th:value="${hotel.hotelId}"
 			th:text="${hotel.hotelName}" ></option>
 		</select>						     	 
@@ -35,8 +35,8 @@
 
 		<div class="form-group">
 			<label>Client:</label> 
-		<select name="clientId" class="form-control">
-		  <option selected disabled>Choose...</option>
+		<select name="clientId" class="form-control" required="required">
+		<option value=""></option>
 			<option th:each="client:${clients}" th:value="${client.clientId}"
 			th:text="${client.clientName}"></option>
 		</select>			
