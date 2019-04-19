@@ -4,24 +4,26 @@
 <meta charset="utf-8">
 <title>Welcome to Green Hotels</title>
 <link rel="stylesheet" type="text/css" href="/css/project/green/green2.css" />
+<link rel="stylesheet" type="text/css" href="/css/project/green/green.css" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
-<body>
+<body id="sfondo">
 
-		<br /> 
-	<div class="right">
+		<br> 
+	<div class="container-fluid left">
 		<a href="/project/green/request.html"><button type="button"
 				class="btn btn-outline-secondary">LOGOUT</button></a> <br>
 	</div>
 		<br>
+		<br>
 		
-		<br /> <br />
-		<h3 class="center" th:text="'Welcome ' + ${user} + '!'"></h3>
-		<br />
+		<h1 class="center" th:text="'Welcome ' + ${user} + '!'"></h1>
+		
+		<br>
 		<br>
 
-		<div class="container-fluid center">
+	<div class="center">
 			<table class="table table-hover">
 				<thead class="thead-succes">
 					<tr>
@@ -32,18 +34,16 @@
 					</tr>
 				</thead>
 			</table>
-		</div>
-
-	<br />
-	<br />
-	<br />
-	<div class="container-fluid center">
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	
+	<div class="container-fluid center blue">
 		<table class="table table-hover">
 			<thead class="thead-succes">
 				<tr>
- 		<br>
-		<br>
-	
 		<th><i>Where we are:</i></th>
 				</tr>
 			</thead>
@@ -54,7 +54,8 @@
 		</div>
 		
 		<br>
-		<div class="container-fluid center">
+		
+		<div class="container-fluid center blue">
 			<table class="table table-hover">
 				<thead class="thead-succes">
 					<tr>
