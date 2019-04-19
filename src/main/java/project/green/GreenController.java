@@ -367,6 +367,27 @@ public class GreenController {
 	}
 		return "/project/green/bookings";
 	}
+	
+	@GetMapping("/project/green/hotel/info")
+	 public String showPage (@RequestParam int hotelId, Model model) {
+		 switch(hotelId) {
+		 case 1:
+			 return "/project/green/hotel/info/tulipano";
+		 case 2:
+			 return "/project/green/hotel/info/margherita";
+		 case 3:
+			 return "/project/green/hotel/info/girasole";
+		 case 4:
+			 return "/project/green/hotel/info/giglio";
+		 case 5:
+			 return "/project/green/hotel/info/orchidea";
+			 
+		 default:
+			 return "/project/green/hotel/info/default";		 
+		 }
+		 
+	 }
+	
 }
 
 
