@@ -11,7 +11,11 @@
 <body id="clients">
 	<div class="container-fluid">
 		<br />
-
+	<div class="right">
+		<a href="/project/green/request.html"><button type="button"
+				class="btn btn-outline-secondary">LOGOUT</button></a> <br>
+	</div>
+	
 		<h3 class="backgroundtitles">
 			<i>Clients</i>
 		</h3>
@@ -24,17 +28,18 @@
 				</button></a> <br /> <br /> <a href="/project/green/login"><button
 					type="button" class="btn btn-outline-dark">Go Back</button></a>
 		</div>
-		<br />
-		<div>
-			<h4 th:text="${message}" th:if="${message}"
-				class="alert alert-success text-center"></h4>
 
-			<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
-				class="alert alert-danger text-center"></h4>
+	<br />
+	<div>
+		<h4 th:text="${message}" th:if="${message}"
+			class="alert alert-success text-center"></h4>
 
-			<h4 th:text="${clientEdit}" th:if="${clientEdit}"
-				class="alert alert-warning text-center"></h4>
-		</div>
+		<h4 th:text="${messageRemoved}" th:if="${messageRemoved}"
+			class="alert alert-danger text-center"></h4>
+
+		<h4 th:text="${clientEdit}" th:if="${clientEdit}"
+			class="alert alert-warning text-center"></h4>
+	</div>
 
 	</div>
 	<br />
