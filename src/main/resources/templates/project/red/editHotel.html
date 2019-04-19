@@ -11,7 +11,8 @@
 <body id="hotels">
 
 	<h3 class="backgroundtitles">Edit Hotel</h3>
-
+	
+	<br>
 	<div class= "container-fluid left">
 	<a href="/project/red/hotels"><button type="button" class="btn btn-info" aria-pressed="true">Go back</button> 
 	</a>
@@ -21,7 +22,7 @@
 	
 
 	<form id="new" name="frmLogInsert" action="/project/red/saveHotel"
-		method="get" onsubmit = "return capitalize()">
+		method="get" onsubmit = "return capitalize()" class="container-fluid left">
 	
 	 <input name = "hotelId" type="number" class="form-control" hidden = "true" th:value ="${hotelId}" >  
 
@@ -29,22 +30,40 @@
 
 			<label>Hotel name:</label> <input name="hotelName" type="text"
 				class="form-control" placeholder="Enter Hotel Name"
-				th:value="${hotelName}" pattern="[a-zA-z ]+">
+				th:unless="${errorHotel} or ${sameHotelCity} or ${message}" pattern="[a-zA-z ]+" th:value="${hotelName}"> 
+				
+				
+				<input name="hotelName"	type="text" class="border border-danger form-control"
+				placeholder="Enter Hotel Name" th:if="${errorHotel} or ${sameHotelCity} or ${message}" pattern="[a-zA-z ]+" th:value="${hotelName}" > 
+				<small class="error" th:if="${errorHotel}"> Name is missing!</small>
+				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
+				<small class="error" th:if="${message}"> This Hotel already exists in this city!</small>
 		</div>
 
 		<div class="form-group">
 			<label>City:</label> <input name="city" type="text"
-				class="form-control" placeholder="Enter City" th:value="${city}" pattern="[a-zA-z ]+">
+				class="form-control" placeholder="Enter City"
+				th:unless="${errorCity} or ${sameHotelCity}" pattern="[a-zA-z ]+" th:value="${city}"> 
+				
+				<input name="city" type="text" class="border border-danger form-control" placeholder="Enter City"
+				th:if="${errorCity} or ${sameHotelCity}" th:value="${city}" pattern="[a-zA-z ]+"> 
+				<small class="error" th:if="${errorCity}"> City is missing!</small> 
+				<small class="error" th:if="${sameHotelCity}"> This Hotel already exists in this city!</small>
 		</div>
-
 
 		<div class="form-group">
-			<label>Rooms: </label> <input min="2" max = "100" name="roomCounter" type="number"
-				class="form-control" placeholder="Enter Room Number"
-				th:value="${roomCounter}">
+			<label>Rooms: </label> <input name="roomCounter" type="number"
+				class="form-control" placeholder="Enter Room Number" th:unless="${errorRooms}" th:value="${roomCounter}">
+				
+				<input name="roomCounter" type="number" class="border border-danger form-control" placeholder="Enter Room Number"
+				th:if="${errorRooms}" th:value="${roomCounter}"> 
+				<small class="error" th:if="${errorRooms}"> RoomCounter is missing!</small>
 		</div>
-
+		
+		<div>
 		<button type="submit" class="btn btn-primary">Submit</button>
+		</div>
+		<br>
 	</form>
 
 
