@@ -49,7 +49,7 @@ public class BlueControllerBooking {
 		
 		Date now = Date.valueOf(LocalDate.now());
 	if(checkIn.before(now) || checkOut.before(checkIn)) {
-		String wrongDate = String.format("--Correct your check-in or check-out!--");
+		String wrongDate = String.format("--Bad date! Correct your check-in or check-out!--");
 		model.addAttribute("wrongDate", wrongDate);
 	}
 		
@@ -66,7 +66,10 @@ public class BlueControllerBooking {
 		try {
 			repBooking.save(booking);
 		} catch (Exception e) {
-			// TODO: handle exception
+			//if(checkIn.before(now) || checkOut.before(checkIn)) {
+				//String wrongDate = String.format("--Bad date! Correct your check-in or check-out!--");
+				//model.addAttribute("wrongDate", wrongDate);
+			//}
 			return "/project/blue/reject";
 		}
 
