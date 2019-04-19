@@ -46,27 +46,18 @@
 		<div class="form-group">
 			<label>Check in: </label> <input name="checkIn" type="date"
 				class="form-control" placeholder="Enter Check-In Date"
-				th:value="${checkIn}" th:unless="${errorCheckIn}"> <input
-				name="checkIn" type="date" class="border border-danger form-control"
-				placeholder="Enter Check-In" th:if="${errorCheckIn}"
-				th:value="${checkIn}"> <small class="error"
-				th:if="${errorCheckIn}"> Check-in date is missing!</small>
+				th:value="${checkIn}" required="required"> 
 		</div>
 
 		<div class="form-group">
 			<label>Check out: </label> <input name="checkOut" type="date"
 				class="form-control" placeholder="Enter Check-Out Date"
-				th:value="${checkOut}" th:unless="${errorCheckOut}"> <input
-				name="checkOut" type="date"
-				class="border border-danger form-control"
-				placeholder="Enter Check-Out" th:if="${errorCheckOut}"
-				th:value="${checkOut}"> <small class="error"
-				th:if="${errorCheckOut}"> Check-out date is missing!</small>
+				th:value="${checkOut}" required="required"> 
 		</div>
 
 		<div class="form-group">
 			<label>Payment: </label> <br> 
-			<input type="radio" name="payment" value="Credit Card" th:checked="${payment} == 'Credit Card'" /> Credit Card 
+			<input type="radio" name="payment" value="Credit Card" th:checked="${payment} == 'Credit Card'" required="required"/> Credit Card 
 			<img src="/img/project/red/carte.png" width="30" height="35"></img> <br>
 		
 			<input type="radio" name="payment" value="Paypal" th:checked="${payment} == 'Paypal'" /> Paypal 

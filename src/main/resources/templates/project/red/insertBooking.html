@@ -42,25 +42,20 @@
 
 		<div class="form-group">
 			<label>Check in: </label> <input name="checkIn" type="date"
-				class="form-control" placeholder="Enter Check-In Date" th:unless = "${errorCheckIn}">
+				class="form-control" placeholder="Enter Check-In Date" required="required">
 			
-				<input name="checkIn" type="date" class="border border-danger form-control" placeholder="Enter Check-In"
-				th:if="${insertDate}" th:value="${checkIn}"> 
-				<small class="error" th:if="${insertDate}"> Check-in date is missing!</small>
 		</div>
 		
 		<div class="form-group">
 			<label>Check out: </label> <input name="checkOut" type="date"
-				class="form-control" placeholder="Enter Check-Out Date"  th:unless = "${errorCheckOut}">
+				class="form-control" placeholder="Enter Check-Out Date" required="required">
+			
 				
-				<input name="checkOut" type="date" class="border border-danger form-control" placeholder="Enter Check-Out"
-				th:if="${insertDate}" th:value="${checkOut}"> 
-				<small class="error" th:if="${insertDate}"> Check-out date is missing!</small>
 		</div>
 		
 		<div class="form-group">
 			<label>Payment: </label> <br> 
-			<input type="radio" name="payment" value="Credit Card"/> Credit Card
+			<input type="radio" name="payment" value="Credit Card" required="required"/> Credit Card
 			<img src="/img/project/red/carte.png" width="30" height="35"></img>
 			<br> 
 			<input type="radio" name="payment" value="Paypal"/> Paypal
