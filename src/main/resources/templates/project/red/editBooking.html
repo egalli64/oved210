@@ -6,6 +6,8 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+<script src="/js/project/red/login.js">
+</script>
 </head>
 
 <body id="bookings">
@@ -19,7 +21,7 @@
 	<br>
 
 	<form class="container-fluid left" id="new" name="frmLogInsert"
-		action="/project/red/saveBooking" method="get">
+		action="/project/red/saveBooking" method="get" onsubmit = "return checkDate();">
 
 		<input name="bookingId" type="number" class="form-control"
 			hidden="true" th:value="${bookingId}">
@@ -46,13 +48,13 @@
 		<div class="form-group">
 			<label>Check in: </label> <input name="checkIn" type="date"
 				class="form-control" placeholder="Enter Check-In Date"
-				th:value="${checkIn}" required="required"> 
+				th:value="${checkIn}" required="required" id="dataInId"> 
 		</div>
 
 		<div class="form-group">
 			<label>Check out: </label> <input name="checkOut" type="date"
 				class="form-control" placeholder="Enter Check-Out Date"
-				th:value="${checkOut}" required="required"> 
+				th:value="${checkOut}" required="required" id="dataOutId"> 
 		</div>
 
 		<div class="form-group">

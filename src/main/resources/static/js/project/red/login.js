@@ -19,5 +19,30 @@ function checkUser() {
 	// OK
 	return true;
 }
+function checkDate() {
+	let dateIn = document.getElementById("dataInId").value;
+	let dateOut = document.getElementById("dataOutId").value;
+	
+	let now = new Date();
+	let date1 = new Date(dateIn);
+	let date2 = new Date(dateOut);
+	
+	if(date1 < now) {
+		alert("Date uncorrect!");
+		return false;
+		
+	}
+	
+	
+	if(date2 < date1) {
+		alert("Date uncorrect!");
+		return false;
+		
+	}
+	
+	return true;
+	
+	}
 
-}
+
+
