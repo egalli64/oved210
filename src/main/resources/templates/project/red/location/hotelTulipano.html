@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <title>Hotel Tulipano</title>
 
-
-
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body id="location">
 
-<div class="container-fluid">
+<div class="container-fluid" align = "center">
 <h3 class="backgroundtitles">Welcome to the Hotel Tulipano - Milano</h3>
 </div>
 
@@ -24,7 +25,7 @@
 
 <br>
 			
-<div class = "container-fluid">
+<div class = "container-fluid" align = "center">
 <p class="backgroundtitles rounded float-center" >Originariamente costruito nel 1932, l'Hotel Tulipano<br>
 si trova nel cuore di questa città vivace e serve come punto di accesso per la nuova Milano.<br>
 Il bar ristorante Terrazza Gallia offre una posizione mozzafiato a coloro che  cercano una cucina innovativa<br>
@@ -35,28 +36,53 @@ Il nostro hotel dispone anche di una Spa, che si estende su due piani e offre un
 con un menu di trattamenti accuratamente realizzati.</p>
 </div>
 
-<div>
-<img src="/img/project/red/hotelMilano.jpg" class="img-thumbnail" width="600" />
-</div>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+
+			<div class="carousel-inner">
+				<div class="item active" align="center">
+					<img src="/img/project/red/Milano.jpg" width=35% height=30%
+						alt="Milano">
+				</div>
+
+				<div class="item" align="center">
+					<img src="/img/project/red/hotelMilano.jpg" width=35% height=35%
+						alt="Hotel Milano">
+				</div>
+
+				<div class="item" align="center">
+					<img src="/img/project/red/serviziMilano.jpg" width=30% height=30%
+						alt="Servizi">
+				</div>
+
+			</div>
+
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
 
 <br>
 
-<div class="container">
-<p class = "backgroundtitles rounded float-center">Our Facilities:</p>
-<img src="/img/project/red/serviziUltima.jpg" class="img-thumbnail" width="350" />
-</div>
 
-<br>
-
-
-<div class = "container">
+<div class = "container" align = "center">
 <address class="backgroundtitles rounded float-center"> Indirizzo: Piazza Duca D'Aosta, 9, 20124 Milano (MI), Italy.<br>
 Tel: +39 02 67851 <br>
 Email: hoteltulipano@gmail.com<br>
 </address>
 </div>
 
-<div>
+<div align = "center">
 <iframe src="http://google.com/maps?q=Piazza+Duca D'Aosta+Milano&amp;output=embed"
 width="300" height="250"> </iframe>
 </div>
