@@ -3,9 +3,14 @@ body {
 	background-size: 100%;
 }
 
-h3 {
+#sfondo {
+	background-image: url('/img/project/green/images.jpg');
+	background-size: 100%;
+}
+
+h1 {
 	text-align: center;
-	color: #000000;
+	color: blue;
 	font-style: italic;
 	font-weight: bold;
 }
@@ -58,3 +63,4 @@ h3 {
 #signature{
 	text-align: bottom;
 }
+

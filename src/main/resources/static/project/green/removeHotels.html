@@ -15,8 +15,8 @@
 		<form name="frmLog" action="/project/green/removeHotels" method="get">
 			<div class="form-row">
 				<div class="col">
-					<input name="hotelId" type="text" class="form-control"
-						placeholder="Id">
+					<input name="hotelId" type="number" class="form-control"
+						placeholder="Id" required="required" pattern="d{0,9}">
 				</div>
 			</div>
 			<br />

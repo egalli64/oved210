@@ -28,8 +28,18 @@ public class HotelController {
 	public String create(@RequestParam String hotelName, @RequestParam String city, @RequestParam String roomCounter,
 
 			Model model) {
+
+
+		model.addAttribute("hotelName", hotelName);
+		model.addAttribute("city", city);
+		model.addAttribute("roomCounter", roomCounter);
+		
+		hotelName = capitalize(hotelName);
+		city = capitalize(city);
+
 	    hotelName = capitalize(hotelName);
 	    city = capitalize (city);
+
 		long rooms = 0;
 		try {
 			rooms = Long.parseLong(roomCounter);
@@ -117,10 +127,56 @@ public class HotelController {
 
 	@GetMapping("/project/red/saveHotel")
 	public String save(@RequestParam long hotelId, @RequestParam String hotelName, @RequestParam String city,
-			@RequestParam long roomCounter, Model model) {
+			@RequestParam String roomCounter, Model model) {
+		
+		model.addAttribute("hotelName", hotelName);
+		model.addAttribute("city", city);
+		model.addAttribute("roomCounter", roomCounter);
+		
+		hotelName = capitalize(hotelName);
+		city = capitalize(city);
 
+	    hotelName = capitalize(hotelName);
+	    city = capitalize (city);
+
+		long rooms = 0;
+		try {
+			rooms = Long.parseLong(roomCounter);
+
+		} catch (NumberFormatException nfe) {
+			model.addAttribute("errorRooms", "***RoomCounter is missing!***");
+
+			return "/project/red/insertHotel";
+		}
+
+		log.trace("get new hotel");
+
+		if (hotelName.isEmpty()) {
+			model.addAttribute("errorHotel", "***Hotel name is missing!***");
+
+			return "/project/red/editHotel";
+		}
+		if (city.isEmpty()) {
+			model.addAttribute("errorCity", "***City is missing!***");
+
+			return "/project/red/editHotel";
+		}
+		try {
+			Hotel hotel = new Hotel(hotelName, city, rooms);
+			repo.save(hotel);
+			model.addAttribute("hotels", repo.findAll());
+
+			String hotelSaved = String.format("***New hotel inserted!***");
+			model.addAttribute("hotelSaved", hotelSaved);
+		} catch (Exception ex) {
+			model.addAttribute("sameHotelCity", "***This Hotel already exists in this city!***");
+
+			return "/project/red/editHotel";
+		}
+
+	
 		log.trace("saving modified hotel");
-		Hotel hotel = new Hotel(hotelId, hotelName, city, roomCounter);
+		Hotel hotel = new Hotel(hotelId, hotelName, city, rooms);
 		repo.save(hotel);
 		model.addAttribute("okEdit", "***Hotel modified!***");
 		model.addAttribute("hotels", repo.findAll());
