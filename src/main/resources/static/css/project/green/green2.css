@@ -18,6 +18,10 @@ h3 {
 	text-align: left;
 }
 
+.right{
+	text-align: right;
+}
+
 .google-maps {
 	position: relative;
 	top: 100;
@@ -45,4 +49,8 @@ h3 {
 .myCarousel {
 	width: 300px;
 	heigth: 300px;
+}
+
+#white{
+	background: white;
 }
