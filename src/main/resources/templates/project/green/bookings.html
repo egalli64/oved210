@@ -30,6 +30,8 @@
 				class="alert alert-danger text-center"></h4>
 			<h4 th:text="${deleteBooking}" th:if="${deleteBooking}"
 				class="alert alert-danger text-center"></h4>
+				<h4 th:text="${paymentEmpty}" th:if="${paymentEmpty}"
+				class="alert alert-danger text-center"></h4>
 
 			<h4 th:text="${editingDone}" th:if="${editingDone}"
 				class="alert alert-danger text-center"></h4>
@@ -68,11 +70,6 @@
 
 			</tr>
 		</table>
-	</div>
-	<div class="container-fluid">
-
-		<a href="/project/green/check-in-out.html"><button type="button"
-				class="btn btn-outline-info">Do your check!</button> </a> <br /> <br />
 	</div>
 </body>
 </html>
