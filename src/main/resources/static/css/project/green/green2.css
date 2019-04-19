@@ -29,8 +29,13 @@ th {
 	position: absolute;
 	top: 100;
 	left: 100;
-/*	width: 100% !important;
-	heigth: 100% !important;*/
+}
+
+.googleframe {
+	border: 5px solid #EEE;
+	text-align: center;
+	width: 100%;
+	heigth: 50%;
 }
 
 .box {
