@@ -86,10 +86,22 @@ public class Hotel {
 		this.roomCounter = roomCounter;
 	}
 
+	public Set<Booking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(Set<Booking> bookings) {
+		this.bookings = bookings;
+	}
+
 	@Override
 	public String toString() {
 		return "Hotel [hotelId=" + hotelId + ", hotelName=" + hotelName + ", city=" + city + ", roomCounter="
-				+ roomCounter + "]";
+				+ roomCounter + ", bookings=" + bookings + "]";
 	}
+
+
+
+
 
 }
