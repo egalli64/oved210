@@ -19,18 +19,18 @@
 		<br />
 		
 		<div class="container-fluid border border-info" align="center" id="welcome">
-			<STRONG>Welcome!</STRONG>
-
-	
+			<br>
+			<h2 class="userpass center">Welcome!</h2>
+	<br>
 			<form name="frmLog" action="/project/green/login" method="post" onsubmit="return checkUser()">
+			<label class="userpass" for="userId">User:</label> 
+						<input  name="user" id="userId">
+					<label class="userpass" for="pwdId">Password:</label> 
+						<input name="password" id="pwdId" type="password">
 				<div>
-					<label for="userId">User:</label> <input name="user" id="userId">
-					<label for="pwdId">Password:</label> <input name="password"
-						id="pwdId" type="password">
-				</div>
-				<div>
+				<br>
 					<a href="/project/green/login"><button type="submit"
-							class="btn btn-light">Go</button> </a>
+							class="btn btn-info">Go</button> </a>
 				</div>
 			</form>
 	
@@ -59,7 +59,7 @@
 		<br />
 		<br />
 
-		<h3 id="signature">&copy; GreenHotel Inc. 1978</h3>
+		<h4 id="signature">&copy; GreenHotel Inc. 1978</h4>
 	</div>
 </body>
 </html>

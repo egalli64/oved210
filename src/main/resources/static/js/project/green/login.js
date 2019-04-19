@@ -20,5 +20,3 @@ function checkUser() {
 	return true;
 	
 }
-
-function 
