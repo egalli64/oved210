@@ -1,17 +1,40 @@
 #requestBody {
-	background-color:#c0c0c0;
-	}
+	background-color: #c0c0c0;
+}
 
-
-
-#contact{
- background-color: white; color:black; opacity: 0.5;
- width: 350px;
- padding-left: 10px;
- padding-right: 10px;
-
+#contact {
+	background-color: white;
+	color: black;
+	opacity: 0.5;
+	width: 350px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 
+#register {
+	background-color: white;
+	color: black;
+	opacity: 0.8;
+	width: 350px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+}
 
-                     
+#welcome {
+	text-align: center;
+
+}
+
+h1 {
+	text-align: center;
+	color: #ffffff;
+	font-style: italic;
+	font-weight: bold;
+	background-color: #ffffff;
+}
+
+.button{
+	position: right
+}

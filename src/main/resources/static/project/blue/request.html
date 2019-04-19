@@ -13,37 +13,88 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+ <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' 
+ integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> 
+ 
 </head>
 <body id="requestBody">
 
+<br>
+<!-- 
 <div class="container-fluid" align="center">
 		<div class="row">
 
-<div class="col-4" align="Center">
+ -->
+ <!--  
+<div class="col-4" align="right">
 <a href="/project/blue/staffWelcome.html">	<button class="button" id="sfattWelcome" >
 		Supporto</button></a>
 </div>
-
-<div class="col-4" align="center">
-<a href="/project/blue/registration.html">	<button class="button" id="regclient" >
-		Register now!</button></a>
+-->
+<div>
+ <p  align=right>
+<a href="/project/blue/staffWelcome.html"><button class="button" id="sfattWelcome"  >
+		Supporto <i class='fas fa-laptop' style='font-size:24px; color: Black'></i> </button></a>
+</div>
+<div id="welcome">	
+<p class="backgroundtitles rounded float-center" align="center">	
+<h1> Welcome in Blue Page!</h1>
 </div>
 
-<div class="col-4" align="Center">
-<a href="/project/blue/registration.html">	<button class="button" id="regclient" >
+
+<!--  
+</div>
+</div>
+-->
+<br>
+<br>
+	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add"  >
+	<div  class = "container-fluid border border-info" align="center" id = "register">
+<h2 align="center"> Iscriviti al sito!</h2>
+<br>
+		
+<input type = "text" name = "mode" hidden="true" value="1" >
+			<label class= text-left>Full Name:  
+			<input type = "text" name = "name" class=text-left >
+			</label><br>
+			<label class=text-left>Email:  
+			<input type = "email" name = "email" autocomplete = "on" placeholder="email@domain.ext" class=text-left>
+			</label><br>
+			<label class=text-left>Phone:  
+			 <input type = "number" name = "phone" class=text-left>
+			</label>
+			<br />
+		<a href="/project/blue/clients">
+		<button type="submit" class = "text-center" id = "done">
+			<b>Done!</b>
+		</button></a>
+		
+		</div> 
+	</form>
+
+<br>
+<div align="Center">
+<p> Sei già iscritto?
+<a href="/project/blue/registration.html"><button class="button" id="regclient" >
 		Accedi</button></a>
+		</p>
 </div>
 
-</div>
-</div>
 
-<!-- Codice del Carousel -->
+
+
+
+
+
+
+
+
+
 
 
 <!-- Carousel -->
 <div class="container-fluid">
 <br>
-<h3> Welcome in Blue Page!</h3>
 <br>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -59,19 +110,19 @@
  
  <div class="carousel-inner">
   <div class="item active" align="center">
-   <img src="/img/project/blue/hotelRoma/roma.jpg" alt= "Roma" width=100% height=70%>
+   <img src="/img/project/blue/hotelRoma/roma.jpg" alt= "Roma" width=90% height=30%>
+ </div>
+  
+  <div class="item " align="center">
+   <img src="/img/project/blue/hotelMilano/milano.jpg" alt="Milano" width=90% height=30%>
   </div>
   
   <div class="item " align="center">
-   <img src="/img/project/blue/hotelMilano/milano.jpg" alt="Milano" width=100% height=70%>
+   <img src="/img/project/blue/hotelVenezia/veneziaRequest.jpg" alt="Venezia" width=90% height=30%>
   </div>
   
   <div class="item " align="center">
-   <img src="/img/project/blue/hotelVenezia/veneziaRequest.jpg" alt="Venezia" width=100% height=70%>
-  </div>
-  
-  <div class="item " align="center">
-   <img src="/img/project/blue/hotelFirenze/firenzeRequest.jpg" alt="Firenze" width=100% height=70%>
+   <img src="/img/project/blue/hotelFirenze/firenzeRequest.jpg" alt="Firenze" width=90% height=30%>
   </div>
   
    
