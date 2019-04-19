@@ -4,15 +4,19 @@
 <meta charset="utf-8">
 <title>Hotel Giglio</title>
 
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/project/red/red.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
 </head>
 
 
 <body id="location">
 
-<div class="container-fluid">
+<div class="container-fluid" align = "center">
 		<h3 class="backgroundtitles">Welcome to the Hotel Giglio - Napoli</h3>
 </div>
 
@@ -23,7 +27,7 @@
 
 <br>
 			
-<div class = "container-fluid">
+<div class = "container-fluid" align = "center">
 <p class="backgroundtitles rounded float-center" > Hotel Giglio situato sul lungomare, vicino all’emblematico Castel dell’Ovo, è il primo edificio a dare il benvenuto al visitatore. <br>
 Con una vista spettacolare sul Vesuvio, il Golfo di Napoli e le isole paradisiache di Ischia e Capri, l'hotel gode di una posizione privilegiata.<br>
 Le camere disponibili sono dotate di servizi e arredi propri di un hotel classico: un’esperienza, più che un semplice soggiorno. <br>
@@ -31,20 +35,47 @@ L’hotel dispone anche dell’eccellente Ristorante "La Terrazza", la cui cucin
 </p> 
 </div>
 
-<div>
-<img src="/img/project/red/hotelNapoli.jpg" class="img-thumbnail" width="600" />
-</div>
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+
+			<div class="carousel-inner">
+				<div class="item active" align="center">
+					<img src="/img/project/red/napoli.jpg" width=45% height=35%
+						alt="Napoli">
+				</div>
+
+				<div class="item" align="center">
+					<img src="/img/project/red/hotelNapoli.jpg" width=35% height=35%
+						alt="Hotel">
+				</div>
+
+				<div class="item" align="center">
+					<img src="/img/project/red/serviziNapoli.jpg" width=25% height=25%
+						alt="Servizi">
+				</div>
+
+			</div>
+
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span> <span
+				class="sr-only">Previous</span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span> <span
+				class="sr-only">Next</span>
+			</a>
+		</div>
+
+
 
 <br>
 
-<div class="container">
-<p class = "backgroundtitles rounded float-center">Our Facilities:</p>
-<img src="/img/project/red/servizi.jpg" class="img-thumbnail" width="350" />
-</div>
-
-<br>
-
-<div class = "container">
+<div class = "container" align = "center">
 <p class="backgroundtitles rounded float-center" > Indirizzo: Via Partenope, 45, 80121, Napoli (NA), Italy.<br>
 Tel: +39 081 764 0044 <br>
 Email: hotelgiglio@gmail.com<br>
@@ -53,7 +84,7 @@ Email: hotelgiglio@gmail.com<br>
 
 <br>
 
-<div>
+<div  align = "center">
 <iframe src= "https://google.com/maps?q=Via+Partenope+45+Napoli&amp;output=embed"
 width="300" height="250"></iframe>
 </div>
