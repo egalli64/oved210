@@ -75,7 +75,7 @@ values (green_clients_seq.nextval, 'Nancy	Greenberg ', 'n.greenberg@gmail.com',3
 
 create table green_hotels (
 hotel_id number (6) primary key,
-hotel_name varchar2 (40),
+hotel_name varchar2 (40) constraint hotel_name unique,
 city varchar2 (30),
 room_counter number (6) 
 );
@@ -186,6 +186,4 @@ values (green_bookings_seq.nextval, 3, 8, '16-giu-2019','18-giu-2019', 'Paypal')
 
 insert into green_bookings(booking_id, client_id, hotel_id, check_in, check_out, payment)
 values (green_bookings_seq.nextval, 2, 9, '27-lug-2019','30-lug-2019', 'Credit Card');
-
-
 
