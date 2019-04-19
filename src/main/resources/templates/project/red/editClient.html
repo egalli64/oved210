@@ -22,29 +22,32 @@
      <input name = "clientId" type="number" class="form-control" hidden = "true" th:value ="${clientId}" >
 
 		<div class="form-group">
-			<label>Name and Surname:</label> <input name="clientName" type="text"
-				class="form-control" placeholder="Enter Name and Surname"
-				th:value="${clientName}" pattern="[a-zA-z ]+">
+		  <label>Name and Surname:</label>
+        <input name="clientName" type="text" class="form-control" 
+        	placeholder="Enter Name and Surname" th:unless = "${errorClient}" pattern="[a-zA-z ]+" th:value="${clientName}">  
+         <input name="clientName" type="text" class="border border-danger form-control " 
+         	placeholder="Enter Name and Surname" th:if = "${errorClient}" pattern="[a-zA-z ]+" th:value="${clientName}">  
+       	 <small class= "error" th:if = "${errorClient}"> Name is missing!</small>
+   </div>
+  
+   <div class="form-group"> 
+    <label>Email:</label>
+    <input name= "email" type="email" class="form-control" id="exampleInputEmail1"
+    	aria-describedby="emailHelp" placeholder="Enter Email" th:unless = "${errorEmail}" th:value="${email}" >
+    
+     <input name = "email" type="text" class="border border-danger form-control"
+     	aria-describedby="emailHelp" placeholder="Enter Email" th:if = "${errorEmail}" th:value = "${email}">
+    <small class= "error" th:if = "${errorEmail}"> Email already existing!</small>
+  </div>
+ 
+  <div class="form-group">
+      <label>Phone: </label>
+        <input name = "phone" type="number" class="form-control"  placeholder="Enter Phone Number" pattern = "d{0,9}" th:value="${phone}">            
+  </div>
 
-		</div>
-
-		<div class="form-group">
-			<label>Email:</label> <input name="email" type="email"
-				class="form-control" id="exampleInputEmail1"
-				aria-describedby="emailHelp" placeholder="Enter Email"
-				th:value="${email}">
-		</div>
-
-		<div class="form-group">
-			<label>Phone: </label> <input name="phone" type="number"
-				class="form-control" placeholder="Enter Phone Number"
-				th:value="${phone}" pattern = "d{0,9}">
-		</div>
-		
-		<div>
-		<button type="submit" class="btn btn-primary" aria-pressed="true">Submit</button>
-		<br>
-		</div>
+  <div class = "container-fluid left">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
 		<br>
 </form>
 
