@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import project.red.RedController;
+
 
 
 
@@ -294,7 +294,8 @@ public class GreenController {
 			model.addAttribute("bookings", repoBooking.findAll());
 
 			String SaveNewBooking = String.format("booking insered");
-			model.addAttribute("SaveNewBooking", SaveNewBooking);			
+			model.addAttribute("SaveNewBooking", SaveNewBooking);	
+			
 		}
 
 		// TODO: what if missing hotel or client?
