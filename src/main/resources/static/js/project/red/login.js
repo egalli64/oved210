@@ -20,15 +20,16 @@ function checkUser() {
 	return true;
 }
 function checkDate() {
-	let dateIn = document.getElementById("dataInId").value;
-	let dateOut = document.getElementById("dataOutId").value;
+	let dateIn = document.getElementById("dataInId");
+	let dateOut = document.getElementById("dataOutId");
 	
 	let now = new Date();
-	let date1 = new Date(dateIn);
-	let date2 = new Date(dateOut);
+	let date1 = new Date(dateIn.value);
+	let date2 = new Date(dateOut.value);
 	
 	if(date1 < now) {
 		alert("Check in date cannot be previous to the current date!");
+		dateIn.focus();
 		return false;
 		
 	}
@@ -36,6 +37,7 @@ function checkDate() {
 	
 	if(date2 < date1) {
 		alert("Check out date cannot be previous to the check in date!");
+		dateOut.focus();
 		return false;
 		
 	}
