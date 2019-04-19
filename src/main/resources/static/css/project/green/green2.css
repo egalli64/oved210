@@ -3,16 +3,17 @@ body {
 	background-size: 100%;
 }
 
-#sfondo {
-	background-image: url('/img/project/green/images.jpg');
-	background-size: 100%;
-}
 
 h1 {
 	text-align: center;
 	color: blue;
 	font-style: italic;
 	font-weight: bold;
+}
+
+table{
+		text-align: center;
+	
 }
 
 .center{

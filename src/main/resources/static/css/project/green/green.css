@@ -1,7 +1,7 @@
 body {
 	background-image: url('/img/project/green/hotel.jpg');
 	color: #000040;
-	background-size: 100%
+	background-size: 50%
 }
 
 h1 {
@@ -33,9 +33,6 @@ p {
 	background-color: #fdf9db;
 }
 
-table{
-	background-color: rgba(255, 255, 255, 0.8);
-}
 
 .center{
 	text-align: center;
