@@ -34,20 +34,21 @@
 
 <br>
 <br>
-	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add"  >
+	<form id= "regclient" name="frmRegInsert" action="/project/blue/clients/add"  method = "get" onsubmit="return checkId();">
 	<div  class = "container-fluid border border-info" align="center" id = "register">
 <h2 align="center"> Iscriviti al sito!</h2>
 <br>
 		
 <input type = "text" name = "mode" hidden="true" value="1" >
 			<label class= text-left>Full Name:  
-			<input type = "text" name = "name" class=text-left >
+			<input type = "text" pattern = "[ A-Za-z]+" placeholder="Name and Surname" name = "name" id="name" class=text-left >
 			</label><br>
 			<label class=text-left>Email:  
-			<input type = "email" name = "email" autocomplete = "on" placeholder="email@domain.ext" class=text-left>
+			<input type = "email" name = "email" autocomplete= "on" placeholder="email@domain.ext"  id = "email" class=text-left>
 			</label><br>
 			<label class=text-left>Phone:  
-			 <input type = "number" name = "phone" class=text-left>
+			 <input type = "number" name = "phone" id="phone" autocomplete = "on" placeholder="Phone number" class=text-left>
+			 <!-- pattern="[0-9]{8,12}" -->
 			</label>
 			<br />
 		<a href="/project/blue/clients">
