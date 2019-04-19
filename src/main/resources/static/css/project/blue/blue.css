@@ -2,6 +2,14 @@
 	background-color:#c0c0c0;
 	}
 
+#staffWelcomeBody{
+	background-color:#c0c0c0;
+}
+
+#responseBody{
+	background-color:#c0c0c0;
+}
+
 h1 {
 	text-align: center;
 	color: #000000;
@@ -25,7 +33,8 @@ legend{
 }
 
 #idLogUser{
-	background-color:#e0ded8;
+	background-color:#80c4f7;
+
 }
 
 #contact{
