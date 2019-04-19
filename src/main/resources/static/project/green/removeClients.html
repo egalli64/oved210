@@ -14,8 +14,8 @@
 		<form name="frmLog" action="/project/green/removeClients" method="get">
 			<div class="form-row">
 				<div class="col">
-					<input name="clientId" type="text" class="form-control"
-						placeholder="Id">
+					<input name="clientId" type="number" class="form-control"
+						placeholder="Id" required="required" pattern="d{0,9}">
 				</div>
 			</div>
 			<br />

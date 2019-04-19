@@ -20,21 +20,20 @@
 			<div class="form-group">
 				<label for="exampleInputClient Name">Client Name</label> <input
 					name="clientName" type="text" class="form-control" pattern="[a-zA-z ]+"
-					th:value="${clientName}">
+					th:value="${clientName}" required="required">
 			</div>
 
 			<div class="form-group">
 				<label for="exampleInputEmail1">Email address</label> <input
-					name="email" type="text" class="form-control"  pattern=".+@.+..+" th:value="${email}">
+					name="email" type="text" class="form-control"  pattern=".+@.+..+" th:value="${email}" required="required">
 			</div>
 
 			<div class="form-group">
 				<label for="exampleInputTelephone number">Telephone number</label> <input
-					name="phone" type="text" class="form-control" th:value="${phone}" pattern="[0-9]{10}">
+					name="phone" type="text" class="form-control" th:value="${phone}" required="required" pattern="[0-9]{10}">
 			</div>
 
 			<button type="submit" class="btn btn-outline-success">Edit!</button>
-
 		</form>
 	</div>
 	<br />
