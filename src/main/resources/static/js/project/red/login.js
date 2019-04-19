@@ -28,14 +28,14 @@ function checkDate() {
 	let date2 = new Date(dateOut);
 	
 	if(date1 < now) {
-		alert("Date uncorrect!");
+		alert("Check in date cannot be previous to the current date!");
 		return false;
 		
 	}
 	
 	
 	if(date2 < date1) {
-		alert("Date uncorrect!");
+		alert("Check out date cannot be previous to the check in date!");
 		return false;
 		
 	}
